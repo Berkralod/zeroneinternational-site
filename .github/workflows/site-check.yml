@@ -8,6 +8,8 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    outputs:
+      diagnostic: ${{ steps.summary.outputs.diagnostic }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -15,11 +17,50 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python validate_site.py
-      - run: python build_all.py
-      - run: python -m pip install 'playwright>=1.45,<2'
-      - run: python -m playwright install --with-deps chromium
-      - run: python browser_test.py
+      - id: static
+        run: python validate_site.py
+      - id: build
+        run: python build_all.py
+      - id: pip
+        run: python -m pip install 'playwright>=1.45,<2'
+      - id: chromium
+        run: python -m playwright install --with-deps chromium
+      - id: browser
+        run: python browser_test.py
+      - id: summary
+        if: always()
+        env:
+          STATIC_RESULT: ${{ steps.static.outcome }}
+          BUILD_RESULT: ${{ steps.build.outcome }}
+          PIP_RESULT: ${{ steps.pip.outcome }}
+          CHROMIUM_RESULT: ${{ steps.chromium.outcome }}
+          BROWSER_RESULT: ${{ steps.browser.outcome }}
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import os
+          report = Path('browser-artifacts/results.json')
+          stages = ['STATIC', 'BUILD', 'PIP', 'CHROMIUM', 'BROWSER']
+          failed = [stage for stage in stages if os.environ.get(stage + '_RESULT') == 'failure']
+          if report.is_file():
+              rows = json.loads(report.read_text(encoding='utf-8'))
+              failures = [row for row in rows if row.get('result') != 'passed']
+              if failures:
+                  row = failures[0]
+                  diagnostic = str(len(failures)) + ' failures: ' + row['page'] + ' @' + str(row['width']) + ': ' + row['error']
+              elif failed:
+                  diagnostic = 'Failed stage: ' + ', '.join(failed)
+              else:
+                  diagnostic = str(len(rows)) + ' browser checks passed'
+          else:
+              diagnostic = 'Failed stage: ' + ', '.join(failed) if failed else 'Browser report unavailable'
+          diagnostic = diagnostic.replace('\n', ' ').replace('\r', ' ')[:220]
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
+              output.write('diagnostic=' + diagnostic + '\n')
+          Path('browser-artifacts').mkdir(exist_ok=True)
+          Path('browser-artifacts/summary.txt').write_text(diagnostic, encoding='utf-8')
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -27,3 +68,16 @@ jobs:
           path: browser-artifacts/
           retention-days: 7
           if-no-files-found: warn
+  diagnostics:
+    needs: validate
+    if: always()
+    name: "Diagnostic - ${{ needs.validate.outputs.diagnostic }}"
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - env:
+          DIAGNOSTIC: ${{ needs.validate.outputs.diagnostic }}
+          RESULT: ${{ needs.validate.result }}
+        run: |
+          printf '%s\n' "$DIAGNOSTIC"
+          test "$RESULT" = "success"
