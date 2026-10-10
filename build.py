@@ -224,7 +224,6 @@ def csp(config):
         f"form-action {' '.join(form)}",
         "base-uri 'none'",
         "object-src 'none'",
-        "upgrade-insecure-requests",
     ])
 
 
@@ -533,7 +532,7 @@ def build(check_only=False):
     # Server-side CSP for Railway/nginx: the meta tag in each page stays the stricter one,
     # the header adds frame-ancestors (not allowed in <meta>) and allows every optional service.
     header_csp = csp({**config, "formspree_form_id": "x", "cloudflare_analytics_token": "x"})
-    header_csp = header_csp.replace("upgrade-insecure-requests", "frame-ancestors 'none'; upgrade-insecure-requests")
+    header_csp += "; frame-ancestors 'none'; upgrade-insecure-requests"
     (BUILD_META / "csp.conf").write_text(
         f'add_header Content-Security-Policy "{header_csp}" always;\n', encoding="utf-8")
     langs_re = "|".join(c for c in site.langs if c != site.default)

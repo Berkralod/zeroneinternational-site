@@ -107,7 +107,7 @@ test("sticky call to action appears after scrolling on phones @mobile", async ({
   await page.goto("/");
   const cta = page.locator("[data-sticky-cta]");
   await expect(cta).not.toHaveClass(/is-visible/);
-  await page.mouse.wheel(0, 1500);
+  await page.evaluate(() => window.scrollTo(0, 1500));
   await expect(cta).toHaveClass(/is-visible/);
   await expect(page.locator("[data-back-to-top]")).toBeVisible();
   await page.locator("[data-back-to-top]").click();
