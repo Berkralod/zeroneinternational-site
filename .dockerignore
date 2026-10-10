@@ -1,0 +1,11 @@
+.git
+.github
+.env
+.env.*
+*.pem
+*.key
+output
+node_modules
+__pycache__
+*.zip
+README.md
