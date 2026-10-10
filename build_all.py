@@ -20,6 +20,7 @@ def main():
         shutil.copytree(ROOT, work, ignore=shutil.ignore_patterns('.git', 'dist', 'output', '__pycache__', '.env', '.env.*'))
         (work / 'locales.json').write_text(json.dumps(data, ensure_ascii=False), encoding='utf-8')
         subprocess.run([sys.executable, str(work / 'build_site.py')], cwd=work, check=True)
+        subprocess.run([sys.executable, str(work / 'enrich_seo.py')], cwd=work, check=True)
         dest = ROOT / 'dist'
         if dest.exists():
             shutil.rmtree(dest)
