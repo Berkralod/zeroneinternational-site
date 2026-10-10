@@ -16,4 +16,4 @@ jobs:
         with:
           python-version: '3.12'
       - run: python validate_site.py
-      - run: python build_site.py
+      - run: python build_all.py

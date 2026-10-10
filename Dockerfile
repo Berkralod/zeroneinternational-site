@@ -1,7 +1,7 @@
 FROM python:3.12-alpine AS builder
 WORKDIR /app
 COPY . .
-RUN python build_site.py
+RUN python build_all.py
 
 FROM nginx:stable-alpine
 ENV PORT=8080
