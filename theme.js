@@ -25,14 +25,21 @@
   });
   if(media&&media.addEventListener){media.addEventListener("change",function(event){if(preference!=="light"&&preference!=="dark"){apply(event.matches?"light":"dark");}});}
   if(buttons.length){
-    var languageLink=document.createElement("a");
-    var isTurkish=root.lang==="tr";
-    languageLink.className="theme-toggle";
-    languageLink.href=isTurkish?"index.html":"tr.html";
-    languageLink.textContent=isTurkish?"English":"Türkçe";
-    languageLink.hreflang=isTurkish?"en":"tr";
-    languageLink.lang=isTurkish?"en":"tr";
-    languageLink.setAttribute("aria-label",isTurkish?"English homepage":"Türkçe ana sayfa");
-    buttons[0].parentNode.appendChild(languageLink);
+    var languageStyle=document.createElement("link");
+    languageStyle.rel="stylesheet";
+    languageStyle.href="languages.css?v=1";
+    document.head.appendChild(languageStyle);
+    var picker=document.createElement("select");
+    picker.className="theme-toggle";
+    var labels={en:"Language",tr:"Dil",de:"Sprache",es:"Idioma"};
+    picker.setAttribute("aria-label",labels[root.lang]||labels.en);
+    var languages=[["en","English","index.html"],["tr","Türkçe","tr.html"],["de","Deutsch","de.html"],["es","Español","es.html"]];
+    languages.forEach(function(item){
+      var option=document.createElement("option");
+      option.value=item[2];option.textContent=item[1];option.lang=item[0];option.selected=root.lang===item[0];
+      picker.appendChild(option);
+    });
+    picker.addEventListener("change",function(){window.location.assign(picker.value);});
+    buttons[0].parentNode.appendChild(picker);
   }
 })();
