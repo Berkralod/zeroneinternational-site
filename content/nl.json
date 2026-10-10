@@ -1,0 +1,855 @@
+{
+  "meta": {
+    "code": "nl",
+    "name": "Nederlands",
+    "dir": "ltr",
+    "og_locale": "nl_NL"
+  },
+  "slugs": {
+    "services": "diensten",
+    "service_automation": "diensten/automatisering-bots",
+    "service_web": "diensten/webapplicaties",
+    "service_mobile": "diensten/mobiele-apps",
+    "products": "producten",
+    "use_cases": "toepassingen",
+    "company": "bedrijf",
+    "contact": "contact",
+    "privacy": "privacy",
+    "terms": "gebruiksvoorwaarden",
+    "cookies": "cookies"
+  },
+  "ui": {
+    "skip": "Naar de inhoud",
+    "menu": "Menu",
+    "nav_label": "Hoofdnavigatie",
+    "language": "Taal",
+    "theme_to_dark": "Overschakelen naar donker thema",
+    "theme_to_light": "Overschakelen naar licht thema",
+    "back_to_top": "Terug naar boven",
+    "start_project": "Start een project",
+    "learn_more": "Meer informatie",
+    "view_all_cases": "Bekijk alle 20 toepassingen",
+    "breadcrumb": "Kruimelpad",
+    "home": "Home",
+    "suggest": "Deze pagina is ook beschikbaar in het Nederlands.",
+    "suggest_switch": "Bekijk in het Nederlands",
+    "dismiss": "Sluiten",
+    "in_development": "In ontwikkeling",
+    "related_cases": "Gerelateerde toepassingen",
+    "previous_case": "Vorige toepassing",
+    "next_case": "Volgende toepassing",
+    "all": "Alle",
+    "filter_label": "Toepassingen filteren op dienst",
+    "case_label": "Toepassing",
+    "service_label": "Gerelateerde dienst",
+    "updated": "Laatst bijgewerkt",
+    "challenge": "De uitdaging",
+    "approach": "Hoe software helpt",
+    "includes": "Wat erin kan zitten",
+    "legal_note": "Deze vertaling is bedoeld als hulpmiddel. Bij verschillen geldt de Engelse versie."
+  },
+  "nav": {
+    "services": "Diensten",
+    "products": "Producten",
+    "use_cases": "Toepassingen",
+    "company": "Bedrijf",
+    "contact": "Contact"
+  },
+  "footer": {
+    "tagline": "Maatwerksoftware, automatisering en resale-tools van een team dat zelf een online doorverkoopbedrijf runt.",
+    "services": "Diensten",
+    "company": "Bedrijf",
+    "legal": "Juridisch",
+    "rights": "Alle rechten voorbehouden.",
+    "trademark": "De namen van marktplaatsen op deze site zijn handelsmerken van hun respectieve eigenaren. Zerone International LLC is niet aan hen verbonden en wordt niet door hen onderschreven.",
+    "location": "Farmingville, New York, Verenigde Staten"
+  },
+  "services_list": {
+    "automation": {
+      "name": "Automatisering en bots",
+      "short": "Weg met repetitief werk: gegevens voorbereiden, advertenties, meldingen en geplande taken die vanzelf draaien."
+    },
+    "web": {
+      "name": "Webapplicaties",
+      "short": "Dashboards, interne tools en klantportalen die in elke browser werken, met de rollen die uw team nodig heeft."
+    },
+    "mobile": {
+      "name": "Mobiele apps",
+      "short": "iOS- en Android-apps voor het werk van uw team in de winkel, in het magazijn of onderweg."
+    }
+  },
+  "process": {
+    "eyebrow": "Zo werken we",
+    "title": "Van eerste bericht tot lancering",
+    "intro": "Een helder proces in vier stappen, zodat u altijd weet wat er komt en wat het kost.",
+    "steps": [
+      {
+        "title": "Verkenning",
+        "text": "U vertelt over uw werkwijze, gebruikers en doelen. Wij stellen vragen tot het probleem helder is."
+      },
+      {
+        "title": "Voorstel",
+        "text": "U ontvangt een schriftelijke scope met functies, platforms, planning en een vaste prijs of duidelijke schatting."
+      },
+      {
+        "title": "Bouwen",
+        "text": "We ontwikkelen in korte iteraties en delen werkende versies, zodat u vroeg feedback kunt geven."
+      },
+      {
+        "title": "Lancering en support",
+        "text": "We zetten live, dragen toegang en documentatie over en blijven bereikbaar voor correcties en vervolgstappen."
+      }
+    ]
+  },
+  "roles": {
+    "eyebrow": "Toegang per rol",
+    "title": "Het juiste scherm voor iedereen",
+    "intro": "Applicaties kunnen aparte omgevingen hebben voor eigenaren, managers en medewerkers, elk met eigen rechten.",
+    "items": [
+      {
+        "title": "Eigenaar",
+        "text": "Een volledig overzicht van het bedrijf, de gebruikers, instellingen en rapportages."
+      },
+      {
+        "title": "Manager",
+        "text": "Taken toewijzen, het team coördineren en de operationele gegevens die managers nodig hebben."
+      },
+      {
+        "title": "Medewerker",
+        "text": "Een overzichtelijke weergave van toegewezen taken en de informatie om ze uit te voeren."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Kost een proces u te veel tijd?",
+    "text": "Vertel ons wat u wilt verbeteren. U ontvangt een helder voorstel met scope, planning en prijs.",
+    "button": "Start een project"
+  },
+  "form": {
+    "name": "Uw naam",
+    "email": "E-mailadres",
+    "company": "Bedrijf",
+    "optional": "optioneel",
+    "project_type": "Soort project",
+    "types": {
+      "automation": "Automatisering of bot",
+      "web": "Webapplicatie",
+      "mobile": "Mobiele app",
+      "resale": "Resale-tools",
+      "other": "Iets anders"
+    },
+    "choose": "Maak een keuze",
+    "budget": "Geschat budget",
+    "budgets": [
+      "Minder dan $ 5.000",
+      "$ 5.000 – 15.000",
+      "$ 15.000 – 50.000",
+      "Meer dan $ 50.000",
+      "Weet ik nog niet"
+    ],
+    "timeline": "Planning",
+    "timelines": [
+      "Zo snel mogelijk",
+      "Binnen 1–3 maanden",
+      "Binnen 3–6 maanden",
+      "Flexibel"
+    ],
+    "message": "Projectdetails",
+    "message_hint": "Beschrijf de taak die u wilt verbeteren, de betrokken platforms en de gebruikersrollen die u nodig heeft. Stuur geen wachtwoorden of API-sleutels.",
+    "consent": "Ik ga ermee akkoord dat mijn gegevens worden verwerkt om mijn aanvraag te beantwoorden, zoals beschreven in de {link}.",
+    "consent_link": "privacyverklaring",
+    "submit": "Aanvraag versturen",
+    "sending": "Bezig met versturen…",
+    "success": "Bedankt! Uw bericht is verzonden. We nemen snel contact met u op.",
+    "error": "Uw bericht kon niet worden verzonden. Probeer het opnieuw of mail ons.",
+    "waitlist_title": "Zet u op de wachtlijst",
+    "waitlist_text": "Laat uw e-mailadres achter en we laten het u weten zodra vroege toegang opengaat.",
+    "waitlist_product": "Ik ben geïnteresseerd in",
+    "waitlist_both": "Beide tools",
+    "waitlist_submit": "Aanmelden",
+    "waitlist_success": "Bedankt! U staat op de lijst.",
+    "not_configured": "Het online formulier wordt ingericht. Neem in de tussentijd per e-mail contact met ons op."
+  },
+  "pages": {
+    "home": {
+      "title": "Maatwerksoftware, automatisering en bots | Zerone International",
+      "description": "Zerone International bouwt maatwerk automatiseringen, bots, web- en mobiele apps en ontwikkelt tools voor doorverkopers. Gevestigd in New York, wereldwijd actief in 15 talen.",
+      "h1": "Software die werkt zoals uw bedrijf werkt",
+      "hero": {
+        "eyebrow": "Maatwerksoftware · New York",
+        "lede": "We bouwen automatiseringen, bots, webapplicaties en mobiele apps rond uw echte werkwijze, en we ontwikkelen tools voor online doorverkopers.",
+        "primary": "Start een project",
+        "secondary": "Bekijk onze diensten",
+        "points": [
+          "Schriftelijk voorstel met vaste scope",
+          "Rollen voor eigenaar, manager en medewerker",
+          "Gebouwd door mensen die zelf online doorverkopen"
+        ]
+      },
+      "services": {
+        "eyebrow": "Wat we bouwen",
+        "title": "Drie manieren om tijd te besparen",
+        "intro": "Elk project begint bij uw werkwijze. Daarna kiezen we het juiste formaat: automatisering, een webapplicatie, een mobiele app of een combinatie."
+      },
+      "resale": {
+        "eyebrow": "Ervaring met doorverkoop",
+        "title": "We kennen online doorverkoop van binnenuit",
+        "text": "Zerone International verkoopt gebruikte goederen en overtollige voorraad via online marktplaatsen. Die dagelijkse ervaring bepaalt de tools die we bouwen: een crosslisting-systeem en een analysetool voor liquidatiepartijen.",
+        "link": "Bekijk onze producten"
+      },
+      "cases": {
+        "eyebrow": "Toepassingen",
+        "title": "Ideeën om op voort te bouwen",
+        "intro": "Twintig voorbeelden van wat maatwerksoftware kan doen voor doorverkopers en kleine bedrijven."
+      },
+      "faq": {
+        "eyebrow": "FAQ",
+        "title": "Veelgestelde vragen",
+        "items": [
+          {
+            "q": "Kan ik nu een maatwerkproject aanvragen?",
+            "a": "Ja. Stuur uw wensen via het contactformulier. Wij beoordelen de haalbaarheid en sturen u een schriftelijk voorstel."
+          },
+          {
+            "q": "Wat kost een maatwerkproject?",
+            "a": "Dat hangt af van de scope. Kleine automatiseringen beginnen vanaf enkele duizenden dollars; grotere applicaties worden na de verkenning geprijsd. U kent de prijs altijd voordat het werk begint."
+          },
+          {
+            "q": "Hoe lang duurt een project?",
+            "a": "Eenvoudige automatiseringen duren vaak twee tot vier weken. Web- en mobiele applicaties duren meestal één tot vier maanden, afhankelijk van de functies."
+          },
+          {
+            "q": "Kan mijn applicatie verschillende gebruikersomgevingen hebben?",
+            "a": "Ja. Omgevingen voor eigenaar, managers en medewerkers zijn mogelijk, elk met eigen rechten."
+          },
+          {
+            "q": "Werken jullie met API’s van marktplaatsen?",
+            "a": "Ja, via officiële API’s en toegestane toegangsmethoden. Elke integratie wordt getoetst aan de regels van het platform voordat ze in een voorstel komt."
+          },
+          {
+            "q": "Zijn jullie resale-tools al beschikbaar?",
+            "a": "Het crosslisting-systeem en de analysetool voor partijen zijn in ontwikkeling. U kunt zich op de productpagina aanmelden voor de wachtlijst."
+          }
+        ]
+      }
+    },
+    "services": {
+      "title": "Maatwerk softwareontwikkeling | Zerone International",
+      "description": "Maatwerk automatiseringen, bots, webapplicaties en mobiele apps voor kleine bedrijven en online doorverkopers. Heldere voorstellen, toegang per rol en doorlopende support.",
+      "eyebrow": "Diensten",
+      "h1": "Maatwerk softwareontwikkeling",
+      "lede": "We maken van repetitief, handmatig of versnipperd werk betrouwbare software. U krijgt precies de functies die u nodig heeft en betaalt niet voor wat u nooit gebruikt.",
+      "faq": {
+        "title": "Vragen over onze diensten",
+        "items": [
+          {
+            "q": "Wie is eigenaar van de broncode?",
+            "a": "Eigendom en licentie van de code worden in het voorstel vastgelegd. Bij de meeste maatwerkprojecten krijgt de klant na de laatste betaling het volledige eigendom."
+          },
+          {
+            "q": "Bieden jullie onderhoud en support?",
+            "a": "Ja. Na de lancering bieden we support- en onderhoudspakketten of hulp op afroep."
+          },
+          {
+            "q": "Welke technologieën gebruiken jullie?",
+            "a": "We kiezen bewezen, goed ondersteunde technologieën die bij het project passen, zoals Python, JavaScript en TypeScript, moderne webframeworks en native of cross-platform mobiele tools."
+          },
+          {
+            "q": "Kunnen jullie een bestaande applicatie verbeteren?",
+            "a": "Ja. We kunnen een bestaand systeem beoordelen en verbeteringen, nieuwe functies of een migratieplan voorstellen."
+          },
+          {
+            "q": "Werken jullie met klanten buiten de Verenigde Staten?",
+            "a": "Ja. We werken op afstand met klanten wereldwijd en communiceren in het Engels en Turks."
+          }
+        ]
+      }
+    },
+    "service_automation": {
+      "title": "Procesautomatisering en maatwerk bots | Zerone International",
+      "description": "Maatwerk automatiseringen en bots die gegevens voorbereiden, advertenties maken, meldingen sturen en geplande taken uitvoeren, zodat uw team zich op beslissingen kan richten.",
+      "eyebrow": "Automatisering en bots",
+      "h1": "Procesautomatisering en maatwerk bots",
+      "lede": "Als uw team elke dag dezelfde stappen kopieert, plakt, controleert en herhaalt, kunnen die stappen meestal geautomatiseerd worden. We bouwen automatiseringen die betrouwbaar draaien en rapporteren wat ze hebben gedaan.",
+      "features_title": "Wat we automatiseren",
+      "features": [
+        {
+          "title": "Gegevens voorbereiden",
+          "text": "Zet spreadsheets, notities en leveranciersbestanden om in schone, gestructureerde gegevens."
+        },
+        {
+          "title": "Advertentieprocessen",
+          "text": "Bereid titels, beschrijvingen en kenmerken voor ter controle vóór publicatie."
+        },
+        {
+          "title": "Meldingen",
+          "text": "Waarschuwingen en herinneringen via e-mail, chat-apps of sms zodra iets aandacht nodig heeft."
+        },
+        {
+          "title": "Geplande taken",
+          "text": "Rapporten, back-ups en synchronisaties die automatisch op vaste tijden draaien."
+        },
+        {
+          "title": "Integraties",
+          "text": "Koppel de tools die u al gebruikt via officiële API’s en webhooks."
+        },
+        {
+          "title": "Monitoring",
+          "text": "Logboeken en statusrapporten, zodat u altijd weet wat de automatisering heeft gedaan."
+        }
+      ],
+      "notes_title": "Goed om te weten",
+      "notes": [
+        "Integraties gebruiken alleen officiële API’s en toegestane toegangsmethoden.",
+        "Automatiseringen bevatten foutafhandeling en duidelijke logboeken.",
+        "U houdt de regie: belangrijke acties kunnen menselijke goedkeuring vereisen."
+      ]
+    },
+    "service_web": {
+      "title": "Maatwerk webapplicaties ontwikkelen | Zerone International",
+      "description": "Maatwerk webapplicaties, dashboards, interne tools en klantportalen met toegang per rol voor eigenaren, managers en medewerkers.",
+      "eyebrow": "Webapplicaties",
+      "h1": "Ontwikkeling van maatwerk webapplicaties",
+      "lede": "Breng uw processen samen in één applicatie in de browser. Geen installatie, toegang vanaf elk apparaat en de juiste rechten voor elke gebruiker.",
+      "features_title": "Wat we bouwen",
+      "features": [
+        {
+          "title": "Dashboards",
+          "text": "Live overzicht van verkoop, voorraad, taken en de cijfers die voor u tellen."
+        },
+        {
+          "title": "Interne tools",
+          "text": "Vervang losse spreadsheets door één gedeelde, overzichtelijke werkomgeving."
+        },
+        {
+          "title": "Klantportalen",
+          "text": "Laat klanten zelf bestellingen, documenten of aanvragen bekijken."
+        },
+        {
+          "title": "Toegang per rol",
+          "text": "Aparte omgevingen voor eigenaar, managers en medewerkers met duidelijke rechten."
+        },
+        {
+          "title": "Rapporten en exports",
+          "text": "Maatwerkrapporten en exports naar CSV en PDF op basis van uw gegevens."
+        },
+        {
+          "title": "Veilig vanaf het ontwerp",
+          "text": "Authenticatie, versleutelde verbindingen en regelmatige back-ups vanaf dag één."
+        }
+      ],
+      "notes_title": "Goed om te weten",
+      "notes": [
+        "Applicaties werken in browsers op desktop, tablet en mobiel.",
+        "Hosting kan door ons worden beheerd of in uw eigen account worden ingericht.",
+        "We documenteren het systeem zodat het met uw bedrijf kan meegroeien."
+      ]
+    },
+    "service_mobile": {
+      "title": "Maatwerk app-ontwikkeling voor iOS en Android | Zerone International",
+      "description": "Maatwerk iOS- en Android-apps voor buitendienst, magazijnen en operaties: takenlijsten, goederenontvangst, foto’s en meldingen.",
+      "eyebrow": "Mobiele apps",
+      "h1": "Ontwikkeling van maatwerk mobiele apps",
+      "lede": "Niet al het werk gebeurt achter een bureau. We bouwen mobiele apps voor de taken die uw team uitvoert in de winkel, in het magazijn of onderweg.",
+      "features_title": "Wat we bouwen",
+      "features": [
+        {
+          "title": "Takenlijsten",
+          "text": "Toegewezen taken, checklists en statusupdates in de broekzak van elke medewerker."
+        },
+        {
+          "title": "Goederenontvangst",
+          "text": "Registreer binnenkomende goederen met barcodescan en foto’s."
+        },
+        {
+          "title": "Fotoprocessen",
+          "text": "Maak en orden productfoto’s direct waar de artikelen liggen."
+        },
+        {
+          "title": "Pushmeldingen",
+          "text": "Informeer de juiste mensen zodra er iets verandert."
+        },
+        {
+          "title": "Offline modus",
+          "text": "Werk door zonder verbinding en synchroniseer zodra u weer online bent."
+        },
+        {
+          "title": "iOS en Android",
+          "text": "Native of cross-platform, afhankelijk van budget en eisen."
+        }
+      ],
+      "notes_title": "Goed om te weten",
+      "notes": [
+        "We kunnen publiceren in de App Store en Google Play of intern distribueren.",
+        "Mobiele apps kunnen gegevens delen met uw webapplicatie.",
+        "De doelapparaten worden in het voorstel vastgelegd."
+      ]
+    },
+    "products": {
+      "title": "Crosslisting- en partij-analysetools | Zerone International",
+      "description": "Zerone International ontwikkelt een crosslisting-systeem en een analysetool voor liquidatiepartijen voor online doorverkopers. Meld u aan voor de wachtlijst.",
+      "eyebrow": "Producten",
+      "h1": "Tools voor online doorverkopers",
+      "lede": "We bouwen de tools die we zelf wilden voor ons doorverkoopbedrijf. Beide zijn in ontwikkeling; meld u aan voor de wachtlijst om te horen wanneer vroege toegang opengaat.",
+      "items": [
+        {
+          "name": "Crosslisting-systeem",
+          "text": "Leg een product één keer vast en beheer de advertenties op meerdere marktplaatsen vanaf één plek.",
+          "features": [
+            "Eén productrecord voor elk kanaal",
+            "Concepttitels en -beschrijvingen ter controle",
+            "Voorraadstatus over alle kanalen",
+            "Integraties via toegestane platformtoegang"
+          ]
+        },
+        {
+          "name": "Analyse van liquidatiepartijen",
+          "text": "Schat in of een liquidatiepartij de moeite waard is voordat u een bod doet.",
+          "features": [
+            "Inkoopprijs, kosten en verzending in één overzicht",
+            "Instelbare reserves voor retouren en schade",
+            "Geschatte verkoopwaarde en nettomarge",
+            "Meerdere partijen naast elkaar vergelijken"
+          ]
+        }
+      ]
+    },
+    "use_cases": {
+      "title": "20 softwaretoepassingen voor doorverkopers en mkb | Zerone",
+      "description": "Twintig voorbeelden van maatwerk automatisering, web- en mobiele software voor online doorverkopers en kleine bedrijven: advertenties, partij-analyse, voorraad, rapportage en teams.",
+      "eyebrow": "Toepassingen",
+      "h1": "20 toepassingen voor maatwerksoftware",
+      "lede": "Voorbeelden van wat we voor doorverkopers en kleine bedrijven kunnen bouwen. Elk voorbeeld is aan te passen aan uw werkwijze, platforms en team.",
+      "note": "Dit zijn projectideeën, geen afgeronde klantprojecten. Platformtoegang en functies worden per voorstel beoordeeld."
+    },
+    "company": {
+      "title": "Over Zerone International LLC – Visie en missie",
+      "description": "Zerone International LLC is een bedrijf uit New York dat online doorverkoop combineert met maatwerk softwareontwikkeling. Lees over onze visie, missie en waarden.",
+      "eyebrow": "Bedrijf",
+      "h1": "Over Zerone International",
+      "lede": "We zijn een bedrijf uit New York op het snijvlak van online handel en software.",
+      "about": {
+        "title": "Wie we zijn",
+        "text": [
+          "Zerone International LLC is gevestigd in Farmingville, New York. We verkopen gebruikte goederen en overtollige voorraad via online marktplaatsen en ontwikkelen software, voor onze eigen bedrijfsvoering en voor klanten.",
+          "Elke dag een doorverkoopbedrijf runnen laat zien waar tijd verloren gaat: advertenties maken, partijen beoordelen, voorraad bijhouden en mensen aansturen. Die kennis nemen we mee in elk softwareproject."
+        ]
+      },
+      "vision": {
+        "title": "Onze visie",
+        "text": "Nuttige, begrijpelijke software toegankelijk maken voor kleine bedrijven, zodat zij hun tijd kunnen besteden aan de beslissingen die ertoe doen."
+      },
+      "mission": {
+        "title": "Onze missie",
+        "text": "Echte bedrijfsbehoeften omzetten in betrouwbare software, met een heldere scope, een eerlijke prijs en de juiste rechten voor elke gebruiker."
+      },
+      "values": {
+        "title": "Waar we voor staan",
+        "items": [
+          {
+            "title": "Helderheid",
+            "text": "Schriftelijke scope, eerlijke planning en geen verrassingen op de factuur."
+          },
+          {
+            "title": "Praktisch",
+            "text": "Functies die echte problemen oplossen, geen functies om de functies."
+          },
+          {
+            "title": "Veiligheid",
+            "text": "Zorgvuldig omgaan met uw gegevens, accounts en toegangsrechten."
+          },
+          {
+            "title": "Partnerschap",
+            "text": "We blijven na de lancering bereikbaar en bouwen de software samen met u verder uit."
+          }
+        ]
+      },
+      "location": {
+        "title": "Waar we zijn",
+        "text": "Farmingville, New York, Verenigde Staten. We werken op afstand met klanten over de hele wereld."
+      }
+    },
+    "contact": {
+      "title": "Contact – Start een softwareproject | Zerone International",
+      "description": "Neem contact op met Zerone International over een maatwerk automatisering, bot, web- of mobiele app. We reageren met vragen of een schriftelijk voorstel.",
+      "eyebrow": "Contact",
+      "h1": "Start uw project",
+      "lede": "Vertel ons over uw idee of het probleem dat u wilt oplossen. We streven ernaar binnen twee werkdagen te reageren.",
+      "email_title": "Liever e-mail?",
+      "email_text": "U kunt ons ook rechtstreeks mailen:",
+      "booking": "Plan een gesprek",
+      "whatsapp": "Stuur een WhatsApp-bericht",
+      "location_title": "Locatie"
+    },
+    "privacy": {
+      "title": "Privacyverklaring | Zerone International",
+      "description": "Hoe Zerone International LLC persoonsgegevens verzamelt, gebruikt en beschermt wanneer u deze website bezoekt of contact met ons opneemt.",
+      "h1": "Privacyverklaring",
+      "intro": "Deze verklaring legt uit welke persoonsgegevens we verwerken wanneer u zeroneinternational.com gebruikt, waarom we dat doen en welke rechten u heeft.",
+      "sections": [
+        {
+          "title": "Wie is verantwoordelijk",
+          "paragraphs": [
+            "Zerone International LLC, Farmingville, New York, Verenigde Staten, is verantwoordelijk voor de verwerking van persoonsgegevens op deze website. U kunt ons bereiken via de contactpagina."
+          ]
+        },
+        {
+          "title": "Gegevens die u ons stuurt",
+          "paragraphs": [
+            "Wanneer u ons contact- of wachtlijstformulier gebruikt, ontvangen we de gegevens die u invult, zoals naam, e-mailadres, bedrijf en bericht. We gebruiken ze alleen om uw aanvraag te beantwoorden en een voorstel op te stellen.",
+            "Formulieren worden verzonden via Formspree, een dienst voor formulierverwerking die namens ons werkt. Stuur via het formulier geen wachtwoorden, API-sleutels of gevoelige klantgegevens."
+          ]
+        },
+        {
+          "title": "Automatisch verzamelde gegevens",
+          "paragraphs": [
+            "Onze hostingprovider kan technische gegevens zoals IP-adres, browsertype en tijdstip van het verzoek in serverlogboeken vastleggen. Dit is nodig om de website veilig aan te bieden.",
+            "Als we websitestatistieken inschakelen, gebruiken we een privacyvriendelijke dienst zonder cookies en zonder persoonlijke profielen."
+          ]
+        },
+        {
+          "title": "Hoe lang we gegevens bewaren",
+          "paragraphs": [
+            "We bewaren aanvragen zolang dat nodig is om uw aanvraag en een eventuele zakelijke relatie af te handelen, en zolang de wet dat vereist. U kunt ons op elk moment vragen uw gegevens te verwijderen."
+          ]
+        },
+        {
+          "title": "Uw rechten",
+          "paragraphs": [
+            "Afhankelijk van waar u woont, bijvoorbeeld onder de AVG, de Turkse KVKK of Californische wetgeving, heeft u mogelijk recht op inzage, correctie, verwijdering of overdracht van uw gegevens en op bezwaar tegen of beperking van de verwerking. Neem contact met ons op om deze rechten uit te oefenen. U kunt ook een klacht indienen bij uw toezichthouder."
+          ]
+        },
+        {
+          "title": "Internationale doorgifte",
+          "paragraphs": [
+            "We zijn gevestigd in de Verenigde Staten en onze dienstverleners kunnen gegevens verwerken in de VS of andere landen. We kiezen dienstverleners die passende waarborgen bieden."
+          ]
+        },
+        {
+          "title": "Wijzigingen",
+          "paragraphs": [
+            "We kunnen deze verklaring aanpassen wanneer onze diensten of wettelijke eisen veranderen. De actuele versie staat altijd op deze pagina."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Gebruiksvoorwaarden | Zerone International",
+      "description": "Voorwaarden die gelden voor het gebruik van de website van Zerone International LLC.",
+      "h1": "Gebruiksvoorwaarden",
+      "intro": "Deze voorwaarden gelden voor uw gebruik van zeroneinternational.com. Door de website te gebruiken, gaat u ermee akkoord.",
+      "sections": [
+        {
+          "title": "Inhoud van de website",
+          "paragraphs": [
+            "De inhoud van deze website is bedoeld als algemene informatie. Beschrijvingen van diensten, producten en toepassingen zijn geen bindende aanbiedingen. Een project wordt alleen overeengekomen via een apart schriftelijk voorstel of contract."
+          ]
+        },
+        {
+          "title": "Producten in ontwikkeling",
+          "paragraphs": [
+            "Producten die als in ontwikkeling zijn gemarkeerd, kunnen vóór de release veranderen. Functies, platformondersteuning en releasedata zijn niet gegarandeerd."
+          ]
+        },
+        {
+          "title": "Intellectueel eigendom",
+          "paragraphs": [
+            "De naam Zerone International, het logo en de inhoud van deze website zijn beschermd. U mag ze zonder onze toestemming niet kopiëren of hergebruiken, tenzij de wet dat toestaat."
+          ]
+        },
+        {
+          "title": "Links en merken",
+          "paragraphs": [
+            "Deze website kan platforms van derden noemen of ernaar linken. Hun namen zijn handelsmerken van hun respectieve eigenaren. We zijn niet verantwoordelijk voor de inhoud van externe websites."
+          ]
+        },
+        {
+          "title": "Aansprakelijkheid",
+          "paragraphs": [
+            "We doen ons best deze website juist en beschikbaar te houden, maar garanderen niet dat ze altijd volledig, actueel of zonder onderbrekingen is. Voor zover de wet het toestaat, zijn we niet aansprakelijk voor schade door het gebruik van de website."
+          ]
+        },
+        {
+          "title": "Toepasselijk recht",
+          "paragraphs": [
+            "Op deze voorwaarden is het recht van de staat New York, Verenigde Staten, van toepassing, tenzij dwingend consumentenrecht in uw land anders bepaalt."
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Cookiebeleid | Zerone International",
+      "description": "Zerone International gebruikt geen advertentie- of trackingcookies. Lees hoe de website uw thema- en taalvoorkeuren opslaat.",
+      "h1": "Cookiebeleid",
+      "intro": "We houden deze website eenvoudig: geen advertentiecookies, geen trackingcookies en geen cookiebanner nodig.",
+      "sections": [
+        {
+          "title": "Geen trackingcookies",
+          "paragraphs": [
+            "Deze website plaatst geen advertentie-, marketing- of trackingcookies en laadt geen advertentiescripts van derden."
+          ]
+        },
+        {
+          "title": "Voorkeuren in uw browser",
+          "paragraphs": [
+            "Als u een licht of donker thema kiest of de taalsuggestie sluit, wordt die keuze opgeslagen in de lokale opslag van uw browser. Ze verlaat uw apparaat nooit en u kunt ze op elk moment wissen via de browserinstellingen."
+          ]
+        },
+        {
+          "title": "Formulieren en statistieken",
+          "paragraphs": [
+            "Wanneer u een formulier verstuurt, gaat het naar onze formulierprovider Formspree, die technisch noodzakelijke cookies kan gebruiken voor spambescherming. Als we websitestatistieken inschakelen, gebruiken we een dienst zonder cookies."
+          ]
+        }
+      ]
+    },
+    "notfound": {
+      "title": "Pagina niet gevonden | Zerone International",
+      "h1": "Pagina niet gevonden",
+      "text": "De pagina die u zoekt bestaat niet of is verplaatst.",
+      "home": "Naar de homepage"
+    }
+  },
+  "cases": [
+    {
+      "slug": "ebay-advertenties-voorbereiden",
+      "title": "eBay-advertenties voorbereiden",
+      "summary": "Zet productnotities om in concepttitels, -beschrijvingen en kenmerken, klaar voor controle.",
+      "challenge": "Goede eBay-advertenties één voor één schrijven kost tijd, en kenmerken worden snel vergeten.",
+      "approach": "Een automatisering leest uw productnotities of spreadsheet en maakt gestructureerde concepten; uw team controleert en keurt alleen nog goed.",
+      "includes": [
+        "Concepten voor titel en beschrijving",
+        "Checklist voor kenmerken",
+        "Controle vóór publicatie"
+      ]
+    },
+    {
+      "slug": "poshmark-verkoopprocessen",
+      "title": "Poshmark-verkoopprocessen",
+      "summary": "Orden kledinggegevens en bereid advertenties voor Poshmark en andere kanalen voor.",
+      "challenge": "Kleding vraagt om maten, merken, staat en afmetingen, en die steeds opnieuw invoeren is traag.",
+      "approach": "Een gestructureerd invoerformulier verzamelt de gegevens één keer en maakt concepten per kanaal volgens de platformregels.",
+      "includes": [
+        "Gegevenssjabloon voor kleding",
+        "Concepten per kanaal",
+        "Status per artikel"
+      ]
+    },
+    {
+      "slug": "amazon-catalogus-voorbereiden",
+      "title": "Amazon-catalogus voorbereiden",
+      "summary": "Orden productgegevens en controleer verplichte velden vóór het plaatsen.",
+      "challenge": "Ontbrekende of inconsistente velden leiden tot afgewezen advertenties en tijdverlies.",
+      "approach": "Een validatietool toetst uw productgegevens aan de vereiste velden en toont wat ontbreekt vóór de upload.",
+      "includes": [
+        "Controle van verplichte velden",
+        "Gegevens in bulk opschonen",
+        "Exporteerbare uploadbestanden"
+      ]
+    },
+    {
+      "slug": "walmart-voorraadprocessen",
+      "title": "Walmart-voorraadprocessen",
+      "summary": "Volg voorraad en productgegevens voor Walmart Marketplace via toegestane toegang.",
+      "challenge": "Voorraad en productgegevens handmatig gelijk houden over kanalen is lastig.",
+      "approach": "Een webdashboard brengt voorraad- en productgegevens samen en markeert verschillen die actie vragen.",
+      "includes": [
+        "Voorraadoverzicht",
+        "Meldingen bij verschillen",
+        "Wijzigingsgeschiedenis"
+      ]
+    },
+    {
+      "slug": "etsy-productbeschrijvingen",
+      "title": "Etsy-productbeschrijvingen",
+      "summary": "Schrijf heldere productbeschrijvingen zonder materialen of herkomst te verzinnen.",
+      "challenge": "Goede beschrijvingen verkopen, maar ze voor elk artikel schrijven kost veel tijd.",
+      "approach": "Een concepttool maakt beschrijvingen uitsluitend op basis van de feiten die u aanlevert, klaar om te bewerken en goed te keuren.",
+      "includes": [
+        "Feitelijke concepten",
+        "Instellingen voor toon en lengte",
+        "Goedkeuring vóór gebruik"
+      ]
+    },
+    {
+      "slug": "b-stock-partijbeoordeling",
+      "title": "B-Stock-partijbeoordeling",
+      "summary": "Vergelijk de prijs van een partij met geschatte kosten, logistiek en verkoopwaarde.",
+      "challenge": "Een partij lijkt goedkoop totdat kosten, verzending en onverkoopbare artikelen worden meegeteld.",
+      "approach": "Een rekentool combineert inkoopprijs, kosten, logistiek en uw verkoopaannames in één duidelijke schatting.",
+      "includes": [
+        "Kostenopbouw",
+        "Aanpasbare aannames",
+        "Opgeslagen beoordelingen"
+      ]
+    },
+    {
+      "slug": "liquidation-biedplanning",
+      "title": "Liquidation.com-biedplanning",
+      "summary": "Schat het nettoresultaat in voordat u bepaalt hoeveel u biedt.",
+      "challenge": "Bieden zonder maximumprijs maakt het makkelijk om te veel te betalen.",
+      "approach": "Een planningstool berekent een aanbevolen maximumbod op basis van uw doelmarge en kostenaannames.",
+      "includes": [
+        "Instelling van de doelmarge",
+        "Schatting van het maximumbod",
+        "Scenario’s vergelijken"
+      ]
+    },
+    {
+      "slug": "retourreserve",
+      "title": "Retourreserve",
+      "summary": "Neem een instelbare reserve voor retouren op bij het beoordelen van de verkoopeconomie.",
+      "challenge": "Retouren verlagen de echte winst, maar worden vaak niet meegerekend.",
+      "approach": "Uw analysetool bevat een instelbare retourreserve per categorie of op basis van uw eigen historie.",
+      "includes": [
+        "Percentages per categorie",
+        "Aanpassing op basis van historie",
+        "Nettomarge na retouren"
+      ]
+    },
+    {
+      "slug": "verzendkosten-schatten",
+      "title": "Verzendkosten schatten",
+      "summary": "Houd in uw planning rekening met gewicht, afmetingen en verzendopties.",
+      "challenge": "Verzendkosten lopen sterk uiteen en kunnen een winstgevend artikel verliesgevend maken.",
+      "approach": "Een planningstool schat verzendkosten op basis van gewicht en afmetingen en neemt ze mee in elke berekening.",
+      "includes": [
+        "Invoer van gewicht en afmetingen",
+        "Tarieftabellen van vervoerders",
+        "Kosten per artikel"
+      ]
+    },
+    {
+      "slug": "overzicht-voor-eigenaar",
+      "title": "Overzicht voor de eigenaar",
+      "summary": "Eén omgeving met de bedrijfsinformatie en instellingen die een eigenaar nodig heeft.",
+      "challenge": "Eigenaren verzamelen vaak cijfers uit veel bronnen om te zien hoe het bedrijf ervoor staat.",
+      "approach": "Een eigenaarsdashboard toont kerncijfers, gebruikers en instellingen op één veilige plek.",
+      "includes": [
+        "Kerncijfers in één oogopslag",
+        "Beheer van gebruikers en rechten",
+        "Exporteerbare rapporten"
+      ]
+    },
+    {
+      "slug": "coordinatie-voor-managers",
+      "title": "Coördinatie voor managers",
+      "summary": "Een werkomgeving om taken toe te wijzen en de operatie te volgen.",
+      "challenge": "Zonder gedeeld overzicht raken taken zoek tussen berichten en spreadsheets.",
+      "approach": "Een managersomgeving maakt het mogelijk werk toe te wijzen, prioriteiten te stellen en voortgang live te volgen.",
+      "includes": [
+        "Taken toewijzen",
+        "Prioriteiten en deadlines bewaken",
+        "Voortgang van het team"
+      ]
+    },
+    {
+      "slug": "takenpanelen-medewerkers",
+      "title": "Takenpanelen voor medewerkers",
+      "summary": "Toon elke medewerker precies de taken en informatie die hij nodig heeft.",
+      "challenge": "Medewerkers verliezen tijd met zoeken naar instructies of vragen wat de volgende taak is.",
+      "approach": "Een eenvoudig mobiel paneel toont de taken van iedere persoon met de details om ze af te ronden.",
+      "includes": [
+        "Persoonlijke takenlijst",
+        "Instructies en foto’s",
+        "Status bijwerken met één tik"
+      ]
+    },
+    {
+      "slug": "goederenontvangst",
+      "title": "Goederenontvangst",
+      "summary": "Registreer binnenkomende goederen en organiseer wat nodig is voor doorverkoop.",
+      "challenge": "Niet-geregistreerde artikelen zijn later moeilijk te vinden, te prijzen en te plaatsen.",
+      "approach": "Een mobiele ontvangstapp legt artikelen bij aankomst vast met barcode, foto’s, staat en locatie.",
+      "includes": [
+        "Barcodescan",
+        "Velden voor staat en locatie",
+        "Direct gesynchroniseerd met het dashboard"
+      ]
+    },
+    {
+      "slug": "productfoto-taken",
+      "title": "Productfototaken",
+      "summary": "Coördineer productfoto’s en advertentievoorbereiding in één proces.",
+      "challenge": "Foto’s van verschillende telefoons raken verspreid en zonder label.",
+      "approach": "Een mobiel proces koppelt elke fotoset aan het juiste product en markeert het als klaar om te plaatsen.",
+      "includes": [
+        "Fotosets per product",
+        "Checklists voor opnames",
+        "Status klaar voor plaatsing"
+      ]
+    },
+    {
+      "slug": "csv-voorbereiding",
+      "title": "CSV-voorbereiding",
+      "summary": "Zet afgesproken spreadsheetformaten om in schone, gestructureerde gegevens.",
+      "challenge": "Bestanden van leveranciers en marktplaatsen gebruiken zelden dezelfde kolommen of formaten.",
+      "approach": "Een automatisering koppelt, schoont en valideert spreadsheetgegevens in precies het formaat dat u nodig heeft.",
+      "includes": [
+        "Kolomtoewijzing",
+        "Regels voor opschoning",
+        "Foutrapport"
+      ]
+    },
+    {
+      "slug": "maatwerkrapportage",
+      "title": "Maatwerkrapportage",
+      "summary": "Rapporten rond de cijfers en gegevensbronnen die u kiest.",
+      "challenge": "Standaardrapporten beantwoorden zelden de vragen die voor uw bedrijf belangrijk zijn.",
+      "approach": "We bouwen rapporten op basis van uw eigen gegevensbronnen, als dashboard of geplande e-mail.",
+      "includes": [
+        "Eigen kerncijfers",
+        "Geplande verzending",
+        "Export naar CSV en PDF"
+      ]
+    },
+    {
+      "slug": "meldingsbots",
+      "title": "Meldingsbots",
+      "summary": "Automatische meldingen en herinneringen via de kanalen die uw team al gebruikt.",
+      "challenge": "Belangrijke wijzigingen worden te laat opgemerkt als iemand handmatig moet controleren.",
+      "approach": "Een bot houdt de gebeurtenissen in de gaten die voor u belangrijk zijn en stuurt een bericht zodra actie nodig is.",
+      "includes": [
+        "Meldingen op basis van gebeurtenissen",
+        "Verzending via e-mail en chat",
+        "Dagelijkse samenvattingen"
+      ]
+    },
+    {
+      "slug": "mobiele-operationele-tools",
+      "title": "Mobiele operationele tools",
+      "summary": "Mobiele processen voor taken die uw team buiten het kantoor uitvoert.",
+      "challenge": "Papieren notities en berichten van de werkvloer zijn traag en foutgevoelig.",
+      "approach": "Een mobiele app zet veldwerk om in gestructureerde stappen die uw systemen direct bijwerken.",
+      "includes": [
+        "Stapsgewijze processen",
+        "Offline ondersteuning",
+        "Realtime updates"
+      ]
+    },
+    {
+      "slug": "webwerkomgevingen",
+      "title": "Webwerkomgevingen",
+      "summary": "Breng geselecteerde processen samen in één browserapplicatie.",
+      "challenge": "Werk dat verspreid is over veel tools en bestanden is moeilijk te beheren en te beveiligen.",
+      "approach": "Een webwerkomgeving bundelt de belangrijkste processen, met passende toegang voor elke rol.",
+      "includes": [
+        "Centrale werkomgeving",
+        "Toegang per rol",
+        "Auditgeschiedenis"
+      ]
+    },
+    {
+      "slug": "multichannelplanning",
+      "title": "Multichannelplanning",
+      "summary": "Plan voorraad over meerdere verkoopkanalen na beoordeling van de API-toegang.",
+      "challenge": "Verkopen op meerdere marktplaatsen vermenigvuldigt het werk om alles synchroon te houden.",
+      "approach": "We beoordelen de API-toegang en regels van elk platform en ontwerpen daarna een automatisering die de kanalen gelijk houdt.",
+      "includes": [
+        "Beoordeling van platformtoegang",
+        "Synchronisatieregels",
+        "Meldingen bij conflicten"
+      ]
+    }
+  ]
+}
