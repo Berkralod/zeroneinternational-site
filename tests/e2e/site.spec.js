@@ -14,14 +14,29 @@ async function horizontalOverflow(page) {
   return page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
 }
 
-// Names the elements that stick out of the viewport, so an overflow failure says what to fix.
+// Names what sticks out of the viewport (elements, SVGs and text runs), so an overflow failure says what to fix.
 async function overflowingElements(page) {
-  return page.evaluate(() =>
-    [...document.querySelectorAll("body *")]
-      .filter((el) => !el.closest("svg") && el.getBoundingClientRect().right > window.innerWidth + 1)
-      .slice(-3)
-      .map((el) => `${el.tagName.toLowerCase()}.${el.className} "${(el.textContent || "").trim().slice(0, 40)}"`)
-  );
+  return page.evaluate(() => {
+    const limit = window.innerWidth + 1;
+    const found = [];
+    for (const el of document.querySelectorAll("body *")) {
+      if (el.parentElement && el.parentElement.closest("svg")) continue;
+      if (el.getBoundingClientRect().right > limit) {
+        found.push(`<${el.tagName.toLowerCase()} class="${el.getAttribute("class") || ""}">`);
+      }
+    }
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const range = document.createRange();
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      if (!node.textContent.trim()) continue;
+      range.selectNodeContents(node);
+      if (range.getBoundingClientRect().right > limit) {
+        found.push(`text in <${node.parentElement.tagName.toLowerCase()} class="${node.parentElement.getAttribute("class") || ""}">: "${node.textContent.trim().slice(0, 50)}"`);
+      }
+    }
+    return found.slice(-5);
+  });
 }
 
 // Every template in every language: loads, no script errors, no horizontal scrolling.
