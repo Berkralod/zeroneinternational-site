@@ -31,7 +31,7 @@ section{padding:86px 0;border-bottom:1px solid var(--line)}
 .card p{font-size:15px}
 .badge{display:inline-block;font-size:10px;letter-spacing:.13em;text-transform:uppercase;border:1px solid var(--line);padding:5px 9px;color:var(--accent)}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
-.art{width:100%;display:block;border:1px solid var(--line);border-radius:8px}
+.art{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:center 60%;display:block;border:1px solid var(--line);border-radius:8px}
 .steps{list-style:none;padding:0;margin:26px 0 0}
 .steps li{padding:14px 0;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
 .steps span{color:var(--accent);margin-right:18px}
