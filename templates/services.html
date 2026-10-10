@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% import "partials/blocks.html" as blocks with context %}
+{% import "partials/icons.html" as icons %}
+{% import "partials/art.html" as art %}
+{% set p = t.pages.services %}
+{% block content %}
+{{ blocks.page_hero(p.eyebrow, p.h1, p.lede, 'web', actions=[(t.ui.start_project, url('contact'), 'primary')]) }}
+<section class="section" aria-label="{{ p.h1 }}">
+  <div class="wrap">
+    <div class="service-rows">
+    {% for key in ("automation", "web", "mobile") %}
+      {% set sp = t.pages[service_page[key]] %}
+      <article class="service-row">
+        <div class="service-row__art">{{ art.art(key) }}</div>
+        <div class="service-row__text">
+          <p class="eyebrow">{{ icons.icon(key) }} {{ t.services_list[key].name }}</p>
+          <h2><a href="{{ url(service_page[key]) }}">{{ sp.h1 }}</a></h2>
+          <p>{{ t.services_list[key].short }}</p>
+          <ul class="checklist checklist--compact" role="list">
+          {% for f in sp.features[:4] %}
+            <li>{{ icons.icon('check') }}<span>{{ f.title }}</span></li>
+          {% endfor %}
+          </ul>
+          <a class="text-link" href="{{ url(service_page[key]) }}" aria-hidden="true" tabindex="-1">{{ t.ui.learn_more }} {{ icons.icon('arrow') }}</a>
+        </div>
+      </article>
+    {% endfor %}
+    </div>
+  </div>
+</section>
+{{ blocks.process() }}
+{{ blocks.roles() }}
+{{ blocks.faq(p.faq.title, p.faq["items"]) }}
+{{ blocks.cta_band() }}
+{% endblock %}

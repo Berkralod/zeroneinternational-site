@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% import "partials/blocks.html" as blocks with context %}
+{% set p = t.pages.use_cases %}
+{% block content %}
+{{ blocks.page_hero(p.eyebrow, p.h1, p.lede) }}
+<section class="section section--flush-top" aria-label="{{ p.h1 }}">
+  <div class="wrap">
+    <div class="filters" data-filters hidden role="group" aria-label="{{ t.ui.filter_label }}">
+      <button type="button" class="chip" data-filter="all" aria-pressed="true">{{ t.ui.all }}</button>
+      {% for key in ("automation", "web", "mobile") %}
+      <button type="button" class="chip" data-filter="{{ key }}" aria-pressed="false">{{ t.services_list[key].name }}</button>
+      {% endfor %}
+    </div>
+    <ul class="card-grid card-grid--3" role="list" data-filter-list>
+    {% for i in range(t.cases|length) %}
+      {{ blocks.case_card(i, 2) }}
+    {% endfor %}
+    </ul>
+    <p class="fineprint">{{ p.note }}</p>
+  </div>
+</section>
+{{ blocks.cta_band() }}
+{% endblock %}

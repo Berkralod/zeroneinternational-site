@@ -1,0 +1,11 @@
+dist/
+build/
+node_modules/
+test-results/
+playwright-report/
+.lighthouseci/
+__pycache__/
+*.pyc
+.env
+.env.*
+.DS_Store

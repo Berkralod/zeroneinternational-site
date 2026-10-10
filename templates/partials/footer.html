@@ -1,0 +1,45 @@
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="{{ url('home') }}" aria-label="{{ config.legal_name }} – {{ t.ui.home }}">{{ logo('f') }}</a>
+      <p>{{ t.footer.tagline }}</p>
+      <p class="footer-location">{{ icons.icon('pin') }} {{ t.footer.location }}</p>
+    </div>
+    <nav aria-label="{{ t.footer.services }}">
+      <h2 class="footer-title">{{ t.footer.services }}</h2>
+      <ul>
+        <li><a href="{{ url('service_automation') }}">{{ t.services_list.automation.name }}</a></li>
+        <li><a href="{{ url('service_web') }}">{{ t.services_list.web.name }}</a></li>
+        <li><a href="{{ url('service_mobile') }}">{{ t.services_list.mobile.name }}</a></li>
+        <li><a href="{{ url('products') }}">{{ t.nav.products }}</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="{{ t.footer.company }}">
+      <h2 class="footer-title">{{ t.footer.company }}</h2>
+      <ul>
+        <li><a href="{{ url('company') }}">{{ t.nav.company }}</a></li>
+        <li><a href="{{ url('use_cases') }}">{{ t.nav.use_cases }}</a></li>
+        <li><a href="{{ url('contact') }}">{{ t.nav.contact }}</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="{{ t.footer.legal }}">
+      <h2 class="footer-title">{{ t.footer.legal }}</h2>
+      <ul>
+        <li><a href="{{ url('privacy') }}">{{ t.pages.privacy.h1 }}</a></li>
+        <li><a href="{{ url('terms') }}">{{ t.pages.terms.h1 }}</a></li>
+        <li><a href="{{ url('cookies') }}">{{ t.pages.cookies.h1 }}</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="wrap footer-langs">
+    <ul aria-label="{{ t.ui.language }}">
+    {% for m, href in lang_links %}
+      <li><a href="{{ href }}" hreflang="{{ m.code }}" lang="{{ m.code }}"{% if m.code == lang %} aria-current="true"{% endif %}>{{ m.name }}</a></li>
+    {% endfor %}
+    </ul>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>&copy; {{ year }} {{ config.legal_name }}. {{ t.footer.rights }}</p>
+    <p class="footer-trademark">{{ t.footer.trademark }}</p>
+  </div>
+</footer>

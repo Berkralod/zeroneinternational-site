@@ -1,7 +1,0 @@
-.top{flex-wrap:wrap;padding-block:16px}.tools,.nav-actions{flex-wrap:wrap}select.theme-toggle{max-width:130px}
-[dir="rtl"] .brand,[dir="rtl"] a[href^="mailto:"]{direction:ltr;unicode-bidi:isolate}[dir="rtl"] .mobile-menu nav{right:auto;left:0}
-html[lang="ja"] h1,html[lang="zh"] h1{line-height:1.4}
-.button{background:#754363;color:#fff;border:1px solid var(--accent)}
-[hidden]{display:none!important}
-h1,h2,h3{overflow-wrap:anywhere}.hero>*,.split>*,.grid>*{min-width:0}
-@media(max-width:360px){.hero h1{font-size:34px}}

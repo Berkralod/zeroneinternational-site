@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% set p = page %}
+{% block content %}
+<section class="page-hero page-hero--compact">
+  <div class="wrap wrap--narrow">
+    <h1>{{ p.h1 }}</h1>
+    <p class="lede">{{ p.intro }}</p>
+    <p class="fineprint">{{ t.ui.updated }}: <time datetime="2026-10-10">2026-10-10</time></p>
+  </div>
+</section>
+<section class="section section--flush-top">
+  <div class="wrap wrap--narrow prose">
+  {% for s in p.sections %}
+    <h2>{{ s.title }}</h2>
+    {% for para in s.paragraphs %}
+    <p>{{ para }}</p>
+    {% endfor %}
+  {% endfor %}
+  {% if lang != 'en' %}
+    <p class="fineprint">{{ t.ui.legal_note }}</p>
+  {% endif %}
+  </div>
+</section>
+{% endblock %}

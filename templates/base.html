@@ -1,0 +1,94 @@
+{% import "partials/icons.html" as icons %}
+{% import "partials/art.html" as art %}
+<!DOCTYPE html>
+<html lang="{{ lang }}" dir="{{ meta.dir }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="{{ csp }}">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<meta name="robots" content="{{ robots }}">
+{% if canonical %}
+<link rel="canonical" href="{{ canonical }}">
+{% endif %}
+{% for code, href in alternates %}
+<link rel="alternate" hreflang="{{ code }}" href="{{ href }}">
+{% endfor %}
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#f5f6f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c141b" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+{% if canonical %}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ config.site_name }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:locale" content="{{ meta.og_locale }}">
+{% for loc in og_locales %}
+<meta property="og:locale:alternate" content="{{ loc }}">
+{% endfor %}
+<meta property="og:image" content="{{ abs_url('/assets/icons/og-image.png') }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ config.legal_name }}">
+<meta name="twitter:card" content="summary_large_image">
+{% endif %}
+{% if config.google_site_verification %}
+<meta name="google-site-verification" content="{{ config.google_site_verification }}">
+{% endif %}
+{% if config.bing_site_verification %}
+<meta name="msvalidate.01" content="{{ config.bing_site_verification }}">
+{% endif %}
+<link rel="preload" href="/assets/fonts/montserrat-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ asset('/assets/css/site.css') }}">
+<script src="{{ asset('/assets/js/theme-init.js') }}"></script>
+<script src="{{ asset('/assets/js/site.js') }}" defer></script>
+{% if config.cloudflare_analytics_token %}
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ config.cloudflare_analytics_token }}"}'></script>
+{% endif %}
+{% if jsonld %}
+<script type="application/ld+json">{{ jsonld }}</script>
+{% endif %}
+</head>
+<body class="page-{{ page_id }}">
+<a class="skip-link" href="#main">{{ t.ui.skip }}</a>
+{% include "partials/header.html" %}
+{% if suggest_json %}
+<div class="lang-suggest" data-lang-suggest hidden>
+  <div class="wrap lang-suggest__inner">
+    <p class="lang-suggest__msg" data-msg></p>
+    <a class="lang-suggest__go" data-go href="#"></a>
+    <button class="icon-button lang-suggest__close" type="button" data-dismiss aria-label="">{{ icons.icon('close') }}</button>
+  </div>
+</div>
+<script type="application/json" id="lang-suggest-data">{{ suggest_json }}</script>
+{% endif %}
+<main id="main" tabindex="-1">
+{% if crumbs|length > 1 %}
+<nav class="wrap breadcrumbs" aria-label="{{ t.ui.breadcrumb }}">
+  <ol>
+  {% for name, link in crumbs %}
+    {% if loop.last %}
+    <li><span aria-current="page">{{ name }}</span></li>
+    {% else %}
+    <li><a href="{{ link }}">{{ name }}</a></li>
+    {% endif %}
+  {% endfor %}
+  </ol>
+</nav>
+{% endif %}
+{% block content %}{% endblock %}
+</main>
+{% include "partials/footer.html" %}
+{% if page_id not in ("contact", "notfound") %}
+<a class="sticky-cta" href="{{ url('contact') }}" data-sticky-cta>{{ t.ui.start_project }} {{ icons.icon('arrow') }}</a>
+{% endif %}
+<button class="back-to-top icon-button" type="button" data-back-to-top aria-label="{{ t.ui.back_to_top }}" hidden>{{ icons.icon('chevron-up') }}</button>
+</body>
+</html>

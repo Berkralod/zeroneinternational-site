@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% import "partials/blocks.html" as blocks with context %}
+{% import "partials/icons.html" as icons %}
+{% import "partials/art.html" as art %}
+{% set c = case %}
+{% set n = t.cases|length %}
+{% block content %}
+<article>
+  <section class="page-hero page-hero--art">
+    <div class="wrap page-hero__grid">
+      <div class="page-hero__text">
+        <p class="eyebrow"><span dir="ltr">{{ '%02d' % (case_index + 1) }}</span> · {{ t.ui.case_label }}</p>
+        <h1>{{ c.title }}</h1>
+        <p class="lede">{{ c.summary }}</p>
+        <a class="tag" href="{{ url(service_page[service_key]) }}">{{ icons.icon(service_key) }} {{ t.services_list[service_key].name }}</a>
+      </div>
+      <div class="page-hero__art">{{ art.art(service_key) }}</div>
+    </div>
+  </section>
+  <section class="section section--flush-top">
+    <div class="wrap case-body">
+      <div class="case-block">
+        <h2>{{ t.ui.challenge }}</h2>
+        <p>{{ c.challenge }}</p>
+      </div>
+      <div class="case-block">
+        <h2>{{ t.ui.approach }}</h2>
+        <p>{{ c.approach }}</p>
+      </div>
+      <div class="case-block case-block--accent">
+        <h2>{{ t.ui.includes }}</h2>
+        <ul class="checklist" role="list">
+        {% for item in c.includes %}
+          <li>{{ icons.icon('check') }}<span>{{ item }}</span></li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="related-service">
+        <span class="card__icon">{{ icons.icon(service_key) }}</span>
+        <div>
+          <p class="eyebrow">{{ t.ui.service_label }}</p>
+          <p class="related-service__name"><a href="{{ url(service_page[service_key]) }}">{{ t.pages[service_page[service_key]].h1 }}</a></p>
+          <p>{{ t.services_list[service_key].short }}</p>
+        </div>
+      </div>
+      <nav class="pager" aria-label="{{ t.ui.case_label }}">
+        {% set prev_i = (case_index - 1) % n %}
+        {% set next_i = (case_index + 1) % n %}
+        <a class="pager__link" href="{{ url('case', prev_i) }}" rel="prev"><span class="pager__label">{{ icons.icon('arrow-left') }} {{ t.ui.previous_case }}</span><span class="pager__title">{{ t.cases[prev_i].title }}</span></a>
+        <a class="pager__link pager__link--next" href="{{ url('case', next_i) }}" rel="next"><span class="pager__label">{{ t.ui.next_case }} {{ icons.icon('arrow') }}</span><span class="pager__title">{{ t.cases[next_i].title }}</span></a>
+      </nav>
+      <p class="fineprint">{{ t.pages.use_cases.note }}</p>
+    </div>
+  </section>
+</article>
+{{ blocks.cta_band() }}
+{% endblock %}

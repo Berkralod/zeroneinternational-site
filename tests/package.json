@@ -1,0 +1,14 @@
+{
+  "name": "zerone-site-tests",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "images": "node make-images.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.1",
+    "@lhci/cli": "0.14.0",
+    "@playwright/test": "1.56.0"
+  }
+}

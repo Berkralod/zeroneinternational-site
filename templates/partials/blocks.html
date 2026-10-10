@@ -1,0 +1,208 @@
+{% import "partials/icons.html" as icons %}
+{% import "partials/art.html" as art %}
+{% macro section_head(eyebrow, title, intro=None, id=None, level=2) -%}
+<div class="section-head">
+  {% if eyebrow %}<p class="eyebrow">{{ eyebrow }}</p>{% endif %}
+  <h{{ level }} class="section-title"{% if id %} id="{{ id }}"{% endif %}>{{ title }}</h{{ level }}>
+  {% if intro %}<p class="section-intro">{{ intro }}</p>{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro page_hero(eyebrow, h1, lede, art_name=None, actions=()) -%}
+<section class="page-hero{% if art_name %} page-hero--art{% endif %}">
+  <div class="wrap page-hero__grid">
+    <div class="page-hero__text">
+      {% if eyebrow %}<p class="eyebrow">{{ eyebrow }}</p>{% endif %}
+      <h1>{{ h1 }}</h1>
+      <p class="lede">{{ lede }}</p>
+      {% if actions %}
+      <div class="actions">
+      {% for label, href, style in actions %}
+        <a class="{{ 'button' if style == 'primary' else 'button button--ghost' }}" href="{{ href }}">{{ label }}{% if style == 'primary' %} {{ icons.icon('arrow') }}{% endif %}</a>
+      {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    {% if art_name %}
+    <div class="page-hero__art">{{ art.art(art_name) }}</div>
+    {% endif %}
+  </div>
+</section>
+{%- endmacro %}
+
+{% macro services_grid(headings=3) -%}
+<ul class="card-grid card-grid--3" role="list">
+{% for key in ("automation", "web", "mobile") %}
+  <li class="card card--link">
+    <span class="card__icon">{{ icons.icon(key) }}</span>
+    <h{{ headings }} class="card__title"><a href="{{ url(service_page[key]) }}">{{ t.services_list[key].name }}</a></h{{ headings }}>
+    <p>{{ t.services_list[key].short }}</p>
+    <span class="card__more" aria-hidden="true">{{ t.ui.learn_more }} {{ icons.icon('arrow') }}</span>
+  </li>
+{% endfor %}
+</ul>
+{%- endmacro %}
+
+{% macro process() -%}
+<section class="section section--tint" aria-labelledby="process-title">
+  <div class="wrap">
+    {{ section_head(t.process.eyebrow, t.process.title, t.process.intro, id="process-title") }}
+    <ol class="timeline">
+    {% for step in t.process.steps %}
+      <li class="timeline__step">
+        <span class="timeline__num" aria-hidden="true">{{ loop.index }}</span>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.text }}</p>
+      </li>
+    {% endfor %}
+    </ol>
+  </div>
+</section>
+{%- endmacro %}
+
+{% macro roles() -%}
+<section class="section" aria-labelledby="roles-title">
+  <div class="wrap">
+    {{ section_head(t.roles.eyebrow, t.roles.title, t.roles.intro, id="roles-title") }}
+    <ul class="card-grid card-grid--3" role="list">
+    {% for item in t.roles["items"] %}
+      <li class="card">
+        <span class="card__icon">{{ icons.icon(('owner', 'manager', 'employee')[loop.index0]) }}</span>
+        <h3 class="card__title">{{ item.title }}</h3>
+        <p>{{ item.text }}</p>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+</section>
+{%- endmacro %}
+
+{% macro case_card(i, heading=3) -%}
+{% set c = t.cases[i] %}
+<li class="card card--link case-card" data-service="{{ case_services[i] }}">
+  <span class="case-card__meta"><span class="case-card__num" dir="ltr">{{ '%02d' % (i + 1) }}</span><span class="tag">{{ t.services_list[case_services[i]].name }}</span></span>
+  <h{{ heading }} class="card__title"><a href="{{ url('case', i) }}">{{ c.title }}</a></h{{ heading }}>
+  <p>{{ c.summary }}</p>
+</li>
+{%- endmacro %}
+
+{% macro faq(title, items, eyebrow=None) -%}
+<section class="section" aria-labelledby="faq-title">
+  <div class="wrap wrap--narrow">
+    {{ section_head(eyebrow, title, id="faq-title") }}
+    <div class="faq">
+    {% for item in items %}
+      <details class="faq__item">
+        <summary>{{ item.q }}</summary>
+        <p>{{ item.a }}</p>
+      </details>
+    {% endfor %}
+    </div>
+  </div>
+</section>
+{%- endmacro %}
+
+{% macro cta_band() -%}
+<section class="section cta-band" aria-labelledby="cta-title">
+  <div class="wrap cta-band__inner">
+    <div>
+      <h2 id="cta-title">{{ t.cta.title }}</h2>
+      <p>{{ t.cta.text }}</p>
+    </div>
+    <a class="button button--light" href="{{ url('contact') }}">{{ t.cta.button }} {{ icons.icon('arrow') }}</a>
+  </div>
+</section>
+{%- endmacro %}
+
+{% macro email_link() -%}
+<a class="email-link" data-email-user="{{ config.email_user }}" data-email-domain="{{ config.email_domain }}" href="{{ url('contact') }}">{{ icons.icon('mail') }} <span>{{ config.email_user }} [at] {{ config.email_domain }}</span></a>
+{%- endmacro %}
+
+{% macro contact_form(kind="project") -%}
+{% if config.formspree_form_id %}
+<form class="form" action="https://formspree.io/f/{{ config.formspree_form_id }}" method="POST" data-ajax-form data-sending="{{ t.form.sending }}" data-success="{{ t.form.waitlist_success if kind == 'waitlist' else t.form.success }}" data-error="{{ t.form.error }}">
+  <input type="hidden" name="_language" value="{{ lang }}">
+  <input type="hidden" name="_subject" value="{{ 'Waiting list' if kind == 'waitlist' else 'Project request' }} ({{ lang }}) – {{ config.site_name }}">
+  <input type="hidden" name="form" value="{{ kind }}">
+  <div class="form__trap" aria-hidden="true"><label>Leave empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+  {% if kind == 'waitlist' %}
+  <div class="form__row form__row--2">
+    <div class="field">
+      <label for="wl-email">{{ t.form.email }}</label>
+      <input id="wl-email" name="email" type="email" autocomplete="email" required maxlength="200">
+    </div>
+    <div class="field">
+      <label for="wl-product">{{ t.form.waitlist_product }}</label>
+      <select id="wl-product" name="product" required>
+        <option value="crosslisting">{{ t.pages.products["items"][0].name }}</option>
+        <option value="lot-analysis">{{ t.pages.products["items"][1].name }}</option>
+        <option value="both">{{ t.form.waitlist_both }}</option>
+      </select>
+    </div>
+  </div>
+  {% else %}
+  <div class="form__row form__row--2">
+    <div class="field">
+      <label for="f-name">{{ t.form.name }}</label>
+      <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="120">
+    </div>
+    <div class="field">
+      <label for="f-email">{{ t.form.email }}</label>
+      <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="200">
+    </div>
+  </div>
+  <div class="form__row form__row--2">
+    <div class="field">
+      <label for="f-company">{{ t.form.company }} <span class="field__opt">({{ t.form.optional }})</span></label>
+      <input id="f-company" name="company" type="text" autocomplete="organization" maxlength="160">
+    </div>
+    <div class="field">
+      <label for="f-type">{{ t.form.project_type }}</label>
+      <select id="f-type" name="project_type" required>
+        <option value="">{{ t.form.choose }}</option>
+        {% for key, label in t.form.types.items() %}
+        <option value="{{ key }}">{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="form__row form__row--2">
+    <div class="field">
+      <label for="f-budget">{{ t.form.budget }}</label>
+      <select id="f-budget" name="budget">
+        <option value="">{{ t.form.choose }}</option>
+        {% for label in t.form.budgets %}
+        <option value="budget-{{ loop.index }}">{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="field">
+      <label for="f-timeline">{{ t.form.timeline }}</label>
+      <select id="f-timeline" name="timeline">
+        <option value="">{{ t.form.choose }}</option>
+        {% for label in t.form.timelines %}
+        <option value="timeline-{{ loop.index }}">{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="field">
+    <label for="f-message">{{ t.form.message }}</label>
+    <textarea id="f-message" name="message" rows="6" required minlength="20" maxlength="5000" aria-describedby="f-message-hint"></textarea>
+    <p class="field__hint" id="f-message-hint">{{ t.form.message_hint }}</p>
+  </div>
+  {% endif %}
+  <div class="field field--check">
+    <input id="{{ kind }}-consent" name="consent" type="checkbox" value="yes" required>
+    <label for="{{ kind }}-consent">{{ t.form.consent|with_link(url('privacy'), t.form.consent_link) }}</label>
+  </div>
+  <button class="button" type="submit">{{ t.form.waitlist_submit if kind == 'waitlist' else t.form.submit }} {{ icons.icon('arrow') }}</button>
+  <p class="form__status" role="status" aria-live="polite" data-form-status></p>
+</form>
+{% else %}
+<div class="notice">
+  <p>{{ t.form.not_configured }}</p>
+  {{ email_link() }}
+</div>
+{% endif %}
+{%- endmacro %}
