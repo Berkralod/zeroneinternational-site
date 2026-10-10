@@ -24,4 +24,15 @@
     });
   });
   if(media&&media.addEventListener){media.addEventListener("change",function(event){if(preference!=="light"&&preference!=="dark"){apply(event.matches?"light":"dark");}});}
+  if(buttons.length){
+    var languageLink=document.createElement("a");
+    var isTurkish=root.lang==="tr";
+    languageLink.className="theme-toggle";
+    languageLink.href=isTurkish?"index.html":"tr.html";
+    languageLink.textContent=isTurkish?"English":"Türkçe";
+    languageLink.hreflang=isTurkish?"en":"tr";
+    languageLink.lang=isTurkish?"en":"tr";
+    languageLink.setAttribute("aria-label",isTurkish?"English homepage":"Türkçe ana sayfa");
+    buttons[0].parentNode.appendChild(languageLink);
+  }
 })();
