@@ -10,12 +10,13 @@
     var reduced=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var playing=!reduced;
     var list=region.querySelector("[data-card-list]");
-    list.classList.remove("services");
+    list.classList.remove("services","grid");
     function render(){
       cards.forEach(function(card,i){card.hidden=i!==index;});
       count.textContent=(index+1)+" / "+cards.length;
-      play.textContent=playing?"Pause rotation":"Start rotation";
+      play.textContent=playing?(region.getAttribute("data-pause-label")||"Pause rotation"):(region.getAttribute("data-play-label")||"Start rotation");
       count.setAttribute("aria-live",playing?"off":"polite");
+      region.setAttribute("data-rotation",playing?"playing":"paused");
     }
     function schedule(){
       if(timer){clearInterval(timer);timer=null;}
