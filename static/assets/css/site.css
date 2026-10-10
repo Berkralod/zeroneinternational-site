@@ -493,6 +493,12 @@ a.tag:hover { border-color: var(--brand); color: var(--brand); }
 }
 .field textarea { min-height: 150px; resize: vertical; }
 .field select { min-width: 0; max-width: 100%; text-overflow: ellipsis; }
+.choice-group { border: 0; margin: 0; padding: 0; gap: 8px; }
+.choice-group legend { font-weight: 600; font-size: 0.95rem; margin-bottom: 6px; padding: 0; }
+.choice { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 12px; background: var(--bg); cursor: pointer; }
+.choice:has(input:checked) { border-color: var(--brand); }
+.choice input { width: 20px; height: 20px; min-height: 0; padding: 0; margin: 1px 0 0; flex: none; accent-color: var(--brand); }
+.choice span { font-weight: 500; }
 .form, .form__row, .product, .product-list { min-width: 0; }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--focus); box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus) 25%, transparent); }
 .field--check { grid-template-columns: auto 1fr; align-items: start; gap: 12px; }

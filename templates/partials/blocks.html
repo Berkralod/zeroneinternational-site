@@ -126,19 +126,17 @@
   <input type="hidden" name="form" value="{{ kind }}">
   <div class="form__trap" aria-hidden="true"><label>Leave empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
   {% if kind == 'waitlist' %}
-  <div class="form__row form__row--2">
+  <div class="form__row">
     <div class="field">
       <label for="wl-email">{{ t.form.email }}</label>
       <input id="wl-email" name="email" type="email" autocomplete="email" required maxlength="200">
     </div>
-    <div class="field">
-      <label for="wl-product">{{ t.form.waitlist_product }}</label>
-      <select id="wl-product" name="product" required>
-        <option value="crosslisting">{{ t.pages.products["items"][0].name }}</option>
-        <option value="lot-analysis">{{ t.pages.products["items"][1].name }}</option>
-        <option value="both">{{ t.form.waitlist_both }}</option>
-      </select>
-    </div>
+    <fieldset class="field choice-group">
+      <legend>{{ t.form.waitlist_product }}</legend>
+      {% for value, label in [("crosslisting", t.pages.products["items"][0].name), ("lot-analysis", t.pages.products["items"][1].name), ("both", t.form.waitlist_both)] %}
+      <label class="choice"><input type="radio" name="product" value="{{ value }}"{% if loop.first %} checked{% endif %}> <span>{{ label }}</span></label>
+      {% endfor %}
+    </fieldset>
   </div>
   {% else %}
   <div class="form__row form__row--2">
