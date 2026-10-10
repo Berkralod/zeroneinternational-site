@@ -14,6 +14,16 @@ async function horizontalOverflow(page) {
   return page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
 }
 
+// Names the elements that stick out of the viewport, so an overflow failure says what to fix.
+async function overflowingElements(page) {
+  return page.evaluate(() =>
+    [...document.querySelectorAll("body *")]
+      .filter((el) => !el.closest("svg") && el.getBoundingClientRect().right > window.innerWidth + 1)
+      .slice(-3)
+      .map((el) => `${el.tagName.toLowerCase()}.${el.className} "${(el.textContent || "").trim().slice(0, 40)}"`)
+  );
+}
+
 // Every template in every language: loads, no script errors, no horizontal scrolling.
 for (const lang of languages) {
   test.describe(`${lang} pages @cross`, () => {
@@ -27,7 +37,9 @@ for (const lang of languages) {
         await expect(page.locator("h1")).toBeVisible();
         for (const width of [320, 1280]) {
           await page.setViewportSize({ width, height: 900 });
-          expect(await horizontalOverflow(page), `overflow at ${width}px`).toBeLessThanOrEqual(1);
+          const overflow = await horizontalOverflow(page);
+          const culprits = overflow > 1 ? await overflowingElements(page) : [];
+          expect(overflow, `overflow at ${width}px: ${culprits.join(" | ")}`).toBeLessThanOrEqual(1);
         }
         expect(errors).toEqual([]);
       });
