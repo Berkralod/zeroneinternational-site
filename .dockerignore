@@ -1,0 +1,13 @@
+.git
+.github
+dist
+build
+lighthouse-report
+tests/node_modules
+tests/test-results
+tests/playwright-report
+**/__pycache__
+.env
+.env.*
+*.pem
+*.key

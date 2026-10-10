@@ -1,0 +1,70 @@
+name: Deploy to GitHub Pages
+
+# Publishes the site at https://zeroneinternational.com whenever main changes.
+# Requires: Settings → Pages → Build and deployment → Source = "GitHub Actions".
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Build site
+        env:
+          ZERONE_FORMSPREE_FORM_ID: ${{ vars.FORMSPREE_FORM_ID }}
+          ZERONE_BOOKING_URL: ${{ vars.BOOKING_URL }}
+          ZERONE_WHATSAPP_NUMBER: ${{ vars.WHATSAPP_NUMBER }}
+          ZERONE_CLOUDFLARE_ANALYTICS_TOKEN: ${{ vars.CLOUDFLARE_ANALYTICS_TOKEN }}
+          ZERONE_GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
+          ZERONE_BING_SITE_VERIFICATION: ${{ vars.BING_SITE_VERIFICATION }}
+        run: python build.py
+      - run: python tests/validate_site.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: tests/package-lock.json
+      - run: npm ci
+        working-directory: tests
+      - run: npx playwright install --with-deps chromium
+        working-directory: tests
+      - name: Browser tests must pass before publishing
+        run: npx playwright test
+        working-directory: tests
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

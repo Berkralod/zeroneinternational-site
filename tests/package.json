@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "test": "playwright test",
-    "images": "node make-images.mjs"
+    "images": "node make-images.mjs",
+    "lighthouse": "lhci autorun"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.10.1",

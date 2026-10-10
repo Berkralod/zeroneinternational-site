@@ -177,6 +177,14 @@ def git_date(*paths):
         return None
 
 
+def git_commit():
+    try:
+        sha = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
+    except OSError:  # no git, e.g. inside the Docker build
+        sha = ""
+    return sha or os.environ.get("RAILWAY_GIT_COMMIT_SHA") or os.environ.get("GITHUB_SHA") or None
+
+
 def copy_static():
     manifest = {}
     for src in sorted(STATIC.rglob("*")):
@@ -261,6 +269,24 @@ def build(check_only=False):
     config = load_json(ROOT / "site.config.json")
     if os.environ.get("ZERONE_LANGS"):  # development shortcut: build a subset of languages
         config["languages"] = os.environ["ZERONE_LANGS"].split(",")
+    # Settings can also come from the environment (e.g. GitHub repository variables).
+    for key in ("formspree_form_id", "booking_url", "whatsapp_number", "cloudflare_analytics_token",
+                "google_site_verification", "bing_site_verification"):
+        value = os.environ.get(f"ZERONE_{key.upper()}")
+        if value:
+            config[key] = value.strip()
+    if config.get("formspree_form_id") and not re.fullmatch(r"[A-Za-z0-9]{6,12}", config["formspree_form_id"]):
+        raise BuildError("formspree_form_id must be the short form ID, e.g. 'xayzabcd'")
+    checks = {
+        "booking_url": r"https://[A-Za-z0-9.-]+(/[A-Za-z0-9._~/%-]*)?",
+        "whatsapp_number": r"[0-9]{7,15}",
+        "cloudflare_analytics_token": r"[A-Za-z0-9]{16,64}",
+        "google_site_verification": r"[A-Za-z0-9_-]{10,100}",
+        "bing_site_verification": r"[A-Za-z0-9_-]{10,100}",
+    }
+    for key, pattern in checks.items():
+        if config.get(key) and not re.fullmatch(pattern, config[key]):
+            raise BuildError(f"{key} has an unexpected format: {config[key]!r}")
     content = load_content(config)
     site = Site(config, content)
     if check_only:
@@ -329,8 +355,9 @@ def build(check_only=False):
             case = t["cases"][case_index]
             service_key = CASE_SERVICES[case_index]
             page = case
-            title = f"{case['title']} | {t['ui']['case_label']} | {config['site_name']}"
-            description = case["summary"]
+            title = f"{case['title']} | {t['ui']['case_label']} – {config['site_name']}"
+            joiner = "" if lang in ("zh", "ja") else " "
+            description = f"{case['summary']}{joiner}{case['challenge']}"
             heading = case["title"]
         else:
             case = None
@@ -498,8 +525,20 @@ def build(check_only=False):
             continue  # served by the new home page itself
         (DIST / old.lstrip("/")).write_text(
             redirect_tpl.render(target=new, absolute=site.abs(new)), encoding="utf-8")
+    # /index.html is excluded: nginx serves "/" through it internally, a redirect would loop.
     (BUILD_META / "redirects.conf").write_text(
-        "".join(f"location = {old} {{ return 301 {new}; }}\n" for old, new in redirects.items()),
+        "".join(f"location = {old} {{ return 301 {new}; }}\n"
+                for old, new in redirects.items() if old != "/index.html"),
+        encoding="utf-8")
+    # Server-side CSP for Railway/nginx: the meta tag in each page stays the stricter one,
+    # the header adds frame-ancestors (not allowed in <meta>) and allows every optional service.
+    header_csp = csp({**config, "formspree_form_id": "x", "cloudflare_analytics_token": "x"})
+    header_csp = header_csp.replace("upgrade-insecure-requests", "frame-ancestors 'none'; upgrade-insecure-requests")
+    (BUILD_META / "csp.conf").write_text(
+        f'add_header Content-Security-Policy "{header_csp}" always;\n', encoding="utf-8")
+    langs_re = "|".join(c for c in site.langs if c != site.default)
+    (BUILD_META / "languages.conf").write_text(
+        f"map $uri $zerone_not_found {{\n    default /404.html;\n    ~^/({langs_re})/ /$1/404.html;\n}}\n",
         encoding="utf-8")
 
     # sitemap.xml with hreflang alternates
@@ -551,7 +590,7 @@ def build(check_only=False):
         shutil.copyfile(cname, DIST / "CNAME")
 
     build_info = {
-        "commit": (subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip() or None),
+        "commit": git_commit(),
         "built_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
         "languages": site.langs,
         "pages": rendered,
