@@ -68,6 +68,13 @@ jobs:
           path: browser-artifacts/
           retention-days: 7
           if-no-files-found: warn
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: site-v2-preview
+          path: dist/
+          retention-days: 7
+          if-no-files-found: error
   diagnostics:
     needs: validate
     if: always()
