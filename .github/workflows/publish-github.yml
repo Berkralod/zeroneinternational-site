@@ -1,0 +1,93 @@
+name: Publish validated GitHub site
+on:
+  push:
+    branches: [site-v2]
+    paths:
+      - .github/workflows/publish-github.yml
+      - publish_github.py
+permissions:
+  contents: read
+concurrency:
+  group: zerone-github-publication
+  cancel-in-progress: false
+jobs:
+  build:
+    if: github.repository == 'Berkralod/zeroneinternational-site'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      source_sha: ${{ steps.source.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - id: source
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python validate_site.py
+      - run: python build_all.py
+      - run: python -m pip install 'playwright>=1.45,<2'
+      - run: python -m playwright install --with-deps chromium
+      - run: python browser_test.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: validated-publication
+          path: dist/
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: publication-browser-review
+          path: browser-artifacts/
+          retention-days: 7
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pages: write
+    outputs:
+      summary: ${{ steps.release.outputs.summary }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.build.outputs.source_sha }}
+          path: source
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: production
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: validated-publication
+          path: ${{ runner.temp }}/zerone-publication
+      - id: release
+        working-directory: production
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_SHA: ${{ needs.build.outputs.source_sha }}
+          RELEASE_DIRECTORY: ${{ runner.temp }}/zerone-publication
+        run: python "$GITHUB_WORKSPACE/source/publish_github.py"
+  result:
+    needs: [build, publish]
+    if: always()
+    name: "Release - ${{ needs.publish.outputs.summary || 'checks failed or publication did not run' }}"
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - env:
+          BUILD_RESULT: ${{ needs.build.result }}
+          PUBLISH_RESULT: ${{ needs.publish.result }}
+        run: |
+          test "$BUILD_RESULT" = "success"
+          test "$PUBLISH_RESULT" = "success"
