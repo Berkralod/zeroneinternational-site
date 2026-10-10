@@ -1,0 +1,147 @@
+{# Language-neutral illustrations: interface sketches without text, coloured by the theme. #}
+{% macro art(name) -%}
+{%- if name == 'hero' -%}
+<svg class="art art--hero" viewBox="0 0 560 440" aria-hidden="true" focusable="false">
+  <rect class="art-frame" x="8" y="20" width="480" height="340" rx="16"/>
+  <rect class="art-bar" x="8" y="20" width="480" height="38" rx="16"/>
+  <rect class="art-bar" x="8" y="42" width="480" height="16"/>
+  <circle class="art-dot" cx="32" cy="39" r="5"/><circle class="art-dot" cx="50" cy="39" r="5"/><circle class="art-dot" cx="68" cy="39" r="5"/>
+  <rect class="art-soft" x="24" y="74" width="92" height="270" rx="10"/>
+  <rect class="art-accent" x="36" y="90" width="68" height="10" rx="5"/>
+  <rect class="art-line" x="36" y="114" width="56" height="8" rx="4"/>
+  <rect class="art-line" x="36" y="134" width="62" height="8" rx="4"/>
+  <rect class="art-line" x="36" y="154" width="48" height="8" rx="4"/>
+  <rect class="art-line" x="36" y="174" width="58" height="8" rx="4"/>
+  <rect class="art-card" x="132" y="74" width="106" height="64" rx="10"/>
+  <rect class="art-card" x="250" y="74" width="106" height="64" rx="10"/>
+  <rect class="art-card" x="368" y="74" width="104" height="64" rx="10"/>
+  <rect class="art-line" x="146" y="90" width="44" height="7" rx="3.5"/>
+  <rect class="art-accent" x="146" y="106" width="64" height="16" rx="5"/>
+  <rect class="art-line" x="264" y="90" width="44" height="7" rx="3.5"/>
+  <rect class="art-accent2" x="264" y="106" width="52" height="16" rx="5"/>
+  <rect class="art-line" x="382" y="90" width="44" height="7" rx="3.5"/>
+  <rect class="art-accent" x="382" y="106" width="70" height="16" rx="5"/>
+  <rect class="art-card" x="132" y="152" width="224" height="192" rx="10"/>
+  <rect class="art-soft" x="152" y="270" width="22" height="56" rx="4"/>
+  <rect class="art-accent" x="184" y="230" width="22" height="96" rx="4"/>
+  <rect class="art-soft" x="216" y="250" width="22" height="76" rx="4"/>
+  <rect class="art-accent" x="248" y="196" width="22" height="130" rx="4"/>
+  <rect class="art-accent2" x="280" y="214" width="22" height="112" rx="4"/>
+  <rect class="art-accent" x="312" y="178" width="22" height="148" rx="4"/>
+  <rect class="art-line" x="152" y="168" width="80" height="8" rx="4"/>
+  <rect class="art-card" x="368" y="152" width="104" height="192" rx="10"/>
+  <rect class="art-line" x="382" y="170" width="76" height="8" rx="4"/>
+  <rect class="art-line" x="382" y="196" width="60" height="8" rx="4"/>
+  <rect class="art-line" x="382" y="222" width="70" height="8" rx="4"/>
+  <rect class="art-line" x="382" y="248" width="52" height="8" rx="4"/>
+  <rect class="art-line" x="382" y="274" width="66" height="8" rx="4"/>
+  <rect class="art-line" x="382" y="300" width="48" height="8" rx="4"/>
+  <g class="art-float">
+    <rect class="art-phone" x="400" y="196" width="148" height="236" rx="22"/>
+    <rect class="art-frame" x="410" y="214" width="128" height="200" rx="12"/>
+    <rect class="art-accent" x="422" y="228" width="60" height="9" rx="4.5"/>
+    <rect class="art-card" x="422" y="248" width="104" height="38" rx="8"/>
+    <circle class="art-check" cx="438" cy="267" r="7"/>
+    <rect class="art-line" x="452" y="263" width="60" height="7" rx="3.5"/>
+    <rect class="art-card" x="422" y="294" width="104" height="38" rx="8"/>
+    <circle class="art-check" cx="438" cy="313" r="7"/>
+    <rect class="art-line" x="452" y="309" width="52" height="7" rx="3.5"/>
+    <rect class="art-card" x="422" y="340" width="104" height="38" rx="8"/>
+    <circle class="art-ring" cx="438" cy="359" r="6"/>
+    <rect class="art-line" x="452" y="355" width="56" height="7" rx="3.5"/>
+  </g>
+  <g class="art-float art-float--slow">
+    <rect class="art-pill" x="0" y="372" width="196" height="54" rx="14"/>
+    <circle class="art-accent2" cx="28" cy="399" r="12"/>
+    <rect class="art-line" x="50" y="389" width="110" height="8" rx="4"/>
+    <rect class="art-line" x="50" y="403" width="76" height="7" rx="3.5"/>
+  </g>
+</svg>
+{%- elif name == 'automation' -%}
+<svg class="art art--automation" viewBox="0 0 480 300" aria-hidden="true" focusable="false">
+  <path class="art-path" d="M110 80 C170 80 170 150 230 150 M110 220 C170 220 170 150 230 150 M330 150 C380 150 380 70 420 70 M330 150 L420 150 M330 150 C380 150 380 230 420 230"/>
+  <rect class="art-card" x="20" y="52" width="96" height="56" rx="12"/>
+  <rect class="art-line" x="36" y="70" width="50" height="8" rx="4"/>
+  <rect class="art-line" x="36" y="86" width="64" height="7" rx="3.5"/>
+  <rect class="art-card" x="20" y="192" width="96" height="56" rx="12"/>
+  <rect class="art-line" x="36" y="210" width="58" height="8" rx="4"/>
+  <rect class="art-line" x="36" y="226" width="44" height="7" rx="3.5"/>
+  <rect class="art-accent" x="226" y="104" width="108" height="92" rx="18"/>
+  <path class="art-bolt" d="M286 120 L262 156 H280 L274 182 L300 144 H282 Z"/>
+  <circle class="art-node" cx="430" cy="70" r="22"/><path class="art-tick" d="M420 70l7 7 13-14"/>
+  <circle class="art-node" cx="430" cy="150" r="22"/><path class="art-tick" d="M420 150l7 7 13-14"/>
+  <circle class="art-node art-node--alt" cx="430" cy="230" r="22"/><path class="art-tick" d="M420 230l7 7 13-14"/>
+</svg>
+{%- elif name == 'web' -%}
+<svg class="art art--web" viewBox="0 0 480 300" aria-hidden="true" focusable="false">
+  <rect class="art-frame" x="10" y="10" width="460" height="280" rx="14"/>
+  <rect class="art-bar" x="10" y="10" width="460" height="34" rx="14"/>
+  <rect class="art-bar" x="10" y="30" width="460" height="14"/>
+  <circle class="art-dot" cx="32" cy="27" r="5"/><circle class="art-dot" cx="49" cy="27" r="5"/><circle class="art-dot" cx="66" cy="27" r="5"/>
+  <rect class="art-soft" x="96" y="20" width="220" height="14" rx="7"/>
+  <rect class="art-card" x="26" y="60" width="132" height="214" rx="10"/>
+  <circle class="art-accent" cx="54" cy="88" r="14"/>
+  <rect class="art-line" x="76" y="82" width="64" height="8" rx="4"/>
+  <rect class="art-accent" x="40" y="120" width="104" height="10" rx="5"/>
+  <rect class="art-line" x="40" y="144" width="86" height="8" rx="4"/>
+  <rect class="art-line" x="40" y="164" width="96" height="8" rx="4"/>
+  <rect class="art-line" x="40" y="184" width="76" height="8" rx="4"/>
+  <rect class="art-card" x="172" y="60" width="282" height="84" rx="10"/>
+  <path class="art-chart" d="M188 126 L230 108 L268 116 L306 90 L346 98 L386 76 L436 84"/>
+  <rect class="art-card" x="172" y="156" width="282" height="118" rx="10"/>
+  <rect class="art-soft" x="186" y="170" width="254" height="16" rx="5"/>
+  <rect class="art-line" x="190" y="198" width="110" height="8" rx="4"/><rect class="art-accent2" x="388" y="196" width="48" height="12" rx="6"/>
+  <rect class="art-line" x="190" y="222" width="140" height="8" rx="4"/><rect class="art-accent" x="388" y="220" width="48" height="12" rx="6"/>
+  <rect class="art-line" x="190" y="246" width="96" height="8" rx="4"/><rect class="art-accent" x="388" y="244" width="48" height="12" rx="6"/>
+</svg>
+{%- elif name == 'mobile' -%}
+<svg class="art art--mobile" viewBox="0 0 480 300" aria-hidden="true" focusable="false">
+  <rect class="art-phone" x="64" y="8" width="160" height="284" rx="26"/>
+  <rect class="art-frame" x="76" y="28" width="136" height="244" rx="14"/>
+  <rect class="art-accent" x="90" y="44" width="72" height="10" rx="5"/>
+  <rect class="art-card" x="90" y="66" width="108" height="44" rx="9"/><circle class="art-check" cx="108" cy="88" r="8"/><rect class="art-line" x="124" y="84" width="60" height="7" rx="3.5"/>
+  <rect class="art-card" x="90" y="118" width="108" height="44" rx="9"/><circle class="art-check" cx="108" cy="140" r="8"/><rect class="art-line" x="124" y="136" width="52" height="7" rx="3.5"/>
+  <rect class="art-card" x="90" y="170" width="108" height="44" rx="9"/><circle class="art-ring" cx="108" cy="192" r="7"/><rect class="art-line" x="124" y="188" width="64" height="7" rx="3.5"/>
+  <rect class="art-accent2" x="90" y="226" width="108" height="30" rx="9"/>
+  <rect class="art-phone" x="258" y="40" width="160" height="252" rx="26"/>
+  <rect class="art-frame" x="270" y="60" width="136" height="212" rx="14"/>
+  <rect class="art-soft" x="284" y="76" width="108" height="92" rx="9"/>
+  <path class="art-scan" d="M300 92v-6h12M376 86h12v6M388 146v6h-12M312 152h-12v-6"/>
+  <path class="art-path" d="M300 122 H388"/>
+  <rect class="art-line" x="284" y="184" width="84" height="8" rx="4"/>
+  <rect class="art-line" x="284" y="202" width="100" height="7" rx="3.5"/>
+  <rect class="art-accent" x="284" y="226" width="108" height="30" rx="9"/>
+</svg>
+{%- elif name == 'crosslisting' -%}
+<svg class="art art--crosslisting" viewBox="0 0 480 300" aria-hidden="true" focusable="false">
+  <path class="art-path" d="M196 150 C250 150 250 60 300 60 M196 150 L300 150 M196 150 C250 150 250 240 300 240"/>
+  <rect class="art-card" x="30" y="70" width="166" height="160" rx="14"/>
+  <rect class="art-soft" x="46" y="86" width="134" height="72" rx="9"/>
+  <path class="art-box" d="M92 110 L113 100 L134 110 V132 L113 142 L92 132 Z M92 110 L113 120 L134 110 M113 120 V142"/>
+  <rect class="art-line" x="46" y="172" width="100" height="8" rx="4"/>
+  <rect class="art-line" x="46" y="190" width="74" height="7" rx="3.5"/>
+  <rect class="art-accent" x="46" y="206" width="54" height="12" rx="6"/>
+  <rect class="art-card" x="300" y="28" width="150" height="64" rx="12"/><rect class="art-accent" x="314" y="44" width="36" height="32" rx="7"/><rect class="art-line" x="360" y="48" width="74" height="8" rx="4"/><rect class="art-line" x="360" y="64" width="50" height="7" rx="3.5"/>
+  <rect class="art-card" x="300" y="118" width="150" height="64" rx="12"/><rect class="art-accent2" x="314" y="134" width="36" height="32" rx="7"/><rect class="art-line" x="360" y="138" width="74" height="8" rx="4"/><rect class="art-line" x="360" y="154" width="50" height="7" rx="3.5"/>
+  <rect class="art-card" x="300" y="208" width="150" height="64" rx="12"/><rect class="art-soft2" x="314" y="224" width="36" height="32" rx="7"/><rect class="art-line" x="360" y="228" width="74" height="8" rx="4"/><rect class="art-line" x="360" y="244" width="50" height="7" rx="3.5"/>
+</svg>
+{%- elif name == 'lots' -%}
+<svg class="art art--lots" viewBox="0 0 480 300" aria-hidden="true" focusable="false">
+  <rect class="art-card" x="24" y="24" width="250" height="252" rx="14"/>
+  <rect class="art-line" x="44" y="46" width="90" height="9" rx="4.5"/>
+  <rect class="art-soft" x="44" y="72" width="210" height="26" rx="7"/><rect class="art-accent" x="200" y="80" width="44" height="10" rx="5"/>
+  <rect class="art-soft" x="44" y="106" width="210" height="26" rx="7"/><rect class="art-accent2" x="208" y="114" width="36" height="10" rx="5"/>
+  <rect class="art-soft" x="44" y="140" width="210" height="26" rx="7"/><rect class="art-accent2" x="214" y="148" width="30" height="10" rx="5"/>
+  <rect class="art-soft" x="44" y="174" width="210" height="26" rx="7"/><rect class="art-accent2" x="204" y="182" width="40" height="10" rx="5"/>
+  <path class="art-path" d="M44 216 H254"/>
+  <rect class="art-line" x="44" y="232" width="70" height="10" rx="5"/><rect class="art-accent" x="172" y="228" width="82" height="20" rx="6"/>
+  <rect class="art-card" x="292" y="24" width="164" height="252" rx="14"/>
+  <circle class="art-donut-bg" cx="374" cy="120" r="54"/>
+  <path class="art-donut" d="M374 66 A54 54 0 1 1 322.6 136.7"/>
+  <rect class="art-accent" x="340" y="112" width="68" height="16" rx="6"/>
+  <rect class="art-line" x="312" y="200" width="124" height="8" rx="4"/>
+  <rect class="art-line" x="312" y="220" width="92" height="8" rx="4"/>
+  <rect class="art-line" x="312" y="240" width="108" height="8" rx="4"/>
+</svg>
+{%- endif -%}
+{%- endmacro %}

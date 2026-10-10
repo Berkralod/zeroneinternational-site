@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% import "partials/blocks.html" as blocks with context %}
+{% import "partials/icons.html" as icons %}
+{% set p = t.pages.company %}
+{% block content %}
+{{ blocks.page_hero(p.eyebrow, p.h1, p.lede) }}
+<section class="section section--flush-top" aria-labelledby="about">
+  <div class="wrap split split--text">
+    <div>
+      <h2 id="about">{{ p.about.title }}</h2>
+    </div>
+    <div class="prose">
+    {% for para in p.about.text %}
+      <p>{{ para }}</p>
+    {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="section section--tint" aria-label="{{ p.vision.title }} · {{ p.mission.title }}">
+  <div class="wrap card-grid card-grid--2">
+    <div class="card card--feature">
+      <span class="card__icon">{{ icons.icon('eye') }}</span>
+      <h2 class="card__title" id="vision">{{ p.vision.title }}</h2>
+      <p>{{ p.vision.text }}</p>
+    </div>
+    <div class="card card--feature">
+      <span class="card__icon">{{ icons.icon('spark') }}</span>
+      <h2 class="card__title" id="mission">{{ p.mission.title }}</h2>
+      <p>{{ p.mission.text }}</p>
+    </div>
+  </div>
+</section>
+<section class="section" aria-labelledby="values-title">
+  <div class="wrap">
+    {{ blocks.section_head(None, p["values"].title, id="values-title") }}
+    <ul class="card-grid card-grid--4" role="list">
+    {% for v in p["values"]["items"] %}
+      <li class="card">
+        <span class="card__icon">{{ icons.icon(('eye', 'check', 'shield', 'handshake')[loop.index0]) }}</span>
+        <h3 class="card__title">{{ v.title }}</h3>
+        <p>{{ v.text }}</p>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+</section>
+<section class="section section--tint" aria-labelledby="location-title">
+  <div class="wrap split split--text">
+    <h2 id="location-title">{{ p.location.title }}</h2>
+    <p class="location">{{ icons.icon('pin') }} <span>{{ p.location.text }}</span></p>
+  </div>
+</section>
+{{ blocks.cta_band() }}
+{% endblock %}

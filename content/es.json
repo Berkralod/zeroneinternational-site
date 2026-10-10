@@ -1,0 +1,855 @@
+{
+  "meta": {
+    "code": "es",
+    "name": "Español",
+    "dir": "ltr",
+    "og_locale": "es_ES"
+  },
+  "slugs": {
+    "services": "servicios",
+    "service_automation": "servicios/automatizacion-bots",
+    "service_web": "servicios/aplicaciones-web",
+    "service_mobile": "servicios/aplicaciones-moviles",
+    "products": "productos",
+    "use_cases": "casos-de-uso",
+    "company": "empresa",
+    "contact": "contacto",
+    "privacy": "privacidad",
+    "terms": "terminos",
+    "cookies": "cookies"
+  },
+  "ui": {
+    "skip": "Saltar al contenido",
+    "menu": "Menú",
+    "nav_label": "Navegación principal",
+    "language": "Idioma",
+    "theme_to_dark": "Cambiar al tema oscuro",
+    "theme_to_light": "Cambiar al tema claro",
+    "back_to_top": "Volver arriba",
+    "start_project": "Iniciar un proyecto",
+    "learn_more": "Más información",
+    "view_all_cases": "Ver los 20 casos de uso",
+    "breadcrumb": "Ruta de navegación",
+    "home": "Inicio",
+    "suggest": "Esta página también está disponible en español.",
+    "suggest_switch": "Ver en español",
+    "dismiss": "Cerrar",
+    "in_development": "En desarrollo",
+    "related_cases": "Casos de uso relacionados",
+    "previous_case": "Caso de uso anterior",
+    "next_case": "Siguiente caso de uso",
+    "all": "Todos",
+    "filter_label": "Filtrar casos de uso por servicio",
+    "case_label": "Caso de uso",
+    "service_label": "Servicio relacionado",
+    "updated": "Última actualización",
+    "challenge": "El reto",
+    "approach": "Cómo ayuda el software",
+    "includes": "Qué puede incluir",
+    "legal_note": "Esta traducción se ofrece por comodidad. En caso de discrepancia, prevalece la versión en inglés."
+  },
+  "nav": {
+    "services": "Servicios",
+    "products": "Productos",
+    "use_cases": "Casos de uso",
+    "company": "Empresa",
+    "contact": "Contacto"
+  },
+  "footer": {
+    "tagline": "Software a medida, automatización y herramientas de reventa de un equipo que dirige su propio negocio de reventa online.",
+    "services": "Servicios",
+    "company": "Empresa",
+    "legal": "Legal",
+    "rights": "Todos los derechos reservados.",
+    "trademark": "Los nombres de marketplaces mencionados en este sitio son marcas comerciales de sus respectivos propietarios. Zerone International LLC no está afiliada a ellos ni cuenta con su respaldo.",
+    "location": "Farmingville, Nueva York, Estados Unidos"
+  },
+  "services_list": {
+    "automation": {
+      "name": "Automatización y bots",
+      "short": "Elimine el trabajo repetitivo: preparación de datos, anuncios, notificaciones y tareas programadas que funcionan solas."
+    },
+    "web": {
+      "name": "Aplicaciones web",
+      "short": "Paneles, herramientas internas y portales de clientes que funcionan en cualquier navegador, con los roles que su equipo necesita."
+    },
+    "mobile": {
+      "name": "Aplicaciones móviles",
+      "short": "Apps para iOS y Android para el trabajo que su equipo hace en la tienda, en el almacén o en la calle."
+    }
+  },
+  "process": {
+    "eyebrow": "Cómo trabajamos",
+    "title": "Del primer mensaje al lanzamiento",
+    "intro": "Un proceso claro en cuatro pasos para que siempre sepa qué viene después y cuánto cuesta.",
+    "steps": [
+      {
+        "title": "Descubrimiento",
+        "text": "Nos cuenta su flujo de trabajo, sus usuarios y sus objetivos. Preguntamos hasta que el problema está claro."
+      },
+      {
+        "title": "Propuesta",
+        "text": "Recibe un alcance por escrito con funciones, plataformas, plazos y un precio cerrado o una estimación clara."
+      },
+      {
+        "title": "Desarrollo",
+        "text": "Desarrollamos en iteraciones cortas y compartimos versiones funcionales para que pueda opinar desde el principio."
+      },
+      {
+        "title": "Lanzamiento y soporte",
+        "text": "Publicamos, entregamos accesos y documentación, y seguimos disponibles para correcciones y próximos pasos."
+      }
+    ]
+  },
+  "roles": {
+    "eyebrow": "Acceso por roles",
+    "title": "La pantalla adecuada para cada persona",
+    "intro": "Las aplicaciones pueden incluir paneles separados para propietarios, responsables y empleados, cada uno con sus propios permisos.",
+    "items": [
+      {
+        "title": "Propietario",
+        "text": "Una visión completa del negocio, los usuarios, la configuración y los informes."
+      },
+      {
+        "title": "Responsable",
+        "text": "Asignación de tareas, coordinación del equipo y los datos operativos que necesitan los responsables."
+      },
+      {
+        "title": "Empleado",
+        "text": "Una vista centrada en las tareas asignadas y la información necesaria para completarlas."
+      }
+    ]
+  },
+  "cta": {
+    "title": "¿Tiene un proceso que le quita demasiado tiempo?",
+    "text": "Cuéntenos qué quiere mejorar. Recibirá una propuesta clara con alcance, plazos y precio.",
+    "button": "Iniciar un proyecto"
+  },
+  "form": {
+    "name": "Su nombre",
+    "email": "Correo electrónico",
+    "company": "Empresa",
+    "optional": "opcional",
+    "project_type": "Tipo de proyecto",
+    "types": {
+      "automation": "Automatización o bot",
+      "web": "Aplicación web",
+      "mobile": "Aplicación móvil",
+      "resale": "Herramientas de reventa",
+      "other": "Otra cosa"
+    },
+    "choose": "Seleccione una opción",
+    "budget": "Presupuesto estimado",
+    "budgets": [
+      "Menos de 5.000 $",
+      "5.000 – 15.000 $",
+      "15.000 – 50.000 $",
+      "Más de 50.000 $",
+      "Aún no lo sé"
+    ],
+    "timeline": "Plazo",
+    "timelines": [
+      "Lo antes posible",
+      "En 1–3 meses",
+      "En 3–6 meses",
+      "Flexible"
+    ],
+    "message": "Detalles del proyecto",
+    "message_hint": "Describa la tarea que quiere mejorar, las plataformas implicadas y los roles de usuario que necesita. Por favor, no envíe contraseñas ni claves de API.",
+    "consent": "Acepto que mis datos se traten para responder a mi solicitud, tal como se describe en la {link}.",
+    "consent_link": "Política de privacidad",
+    "submit": "Enviar solicitud",
+    "sending": "Enviando…",
+    "success": "¡Gracias! Su mensaje se ha enviado. Le responderemos pronto.",
+    "error": "No se pudo enviar su mensaje. Inténtelo de nuevo o escríbanos por correo electrónico.",
+    "waitlist_title": "Únase a la lista de espera",
+    "waitlist_text": "Déjenos su correo electrónico y le avisaremos cuando abra el acceso anticipado.",
+    "waitlist_product": "Me interesa",
+    "waitlist_both": "Ambas herramientas",
+    "waitlist_submit": "Unirme a la lista",
+    "waitlist_success": "¡Gracias! Ya está en la lista.",
+    "not_configured": "El formulario online se está configurando. Mientras tanto, contáctenos por correo electrónico."
+  },
+  "pages": {
+    "home": {
+      "title": "Software a medida, automatización y bots | Zerone International",
+      "description": "Zerone International desarrolla automatizaciones, bots, aplicaciones web y móviles a medida, y herramientas para revendedores. Con sede en Nueva York, trabajamos en todo el mundo en 15 idiomas.",
+      "h1": "Software que funciona como funciona su negocio",
+      "hero": {
+        "eyebrow": "Software a medida · Nueva York",
+        "lede": "Creamos automatizaciones, bots, aplicaciones web y apps móviles en torno a su flujo de trabajo real, y desarrollamos herramientas para revendedores online.",
+        "primary": "Iniciar un proyecto",
+        "secondary": "Ver servicios",
+        "points": [
+          "Propuesta por escrito con alcance cerrado",
+          "Roles de propietario, responsable y empleado",
+          "Hecho por quienes dirigen un negocio de reventa online"
+        ]
+      },
+      "services": {
+        "eyebrow": "Qué desarrollamos",
+        "title": "Tres formas de ahorrar tiempo",
+        "intro": "Cada proyecto empieza por su flujo de trabajo. Después elegimos el formato adecuado: automatización, aplicación web, app móvil o una combinación."
+      },
+      "resale": {
+        "eyebrow": "Experiencia en reventa",
+        "title": "Conocemos la reventa online desde dentro",
+        "text": "Zerone International vende artículos usados y excedentes de stock en marketplaces online. Esa experiencia diaria da forma a las herramientas que desarrollamos: un sistema de publicación multicanal y una herramienta de análisis de lotes de liquidación.",
+        "link": "Ver nuestros productos"
+      },
+      "cases": {
+        "eyebrow": "Casos de uso",
+        "title": "Ideas sobre las que construir",
+        "intro": "Veinte ejemplos de lo que el software a medida puede hacer por revendedores y pequeñas empresas."
+      },
+      "faq": {
+        "eyebrow": "Preguntas frecuentes",
+        "title": "Preguntas frecuentes",
+        "items": [
+          {
+            "q": "¿Puedo solicitar ahora un proyecto de software a medida?",
+            "a": "Sí. Envíenos sus requisitos mediante el formulario de contacto. Analizamos la viabilidad y le enviamos una propuesta por escrito."
+          },
+          {
+            "q": "¿Cuánto cuesta un proyecto a medida?",
+            "a": "Depende del alcance. Las automatizaciones pequeñas pueden empezar en unos pocos miles de dólares; las aplicaciones más grandes se presupuestan tras la fase de descubrimiento. Siempre conoce el precio antes de empezar."
+          },
+          {
+            "q": "¿Cuánto dura un proyecto?",
+            "a": "Las automatizaciones sencillas suelen llevar de dos a cuatro semanas. Las aplicaciones web y móviles suelen llevar de uno a cuatro meses, según sus funciones."
+          },
+          {
+            "q": "¿Puede mi aplicación tener distintos paneles de usuario?",
+            "a": "Sí. Se pueden incluir paneles para propietario, responsables y empleados, cada uno con sus propios permisos."
+          },
+          {
+            "q": "¿Trabajan con las API de los marketplaces?",
+            "a": "Sí, mediante API oficiales y métodos de acceso permitidos. Cada integración se revisa según las reglas de la plataforma antes de incluirla en una propuesta."
+          },
+          {
+            "q": "¿Están disponibles sus herramientas de reventa?",
+            "a": "El sistema de publicación multicanal y la herramienta de análisis de lotes están en desarrollo. Puede unirse a la lista de espera en la página de productos."
+          }
+        ]
+      }
+    },
+    "services": {
+      "title": "Servicios de desarrollo de software a medida | Zerone International",
+      "description": "Automatizaciones, bots, aplicaciones web y móviles a medida para pequeñas empresas y revendedores online. Propuestas claras, acceso por roles y soporte continuo.",
+      "eyebrow": "Servicios",
+      "h1": "Desarrollo de software a medida",
+      "lede": "Convertimos el trabajo repetitivo, manual o disperso en software fiable. Obtiene exactamente las funciones que necesita y no paga por nada que no vaya a usar.",
+      "faq": {
+        "title": "Preguntas sobre nuestros servicios",
+        "items": [
+          {
+            "q": "¿De quién es el código fuente?",
+            "a": "La propiedad y la licencia del código se definen en la propuesta. En la mayoría de los proyectos a medida, el cliente recibe la propiedad completa tras el pago final."
+          },
+          {
+            "q": "¿Ofrecen mantenimiento y soporte?",
+            "a": "Sí. Tras el lanzamiento ofrecemos planes de soporte y mantenimiento, o ayuda bajo demanda."
+          },
+          {
+            "q": "¿Qué tecnologías utilizan?",
+            "a": "Elegimos tecnologías probadas y con buen soporte que se adapten al proyecto, por ejemplo Python, JavaScript y TypeScript, frameworks web modernos y herramientas móviles nativas o multiplataforma."
+          },
+          {
+            "q": "¿Pueden mejorar una aplicación existente?",
+            "a": "Sí. Podemos revisar un sistema existente y proponer mejoras, nuevas funciones o un plan de migración."
+          },
+          {
+            "q": "¿Trabajan con clientes fuera de Estados Unidos?",
+            "a": "Sí. Trabajamos en remoto con clientes de todo el mundo y nos comunicamos en inglés y turco."
+          }
+        ]
+      }
+    },
+    "service_automation": {
+      "title": "Automatización de procesos y bots a medida | Zerone International",
+      "description": "Automatizaciones y bots a medida que preparan datos, crean anuncios, envían notificaciones y ejecutan tareas programadas, para que su equipo se centre en las decisiones.",
+      "eyebrow": "Automatización y bots",
+      "h1": "Automatización de procesos y bots a medida",
+      "lede": "Si su equipo copia, pega, revisa y repite los mismos pasos cada día, normalmente esos pasos se pueden automatizar. Creamos automatizaciones que funcionan de forma fiable e informan de lo que han hecho.",
+      "features_title": "Qué automatizamos",
+      "features": [
+        {
+          "title": "Preparación de datos",
+          "text": "Convierta hojas de cálculo, notas y archivos de proveedores en datos limpios y estructurados."
+        },
+        {
+          "title": "Flujos de publicación",
+          "text": "Prepare títulos, descripciones y características para revisarlos antes de publicar."
+        },
+        {
+          "title": "Notificaciones",
+          "text": "Alertas y recordatorios por correo, apps de mensajería o SMS cuando algo requiere atención."
+        },
+        {
+          "title": "Tareas programadas",
+          "text": "Informes, copias de seguridad y sincronizaciones que se ejecutan solos a horas fijas."
+        },
+        {
+          "title": "Integraciones",
+          "text": "Conecte las herramientas que ya usa mediante API oficiales y webhooks."
+        },
+        {
+          "title": "Supervisión",
+          "text": "Registros e informes de estado para saber siempre qué ha hecho la automatización."
+        }
+      ],
+      "notes_title": "Conviene saber",
+      "notes": [
+        "Las integraciones usan solo API oficiales y métodos de acceso permitidos.",
+        "Las automatizaciones incluyen gestión de errores y registros claros.",
+        "Usted mantiene el control: las acciones importantes pueden requerir aprobación humana."
+      ]
+    },
+    "service_web": {
+      "title": "Desarrollo de aplicaciones web a medida | Zerone International",
+      "description": "Aplicaciones web a medida, paneles, herramientas internas y portales de clientes con acceso por roles para propietarios, responsables y empleados.",
+      "eyebrow": "Aplicaciones web",
+      "h1": "Desarrollo de aplicaciones web a medida",
+      "lede": "Reúna sus operaciones en una sola aplicación en el navegador. Sin instalación, accesible desde cualquier dispositivo y con los permisos adecuados para cada usuario.",
+      "features_title": "Qué desarrollamos",
+      "features": [
+        {
+          "title": "Paneles de control",
+          "text": "Una visión en tiempo real de ventas, stock, tareas y las métricas que le importan."
+        },
+        {
+          "title": "Herramientas internas",
+          "text": "Sustituya hojas de cálculo dispersas por un único espacio de trabajo compartido y estructurado."
+        },
+        {
+          "title": "Portales de clientes",
+          "text": "Permita que sus clientes consulten pedidos, documentos o solicitudes por su cuenta."
+        },
+        {
+          "title": "Acceso por roles",
+          "text": "Paneles separados para propietario, responsables y empleados con permisos claros."
+        },
+        {
+          "title": "Informes y exportaciones",
+          "text": "Informes personalizados y exportaciones en CSV y PDF a partir de sus datos."
+        },
+        {
+          "title": "Seguridad desde el diseño",
+          "text": "Autenticación, conexiones cifradas y copias de seguridad periódicas desde el primer día."
+        }
+      ],
+      "notes_title": "Conviene saber",
+      "notes": [
+        "Las aplicaciones funcionan en navegadores de escritorio, tableta y móvil.",
+        "El alojamiento puede gestionarlo nosotros o configurarse en su propia cuenta.",
+        "Documentamos el sistema para que pueda crecer con su negocio."
+      ]
+    },
+    "service_mobile": {
+      "title": "Desarrollo de apps móviles a medida (iOS y Android) | Zerone International",
+      "description": "Apps a medida para iOS y Android para equipos de campo, almacenes y operaciones: listas de tareas, entrada de stock, fotos y notificaciones.",
+      "eyebrow": "Aplicaciones móviles",
+      "h1": "Desarrollo de aplicaciones móviles a medida",
+      "lede": "Hay trabajo que no se hace en un escritorio. Creamos apps móviles para las tareas que su equipo realiza en la tienda, en el almacén o en ruta.",
+      "features_title": "Qué desarrollamos",
+      "features": [
+        {
+          "title": "Listas de tareas",
+          "text": "Tareas asignadas, listas de control y actualizaciones de estado en el bolsillo de cada empleado."
+        },
+        {
+          "title": "Entrada de stock",
+          "text": "Registre la mercancía entrante con lectura de códigos de barras y fotos."
+        },
+        {
+          "title": "Flujos de fotografía",
+          "text": "Tome y organice las fotos de producto justo donde están los artículos."
+        },
+        {
+          "title": "Notificaciones push",
+          "text": "Informe a las personas adecuadas en el momento en que algo cambia."
+        },
+        {
+          "title": "Modo sin conexión",
+          "text": "Siga trabajando sin conexión y sincronice al recuperarla."
+        },
+        {
+          "title": "iOS y Android",
+          "text": "Nativa o multiplataforma, según el presupuesto y los requisitos."
+        }
+      ],
+      "notes_title": "Conviene saber",
+      "notes": [
+        "Podemos publicar en App Store y Google Play o distribuir internamente.",
+        "Las apps móviles pueden compartir datos con su aplicación web.",
+        "Los dispositivos de destino se acuerdan en la propuesta."
+      ]
+    },
+    "products": {
+      "title": "Herramientas de publicación multicanal y análisis de lotes | Zerone International",
+      "description": "Zerone International desarrolla un sistema de publicación multicanal y una herramienta de análisis de lotes de liquidación para revendedores online. Únase a la lista de espera.",
+      "eyebrow": "Productos",
+      "h1": "Herramientas para revendedores online",
+      "lede": "Estamos creando las herramientas que queríamos para nuestro propio negocio de reventa. Ambas están en desarrollo; únase a la lista de espera para saber cuándo abre el acceso anticipado.",
+      "items": [
+        {
+          "name": "Sistema de publicación multicanal",
+          "text": "Prepare un producto una vez y gestione sus anuncios en varios marketplaces desde un solo lugar.",
+          "features": [
+            "Una única ficha de producto para cada canal",
+            "Borradores de títulos y descripciones para revisar",
+            "Estado del stock en todos los canales",
+            "Integraciones mediante acceso permitido a las plataformas"
+          ]
+        },
+        {
+          "name": "Análisis de lotes de liquidación",
+          "text": "Estime si un lote de liquidación merece la pena antes de pujar.",
+          "features": [
+            "Precio de compra, comisiones y envío en una sola vista",
+            "Márgenes configurables para devoluciones y daños",
+            "Valor de reventa estimado y margen neto",
+            "Compare varios lotes en paralelo"
+          ]
+        }
+      ]
+    },
+    "use_cases": {
+      "title": "20 casos de uso de software para revendedores y pymes | Zerone",
+      "description": "Veinte ejemplos de automatización, software web y móvil a medida para revendedores online y pequeñas empresas: anuncios, análisis de lotes, stock, informes y equipos.",
+      "eyebrow": "Casos de uso",
+      "h1": "20 casos de uso de software a medida",
+      "lede": "Ejemplos de lo que podemos desarrollar para revendedores y pequeñas empresas. Cada uno puede adaptarse a su flujo de trabajo, sus plataformas y su equipo.",
+      "note": "Son ideas de proyecto, no proyectos de clientes terminados. El acceso a plataformas y las funciones se revisan en cada propuesta."
+    },
+    "company": {
+      "title": "Sobre Zerone International LLC – Visión y misión",
+      "description": "Zerone International LLC es una empresa de Nueva York que combina la reventa online con el desarrollo de software a medida. Conozca nuestra visión, misión y valores.",
+      "eyebrow": "Empresa",
+      "h1": "Sobre Zerone International",
+      "lede": "Somos una empresa de Nueva York que trabaja donde se cruzan el comercio online y el software.",
+      "about": {
+        "title": "Quiénes somos",
+        "text": [
+          "Zerone International LLC tiene su sede en Farmingville, Nueva York. Vendemos artículos usados y excedentes de stock en marketplaces online y desarrollamos software, tanto para nuestras propias operaciones como para clientes.",
+          "Llevar un negocio de reventa cada día nos muestra dónde se pierde el tiempo: preparar anuncios, revisar lotes, controlar el stock y coordinar a las personas. Ese conocimiento es el que aportamos a cada proyecto de software."
+        ]
+      },
+      "vision": {
+        "title": "Nuestra visión",
+        "text": "Hacer accesible a las pequeñas empresas un software útil y comprensible, para que puedan dedicar su tiempo a las decisiones que importan."
+      },
+      "mission": {
+        "title": "Nuestra misión",
+        "text": "Convertir necesidades reales del negocio en software fiable, con un alcance claro, precios justos y los permisos adecuados para cada usuario."
+      },
+      "values": {
+        "title": "Lo que valoramos",
+        "items": [
+          {
+            "title": "Claridad",
+            "text": "Alcance por escrito, plazos honestos y ninguna sorpresa en la factura."
+          },
+          {
+            "title": "Sentido práctico",
+            "text": "Funciones que resuelven problemas reales, no funciones porque sí."
+          },
+          {
+            "title": "Seguridad",
+            "text": "Cuidado en el manejo de sus datos, cuentas y permisos de acceso."
+          },
+          {
+            "title": "Colaboración",
+            "text": "Seguimos a su lado después del lanzamiento y hacemos crecer el software con usted."
+          }
+        ]
+      },
+      "location": {
+        "title": "Dónde estamos",
+        "text": "Farmingville, Nueva York, Estados Unidos. Trabajamos en remoto con clientes de todo el mundo."
+      }
+    },
+    "contact": {
+      "title": "Contacto – Inicie un proyecto de software | Zerone International",
+      "description": "Contacte con Zerone International para hablar de un proyecto de automatización, bot, aplicación web o móvil a medida. Respondemos con preguntas o una propuesta por escrito.",
+      "eyebrow": "Contacto",
+      "h1": "Inicie su proyecto",
+      "lede": "Cuéntenos su idea o el problema que quiere resolver. Intentamos responder en un plazo de dos días hábiles.",
+      "email_title": "¿Prefiere el correo electrónico?",
+      "email_text": "También puede escribirnos directamente:",
+      "booking": "Reservar una llamada",
+      "whatsapp": "Escribir por WhatsApp",
+      "location_title": "Ubicación"
+    },
+    "privacy": {
+      "title": "Política de privacidad | Zerone International",
+      "description": "Cómo Zerone International LLC recoge, utiliza y protege los datos personales cuando visita este sitio web o se pone en contacto con nosotros.",
+      "h1": "Política de privacidad",
+      "intro": "Esta política explica qué datos personales tratamos cuando utiliza zeroneinternational.com, por qué los tratamos y qué derechos tiene.",
+      "sections": [
+        {
+          "title": "Responsable",
+          "paragraphs": [
+            "Zerone International LLC, Farmingville, Nueva York, Estados Unidos, es responsable del tratamiento de los datos personales en este sitio web. Puede contactarnos a través de la página de contacto."
+          ]
+        },
+        {
+          "title": "Datos que nos envía",
+          "paragraphs": [
+            "Cuando utiliza nuestro formulario de contacto o de lista de espera, recibimos los datos que introduce, como su nombre, correo electrónico, empresa y mensaje. Los usamos únicamente para responder a su solicitud y preparar una propuesta.",
+            "Los formularios se envían a través de Formspree, un servicio de procesamiento de formularios que actúa en nuestro nombre. No envíe contraseñas, claves de API ni datos sensibles de clientes a través del formulario."
+          ]
+        },
+        {
+          "title": "Datos recogidos automáticamente",
+          "paragraphs": [
+            "Nuestro proveedor de alojamiento puede registrar datos técnicos como la dirección IP, el tipo de navegador y la hora de la solicitud en los registros del servidor. Esto es necesario para ofrecer el sitio web de forma segura.",
+            "Si activamos estadísticas del sitio web, usamos un servicio respetuoso con la privacidad que no utiliza cookies ni crea perfiles personales."
+          ]
+        },
+        {
+          "title": "Cuánto tiempo conservamos los datos",
+          "paragraphs": [
+            "Conservamos las consultas durante el tiempo necesario para atender su solicitud y cualquier relación comercial resultante, y durante el tiempo que exija la ley. Puede pedirnos que eliminemos sus datos en cualquier momento."
+          ]
+        },
+        {
+          "title": "Sus derechos",
+          "paragraphs": [
+            "Según dónde viva, por ejemplo en virtud del RGPD, la ley turca KVKK o la legislación de California, puede tener derecho a acceder, rectificar, suprimir o exportar sus datos, y a oponerse a su tratamiento o limitarlo. Contáctenos para ejercer estos derechos. También puede presentar una reclamación ante su autoridad de protección de datos."
+          ]
+        },
+        {
+          "title": "Transferencias internacionales",
+          "paragraphs": [
+            "Tenemos nuestra sede en Estados Unidos, y nuestros proveedores pueden tratar datos en Estados Unidos o en otros países. Elegimos proveedores que ofrecen garantías adecuadas."
+          ]
+        },
+        {
+          "title": "Cambios",
+          "paragraphs": [
+            "Podemos actualizar esta política cuando cambien nuestros servicios o los requisitos legales. La versión vigente siempre se publica en esta página."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Términos de uso | Zerone International",
+      "description": "Términos aplicables al uso del sitio web de Zerone International LLC.",
+      "h1": "Términos de uso",
+      "intro": "Estos términos se aplican a su uso de zeroneinternational.com. Al utilizar el sitio web, los acepta.",
+      "sections": [
+        {
+          "title": "Contenido del sitio web",
+          "paragraphs": [
+            "El contenido de este sitio web tiene fines informativos generales. Las descripciones de servicios, productos y casos de uso no son ofertas vinculantes. Un proyecto solo se acuerda mediante una propuesta escrita o un contrato independiente."
+          ]
+        },
+        {
+          "title": "Productos en desarrollo",
+          "paragraphs": [
+            "Los productos marcados como en desarrollo pueden cambiar antes de su lanzamiento. Las funciones, la compatibilidad con plataformas y las fechas de lanzamiento no están garantizadas."
+          ]
+        },
+        {
+          "title": "Propiedad intelectual",
+          "paragraphs": [
+            "El nombre Zerone International, el logotipo y el contenido de este sitio web están protegidos. No puede copiarlos ni reutilizarlos sin nuestro permiso, salvo cuando la ley lo permita."
+          ]
+        },
+        {
+          "title": "Enlaces y marcas",
+          "paragraphs": [
+            "Este sitio web puede mencionar o enlazar plataformas de terceros. Sus nombres son marcas comerciales de sus respectivos propietarios. No somos responsables del contenido de sitios web externos."
+          ]
+        },
+        {
+          "title": "Responsabilidad",
+          "paragraphs": [
+            "Procuramos que este sitio web sea preciso y esté disponible, pero no garantizamos que esté siempre completo, actualizado o libre de interrupciones. En la medida en que lo permita la ley, no somos responsables de los daños derivados del uso del sitio web."
+          ]
+        },
+        {
+          "title": "Ley aplicable",
+          "paragraphs": [
+            "Estos términos se rigen por las leyes del Estado de Nueva York, Estados Unidos, salvo que la legislación imperativa de protección del consumidor de su país disponga otra cosa."
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Política de cookies | Zerone International",
+      "description": "Zerone International no utiliza cookies publicitarias ni de seguimiento. Descubra cómo guarda el sitio sus preferencias de tema e idioma.",
+      "h1": "Política de cookies",
+      "intro": "Mantenemos este sitio sencillo: sin cookies publicitarias, sin cookies de seguimiento y sin necesidad de banner de cookies.",
+      "sections": [
+        {
+          "title": "Sin cookies de seguimiento",
+          "paragraphs": [
+            "Este sitio web no instala cookies publicitarias, de marketing ni de seguimiento, y no carga scripts publicitarios de terceros."
+          ]
+        },
+        {
+          "title": "Preferencias en su navegador",
+          "paragraphs": [
+            "Si elige un tema claro u oscuro, o cierra la sugerencia de idioma, esa elección se guarda en el almacenamiento local de su navegador. Nunca sale de su dispositivo y puede borrarla en cualquier momento desde la configuración del navegador."
+          ]
+        },
+        {
+          "title": "Formularios y estadísticas",
+          "paragraphs": [
+            "Cuando envía un formulario, se transmite a nuestro proveedor Formspree, que puede usar cookies técnicamente necesarias para la protección contra spam. Si activamos estadísticas del sitio web, usamos un servicio sin cookies."
+          ]
+        }
+      ]
+    },
+    "notfound": {
+      "title": "Página no encontrada | Zerone International",
+      "h1": "Página no encontrada",
+      "text": "La página que busca no existe o se ha movido.",
+      "home": "Ir a la página de inicio"
+    }
+  },
+  "cases": [
+    {
+      "slug": "preparacion-anuncios-ebay",
+      "title": "Preparación de anuncios en eBay",
+      "summary": "Convierta notas de producto en borradores de títulos, descripciones y características, listos para revisar.",
+      "challenge": "Redactar buenos anuncios de eBay uno a uno lleva tiempo y es fácil olvidar características.",
+      "approach": "Una automatización lee sus notas u hoja de cálculo y prepara borradores estructurados; su equipo solo revisa y aprueba.",
+      "includes": [
+        "Borradores de título y descripción",
+        "Lista de control de características",
+        "Paso de revisión antes de publicar"
+      ]
+    },
+    {
+      "slug": "reventa-en-poshmark",
+      "title": "Flujos de reventa en Poshmark",
+      "summary": "Organice los datos de ropa y prepare anuncios para Poshmark y otros canales.",
+      "challenge": "La ropa requiere tallas, marcas, estado y medidas, e introducirlos una y otra vez es lento.",
+      "approach": "Un formulario de entrada estructurado recoge los datos una vez y prepara borradores para cada canal según sus reglas.",
+      "includes": [
+        "Plantilla de datos de ropa",
+        "Borradores por canal",
+        "Seguimiento del estado de cada artículo"
+      ]
+    },
+    {
+      "slug": "preparacion-catalogo-amazon",
+      "title": "Preparación del catálogo de Amazon",
+      "summary": "Organice los datos de producto y revise los campos obligatorios antes de publicar.",
+      "challenge": "Los campos que faltan o son incoherentes provocan anuncios rechazados y pérdida de tiempo.",
+      "approach": "Una herramienta de validación revisa sus datos según los campos necesarios y señala lo que falta antes de subirlos.",
+      "includes": [
+        "Comprobación de campos obligatorios",
+        "Limpieza masiva de datos",
+        "Archivos de carga exportables"
+      ]
+    },
+    {
+      "slug": "inventario-walmart",
+      "title": "Flujos de inventario para Walmart",
+      "summary": "Controle el stock y los datos de producto de Walmart Marketplace mediante acceso permitido.",
+      "challenge": "Mantener alineados el stock y los datos de producto entre canales a mano es difícil.",
+      "approach": "Un panel web reúne los datos de stock y de producto y señala las diferencias que requieren acción.",
+      "includes": [
+        "Vista general del stock",
+        "Alertas de diferencias",
+        "Historial de cambios"
+      ]
+    },
+    {
+      "slug": "descripciones-etsy",
+      "title": "Descripciones de productos para Etsy",
+      "summary": "Prepare descripciones claras sin inventar materiales ni procedencia.",
+      "challenge": "Las buenas descripciones venden, pero escribirlas para cada artículo lleva mucho tiempo.",
+      "approach": "Una herramienta de borradores crea descripciones solo con los datos que usted aporta, listas para editar y aprobar.",
+      "includes": [
+        "Borradores basados en hechos",
+        "Ajustes de tono y extensión",
+        "Aprobación antes de usarlas"
+      ]
+    },
+    {
+      "slug": "evaluacion-lotes-b-stock",
+      "title": "Evaluación de lotes en B-Stock",
+      "summary": "Compare el precio de un lote con las comisiones, la logística y el valor de reventa estimados.",
+      "challenge": "Un lote puede parecer barato hasta que se suman comisiones, envío y artículos invendibles.",
+      "approach": "Una calculadora combina precio de compra, comisiones, logística y sus supuestos de reventa en una estimación clara.",
+      "includes": [
+        "Desglose de costes",
+        "Supuestos ajustables",
+        "Evaluaciones guardadas"
+      ]
+    },
+    {
+      "slug": "planificacion-pujas-liquidation",
+      "title": "Planificación de pujas en Liquidation.com",
+      "summary": "Estime el resultado neto antes de decidir cuánto pujar.",
+      "challenge": "Pujar sin un precio máximo facilita pagar de más.",
+      "approach": "Una herramienta de planificación calcula una puja máxima recomendada a partir de su margen objetivo y sus costes.",
+      "includes": [
+        "Ajustes de margen objetivo",
+        "Estimación de puja máxima",
+        "Comparación de escenarios"
+      ]
+    },
+    {
+      "slug": "reserva-devoluciones",
+      "title": "Reserva para devoluciones",
+      "summary": "Incluya un margen ajustable para devoluciones al evaluar la rentabilidad de la reventa.",
+      "challenge": "Las devoluciones reducen el beneficio real, pero a menudo se omiten en los cálculos.",
+      "approach": "Su herramienta de análisis incluye una reserva configurable para devoluciones según la categoría o su propio historial.",
+      "includes": [
+        "Tasas por categoría",
+        "Ajustes según el historial",
+        "Margen neto tras devoluciones"
+      ]
+    },
+    {
+      "slug": "estimacion-costes-envio",
+      "title": "Estimación de costes de envío",
+      "summary": "Tenga en cuenta peso, dimensiones y opciones de envío en su planificación.",
+      "challenge": "Los costes de envío varían mucho y pueden convertir un artículo rentable en una pérdida.",
+      "approach": "Una herramienta de planificación estima el coste de envío a partir del peso y las medidas y lo incluye en cada cálculo.",
+      "includes": [
+        "Datos de peso y medidas",
+        "Tablas de tarifas de transportistas",
+        "Coste por artículo"
+      ]
+    },
+    {
+      "slug": "panel-del-propietario",
+      "title": "Panel del propietario",
+      "summary": "Un único panel con la información y los controles que necesita un propietario.",
+      "challenge": "Los propietarios suelen reunir cifras de muchos sitios para saber cómo va el negocio.",
+      "approach": "Un panel del propietario muestra las cifras clave, los usuarios y la configuración en un solo lugar seguro.",
+      "includes": [
+        "Métricas clave de un vistazo",
+        "Gestión de usuarios y permisos",
+        "Informes exportables"
+      ]
+    },
+    {
+      "slug": "coordinacion-de-responsables",
+      "title": "Coordinación de responsables",
+      "summary": "Un espacio de trabajo para asignar tareas y seguir las operaciones.",
+      "challenge": "Sin una vista compartida, las tareas se pierden entre mensajes y hojas de cálculo.",
+      "approach": "Un espacio para responsables permite asignar trabajo, fijar prioridades y ver el progreso en tiempo real.",
+      "includes": [
+        "Asignación de tareas",
+        "Seguimiento de prioridades y plazos",
+        "Vista del progreso del equipo"
+      ]
+    },
+    {
+      "slug": "paneles-de-tareas-empleados",
+      "title": "Paneles de tareas para empleados",
+      "summary": "Muestre a cada empleado exactamente las tareas y la información que necesita.",
+      "challenge": "Los empleados pierden tiempo buscando instrucciones o preguntando qué hacer a continuación.",
+      "approach": "Un panel móvil sencillo enumera las tareas de cada persona con los detalles necesarios para completarlas.",
+      "includes": [
+        "Lista personal de tareas",
+        "Instrucciones y fotos",
+        "Actualización de estado con un toque"
+      ]
+    },
+    {
+      "slug": "entrada-de-stock",
+      "title": "Entrada de stock",
+      "summary": "Registre la mercancía entrante y organice lo necesario para la reventa.",
+      "challenge": "Los artículos sin registrar son difíciles de encontrar, valorar y publicar después.",
+      "approach": "Una app móvil de entrada registra cada artículo al llegar con código de barras, fotos, estado y ubicación.",
+      "includes": [
+        "Lectura de códigos de barras",
+        "Campos de estado y ubicación",
+        "Sincronización inmediata con el panel"
+      ]
+    },
+    {
+      "slug": "tareas-de-fotografia",
+      "title": "Tareas de fotografía de producto",
+      "summary": "Coordine las fotos de producto y la preparación de anuncios en un solo flujo.",
+      "challenge": "Las fotos hechas con distintos móviles acaban dispersas y sin etiquetar.",
+      "approach": "Un flujo móvil vincula cada serie de fotos al producto correcto y la marca como lista para publicar.",
+      "includes": [
+        "Series de fotos por producto",
+        "Listas de control de tomas",
+        "Estado de listo para publicar"
+      ]
+    },
+    {
+      "slug": "preparacion-csv",
+      "title": "Preparación de CSV",
+      "summary": "Convierta formatos de hoja de cálculo acordados en datos limpios y estructurados.",
+      "challenge": "Los archivos de proveedores y marketplaces rara vez usan las mismas columnas o formatos.",
+      "approach": "Una automatización asigna, limpia y valida los datos en el formato exacto que necesita.",
+      "includes": [
+        "Asignación de columnas",
+        "Reglas de limpieza de datos",
+        "Informe de errores"
+      ]
+    },
+    {
+      "slug": "informes-a-medida",
+      "title": "Informes a medida",
+      "summary": "Informes basados en las métricas y fuentes de datos que usted elija.",
+      "challenge": "Los informes estándar rara vez responden a las preguntas que importan a su negocio.",
+      "approach": "Creamos informes a partir de sus propias fuentes de datos, como paneles o correos programados.",
+      "includes": [
+        "Métricas personalizadas",
+        "Envío programado",
+        "Exportación a CSV y PDF"
+      ]
+    },
+    {
+      "slug": "bots-de-notificacion",
+      "title": "Bots de notificación",
+      "summary": "Alertas y recordatorios automáticos por los canales que su equipo ya utiliza.",
+      "challenge": "Los cambios importantes se detectan demasiado tarde cuando alguien tiene que revisarlos a mano.",
+      "approach": "Un bot vigila los eventos que le interesan y envía un mensaje en cuanto hace falta actuar.",
+      "includes": [
+        "Alertas basadas en eventos",
+        "Envío por correo y mensajería",
+        "Resúmenes diarios"
+      ]
+    },
+    {
+      "slug": "herramientas-operativas-moviles",
+      "title": "Herramientas operativas móviles",
+      "summary": "Flujos móviles para las tareas que su equipo realiza lejos del escritorio.",
+      "challenge": "Las notas en papel y los mensajes desde el almacén son lentos y propensos a errores.",
+      "approach": "Una app móvil convierte el trabajo de campo en pasos estructurados que actualizan sus sistemas al instante.",
+      "includes": [
+        "Flujos paso a paso",
+        "Funcionamiento sin conexión",
+        "Actualizaciones en tiempo real"
+      ]
+    },
+    {
+      "slug": "espacios-de-trabajo-web",
+      "title": "Espacios de trabajo web",
+      "summary": "Reúna flujos de trabajo seleccionados en una sola aplicación en el navegador.",
+      "challenge": "El trabajo repartido entre muchas herramientas y archivos es difícil de gestionar y de proteger.",
+      "approach": "Un espacio de trabajo web reúne los flujos más importantes, con acceso adecuado para cada rol.",
+      "includes": [
+        "Espacio de trabajo central",
+        "Acceso por roles",
+        "Historial de auditoría"
+      ]
+    },
+    {
+      "slug": "planificacion-multicanal",
+      "title": "Planificación multicanal",
+      "summary": "Planifique el inventario en varios canales de venta tras revisar el acceso a las API.",
+      "challenge": "Vender en varios marketplaces multiplica el trabajo de mantenerlo todo sincronizado.",
+      "approach": "Revisamos el acceso a la API y las reglas de cada plataforma y diseñamos una automatización que mantiene los canales alineados.",
+      "includes": [
+        "Revisión del acceso a plataformas",
+        "Reglas de sincronización",
+        "Alertas de conflictos"
+      ]
+    }
+  ]
+}

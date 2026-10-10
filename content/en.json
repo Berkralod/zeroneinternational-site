@@ -1,0 +1,855 @@
+{
+  "meta": {
+    "code": "en",
+    "name": "English",
+    "dir": "ltr",
+    "og_locale": "en_US"
+  },
+  "slugs": {
+    "services": "services",
+    "service_automation": "services/automation-bots",
+    "service_web": "services/web-applications",
+    "service_mobile": "services/mobile-apps",
+    "products": "products",
+    "use_cases": "use-cases",
+    "company": "company",
+    "contact": "contact",
+    "privacy": "privacy",
+    "terms": "terms",
+    "cookies": "cookies"
+  },
+  "ui": {
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "nav_label": "Main navigation",
+    "language": "Language",
+    "theme_to_dark": "Switch to dark theme",
+    "theme_to_light": "Switch to light theme",
+    "back_to_top": "Back to top",
+    "start_project": "Start a project",
+    "learn_more": "Learn more",
+    "view_all_cases": "View all 20 use cases",
+    "breadcrumb": "Breadcrumb",
+    "home": "Home",
+    "suggest": "This page is also available in English.",
+    "suggest_switch": "Switch to English",
+    "dismiss": "Close",
+    "in_development": "In development",
+    "related_cases": "Related use cases",
+    "previous_case": "Previous use case",
+    "next_case": "Next use case",
+    "all": "All",
+    "filter_label": "Filter use cases by service",
+    "case_label": "Use case",
+    "service_label": "Related service",
+    "updated": "Last updated",
+    "challenge": "The challenge",
+    "approach": "How software helps",
+    "includes": "What it can include",
+    "legal_note": "This translation is provided for convenience. If there is any difference, the English version applies."
+  },
+  "nav": {
+    "services": "Services",
+    "products": "Products",
+    "use_cases": "Use cases",
+    "company": "Company",
+    "contact": "Contact"
+  },
+  "footer": {
+    "tagline": "Custom software, automation and resale tools from a team that runs its own online resale business.",
+    "services": "Services",
+    "company": "Company",
+    "legal": "Legal",
+    "rights": "All rights reserved.",
+    "trademark": "Marketplace names mentioned on this site are trademarks of their respective owners. Zerone International LLC is not affiliated with or endorsed by them.",
+    "location": "Farmingville, New York, United States"
+  },
+  "services_list": {
+    "automation": {
+      "name": "Automation & bots",
+      "short": "Remove repetitive work: data preparation, listings, notifications and scheduled tasks that run on their own."
+    },
+    "web": {
+      "name": "Web applications",
+      "short": "Dashboards, internal tools and customer portals that work in any browser, with the roles your team needs."
+    },
+    "mobile": {
+      "name": "Mobile apps",
+      "short": "iOS and Android apps for the work your team does on the floor, in the warehouse or on the road."
+    }
+  },
+  "process": {
+    "eyebrow": "How we work",
+    "title": "From first message to launch",
+    "intro": "A clear, four-step process so you always know what happens next and what it costs.",
+    "steps": [
+      {
+        "title": "Discovery",
+        "text": "You tell us about your workflow, your users and your goals. We ask questions until the problem is clear."
+      },
+      {
+        "title": "Proposal",
+        "text": "You receive a written scope with features, platforms, timeline and a fixed price or a clear estimate."
+      },
+      {
+        "title": "Build",
+        "text": "We develop in short iterations and share working versions, so you can give feedback early."
+      },
+      {
+        "title": "Launch & support",
+        "text": "We deploy, hand over access and documentation, and stay available for fixes and next steps."
+      }
+    ]
+  },
+  "roles": {
+    "eyebrow": "Role-based access",
+    "title": "The right screen for every person",
+    "intro": "Applications can include separate panels for owners, managers and employees, each with its own permissions.",
+    "items": [
+      {
+        "title": "Owner",
+        "text": "A complete overview of the business, users, settings and reports."
+      },
+      {
+        "title": "Manager",
+        "text": "Task assignment, team coordination and the operational data managers need."
+      },
+      {
+        "title": "Employee",
+        "text": "A focused view of assigned tasks and the information needed to complete them."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Have a process that takes too much time?",
+    "text": "Tell us what you want to improve. You will receive a clear proposal with scope, timeline and price.",
+    "button": "Start a project"
+  },
+  "form": {
+    "name": "Your name",
+    "email": "E-mail address",
+    "company": "Company",
+    "optional": "optional",
+    "project_type": "Project type",
+    "types": {
+      "automation": "Automation or bot",
+      "web": "Web application",
+      "mobile": "Mobile app",
+      "resale": "Resale tools",
+      "other": "Something else"
+    },
+    "choose": "Please choose",
+    "budget": "Estimated budget",
+    "budgets": [
+      "Under $5,000",
+      "$5,000 – $15,000",
+      "$15,000 – $50,000",
+      "Over $50,000",
+      "Not sure yet"
+    ],
+    "timeline": "Timeline",
+    "timelines": [
+      "As soon as possible",
+      "Within 1–3 months",
+      "Within 3–6 months",
+      "Flexible"
+    ],
+    "message": "Project details",
+    "message_hint": "Describe the task you want to improve, the platforms involved and the user roles you need. Please do not send passwords or API keys.",
+    "consent": "I agree that my details are processed to answer my request, as described in the {link}.",
+    "consent_link": "Privacy Policy",
+    "submit": "Send request",
+    "sending": "Sending…",
+    "success": "Thank you! Your message has been sent. We will get back to you soon.",
+    "error": "Your message could not be sent. Please try again or contact us by e-mail.",
+    "waitlist_title": "Join the waiting list",
+    "waitlist_text": "Leave your e-mail address and we will let you know when early access opens.",
+    "waitlist_product": "I am interested in",
+    "waitlist_both": "Both tools",
+    "waitlist_submit": "Join the list",
+    "waitlist_success": "Thank you! You are on the list.",
+    "not_configured": "The online form is being set up. Please contact us by e-mail in the meantime."
+  },
+  "pages": {
+    "home": {
+      "title": "Custom Software, Bots & Resale Tools | Zerone International",
+      "description": "Zerone International builds custom automation, bots, web and mobile apps, and develops resale tools. Based in New York, working worldwide in 15 languages.",
+      "h1": "Software that works the way your business works",
+      "hero": {
+        "eyebrow": "Custom software · New York",
+        "lede": "We build automation, bots, web applications and mobile apps around your real workflow, and we develop tools for online resellers.",
+        "primary": "Start a project",
+        "secondary": "Explore services",
+        "points": [
+          "Written proposal with fixed scope",
+          "Owner, manager and employee roles",
+          "Built by people who run an online resale business"
+        ]
+      },
+      "services": {
+        "eyebrow": "What we build",
+        "title": "Three ways to save time",
+        "intro": "Every project starts with your workflow. We then choose the right format: automation, a web application, a mobile app or a combination."
+      },
+      "resale": {
+        "eyebrow": "Resale experience",
+        "title": "We know online resale from the inside",
+        "text": "Zerone International sells used and overstock goods on online marketplaces. That daily experience shapes the tools we are building: a crosslisting system and a liquidation lot analysis tool.",
+        "link": "See our products"
+      },
+      "cases": {
+        "eyebrow": "Use cases",
+        "title": "Ideas you can build on",
+        "intro": "Twenty examples of what custom software can do for resellers and small businesses."
+      },
+      "faq": {
+        "eyebrow": "FAQ",
+        "title": "Frequently asked questions",
+        "items": [
+          {
+            "q": "Can I request a custom software project now?",
+            "a": "Yes. Send us your requirements through the contact form. We review feasibility and send you a written proposal."
+          },
+          {
+            "q": "How much does a custom project cost?",
+            "a": "It depends on scope. Small automations can start at a few thousand dollars; larger applications are priced after discovery. You always receive the price before work starts."
+          },
+          {
+            "q": "How long does a project take?",
+            "a": "Simple automations often take two to four weeks. Web and mobile applications usually take one to four months, depending on features."
+          },
+          {
+            "q": "Can my application have different user panels?",
+            "a": "Yes. Owner, manager and employee panels can be included, each with its own permissions."
+          },
+          {
+            "q": "Do you work with marketplace APIs?",
+            "a": "Yes, through official APIs and permitted access methods. Each integration is reviewed against the platform's rules before it is included in a proposal."
+          },
+          {
+            "q": "Are your resale tools available?",
+            "a": "The crosslisting system and the lot analysis tool are in development. You can join the waiting list on the products page."
+          }
+        ]
+      }
+    },
+    "services": {
+      "title": "Custom Software Development Services | Zerone International",
+      "description": "Custom automation, bots, web applications and mobile apps for small businesses and online resellers. Clear proposals, role-based access and ongoing support.",
+      "eyebrow": "Services",
+      "h1": "Custom software development",
+      "lede": "We turn repetitive, manual or scattered work into reliable software. You get exactly the features you need, nothing you will pay for and never use.",
+      "faq": {
+        "title": "Questions about our services",
+        "items": [
+          {
+            "q": "Who owns the source code?",
+            "a": "Code ownership and licensing are defined in the proposal. In most custom projects, the client receives full ownership after final payment."
+          },
+          {
+            "q": "Do you offer maintenance and support?",
+            "a": "Yes. After launch we offer support and maintenance plans, or help on demand."
+          },
+          {
+            "q": "Which technologies do you use?",
+            "a": "We choose proven, well-supported technologies that fit the project, for example Python, JavaScript and TypeScript, modern web frameworks and native or cross-platform mobile tools."
+          },
+          {
+            "q": "Can you improve an existing application?",
+            "a": "Yes. We can review an existing system and propose improvements, new features or a migration plan."
+          },
+          {
+            "q": "Do you work with clients outside the United States?",
+            "a": "Yes. We work remotely with clients worldwide and communicate in English and Turkish."
+          }
+        ]
+      }
+    },
+    "service_automation": {
+      "title": "Business Automation & Custom Bot Development | Zerone International",
+      "description": "Custom automation and bots that prepare data, create listings, send notifications and run scheduled tasks, so your team can focus on decisions.",
+      "eyebrow": "Automation & bots",
+      "h1": "Business automation and custom bots",
+      "lede": "If your team copies, pastes, checks and repeats the same steps every day, those steps can usually be automated. We build automations that run reliably and report what they did.",
+      "features_title": "What we automate",
+      "features": [
+        {
+          "title": "Data preparation",
+          "text": "Turn spreadsheets, notes and supplier files into clean, structured data."
+        },
+        {
+          "title": "Listing workflows",
+          "text": "Prepare titles, descriptions and item details for review before publishing."
+        },
+        {
+          "title": "Notifications",
+          "text": "Alerts and reminders via e-mail, chat apps or SMS when something needs attention."
+        },
+        {
+          "title": "Scheduled tasks",
+          "text": "Reports, backups and data syncs that run automatically at fixed times."
+        },
+        {
+          "title": "Integrations",
+          "text": "Connect the tools you already use through official APIs and webhooks."
+        },
+        {
+          "title": "Monitoring",
+          "text": "Logs and status reports so you always know what the automation has done."
+        }
+      ],
+      "notes_title": "Good to know",
+      "notes": [
+        "Integrations use official APIs and permitted access methods only.",
+        "Automations include error handling and clear logs.",
+        "You keep control: important actions can require human approval."
+      ]
+    },
+    "service_web": {
+      "title": "Custom Web Application Development | Zerone International",
+      "description": "Custom web applications, dashboards, internal tools and customer portals with role-based access for owners, managers and employees.",
+      "eyebrow": "Web applications",
+      "h1": "Custom web application development",
+      "lede": "Bring your operations into one browser-based application. No installation, access from any device, and the right permissions for every user.",
+      "features_title": "What we build",
+      "features": [
+        {
+          "title": "Dashboards",
+          "text": "Live overviews of sales, stock, tasks and the metrics you care about."
+        },
+        {
+          "title": "Internal tools",
+          "text": "Replace scattered spreadsheets with one shared, structured workspace."
+        },
+        {
+          "title": "Customer portals",
+          "text": "Let customers check orders, documents or requests on their own."
+        },
+        {
+          "title": "Role-based access",
+          "text": "Separate owner, manager and employee panels with clear permissions."
+        },
+        {
+          "title": "Reports and exports",
+          "text": "Custom reports, CSV and PDF exports built around your data."
+        },
+        {
+          "title": "Secure by design",
+          "text": "Authentication, encrypted connections and regular backups from day one."
+        }
+      ],
+      "notes_title": "Good to know",
+      "notes": [
+        "Applications work on desktop, tablet and mobile browsers.",
+        "Hosting can be managed by us or set up in your own account.",
+        "We document the system so it can grow with your business."
+      ]
+    },
+    "service_mobile": {
+      "title": "Custom Mobile App Development (iOS & Android) | Zerone International",
+      "description": "Custom iOS and Android apps for field teams, warehouses and operations: task lists, stock intake, photos and notifications.",
+      "eyebrow": "Mobile apps",
+      "h1": "Custom mobile app development",
+      "lede": "Some work does not happen at a desk. We build mobile apps for the tasks your team performs on the floor, in the warehouse or on the road.",
+      "features_title": "What we build",
+      "features": [
+        {
+          "title": "Task lists",
+          "text": "Assigned tasks, checklists and status updates in every employee's pocket."
+        },
+        {
+          "title": "Stock intake",
+          "text": "Record incoming goods with barcode scanning and photos."
+        },
+        {
+          "title": "Photo workflows",
+          "text": "Capture and organize product photos directly where the items are."
+        },
+        {
+          "title": "Push notifications",
+          "text": "Inform the right people the moment something changes."
+        },
+        {
+          "title": "Offline mode",
+          "text": "Keep working without a connection and sync when back online."
+        },
+        {
+          "title": "iOS and Android",
+          "text": "Native or cross-platform, depending on budget and requirements."
+        }
+      ],
+      "notes_title": "Good to know",
+      "notes": [
+        "We can publish to the App Store and Google Play or distribute internally.",
+        "Mobile apps can share data with your web application.",
+        "Target devices are agreed in the proposal."
+      ]
+    },
+    "products": {
+      "title": "Crosslisting & Liquidation Lot Analysis Tools | Zerone International",
+      "description": "Zerone International is developing a crosslisting system and a liquidation lot analysis tool for online resellers. Join the waiting list for early access.",
+      "eyebrow": "Products",
+      "h1": "Tools for online resellers",
+      "lede": "We are building the tools we wanted for our own resale business. Both are in development; join the waiting list to hear when early access opens.",
+      "items": [
+        {
+          "name": "Crosslisting system",
+          "text": "Prepare a product once and manage its listings across multiple marketplaces from one place.",
+          "features": [
+            "One product record for every channel",
+            "Draft titles and descriptions for review",
+            "Stock status across channels",
+            "Integrations through permitted platform access"
+          ]
+        },
+        {
+          "name": "Liquidation lot analysis",
+          "text": "Estimate whether a liquidation lot is worth buying before you place a bid.",
+          "features": [
+            "Purchase price, fees and shipping in one view",
+            "Configurable return and damage allowances",
+            "Estimated resale value and net margin",
+            "Compare several lots side by side"
+          ]
+        }
+      ]
+    },
+    "use_cases": {
+      "title": "20 Software Use Cases for Resellers & Small Businesses | Zerone",
+      "description": "Twenty examples of custom automation, web and mobile software for online resellers and small businesses: listings, lot analysis, stock, reporting and teams.",
+      "eyebrow": "Use cases",
+      "h1": "20 use cases for custom software",
+      "lede": "Examples of what we can build for resellers and small businesses. Each one can be adapted to your workflow, your platforms and your team.",
+      "note": "These are project ideas, not completed client projects. Platform access and features are reviewed for every proposal."
+    },
+    "company": {
+      "title": "About Zerone International LLC – Vision & Mission",
+      "description": "Zerone International LLC is a New York company combining online resale with custom software development. Learn about our vision, mission and values.",
+      "eyebrow": "Company",
+      "h1": "About Zerone International",
+      "lede": "We are a New York company working at the intersection of online commerce and software.",
+      "about": {
+        "title": "Who we are",
+        "text": [
+          "Zerone International LLC is based in Farmingville, New York. We sell used and overstock goods on online marketplaces, and we develop software, both for our own operations and for clients.",
+          "Running a resale business every day shows us where time is lost: preparing listings, checking lots, tracking stock and coordinating people. That is the knowledge we bring to every software project."
+        ]
+      },
+      "vision": {
+        "title": "Our vision",
+        "text": "To make useful, understandable software accessible to small businesses, so they can spend their time on the decisions that matter."
+      },
+      "mission": {
+        "title": "Our mission",
+        "text": "To turn real business needs into reliable software with a clear scope, fair pricing and the right permissions for every user."
+      },
+      "values": {
+        "title": "What we value",
+        "items": [
+          {
+            "title": "Clarity",
+            "text": "Written scope, honest timelines and no surprises on the invoice."
+          },
+          {
+            "title": "Practicality",
+            "text": "Features that solve real problems, not features for the sake of it."
+          },
+          {
+            "title": "Security",
+            "text": "Careful handling of your data, accounts and access rights."
+          },
+          {
+            "title": "Partnership",
+            "text": "We stay available after launch and grow the software with you."
+          }
+        ]
+      },
+      "location": {
+        "title": "Where we are",
+        "text": "Farmingville, New York, United States. We work remotely with clients around the world."
+      }
+    },
+    "contact": {
+      "title": "Contact – Start a Software Project | Zerone International",
+      "description": "Contact Zerone International to discuss a custom automation, bot, web or mobile app project. We reply with questions or a written proposal.",
+      "eyebrow": "Contact",
+      "h1": "Start your project",
+      "lede": "Tell us about your idea or the problem you want to solve. We aim to reply within two business days.",
+      "email_title": "Prefer e-mail?",
+      "email_text": "You can also write to us directly:",
+      "booking": "Book a call",
+      "whatsapp": "Message on WhatsApp",
+      "location_title": "Location"
+    },
+    "privacy": {
+      "title": "Privacy Policy | Zerone International",
+      "description": "How Zerone International LLC collects, uses and protects personal data when you visit this website or contact us.",
+      "h1": "Privacy Policy",
+      "intro": "This policy explains which personal data we process when you use zeroneinternational.com, why we process it and what rights you have.",
+      "sections": [
+        {
+          "title": "Who is responsible",
+          "paragraphs": [
+            "Zerone International LLC, Farmingville, New York, United States, is responsible for the processing of personal data on this website. You can reach us through the contact page."
+          ]
+        },
+        {
+          "title": "Data you send us",
+          "paragraphs": [
+            "When you use our contact or waiting-list form, we receive the details you enter, such as your name, e-mail address, company and message. We use them only to answer your request and to prepare a proposal.",
+            "Forms are delivered through Formspree, a form-processing service that acts on our behalf. Please do not send passwords, API keys or sensitive customer data through the form."
+          ]
+        },
+        {
+          "title": "Data collected automatically",
+          "paragraphs": [
+            "Our hosting provider may record technical data such as IP address, browser type and the time of the request in server logs. This is necessary to deliver the website securely.",
+            "If we enable website statistics, we use a privacy-friendly service that does not use cookies and does not build personal profiles."
+          ]
+        },
+        {
+          "title": "How long we keep data",
+          "paragraphs": [
+            "We keep enquiries for as long as needed to handle your request and any resulting business relationship, and as long as required by law. You may ask us to delete your data at any time."
+          ]
+        },
+        {
+          "title": "Your rights",
+          "paragraphs": [
+            "Depending on where you live, for example under the GDPR, the Turkish KVKK or Californian law, you may have the right to access, correct, delete or export your data, and to object to or restrict its processing. Contact us to exercise these rights. You may also lodge a complaint with your data protection authority."
+          ]
+        },
+        {
+          "title": "International transfers",
+          "paragraphs": [
+            "We are based in the United States, and our service providers may process data in the United States or other countries. We choose providers that offer appropriate safeguards."
+          ]
+        },
+        {
+          "title": "Changes",
+          "paragraphs": [
+            "We may update this policy when our services or legal requirements change. The current version is always published on this page."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Use | Zerone International",
+      "description": "Terms that apply when you use the Zerone International LLC website.",
+      "h1": "Terms of Use",
+      "intro": "These terms apply to your use of zeroneinternational.com. By using the website, you agree to them.",
+      "sections": [
+        {
+          "title": "Website content",
+          "paragraphs": [
+            "The content on this website is provided for general information. Descriptions of services, products and use cases are not binding offers. A project is only agreed through a separate written proposal or contract."
+          ]
+        },
+        {
+          "title": "Products in development",
+          "paragraphs": [
+            "Products marked as in development may change before release. Features, platform support and release dates are not guaranteed."
+          ]
+        },
+        {
+          "title": "Intellectual property",
+          "paragraphs": [
+            "The name Zerone International, the logo and the content of this website are protected. You may not copy or reuse them without our permission, except where the law allows it."
+          ]
+        },
+        {
+          "title": "Links and trademarks",
+          "paragraphs": [
+            "This website may mention or link to third-party platforms. Their names are trademarks of their respective owners. We are not responsible for the content of external websites."
+          ]
+        },
+        {
+          "title": "Liability",
+          "paragraphs": [
+            "We take care to keep this website accurate and available, but we do not guarantee that it is always complete, current or free of interruptions. To the extent permitted by law, we are not liable for damages arising from the use of the website."
+          ]
+        },
+        {
+          "title": "Applicable law",
+          "paragraphs": [
+            "These terms are governed by the laws of the State of New York, United States, unless mandatory consumer protection law in your country provides otherwise."
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie Policy | Zerone International",
+      "description": "Zerone International does not use advertising or tracking cookies. Learn how the website stores your theme and language preferences.",
+      "h1": "Cookie Policy",
+      "intro": "We keep this website simple: no advertising cookies, no tracking cookies and no cookie banner needed.",
+      "sections": [
+        {
+          "title": "No tracking cookies",
+          "paragraphs": [
+            "This website does not set advertising, marketing or tracking cookies, and it does not load third-party advertising scripts."
+          ]
+        },
+        {
+          "title": "Preferences in your browser",
+          "paragraphs": [
+            "If you choose a light or dark theme, or close the language suggestion, this choice is saved in your browser's local storage. It never leaves your device and you can delete it at any time in your browser settings."
+          ]
+        },
+        {
+          "title": "Forms and statistics",
+          "paragraphs": [
+            "When you submit a form, it is sent to our form provider Formspree, which may use technically necessary cookies for spam protection. If we enable website statistics, we use a cookie-free service."
+          ]
+        }
+      ]
+    },
+    "notfound": {
+      "title": "Page not found | Zerone International",
+      "h1": "Page not found",
+      "text": "The page you are looking for does not exist or has moved.",
+      "home": "Go to the home page"
+    }
+  },
+  "cases": [
+    {
+      "slug": "ebay-listing-preparation",
+      "title": "eBay listing preparation",
+      "summary": "Turn product notes into draft titles, descriptions and item specifics, ready for review.",
+      "challenge": "Writing good eBay listings one by one takes time, and item specifics are easy to miss.",
+      "approach": "An automation reads your product notes or spreadsheet and prepares structured drafts, so your team only reviews and approves.",
+      "includes": [
+        "Title and description drafts",
+        "Item specifics checklist",
+        "Review step before publishing"
+      ]
+    },
+    {
+      "slug": "poshmark-resale-workflows",
+      "title": "Poshmark resale workflows",
+      "summary": "Organize apparel details and prepare listings for Poshmark and other channels.",
+      "challenge": "Apparel needs sizes, brands, conditions and measurements, and entering them repeatedly is slow.",
+      "approach": "A structured intake form collects apparel details once and prepares drafts for each channel within platform rules.",
+      "includes": [
+        "Apparel data template",
+        "Channel-specific drafts",
+        "Status tracking per item"
+      ]
+    },
+    {
+      "slug": "amazon-catalog-preparation",
+      "title": "Amazon catalog preparation",
+      "summary": "Organize product data and check required fields before a listing workflow.",
+      "challenge": "Missing or inconsistent fields cause rejected listings and lost time.",
+      "approach": "A validation tool checks your product data against the fields you need and highlights what is missing before upload.",
+      "includes": [
+        "Required-field checks",
+        "Bulk data cleanup",
+        "Exportable upload files"
+      ]
+    },
+    {
+      "slug": "walmart-inventory-workflows",
+      "title": "Walmart inventory workflows",
+      "summary": "Track stock and product data for Walmart Marketplace through permitted access.",
+      "challenge": "Keeping stock levels and product data aligned across channels is hard to do by hand.",
+      "approach": "A web dashboard brings stock and product data together and flags differences that need action.",
+      "includes": [
+        "Stock overview",
+        "Difference alerts",
+        "Change history"
+      ]
+    },
+    {
+      "slug": "etsy-product-descriptions",
+      "title": "Etsy product descriptions",
+      "summary": "Prepare clear product descriptions without inventing materials or origin.",
+      "challenge": "Good descriptions sell, but writing them for every item is time-consuming.",
+      "approach": "A drafting tool builds descriptions only from the facts you provide, ready for you to edit and approve.",
+      "includes": [
+        "Fact-based drafts",
+        "Tone and length settings",
+        "Approval before use"
+      ]
+    },
+    {
+      "slug": "b-stock-lot-evaluation",
+      "title": "B-Stock lot evaluation",
+      "summary": "Compare a lot's price with estimated fees, logistics and resale value.",
+      "challenge": "A lot can look cheap until fees, shipping and unsellable items are counted.",
+      "approach": "A calculator combines purchase price, fees, logistics and your resale assumptions into one clear estimate.",
+      "includes": [
+        "Cost breakdown",
+        "Adjustable assumptions",
+        "Saved evaluations"
+      ]
+    },
+    {
+      "slug": "liquidation-bid-planning",
+      "title": "Liquidation.com bid planning",
+      "summary": "Estimate net outcomes before deciding how much to bid.",
+      "challenge": "Bidding without a maximum price makes it easy to overpay.",
+      "approach": "A planning tool calculates a suggested maximum bid from your target margin and cost assumptions.",
+      "includes": [
+        "Target margin settings",
+        "Maximum bid estimate",
+        "Scenario comparison"
+      ]
+    },
+    {
+      "slug": "returns-reserve",
+      "title": "Returns reserve",
+      "summary": "Include an adjustable allowance for returns when evaluating resale economics.",
+      "challenge": "Returns reduce real profit, but they are often left out of calculations.",
+      "approach": "Your analysis tool includes a configurable returns reserve based on category or your own history.",
+      "includes": [
+        "Category-based rates",
+        "Historical adjustments",
+        "Net margin after returns"
+      ]
+    },
+    {
+      "slug": "shipping-cost-estimates",
+      "title": "Shipping cost estimates",
+      "summary": "Account for weight, dimensions and shipping options in your planning.",
+      "challenge": "Shipping costs vary widely and can turn a profitable item into a loss.",
+      "approach": "A planning tool estimates shipping costs from weight and dimensions and includes them in each calculation.",
+      "includes": [
+        "Weight and size inputs",
+        "Carrier rate tables",
+        "Cost per item"
+      ]
+    },
+    {
+      "slug": "owner-overview",
+      "title": "Owner overview",
+      "summary": "A single panel with the business information and controls an owner needs.",
+      "challenge": "Owners often collect numbers from many places to understand how the business is doing.",
+      "approach": "An owner dashboard shows key figures, users and settings in one secure place.",
+      "includes": [
+        "Key metrics at a glance",
+        "User and permission management",
+        "Exportable reports"
+      ]
+    },
+    {
+      "slug": "manager-coordination",
+      "title": "Manager coordination",
+      "summary": "A workspace for assigning tasks and keeping track of operations.",
+      "challenge": "Without one shared view, tasks get lost between messages and spreadsheets.",
+      "approach": "A manager workspace lets managers assign work, set priorities and see progress in real time.",
+      "includes": [
+        "Task assignment",
+        "Priority and deadline tracking",
+        "Team progress view"
+      ]
+    },
+    {
+      "slug": "employee-task-panels",
+      "title": "Employee task panels",
+      "summary": "Show every employee exactly the tasks and information they need.",
+      "challenge": "Employees lose time searching for instructions or asking what to do next.",
+      "approach": "A simple mobile panel lists each person's tasks with the details needed to complete them.",
+      "includes": [
+        "Personal task list",
+        "Instructions and photos",
+        "One-tap status updates"
+      ]
+    },
+    {
+      "slug": "stock-intake",
+      "title": "Stock intake",
+      "summary": "Record incoming goods and organize what is needed for resale.",
+      "challenge": "Unrecorded items are hard to find, price and list later.",
+      "approach": "A mobile intake app records items with barcode, photos, condition and location as they arrive.",
+      "includes": [
+        "Barcode scanning",
+        "Condition and location fields",
+        "Instant sync to the dashboard"
+      ]
+    },
+    {
+      "slug": "product-photo-tasks",
+      "title": "Product photography tasks",
+      "summary": "Coordinate product photos and listing preparation in one flow.",
+      "challenge": "Photos taken on different phones end up scattered and unlabeled.",
+      "approach": "A mobile workflow links each photo set to the right product and marks it ready for listing.",
+      "includes": [
+        "Photo sets per product",
+        "Shot checklists",
+        "Ready-for-listing status"
+      ]
+    },
+    {
+      "slug": "csv-preparation",
+      "title": "CSV preparation",
+      "summary": "Convert agreed spreadsheet formats into clean, structured data.",
+      "challenge": "Supplier and marketplace files rarely use the same columns or formats.",
+      "approach": "An automation maps, cleans and validates spreadsheet data into the exact format you need.",
+      "includes": [
+        "Column mapping",
+        "Data cleanup rules",
+        "Error report"
+      ]
+    },
+    {
+      "slug": "custom-reporting",
+      "title": "Custom reporting",
+      "summary": "Reports built around the metrics and data sources you choose.",
+      "challenge": "Standard reports rarely answer the questions that matter to your business.",
+      "approach": "We build reports from your own data sources, delivered as dashboards or scheduled e-mails.",
+      "includes": [
+        "Custom metrics",
+        "Scheduled delivery",
+        "CSV and PDF export"
+      ]
+    },
+    {
+      "slug": "notification-bots",
+      "title": "Notification bots",
+      "summary": "Automatic alerts and reminders through the channels your team already uses.",
+      "challenge": "Important changes are noticed too late when someone has to check manually.",
+      "approach": "A bot watches the events you care about and sends a message the moment action is needed.",
+      "includes": [
+        "Event-based alerts",
+        "E-mail and chat delivery",
+        "Daily summaries"
+      ]
+    },
+    {
+      "slug": "mobile-operations-tools",
+      "title": "Mobile operations tools",
+      "summary": "Mobile workflows for tasks your team performs away from a desk.",
+      "challenge": "Paper notes and messages from the floor are slow and error-prone.",
+      "approach": "A mobile app turns field work into structured steps that update your systems immediately.",
+      "includes": [
+        "Step-by-step workflows",
+        "Offline support",
+        "Real-time updates"
+      ]
+    },
+    {
+      "slug": "web-workspaces",
+      "title": "Web-based workspaces",
+      "summary": "Bring selected workflows into one browser-based application.",
+      "challenge": "Work spread across many tools and files is hard to manage and to secure.",
+      "approach": "A web workspace brings the most important workflows together, with access for each role.",
+      "includes": [
+        "Central workspace",
+        "Role-based access",
+        "Audit history"
+      ]
+    },
+    {
+      "slug": "cross-channel-planning",
+      "title": "Cross-channel planning",
+      "summary": "Plan inventory across several sales channels after reviewing API access.",
+      "challenge": "Selling on several marketplaces multiplies the work of keeping everything in sync.",
+      "approach": "We review each platform's API access and rules, then design an automation that keeps channels aligned.",
+      "includes": [
+        "Platform access review",
+        "Sync rules",
+        "Conflict alerts"
+      ]
+    }
+  ]
+}

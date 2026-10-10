@@ -1,0 +1,39 @@
+{% set nav_items = [("services", t.nav.services), ("products", t.nav.products), ("use_cases", t.nav.use_cases), ("company", t.nav.company), ("contact", t.nav.contact)] %}
+{% set section = "services" if page_id.startswith("service") else ("use_cases" if page_id == "case" else page_id) %}
+<header class="site-header">
+  <div class="wrap header-bar">
+    <a class="brand" href="{{ url('home') }}" aria-label="{{ config.legal_name }} – {{ t.ui.home }}">{{ logo('h') }}</a>
+    <nav class="primary-nav" aria-label="{{ t.ui.nav_label }}">
+      <ul>
+      {% for key, label in nav_items %}
+        <li><a href="{{ url(key) }}"{% if section == key %} aria-current="page"{% endif %}>{{ label }}</a></li>
+      {% endfor %}
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <details class="dropdown lang-menu" data-dropdown>
+        <summary aria-label="{{ t.ui.language }}: {{ meta.name }}">{{ icons.icon('globe') }}<span class="lang-menu__current">{{ meta.code|upper }}</span></summary>
+        <ul class="dropdown__panel" role="list">
+        {% for m, href in lang_links %}
+          <li><a href="{{ href }}" hreflang="{{ m.code }}" lang="{{ m.code }}"{% if m.code == lang %} aria-current="true"{% endif %}>{{ m.name }}</a></li>
+        {% endfor %}
+        </ul>
+      </details>
+      <button class="icon-button theme-toggle" type="button" data-theme-toggle data-label-dark="{{ t.ui.theme_to_dark }}" data-label-light="{{ t.ui.theme_to_light }}" aria-label="{{ t.ui.theme_to_dark }}">
+        <span class="theme-toggle__moon">{{ icons.icon('moon') }}</span><span class="theme-toggle__sun">{{ icons.icon('sun') }}</span>
+      </button>
+      <a class="button button--small header-cta" href="{{ url('contact') }}">{{ t.ui.start_project }}</a>
+      <details class="dropdown nav-menu" data-dropdown>
+        <summary aria-label="{{ t.ui.menu }}">{{ icons.icon('menu') }}</summary>
+        <nav class="dropdown__panel nav-menu__panel" aria-label="{{ t.ui.nav_label }}">
+          <ul>
+          {% for key, label in nav_items %}
+            <li><a href="{{ url(key) }}"{% if section == key %} aria-current="page"{% endif %}>{{ label }}</a></li>
+          {% endfor %}
+          </ul>
+          <a class="button" href="{{ url('contact') }}">{{ t.ui.start_project }}</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,22 @@
+{
+  "base_url": "https://zeroneinternational.com",
+  "site_name": "Zerone International",
+  "legal_name": "Zerone International LLC",
+  "default_language": "en",
+  "languages": ["en", "tr", "de", "es", "fr", "it", "pt", "nl", "pl", "ru", "uk", "ar", "hi", "zh", "ja"],
+  "founder": "Berk Divaroren",
+  "email_user": "berk",
+  "email_domain": "zeroneinternational.com",
+  "address": {
+    "locality": "Farmingville",
+    "region": "NY",
+    "country": "US"
+  },
+  "formspree_form_id": "",
+  "booking_url": "",
+  "whatsapp_number": "",
+  "cloudflare_analytics_token": "",
+  "google_site_verification": "",
+  "bing_site_verification": "",
+  "same_as": []
+}

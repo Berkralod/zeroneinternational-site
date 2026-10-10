@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% import "partials/blocks.html" as blocks with context %}
+{% import "partials/icons.html" as icons %}
+{% import "partials/art.html" as art %}
+{% set p = t.pages.products %}
+{% block content %}
+{{ blocks.page_hero(p.eyebrow, p.h1, p.lede, None, actions=[(t.form.waitlist_title, '#waitlist', 'primary')]) }}
+<section class="section" aria-label="{{ p.h1 }}">
+  <div class="wrap product-list">
+  {% for item in p["items"] %}
+    <article class="split product{% if loop.index is even %} split--reverse{% endif %}">
+      <div class="split__art">{{ art.art(('crosslisting', 'lots')[loop.index0]) }}</div>
+      <div>
+        <span class="tag tag--soft">{{ t.ui.in_development }}</span>
+        <h2>{{ item.name }}</h2>
+        <p>{{ item.text }}</p>
+        <ul class="checklist" role="list">
+        {% for f in item.features %}
+          <li>{{ icons.icon('check') }}<span>{{ f }}</span></li>
+        {% endfor %}
+        </ul>
+      </div>
+    </article>
+  {% endfor %}
+  </div>
+</section>
+<section class="section section--tint" id="waitlist" aria-labelledby="waitlist-title">
+  <div class="wrap wrap--narrow">
+    {{ blocks.section_head(None, t.form.waitlist_title, t.form.waitlist_text, id="waitlist-title") }}
+    {{ blocks.contact_form('waitlist') }}
+  </div>
+</section>
+{{ blocks.cta_band() }}
+{% endblock %}

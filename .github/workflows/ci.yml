@@ -1,0 +1,104 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Build, validate and test
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Build site
+        env:
+          # A placeholder form ID lets the form tests run before Formspree is configured.
+          ZERONE_FORMSPREE_FORM_ID: ${{ vars.FORMSPREE_FORM_ID || 'testform' }}
+        run: python build.py
+      - name: Static checks (links, SEO tags, hreflang, CSP, secrets)
+        run: python tests/validate_site.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: tests/package-lock.json
+      - run: npm ci
+        working-directory: tests
+      - run: npx playwright install --with-deps chromium
+        working-directory: tests
+      - name: Browser and accessibility tests
+        run: npx playwright test
+        working-directory: tests
+      - name: Lighthouse (performance, accessibility, best practices, SEO)
+        run: npx lhci autorun
+        working-directory: tests
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-reports
+          path: |
+            tests/playwright-report/
+            lighthouse-report/
+          retention-days: 7
+          if-no-files-found: ignore
+
+  cross-browser:
+    name: Firefox and Safari (WebKit)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python build.py
+        env:
+          ZERONE_FORMSPREE_FORM_ID: ${{ vars.FORMSPREE_FORM_ID || 'testform' }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: tests/package-lock.json
+      - run: npm ci
+        working-directory: tests
+      - run: npx playwright install --with-deps chromium firefox webkit
+        working-directory: tests
+      - run: npx playwright test --project=firefox --project=webkit --project=mobile-safari
+        working-directory: tests
+        env:
+          ALL_BROWSERS: "1"
+
+  docker:
+    name: Railway image
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Build image
+        run: docker build -t zerone-site:ci .
+      - name: Smoke test (health, headers, redirects, 404, caching)
+        run: tests/docker-smoke.sh zerone-site:ci

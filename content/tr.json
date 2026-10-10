@@ -1,0 +1,855 @@
+{
+  "meta": {
+    "code": "tr",
+    "name": "Türkçe",
+    "dir": "ltr",
+    "og_locale": "tr_TR"
+  },
+  "slugs": {
+    "services": "hizmetler",
+    "service_automation": "hizmetler/otomasyon-ve-botlar",
+    "service_web": "hizmetler/web-uygulamalari",
+    "service_mobile": "hizmetler/mobil-uygulamalar",
+    "products": "urunler",
+    "use_cases": "kullanim-senaryolari",
+    "company": "sirket",
+    "contact": "iletisim",
+    "privacy": "gizlilik",
+    "terms": "kullanim-kosullari",
+    "cookies": "cerezler"
+  },
+  "ui": {
+    "skip": "İçeriğe geç",
+    "menu": "Menü",
+    "nav_label": "Ana menü",
+    "language": "Dil",
+    "theme_to_dark": "Koyu temaya geç",
+    "theme_to_light": "Açık temaya geç",
+    "back_to_top": "Başa dön",
+    "start_project": "Proje başlat",
+    "learn_more": "Detaylı bilgi",
+    "view_all_cases": "20 kullanım senaryosunun tümünü görün",
+    "breadcrumb": "Sayfa konumu",
+    "home": "Ana sayfa",
+    "suggest": "Bu sayfa Türkçe olarak da mevcut.",
+    "suggest_switch": "Türkçeye geç",
+    "dismiss": "Kapat",
+    "in_development": "Geliştiriliyor",
+    "related_cases": "İlgili kullanım senaryoları",
+    "previous_case": "Önceki senaryo",
+    "next_case": "Sonraki senaryo",
+    "all": "Tümü",
+    "filter_label": "Senaryoları hizmete göre filtrele",
+    "case_label": "Kullanım senaryosu",
+    "service_label": "İlgili hizmet",
+    "updated": "Son güncelleme",
+    "challenge": "Sorun",
+    "approach": "Yazılım nasıl yardımcı olur",
+    "includes": "Neler içerebilir",
+    "legal_note": "Bu çeviri kolaylık amacıyla sunulmuştur. Herhangi bir farklılık durumunda İngilizce metin geçerlidir."
+  },
+  "nav": {
+    "services": "Hizmetler",
+    "products": "Ürünler",
+    "use_cases": "Kullanım senaryoları",
+    "company": "Şirket",
+    "contact": "İletişim"
+  },
+  "footer": {
+    "tagline": "Kendi online yeniden satış işini yürüten bir ekipten özel yazılım, otomasyon ve yeniden satış araçları.",
+    "services": "Hizmetler",
+    "company": "Şirket",
+    "legal": "Yasal",
+    "rights": "Tüm hakları saklıdır.",
+    "trademark": "Bu sitede adı geçen pazaryeri isimleri ilgili sahiplerinin ticari markalarıdır. Zerone International LLC bu şirketlerle bağlantılı değildir ve onlar tarafından desteklenmemektedir.",
+    "location": "Farmingville, New York, Amerika Birleşik Devletleri"
+  },
+  "services_list": {
+    "automation": {
+      "name": "Otomasyon ve botlar",
+      "short": "Tekrarlayan işleri ortadan kaldırın: veri hazırlama, ilanlar, bildirimler ve kendiliğinden çalışan zamanlanmış görevler."
+    },
+    "web": {
+      "name": "Web uygulamaları",
+      "short": "Her tarayıcıda çalışan paneller, şirket içi araçlar ve müşteri portalları; ekibinizin ihtiyaç duyduğu rollerle."
+    },
+    "mobile": {
+      "name": "Mobil uygulamalar",
+      "short": "Ekibinizin mağazada, depoda veya yolda yaptığı işler için iOS ve Android uygulamaları."
+    }
+  },
+  "process": {
+    "eyebrow": "Nasıl çalışıyoruz",
+    "title": "İlk mesajdan yayına",
+    "intro": "Dört adımlı net bir süreç: sırada ne olduğunu ve maliyetin ne olacağını her zaman bilirsiniz.",
+    "steps": [
+      {
+        "title": "Keşif",
+        "text": "İş akışınızı, kullanıcılarınızı ve hedeflerinizi anlatırsınız. Sorun netleşene kadar soru sorarız."
+      },
+      {
+        "title": "Teklif",
+        "text": "Özellikleri, platformları, takvimi ve sabit fiyatı ya da net bir tahmini içeren yazılı bir kapsam alırsınız."
+      },
+      {
+        "title": "Geliştirme",
+        "text": "Kısa aşamalarla geliştirir, çalışan sürümleri paylaşırız; böylece erkenden geri bildirim verebilirsiniz."
+      },
+      {
+        "title": "Yayın ve destek",
+        "text": "Yayına alır, erişimleri ve dokümantasyonu teslim eder, düzeltmeler ve sonraki adımlar için yanınızda oluruz."
+      }
+    ]
+  },
+  "roles": {
+    "eyebrow": "Rol bazlı erişim",
+    "title": "Herkese doğru ekran",
+    "intro": "Uygulamalar; işletme sahibi, yöneticiler ve çalışanlar için her biri kendi yetkilerine sahip ayrı paneller içerebilir.",
+    "items": [
+      {
+        "title": "İşletme sahibi",
+        "text": "İşletmenin, kullanıcıların, ayarların ve raporların eksiksiz görünümü."
+      },
+      {
+        "title": "Yönetici",
+        "text": "Görev atama, ekip koordinasyonu ve yöneticilerin ihtiyaç duyduğu operasyon verileri."
+      },
+      {
+        "title": "Çalışan",
+        "text": "Atanan görevlerin ve bunları tamamlamak için gereken bilgilerin sade bir görünümü."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Çok zaman alan bir süreciniz mi var?",
+    "text": "Neyi iyileştirmek istediğinizi anlatın. Kapsamı, takvimi ve fiyatı belli net bir teklif alın.",
+    "button": "Proje başlat"
+  },
+  "form": {
+    "name": "Adınız",
+    "email": "E-posta adresi",
+    "company": "Şirket",
+    "optional": "isteğe bağlı",
+    "project_type": "Proje türü",
+    "types": {
+      "automation": "Otomasyon veya bot",
+      "web": "Web uygulaması",
+      "mobile": "Mobil uygulama",
+      "resale": "Yeniden satış araçları",
+      "other": "Başka bir şey"
+    },
+    "choose": "Lütfen seçin",
+    "budget": "Tahmini bütçe",
+    "budgets": [
+      "5.000 $ altı",
+      "5.000 – 15.000 $",
+      "15.000 – 50.000 $",
+      "50.000 $ üzeri",
+      "Henüz emin değilim"
+    ],
+    "timeline": "Takvim",
+    "timelines": [
+      "Mümkün olan en kısa sürede",
+      "1–3 ay içinde",
+      "3–6 ay içinde",
+      "Esnek"
+    ],
+    "message": "Proje detayları",
+    "message_hint": "İyileştirmek istediğiniz işi, kullanılan platformları ve ihtiyaç duyduğunuz kullanıcı rollerini anlatın. Lütfen şifre veya API anahtarı göndermeyin.",
+    "consent": "Bilgilerimin talebimi yanıtlamak amacıyla {link} kapsamında işlenmesini kabul ediyorum.",
+    "consent_link": "Gizlilik Politikası",
+    "submit": "Talebi gönder",
+    "sending": "Gönderiliyor…",
+    "success": "Teşekkürler! Mesajınız gönderildi. En kısa sürede size dönüş yapacağız.",
+    "error": "Mesajınız gönderilemedi. Lütfen tekrar deneyin veya bize e-posta ile ulaşın.",
+    "waitlist_title": "Bekleme listesine katılın",
+    "waitlist_text": "E-posta adresinizi bırakın, erken erişim açıldığında size haber verelim.",
+    "waitlist_product": "İlgilendiğim ürün",
+    "waitlist_both": "Her iki araç",
+    "waitlist_submit": "Listeye katıl",
+    "waitlist_success": "Teşekkürler! Listeye eklendiniz.",
+    "not_configured": "Online form hazırlanıyor. Bu süre içinde lütfen bize e-posta ile ulaşın."
+  },
+  "pages": {
+    "home": {
+      "title": "Özel Yazılım, Otomasyon ve Bot Geliştirme | Zerone International",
+      "description": "Zerone International; özel otomasyon, bot, web ve mobil uygulamalar geliştirir ve online satıcılar için araçlar üretir. New York merkezli, 15 dilde dünya çapında hizmet.",
+      "h1": "İşinizin çalışma şekline uyan yazılım",
+      "hero": {
+        "eyebrow": "Özel yazılım · New York",
+        "lede": "Gerçek iş akışınıza göre otomasyonlar, botlar, web uygulamaları ve mobil uygulamalar geliştiriyor; online satıcılar için araçlar üretiyoruz.",
+        "primary": "Proje başlat",
+        "secondary": "Hizmetleri keşfet",
+        "points": [
+          "Kapsamı belli yazılı teklif",
+          "İşletme sahibi, yönetici ve çalışan rolleri",
+          "Online yeniden satış işini bizzat yürüten bir ekip"
+        ]
+      },
+      "services": {
+        "eyebrow": "Neler geliştiriyoruz",
+        "title": "Zaman kazanmanın üç yolu",
+        "intro": "Her proje sizin iş akışınızla başlar. Ardından doğru formatı seçeriz: otomasyon, web uygulaması, mobil uygulama ya da bunların birleşimi."
+      },
+      "resale": {
+        "eyebrow": "Yeniden satış deneyimi",
+        "title": "Online yeniden satışı içeriden biliyoruz",
+        "text": "Zerone International, online pazaryerlerinde ikinci el ve stok fazlası ürünler satar. Bu günlük deneyim geliştirdiğimiz araçları şekillendiriyor: bir çapraz listeleme sistemi ve bir likidasyon lotu analiz aracı.",
+        "link": "Ürünlerimizi görün"
+      },
+      "cases": {
+        "eyebrow": "Kullanım senaryoları",
+        "title": "Üzerine inşa edebileceğiniz fikirler",
+        "intro": "Özel yazılımın yeniden satıcılar ve küçük işletmeler için neler yapabileceğine dair yirmi örnek."
+      },
+      "faq": {
+        "eyebrow": "SSS",
+        "title": "Sık sorulan sorular",
+        "items": [
+          {
+            "q": "Şimdi özel bir yazılım projesi talep edebilir miyim?",
+            "a": "Evet. İhtiyaçlarınızı iletişim formuyla gönderin. Uygulanabilirliği değerlendirir ve size yazılı bir teklif göndeririz."
+          },
+          {
+            "q": "Özel bir proje ne kadar tutar?",
+            "a": "Kapsama bağlıdır. Küçük otomasyonlar birkaç bin dolardan başlayabilir; büyük uygulamalar keşif aşamasından sonra fiyatlandırılır. Çalışma başlamadan önce fiyatı her zaman bilirsiniz."
+          },
+          {
+            "q": "Bir proje ne kadar sürer?",
+            "a": "Basit otomasyonlar genellikle iki ila dört hafta sürer. Web ve mobil uygulamalar ise özelliklere bağlı olarak genellikle bir ila dört ay sürer."
+          },
+          {
+            "q": "Uygulamamda farklı kullanıcı panelleri olabilir mi?",
+            "a": "Evet. İşletme sahibi, yönetici ve çalışan panelleri, her biri kendi yetkileriyle eklenebilir."
+          },
+          {
+            "q": "Pazaryeri API'leriyle çalışıyor musunuz?",
+            "a": "Evet, resmi API'ler ve izin verilen erişim yöntemleriyle. Her entegrasyon teklife eklenmeden önce platformun kurallarına göre incelenir."
+          },
+          {
+            "q": "Yeniden satış araçlarınız kullanıma açık mı?",
+            "a": "Çapraz listeleme sistemi ve lot analiz aracı geliştirme aşamasında. Ürünler sayfasından bekleme listesine katılabilirsiniz."
+          }
+        ]
+      }
+    },
+    "services": {
+      "title": "Özel Yazılım Geliştirme Hizmetleri | Zerone International",
+      "description": "Küçük işletmeler ve online satıcılar için özel otomasyon, bot, web uygulaması ve mobil uygulama geliştirme. Net teklifler, rol bazlı erişim ve sürekli destek.",
+      "eyebrow": "Hizmetler",
+      "h1": "Özel yazılım geliştirme",
+      "lede": "Tekrarlayan, elle yapılan veya dağınık işleri güvenilir yazılıma dönüştürüyoruz. Tam olarak ihtiyacınız olan özellikleri alırsınız; kullanmayacağınız hiçbir şey için ödeme yapmazsınız.",
+      "faq": {
+        "title": "Hizmetlerimiz hakkında sorular",
+        "items": [
+          {
+            "q": "Kaynak kodun sahibi kim olur?",
+            "a": "Kod sahipliği ve lisans koşulları teklifte belirlenir. Özel projelerin çoğunda son ödemeden sonra tüm haklar müşteriye geçer."
+          },
+          {
+            "q": "Bakım ve destek sunuyor musunuz?",
+            "a": "Evet. Yayından sonra destek ve bakım paketleri veya ihtiyaç halinde yardım sunuyoruz."
+          },
+          {
+            "q": "Hangi teknolojileri kullanıyorsunuz?",
+            "a": "Projeye uygun, kendini kanıtlamış ve iyi desteklenen teknolojiler seçeriz; örneğin Python, JavaScript ve TypeScript, modern web framework'leri ile native veya çapraz platform mobil araçlar."
+          },
+          {
+            "q": "Mevcut bir uygulamayı geliştirebilir misiniz?",
+            "a": "Evet. Mevcut bir sistemi inceleyip iyileştirmeler, yeni özellikler veya bir geçiş planı önerebiliriz."
+          },
+          {
+            "q": "ABD dışındaki müşterilerle çalışıyor musunuz?",
+            "a": "Evet. Dünyanın her yerinden müşterilerle uzaktan çalışıyor, İngilizce ve Türkçe iletişim kuruyoruz."
+          }
+        ]
+      }
+    },
+    "service_automation": {
+      "title": "İş Süreçleri Otomasyonu ve Özel Bot Geliştirme | Zerone International",
+      "description": "Veri hazırlayan, ilan oluşturan, bildirim gönderen ve zamanlanmış görevleri yürüten özel otomasyonlar ve botlar; ekibiniz kararlara odaklanabilsin.",
+      "eyebrow": "Otomasyon ve botlar",
+      "h1": "İş süreçleri otomasyonu ve özel botlar",
+      "lede": "Ekibiniz her gün aynı adımları kopyalıyor, yapıştırıyor, kontrol ediyor ve tekrarlıyorsa bu adımlar genellikle otomatikleştirilebilir. Güvenilir çalışan ve ne yaptığını raporlayan otomasyonlar geliştiriyoruz.",
+      "features_title": "Neleri otomatikleştiriyoruz",
+      "features": [
+        {
+          "title": "Veri hazırlama",
+          "text": "Tabloları, notları ve tedarikçi dosyalarını temiz, yapılandırılmış verilere dönüştürün."
+        },
+        {
+          "title": "İlan süreçleri",
+          "text": "Başlıkları, açıklamaları ve ürün özelliklerini yayından önce kontrol için hazırlayın."
+        },
+        {
+          "title": "Bildirimler",
+          "text": "Dikkat gerektiren bir durumda e-posta, mesajlaşma uygulamaları veya SMS ile uyarılar ve hatırlatmalar."
+        },
+        {
+          "title": "Zamanlanmış görevler",
+          "text": "Belirli saatlerde otomatik çalışan raporlar, yedeklemeler ve veri senkronizasyonları."
+        },
+        {
+          "title": "Entegrasyonlar",
+          "text": "Zaten kullandığınız araçları resmi API'ler ve webhook'lar üzerinden bağlayın."
+        },
+        {
+          "title": "İzleme",
+          "text": "Otomasyonun ne yaptığını her zaman bilmeniz için kayıtlar ve durum raporları."
+        }
+      ],
+      "notes_title": "Bilmeniz gerekenler",
+      "notes": [
+        "Entegrasyonlar yalnızca resmi API'leri ve izin verilen erişim yöntemlerini kullanır.",
+        "Otomasyonlar hata yönetimi ve anlaşılır kayıtlar içerir.",
+        "Kontrol sizde kalır: önemli işlemler insan onayı gerektirecek şekilde ayarlanabilir."
+      ]
+    },
+    "service_web": {
+      "title": "Özel Web Uygulaması Geliştirme | Zerone International",
+      "description": "İşletme sahibi, yönetici ve çalışanlar için rol bazlı erişime sahip özel web uygulamaları, paneller, şirket içi araçlar ve müşteri portalları.",
+      "eyebrow": "Web uygulamaları",
+      "h1": "Özel web uygulaması geliştirme",
+      "lede": "Operasyonlarınızı tarayıcı tabanlı tek bir uygulamada toplayın. Kurulum gerektirmez, her cihazdan erişilir ve her kullanıcıya doğru yetkiler verilir.",
+      "features_title": "Neler geliştiriyoruz",
+      "features": [
+        {
+          "title": "Yönetim panelleri",
+          "text": "Satışların, stokların, görevlerin ve önem verdiğiniz metriklerin canlı görünümü."
+        },
+        {
+          "title": "Şirket içi araçlar",
+          "text": "Dağınık tabloların yerine ortak ve düzenli tek bir çalışma alanı."
+        },
+        {
+          "title": "Müşteri portalları",
+          "text": "Müşterilerinizin siparişleri, belgeleri veya talepleri kendileri takip etmesini sağlayın."
+        },
+        {
+          "title": "Rol bazlı erişim",
+          "text": "Net yetkilere sahip ayrı işletme sahibi, yönetici ve çalışan panelleri."
+        },
+        {
+          "title": "Raporlar ve dışa aktarma",
+          "text": "Verilerinize göre hazırlanmış özel raporlar, CSV ve PDF dışa aktarımları."
+        },
+        {
+          "title": "Güvenlik odaklı tasarım",
+          "text": "İlk günden itibaren kimlik doğrulama, şifreli bağlantılar ve düzenli yedekleme."
+        }
+      ],
+      "notes_title": "Bilmeniz gerekenler",
+      "notes": [
+        "Uygulamalar masaüstü, tablet ve mobil tarayıcılarda çalışır.",
+        "Barındırma bizim tarafımızdan yönetilebilir veya kendi hesabınızda kurulabilir.",
+        "Sistemi, işinizle birlikte büyüyebilmesi için dokümante ederiz."
+      ]
+    },
+    "service_mobile": {
+      "title": "Özel Mobil Uygulama Geliştirme (iOS ve Android) | Zerone International",
+      "description": "Saha ekipleri, depolar ve operasyonlar için özel iOS ve Android uygulamaları: görev listeleri, stok girişi, fotoğraflar ve bildirimler.",
+      "eyebrow": "Mobil uygulamalar",
+      "h1": "Özel mobil uygulama geliştirme",
+      "lede": "Bazı işler masa başında yapılmaz. Ekibinizin mağazada, depoda veya yolda yaptığı görevler için mobil uygulamalar geliştiriyoruz.",
+      "features_title": "Neler geliştiriyoruz",
+      "features": [
+        {
+          "title": "Görev listeleri",
+          "text": "Atanan görevler, kontrol listeleri ve durum güncellemeleri her çalışanın cebinde."
+        },
+        {
+          "title": "Stok girişi",
+          "text": "Gelen ürünleri barkod okuma ve fotoğraflarla kaydedin."
+        },
+        {
+          "title": "Fotoğraf süreçleri",
+          "text": "Ürün fotoğraflarını ürünlerin bulunduğu yerde çekin ve düzenleyin."
+        },
+        {
+          "title": "Anlık bildirimler",
+          "text": "Bir şey değiştiği anda doğru kişileri bilgilendirin."
+        },
+        {
+          "title": "Çevrimdışı mod",
+          "text": "Bağlantı olmadan çalışmaya devam edin, tekrar bağlanınca veriler senkronize olsun."
+        },
+        {
+          "title": "iOS ve Android",
+          "text": "Bütçeye ve ihtiyaçlara göre native veya çapraz platform."
+        }
+      ],
+      "notes_title": "Bilmeniz gerekenler",
+      "notes": [
+        "Uygulamaları App Store ve Google Play'de yayınlayabilir veya şirket içinde dağıtabiliriz.",
+        "Mobil uygulamalar web uygulamanızla veri paylaşabilir.",
+        "Hedef cihazlar teklifte belirlenir."
+      ]
+    },
+    "products": {
+      "title": "Çapraz Listeleme ve Likidasyon Lotu Analiz Araçları | Zerone International",
+      "description": "Zerone International, online satıcılar için bir çapraz listeleme sistemi ve likidasyon lotu analiz aracı geliştiriyor. Erken erişim için bekleme listesine katılın.",
+      "eyebrow": "Ürünler",
+      "h1": "Online satıcılar için araçlar",
+      "lede": "Kendi yeniden satış işimiz için istediğimiz araçları geliştiriyoruz. İkisi de geliştirme aşamasında; erken erişim açıldığında haberdar olmak için bekleme listesine katılın.",
+      "items": [
+        {
+          "name": "Çapraz listeleme sistemi",
+          "text": "Bir ürünü bir kez hazırlayın, birden fazla pazaryerindeki ilanlarını tek bir yerden yönetin.",
+          "features": [
+            "Tüm kanallar için tek ürün kaydı",
+            "Kontrol için başlık ve açıklama taslakları",
+            "Kanallar genelinde stok durumu",
+            "İzin verilen platform erişimiyle entegrasyonlar"
+          ]
+        },
+        {
+          "name": "Likidasyon lotu analizi",
+          "text": "Teklif vermeden önce bir likidasyon lotunun almaya değip değmeyeceğini tahmin edin.",
+          "features": [
+            "Alış fiyatı, ücretler ve kargo tek ekranda",
+            "Ayarlanabilir iade ve hasar payları",
+            "Tahmini satış değeri ve net kâr marjı",
+            "Birden fazla lotu yan yana karşılaştırma"
+          ]
+        }
+      ]
+    },
+    "use_cases": {
+      "title": "Satıcılar ve Küçük İşletmeler için 20 Yazılım Senaryosu | Zerone",
+      "description": "Online satıcılar ve küçük işletmeler için özel otomasyon, web ve mobil yazılımdan yirmi örnek: ilanlar, lot analizi, stok, raporlama ve ekipler.",
+      "eyebrow": "Kullanım senaryoları",
+      "h1": "Özel yazılım için 20 kullanım senaryosu",
+      "lede": "Yeniden satıcılar ve küçük işletmeler için neler geliştirebileceğimize dair örnekler. Her biri iş akışınıza, platformlarınıza ve ekibinize uyarlanabilir.",
+      "note": "Bunlar proje fikirleridir, tamamlanmış müşteri projeleri değildir. Platform erişimi ve özellikler her teklif için ayrıca değerlendirilir."
+    },
+    "company": {
+      "title": "Zerone International LLC Hakkında – Vizyon ve Misyon",
+      "description": "Zerone International LLC, online yeniden satışı özel yazılım geliştirmeyle birleştiren New York merkezli bir şirkettir. Vizyonumuzu, misyonumuzu ve değerlerimizi tanıyın.",
+      "eyebrow": "Şirket",
+      "h1": "Zerone International hakkında",
+      "lede": "Online ticaret ile yazılımın kesiştiği noktada çalışan New York merkezli bir şirketiz.",
+      "about": {
+        "title": "Biz kimiz",
+        "text": [
+          "Zerone International LLC, New York eyaletinin Farmingville kasabasında yer alır. Online pazaryerlerinde ikinci el ve stok fazlası ürünler satıyor; hem kendi operasyonlarımız hem de müşterilerimiz için yazılım geliştiriyoruz.",
+          "Her gün bir yeniden satış işi yürütmek, zamanın nerede kaybolduğunu bize gösteriyor: ilan hazırlamak, lotları incelemek, stok takibi yapmak ve ekibi koordine etmek. Her yazılım projesine bu deneyimi taşıyoruz."
+        ]
+      },
+      "vision": {
+        "title": "Vizyonumuz",
+        "text": "Küçük işletmelerin zamanlarını önemli kararlara ayırabilmeleri için faydalı ve anlaşılır yazılımı erişilebilir kılmak."
+      },
+      "mission": {
+        "title": "Misyonumuz",
+        "text": "Gerçek iş ihtiyaçlarını net bir kapsam, adil fiyat ve her kullanıcı için doğru yetkilerle güvenilir yazılıma dönüştürmek."
+      },
+      "values": {
+        "title": "Değer verdiklerimiz",
+        "items": [
+          {
+            "title": "Netlik",
+            "text": "Yazılı kapsam, dürüst takvimler ve faturada sürpriz yok."
+          },
+          {
+            "title": "Pratiklik",
+            "text": "Özellik olsun diye özellik değil, gerçek sorunları çözen özellikler."
+          },
+          {
+            "title": "Güvenlik",
+            "text": "Verilerinizi, hesaplarınızı ve erişim yetkilerinizi özenle yönetmek."
+          },
+          {
+            "title": "İş ortaklığı",
+            "text": "Yayından sonra da yanınızdayız ve yazılımı sizinle birlikte büyütüyoruz."
+          }
+        ]
+      },
+      "location": {
+        "title": "Neredeyiz",
+        "text": "Farmingville, New York, Amerika Birleşik Devletleri. Dünyanın dört bir yanındaki müşterilerle uzaktan çalışıyoruz."
+      }
+    },
+    "contact": {
+      "title": "İletişim – Yazılım Projenizi Başlatın | Zerone International",
+      "description": "Özel otomasyon, bot, web veya mobil uygulama projenizi görüşmek için Zerone International ile iletişime geçin. Sorularımızla veya yazılı bir teklifle dönüş yapıyoruz.",
+      "eyebrow": "İletişim",
+      "h1": "Projenizi başlatın",
+      "lede": "Fikrinizi veya çözmek istediğiniz sorunu anlatın. İki iş günü içinde yanıt vermeyi hedefliyoruz.",
+      "email_title": "E-postayı mı tercih edersiniz?",
+      "email_text": "Bize doğrudan da yazabilirsiniz:",
+      "booking": "Görüşme planla",
+      "whatsapp": "WhatsApp'tan yazın",
+      "location_title": "Konum"
+    },
+    "privacy": {
+      "title": "Gizlilik Politikası | Zerone International",
+      "description": "Zerone International LLC'nin bu web sitesini ziyaret ettiğinizde veya bizimle iletişime geçtiğinizde kişisel verileri nasıl topladığı, kullandığı ve koruduğu.",
+      "h1": "Gizlilik Politikası",
+      "intro": "Bu politika, zeroneinternational.com'u kullandığınızda hangi kişisel verileri işlediğimizi, neden işlediğimizi ve hangi haklara sahip olduğunuzu açıklar.",
+      "sections": [
+        {
+          "title": "Sorumlu taraf",
+          "paragraphs": [
+            "Bu web sitesindeki kişisel verilerin işlenmesinden Farmingville, New York, Amerika Birleşik Devletleri'nde bulunan Zerone International LLC sorumludur. Bize iletişim sayfası üzerinden ulaşabilirsiniz."
+          ]
+        },
+        {
+          "title": "Bize gönderdiğiniz veriler",
+          "paragraphs": [
+            "İletişim veya bekleme listesi formumuzu kullandığınızda adınız, e-posta adresiniz, şirketiniz ve mesajınız gibi girdiğiniz bilgileri alırız. Bunları yalnızca talebinizi yanıtlamak ve teklif hazırlamak için kullanırız.",
+            "Formlar, bizim adımıza çalışan bir form işleme hizmeti olan Formspree aracılığıyla iletilir. Lütfen form üzerinden şifre, API anahtarı veya hassas müşteri verisi göndermeyin."
+          ]
+        },
+        {
+          "title": "Otomatik olarak toplanan veriler",
+          "paragraphs": [
+            "Barındırma sağlayıcımız, sunucu kayıtlarında IP adresi, tarayıcı türü ve istek zamanı gibi teknik verileri kaydedebilir. Bu, web sitesini güvenli şekilde sunmak için gereklidir.",
+            "Site istatistiklerini etkinleştirirsek, çerez kullanmayan ve kişisel profil oluşturmayan gizlilik dostu bir hizmet kullanırız."
+          ]
+        },
+        {
+          "title": "Verileri ne kadar süre saklıyoruz",
+          "paragraphs": [
+            "Talepleri, talebinizi ve buna bağlı iş ilişkisini yürütmek için gerektiği sürece ve yasaların gerektirdiği süre boyunca saklarız. Verilerinizin silinmesini istediğiniz zaman talep edebilirsiniz."
+          ]
+        },
+        {
+          "title": "Haklarınız",
+          "paragraphs": [
+            "Yaşadığınız yere bağlı olarak, örneğin GDPR, Türkiye'deki KVKK veya Kaliforniya yasaları kapsamında, verilerinize erişme, bunları düzeltme, silme veya taşıma ve işlenmesine itiraz etme ya da kısıtlanmasını isteme haklarına sahip olabilirsiniz. Bu hakları kullanmak için bizimle iletişime geçin. Ayrıca veri koruma otoritenize şikâyette bulunabilirsiniz."
+          ]
+        },
+        {
+          "title": "Yurt dışına aktarım",
+          "paragraphs": [
+            "Amerika Birleşik Devletleri'nde bulunuyoruz ve hizmet sağlayıcılarımız verileri ABD'de veya başka ülkelerde işleyebilir. Uygun güvenceler sunan sağlayıcıları tercih ederiz."
+          ]
+        },
+        {
+          "title": "Değişiklikler",
+          "paragraphs": [
+            "Hizmetlerimiz veya yasal gereklilikler değiştiğinde bu politikayı güncelleyebiliriz. Güncel sürüm her zaman bu sayfada yayınlanır."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Kullanım Koşulları | Zerone International",
+      "description": "Zerone International LLC web sitesini kullanırken geçerli olan koşullar.",
+      "h1": "Kullanım Koşulları",
+      "intro": "Bu koşullar zeroneinternational.com'u kullanımınız için geçerlidir. Web sitesini kullanarak bu koşulları kabul etmiş olursunuz.",
+      "sections": [
+        {
+          "title": "Web sitesi içeriği",
+          "paragraphs": [
+            "Bu web sitesindeki içerik genel bilgilendirme amaçlıdır. Hizmet, ürün ve kullanım senaryosu açıklamaları bağlayıcı teklif değildir. Bir proje yalnızca ayrı bir yazılı teklif veya sözleşmeyle kararlaştırılır."
+          ]
+        },
+        {
+          "title": "Geliştirme aşamasındaki ürünler",
+          "paragraphs": [
+            "Geliştiriliyor olarak işaretlenen ürünler yayından önce değişebilir. Özellikler, platform desteği ve yayın tarihleri garanti edilmez."
+          ]
+        },
+        {
+          "title": "Fikri mülkiyet",
+          "paragraphs": [
+            "Zerone International adı, logosu ve bu web sitesinin içeriği korunmaktadır. Yasaların izin verdiği durumlar dışında bunları iznimiz olmadan kopyalayamaz veya yeniden kullanamazsınız."
+          ]
+        },
+        {
+          "title": "Bağlantılar ve markalar",
+          "paragraphs": [
+            "Bu web sitesi üçüncü taraf platformlardan bahsedebilir veya onlara bağlantı verebilir. Bu platformların adları ilgili sahiplerinin ticari markalarıdır. Harici web sitelerinin içeriğinden sorumlu değiliz."
+          ]
+        },
+        {
+          "title": "Sorumluluk",
+          "paragraphs": [
+            "Bu web sitesini doğru ve erişilebilir tutmaya özen gösteririz; ancak her zaman eksiksiz, güncel veya kesintisiz olacağını garanti etmeyiz. Yasaların izin verdiği ölçüde, web sitesinin kullanımından doğan zararlardan sorumlu değiliz."
+          ]
+        },
+        {
+          "title": "Uygulanacak hukuk",
+          "paragraphs": [
+            "Ülkenizdeki zorunlu tüketici koruma mevzuatı aksini öngörmedikçe bu koşullar Amerika Birleşik Devletleri, New York Eyaleti yasalarına tabidir."
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Çerez Politikası | Zerone International",
+      "description": "Zerone International reklam veya takip çerezi kullanmaz. Web sitesinin tema ve dil tercihlerinizi nasıl sakladığını öğrenin.",
+      "h1": "Çerez Politikası",
+      "intro": "Bu web sitesini sade tutuyoruz: reklam çerezi yok, takip çerezi yok ve çerez uyarısına gerek yok.",
+      "sections": [
+        {
+          "title": "Takip çerezi yok",
+          "paragraphs": [
+            "Bu web sitesi reklam, pazarlama veya takip çerezi yerleştirmez ve üçüncü taraf reklam komut dosyaları yüklemez."
+          ]
+        },
+        {
+          "title": "Tarayıcınızdaki tercihler",
+          "paragraphs": [
+            "Açık veya koyu temayı seçerseniz ya da dil önerisini kapatırsanız bu tercih tarayıcınızın yerel depolama alanına kaydedilir. Cihazınızdan asla çıkmaz ve tarayıcı ayarlarınızdan istediğiniz zaman silebilirsiniz."
+          ]
+        },
+        {
+          "title": "Formlar ve istatistikler",
+          "paragraphs": [
+            "Bir form gönderdiğinizde form, spam koruması için teknik olarak gerekli çerezler kullanabilen form sağlayıcımız Formspree'ye iletilir. Site istatistiklerini etkinleştirirsek çerez kullanmayan bir hizmet kullanırız."
+          ]
+        }
+      ]
+    },
+    "notfound": {
+      "title": "Sayfa bulunamadı | Zerone International",
+      "h1": "Sayfa bulunamadı",
+      "text": "Aradığınız sayfa mevcut değil veya taşınmış.",
+      "home": "Ana sayfaya git"
+    }
+  },
+  "cases": [
+    {
+      "slug": "ebay-ilan-hazirligi",
+      "title": "eBay ilan hazırlığı",
+      "summary": "Ürün notlarını kontrole hazır başlık, açıklama ve ürün özelliği taslaklarına dönüştürün.",
+      "challenge": "İyi eBay ilanlarını tek tek yazmak zaman alır ve ürün özellikleri kolayca atlanır.",
+      "approach": "Bir otomasyon ürün notlarınızı veya tablonuzu okuyup yapılandırılmış taslaklar hazırlar; ekibiniz yalnızca kontrol edip onaylar.",
+      "includes": [
+        "Başlık ve açıklama taslakları",
+        "Ürün özellikleri kontrol listesi",
+        "Yayından önce onay adımı"
+      ]
+    },
+    {
+      "slug": "poshmark-satis-surecleri",
+      "title": "Poshmark satış süreçleri",
+      "summary": "Giyim ürünlerinin bilgilerini düzenleyin, Poshmark ve diğer kanallar için ilanlar hazırlayın.",
+      "challenge": "Giyimde beden, marka, durum ve ölçüler gerekir; bunları tekrar tekrar girmek yavaştır.",
+      "approach": "Yapılandırılmış bir giriş formu giyim bilgilerini bir kez toplar ve platform kurallarına uygun olarak her kanal için taslak hazırlar.",
+      "includes": [
+        "Giyim veri şablonu",
+        "Kanala özel taslaklar",
+        "Ürün bazında durum takibi"
+      ]
+    },
+    {
+      "slug": "amazon-katalog-hazirligi",
+      "title": "Amazon katalog hazırlığı",
+      "summary": "Ürün verilerini düzenleyin ve listeleme öncesinde zorunlu alanları kontrol edin.",
+      "challenge": "Eksik veya tutarsız alanlar reddedilen ilanlara ve zaman kaybına yol açar.",
+      "approach": "Bir doğrulama aracı ürün verilerinizi gereken alanlara göre kontrol eder ve yüklemeden önce eksikleri gösterir.",
+      "includes": [
+        "Zorunlu alan kontrolleri",
+        "Toplu veri temizliği",
+        "Dışa aktarılabilir yükleme dosyaları"
+      ]
+    },
+    {
+      "slug": "walmart-stok-surecleri",
+      "title": "Walmart stok süreçleri",
+      "summary": "Walmart Marketplace için stok ve ürün verilerini izin verilen erişimle takip edin.",
+      "challenge": "Stok seviyelerini ve ürün verilerini kanallar arasında elle uyumlu tutmak zordur.",
+      "approach": "Bir web paneli stok ve ürün verilerini bir araya getirir ve işlem gerektiren farklılıkları işaretler.",
+      "includes": [
+        "Stok genel görünümü",
+        "Farklılık uyarıları",
+        "Değişiklik geçmişi"
+      ]
+    },
+    {
+      "slug": "etsy-urun-aciklamalari",
+      "title": "Etsy ürün açıklamaları",
+      "summary": "Malzeme veya köken uydurmadan net ürün açıklamaları hazırlayın.",
+      "challenge": "İyi açıklamalar satar ama her ürün için yazmak çok zaman alır.",
+      "approach": "Bir taslak aracı açıklamaları yalnızca sizin verdiğiniz bilgilerden oluşturur; düzenleyip onaylamanız için hazır olur.",
+      "includes": [
+        "Bilgiye dayalı taslaklar",
+        "Üslup ve uzunluk ayarları",
+        "Kullanmadan önce onay"
+      ]
+    },
+    {
+      "slug": "b-stock-lot-degerlendirme",
+      "title": "B-Stock lot değerlendirmesi",
+      "summary": "Bir lotun fiyatını tahmini ücretler, lojistik ve satış değeriyle karşılaştırın.",
+      "challenge": "Bir lot; ücretler, kargo ve satılamayan ürünler hesaba katılana kadar ucuz görünebilir.",
+      "approach": "Bir hesaplama aracı alış fiyatını, ücretleri, lojistiği ve satış varsayımlarınızı tek ve net bir tahminde birleştirir.",
+      "includes": [
+        "Maliyet dökümü",
+        "Ayarlanabilir varsayımlar",
+        "Kaydedilen değerlendirmeler"
+      ]
+    },
+    {
+      "slug": "liquidation-teklif-planlama",
+      "title": "Liquidation.com teklif planlama",
+      "summary": "Ne kadar teklif vereceğinize karar vermeden önce net sonucu tahmin edin.",
+      "challenge": "Bir üst fiyat belirlemeden teklif vermek fazla ödemeyi kolaylaştırır.",
+      "approach": "Bir planlama aracı hedef kâr marjınızdan ve maliyet varsayımlarınızdan önerilen en yüksek teklifi hesaplar.",
+      "includes": [
+        "Hedef marj ayarları",
+        "En yüksek teklif tahmini",
+        "Senaryo karşılaştırması"
+      ]
+    },
+    {
+      "slug": "iade-karsiligi",
+      "title": "İade karşılığı",
+      "summary": "Satış ekonomisini değerlendirirken iadeler için ayarlanabilir bir pay ekleyin.",
+      "challenge": "İadeler gerçek kârı azaltır ama hesaplarda çoğu zaman unutulur.",
+      "approach": "Analiz aracınız, kategoriye veya kendi geçmiş verilerinize göre ayarlanabilen bir iade karşılığı içerir.",
+      "includes": [
+        "Kategori bazlı oranlar",
+        "Geçmiş verilere göre ayar",
+        "İadeler sonrası net marj"
+      ]
+    },
+    {
+      "slug": "kargo-maliyeti-tahmini",
+      "title": "Kargo maliyeti tahmini",
+      "summary": "Planlamanızda ağırlığı, ölçüleri ve kargo seçeneklerini hesaba katın.",
+      "challenge": "Kargo maliyetleri çok değişkendir ve kârlı bir ürünü zarara çevirebilir.",
+      "approach": "Bir planlama aracı ağırlık ve ölçülerden kargo maliyetini tahmin eder ve her hesaba dahil eder.",
+      "includes": [
+        "Ağırlık ve ölçü girişleri",
+        "Kargo firması fiyat tabloları",
+        "Ürün başına maliyet"
+      ]
+    },
+    {
+      "slug": "sahip-paneli",
+      "title": "İşletme sahibi paneli",
+      "summary": "İşletme sahibinin ihtiyaç duyduğu bilgileri ve kontrolleri tek panelde toplayın.",
+      "challenge": "İşletme sahipleri, işlerin nasıl gittiğini anlamak için çoğu zaman rakamları pek çok yerden toplar.",
+      "approach": "Bir sahip paneli temel rakamları, kullanıcıları ve ayarları tek ve güvenli bir yerde gösterir.",
+      "includes": [
+        "Bir bakışta temel metrikler",
+        "Kullanıcı ve yetki yönetimi",
+        "Dışa aktarılabilir raporlar"
+      ]
+    },
+    {
+      "slug": "yonetici-koordinasyonu",
+      "title": "Yönetici koordinasyonu",
+      "summary": "Görev atamak ve operasyonu takip etmek için bir çalışma alanı.",
+      "challenge": "Ortak bir görünüm olmadığında görevler mesajlar ve tablolar arasında kaybolur.",
+      "approach": "Bir yönetici çalışma alanı; iş atamayı, öncelik belirlemeyi ve ilerlemeyi anlık görmeyi sağlar.",
+      "includes": [
+        "Görev atama",
+        "Öncelik ve son tarih takibi",
+        "Ekip ilerleme görünümü"
+      ]
+    },
+    {
+      "slug": "calisan-gorev-panelleri",
+      "title": "Çalışan görev panelleri",
+      "summary": "Her çalışana tam olarak ihtiyaç duyduğu görevleri ve bilgileri gösterin.",
+      "challenge": "Çalışanlar talimat aramaya veya sıradaki işi sormaya zaman kaybeder.",
+      "approach": "Basit bir mobil panel, her kişinin görevlerini tamamlamak için gereken detaylarla birlikte listeler.",
+      "includes": [
+        "Kişisel görev listesi",
+        "Talimatlar ve fotoğraflar",
+        "Tek dokunuşla durum güncelleme"
+      ]
+    },
+    {
+      "slug": "stok-girisi",
+      "title": "Stok girişi",
+      "summary": "Gelen ürünleri kaydedin ve satış için gerekenleri düzenleyin.",
+      "challenge": "Kaydedilmemiş ürünleri sonradan bulmak, fiyatlamak ve listelemek zordur.",
+      "approach": "Bir mobil giriş uygulaması ürünleri geldikleri anda barkod, fotoğraf, durum ve konum bilgisiyle kaydeder.",
+      "includes": [
+        "Barkod okuma",
+        "Durum ve konum alanları",
+        "Panele anında senkronizasyon"
+      ]
+    },
+    {
+      "slug": "urun-fotografi-gorevleri",
+      "title": "Ürün fotoğrafı görevleri",
+      "summary": "Ürün fotoğraflarını ve ilan hazırlığını tek bir akışta koordine edin.",
+      "challenge": "Farklı telefonlarla çekilen fotoğraflar dağınık ve etiketsiz kalır.",
+      "approach": "Bir mobil iş akışı her fotoğraf setini doğru ürüne bağlar ve ilana hazır olarak işaretler.",
+      "includes": [
+        "Ürün başına fotoğraf setleri",
+        "Çekim kontrol listeleri",
+        "İlana hazır durumu"
+      ]
+    },
+    {
+      "slug": "csv-hazirligi",
+      "title": "CSV hazırlığı",
+      "summary": "Üzerinde anlaşılan tablo formatlarını temiz, yapılandırılmış verilere dönüştürün.",
+      "challenge": "Tedarikçi ve pazaryeri dosyaları nadiren aynı sütunları veya formatları kullanır.",
+      "approach": "Bir otomasyon tablo verilerini eşler, temizler ve tam ihtiyacınız olan formata göre doğrular.",
+      "includes": [
+        "Sütun eşleştirme",
+        "Veri temizleme kuralları",
+        "Hata raporu"
+      ]
+    },
+    {
+      "slug": "ozel-raporlama",
+      "title": "Özel raporlama",
+      "summary": "Seçtiğiniz metriklere ve veri kaynaklarına göre hazırlanan raporlar.",
+      "challenge": "Standart raporlar, işiniz için önemli olan sorulara nadiren cevap verir.",
+      "approach": "Kendi veri kaynaklarınızdan raporlar hazırlar; bunları panel olarak veya zamanlanmış e-postalarla sunarız.",
+      "includes": [
+        "Özel metrikler",
+        "Zamanlanmış gönderim",
+        "CSV ve PDF dışa aktarma"
+      ]
+    },
+    {
+      "slug": "bildirim-botlari",
+      "title": "Bildirim botları",
+      "summary": "Ekibinizin zaten kullandığı kanallardan otomatik uyarılar ve hatırlatmalar.",
+      "challenge": "Birinin elle kontrol etmesi gerektiğinde önemli değişiklikler çok geç fark edilir.",
+      "approach": "Bir bot önem verdiğiniz olayları izler ve işlem gerektiği anda mesaj gönderir.",
+      "includes": [
+        "Olay bazlı uyarılar",
+        "E-posta ve mesajlaşma ile iletim",
+        "Günlük özetler"
+      ]
+    },
+    {
+      "slug": "mobil-operasyon-araclari",
+      "title": "Mobil operasyon araçları",
+      "summary": "Ekibinizin masa başı dışında yaptığı işler için mobil iş akışları.",
+      "challenge": "Kâğıt notlar ve sahadan gelen mesajlar yavaştır ve hataya açıktır.",
+      "approach": "Bir mobil uygulama saha işini yapılandırılmış adımlara dönüştürür ve sistemlerinizi anında günceller.",
+      "includes": [
+        "Adım adım iş akışları",
+        "Çevrimdışı destek",
+        "Anlık güncellemeler"
+      ]
+    },
+    {
+      "slug": "web-tabanli-calisma-alanlari",
+      "title": "Web tabanlı çalışma alanları",
+      "summary": "Seçilen iş akışlarını tarayıcı tabanlı tek bir uygulamada toplayın.",
+      "challenge": "Pek çok araca ve dosyaya dağılmış işleri yönetmek ve güvende tutmak zordur.",
+      "approach": "Bir web çalışma alanı en önemli iş akışlarını, her rol için uygun erişimle bir araya getirir.",
+      "includes": [
+        "Merkezi çalışma alanı",
+        "Rol bazlı erişim",
+        "İşlem geçmişi"
+      ]
+    },
+    {
+      "slug": "cok-kanalli-planlama",
+      "title": "Çok kanallı planlama",
+      "summary": "API erişimini inceledikten sonra stoku birden fazla satış kanalında planlayın.",
+      "challenge": "Birden fazla pazaryerinde satış yapmak, her şeyi senkronize tutma işini katlar.",
+      "approach": "Her platformun API erişimini ve kurallarını inceler, ardından kanalları uyumlu tutan bir otomasyon tasarlarız.",
+      "includes": [
+        "Platform erişim incelemesi",
+        "Senkronizasyon kuralları",
+        "Çakışma uyarıları"
+      ]
+    }
+  ]
+}

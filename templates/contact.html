@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% import "partials/blocks.html" as blocks with context %}
+{% import "partials/icons.html" as icons %}
+{% set p = t.pages.contact %}
+{% block content %}
+{{ blocks.page_hero(p.eyebrow, p.h1, p.lede) }}
+<section class="section section--flush-top" aria-label="{{ p.h1 }}">
+  <div class="wrap contact-grid">
+    <div class="contact-form">
+      {{ blocks.contact_form('project') }}
+    </div>
+    <aside class="contact-aside">
+      <div class="card">
+        <h2 class="card__title">{{ p.email_title }}</h2>
+        <p>{{ p.email_text }}</p>
+        {{ blocks.email_link() }}
+        {% if config.booking_url or config.whatsapp_number %}
+        <div class="actions actions--stack">
+          {% if config.booking_url %}
+          <a class="button button--ghost" href="{{ config.booking_url }}" rel="noopener" target="_blank">{{ icons.icon('calendar') }} {{ p.booking }}</a>
+          {% endif %}
+          {% if config.whatsapp_number %}
+          <a class="button button--ghost" href="https://wa.me/{{ config.whatsapp_number }}" rel="noopener" target="_blank">{{ icons.icon('chat') }} {{ p.whatsapp }}</a>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+      <div class="card">
+        <h2 class="card__title">{{ p.location_title }}</h2>
+        <p class="location">{{ icons.icon('pin') }} <span>{{ t.footer.location }}</span></p>
+      </div>
+      <div class="card">
+        <h2 class="card__title">{{ t.process.title }}</h2>
+        <ol class="mini-steps">
+        {% for step in t.process.steps %}
+          <li><strong>{{ step.title }}</strong></li>
+        {% endfor %}
+        </ol>
+      </div>
+    </aside>
+  </div>
+</section>
+{% endblock %}

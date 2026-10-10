@@ -1,0 +1,51 @@
+name: Deploy to Railway
+
+# Optional second host. Nothing happens until Railway is set up:
+#   1. Repository secret  RAILWAY_TOKEN    – a Railway *project* token
+#   2. Repository variable RAILWAY_SERVICE – the Railway service name or ID
+# Then run this workflow with "Run workflow", or set the repository variable
+# RAILWAY_AUTO_DEPLOY=true to deploy automatically after every change on main.
+# (Connecting the repository inside Railway's dashboard works too and needs no token.)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: railway
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.event_name == 'workflow_dispatch' || vars.RAILWAY_AUTO_DEPLOY == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check configuration
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_SERVICE: ${{ vars.RAILWAY_SERVICE }}
+        run: |
+          if [ -z "$RAILWAY_TOKEN" ] || [ -z "$RAILWAY_SERVICE" ]; then
+            echo "::error::Add the RAILWAY_TOKEN secret and the RAILWAY_SERVICE variable first (see docs/RAILWAY.md)."
+            exit 1
+          fi
+      - name: Build and smoke-test the image first
+        run: |
+          docker build -t zerone-site:release .
+          tests/docker-smoke.sh zerone-site:release
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Deploy
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_SERVICE: ${{ vars.RAILWAY_SERVICE }}
+        run: npx --yes @railway/cli@4 up --ci --service "$RAILWAY_SERVICE"

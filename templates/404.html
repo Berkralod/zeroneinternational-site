@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% import "partials/icons.html" as icons %}
+{% block content %}
+<section class="page-hero page-hero--compact notfound" data-notfound>
+  <div class="wrap wrap--narrow">
+    <p class="notfound__code" aria-hidden="true">404</p>
+    <h1 data-nf="h1">{{ page.h1 }}</h1>
+    <p class="lede" data-nf="text">{{ page.text }}</p>
+    <a class="button" href="{{ url('home') }}" data-nf="home">{{ page.home }} {{ icons.icon('arrow') }}</a>
+  </div>
+</section>
+<script type="application/json" id="notfound-data">{{ notfound_json }}</script>
+{% endblock %}

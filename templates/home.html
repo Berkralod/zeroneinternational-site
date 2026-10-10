@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% import "partials/blocks.html" as blocks with context %}
+{% import "partials/icons.html" as icons %}
+{% import "partials/art.html" as art %}
+{% set p = t.pages.home %}
+{% block content %}
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <p class="eyebrow">{{ p.hero.eyebrow }}</p>
+      <h1>{{ p.h1 }}</h1>
+      <p class="lede">{{ p.hero.lede }}</p>
+      <div class="actions">
+        <a class="button" href="{{ url('contact') }}">{{ p.hero.primary }} {{ icons.icon('arrow') }}</a>
+        <a class="button button--ghost" href="{{ url('services') }}">{{ p.hero.secondary }}</a>
+      </div>
+      <ul class="checklist" role="list">
+      {% for point in p.hero.points %}
+        <li>{{ icons.icon('check') }}<span>{{ point }}</span></li>
+      {% endfor %}
+      </ul>
+    </div>
+    <div class="hero__art">{{ art.art('hero') }}</div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="services-title">
+  <div class="wrap">
+    {{ blocks.section_head(p.services.eyebrow, p.services.title, p.services.intro, id="services-title") }}
+    {{ blocks.services_grid() }}
+  </div>
+</section>
+
+<section class="section section--tint" aria-labelledby="resale-title">
+  <div class="wrap split">
+    <div class="split__art">{{ art.art('crosslisting') }}</div>
+    <div>
+      {{ blocks.section_head(p.resale.eyebrow, p.resale.title, id="resale-title") }}
+      <p>{{ p.resale.text }}</p>
+      <ul class="product-mini" role="list">
+      {% for item in t.pages.products["items"] %}
+        <li><span class="card__icon">{{ icons.icon(('box', 'chart')[loop.index0]) }}</span><span><strong>{{ item.name }}</strong><span class="tag tag--soft">{{ t.ui.in_development }}</span></span></li>
+      {% endfor %}
+      </ul>
+      <a class="text-link" href="{{ url('products') }}">{{ p.resale.link }} {{ icons.icon('arrow') }}</a>
+    </div>
+  </div>
+</section>
+
+{{ blocks.process() }}
+
+<section class="section" aria-labelledby="cases-title">
+  <div class="wrap">
+    {{ blocks.section_head(p.cases.eyebrow, p.cases.title, p.cases.intro, id="cases-title") }}
+    <ul class="card-grid card-grid--3" role="list">
+    {% for i in (0, 5, 9, 12, 16, 19) %}
+      {{ blocks.case_card(i) }}
+    {% endfor %}
+    </ul>
+    <p class="section-more"><a class="text-link" href="{{ url('use_cases') }}">{{ t.ui.view_all_cases }} {{ icons.icon('arrow') }}</a></p>
+  </div>
+</section>
+
+{{ blocks.roles() }}
+{{ blocks.faq(p.faq.title, p.faq["items"], p.faq.eyebrow) }}
+{{ blocks.cta_band() }}
+{% endblock %}
