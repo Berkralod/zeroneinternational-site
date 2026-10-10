@@ -504,7 +504,7 @@ a.tag:hover { border-color: var(--brand); color: var(--brand); }
 .form__status[data-state="error"] { color: #b3261e; }
 :root[data-theme="dark"] .form__status[data-state="success"] { color: #6fd6a0; }
 :root[data-theme="dark"] .form__status[data-state="error"] { color: #ff9a92; }
-.form__trap { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.form__trap { display: none; } /* honeypot: invisible to people, still filled in by bots */
 .form { position: relative; }
 .notice { padding: 24px; border-radius: var(--radius-lg); background: var(--accent-soft); }
 .email-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: var(--brand); word-break: break-all; }
