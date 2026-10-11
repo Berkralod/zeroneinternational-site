@@ -12,11 +12,13 @@
     "region": "NY",
     "country": "US"
   },
+  "telephone": "+1-631-319-7032",
   "formspree_form_id": "xjygrpne",
   "booking_url": "",
   "whatsapp_number": "",
-  "cloudflare_analytics_token": "",
+  "cloudflare_analytics_token": "4827c1398525463397377eb88ef93b99",
   "google_site_verification": "",
   "bing_site_verification": "",
+  "indexnow_key": "94d49004ef11e588dddb9c6ba0ac2921",
   "same_as": []
 }

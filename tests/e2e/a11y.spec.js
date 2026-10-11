@@ -1,5 +1,5 @@
 // Automated accessibility checks (WCAG 2.2 A/AA rules) with axe-core, in both themes and every language.
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures.js";
 import AxeBuilder from "@axe-core/playwright";
 import { languages, pathFor } from "./site-data.js";
 

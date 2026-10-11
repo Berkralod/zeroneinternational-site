@@ -250,6 +250,7 @@ def organization(site):
             "addressRegion": c["address"]["region"],
             "addressCountry": c["address"]["country"],
         },
+        **({"telephone": c["telephone"]} if c.get("telephone") else {}),
         "areaServed": "Worldwide",
         "knowsLanguage": site.langs,
         "contactPoint": {
@@ -257,6 +258,7 @@ def organization(site):
             "contactType": "sales",
             "url": site.abs(site.path(site.default, "contact")),
             "availableLanguage": ["en", "tr"],
+            **({"telephone": c["telephone"]} if c.get("telephone") else {}),
         },
         **({"sameAs": c["same_as"]} if c.get("same_as") else {}),
     }
@@ -282,6 +284,8 @@ def build(check_only=False):
         "cloudflare_analytics_token": r"[A-Za-z0-9]{16,64}",
         "google_site_verification": r"[A-Za-z0-9_-]{10,100}",
         "bing_site_verification": r"[A-Za-z0-9_-]{10,100}",
+        "telephone": r"\+[0-9][0-9-]{6,18}",
+        "indexnow_key": r"[a-f0-9]{32}",
     }
     for key, pattern in checks.items():
         if config.get(key) and not re.fullmatch(pattern, config[key]):
@@ -585,6 +589,8 @@ def build(check_only=False):
         ],
     }, indent=2), encoding="utf-8")
 
+    if config.get("indexnow_key"):  # proves ownership to Bing/IndexNow; the key is public by design
+        (DIST / f"{config['indexnow_key']}.txt").write_text(config["indexnow_key"], encoding="utf-8")
     (DIST / ".nojekyll").write_text("", encoding="utf-8")
     cname = ROOT / "CNAME"
     if cname.exists():

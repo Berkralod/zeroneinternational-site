@@ -14,6 +14,9 @@
         <h2 class="card__title">{{ p.email_title }}</h2>
         <p>{{ p.email_text }}</p>
         {{ blocks.email_link() }}
+        {% if config.telephone %}
+        <a class="phone-link" href="tel:{{ config.telephone|replace('-', '') }}" dir="ltr">{{ icons.icon('phone') }} {% set ph = config.telephone.split('-') %}<span>{{ ph[0] }} ({{ ph[1] }}) {{ ph[2:]|join('-') }}</span></a>
+        {% endif %}
         {% if config.booking_url or config.whatsapp_number %}
         <div class="actions actions--stack">
           {% if config.booking_url %}

@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures.js";
 import { languages, content, pathFor, samplePages, config } from "./site-data.js";
 
 async function collectErrors(page) {
