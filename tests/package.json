@@ -8,8 +8,8 @@
     "lighthouse": "lhci autorun"
   },
   "devDependencies": {
-    "@axe-core/playwright": "4.10.1",
-    "@lhci/cli": "0.14.0",
-    "@playwright/test": "1.56.0"
+    "@axe-core/playwright": "4.13.0",
+    "@lhci/cli": "0.15.1",
+    "@playwright/test": "1.64.0"
   }
 }
