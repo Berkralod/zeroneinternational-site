@@ -47,3 +47,23 @@ Bu ayarlar dosyaya yazılmak yerine GitHub **Settings → Secrets and variables 
 - Logo: `static/assets/img/logo-navy.svg`, `logo-white.svg`, sayfa içi sürüm `templates/partials/logo.svg`.
 - Simgeler ve paylaşım görseli logodan üretilir: `cd tests && npm run images`.
 - Sayfalardaki çizimler `templates/partials/art.html` içindedir. Metin içermedikleri için dile göre değişmezler ve renklerini temadan alırlar.
+
+## Blog yazısı ekleme
+
+1. `content/blog/` klasörüne yeni bir dosya ekleyin. Dosya adı adresi belirler: `yeni-yazi-basligi.md` → `zeroneinternational.com/blog/yeni-yazi-basligi/` (küçük harf, Türkçe karakter yok, kelimeler arasında tire).
+2. Dosyanın en üstüne bu bilgileri yazın, altına yazının metnini Markdown ile ekleyin (`## Ara başlık`, `- madde`, `**kalın**`, `[bağlantı](/contact/)`):
+
+```
+---
+title: Yazının başlığı (en fazla ~60 karakter)
+description: Google'da görünecek bir-iki cümlelik özet (~150 karakter)
+date: 2026-10-11
+tags: Crosslisting, Automation
+---
+```
+
+3. Yazıyı güncellerseniz `updated: 2026-11-02` satırını ekleyin.
+
+Yazılar şimdilik yalnızca İngilizce yayınlanır; diğer 14 dildeki blog sayfası aynı yazıları "şimdilik İngilizce" notuyla listeler. Yazılar site haritasına, RSS akışına (`/blog/feed.xml`) ve Google'ın okuduğu `BlogPosting` verisine otomatik eklenir; yayından sonra Bing'e de otomatik haber gider.
+
+**Bülten aboneleri** Formspree'de "form: newsletter" olarak görünür (Formspree → Submissions). Listeyi oradan CSV olarak indirebilirsiniz.

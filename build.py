@@ -18,6 +18,7 @@ import sys
 from pathlib import Path
 from xml.sax.saxutils import escape as xml_escape
 
+import markdown
 from jinja2 import Environment, FileSystemLoader, StrictUndefined, select_autoescape
 from markupsafe import Markup, escape
 
@@ -27,10 +28,11 @@ TEMPLATES = ROOT / "templates"
 STATIC = ROOT / "static"
 DIST = ROOT / "dist"
 BUILD_META = ROOT / "build"
+BLOG = CONTENT / "blog"
 
 PAGE_IDS = [
     "home", "services", "service_automation", "service_web", "service_mobile",
-    "products", "use_cases", "company", "contact", "payment", "privacy", "terms", "cookies",
+    "products", "use_cases", "company", "contact", "payment", "blog", "privacy", "terms", "cookies",
 ]
 TEMPLATE_FOR = {
     "home": "home.html",
@@ -43,6 +45,7 @@ TEMPLATE_FOR = {
     "company": "company.html",
     "contact": "contact.html",
     "payment": "payment.html",
+    "blog": "blog.html",
     "privacy": "legal.html",
     "terms": "legal.html",
     "cookies": "legal.html",
@@ -132,6 +135,46 @@ def load_content(config):
     return content
 
 
+FRONT_MATTER_RE = re.compile(r"\A---\n(.*?)\n---\n", re.S)
+
+
+def load_posts():
+    """Blog posts: content/blog/<slug>.md with 'key: value' front matter (title, description, date, tags)."""
+    posts = []
+    for path in sorted(BLOG.glob("*.md")):
+        text = path.read_text(encoding="utf-8")
+        match = FRONT_MATTER_RE.match(text)
+        if not match:
+            raise BuildError(f"{path.name}: missing '---' front matter")
+        meta = {}
+        for line in match.group(1).splitlines():
+            key, _, value = line.partition(":")
+            meta[key.strip()] = value.strip()
+        for key in ("title", "description", "date"):
+            if not meta.get(key):
+                raise BuildError(f"{path.name}: front matter needs '{key}'")
+        if not SLUG_RE.match(path.stem):
+            raise BuildError(f"{path.name}: file name must be a lowercase slug")
+        try:
+            published = dt.date.fromisoformat(meta["date"])
+            updated = dt.date.fromisoformat(meta.get("updated") or meta["date"])
+        except ValueError as exc:
+            raise BuildError(f"{path.name}: dates must look like 2026-10-11 ({exc})") from None
+        body = text[match.end():]
+        posts.append({
+            "slug": path.stem,
+            "title": meta["title"],
+            "description": meta["description"],
+            "date": published.isoformat(),
+            "updated": max(published, updated).isoformat(),
+            "tags": [tag.strip() for tag in meta.get("tags", "").split(",") if tag.strip()],
+            "minutes": max(1, round(len(re.findall(r"\w+", body)) / 220)),
+            "html": Markup(markdown.markdown(body, extensions=["extra", "sane_lists"], output_format="html")),
+        })
+    posts.sort(key=lambda p: (p["date"], p["title"]), reverse=True)
+    return posts
+
+
 # --------------------------------------------------------------------------- urls
 
 class Site:
@@ -152,6 +195,10 @@ class Site:
             slug = data["slugs"][page_id]
         parts = [p for p in ("" if lang == self.default else lang, slug) if p]
         return "/" + "/".join(parts) + ("/" if parts else "")
+
+    def post_path(self, slug):
+        """Blog posts are published in the default language only, under its blog index."""
+        return f"{self.path(self.default, 'blog')}{slug}/"
 
     def abs(self, path):
         return self.base + path
@@ -298,6 +345,7 @@ def build(check_only=False):
             raise BuildError(f"{key} has an unexpected format: {config[key]!r}")
     content = load_content(config)
     site = Site(config, content)
+    posts = load_posts()
     if check_only:
         print(f"Content OK: {len(site.langs)} languages, identical structure.")
         return
@@ -340,6 +388,7 @@ def build(check_only=False):
         all_langs=[content[c]["meta"] for c in site.langs],
         # Form answers reach the inbox in English whatever language the visitor used.
         form_en=content[config["default_language"]]["form"],
+        post_url=lambda slug: site.post_path(slug),
         logo=lambda suffix: Markup(logo_source.replace("logo-globe", f"logo-globe-{suffix}")),
     )
 
@@ -349,6 +398,8 @@ def build(check_only=False):
     for lang in site.langs:
         dates = [d for d in (git_date(CONTENT / f"{lang}.json"), template_mtime) if d]
         lastmod[lang] = max(dates) if dates else today
+    newest_post = max((p["updated"] for p in posts), default=None)
+    feed_path = site.path(site.default, "blog") + "feed.xml"
 
     sitemap_entries = []
     rendered = 0
@@ -383,7 +434,7 @@ def build(check_only=False):
         if parent:
             crumbs.append((t["pages"][parent]["h1"], url(parent)))
         if page_id != "home":
-            crumbs.append((heading, here))
+            crumbs.append((t["nav"]["blog"] if page_id == "blog" else heading, here))
 
         graph = [
             organization(site),
@@ -486,13 +537,89 @@ def build(check_only=False):
             suggest_json=Markup(json.dumps(suggest, ensure_ascii=False).replace("</", "<\\/")),
             og_locales=[content[c]["meta"]["og_locale"] for c in site.langs if c != lang],
             robots="index,follow",
+            og_type="website",
+            posts=posts,
+            feed_url=feed_path if page_id == "blog" else None,
         )
         html = env.get_template(TEMPLATE_FOR[page_id]).render(**ctx)
         out = DIST / here.lstrip("/") / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(html, encoding="utf-8")
         rendered += 1
-        sitemap_entries.append((site.abs(here), lastmod[lang], alternates))
+        page_mod = max(lastmod[lang], newest_post) if page_id == "blog" and newest_post else lastmod[lang]
+        sitemap_entries.append((site.abs(here), page_mod, alternates))
+
+    # Blog posts (default language only): hreflang points to themselves and x-default.
+    t = content[site.default]
+    for post in posts:
+        lang = site.default
+        here = site.post_path(post["slug"])
+
+        def url(target, case=None, _lang=lang):
+            return site.path(_lang, target, case)
+
+        alternates = [(lang, site.abs(here)), ("x-default", site.abs(here))]
+        crumbs = [(t["ui"]["home"], url("home")), (t["nav"]["blog"], url("blog")), (post["title"], here)]
+        graph = [
+            organization(site),
+            {
+                "@type": "BlogPosting",
+                "@id": site.abs(here) + "#article",
+                "headline": post["title"],
+                "description": post["description"],
+                "datePublished": post["date"],
+                "dateModified": post["updated"],
+                "inLanguage": lang,
+                "keywords": ", ".join(post["tags"]),
+                "image": site.abs("/assets/icons/og-image.png"),
+                "author": {"@type": "Person", "name": config["founder"], "url": site.abs(url("company"))},
+                "publisher": {"@id": site.abs("/#organization")},
+                "mainEntityOfPage": site.abs(here),
+                "isPartOf": {"@type": "Blog", "@id": site.abs(url("blog")) + "#blog", "url": site.abs(url("blog"))},
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": site.abs(here) + "#breadcrumb",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": i + 1, "name": name, "item": site.abs(link)}
+                    for i, (name, link) in enumerate(crumbs)
+                ],
+            },
+        ]
+        ctx = dict(
+            lang=lang, meta=t["meta"], t=t, page=post, page_id="post", post=post,
+            case=None, case_index=None, service_key=None,
+            title=f"{post['title']} | {config['site_name']}", description=post["description"],
+            canonical=site.abs(here), here=here, url=url, abs_url=site.abs, alternates=alternates,
+            # Other languages have no translation yet, so the language menu leads to their blog index.
+            lang_links=[(content[c]["meta"], here if c == lang else site.path(c, "blog")) for c in site.langs],
+            crumbs=crumbs, jsonld=jsonld_script(graph), suggest_json=None, og_locales=[],
+            robots="index,follow", og_type="article", posts=posts, feed_url=feed_path,
+        )
+        out = DIST / here.lstrip("/") / "index.html"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(env.get_template("post.html").render(**ctx), encoding="utf-8")
+        rendered += 1
+        sitemap_entries.append((site.abs(here), post["updated"], alternates))
+
+    # RSS feed of the blog.
+    def rfc822(day):
+        return dt.datetime.fromisoformat(day).replace(hour=12, tzinfo=dt.timezone.utc).strftime("%a, %d %b %Y %H:%M:%S +0000")
+
+    feed = ['<?xml version="1.0" encoding="UTF-8"?>',
+            '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>',
+            f"<title>{xml_escape(t['nav']['blog'] + ' – ' + config['site_name'])}</title>",
+            f"<link>{site.abs(site.path(site.default, 'blog'))}</link>",
+            f"<description>{xml_escape(t['pages']['blog']['description'])}</description>",
+            f"<language>{site.default}</language>",
+            f'<atom:link href="{site.abs(feed_path)}" rel="self" type="application/rss+xml"/>']
+    for post in posts:
+        link = site.abs(site.post_path(post["slug"]))
+        feed.append(f"<item><title>{xml_escape(post['title'])}</title><link>{link}</link>"
+                    f'<guid isPermaLink="true">{link}</guid><pubDate>{rfc822(post["date"])}</pubDate>'
+                    f"<description>{xml_escape(post['description'])}</description></item>")
+    feed.append("</channel></rss>")
+    (DIST / feed_path.lstrip("/")).write_text("\n".join(feed) + "\n", encoding="utf-8")
 
     # 404 pages: one per language for servers that support it (Railway/nginx),
     # and the root /404.html that GitHub Pages serves for every missing path.
@@ -517,6 +644,7 @@ def build(check_only=False):
             abs_url=site.abs, alternates=[],
             lang_links=[(content[c]["meta"], site.path(c, "home")) for c in site.langs],
             crumbs=[], jsonld=None, suggest_json=None, og_locales=[], robots="noindex,follow",
+            og_type="website", posts=posts, feed_url=None,
             notfound_json=Markup(json.dumps(notfound, ensure_ascii=False).replace("</", "<\\/")),
             case=None, case_index=None, service_key=None,
         )

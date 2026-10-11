@@ -118,6 +118,38 @@
 <a class="email-link" data-email-user="{{ config.email_user }}" data-email-domain="{{ config.email_domain }}" href="{{ url('contact') }}">{{ icons.icon('mail') }} <span>{{ config.email_user }} [at] {{ config.email_domain }}</span></a>
 {%- endmacro %}
 
+{% macro newsletter_form() -%}
+{% set n = t.newsletter %}
+<section class="section section--tint newsletter" aria-labelledby="newsletter-title">
+  <div class="wrap split split--text">
+    <div>
+      <h2 id="newsletter-title">{{ n.title }}</h2>
+      <p>{{ n.text }}</p>
+    </div>
+    {% if config.formspree_form_id %}
+    <form class="form form--inline" action="https://formspree.io/f/{{ config.formspree_form_id }}" method="POST" data-ajax-form data-sending="{{ t.form.sending }}" data-success="{{ n.success }}" data-error="{{ t.form.error }}">
+      <input type="hidden" name="form" value="newsletter">
+      <input type="hidden" name="_language" value="{{ lang }}">
+      <input type="hidden" name="_subject" value="Newsletter signup ({{ lang }}) – {{ config.site_name }}">
+      <div class="form__trap" aria-hidden="true"><label>Leave empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+      <div class="field">
+        <label for="nl-email">{{ n.email }}</label>
+        <input id="nl-email" name="email" type="email" autocomplete="email" required maxlength="200">
+      </div>
+      <div class="field field--check">
+        <input id="nl-consent" name="consent" type="checkbox" value="yes" required>
+        <label for="nl-consent">{{ n.consent|with_link(url('privacy'), t.pages.privacy.h1) }}</label>
+      </div>
+      <button class="button" type="submit">{{ n.submit }} {{ icons.icon('arrow') }}</button>
+      <p class="form__status" role="status" aria-live="polite" data-form-status></p>
+    </form>
+    {% else %}
+    <div class="notice"><p>{{ t.form.not_configured }}</p>{{ email_link() }}</div>
+    {% endif %}
+  </div>
+</section>
+{%- endmacro %}
+
 {% macro contact_form(kind="project") -%}
 {% if config.formspree_form_id %}
 <form class="form" action="https://formspree.io/f/{{ config.formspree_form_id }}" method="POST" data-ajax-form data-sending="{{ t.form.sending }}" data-success="{{ t.form.waitlist_success if kind == 'waitlist' else t.form.success }}" data-error="{{ t.form.error }}">

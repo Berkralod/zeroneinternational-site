@@ -609,3 +609,16 @@ a.tag:hover { border-color: var(--brand); color: var(--brand); }
 }
 .section + .cta-band, article + .cta-band { padding-top: 0; }
 .section--tint + .cta-band { padding-top: clamp(40px, 6vw, 72px); }
+
+/* blog */
+.post-meta { color: var(--muted); font-size: 0.9rem; margin: 0 0 10px; }
+.post-language-note { display: flex; gap: 10px; align-items: center; margin: 0 0 28px; }
+.post-language-note .icon { color: var(--accent); flex: none; }
+.post-body { font-size: 1.08rem; line-height: 1.7; }
+.post-body h2 { font-size: 1.45rem; }
+.post-body ul, .post-body ol { padding-inline-start: 1.3em; }
+.post-body li + li { margin-top: 6px; }
+.post-body a { color: var(--brand); text-underline-offset: 3px; }
+.post-body blockquote { margin: 24px 0; padding: 16px 20px; border-inline-start: 4px solid var(--accent); background: var(--accent-soft); border-radius: var(--radius); }
+.post-body blockquote p { margin: 0; }
+.newsletter .form { max-width: 520px; }

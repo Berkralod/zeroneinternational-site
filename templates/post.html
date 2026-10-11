@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% import "partials/blocks.html" as blocks with context %}
+{% import "partials/icons.html" as icons %}
+{% set p = t.pages.blog %}
+{% block content %}
+<article class="post" aria-labelledby="post-title">
+  <header class="page-hero page-hero--compact">
+    <div class="wrap wrap--narrow">
+      {% if post.tags %}<p class="eyebrow">{{ post.tags|join(' · ') }}</p>{% endif %}
+      <h1 id="post-title">{{ post.title }}</h1>
+      <p class="lede">{{ post.description }}</p>
+      <p class="post-meta">{{ p.published }} <time datetime="{{ post.date }}">{{ post.date }}</time>{% if post.updated != post.date %} · {{ p.updated }} <time datetime="{{ post.updated }}">{{ post.updated }}</time>{% endif %} · {{ p.minutes|replace('{n}', post.minutes) }} · {{ config.founder }}</p>
+    </div>
+  </header>
+  <div class="section section--flush-top">
+    <div class="wrap wrap--narrow prose post-body">
+{{ post.html }}
+      <p class="section-more"><a class="text-link" href="{{ url('blog') }}">{{ icons.icon('arrow-left') }} {{ p.back }}</a></p>
+    </div>
+  </div>
+</article>
+{{ blocks.newsletter_form() }}
+{{ blocks.cta_band() }}
+{% endblock %}

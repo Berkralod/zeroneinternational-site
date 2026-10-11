@@ -15,6 +15,7 @@
     "company": "empresa",
     "contact": "contacto",
     "payment": "pago",
+    "blog": "blog",
     "privacy": "privacidad",
     "terms": "terminos",
     "cookies": "cookies"
@@ -54,6 +55,7 @@
     "products": "Productos",
     "use_cases": "Casos de uso",
     "company": "Empresa",
+    "blog": "Blog",
     "contact": "Contacto"
   },
   "footer": {
@@ -170,6 +172,14 @@
     "waitlist_submit": "Unirme a la lista",
     "waitlist_success": "¡Gracias! Ya está en la lista.",
     "not_configured": "El formulario online se está configurando. Mientras tanto, contáctenos por correo electrónico."
+  },
+  "newsletter": {
+    "title": "Reciba nuevas guías por correo electrónico",
+    "text": "Un breve correo cuando publiquemos algo útil. Sin spam; puede darse de baja en cualquier momento.",
+    "email": "Correo electrónico",
+    "submit": "Suscribirse",
+    "success": "¡Gracias! Su suscripción se ha completado.",
+    "consent": "Deseo recibir el boletín y acepto la {link}."
   },
   "pages": {
     "home": {
@@ -533,6 +543,20 @@
         "link": "Contáctenos"
       }
     },
+    "blog": {
+      "title": "Blog – Guías de automatización de reventa | Zerone International",
+      "description": "Guías prácticas sobre crosslisting, análisis de lotes de liquidación y automatización de la reventa, escritas por un equipo con su propio negocio online.",
+      "eyebrow": "Blog",
+      "h1": "Guías para revendedores y equipos en crecimiento",
+      "lede": "Artículos prácticos sobre crosslisting, compra de lotes de liquidación y automatización de las tareas repetitivas de la reventa.",
+      "language_note": "Por ahora, los artículos se publican en inglés.",
+      "read_more": "Leer artículo",
+      "minutes": "{n} min de lectura",
+      "published": "Publicado",
+      "updated": "Actualizado",
+      "back": "Todos los artículos",
+      "rss": "Feed RSS"
+    },
     "privacy": {
       "title": "Política de privacidad | Zerone International",
       "description": "Cómo Zerone International LLC recoge, utiliza y protege los datos personales cuando visita este sitio web o se pone en contacto con nosotros.",
@@ -550,6 +574,12 @@
           "paragraphs": [
             "Cuando utiliza nuestro formulario de contacto o de lista de espera, recibimos los datos que introduce, como su nombre, correo electrónico, empresa y mensaje. Los usamos únicamente para responder a su solicitud y preparar una propuesta.",
             "Los formularios se envían a través de Formspree, un servicio de procesamiento de formularios que actúa en nuestro nombre. No envíe contraseñas, claves de API ni datos sensibles de clientes a través del formulario."
+          ]
+        },
+        {
+          "title": "Boletín",
+          "paragraphs": [
+            "Si se suscribe a nuestro boletín, almacenamos su dirección de correo electrónico y la fecha de su consentimiento, y los utilizamos únicamente para enviarle nuevos artículos y, ocasionalmente, noticias de la empresa. Cada correo incluye una forma de darse de baja, y también puede solicitarnos en cualquier momento que eliminemos su dirección."
           ]
         },
         {

@@ -15,6 +15,7 @@
     "company": "azienda",
     "contact": "contatti",
     "payment": "pagamento",
+    "blog": "blog",
     "privacy": "privacy",
     "terms": "termini-di-utilizzo",
     "cookies": "cookie"
@@ -54,6 +55,7 @@
     "products": "Prodotti",
     "use_cases": "Casi d’uso",
     "company": "Azienda",
+    "blog": "Blog",
     "contact": "Contatti"
   },
   "footer": {
@@ -170,6 +172,14 @@
     "waitlist_submit": "Iscrivimi",
     "waitlist_success": "Grazie! Siete iscritti alla lista.",
     "not_configured": "Il modulo online è in fase di attivazione. Nel frattempo contattateci via e-mail."
+  },
+  "newsletter": {
+    "title": "Riceva le nuove guide via e-mail",
+    "text": "Una breve e-mail quando pubblichiamo qualcosa di utile. Niente spam; può annullare l'iscrizione in qualsiasi momento.",
+    "email": "Indirizzo e-mail",
+    "submit": "Iscriviti",
+    "success": "Grazie! L'iscrizione è stata completata.",
+    "consent": "Desidero ricevere la newsletter e accetto l'{link}."
   },
   "pages": {
     "home": {
@@ -533,6 +543,20 @@
         "link": "Contatti"
       }
     },
+    "blog": {
+      "title": "Blog – Guide su rivendita e automazione | Zerone International",
+      "description": "Guide pratiche su crosslisting, analisi dei lotti di liquidazione e automazione della rivendita, scritte da un team che gestisce un proprio e-commerce.",
+      "eyebrow": "Blog",
+      "h1": "Guide per rivenditori e team in crescita",
+      "lede": "Articoli pratici su crosslisting, acquisto di lotti di liquidazione e automazione delle attività ripetitive della rivendita.",
+      "language_note": "Al momento gli articoli sono pubblicati in inglese.",
+      "read_more": "Leggi l'articolo",
+      "minutes": "{n} min di lettura",
+      "published": "Pubblicato",
+      "updated": "Aggiornato",
+      "back": "Tutti gli articoli",
+      "rss": "Feed RSS"
+    },
     "privacy": {
       "title": "Informativa sulla privacy | Zerone International",
       "description": "Come Zerone International LLC raccoglie, utilizza e protegge i dati personali quando visitate questo sito o ci contattate.",
@@ -550,6 +574,12 @@
           "paragraphs": [
             "Quando usate il modulo di contatto o della lista d’attesa, riceviamo i dati inseriti, come nome, indirizzo e-mail, azienda e messaggio. Li usiamo solo per rispondere alla vostra richiesta e preparare una proposta.",
             "I moduli vengono inviati tramite Formspree, un servizio di gestione dei moduli che opera per nostro conto. Non inviate tramite il modulo password, chiavi API o dati sensibili dei clienti."
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "paragraphs": [
+            "Se si iscrive alla nostra newsletter, conserviamo il Suo indirizzo e-mail e la data del Suo consenso e li utilizziamo esclusivamente per inviarLe nuovi articoli e, occasionalmente, notizie sull'azienda. Ogni e-mail contiene un modo per annullare l'iscrizione e può inoltre chiederci in qualsiasi momento di cancellare il Suo indirizzo."
           ]
         },
         {

@@ -15,6 +15,7 @@
     "company": "company",
     "contact": "contact",
     "payment": "payment",
+    "blog": "blog",
     "privacy": "privacy",
     "terms": "terms",
     "cookies": "cookies"
@@ -54,6 +55,7 @@
     "products": "产品",
     "use_cases": "应用场景",
     "company": "关于我们",
+    "blog": "博客",
     "contact": "联系我们"
   },
   "footer": {
@@ -170,6 +172,14 @@
     "waitlist_submit": "加入名单",
     "waitlist_success": "谢谢！您已加入名单。",
     "not_configured": "在线表单正在设置中，目前请通过电子邮件与我们联系。"
+  },
+  "newsletter": {
+    "title": "通过电子邮件获取新指南",
+    "text": "每当我们发布有用的内容时，会发送一封简短的邮件。绝无垃圾邮件，您可随时退订。",
+    "email": "电子邮件地址",
+    "submit": "订阅",
+    "success": "感谢您！订阅成功。",
+    "consent": "我同意接收新闻通讯，并接受{link}。"
   },
   "pages": {
     "home": {
@@ -533,6 +543,20 @@
         "link": "联系我们"
       }
     },
+    "blog": {
+      "title": "博客 – 转售自动化与软件指南 | Zerone International",
+      "description": "关于多平台同步上架、清仓批货分析以及转售工作自动化的实用指南。作者团队自己经营在线转售业务，分享来自一线的经验与方法。",
+      "eyebrow": "博客",
+      "h1": "面向转售商和成长型团队的指南",
+      "lede": "关于多平台同步上架、采购清仓批货以及将转售中的重复性工作自动化的实用文章。",
+      "language_note": "目前文章以英文发布。",
+      "read_more": "阅读文章",
+      "minutes": "阅读时间 {n} 分钟",
+      "published": "发布于",
+      "updated": "更新于",
+      "back": "全部文章",
+      "rss": "RSS 订阅"
+    },
     "privacy": {
       "title": "隐私政策 | Zerone International",
       "description": "当您访问本网站或与我们联系时，Zerone International LLC 如何收集、使用和保护个人数据。",
@@ -550,6 +574,12 @@
           "paragraphs": [
             "当您使用联系表单或等候名单表单时，我们会收到您填写的信息，例如姓名、电子邮箱、公司和留言。我们仅将其用于回复您的咨询和准备方案。",
             "表单通过 Formspree 提交，这是一项代表我们处理表单的服务。请勿通过表单发送密码、API 密钥或敏感的客户数据。"
+          ]
+        },
+        {
+          "title": "新闻通讯",
+          "paragraphs": [
+            "如果您订阅我们的新闻通讯，我们将存储您的电子邮件地址及您表示同意的日期，并仅将其用于向您发送新文章和不定期的公司新闻。每封邮件均提供退订方式，您也可以随时要求我们删除您的地址。"
           ]
         },
         {
