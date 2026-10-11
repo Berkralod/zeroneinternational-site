@@ -15,6 +15,7 @@
     "company": "company",
     "contact": "contact",
     "payment": "payment",
+    "blog": "blog",
     "privacy": "privacy",
     "terms": "terms",
     "cookies": "cookies"
@@ -54,6 +55,7 @@
     "products": "Products",
     "use_cases": "Use cases",
     "company": "Company",
+    "blog": "Blog",
     "contact": "Contact"
   },
   "footer": {
@@ -170,6 +172,14 @@
     "waitlist_submit": "Join the list",
     "waitlist_success": "Thank you! You are on the list.",
     "not_configured": "The online form is being set up. Please contact us by e-mail in the meantime."
+  },
+  "newsletter": {
+    "title": "Get new guides by e-mail",
+    "text": "One short e-mail when we publish something useful. No spam; unsubscribe any time.",
+    "email": "E-mail address",
+    "submit": "Subscribe",
+    "success": "Thank you! You are subscribed.",
+    "consent": "I agree to receive the newsletter and accept the {link}."
   },
   "pages": {
     "home": {
@@ -533,6 +543,20 @@
         "link": "Contact us"
       }
     },
+    "blog": {
+      "title": "Blog – Resale Automation & Software Guides | Zerone International",
+      "description": "Practical guides on crosslisting, liquidation lot analysis and automating resale work, from a team that runs its own online resale business.",
+      "eyebrow": "Blog",
+      "h1": "Guides for resellers and growing teams",
+      "lede": "Practical articles on crosslisting, buying liquidation lots and automating the repetitive parts of resale.",
+      "language_note": "Articles are currently published in English.",
+      "read_more": "Read article",
+      "minutes": "{n} min read",
+      "published": "Published",
+      "updated": "Updated",
+      "back": "All articles",
+      "rss": "RSS feed"
+    },
     "privacy": {
       "title": "Privacy Policy | Zerone International",
       "description": "How Zerone International LLC collects, uses and protects personal data when you visit this website or contact us.",
@@ -550,6 +574,12 @@
           "paragraphs": [
             "When you use our contact or waiting-list form, we receive the details you enter, such as your name, e-mail address, company and message. We use them only to answer your request and to prepare a proposal.",
             "Forms are delivered through Formspree, a form-processing service that acts on our behalf. Please do not send passwords, API keys or sensitive customer data through the form."
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "paragraphs": [
+            "If you subscribe to our newsletter, we store your e-mail address and the date of your consent and use them only to send you new articles and occasional company news. Every e-mail contains a way to unsubscribe, and you can also ask us to delete your address at any time."
           ]
         },
         {

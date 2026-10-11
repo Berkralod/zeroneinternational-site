@@ -15,6 +15,7 @@
     "company": "entreprise",
     "contact": "contact",
     "payment": "paiement",
+    "blog": "blog",
     "privacy": "confidentialite",
     "terms": "conditions-utilisation",
     "cookies": "cookies"
@@ -54,6 +55,7 @@
     "products": "Produits",
     "use_cases": "Cas d’usage",
     "company": "Entreprise",
+    "blog": "Blog",
     "contact": "Contact"
   },
   "footer": {
@@ -170,6 +172,14 @@
     "waitlist_submit": "M’inscrire",
     "waitlist_success": "Merci ! Vous êtes inscrit(e) sur la liste.",
     "not_configured": "Le formulaire en ligne est en cours de mise en place. En attendant, contactez-nous par e-mail."
+  },
+  "newsletter": {
+    "title": "Recevez nos nouveaux guides par e-mail",
+    "text": "Un court e-mail lorsque nous publions un contenu utile. Pas de spam ; désinscription possible à tout moment.",
+    "email": "Adresse e-mail",
+    "submit": "S'abonner",
+    "success": "Merci ! Votre inscription est confirmée.",
+    "consent": "Je souhaite recevoir la newsletter et j'accepte la {link}."
   },
   "pages": {
     "home": {
@@ -533,6 +543,20 @@
         "link": "Nous contacter"
       }
     },
+    "blog": {
+      "title": "Blog – Guides pour la revente automatisée | Zerone International",
+      "description": "Guides pratiques sur le multi-listing, l'analyse de lots de déstockage et l'automatisation de la revente, par une équipe qui gère sa propre activité en ligne.",
+      "eyebrow": "Blog",
+      "h1": "Guides pour revendeurs et équipes en croissance",
+      "lede": "Articles pratiques sur le multi-listing, l'achat de lots de déstockage et l'automatisation des tâches répétitives de la revente.",
+      "language_note": "Les articles sont actuellement publiés en anglais.",
+      "read_more": "Lire l'article",
+      "minutes": "{n} min de lecture",
+      "published": "Publié",
+      "updated": "Mis à jour",
+      "back": "Tous les articles",
+      "rss": "Flux RSS"
+    },
     "privacy": {
       "title": "Politique de confidentialité | Zerone International",
       "description": "Comment Zerone International LLC collecte, utilise et protège les données personnelles lorsque vous visitez ce site ou nous contactez.",
@@ -550,6 +574,12 @@
           "paragraphs": [
             "Lorsque vous utilisez notre formulaire de contact ou de liste d’attente, nous recevons les informations saisies, comme votre nom, votre adresse e-mail, votre entreprise et votre message. Nous les utilisons uniquement pour répondre à votre demande et préparer une proposition.",
             "Les formulaires sont transmis via Formspree, un service de traitement de formulaires agissant pour notre compte. Merci de ne pas envoyer de mots de passe, de clés API ou de données clients sensibles via le formulaire."
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "paragraphs": [
+            "Si vous vous abonnez à notre newsletter, nous conservons votre adresse e-mail et la date de votre consentement, et ne les utilisons que pour vous envoyer nos nouveaux articles et, à l'occasion, des actualités de l'entreprise. Chaque e-mail contient un lien de désinscription, et vous pouvez également nous demander à tout moment de supprimer votre adresse."
           ]
         },
         {

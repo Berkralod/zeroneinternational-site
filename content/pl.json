@@ -15,6 +15,7 @@
     "company": "firma",
     "contact": "kontakt",
     "payment": "platnosc",
+    "blog": "blog",
     "privacy": "polityka-prywatnosci",
     "terms": "warunki-korzystania",
     "cookies": "pliki-cookie"
@@ -54,6 +55,7 @@
     "products": "Produkty",
     "use_cases": "Przykłady",
     "company": "Firma",
+    "blog": "Blog",
     "contact": "Kontakt"
   },
   "footer": {
@@ -170,6 +172,14 @@
     "waitlist_submit": "Zapisz mnie",
     "waitlist_success": "Dziękujemy! Jesteś na liście.",
     "not_configured": "Formularz online jest właśnie konfigurowany. Do tego czasu skontaktuj się z nami e-mailem."
+  },
+  "newsletter": {
+    "title": "Nowe poradniki e-mailem",
+    "text": "Jeden krótki e-mail, gdy opublikujemy coś przydatnego. Bez spamu; z subskrypcji można zrezygnować w każdej chwili.",
+    "email": "Adres e-mail",
+    "submit": "Subskrybuj",
+    "success": "Dziękujemy! Subskrypcja została aktywowana.",
+    "consent": "Wyrażam zgodę na otrzymywanie newslettera i akceptuję dokument {link}."
   },
   "pages": {
     "home": {
@@ -533,6 +543,20 @@
         "link": "Kontakt"
       }
     },
+    "blog": {
+      "title": "Blog – Poradniki dla resellerów | Zerone International",
+      "description": "Praktyczne poradniki o crosslistingu, analizie partii likwidacyjnych i automatyzacji odsprzedaży – od zespołu prowadzącego własny biznes e-commerce.",
+      "eyebrow": "Blog",
+      "h1": "Poradniki dla sprzedawców i rozwijających się zespołów",
+      "lede": "Praktyczne artykuły o crosslistingu, zakupie partii likwidacyjnych i automatyzacji powtarzalnych zadań w odsprzedaży.",
+      "language_note": "Artykuły są obecnie publikowane w języku angielskim.",
+      "read_more": "Przeczytaj artykuł",
+      "minutes": "{n} min czytania",
+      "published": "Opublikowano",
+      "updated": "Zaktualizowano",
+      "back": "Wszystkie artykuły",
+      "rss": "Kanał RSS"
+    },
     "privacy": {
       "title": "Polityka prywatności | Zerone International",
       "description": "Jak Zerone International LLC zbiera, wykorzystuje i chroni dane osobowe, gdy odwiedzasz tę stronę lub kontaktujesz się z nami.",
@@ -550,6 +574,12 @@
           "paragraphs": [
             "Gdy korzystasz z formularza kontaktowego lub listy oczekujących, otrzymujemy wpisane dane, takie jak imię i nazwisko, adres e-mail, firma i treść wiadomości. Wykorzystujemy je wyłącznie do odpowiedzi na zapytanie i przygotowania oferty.",
             "Formularze są przesyłane przez Formspree, usługę obsługi formularzy działającą w naszym imieniu. Nie wysyłaj przez formularz haseł, kluczy API ani wrażliwych danych klientów."
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "paragraphs": [
+            "Jeśli zapiszą się Państwo do naszego newslettera, przechowujemy Państwa adres e-mail oraz datę wyrażenia zgody i wykorzystujemy je wyłącznie do wysyłania nowych artykułów oraz okazjonalnych informacji o firmie. Każdy e-mail zawiera możliwość rezygnacji z subskrypcji, a ponadto w każdej chwili mogą Państwo poprosić nas o usunięcie adresu."
           ]
         },
         {

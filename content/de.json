@@ -15,6 +15,7 @@
     "company": "unternehmen",
     "contact": "kontakt",
     "payment": "zahlung",
+    "blog": "blog",
     "privacy": "datenschutz",
     "terms": "nutzungsbedingungen",
     "cookies": "cookies"
@@ -54,6 +55,7 @@
     "products": "Produkte",
     "use_cases": "Anwendungsfälle",
     "company": "Unternehmen",
+    "blog": "Blog",
     "contact": "Kontakt"
   },
   "footer": {
@@ -170,6 +172,14 @@
     "waitlist_submit": "Eintragen",
     "waitlist_success": "Vielen Dank! Sie stehen auf der Liste.",
     "not_configured": "Das Online-Formular wird gerade eingerichtet. Bitte kontaktieren Sie uns bis dahin per E-Mail."
+  },
+  "newsletter": {
+    "title": "Neue Ratgeber per E-Mail erhalten",
+    "text": "Eine kurze E-Mail, wenn wir etwas Nützliches veröffentlichen. Kein Spam; Abmeldung jederzeit möglich.",
+    "email": "E-Mail-Adresse",
+    "submit": "Abonnieren",
+    "success": "Vielen Dank! Sie haben den Newsletter abonniert.",
+    "consent": "Ich möchte den Newsletter erhalten und akzeptiere die {link}."
   },
   "pages": {
     "home": {
@@ -533,6 +543,20 @@
         "link": "Kontakt aufnehmen"
       }
     },
+    "blog": {
+      "title": "Blog – Reselling- und Software-Ratgeber | Zerone International",
+      "description": "Praxisnahe Ratgeber zu Crosslisting, der Analyse von Restposten-Lots und der Automatisierung im Wiederverkauf – von einem Team mit eigenem Online-Handel.",
+      "eyebrow": "Blog",
+      "h1": "Ratgeber für Wiederverkäufer und wachsende Teams",
+      "lede": "Praxisnahe Artikel zu Crosslisting, zum Einkauf von Restposten-Lots und zur Automatisierung wiederkehrender Aufgaben im Wiederverkauf.",
+      "language_note": "Die Artikel erscheinen derzeit auf Englisch.",
+      "read_more": "Artikel lesen",
+      "minutes": "{n} Min. Lesezeit",
+      "published": "Veröffentlicht",
+      "updated": "Aktualisiert",
+      "back": "Alle Artikel",
+      "rss": "RSS-Feed"
+    },
     "privacy": {
       "title": "Datenschutzerklärung | Zerone International",
       "description": "Wie Zerone International LLC personenbezogene Daten erhebt, nutzt und schützt, wenn Sie diese Website besuchen oder uns kontaktieren.",
@@ -550,6 +574,12 @@
           "paragraphs": [
             "Wenn Sie unser Kontakt- oder Wartelistenformular nutzen, erhalten wir die von Ihnen eingegebenen Angaben wie Name, E-Mail-Adresse, Unternehmen und Nachricht. Wir verwenden sie ausschließlich, um Ihre Anfrage zu beantworten und ein Angebot zu erstellen.",
             "Formulare werden über Formspree übermittelt, einen Dienst zur Formularverarbeitung, der in unserem Auftrag tätig ist. Bitte senden Sie über das Formular keine Passwörter, API-Schlüssel oder sensiblen Kundendaten."
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "paragraphs": [
+            "Wenn Sie unseren Newsletter abonnieren, speichern wir Ihre E-Mail-Adresse und das Datum Ihrer Einwilligung und verwenden diese ausschließlich, um Ihnen neue Artikel und gelegentlich Neuigkeiten aus unserem Unternehmen zu senden. Jede E-Mail enthält eine Möglichkeit zur Abmeldung; zudem können Sie jederzeit die Löschung Ihrer Adresse verlangen."
           ]
         },
         {

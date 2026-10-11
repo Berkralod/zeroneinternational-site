@@ -237,3 +237,28 @@ test("payment page links only to the payment providers' own pages", async ({ pag
     expect(new URL(href).hostname).toMatch(/(^|\.)(paypal\.(com|me|biz)|square\.link|square\.site|squareup\.com)$/);
   }
 });
+
+test("blog lists every post, posts render and the newsletter form submits @cross", async ({ page }) => {
+  const errors = await collectErrors(page);
+  await page.goto(pathFor("de", "blog"));
+  const cards = page.locator(".post-card");
+  expect(await cards.count()).toBeGreaterThan(0);
+  await cards.first().locator("a").click();
+  await expect(page).toHaveURL(/\/blog\/[a-z0-9-]+\/$/);
+  await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  await expect(page.locator("article h1")).toBeVisible();
+  for (const width of [320, 1280]) {
+    await page.setViewportSize({ width, height: 900 });
+    expect(await horizontalOverflow(page), `overflow at ${width}px`).toBeLessThanOrEqual(1);
+  }
+  const form = page.locator("section.newsletter form[data-ajax-form]");
+  test.skip((await form.count()) === 0, "Formspree is not configured in this build");
+  await page.route("https://formspree.io/**", (route) =>
+    route.fulfill({ status: 200, contentType: "application/json", body: '{"ok":true}' })
+  );
+  await form.locator("#nl-email").fill("reader@example.com");
+  await form.locator("#nl-consent").check();
+  await form.locator("[type=submit]").click();
+  await expect(form.locator("[data-form-status]")).toHaveText(content.en.newsletter.success);
+  expect(errors).toEqual([]);
+});

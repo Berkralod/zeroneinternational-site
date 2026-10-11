@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% import "partials/blocks.html" as blocks with context %}
+{% import "partials/icons.html" as icons %}
+{% set p = t.pages.blog %}
+{% block content %}
+{{ blocks.page_hero(p.eyebrow, p.h1, p.lede) }}
+<section class="section section--flush-top" aria-label="{{ t.nav.blog }}">
+  <div class="wrap">
+    {% if lang != config.default_language %}
+    <p class="notice post-language-note">{{ icons.icon('globe') }} <span>{{ p.language_note }}</span></p>
+    {% endif %}
+    <ul class="card-grid card-grid--3 post-list" role="list">
+    {% for post in posts %}
+      <li class="card card--link post-card" lang="{{ config.default_language }}">
+        <p class="post-meta"><time datetime="{{ post.date }}">{{ post.date }}</time> · {{ p.minutes|replace('{n}', post.minutes) }}</p>
+        <h3 class="card__title"><a href="{{ post_url(post.slug) }}" hreflang="{{ config.default_language }}">{{ post.title }}</a></h3>
+        <p>{{ post.description }}</p>
+        <span class="card__more" aria-hidden="true">{{ p.read_more }} {{ icons.icon('arrow') }}</span>
+      </li>
+    {% endfor %}
+    </ul>
+    <p class="section-more"><a class="text-link" href="{{ feed_url }}" type="application/rss+xml">{{ p.rss }} {{ icons.icon('arrow') }}</a></p>
+  </div>
+</section>
+{{ blocks.newsletter_form() }}
+{% endblock %}

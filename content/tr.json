@@ -15,6 +15,7 @@
     "company": "sirket",
     "contact": "iletisim",
     "payment": "odeme",
+    "blog": "blog",
     "privacy": "gizlilik",
     "terms": "kullanim-kosullari",
     "cookies": "cerezler"
@@ -54,6 +55,7 @@
     "products": "Ürünler",
     "use_cases": "Kullanım senaryoları",
     "company": "Şirket",
+    "blog": "Blog",
     "contact": "İletişim"
   },
   "footer": {
@@ -170,6 +172,14 @@
     "waitlist_submit": "Listeye katıl",
     "waitlist_success": "Teşekkürler! Listeye eklendiniz.",
     "not_configured": "Online form hazırlanıyor. Bu süre içinde lütfen bize e-posta ile ulaşın."
+  },
+  "newsletter": {
+    "title": "Yeni rehberleri e-posta ile alın",
+    "text": "Faydalı bir içerik yayımladığımızda tek bir kısa e-posta. Spam yok; aboneliğinizi istediğiniz zaman iptal edebilirsiniz.",
+    "email": "E-posta adresi",
+    "submit": "Abone olun",
+    "success": "Teşekkür ederiz! Aboneliğiniz tamamlandı.",
+    "consent": "Bülteni almayı ve {link} metnini kabul ediyorum."
   },
   "pages": {
     "home": {
@@ -533,6 +543,20 @@
         "link": "Bize ulaşın"
       }
     },
+    "blog": {
+      "title": "Blog – Yeniden Satış Otomasyonu Rehberleri | Zerone International",
+      "description": "Çapraz listeleme, likidasyon lotu analizi ve satış süreçlerinin otomasyonu üzerine pratik rehberler; kendi çevrimiçi satış işini yürüten bir ekipten.",
+      "eyebrow": "Blog",
+      "h1": "Satıcılar ve büyüyen ekipler için rehberler",
+      "lede": "Çapraz listeleme, likidasyon lotu satın alma ve yeniden satıştaki tekrarlayan işleri otomatikleştirme üzerine pratik makaleler.",
+      "language_note": "Makalelerimiz şu anda İngilizce olarak yayımlanmaktadır.",
+      "read_more": "Makaleyi okuyun",
+      "minutes": "{n} dk okuma",
+      "published": "Yayımlanma",
+      "updated": "Güncellenme",
+      "back": "Tüm makaleler",
+      "rss": "RSS beslemesi"
+    },
     "privacy": {
       "title": "Gizlilik Politikası | Zerone International",
       "description": "Zerone International LLC'nin bu web sitesini ziyaret ettiğinizde veya bizimle iletişime geçtiğinizde kişisel verileri nasıl topladığı, kullandığı ve koruduğu.",
@@ -550,6 +574,12 @@
           "paragraphs": [
             "İletişim veya bekleme listesi formumuzu kullandığınızda adınız, e-posta adresiniz, şirketiniz ve mesajınız gibi girdiğiniz bilgileri alırız. Bunları yalnızca talebinizi yanıtlamak ve teklif hazırlamak için kullanırız.",
             "Formlar, bizim adımıza çalışan bir form işleme hizmeti olan Formspree aracılığıyla iletilir. Lütfen form üzerinden şifre, API anahtarı veya hassas müşteri verisi göndermeyin."
+          ]
+        },
+        {
+          "title": "Bülten",
+          "paragraphs": [
+            "Bültenimize abone olursanız, e-posta adresinizi ve onay tarihinizi saklarız ve bunları yalnızca size yeni makaleler ve zaman zaman şirket haberleri göndermek için kullanırız. Her e-postada abonelikten çıkma imkânı bulunur; ayrıca adresinizin silinmesini istediğiniz zaman talep edebilirsiniz."
           ]
         },
         {

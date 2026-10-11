@@ -15,6 +15,7 @@
     "company": "bedrijf",
     "contact": "contact",
     "payment": "betaling",
+    "blog": "blog",
     "privacy": "privacy",
     "terms": "gebruiksvoorwaarden",
     "cookies": "cookies"
@@ -54,6 +55,7 @@
     "products": "Producten",
     "use_cases": "Toepassingen",
     "company": "Bedrijf",
+    "blog": "Blog",
     "contact": "Contact"
   },
   "footer": {
@@ -170,6 +172,14 @@
     "waitlist_submit": "Aanmelden",
     "waitlist_success": "Bedankt! U staat op de lijst.",
     "not_configured": "Het online formulier wordt ingericht. Neem in de tussentijd per e-mail contact met ons op."
+  },
+  "newsletter": {
+    "title": "Ontvang nieuwe gidsen per e-mail",
+    "text": "Eén korte e-mail wanneer we iets nuttigs publiceren. Geen spam; u kunt zich op elk moment afmelden.",
+    "email": "E-mailadres",
+    "submit": "Aanmelden",
+    "success": "Bedankt! U bent aangemeld.",
+    "consent": "Ik wil de nieuwsbrief ontvangen en ga akkoord met de {link}."
   },
   "pages": {
     "home": {
@@ -533,6 +543,20 @@
         "link": "Contact opnemen"
       }
     },
+    "blog": {
+      "title": "Blog – Gidsen voor resale-automatisering | Zerone International",
+      "description": "Praktische gidsen over crosslisting, analyse van liquidatiepartijen en automatisering van doorverkoop, van een team met een eigen online doorverkoopbedrijf.",
+      "eyebrow": "Blog",
+      "h1": "Gidsen voor doorverkopers en groeiende teams",
+      "lede": "Praktische artikelen over crosslisting, het inkopen van liquidatiepartijen en het automatiseren van repetitief werk bij doorverkoop.",
+      "language_note": "De artikelen worden momenteel in het Engels gepubliceerd.",
+      "read_more": "Artikel lezen",
+      "minutes": "{n} min leestijd",
+      "published": "Gepubliceerd",
+      "updated": "Bijgewerkt",
+      "back": "Alle artikelen",
+      "rss": "RSS-feed"
+    },
     "privacy": {
       "title": "Privacyverklaring | Zerone International",
       "description": "Hoe Zerone International LLC persoonsgegevens verzamelt, gebruikt en beschermt wanneer u deze website bezoekt of contact met ons opneemt.",
@@ -550,6 +574,12 @@
           "paragraphs": [
             "Wanneer u ons contact- of wachtlijstformulier gebruikt, ontvangen we de gegevens die u invult, zoals naam, e-mailadres, bedrijf en bericht. We gebruiken ze alleen om uw aanvraag te beantwoorden en een voorstel op te stellen.",
             "Formulieren worden verzonden via Formspree, een dienst voor formulierverwerking die namens ons werkt. Stuur via het formulier geen wachtwoorden, API-sleutels of gevoelige klantgegevens."
+          ]
+        },
+        {
+          "title": "Nieuwsbrief",
+          "paragraphs": [
+            "Als u zich aanmeldt voor onze nieuwsbrief, bewaren wij uw e-mailadres en de datum van uw toestemming en gebruiken wij deze uitsluitend om u nieuwe artikelen en af en toe bedrijfsnieuws te sturen. Elke e-mail bevat een mogelijkheid om u af te melden, en u kunt ons ook op elk moment vragen uw adres te verwijderen."
           ]
         },
         {

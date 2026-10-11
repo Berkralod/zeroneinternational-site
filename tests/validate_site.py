@@ -211,7 +211,9 @@ def main() -> int:
             if canon != [url_for_file(f)]:
                 err(f"canonical {canon} should be {url_for_file(f)}")
             alts = {hl: h for r, h, hl in p.links if r == "alternate" and hl}
-            if set(alts) != set(LANGS) | {"x-default"}:
+            # Pages exist in every language, except blog posts, which are only in their own language.
+            single_language = set(alts) == {p.lang, "x-default"} and alts.get("x-default") == url_for_file(f)
+            if set(alts) != set(LANGS) | {"x-default"} and not single_language:
                 err(f"hreflang set is {sorted(alts)}")
             if alts.get(p.lang) != url_for_file(f):
                 err("hreflang for own language does not point to itself")

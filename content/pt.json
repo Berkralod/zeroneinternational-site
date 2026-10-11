@@ -15,6 +15,7 @@
     "company": "empresa",
     "contact": "contato",
     "payment": "pagamento",
+    "blog": "blog",
     "privacy": "privacidade",
     "terms": "termos-de-uso",
     "cookies": "cookies"
@@ -54,6 +55,7 @@
     "products": "Produtos",
     "use_cases": "Casos de uso",
     "company": "Empresa",
+    "blog": "Blog",
     "contact": "Contato"
   },
   "footer": {
@@ -170,6 +172,14 @@
     "waitlist_submit": "Entrar na lista",
     "waitlist_success": "Obrigado! Você está na lista.",
     "not_configured": "O formulário online está sendo configurado. Enquanto isso, fale conosco por e-mail."
+  },
+  "newsletter": {
+    "title": "Receba novos guias por e-mail",
+    "text": "Um e-mail curto quando publicarmos algo útil. Sem spam; cancele a inscrição quando quiser.",
+    "email": "Endereço de e-mail",
+    "submit": "Inscrever-se",
+    "success": "Obrigado! Sua inscrição foi confirmada.",
+    "consent": "Concordo em receber a newsletter e aceito a {link}."
   },
   "pages": {
     "home": {
@@ -533,6 +543,20 @@
         "link": "Fale conosco"
       }
     },
+    "blog": {
+      "title": "Blog – Guias de automação para revenda | Zerone International",
+      "description": "Guias práticos sobre crosslisting, análise de lotes de liquidação e automação da revenda, feitos por uma equipe que mantém seu próprio negócio online.",
+      "eyebrow": "Blog",
+      "h1": "Guias para revendedores e equipes em crescimento",
+      "lede": "Artigos práticos sobre crosslisting, compra de lotes de liquidação e automação das tarefas repetitivas da revenda.",
+      "language_note": "No momento, os artigos são publicados em inglês.",
+      "read_more": "Ler artigo",
+      "minutes": "{n} min de leitura",
+      "published": "Publicado",
+      "updated": "Atualizado",
+      "back": "Todos os artigos",
+      "rss": "Feed RSS"
+    },
     "privacy": {
       "title": "Política de Privacidade | Zerone International",
       "description": "Como a Zerone International LLC coleta, usa e protege dados pessoais quando você visita este site ou entra em contato conosco.",
@@ -550,6 +574,12 @@
           "paragraphs": [
             "Quando você usa nosso formulário de contato ou de lista de espera, recebemos os dados informados, como nome, e-mail, empresa e mensagem. Usamos esses dados apenas para responder à sua solicitação e preparar uma proposta.",
             "Os formulários são enviados pelo Formspree, um serviço de processamento de formulários que atua em nosso nome. Não envie senhas, chaves de API ou dados sensíveis de clientes pelo formulário."
+          ]
+        },
+        {
+          "title": "Newsletter",
+          "paragraphs": [
+            "Se você se inscrever em nossa newsletter, armazenamos seu endereço de e-mail e a data do seu consentimento e os utilizamos apenas para enviar novos artigos e, ocasionalmente, notícias da empresa. Todo e-mail contém uma opção para cancelar a inscrição, e você também pode nos pedir a qualquer momento que excluamos seu endereço."
           ]
         },
         {
