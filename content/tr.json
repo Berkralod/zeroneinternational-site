@@ -14,6 +14,7 @@
     "use_cases": "kullanim-senaryolari",
     "company": "sirket",
     "contact": "iletisim",
+    "payment": "odeme",
     "privacy": "gizlilik",
     "terms": "kullanim-kosullari",
     "cookies": "cerezler"
@@ -482,6 +483,56 @@
       "telegram": "Telegram'dan yazın",
       "location_title": "Konum"
     },
+    "payment": {
+      "title": "Ödeme Yapın – Faturanızı Güvenle Ödeyin | Zerone International",
+      "description": "Zerone International faturanızı kart, Apple Pay, banka havalesi (ACH) veya PayPal ile güvenle ödeyin. Kart bilgileri sitemizde değil, Square ve PayPal'da işlenir.",
+      "eyebrow": "Ödemeler",
+      "h1": "Ödeme yapın",
+      "lede": "Faturanızı çevrimiçi ve güvenli bir şekilde ödeyin. Kart bilgileriniz doğrudan Square veya PayPal'a iletilir ve web sitemizden hiçbir zaman geçmez.",
+      "methods_title": "Ödeme yönteminizi seçin",
+      "square": {
+        "title": "Square faturasını ödeyin",
+        "text": "Tüm faturalarımızı Square üzerinden e-postayla göndeririz. E-postayı açın, “Faturayı öde” seçeneğine tıklayın ve kart, Apple Pay, Google Pay veya banka havalesi (ACH) ile ödeyin.",
+        "note": "E-postayı bulamıyor musunuz? Spam klasörünüzü kontrol edin ya da bizimle iletişime geçin; faturayı yeniden gönderelim.",
+        "button": "Square ile öde"
+      },
+      "paypal": {
+        "title": "PayPal ile ödeyin",
+        "text": "PayPal'ı mı tercih edersiniz? Doğrulanmış işletme profilimizi açın ve faturanızda yer alan tutarı ve fatura numarasını girin.",
+        "button": "PayPal ile öde"
+      },
+      "security": {
+        "title": "Ödemeniz güvence altında",
+        "items": [
+          "Ödemeler, PCI DSS kart güvenliği standardına göre sertifikalı Square ve PayPal tarafından işlenir.",
+          "Web sitemiz kart veya banka bilgilerinizi hiçbir zaman görmez ve saklamaz.",
+          "Ödeme yapmadan önce ödeme sayfasının Square'e veya PayPal'a ait olduğunu kontrol edin.",
+          "Kart bilgilerinizi asla e-posta, telefon veya sohbet yoluyla istemeyiz."
+        ]
+      },
+      "faq": {
+        "title": "Ödemeyle ilgili sorular",
+        "items": [
+          {
+            "q": "Faturalarınız hangi para biriminde düzenleniyor?",
+            "a": "Faturalar ABD doları cinsinden düzenlenir. PayPal diğer para birimlerini otomatik olarak dönüştürür; bankanız veya PayPal döviz çevirme ücreti alabilir."
+          },
+          {
+            "q": "Makbuz alacak mıyım?",
+            "a": "Evet. Ödeme tamamlanır tamamlanmaz Square veya PayPal size e-postayla bir makbuz gönderir; biz de ödemeyi aldığımızı ayrıca onaylarız."
+          },
+          {
+            "q": "Bir proje aşamalı olarak ödenebilir mi?",
+            "a": "Evet. Büyük projeler genellikle yazılı teklifinizde belirtilen kilometre taşlarına göre aşamalı olarak ödenir."
+          }
+        ]
+      },
+      "help": {
+        "title": "Faturanızla ilgili sorunuz mu var?",
+        "text": "Fatura numaranızla bizimle iletişime geçin, size yardımcı olalım.",
+        "link": "Bize ulaşın"
+      }
+    },
     "privacy": {
       "title": "Gizlilik Politikası | Zerone International",
       "description": "Zerone International LLC'nin bu web sitesini ziyaret ettiğinizde veya bizimle iletişime geçtiğinizde kişisel verileri nasıl topladığı, kullandığı ve koruduğu.",
@@ -506,6 +557,12 @@
           "paragraphs": [
             "Barındırma sağlayıcımız, sunucu kayıtlarında IP adresi, tarayıcı türü ve istek zamanı gibi teknik verileri kaydedebilir. Bu, web sitesini güvenli şekilde sunmak için gereklidir.",
             "Site istatistiklerini etkinleştirirsek, çerez kullanmayan ve kişisel profil oluşturmayan gizlilik dostu bir hizmet kullanırız."
+          ]
+        },
+        {
+          "title": "Ödemeler",
+          "paragraphs": [
+            "Bir faturayı ödediğinizde ödeme bilgileriniz, bağımsız hizmet sağlayıcılar olarak Square veya PayPal tarafından işlenir. Adınızı, e-posta adresinizi ve ödenen tutarı içeren bir onay alırız ve bunu yasaların gerektirdiği şekilde muhasebe amacıyla saklarız."
           ]
         },
         {
@@ -568,6 +625,12 @@
           "title": "Sorumluluk",
           "paragraphs": [
             "Bu web sitesini doğru ve erişilebilir tutmaya özen gösteririz; ancak her zaman eksiksiz, güncel veya kesintisiz olacağını garanti etmeyiz. Yasaların izin verdiği ölçüde, web sitesinin kullanımından doğan zararlardan sorumlu değiliz."
+          ]
+        },
+        {
+          "title": "Ödemeler",
+          "paragraphs": [
+            "Bir projeye ait ücretler, ödeme koşulları ve kilometre taşları, ilgili yazılı teklifte veya faturada belirtilir. Ödemeler, Square veya PayPal tarafından kendi koşulları çerçevesinde işlenir; kart bilgilerinizi almayız ve saklamayız."
           ]
         },
         {

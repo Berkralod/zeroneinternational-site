@@ -14,6 +14,7 @@
     "use_cases": "use-cases",
     "company": "company",
     "contact": "contact",
+    "payment": "payment",
     "privacy": "privacy",
     "terms": "terms",
     "cookies": "cookies"
@@ -482,6 +483,56 @@
       "telegram": "通过 Telegram 联系",
       "location_title": "地址"
     },
+    "payment": {
+      "title": "在线付款 – 安全支付发票 | Zerone International",
+      "description": "通过银行卡、Apple Pay、银行转账（ACH）或 PayPal 安全支付 Zerone International 发票。银行卡信息由 Square 和 PayPal 处理，不经过我们的网站。",
+      "eyebrow": "付款",
+      "h1": "在线付款",
+      "lede": "在线安全支付您的发票。您的银行卡信息直接发送至 Square 或 PayPal，绝不会经过我们的网站。",
+      "methods_title": "选择付款方式",
+      "square": {
+        "title": "支付 Square 发票",
+        "text": "我们通过 Square 以电子邮件发送每张发票。打开邮件，点击“支付发票”，即可使用银行卡、Apple Pay、Google Pay 或银行转账（ACH）付款。",
+        "note": "找不到邮件？请检查垃圾邮件文件夹，或联系我们重新发送。",
+        "button": "使用 Square 付款"
+      },
+      "paypal": {
+        "title": "使用 PayPal 付款",
+        "text": "更喜欢 PayPal？请打开我们经过验证的商家页面，输入发票上显示的金额和发票编号。",
+        "button": "使用 PayPal 付款"
+      },
+      "security": {
+        "title": "您的付款安全有保障",
+        "items": [
+          "付款由 Square 和 PayPal 处理，两者均已通过 PCI DSS 支付卡安全标准认证。",
+          "我们的网站绝不会查看或存储您的银行卡或银行账户信息。",
+          "付款前，请确认付款页面属于 Square 或 PayPal。",
+          "我们绝不会通过电子邮件、电话或聊天索要您的银行卡信息。"
+        ]
+      },
+      "faq": {
+        "title": "付款常见问题",
+        "items": [
+          {
+            "q": "发票以什么货币开具？",
+            "a": "发票以美元开具。PayPal 会自动换算其他货币；您的银行或 PayPal 可能会收取货币转换费。"
+          },
+          {
+            "q": "我会收到收据吗？",
+            "a": "会。付款完成后，Square 或 PayPal 会立即通过电子邮件向您发送收据，我们也会确认已收到款项。"
+          },
+          {
+            "q": "项目可以分阶段付款吗？",
+            "a": "可以。较大的项目通常按照书面方案中约定的里程碑分阶段付款。"
+          }
+        ]
+      },
+      "help": {
+        "title": "对发票有疑问？",
+        "text": "请提供您的发票编号联系我们，我们将为您提供帮助。",
+        "link": "联系我们"
+      }
+    },
     "privacy": {
       "title": "隐私政策 | Zerone International",
       "description": "当您访问本网站或与我们联系时，Zerone International LLC 如何收集、使用和保护个人数据。",
@@ -506,6 +557,12 @@
           "paragraphs": [
             "我们的托管服务商可能会在服务器日志中记录 IP 地址、浏览器类型和请求时间等技术数据，这是安全提供网站服务所必需的。",
             "如果我们启用网站统计，将使用注重隐私、不使用 Cookie 且不建立个人画像的服务。"
+          ]
+        },
+        {
+          "title": "付款",
+          "paragraphs": [
+            "当您支付发票时，Square 或 PayPal 作为独立服务提供商处理您的付款信息。我们会收到一份包含您的姓名、电子邮件地址和付款金额的确认信息，并依法将其保存用于会计用途。"
           ]
         },
         {
@@ -568,6 +625,12 @@
           "title": "责任",
           "paragraphs": [
             "我们努力保持本网站准确且可用，但不保证其始终完整、最新或不间断。在法律允许的范围内，我们不对因使用本网站造成的损失承担责任。"
+          ]
+        },
+        {
+          "title": "付款",
+          "paragraphs": [
+            "项目的费用、付款条款和里程碑均在相应的书面方案或发票中列明。付款由 Square 或 PayPal 根据其各自的条款处理；我们不会接收或存储您的银行卡信息。"
           ]
         },
         {

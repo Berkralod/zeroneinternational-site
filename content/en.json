@@ -14,6 +14,7 @@
     "use_cases": "use-cases",
     "company": "company",
     "contact": "contact",
+    "payment": "payment",
     "privacy": "privacy",
     "terms": "terms",
     "cookies": "cookies"
@@ -482,6 +483,56 @@
       "telegram": "Message on Telegram",
       "location_title": "Location"
     },
+    "payment": {
+      "title": "Make a Payment – Pay an Invoice Securely | Zerone International",
+      "description": "Pay a Zerone International invoice securely by card, Apple Pay, bank transfer (ACH) or PayPal. Card details are handled by Square and PayPal, never by our website.",
+      "eyebrow": "Payments",
+      "h1": "Make a payment",
+      "lede": "Pay your invoice securely online. Your card details go straight to Square or PayPal and never touch our website.",
+      "methods_title": "Choose how to pay",
+      "square": {
+        "title": "Pay a Square invoice",
+        "text": "We send every invoice by e-mail through Square. Open the e-mail, select “Pay invoice” and pay by card, Apple Pay, Google Pay or bank transfer (ACH).",
+        "note": "Can't find the e-mail? Check your spam folder or contact us and we will send it again.",
+        "button": "Pay with Square"
+      },
+      "paypal": {
+        "title": "Pay with PayPal",
+        "text": "Prefer PayPal? Open our verified business profile and enter the amount and the invoice number shown on your invoice.",
+        "button": "Pay with PayPal"
+      },
+      "security": {
+        "title": "Your payment is protected",
+        "items": [
+          "Payments are processed by Square and PayPal, which are certified to the PCI DSS card security standard.",
+          "Our website never sees or stores your card or bank details.",
+          "Before you pay, check that the payment page belongs to Square or PayPal.",
+          "We will never ask for card details by e-mail, phone or chat."
+        ]
+      },
+      "faq": {
+        "title": "Payment questions",
+        "items": [
+          {
+            "q": "Which currency do you invoice in?",
+            "a": "Invoices are issued in US dollars. PayPal converts other currencies automatically; your bank or PayPal may charge a conversion fee."
+          },
+          {
+            "q": "Will I get a receipt?",
+            "a": "Yes. Square or PayPal e-mails you a receipt as soon as the payment is complete, and we confirm that we have received it."
+          },
+          {
+            "q": "Can a project be paid in stages?",
+            "a": "Yes. Larger projects are usually paid in milestones, as set out in your written proposal."
+          }
+        ]
+      },
+      "help": {
+        "title": "Questions about an invoice?",
+        "text": "Contact us with your invoice number and we will help.",
+        "link": "Contact us"
+      }
+    },
     "privacy": {
       "title": "Privacy Policy | Zerone International",
       "description": "How Zerone International LLC collects, uses and protects personal data when you visit this website or contact us.",
@@ -506,6 +557,12 @@
           "paragraphs": [
             "Our hosting provider may record technical data such as IP address, browser type and the time of the request in server logs. This is necessary to deliver the website securely.",
             "If we enable website statistics, we use a privacy-friendly service that does not use cookies and does not build personal profiles."
+          ]
+        },
+        {
+          "title": "Payments",
+          "paragraphs": [
+            "When you pay an invoice, Square or PayPal process your payment details as independent providers. We receive a confirmation with your name, e-mail address and the amount paid, and keep it for accounting as required by law."
           ]
         },
         {
@@ -568,6 +625,12 @@
           "title": "Liability",
           "paragraphs": [
             "We take care to keep this website accurate and available, but we do not guarantee that it is always complete, current or free of interruptions. To the extent permitted by law, we are not liable for damages arising from the use of the website."
+          ]
+        },
+        {
+          "title": "Payments",
+          "paragraphs": [
+            "Fees, payment terms and milestones for a project are set out in its written proposal or invoice. Payments are processed by Square or PayPal under their own terms; we do not receive or store your card details."
           ]
         },
         {

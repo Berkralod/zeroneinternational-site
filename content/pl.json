@@ -14,6 +14,7 @@
     "use_cases": "przyklady-zastosowan",
     "company": "firma",
     "contact": "kontakt",
+    "payment": "platnosc",
     "privacy": "polityka-prywatnosci",
     "terms": "warunki-korzystania",
     "cookies": "pliki-cookie"
@@ -482,6 +483,56 @@
       "telegram": "Napisz na Telegramie",
       "location_title": "Lokalizacja"
     },
+    "payment": {
+      "title": "Płatności – bezpieczne opłacanie faktur | Zerone International",
+      "description": "Fakturę Zerone International można bezpiecznie opłacić kartą, Apple Pay, przelewem bankowym (ACH) lub przez PayPal. Dane karty obsługują wyłącznie Square i PayPal.",
+      "eyebrow": "Płatności",
+      "h1": "Płatność online",
+      "lede": "Fakturę można bezpiecznie opłacić online. Dane karty trafiają bezpośrednio do Square lub PayPal i nigdy nie przechodzą przez naszą stronę.",
+      "methods_title": "Wybór metody płatności",
+      "square": {
+        "title": "Płatność za fakturę Square",
+        "text": "Każdą fakturę wysyłamy e-mailem za pośrednictwem Square. Wystarczy otworzyć wiadomość, wybrać „Zapłać fakturę” i zapłacić kartą, Apple Pay, Google Pay lub przelewem bankowym (ACH).",
+        "note": "Nie można znaleźć wiadomości? Prosimy sprawdzić folder ze spamem lub skontaktować się z nami – wyślemy ją ponownie.",
+        "button": "Zapłać przez Square"
+      },
+      "paypal": {
+        "title": "Płatność przez PayPal",
+        "text": "Wolą Państwo PayPal? Wystarczy otworzyć nasz zweryfikowany profil firmowy i wpisać kwotę oraz numer faktury podane na fakturze.",
+        "button": "Zapłać przez PayPal"
+      },
+      "security": {
+        "title": "Płatność jest chroniona",
+        "items": [
+          "Płatności obsługują Square i PayPal, posiadające certyfikat zgodności ze standardem bezpieczeństwa kart PCI DSS.",
+          "Nasza strona nigdy nie widzi ani nie przechowuje danych karty ani rachunku bankowego.",
+          "Przed dokonaniem płatności prosimy sprawdzić, czy strona płatności należy do Square lub PayPal.",
+          "Nigdy nie prosimy o dane karty e-mailem, telefonicznie ani na czacie."
+        ]
+      },
+      "faq": {
+        "title": "Pytania dotyczące płatności",
+        "items": [
+          {
+            "q": "W jakiej walucie wystawiane są faktury?",
+            "a": "Faktury wystawiamy w dolarach amerykańskich. PayPal automatycznie przelicza inne waluty; bank lub PayPal może pobrać opłatę za przewalutowanie."
+          },
+          {
+            "q": "Czy otrzymam potwierdzenie płatności?",
+            "a": "Tak. Square lub PayPal wysyła potwierdzenie e-mailem zaraz po zakończeniu płatności, a my potwierdzamy jej otrzymanie."
+          },
+          {
+            "q": "Czy projekt można opłacić etapami?",
+            "a": "Tak. Większe projekty są zwykle rozliczane etapami, zgodnie z pisemną ofertą."
+          }
+        ]
+      },
+      "help": {
+        "title": "Pytania dotyczące faktury?",
+        "text": "Prosimy o kontakt z podaniem numeru faktury – chętnie pomożemy.",
+        "link": "Kontakt"
+      }
+    },
     "privacy": {
       "title": "Polityka prywatności | Zerone International",
       "description": "Jak Zerone International LLC zbiera, wykorzystuje i chroni dane osobowe, gdy odwiedzasz tę stronę lub kontaktujesz się z nami.",
@@ -506,6 +557,12 @@
           "paragraphs": [
             "Nasz dostawca hostingu może zapisywać w logach serwera dane techniczne, takie jak adres IP, typ przeglądarki i czas żądania. Jest to niezbędne do bezpiecznego udostępniania serwisu.",
             "Jeśli włączymy statystyki, użyjemy usługi przyjaznej prywatności, która nie korzysta z plików cookie i nie tworzy profili."
+          ]
+        },
+        {
+          "title": "Płatności",
+          "paragraphs": [
+            "Przy opłacaniu faktury dane płatnicze przetwarzają Square lub PayPal jako niezależni dostawcy. Otrzymujemy potwierdzenie zawierające imię i nazwisko, adres e-mail oraz zapłaconą kwotę i przechowujemy je do celów księgowych zgodnie z wymogami prawa."
           ]
         },
         {
@@ -568,6 +625,12 @@
           "title": "Odpowiedzialność",
           "paragraphs": [
             "Dbamy o poprawność i dostępność serwisu, ale nie gwarantujemy, że zawsze będzie kompletny, aktualny i dostępny bez przerw. W zakresie dozwolonym przez prawo nie odpowiadamy za szkody wynikające z korzystania z serwisu."
+          ]
+        },
+        {
+          "title": "Płatności",
+          "paragraphs": [
+            "Opłaty, warunki płatności i etapy projektu określa pisemna oferta lub faktura. Płatności obsługują Square lub PayPal na podstawie własnych regulaminów; nie otrzymujemy ani nie przechowujemy danych karty."
           ]
         },
         {

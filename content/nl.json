@@ -14,6 +14,7 @@
     "use_cases": "toepassingen",
     "company": "bedrijf",
     "contact": "contact",
+    "payment": "betaling",
     "privacy": "privacy",
     "terms": "gebruiksvoorwaarden",
     "cookies": "cookies"
@@ -482,6 +483,56 @@
       "telegram": "Stuur een Telegram-bericht",
       "location_title": "Locatie"
     },
+    "payment": {
+      "title": "Betalen – Uw factuur veilig online betalen | Zerone International",
+      "description": "Betaal uw factuur van Zerone International veilig met uw kaart, Apple Pay, bankoverschrijving (ACH) of PayPal. Uw kaartgegevens worden verwerkt door Square en PayPal.",
+      "eyebrow": "Betalingen",
+      "h1": "Een betaling doen",
+      "lede": "Betaal uw factuur veilig online. Uw kaartgegevens gaan rechtstreeks naar Square of PayPal en komen nooit op onze website.",
+      "methods_title": "Kies hoe u wilt betalen",
+      "square": {
+        "title": "Een Square-factuur betalen",
+        "text": "Wij versturen elke factuur per e-mail via Square. Open de e-mail, kies ‘Factuur betalen’ en betaal met uw kaart, Apple Pay, Google Pay of bankoverschrijving (ACH).",
+        "note": "Kunt u de e-mail niet vinden? Kijk in uw spammap of neem contact met ons op, dan sturen wij hem opnieuw.",
+        "button": "Betalen met Square"
+      },
+      "paypal": {
+        "title": "Betalen met PayPal",
+        "text": "Betaalt u liever met PayPal? Open ons geverifieerde zakelijke profiel en vul het bedrag en het factuurnummer in die op uw factuur staan.",
+        "button": "Betalen met PayPal"
+      },
+      "security": {
+        "title": "Uw betaling is beschermd",
+        "items": [
+          "Betalingen worden verwerkt door Square en PayPal, die gecertificeerd zijn volgens de kaartbeveiligingsstandaard PCI DSS.",
+          "Onze website ziet of bewaart nooit uw kaart- of bankgegevens.",
+          "Controleer voordat u betaalt of de betaalpagina van Square of PayPal is.",
+          "Wij vragen nooit om uw kaartgegevens via e-mail, telefoon of chat."
+        ]
+      },
+      "faq": {
+        "title": "Vragen over betalen",
+        "items": [
+          {
+            "q": "In welke valuta factureert u?",
+            "a": "Facturen worden opgesteld in Amerikaanse dollars. PayPal rekent andere valuta automatisch om; uw bank of PayPal kan hiervoor omrekeningskosten in rekening brengen."
+          },
+          {
+            "q": "Krijg ik een betaalbewijs?",
+            "a": "Ja. Square of PayPal stuurt u een betaalbewijs per e-mail zodra de betaling is voltooid, en wij bevestigen dat wij de betaling hebben ontvangen."
+          },
+          {
+            "q": "Kan een project in termijnen worden betaald?",
+            "a": "Ja. Grotere projecten worden meestal per mijlpaal betaald, zoals vastgelegd in uw schriftelijke voorstel."
+          }
+        ]
+      },
+      "help": {
+        "title": "Vragen over een factuur?",
+        "text": "Neem contact met ons op met uw factuurnummer, dan helpen wij u graag.",
+        "link": "Contact opnemen"
+      }
+    },
     "privacy": {
       "title": "Privacyverklaring | Zerone International",
       "description": "Hoe Zerone International LLC persoonsgegevens verzamelt, gebruikt en beschermt wanneer u deze website bezoekt of contact met ons opneemt.",
@@ -506,6 +557,12 @@
           "paragraphs": [
             "Onze hostingprovider kan technische gegevens zoals IP-adres, browsertype en tijdstip van het verzoek in serverlogboeken vastleggen. Dit is nodig om de website veilig aan te bieden.",
             "Als we websitestatistieken inschakelen, gebruiken we een privacyvriendelijke dienst zonder cookies en zonder persoonlijke profielen."
+          ]
+        },
+        {
+          "title": "Betalingen",
+          "paragraphs": [
+            "Wanneer u een factuur betaalt, verwerken Square of PayPal uw betaalgegevens als onafhankelijke aanbieders. Wij ontvangen een bevestiging met uw naam, e-mailadres en het betaalde bedrag, en bewaren deze voor onze boekhouding zoals de wet vereist."
           ]
         },
         {
@@ -568,6 +625,12 @@
           "title": "Aansprakelijkheid",
           "paragraphs": [
             "We doen ons best deze website juist en beschikbaar te houden, maar garanderen niet dat ze altijd volledig, actueel of zonder onderbrekingen is. Voor zover de wet het toestaat, zijn we niet aansprakelijk voor schade door het gebruik van de website."
+          ]
+        },
+        {
+          "title": "Betalingen",
+          "paragraphs": [
+            "Tarieven, betalingsvoorwaarden en mijlpalen van een project zijn vastgelegd in het bijbehorende schriftelijke voorstel of de factuur. Betalingen worden verwerkt door Square of PayPal onder hun eigen voorwaarden; wij ontvangen of bewaren uw kaartgegevens niet."
           ]
         },
         {
