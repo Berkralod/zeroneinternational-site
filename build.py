@@ -328,6 +328,8 @@ def build(check_only=False):
         case_services=CASE_SERVICES,
         service_page=SERVICE_PAGE,
         all_langs=[content[c]["meta"] for c in site.langs],
+        # Form answers reach the inbox in English whatever language the visitor used.
+        form_en=content[config["default_language"]]["form"],
         logo=lambda suffix: Markup(logo_source.replace("logo-globe", f"logo-globe-{suffix}")),
     )
 

@@ -170,7 +170,7 @@
       <select id="f-budget" name="budget">
         <option value="">{{ t.form.choose }}</option>
         {% for label in t.form.budgets %}
-        <option value="budget-{{ loop.index }}">{{ label }}</option>
+        <option value="{{ form_en.budgets[loop.index0] }}">{{ label }}</option>
         {% endfor %}
       </select>
     </div>
@@ -179,7 +179,7 @@
       <select id="f-timeline" name="timeline">
         <option value="">{{ t.form.choose }}</option>
         {% for label in t.form.timelines %}
-        <option value="timeline-{{ loop.index }}">{{ label }}</option>
+        <option value="{{ form_en.timelines[loop.index0] }}">{{ label }}</option>
         {% endfor %}
       </select>
     </div>
