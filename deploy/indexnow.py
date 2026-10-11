@@ -7,6 +7,7 @@ import json
 import re
 import sys
 import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -18,8 +19,11 @@ base = config["base_url"].rstrip("/")
 host = base.split("://", 1)[1]
 
 
+HEADERS = {"User-Agent": "zeroneinternational-deploy/1.0 (+https://zeroneinternational.com)"}
+
+
 def fetch(url):
-    with urllib.request.urlopen(url, timeout=30) as response:
+    with urllib.request.urlopen(urllib.request.Request(url, headers=HEADERS), timeout=30) as response:
         return response.read().decode("utf-8")
 
 
@@ -37,6 +41,15 @@ else:
 urls = re.findall(r"<loc>([^<]+)</loc>", fetch(f"{base}/sitemap.xml"))
 payload = json.dumps({"host": host, "key": key, "keyLocation": f"{base}/{key}.txt", "urlList": urls[:10000]}).encode()
 request = urllib.request.Request("https://api.indexnow.org/indexnow", data=payload,
-                                 headers={"Content-Type": "application/json; charset=utf-8"})
-with urllib.request.urlopen(request, timeout=30) as response:
-    print(f"IndexNow accepted {len(urls)} URLs (HTTP {response.status}).")
+                                 headers={**HEADERS, "Content-Type": "application/json; charset=utf-8"})
+# A brand-new key is sometimes rejected (403) until the engine has fetched the key file; retry a few times.
+for attempt in range(4):
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            print(f"IndexNow accepted {len(urls)} URLs (HTTP {response.status}).")
+            break
+    except urllib.error.HTTPError as error:
+        print(f"IndexNow answered HTTP {error.code}: {error.read().decode('utf-8', 'replace')[:300]}")
+        if error.code not in (403, 429) or attempt == 3:
+            sys.exit(1)
+        time.sleep(60)
