@@ -271,7 +271,7 @@ def build(check_only=False):
     if os.environ.get("ZERONE_LANGS"):  # development shortcut: build a subset of languages
         config["languages"] = os.environ["ZERONE_LANGS"].split(",")
     # Settings can also come from the environment (e.g. GitHub repository variables).
-    for key in ("formspree_form_id", "booking_url", "whatsapp_number", "cloudflare_analytics_token",
+    for key in ("formspree_form_id", "booking_url", "whatsapp_number", "telegram_username", "cloudflare_analytics_token",
                 "google_site_verification", "bing_site_verification"):
         value = os.environ.get(f"ZERONE_{key.upper()}")
         if value:
@@ -281,6 +281,7 @@ def build(check_only=False):
     checks = {
         "booking_url": r"https://[A-Za-z0-9.-]+(/[A-Za-z0-9._~/%-]*)?",
         "whatsapp_number": r"[0-9]{7,15}",
+        "telegram_username": r"[A-Za-z][A-Za-z0-9_]{4,31}",
         "cloudflare_analytics_token": r"[A-Za-z0-9]{16,64}",
         "google_site_verification": r"[A-Za-z0-9_-]{10,100}",
         "bing_site_verification": r"[A-Za-z0-9_-]{10,100}",

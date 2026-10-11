@@ -17,13 +17,16 @@
         {% if config.telephone %}
         <a class="phone-link" href="tel:{{ config.telephone|replace('-', '') }}" dir="ltr">{{ icons.icon('phone') }} {% set ph = config.telephone.split('-') %}<span>{{ ph[0] }} ({{ ph[1] }}) {{ ph[2:]|join('-') }}</span></a>
         {% endif %}
-        {% if config.booking_url or config.whatsapp_number %}
+        {% if config.booking_url or config.whatsapp_number or config.telegram_username %}
         <div class="actions actions--stack">
           {% if config.booking_url %}
           <a class="button button--ghost" href="{{ config.booking_url }}" rel="noopener" target="_blank">{{ icons.icon('calendar') }} {{ p.booking }}</a>
           {% endif %}
           {% if config.whatsapp_number %}
           <a class="button button--ghost" href="https://wa.me/{{ config.whatsapp_number }}" rel="noopener" target="_blank">{{ icons.icon('chat') }} {{ p.whatsapp }}</a>
+          {% endif %}
+          {% if config.telegram_username %}
+          <a class="button button--ghost" href="https://t.me/{{ config.telegram_username }}" rel="noopener" target="_blank">{{ icons.icon('send') }} {{ p.telegram }}</a>
           {% endif %}
         </div>
         {% endif %}
