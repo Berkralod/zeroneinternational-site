@@ -9,8 +9,15 @@
 - **E-posta adresi** sayfa kaynağında düz metin olarak durmaz, JavaScript ile oluşturulur. Bu, e-posta toplayan botların işini zorlaştırır.
 - **Form koruması:** gizli bal tuzağı (`_gotcha`) alanı, uzunluk sınırları ve Formspree'nin spam filtresi. Formspree'de **Allowed domains** ayarı yapılmalı (bkz. [Yayına alma](YAYINA-ALMA.md)).
 - **Gizli anahtar taraması:** `tests/validate_site.py` yayınlanacak her dosyada token/anahtar kalıplarını arar; bulursa yayın durur.
-- **GitHub Actions:** iş akışları en az yetkiyle çalışır (`contents: read`). Pages yayını yalnızca `pages: write` + `id-token` kullanır; artık `main` dalına yazan bir token yoktur. Dependabot, eylem ve paket güncellemelerini aylık önerir.
+- **GitHub Actions:** iş akışları en az yetkiyle çalışır (`contents: read`). Pages yayını yalnızca `pages: write` + `id-token` kullanır; artık `main` dalına yazan bir token yoktur. Dependabot, eylem ve paket güncellemelerini haftalık önerir.
 - **`/.well-known/security.txt`** güvenlik araştırmacılarına iletişim yolunu gösterir.
+
+## Otomatik kontroller
+
+- **Günlük sağlık kontrolü** (`.github/workflows/health-check.yml`, her gün 11:17 UTC): canlı sitedeki sitemap'te yer alan her sayfayı açar; canonical, CSP, hreflang ve yapılandırılmış veri etiketlerini, 404 sayfasını, http→https ve www yönlendirmelerini ve SSL sertifikasının bitiş tarihini (21 günden az kaldıysa uyarır) kontrol eder. Sorun bulursa **"Live site health check failed"** başlıklı bir GitHub issue açar ve GitHub size e-posta gönderir. Sorun düzelince issue kendiliğinden kapanır. Elle çalıştırmak için: Actions → Live site health check → Run workflow.
+- **Haftalık tam test** (`ci.yml`, her pazartesi): yeni commit olmasa bile tüm testleri `main` üzerinde yeniden çalıştırır; bir bağımlılık veya tarayıcı değişikliği bir şeyi bozarsa fark edilir.
+- **CodeQL güvenlik taraması** (`codeql.yml`): her değişiklikte ve haftada bir Python, JavaScript ve iş akışı kodunu güvenlik açıklarına karşı tarar. Sonuçlar: repo → Security → Code scanning.
+- **Dependabot** her hafta güncelleme önerir; testleri geçen güncellemeler incelenip birleştirilir.
 
 ## GitHub hesabında sizin yapmanız gerekenler
 

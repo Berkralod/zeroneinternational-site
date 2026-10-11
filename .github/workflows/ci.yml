@@ -5,6 +5,9 @@ on:
   push:
     branches-ignore: [main]
   workflow_dispatch:
+  schedule:
+    # Weekly full run on main, so a broken dependency or browser change is caught even without new commits.
+    - cron: "23 6 * * 1"
 
 permissions:
   contents: read
