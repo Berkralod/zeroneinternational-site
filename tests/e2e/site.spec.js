@@ -226,3 +226,14 @@ test("page is not usable inside a frame on another site", async ({ page }) => {
     expect(display).toBe("none");
   }
 });
+
+test("payment page links only to the payment providers' own pages", async ({ page }) => {
+  await page.goto(pathFor("en", "payment"));
+  const paypal = page.locator(`a[href="${config.paypal_url}"]`);
+  await expect(paypal).toHaveCount(config.paypal_url ? 1 : 0);
+  // No payment form or card field is ever rendered on our own site.
+  await expect(page.locator("main form, main input")).toHaveCount(0);
+  for (const href of await page.locator("main a[target=_blank]").evaluateAll((links) => links.map((a) => a.href))) {
+    expect(new URL(href).hostname).toMatch(/(^|\.)(paypal\.(com|me|biz)|square\.link|square\.site|squareup\.com)$/);
+  }
+});

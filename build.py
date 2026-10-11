@@ -30,7 +30,7 @@ BUILD_META = ROOT / "build"
 
 PAGE_IDS = [
     "home", "services", "service_automation", "service_web", "service_mobile",
-    "products", "use_cases", "company", "contact", "privacy", "terms", "cookies",
+    "products", "use_cases", "company", "contact", "payment", "privacy", "terms", "cookies",
 ]
 TEMPLATE_FOR = {
     "home": "home.html",
@@ -42,6 +42,7 @@ TEMPLATE_FOR = {
     "use_cases": "use_cases.html",
     "company": "company.html",
     "contact": "contact.html",
+    "payment": "payment.html",
     "privacy": "legal.html",
     "terms": "legal.html",
     "cookies": "legal.html",
@@ -271,7 +272,8 @@ def build(check_only=False):
     if os.environ.get("ZERONE_LANGS"):  # development shortcut: build a subset of languages
         config["languages"] = os.environ["ZERONE_LANGS"].split(",")
     # Settings can also come from the environment (e.g. GitHub repository variables).
-    for key in ("formspree_form_id", "booking_url", "whatsapp_number", "telegram_username", "cloudflare_analytics_token",
+    for key in ("formspree_form_id", "booking_url", "whatsapp_number", "telegram_username", "paypal_url",
+                "square_payment_url", "cloudflare_analytics_token",
                 "google_site_verification", "bing_site_verification"):
         value = os.environ.get(f"ZERONE_{key.upper()}")
         if value:
@@ -282,6 +284,9 @@ def build(check_only=False):
         "booking_url": r"https://[A-Za-z0-9.-]+(/[A-Za-z0-9._~/%-]*)?",
         "whatsapp_number": r"[0-9]{7,15}",
         "telegram_username": r"[A-Za-z][A-Za-z0-9_]{4,31}",
+        # Hosted payment pages only: the card form always lives on Square's or PayPal's own domain.
+        "paypal_url": r"https://(www\.)?(paypal\.com|paypal\.me|paypal\.biz)/[A-Za-z0-9._/?=&-]+",
+        "square_payment_url": r"https://(square\.link|checkout\.square\.site|squareup\.com)/[A-Za-z0-9._/?=&-]+",
         "cloudflare_analytics_token": r"[A-Za-z0-9]{16,64}",
         "google_site_verification": r"[A-Za-z0-9_-]{10,100}",
         "bing_site_verification": r"[A-Za-z0-9_-]{10,100}",
@@ -416,6 +421,8 @@ def build(check_only=False):
             faq = t["pages"]["home"]["faq"]["items"]
         elif page_id == "services":
             faq = t["pages"]["services"]["faq"]["items"]
+        elif page_id == "payment":
+            faq = t["pages"]["payment"]["faq"]["items"]
         if faq:
             graph.append({
                 "@type": "FAQPage",

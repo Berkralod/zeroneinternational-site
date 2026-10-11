@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% import "partials/blocks.html" as blocks with context %}
+{% import "partials/icons.html" as icons %}
+{% set p = t.pages.payment %}
+{% block content %}
+{{ blocks.page_hero(p.eyebrow, p.h1, p.lede) }}
+<section class="section section--flush-top" aria-labelledby="methods-title">
+  <div class="wrap">
+    {{ blocks.section_head(None, p.methods_title, id="methods-title") }}
+    <div class="card-grid card-grid--2">
+      <div class="card card--feature">
+        <span class="card__icon">{{ icons.icon('mail') }}</span>
+        <h3 class="card__title">{{ p.square.title }}</h3>
+        <p>{{ p.square.text }}</p>
+        <p class="field__hint">{{ p.square.note }}</p>
+        {% if config.square_payment_url %}
+        <div class="actions"><a class="button" href="{{ config.square_payment_url }}" rel="noopener" target="_blank">{{ icons.icon('card') }} {{ p.square.button }}</a></div>
+        {% endif %}
+      </div>
+      <div class="card card--feature">
+        <span class="card__icon">{{ icons.icon('card') }}</span>
+        <h3 class="card__title">{{ p.paypal.title }}</h3>
+        <p>{{ p.paypal.text }}</p>
+        {% if config.paypal_url %}
+        <div class="actions"><a class="button" href="{{ config.paypal_url }}" rel="noopener" target="_blank">{{ p.paypal.button }} {{ icons.icon('arrow') }}</a></div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="notes">
+      <h2 class="notes__title">{{ icons.icon('shield') }} {{ p.security.title }}</h2>
+      <ul class="checklist" role="list">
+      {% for item in p.security["items"] %}
+        <li>{{ icons.icon('check') }}<span>{{ item }}</span></li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+{{ blocks.faq(p.faq.title, p.faq["items"]) }}
+<section class="section section--tint" aria-labelledby="help-title">
+  <div class="wrap split split--text">
+    <h2 id="help-title">{{ p.help.title }}</h2>
+    <div>
+      <p>{{ p.help.text }}</p>
+      <p><a class="text-link" href="{{ url('contact') }}">{{ p.help.link }} {{ icons.icon('arrow') }}</a></p>
+    </div>
+  </div>
+</section>
+{% endblock %}
