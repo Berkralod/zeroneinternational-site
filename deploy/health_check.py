@@ -81,6 +81,7 @@ if BASE.startswith("https://"):
             problems.append(f"{variant} ends at {final}, expected {BASE}/")
     try:
         context = ssl.create_default_context()
+        context.minimum_version = ssl.TLSVersion.TLSv1_2
         with socket.create_connection((HOST, 443), timeout=30) as sock:
             with context.wrap_socket(sock, server_hostname=HOST) as tls:
                 expires = dt.datetime.fromtimestamp(ssl.cert_time_to_seconds(tls.getpeercert()["notAfter"]), dt.timezone.utc)
