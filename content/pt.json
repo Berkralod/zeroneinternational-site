@@ -14,6 +14,7 @@
     "use_cases": "casos-de-uso",
     "company": "empresa",
     "contact": "contato",
+    "payment": "pagamento",
     "privacy": "privacidade",
     "terms": "termos-de-uso",
     "cookies": "cookies"
@@ -482,6 +483,56 @@
       "telegram": "Enviar mensagem no Telegram",
       "location_title": "Localização"
     },
+    "payment": {
+      "title": "Pagamento – Pague sua fatura com segurança | Zerone International",
+      "description": "Pague com segurança sua fatura da Zerone International por cartão, Apple Pay, transferência bancária (ACH) ou PayPal. Os dados do cartão ficam com Square e PayPal.",
+      "eyebrow": "Pagamentos",
+      "h1": "Fazer um pagamento",
+      "lede": "Pague sua fatura online com segurança. Os dados do seu cartão vão diretamente para a Square ou o PayPal e nunca passam pelo nosso site.",
+      "methods_title": "Escolha como pagar",
+      "square": {
+        "title": "Pagar uma fatura da Square",
+        "text": "Enviamos todas as faturas por e-mail pela Square. Abra o e-mail, selecione “Pagar fatura” e pague com cartão, Apple Pay, Google Pay ou transferência bancária (ACH).",
+        "note": "Não encontrou o e-mail? Verifique sua pasta de spam ou fale conosco e enviaremos novamente.",
+        "button": "Pagar com Square"
+      },
+      "paypal": {
+        "title": "Pagar com PayPal",
+        "text": "Prefere o PayPal? Abra nosso perfil comercial verificado e informe o valor e o número da fatura que constam na sua fatura.",
+        "button": "Pagar com PayPal"
+      },
+      "security": {
+        "title": "Seu pagamento está protegido",
+        "items": [
+          "Os pagamentos são processados pela Square e pelo PayPal, certificados no padrão de segurança de cartões PCI DSS.",
+          "Nosso site nunca vê nem armazena os dados do seu cartão ou da sua conta bancária.",
+          "Antes de pagar, confirme que a página de pagamento pertence à Square ou ao PayPal.",
+          "Nunca pediremos os dados do seu cartão por e-mail, telefone ou chat."
+        ]
+      },
+      "faq": {
+        "title": "Dúvidas sobre pagamento",
+        "items": [
+          {
+            "q": "Em que moeda as faturas são emitidas?",
+            "a": "As faturas são emitidas em dólares americanos. O PayPal converte outras moedas automaticamente; seu banco ou o PayPal podem cobrar uma taxa de conversão."
+          },
+          {
+            "q": "Vou receber um recibo?",
+            "a": "Sim. A Square ou o PayPal envia um recibo por e-mail assim que o pagamento é concluído, e nós confirmamos o recebimento."
+          },
+          {
+            "q": "Um projeto pode ser pago em etapas?",
+            "a": "Sim. Projetos maiores geralmente são pagos por marcos, conforme definido na sua proposta por escrito."
+          }
+        ]
+      },
+      "help": {
+        "title": "Dúvidas sobre uma fatura?",
+        "text": "Fale conosco informando o número da fatura e ajudaremos você.",
+        "link": "Fale conosco"
+      }
+    },
     "privacy": {
       "title": "Política de Privacidade | Zerone International",
       "description": "Como a Zerone International LLC coleta, usa e protege dados pessoais quando você visita este site ou entra em contato conosco.",
@@ -506,6 +557,12 @@
           "paragraphs": [
             "Nosso provedor de hospedagem pode registrar em logs do servidor dados técnicos como endereço IP, tipo de navegador e horário da solicitação. Isso é necessário para disponibilizar o site com segurança.",
             "Se ativarmos estatísticas do site, usaremos um serviço que respeita a privacidade, não usa cookies e não cria perfis pessoais."
+          ]
+        },
+        {
+          "title": "Pagamentos",
+          "paragraphs": [
+            "Quando você paga uma fatura, a Square ou o PayPal tratam seus dados de pagamento como prestadores independentes. Recebemos uma confirmação com seu nome, endereço de e-mail e o valor pago, e a guardamos para fins contábeis, conforme exigido por lei."
           ]
         },
         {
@@ -568,6 +625,12 @@
           "title": "Responsabilidade",
           "paragraphs": [
             "Procuramos manter este site correto e disponível, mas não garantimos que esteja sempre completo, atualizado ou livre de interrupções. Na medida permitida por lei, não nos responsabilizamos por danos decorrentes do uso do site."
+          ]
+        },
+        {
+          "title": "Pagamentos",
+          "paragraphs": [
+            "Os valores, as condições de pagamento e os marcos de cada projeto são definidos na respectiva proposta por escrito ou fatura. Os pagamentos são processados pela Square ou pelo PayPal de acordo com os termos deles; não recebemos nem armazenamos os dados do seu cartão."
           ]
         },
         {
