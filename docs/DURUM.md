@@ -15,11 +15,12 @@ Son güncelleme: 2026-10-12. Yeni bir oturum veya sohbet özetlemesinden sonra C
 
 ## Dışarıdan beklenen
 - Stripe: vergi numarası incelemesi (In review). 11 Kasım 2026 veya $600 hacimden önce bitmeli.
-- PayPal: banka hesabı doğrulaması (sahip uygulamadan kontrol edecek; Mercury bağlanacak). PayPal'ın "Activations Agent" e-postaları otomatik satış mesajı, cevap gerekmez.
+- PayPal: Mercury bağlantısı denendi (12 Ekim; Mercury'den "Finicity connected" maili geldi) ama PayPal uygulaması bankayı henüz göstermiyor. paypal.com/myaccount/money'den kontrol; yoksa bilgisayarda elle (routing + account no) bağlanacak. "Activations Agent" e-postaları otomatik satış mesajı, cevap gerekmez.
 - Google Search Console: www kopya sayfa uyarısı için "Validate fix" başlatıldı.
 
 ## Bilgisayar listesi (sahiple yapılacak)
 1. Yapay zekâ asistanını açmak
+1b. PayPal banka bağlantısını kontrol/tamamla (paypal.com → Wallet)
 2. LinkedIn şirket sayfası + profil
 3. Railway etkinleştirme + Discourse topluluk
 4. Square tam logo + Apple Business marka logosu
