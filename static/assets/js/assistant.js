@@ -393,7 +393,7 @@
   }
   function syncChrome() {
     chips.hidden = hasUserMessages();
-    teamBtn.hidden = !hasUserMessages();
+    teamBtn.hidden = !hasUserMessages() || isBlocked();
     newBtn.hidden = !hasUserMessages();
   }
 
@@ -427,7 +427,10 @@
     }
     var text = message.fallback ? T.error : message.content;
     String(text || "").split(/\n+/).forEach(function (line) {
-      if (line.trim()) bubble.appendChild(el("p", null, line));
+      if (!line.trim()) return;
+      var para = el("p", null, line);
+      para.dir = "auto"; // a reply may be in another language and direction than the page
+      bubble.appendChild(para);
     });
     if (message.role === "assistant" && catalog) {
       renderLinks(bubble, message.fallback
@@ -495,6 +498,7 @@
   }
   function syncBlocked() {
     if (timer) { window.clearInterval(timer); timer = null; }
+    syncChrome();
     if (!isBlocked()) {
       status.hidden = true;
       status.textContent = "";
@@ -516,7 +520,10 @@
     wait.appendChild(document.createTextNode(parts.slice(1).join("")));
     status.appendChild(wait);
     loadCatalog().then(function (catalog) {
-      if (!status.hidden) renderLinks(status, checkedLinks(catalog, contactLinks(catalog), pageLang));
+      if (!status.hidden && !status.querySelector(".zai-links")) {
+        renderLinks(status, checkedLinks(catalog, contactLinks(catalog), pageLang));
+        scrollDown();
+      }
     });
     status.hidden = false;
     var tick = function () {
