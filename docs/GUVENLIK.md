@@ -14,10 +14,46 @@
 
 ## Otomatik kontroller
 
-- **Günlük sağlık kontrolü** (`.github/workflows/health-check.yml`, her gün 11:17 UTC): canlı sitedeki sitemap'te yer alan her sayfayı açar; canonical, CSP, hreflang ve yapılandırılmış veri etiketlerini, 404 sayfasını, http→https ve www yönlendirmelerini ve SSL sertifikasının bitiş tarihini (21 günden az kaldıysa uyarır) kontrol eder. Sorun bulursa **"Live site health check failed"** başlıklı bir GitHub issue açar ve GitHub size e-posta gönderir. Sorun düzelince issue kendiliğinden kapanır. Elle çalıştırmak için: Actions → Live site health check → Run workflow.
+- **Saatlik sağlık kontrolü** (`.github/workflows/health-check.yml`, her saat başını 17 geçe): canlı sitedeki sitemap'te yer alan her sayfayı açar; canonical, CSP, hreflang ve yapılandırılmış veri etiketlerini, 404 sayfasını, http→https ve www yönlendirmelerini ve SSL sertifikasının bitiş tarihini (21 günden az kaldıysa uyarır) kontrol eder. Bir sorun bulursa 90 saniye sonra bir kez daha dener (kısa bir kesinti alarm sebebi olmasın diye). Sorun devam ederse **"Live site health check failed"** başlıklı bir GitHub issue açar (GitHub size e-posta gönderir) ve Telegram'a uyarı yollar. Sorun sürdükçe issue'ya ve Telegram'a en fazla **6 saatte bir** hatırlatma gider. Sorun düzelince issue kendiliğinden kapanır ve Telegram'a "düzeldi" mesajı gelir. Elle çalıştırmak için: Actions → Live site health check → Run workflow.
+- **Yayın sonrası kontrol ve otomatik geri alma** (`deploy-pages.yml`): her yayından sonra canlı site birkaç dakika içinde aynı sağlık kontrolünden geçirilir. Kontrol başarısız olursa ve site yayından hemen önce sağlıklıysa (yani sorunu büyük olasılıkla bu yayın çıkardıysa), son **sağlam** yayın (canlıda kontrolü geçmiş son sürüm; 30 gün saklanır) otomatik olarak yeniden yayınlanır. Geri alma yeni commit oluşturmaz ve yeni bir çalıştırma başlatmaz, bu yüzden döngüye giremez. Hatalı commit `main`'de kalır; düzeltip tekrar göndermeniz gerekir.
 - **Haftalık tam test** (`ci.yml`, her pazartesi): yeni commit olmasa bile tüm testleri `main` üzerinde yeniden çalıştırır; bir bağımlılık veya tarayıcı değişikliği bir şeyi bozarsa fark edilir.
 - **CodeQL güvenlik taraması** (`codeql.yml`): her değişiklikte ve haftada bir Python, JavaScript ve iş akışı kodunu güvenlik açıklarına karşı tarar. Sonuçlar: repo → Security → Code scanning.
 - **Dependabot** her hafta güncelleme önerir; testleri geçen güncellemeler incelenip birleştirilir.
+- **Haftalık özet** (`weekly-digest.yml`, her pazartesi 07:37 UTC): açık Dependabot PR'larını, açık CodeQL uyarılarını, sitenin sağlık durumunu ve son yayın/test sonuçlarını tek bir Telegram mesajında toplar.
+
+## Telegram uyarıları
+
+Site bozulduğunda, yayın yapıldığında veya geri alındığında size özel Telegram botunuzdan kısa bir mesaj gelir. Telegram ayarlı değilse hiçbir şey bozulmaz; uyarılar sadece atlanır (GitHub issue ve e-postalar yine çalışır).
+
+### Kurulum (bir kez, yaklaşık 5 dakika)
+
+1. **Bot oluşturun:** Telegram'da **@BotFather**'ı açın, `/newbot` yazın, bir ad ve kullanıcı adı verin. BotFather size `123456789:ABC...` biçiminde bir **token** verir. Bu bir şifredir; kimseyle paylaşmayın, hiçbir dosyaya veya commit'e yazmayın.
+2. **Botu başlatın:** BotFather'ın verdiği bağlantıdan kendi botunuzu açın ve **Start** (`/start`) deyin. Bunu yapmazsanız bot size mesaj gönderemez.
+3. **Chat ID'nizi öğrenin:** Telegram'da **@userinfobot**'u açın ve `/start` gönderin. Size sayısal kimliğinizi (ör. `123456789`) yazar; bu sizin chat ID'nizdir.
+4. **İki secret'ı GitHub'a ekleyin:** GitHub → repo **Settings** → **Secrets and variables** → **Actions** → **New repository secret**:
+   - Name: `TELEGRAM_BOT_TOKEN`, Secret: BotFather'ın verdiği token
+   - Name: `TELEGRAM_CHAT_ID`, Secret: @userinfobot'un verdiği sayı
+5. **Deneyin:** Actions → **Weekly security and maintenance digest** → **Run workflow**. Birkaç saniye içinde Telegram'a haftalık özet gelmelidir. Gelmezse çalıştırmanın kaydında "Telegram message not sent" satırına bakın (token hiçbir zaman kayıtlarda görünmez).
+
+Token sızdığından şüphelenirseniz: @BotFather → `/revoke` ile yeni token alın ve `TELEGRAM_BOT_TOKEN` secret'ını güncelleyin.
+
+### Hangi mesaj ne anlama gelir?
+
+| Mesaj | Anlamı | Ne yapmalı? |
+| --- | --- | --- |
+| **Site health check FAILING** | Canlı site saatlik kontrolde iki kez üst üste hata verdi. Mesajda sorunlar ve GitHub issue bağlantısı var. | Issue'daki listeye bakın; gerekirse bana iletin. |
+| **Site still failing (6-hour reminder)** | Sorun hâlâ sürüyor. En fazla 6 saatte bir gelir. | Aynı issue üzerinden takip edin. |
+| **Site recovered** | Kontroller yeniden geçti; issue kapatıldı. | Bir şey yapmanıza gerek yok. |
+| **Deploy succeeded** | `main`'deki değişiklik yayınlandı ve canlıda kontrolü geçti. Commit başlığı ve site adresi yazılır. | Yok. |
+| **New blog post published** | Yeni bir blog yazısı yayında; mesajda yazının adresi var. | İsterseniz sosyal medyada paylaşın. |
+| **Blog post updated** | Başlığı `Blog:` ile başlayan ve mevcut bir yazıyı değiştiren commit yayınlandı. | Yok. |
+| **Deploy stopped: build or tests failed** | Yeni sürüm testleri geçemedi, **yayınlanmadı**. Canlı site değişmedi. | Değişikliği düzeltin. |
+| **Deploy to GitHub Pages failed** | GitHub Pages yayını reddetti (çoğunlukla GitHub tarafında geçici sorun). | Actions'ta çalıştırmayı **Re-run** edin. |
+| **Rolled back: new deploy failed the live check** | Yeni sürüm yayınlandı ama canlıda bozuk çıktı; son sağlam sürüm otomatik geri yüklendi. Mesaj, sitenin geri yüklemeden sonra sağlıklı olup olmadığını da söyler. | Hatalı commit'i düzeltin veya geri alın (`git revert`). |
+| **Deployed, but the live site was already failing** | Yeni sürüm yayınlandı; site yayından önce de hata veriyordu, yani sorun büyük olasılıkla bu değişiklikte değil (DNS, sertifika, GitHub kesintisi). Geri alma yapılmadı. | Saatlik kontrolün açtığı issue'ya bakın. |
+| **Live site failing after deploy, rollback FAILED** | Yeni sürüm canlıda bozuk ve geri alma yapılamadı (ör. son 30 günde sağlam bir yayın yok). | Acil: commit'i hemen geri alın veya düzeltin. |
+| **CI failed on main / Weekly test run failed** | `main` üzerindeki veya haftalık test çalıştırması başarısız. Canlı site etkilenmez; erken uyarıdır. | Bağlantıdaki kayda bakın. |
+| **Weekly security and maintenance digest** | Pazartesi özeti: açık Dependabot PR'ları, CodeQL uyarıları, sağlık durumu. | Bekleyen güncellemeleri birleştirin. |
 
 ## GitHub hesabında sizin yapmanız gerekenler
 
