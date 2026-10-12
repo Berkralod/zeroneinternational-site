@@ -172,7 +172,29 @@ def load_posts():
             "html": Markup(markdown.markdown(body, extensions=["extra", "sane_lists"], output_format="html")),
         })
     posts.sort(key=lambda p: (p["date"], p["title"]), reverse=True)
+    for post in posts:
+        post["related"] = related_posts(post, posts)
     return posts
+
+
+def related_posts(post, posts, limit=3):
+    """Other posts that share the most tags with this one, newest first among equals."""
+    tags = {tag.lower() for tag in post["tags"]}
+    others = [p for p in posts if p["slug"] != post["slug"]]
+    # posts is already sorted newest first, so a stable sort keeps recency as the tie-breaker.
+    others.sort(key=lambda p: -len(tags & {tag.lower() for tag in p["tags"]}))
+    return others[:limit]
+
+
+def page_title(name, *suffixes, limit=60, keep_brand=False):
+    """'name | suffix' with the first (longest) suffix that keeps the title within the limit.
+
+    When none fits, the bare name is used, or the last (shortest) suffix with keep_brand."""
+    for suffix in suffixes:
+        title = f"{name} | {suffix}"
+        if len(title) <= limit:
+            return title
+    return f"{name} | {suffixes[-1]}" if keep_brand else name
 
 
 # --------------------------------------------------------------------------- urls
@@ -291,7 +313,7 @@ def organization(site):
         "legalName": c["legal_name"],
         "url": site.abs("/"),
         "logo": {"@type": "ImageObject", "url": site.abs("/assets/icons/logo-600.png"), "width": 600, "height": 197},
-        "founder": {"@type": "Person", "name": c["founder"]},
+        "founder": {"@type": "Person", "@id": site.abs("/#founder"), "name": c["founder"]},
         "address": {
             "@type": "PostalAddress",
             "addressLocality": c["address"]["locality"],
@@ -417,7 +439,8 @@ def build(check_only=False):
             case = t["cases"][case_index]
             service_key = CASE_SERVICES[case_index]
             page = case
-            title = f"{case['title']} | {t['ui']['case_label']} – {config['site_name']}"
+            label = t["ui"]["case_label"]
+            title = page_title(case["title"], f"{label} – {config['site_name']}", f"{label} – Zerone", keep_brand=True)
             joiner = "" if lang in ("zh", "ja") else " "
             description = f"{case['summary']}{joiner}{case['challenge']}"
             heading = case["title"]
@@ -495,6 +518,31 @@ def build(check_only=False):
                 "areaServed": "Worldwide",
                 "url": site.abs(here),
             })
+        if page_id == "company":
+            graph.append({
+                "@type": "Person",
+                "@id": site.abs("/#founder"),
+                "name": config["founder"],
+                "jobTitle": "Founder",
+                "worksFor": {"@id": site.abs("/#organization")},
+                "url": site.abs(site.path(site.default, "company")),
+            })
+        if page_id == "products":
+            # Both products are still in development: no offers, prices or ratings are claimed.
+            for i, item in enumerate(t["pages"]["products"]["items"]):
+                graph.append({
+                    "@type": "SoftwareApplication",
+                    "@id": site.abs(here) + f"#product-{i + 1}",
+                    "name": item["name"],
+                    "description": item["text"],
+                    "applicationCategory": "BusinessApplication",
+                    "featureList": item["features"],
+                    "creativeWorkStatus": t["ui"]["in_development"],
+                    "inLanguage": lang,
+                    "url": site.abs(here),
+                    "author": {"@id": site.abs("/#organization")},
+                    "publisher": {"@id": site.abs("/#organization")},
+                })
         if page_id == "use_cases":
             graph.append({
                 "@type": "ItemList",
@@ -572,7 +620,8 @@ def build(check_only=False):
                 "inLanguage": lang,
                 "keywords": ", ".join(post["tags"]),
                 "image": site.abs("/assets/icons/og-image.png"),
-                "author": {"@type": "Person", "name": config["founder"], "url": site.abs(url("company"))},
+                "author": {"@type": "Person", "@id": site.abs("/#founder"), "name": config["founder"],
+                           "url": site.abs(url("company"))},
                 "publisher": {"@id": site.abs("/#organization")},
                 "mainEntityOfPage": site.abs(here),
                 "isPartOf": {"@type": "Blog", "@id": site.abs(url("blog")) + "#blog", "url": site.abs(url("blog"))},
@@ -589,7 +638,7 @@ def build(check_only=False):
         ctx = dict(
             lang=lang, meta=t["meta"], t=t, page=post, page_id="post", post=post,
             case=None, case_index=None, service_key=None,
-            title=f"{post['title']} | {config['site_name']}", description=post["description"],
+            title=page_title(post["title"], config["site_name"], "Zerone"), description=post["description"],
             canonical=site.abs(here), here=here, url=url, abs_url=site.abs, alternates=alternates,
             # Other languages have no translation yet, so the language menu leads to their blog index.
             lang_links=[(content[c]["meta"], here if c == lang else site.path(c, "blog")) for c in site.langs],

@@ -277,7 +277,7 @@
       }
     },
     "service_automation": {
-      "title": "Business Automation & Custom Bot Development | Zerone International",
+      "title": "Business Automation & Custom Bot Development | Zerone",
       "description": "Custom automation and bots that prepare data, create listings, send notifications and run scheduled tasks, so your team can focus on decisions.",
       "eyebrow": "Automation & bots",
       "h1": "Business automation and custom bots",
@@ -357,7 +357,7 @@
       ]
     },
     "service_mobile": {
-      "title": "Custom Mobile App Development (iOS & Android) | Zerone International",
+      "title": "iOS & Android App Development | Zerone International",
       "description": "Custom iOS and Android apps for field teams, warehouses and operations: task lists, stock intake, photos and notifications.",
       "eyebrow": "Mobile apps",
       "h1": "Custom mobile app development",
@@ -397,7 +397,7 @@
       ]
     },
     "products": {
-      "title": "Crosslisting & Liquidation Lot Analysis Tools | Zerone International",
+      "title": "Crosslisting & Liquidation Lot Analysis Tools | Zerone",
       "description": "Zerone International is developing a crosslisting system and a liquidation lot analysis tool for online resellers. Join the waiting list for early access.",
       "eyebrow": "Products",
       "h1": "Tools for online resellers",
@@ -426,7 +426,7 @@
       ]
     },
     "use_cases": {
-      "title": "20 Software Use Cases for Resellers & Small Businesses | Zerone",
+      "title": "Software Use Cases for Resellers & Small Businesses | Zerone",
       "description": "Twenty examples of custom automation, web and mobile software for online resellers and small businesses: listings, lot analysis, stock, reporting and teams.",
       "eyebrow": "Use cases",
       "h1": "20 use cases for custom software",
@@ -494,8 +494,8 @@
       "location_title": "Location"
     },
     "payment": {
-      "title": "Make a Payment – Pay an Invoice Securely | Zerone International",
-      "description": "Pay a Zerone International invoice securely by card, Apple Pay, bank transfer (ACH) or PayPal. Card details are handled by Square and PayPal, never by our website.",
+      "title": "Make a Payment – Pay an Invoice | Zerone International",
+      "description": "Pay a Zerone International invoice securely by card, Apple Pay, ACH bank transfer or PayPal. Card details are handled by Square and PayPal, never by our site.",
       "eyebrow": "Payments",
       "h1": "Make a payment",
       "lede": "Pay your invoice securely online. Your card details go straight to Square or PayPal and never touch our website.",
@@ -544,7 +544,7 @@
       }
     },
     "blog": {
-      "title": "Blog – Resale Automation & Software Guides | Zerone International",
+      "title": "Blog – Resale Automation & Software Guides | Zerone",
       "description": "Practical guides on crosslisting, liquidation lot analysis and automating resale work, from a team that runs its own online resale business.",
       "eyebrow": "Blog",
       "h1": "Guides for resellers and growing teams",
@@ -555,11 +555,13 @@
       "published": "Published",
       "updated": "Updated",
       "back": "All articles",
+      "related": "Related articles",
+      "guides_link": "Read our guides for resellers",
       "rss": "RSS feed"
     },
     "privacy": {
       "title": "Privacy Policy | Zerone International",
-      "description": "How Zerone International LLC collects, uses and protects personal data when you visit this website or contact us.",
+      "description": "How Zerone International LLC collects, uses and protects personal data when you visit this website, use our forms, join the newsletter or contact us.",
       "h1": "Privacy Policy",
       "intro": "This policy explains which personal data we process when you use zeroneinternational.com, why we process it and what rights you have.",
       "sections": [
@@ -623,7 +625,7 @@
     },
     "terms": {
       "title": "Terms of Use | Zerone International",
-      "description": "Terms that apply when you use the Zerone International LLC website.",
+      "description": "The terms that apply when you use the Zerone International LLC website: content, products in development, intellectual property, liability and governing law.",
       "h1": "Terms of Use",
       "intro": "These terms apply to your use of zeroneinternational.com. By using the website, you agree to them.",
       "sections": [
@@ -708,8 +710,8 @@
     {
       "slug": "ebay-listing-preparation",
       "title": "eBay listing preparation",
-      "summary": "Turn product notes into draft titles, descriptions and item specifics, ready for review.",
-      "challenge": "Writing good eBay listings one by one takes time, and item specifics are easy to miss.",
+      "summary": "Turn product notes into draft titles, descriptions and item specifics for review.",
+      "challenge": "Writing eBay listings one by one is slow, and item specifics are easy to miss.",
       "approach": "An automation reads your product notes or spreadsheet and prepares structured drafts, so your team only reviews and approves.",
       "includes": [
         "Title and description drafts",
@@ -721,7 +723,7 @@
       "slug": "poshmark-resale-workflows",
       "title": "Poshmark resale workflows",
       "summary": "Organize apparel details and prepare listings for Poshmark and other channels.",
-      "challenge": "Apparel needs sizes, brands, conditions and measurements, and entering them repeatedly is slow.",
+      "challenge": "Apparel needs sizes, brands, conditions and measurements; retyping them is slow.",
       "approach": "A structured intake form collects apparel details once and prepares drafts for each channel within platform rules.",
       "includes": [
         "Apparel data template",
@@ -745,7 +747,7 @@
       "slug": "walmart-inventory-workflows",
       "title": "Walmart inventory workflows",
       "summary": "Track stock and product data for Walmart Marketplace through permitted access.",
-      "challenge": "Keeping stock levels and product data aligned across channels is hard to do by hand.",
+      "challenge": "Keeping stock and product data aligned across channels is hard to do by hand.",
       "approach": "A web dashboard brings stock and product data together and flags differences that need action.",
       "includes": [
         "Stock overview",
@@ -781,7 +783,7 @@
       "slug": "liquidation-bid-planning",
       "title": "Liquidation.com bid planning",
       "summary": "Estimate net outcomes before deciding how much to bid.",
-      "challenge": "Bidding without a maximum price makes it easy to overpay.",
+      "challenge": "Bidding on a liquidation lot without a maximum price makes it easy to overpay.",
       "approach": "A planning tool calculates a suggested maximum bid from your target margin and cost assumptions.",
       "includes": [
         "Target margin settings",
@@ -853,7 +855,7 @@
       "slug": "stock-intake",
       "title": "Stock intake",
       "summary": "Record incoming goods and organize what is needed for resale.",
-      "challenge": "Unrecorded items are hard to find, price and list later.",
+      "challenge": "Items that are not recorded on arrival are hard to find, price and list later.",
       "approach": "A mobile intake app records items with barcode, photos, condition and location as they arrive.",
       "includes": [
         "Barcode scanning",

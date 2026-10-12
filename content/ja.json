@@ -555,6 +555,8 @@
       "published": "公開日",
       "updated": "更新日",
       "back": "記事一覧",
+      "related": "関連記事",
+      "guides_link": "再販事業者向けガイドを読む",
       "rss": "RSSフィード"
     },
     "privacy": {
