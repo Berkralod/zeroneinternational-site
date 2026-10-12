@@ -168,7 +168,7 @@ test("returns a cleaned reply: unknown link ids dropped, foreign URLs stripped, 
   assert.equal(res.json.reply.includes("evil.example"), false);
   assert.equal(res.json.reply.includes("phish.example"), false);
   assert.match(res.json.reply, /buraya/);
-  assert.match(res.json.reply, /https:\/\/zeroneinternational\.com\/tr\/iletisim\//);
+  assert.ok(res.json.reply.includes("https://zeroneinternational.com/tr/iletisim/"), res.json.reply);
   assert.deepEqual(res.json.links.map((l) => l.id), ["services", "contact", "booking"]);
   assert.equal(res.json.links[0].url, "https://zeroneinternational.com/tr/hizmetler/");
   assert.equal(res.json.links[0].label, "Hizmetler");
