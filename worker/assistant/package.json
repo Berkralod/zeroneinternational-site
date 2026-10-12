@@ -1,0 +1,21 @@
+{
+  "name": "zerone-assistant-worker",
+  "private": true,
+  "type": "module",
+  "description": "Cloudflare Worker behind the AI sales assistant on zeroneinternational.com (see docs/ASISTAN.md).",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "data": "cd ../.. && python3 build.py && cp build/assistant-data.json worker/assistant/src/site-data.json",
+    "check": "wrangler deploy --dry-run --outdir .wrangler/dry-run",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.133.0"
+  },
+  "devDependencies": {
+    "wrangler": "4.149.0"
+  }
+}

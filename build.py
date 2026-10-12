@@ -69,6 +69,11 @@ CASE_SERVICES = [
 ]
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*(?:/[a-z0-9]+(?:-[a-z0-9]+)*)*$")
 HASHED_SUFFIXES = {".css", ".js"}
+# The AI sales assistant (see docs/ASISTAN.md) is published only when site.config.json has an
+# assistant_endpoint; until then its files are left out of dist/ and the CSP stays unchanged.
+ASSISTANT_ASSETS = {"assets/js/assistant.js", "assets/css/assistant.css"}
+TURNSTILE_ORIGIN = "https://challenges.cloudflare.com"
+LINK_ID_RE = re.compile(r"^[a-z0-9][a-z0-9_-]{0,63}$")
 
 
 class BuildError(Exception):
@@ -257,12 +262,14 @@ def git_commit():
     return sha or os.environ.get("RAILWAY_GIT_COMMIT_SHA") or os.environ.get("GITHUB_SHA") or None
 
 
-def copy_static():
+def copy_static(skip=()):
     manifest = {}
     for src in sorted(STATIC.rglob("*")):
         if src.is_dir():
             continue
         rel = src.relative_to(STATIC)
+        if rel.as_posix() in skip:
+            continue
         if rel.parts[0] == "assets" and src.suffix in HASHED_SUFFIXES:
             digest = hashlib.sha256(src.read_bytes()).hexdigest()[:10]
             out_rel = rel.with_name(f"{src.stem}.{digest}{src.suffix}")
@@ -275,16 +282,30 @@ def copy_static():
     return manifest
 
 
+def origin_of(url):
+    """'https://host[:port]' of an absolute URL (the assistant endpoint is validated before this runs)."""
+    match = re.match(r"https://[^/]+", url)
+    if not match:
+        raise BuildError(f"not an https URL: {url!r}")
+    return match.group(0)
+
+
 def csp(config):
     script = ["'self'"]
     connect = ["'self'"]
     form = ["'self'"]
+    frame = []
     if config.get("formspree_form_id"):
         connect.append("https://formspree.io")
         form.append("https://formspree.io")
     if config.get("cloudflare_analytics_token"):
         script.append("https://static.cloudflareinsights.com")
         connect.append("https://cloudflareinsights.com")
+    if config.get("assistant_endpoint"):
+        # Chat requests go to the Cloudflare Worker; Turnstile (bot check) runs a script and an iframe.
+        connect.append(origin_of(config["assistant_endpoint"]))
+        script.append(TURNSTILE_ORIGIN)
+        frame.append(TURNSTILE_ORIGIN)
     return "; ".join([
         "default-src 'none'",
         f"script-src {' '.join(script)}",
@@ -292,11 +313,177 @@ def csp(config):
         "img-src 'self' data:",
         "font-src 'self'",
         f"connect-src {' '.join(connect)}",
+        *([f"frame-src {' '.join(frame)}"] if frame else []),
         "manifest-src 'self'",
         f"form-action {' '.join(form)}",
         "base-uri 'none'",
         "object-src 'none'",
     ])
+
+
+# --------------------------------------------------------------------------- AI sales assistant
+
+PAGE_DESCRIPTIONS = {
+    "home": "Home page: overview of services, resale experience, use cases and FAQ",
+    "services": "Overview of all custom software services, with the services FAQ",
+    "service_automation": "Automation & bots: data preparation, listings, notifications, scheduled tasks, integrations",
+    "service_web": "Web applications: dashboards, internal tools, customer portals with user roles",
+    "service_mobile": "Mobile apps: iOS and Android apps for teams on the floor, in the warehouse or on the road",
+    "products": "Resale tools in development: crosslisting system and liquidation lot analysis (waiting list)",
+    "use_cases": "All 20 use cases for resellers and small businesses",
+    "company": "About the company: who we are, vision, mission, values, location",
+    "contact": "Contact form to start a project or ask for a quote",
+    "payment": "Pay an invoice: card via Stripe, Square invoices, PayPal",
+    "blog": "Blog with guides for resale sellers",
+    "developers": "Planned APIs for resale sellers and the developer early-access list",
+    "privacy": "Privacy policy (also covers this AI assistant)",
+    "terms": "Terms of use",
+    "cookies": "Cookie policy",
+}
+
+
+def assistant_catalog(site, config, posts):
+    """Every link the assistant may hand out: id -> {desc, urls per language, labels per language}.
+
+    The Worker shows the model only these ids and maps the ids it returns back to URLs; the widget
+    accepts a link only when it matches this catalogue too. Nothing else can become a link."""
+    langs = site.langs
+    content = site.content
+    links = {}
+
+    def page_label(t, pid):
+        if pid == "home":
+            return t["ui"]["home"]
+        if pid in SERVICE_PAGE.values():
+            key = next(k for k, v in SERVICE_PAGE.items() if v == pid)
+            return t["services_list"][key]["name"]
+        if pid in t["nav"]:
+            return t["nav"][pid]
+        return t["pages"][pid]["h1"]
+
+    for pid in PAGE_IDS:
+        links[pid] = {
+            "desc": PAGE_DESCRIPTIONS[pid],
+            "urls": {code: site.abs(site.path(code, pid)) for code in langs},
+            "labels": {code: page_label(content[code], pid) for code in langs},
+        }
+    en = content[site.default]
+    for i, case in enumerate(en["cases"]):
+        links[f"case{i + 1}"] = {
+            "desc": f"Use case: {case['title']} ({CASE_SERVICES[i]})",
+            "urls": {code: site.abs(site.path(code, "case", i)) for code in langs},
+            "labels": {code: content[code]["cases"][i]["title"] for code in langs},
+        }
+
+    def external(link_id, url, desc, label):
+        links[link_id] = {
+            "desc": desc,
+            "urls": {code: url for code in langs},
+            "labels": {code: label(content[code]) for code in langs},
+        }
+
+    if config.get("booking_url"):
+        external("booking", config["booking_url"], "Book a call with the team (calendar)",
+                 lambda t: t["pages"]["contact"]["booking"])
+    if config.get("whatsapp_number"):
+        external("whatsapp", f"https://wa.me/{config['whatsapp_number']}", "Message the team on WhatsApp",
+                 lambda t: t["pages"]["contact"]["whatsapp"])
+    if config.get("telegram_username"):
+        external("telegram", f"https://t.me/{config['telegram_username']}", "Message the team on Telegram",
+                 lambda t: t["pages"]["contact"]["telegram"])
+    if config.get("stripe_payment_url"):
+        external("pay_card", config["stripe_payment_url"], "Pay an invoice or quote by card on Stripe's page",
+                 lambda t: t["pages"]["payment"]["stripe"]["button"])
+    if config.get("square_payment_url"):
+        external("pay_square", config["square_payment_url"], "Pay on Square's page",
+                 lambda t: t["pages"]["payment"]["square"]["button"])
+    if config.get("paypal_url"):
+        external("pay_paypal", config["paypal_url"], "Pay an invoice with PayPal",
+                 lambda t: t["pages"]["payment"]["paypal"]["button"])
+    for post in posts:
+        url = site.abs(site.post_path(post["slug"]))
+        links[f"post-{post['slug']}"[:64]] = {
+            "desc": f"Blog post (English): {post['title']}",
+            "urls": {code: url for code in langs},
+            "labels": {code: post["title"] for code in langs},
+        }
+    for link_id in links:
+        if not LINK_ID_RE.match(link_id):
+            raise BuildError(f"assistant link id {link_id!r} is not a short lowercase id")
+    return links
+
+
+def assistant_knowledge(site, config):
+    """Business facts for the assistant's system prompt, in English, taken from content/en.json."""
+    t = site.content[site.default]
+    p = t["pages"]
+    out = []
+    add = out.append
+    add(f"Company: {config['legal_name']} ({config['site_name']}), founded by {config['founder']}, "
+        f"based in {config['address']['locality']}, {config['address']['region']}, {config['address']['country']}; "
+        "works remotely with clients worldwide. The website is in 15 languages; the team communicates in English and Turkish.")
+    add(" ".join(p["company"]["about"]["text"]))
+    add(f"Mission: {p['company']['mission']['text']}")
+    add("Values: " + "; ".join(f"{v['title']}: {v['text']}" for v in p["company"]["values"]["items"]))
+    add("\nSERVICES")
+    for key, page_id in SERVICE_PAGE.items():
+        service = t["services_list"][key]
+        page = p[page_id]
+        add(f"- {service['name']} (link id {page_id}): {service['short']} {page['lede']}")
+        add("  Features: " + "; ".join(f"{f['title']} ({f['text']})" for f in page["features"]))
+        add("  Notes: " + " ".join(page["notes"]))
+    add(f"Role-based access: {t['roles']['intro']} " + "; ".join(f"{r['title']}: {r['text']}" for r in t["roles"]["items"]))
+    add("\nPRODUCTS FOR RESALE SELLERS (both in development, not available yet; visitors can join the waiting list on the products page)")
+    add(p["products"]["lede"])
+    for item in p["products"]["items"]:
+        add(f"- {item['name']}: {item['text']} Planned features: " + "; ".join(item["features"]))
+    add(p["home"]["resale"]["text"])
+    add("\nPLANNED DEVELOPER APIS (plans only, nothing is live; early-access list on the developers page)")
+    add(p["developers"]["products"]["intro"])
+    for item in p["developers"]["products"]["items"]:
+        add(f"- {item['name']}: {item['text']}")
+    add("Access model: " + "; ".join(f"{a['title']}: {a['text']}" for a in p["developers"]["access"]["items"]))
+    add("\nPROCESS")
+    add(t["process"]["intro"])
+    for i, step in enumerate(t["process"]["steps"], 1):
+        add(f"{i}. {step['title']}: {step['text']}")
+    add(p["contact"]["lede"])
+    add("\nPAYMENTS (hosted payment pages only; the website never sees card details)")
+    pay = p["payment"]
+    add(pay["lede"])
+    if config.get("stripe_payment_url"):
+        add(f"- {pay['stripe']['title']} (link id pay_card): {pay['stripe']['text']}")
+    add(f"- {pay['square']['title']}: {pay['square']['text']} {pay['square']['note']}")
+    if config.get("paypal_url"):
+        add(f"- {pay['paypal']['title']} (link id pay_paypal): {pay['paypal']['text']}")
+    add("Security: " + " ".join(pay["security"]["items"]))
+    add("\nFREQUENTLY ASKED QUESTIONS (published answers; you may repeat them, as indications only)")
+    faqs = p["home"]["faq"]["items"] + p["services"]["faq"]["items"] + pay["faq"]["items"] + p["developers"]["faq"]["items"]
+    for item in faqs:
+        add(f"Q: {item['q']} A: {item['a']}")
+    add("\nCONTACT")
+    add("Contact form on the contact page (link id contact); we aim to reply within two business days.")
+    add(f"E-mail: {config['email_user']}@{config['email_domain']}")
+    if config.get("telephone"):
+        add(f"Phone: {config['telephone']}")
+    for key, label, link_id in (("booking_url", "Book a call", "booking"), ("whatsapp_number", "WhatsApp", "whatsapp"),
+                                ("telegram_username", "Telegram", "telegram")):
+        if config.get(key):
+            add(f"{label}: link id {link_id}")
+    return "\n".join(out)
+
+
+def assistant_data(site, config, posts):
+    """Everything the Worker needs from the site: the link catalogue and the business facts."""
+    data = {
+        "languages": site.langs,
+        "default_language": site.default,
+        "base_url": site.base,
+        "links": assistant_catalog(site, config, posts),
+        "knowledge": assistant_knowledge(site, config),
+    }
+    data["version"] = hashlib.sha256(json.dumps(data, sort_keys=True).encode()).hexdigest()[:10]
+    return data
 
 
 # --------------------------------------------------------------------------- structured data
@@ -345,7 +532,8 @@ def build(check_only=False):
     # Settings can also come from the environment (e.g. GitHub repository variables).
     for key in ("formspree_form_id", "booking_url", "whatsapp_number", "telegram_username", "paypal_url",
                 "square_payment_url", "stripe_payment_url", "cloudflare_analytics_token",
-                "google_site_verification", "bing_site_verification"):
+                "google_site_verification", "bing_site_verification",
+                "assistant_endpoint", "assistant_turnstile_sitekey"):
         value = os.environ.get(f"ZERONE_{key.upper()}")
         if value:
             config[key] = value.strip()
@@ -364,6 +552,9 @@ def build(check_only=False):
         "bing_site_verification": r"[A-Za-z0-9_-]{10,100}",
         "telephone": r"\+[0-9][0-9-]{6,18}",
         "indexnow_key": r"[a-f0-9]{32}",
+        # The Cloudflare Worker of the AI assistant, e.g. https://zerone-assistant.<account>.workers.dev
+        "assistant_endpoint": r"https://[A-Za-z0-9.-]+(:[0-9]{2,5})?(/[A-Za-z0-9._~-]+)*/?",
+        "assistant_turnstile_sitekey": r"[0-9]x[A-Za-z0-9_-]{8,64}",
     }
     for key, pattern in checks.items():
         if config.get(key) and not re.fullmatch(pattern, config[key]):
@@ -381,7 +572,38 @@ def build(check_only=False):
         shutil.rmtree(BUILD_META)
     DIST.mkdir()
     BUILD_META.mkdir()
-    assets = copy_static()
+    assistant_on = bool(config.get("assistant_endpoint"))
+    assets = copy_static(skip=() if assistant_on else ASSISTANT_ASSETS)
+
+    # The Worker is deployed with this file (.github/workflows/assistant-deploy.yml), also while
+    # the widget is still switched off on the site.
+    worker_data = assistant_data(site, config, posts)
+    (BUILD_META / "assistant-data.json").write_text(
+        json.dumps(worker_data, ensure_ascii=False, indent=1), encoding="utf-8")
+    assistant_json = None
+    if assistant_on:
+        public = {"version": worker_data["version"],
+                  "links": {k: {"urls": v["urls"], "labels": v["labels"]} for k, v in worker_data["links"].items()}}
+        text = json.dumps(public, ensure_ascii=False, separators=(",", ":"))
+        catalog_path = f"/assets/assistant-catalog.{hashlib.sha256(text.encode()).hexdigest()[:10]}.json"
+        (DIST / catalog_path.lstrip("/")).write_text(text, encoding="utf-8")
+
+        def assistant_json(lang):
+            """Settings and texts for the chat widget, embedded in each page as JSON (never as script)."""
+            t = content[lang]
+            settings = {
+                "endpoint": config["assistant_endpoint"].rstrip("/"),
+                "sitekey": config.get("assistant_turnstile_sitekey", ""),
+                "lang": lang,
+                "dir": t["meta"]["dir"],
+                "catalog": catalog_path,
+                "privacy": site.path(lang, "privacy"),
+                "contact": site.path(lang, "contact"),
+                "t": {**t["assistant"], "privacy": t["pages"]["privacy"]["h1"],
+                      "consent_link": t["form"]["consent_link"], "name": t["form"]["name"],
+                      "contact": t["nav"]["contact"]},
+            }
+            return Markup(json.dumps(settings, ensure_ascii=False).replace("</", "<\\/"))
 
     env = Environment(
         loader=FileSystemLoader(TEMPLATES),
@@ -407,6 +629,8 @@ def build(check_only=False):
         asset=asset,
         config=config,
         csp=csp(config),
+        assistant=assistant_on,
+        assistant_json=assistant_json,
         year=dt.date.today().year,
         case_services=CASE_SERVICES,
         service_page=SERVICE_PAGE,
@@ -790,6 +1014,7 @@ def build(check_only=False):
         "languages": site.langs,
         "pages": rendered,
         "formspree_configured": bool(config.get("formspree_form_id")),
+        "assistant_enabled": assistant_on,
     }
     (BUILD_META / "build-info.json").write_text(json.dumps(build_info, indent=2), encoding="utf-8")
     print(f"Built {rendered} pages in {len(site.langs)} languages into {DIST.relative_to(ROOT)}/")

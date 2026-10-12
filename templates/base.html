@@ -59,8 +59,14 @@
 {% endif %}
 <link rel="preload" href="/assets/fonts/montserrat-latin-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{{ asset('/assets/css/site.css') }}">
+{% if assistant %}
+<link rel="stylesheet" href="{{ asset('/assets/css/assistant.css') }}">
+{% endif %}
 <script src="{{ asset('/assets/js/theme-init.js') }}"></script>
 <script src="{{ asset('/assets/js/site.js') }}" defer></script>
+{% if assistant %}
+<script src="{{ asset('/assets/js/assistant.js') }}" defer></script>
+{% endif %}
 {% if config.cloudflare_analytics_token %}
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ config.cloudflare_analytics_token }}"}'></script>
 {% endif %}
@@ -68,7 +74,7 @@
 <script type="application/ld+json">{{ jsonld }}</script>
 {% endif %}
 </head>
-<body class="page-{{ page_id }}">
+<body class="page-{{ page_id }}{% if assistant %} has-assistant{% endif %}">
 <a class="skip-link" href="#main">{{ t.ui.skip }}</a>
 {% include "partials/header.html" %}
 {% if suggest_json %}
@@ -102,5 +108,8 @@
 <a class="sticky-cta" href="{{ url('contact') }}" data-sticky-cta>{{ t.ui.start_project }} {{ icons.icon('arrow') }}</a>
 {% endif %}
 <button class="back-to-top icon-button" type="button" data-back-to-top aria-label="{{ t.ui.back_to_top }}" hidden>{{ icons.icon('chevron-up') }}</button>
+{% if assistant %}
+<script type="application/json" id="assistant-data">{{ assistant_json(lang) }}</script>
+{% endif %}
 </body>
 </html>

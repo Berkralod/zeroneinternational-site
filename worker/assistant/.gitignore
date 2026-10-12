@@ -1,0 +1,5 @@
+node_modules/
+.wrangler/
+.dev.vars
+# Generated from content/*.json by build.py (npm run data); the deploy workflow recreates it.
+src/site-data.json

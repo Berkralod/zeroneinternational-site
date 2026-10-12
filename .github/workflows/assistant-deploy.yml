@@ -1,0 +1,121 @@
+name: AI assistant (Cloudflare Worker)
+
+# Deploys the Worker behind the AI sales assistant (worker/assistant) and configures it, all through
+# the Cloudflare API. Run by hand; safe to run again. See docs/ASISTAN.md.
+#   1. builds the site data (link catalogue + business facts) from content/*.json,
+#   2. runs the Worker's unit tests,
+#   3. deploys with wrangler to https://zerone-assistant.<subdomain>.workers.dev,
+#   4. creates the Turnstile widget if missing and sets all Worker secrets,
+#   5. checks /health and sends a Turkish summary (endpoint + sitekey) to Telegram.
+# The website itself is not changed: the widget appears only after assistant_endpoint and
+# assistant_turnstile_sitekey are set in site.config.json.
+#
+# Secrets: CLOUDFLARE_API_TOKEN (Workers Scripts Edit, Account Settings Read, Turnstile Edit),
+# ANTHROPIC_API_KEY, and optionally TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: assistant-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Build the site data for the Worker
+        run: |
+          python build.py
+          cp build/assistant-data.json worker/assistant/src/site-data.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: worker/assistant/package-lock.json
+      - run: npm ci
+        working-directory: worker/assistant
+      - name: Worker unit tests
+        run: npm test
+        working-directory: worker/assistant
+      - name: Check secrets
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          missing=""
+          [ -n "$CLOUDFLARE_API_TOKEN" ] || missing="$missing CLOUDFLARE_API_TOKEN"
+          [ -n "$ANTHROPIC_API_KEY" ] || missing="$missing ANTHROPIC_API_KEY"
+          if [ -n "$missing" ]; then
+            echo "Eksik GitHub secret:$missing" | tee summary.txt
+            exit 1
+          fi
+      - name: Prepare the Cloudflare account
+        id: prepare
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          SUMMARY_FILE: summary.txt
+        run: python3 deploy/assistant_setup.py prepare
+      - name: Deploy the Worker
+        working-directory: worker/assistant
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ steps.prepare.outputs.account_id }}
+          WRANGLER_SEND_METRICS: "false"
+        run: npx wrangler deploy
+      - name: Turnstile and Worker secrets
+        id: secrets
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ steps.prepare.outputs.account_id }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          SUMMARY_FILE: summary.txt
+        run: python3 deploy/assistant_setup.py secrets
+      - name: Health check
+        env:
+          ENDPOINT: ${{ steps.secrets.outputs.endpoint }}
+        run: |
+          # A new workers.dev subdomain can take a minute to answer.
+          for attempt in 1 2 3 4 5 6; do
+            if curl -fsS --max-time 10 "$ENDPOINT/health" | grep -q '"ok":true'; then
+              echo "Sağlık kontrolü: başarılı ($ENDPOINT/health)" >> summary.txt
+              exit 0
+            fi
+            sleep 20
+          done
+          echo "Sağlık kontrolü: Worker henüz yanıt vermiyor; birkaç dakika sonra tekrar deneyin." >> summary.txt
+          exit 1
+      - name: Job summary
+        if: always()
+        run: cat summary.txt >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
+      - name: Send the result to Telegram
+        if: always()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          OUTCOME: ${{ job.status }}
+        run: |
+          if [ "$OUTCOME" = "success" ]; then
+            title="AI asistan Cloudflare'e kuruldu"
+            next="Sonraki adım: Claude'a bu mesajı iletin; Claude adresi ve site anahtarını site.config.json'a yazıp asistanı sitede açacak."
+          else
+            title="AI asistan kurulumunda HATA"
+            next="Hiçbir şey sitede değişmedi. Claude'a haber verin."
+          fi
+          { cat summary.txt 2>/dev/null || echo "Sonuç dosyası oluşmadı."; echo; echo "$next"; echo "Ayrıntılar: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"; } \
+            | python3 deploy/notify_telegram.py --title "$title"
