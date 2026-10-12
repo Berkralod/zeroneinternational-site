@@ -7,3 +7,4 @@
 - Payments: hosted options only (PayPal, Square invoices, Stripe Payment Links). No integrations that make us handle card data.
 - Changes go through a PR from the designated branch; run build.py, tests/validate_site.py and the Playwright suite before pushing.
 - AI sales assistant (docs/ASISTAN.md): widget in static/assets/{js,css}/assistant.*, Cloudflare Worker in worker/assistant (deployed by assistant-deploy.yml). It is on only when site.config.json has assistant_endpoint (+ assistant_turnstile_sitekey); empty it to switch the assistant off. Run `npm test` in worker/assistant after Worker changes.
+- Current project status, open items and the owner's to-do list: docs/DURUM.md (keep it updated after each piece of work).
