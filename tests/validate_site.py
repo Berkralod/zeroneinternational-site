@@ -154,6 +154,7 @@ REQUIRED_PROPERTIES = {
     "Person": ("@id", "name"),
     "SoftwareApplication": ("name", "description", "applicationCategory"),
     "Service": ("name", "provider"),
+    "FAQPage": ("mainEntity",),
 }
 
 

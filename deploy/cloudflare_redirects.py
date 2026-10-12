@@ -102,6 +102,29 @@ def ensure_redirect(zone_id, domain, target):
     call("PUT", f"/zones/{zone_id}/rulesets/phases/http_request_dynamic_redirect/entrypoint", {"rules": [rule]})
 
 
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, *args, **kwargs):
+        return None
+
+
+def live_check(domain, target):
+    """Request each address once without following redirects; return the ones that do not 301 to target."""
+    opener = urllib.request.build_opener(_NoRedirect)
+    bad = []
+    for url in (f"http://{domain}/", f"https://{domain}/", f"https://www.{domain}/"):
+        try:
+            with opener.open(urllib.request.Request(url, method="HEAD"), timeout=20) as response:
+                status, location = response.status, response.headers.get("Location", "")
+        except urllib.error.HTTPError as error:
+            status, location = error.code, error.headers.get("Location", "")
+        except OSError as error:
+            bad.append(f"{url} ({error.__class__.__name__})")
+            continue
+        if status not in (301, 308) or not location.startswith(target.rstrip("/")):
+            bad.append(f"{url} (HTTP {status})")
+    return bad
+
+
 def main():
     if len(sys.argv) < 3:
         sys.exit(__doc__)
@@ -131,7 +154,11 @@ def main():
                     pass  # Rate-limited checks are harmless; Cloudflare also checks on its own.
             line = f"{domain} → {target} yönlendirmesi kuruldu."
             if status == "active":
-                line += " Durum: AKTİF, yönlendirme çalışıyor."
+                bad = live_check(domain, target)
+                if bad:
+                    line += " Durum: AKTİF, ama şu adresler henüz yönlendirmiyor (sertifika birkaç dakika sürebilir): " + ", ".join(bad)
+                else:
+                    line += " Durum: AKTİF, test edildi: http, https ve www adresleri ana siteye yönlendiriyor."
             else:
                 servers = ", ".join(zone.get("name_servers", []))
                 line += f" Durum: bekliyor. Namecheap'te nameserver olarak şunlar girilmeli: {servers}"

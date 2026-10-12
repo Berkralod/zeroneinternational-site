@@ -16,6 +16,7 @@
     "contact": "iletisim",
     "payment": "odeme",
     "blog": "blog",
+    "developers": "gelistiriciler",
     "privacy": "gizlilik",
     "terms": "kullanim-kosullari",
     "cookies": "cerezler"
@@ -56,6 +57,7 @@
     "use_cases": "Kullanım senaryoları",
     "company": "Şirket",
     "blog": "Blog",
+    "developers": "Geliştiriciler için",
     "contact": "İletişim"
   },
   "footer": {
@@ -558,6 +560,84 @@
       "related": "İlgili makaleler",
       "guides_link": "Satıcılar için rehberlerimizi okuyun",
       "rss": "RSS beslemesi"
+    },
+    "developers": {
+      "title": "Yeniden Satış İçin API'ler – Erken Erişim | Zerone International",
+      "description": "Zerone International yeniden satıcılar için API'ler planlıyor: ilan verisi düzenleme, stok eşitleme, lot analizi ve ücret hesaplama. Erken erişim listesine katılın.",
+      "eyebrow": "Geliştiriciler için",
+      "h1": "Yeniden satıcılar için API'ler ve araçlar",
+      "lede": "Kendi yeniden satış işimiz için geliştirdiğimiz geliştirici araçlarında erken erişimi açıyoruz. Henüz hiçbiri yayında değil; listeye katılın, önceliklere birlikte karar verelim.",
+      "hero_button": "Erken erişime katılın",
+      "planned": "Planlanıyor",
+      "products": {
+        "title": "Planlanan API ürünleri",
+        "intro": "Bunlar bitmiş ürünler değil, planlardır. Kapsam ve zamanlama erken erişim geri bildirimlerine göre değişebilir.",
+        "items": [
+          {
+            "name": "İlan verisi düzenleme",
+            "text": "Farklı pazar yerlerinden gelen ürün verisini çapraz listelemeye hazır, tutarlı tek bir katalog biçimine dönüştürün."
+          },
+          {
+            "name": "Stok ve satılan ürün eşitleme",
+            "text": "Stoku pazar yerleri arasında eşit tutun ve başka yerde satılan ürünleri işaretleyin; böylece çift satışın önüne geçin."
+          },
+          {
+            "name": "Lot ve manifest analizi",
+            "text": "Bir likidasyon manifestini okuyun; lotu almadan önce yeniden satış değerini, ücretleri ve kârı tahmin edin."
+          },
+          {
+            "name": "Fiyat ve ücret hesaplayıcıları",
+            "text": "Pazar yeri ücretlerini, kargoyu ve kur dönüşümünü hesaplayarak bir satıştan elinize gerçekte ne kaldığını görün."
+          }
+        ]
+      },
+      "access": {
+        "title": "Erişim nasıl işleyecek",
+        "intro": "Ayrıntılar henüz netleşmedi. Planladığımız genel model şöyle:",
+        "items": [
+          {
+            "title": "Hesap başına API anahtarı",
+            "text": "Her hesabın, kendiniz oluşturup iptal edebileceğiniz kendi anahtarları olacak."
+          },
+          {
+            "title": "Kullanıma göre planlar",
+            "text": "Planlar kullanım miktarına göre belirlenecek. Ücretli bir plan başlamadan önce fiyatlar yayımlanacak."
+          },
+          {
+            "title": "Dokümantasyon",
+            "text": "Her uç nokta, erken erişim kullanıcılarına açılmadan önce örneklerle belgelenecek."
+          },
+          {
+            "title": "Test ortamı (sandbox)",
+            "text": "Örnek verili bir test ortamında gerçek ilanlara veya pazar yeri hesaplarına dokunmadan deneme yapabileceksiniz."
+          }
+        ]
+      },
+      "waitlist": {
+        "title": "Geliştirici erken erişim listesine katılın",
+        "text": "Ne geliştirmek istediğinizi anlatın. Erken erişim açıldığında sizinle iletişime geçeceğiz. Herhangi bir taahhüt yoktur.",
+        "idea": "Ne geliştirmek isterdiniz?",
+        "idea_hint": "Örneğin ilgili pazar yerleri, veriler veya iş akışı. Lütfen şifre veya API anahtarı göndermeyin.",
+        "submit": "Erken erişim isteyin",
+        "success": "Teşekkürler! Geliştirici erken erişim listesine eklendiniz."
+      },
+      "faq": {
+        "title": "Geliştirici soruları",
+        "items": [
+          {
+            "q": "API şu anda kullanılabilir mi?",
+            "a": "Hayır. Bu sayfadaki her şey planlama aşamasındadır ve henüz kullanıma açık değildir. Listeye katılmak bir hesap ya da yükümlülük oluşturmaz."
+          },
+          {
+            "q": "Ücreti ne kadar olacak?",
+            "a": "Fiyatlar henüz belirlenmedi. Kullanıma göre planlar düşünüyoruz ve ücretli bir plan başlamadan önce fiyatları yayımlayacağız."
+          },
+          {
+            "q": "Hangi pazar yerleri desteklenecek?",
+            "a": "Bu, erken erişim talebine ve her pazar yerinin resmî erişim imkânlarına ve kurallarına bağlı. Sizin için önemli olanları formda belirtin."
+          }
+        ]
+      }
     },
     "privacy": {
       "title": "Gizlilik Politikası | Zerone International",

@@ -16,6 +16,7 @@
     "contact": "kontakt",
     "payment": "platnosc",
     "blog": "blog",
+    "developers": "dla-programistow",
     "privacy": "polityka-prywatnosci",
     "terms": "warunki-korzystania",
     "cookies": "pliki-cookie"
@@ -56,6 +57,7 @@
     "use_cases": "Przykłady",
     "company": "Firma",
     "blog": "Blog",
+    "developers": "Dla programistów",
     "contact": "Kontakt"
   },
   "footer": {
@@ -558,6 +560,84 @@
       "related": "Powiązane artykuły",
       "guides_link": "Przeczytaj nasze poradniki dla sprzedawców",
       "rss": "Kanał RSS"
+    },
+    "developers": {
+      "title": "API dla odsprzedawców – wczesny dostęp | Zerone International",
+      "description": "Zerone International planuje API dla odsprzedawców: normalizację ofert, synchronizację stanów, analizę partii i kalkulatory opłat. Zapisz się na wczesny dostęp.",
+      "eyebrow": "Dla programistów",
+      "h1": "API i narzędzia dla odsprzedawców",
+      "lede": "Otwieramy wczesny dostęp do narzędzi dla programistów, które tworzymy na potrzeby naszej własnej odsprzedaży. Nic nie jest jeszcze dostępne – zapisz się i pomóż zdecydować, co powstanie najpierw.",
+      "hero_button": "Dołącz do wczesnego dostępu",
+      "planned": "Planowane",
+      "products": {
+        "title": "Planowane produkty API",
+        "intro": "To plany, a nie gotowe produkty. Zakres i terminy mogą się zmienić na podstawie opinii z wczesnego dostępu.",
+        "items": [
+          {
+            "name": "Normalizacja danych ofert",
+            "text": "Zamień dane produktów z różnych marketplace’ów na jeden spójny format katalogu, gotowy do wystawiania na wielu kanałach."
+          },
+          {
+            "name": "Synchronizacja stanów i sprzedaży",
+            "text": "Utrzymuj zgodne stany magazynowe na marketplace’ach i oznaczaj rzeczy sprzedane gdzie indziej, aby uniknąć podwójnej sprzedaży."
+          },
+          {
+            "name": "Analiza partii i manifestów",
+            "text": "Odczytaj manifest partii likwidacyjnej i oszacuj wartość odsprzedaży, opłaty oraz marżę, zanim ją kupisz."
+          },
+          {
+            "name": "Kalkulatory cen i opłat",
+            "text": "Oblicz prowizje marketplace’u, wysyłkę i przewalutowanie, aby zobaczyć, ile naprawdę zostaje ze sprzedaży."
+          }
+        ]
+      },
+      "access": {
+        "title": "Jak będzie działał dostęp",
+        "intro": "Szczegóły wciąż ustalamy. Oto ogólny model, który planujemy.",
+        "items": [
+          {
+            "title": "Klucze API dla każdego konta",
+            "text": "Każde konto otrzyma własne klucze, które sam utworzysz i unieważnisz."
+          },
+          {
+            "title": "Plany zależne od użycia",
+            "text": "Plany będą zależeć od wykorzystania. Ceny opublikujemy przed startem jakiegokolwiek płatnego planu."
+          },
+          {
+            "title": "Dokumentacja",
+            "text": "Każdy endpoint zostanie opisany z przykładami, zanim udostępnimy go użytkownikom wczesnego dostępu."
+          },
+          {
+            "title": "Sandbox",
+            "text": "Środowisko testowe z przykładowymi danymi pozwoli testować bez dotykania prawdziwych ofert i kont."
+          }
+        ]
+      },
+      "waitlist": {
+        "title": "Zapisz się na wczesny dostęp dla programistów",
+        "text": "Napisz, co chcesz zbudować. Skontaktujemy się, gdy otworzymy wczesny dostęp. Bez zobowiązań.",
+        "idea": "Co chcesz zbudować?",
+        "idea_hint": "Na przykład marketplace’y, dane lub proces, których to dotyczy. Nie wysyłaj haseł ani kluczy API.",
+        "submit": "Poproś o wczesny dostęp",
+        "success": "Dziękujemy! Jesteś na liście wczesnego dostępu dla programistów."
+      },
+      "faq": {
+        "title": "Pytania programistów",
+        "items": [
+          {
+            "q": "Czy API jest już dostępne?",
+            "a": "Nie. Wszystko na tej stronie jest planowane i jeszcze niedostępne. Zapis na listę nie tworzy konta ani żadnych zobowiązań."
+          },
+          {
+            "q": "Ile to będzie kosztować?",
+            "a": "Ceny nie są jeszcze ustalone. Planujemy plany zależne od użycia i opublikujemy ceny przed startem jakiegokolwiek płatnego planu."
+          },
+          {
+            "q": "Które marketplace’y będą obsługiwane?",
+            "a": "To zależy od zainteresowania we wczesnym dostępie oraz od tego, na co pozwalają oficjalny dostęp i regulamin danego marketplace’u. Wskaż w formularzu te, które są dla Ciebie ważne."
+          }
+        ]
+      }
     },
     "privacy": {
       "title": "Polityka prywatności | Zerone International",

@@ -16,6 +16,7 @@
     "contact": "contact",
     "payment": "payment",
     "blog": "blog",
+    "developers": "developers",
     "privacy": "privacy",
     "terms": "terms",
     "cookies": "cookies"
@@ -56,6 +57,7 @@
     "use_cases": "Use cases",
     "company": "Company",
     "blog": "Blog",
+    "developers": "For developers",
     "contact": "Contact"
   },
   "footer": {
@@ -558,6 +560,84 @@
       "related": "Related articles",
       "guides_link": "Read our guides for resellers",
       "rss": "RSS feed"
+    },
+    "developers": {
+      "title": "APIs for Resale Sellers – Early Access | Zerone International",
+      "description": "Zerone International is planning APIs for resale sellers: listing normalization, inventory sync, lot analysis and fee calculators. Join the early-access list.",
+      "eyebrow": "For developers",
+      "h1": "APIs and tools for resale sellers",
+      "lede": "We are opening early access to the developer tools we are building for our own resale business. Nothing is live yet; join the list and help decide what comes first.",
+      "hero_button": "Join early access",
+      "planned": "Planned",
+      "products": {
+        "title": "Planned API products",
+        "intro": "These are plans, not finished products. Scope and timing may change based on early-access feedback.",
+        "items": [
+          {
+            "name": "Listing data normalization",
+            "text": "Turn product data from different marketplaces into one consistent catalog format, ready for crosslisting."
+          },
+          {
+            "name": "Inventory and sold-item sync",
+            "text": "Keep stock in step across marketplaces and flag items that sold elsewhere, to help prevent double selling."
+          },
+          {
+            "name": "Lot and manifest analysis",
+            "text": "Read a liquidation manifest and estimate resale value, fees and margin before you buy the lot."
+          },
+          {
+            "name": "Pricing and fee calculators",
+            "text": "Work out marketplace fees, shipping and currency conversion to see what you actually keep from a sale."
+          }
+        ]
+      },
+      "access": {
+        "title": "How access will work",
+        "intro": "The details are still being decided. This is the general model we are planning.",
+        "items": [
+          {
+            "title": "API keys per account",
+            "text": "Each account will get its own keys, which you can create and revoke yourself."
+          },
+          {
+            "title": "Usage-based plans",
+            "text": "Plans will depend on how much you use. Prices will be published before any paid plan starts."
+          },
+          {
+            "title": "Documentation",
+            "text": "Every endpoint will be documented with examples before it opens to early-access users."
+          },
+          {
+            "title": "Sandbox",
+            "text": "A sandbox with sample data will let you test without touching real listings or marketplace accounts."
+          }
+        ]
+      },
+      "waitlist": {
+        "title": "Join the developer early-access list",
+        "text": "Tell us what you would like to build. We will contact you when early access opens. There is no commitment.",
+        "idea": "What would you build?",
+        "idea_hint": "For example the marketplaces, data or workflow involved. Please do not send passwords or API keys.",
+        "submit": "Request early access",
+        "success": "Thank you! You are on the developer early-access list."
+      },
+      "faq": {
+        "title": "Developer questions",
+        "items": [
+          {
+            "q": "Is the API available now?",
+            "a": "No. Everything on this page is planned and not yet available. Joining the list does not create an account or any obligation."
+          },
+          {
+            "q": "How much will it cost?",
+            "a": "Pricing has not been set. We plan usage-based plans and will publish prices before any paid plan starts."
+          },
+          {
+            "q": "Which marketplaces will be supported?",
+            "a": "That depends on early-access demand and on what each marketplace's official access and terms allow. Tell us in the form which ones matter to you."
+          }
+        ]
+      }
     },
     "privacy": {
       "title": "Privacy Policy | Zerone International",

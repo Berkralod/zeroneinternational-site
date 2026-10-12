@@ -623,3 +623,7 @@ a.tag:hover { border-color: var(--brand); color: var(--brand); }
 .post-body blockquote { margin: 24px 0; padding: 16px 20px; border-inline-start: 4px solid var(--accent); background: var(--accent-soft); border-radius: var(--radius); }
 .post-body blockquote p { margin: 0; }
 .newsletter .form { max-width: 520px; }
+
+/* developers page */
+.dev-card__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.dev-card__head .card__icon { margin-bottom: 0; }

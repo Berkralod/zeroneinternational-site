@@ -67,3 +67,9 @@ tags: Crosslisting, Automation
 Yazılar şimdilik yalnızca İngilizce yayınlanır; diğer 14 dildeki blog sayfası aynı yazıları "şimdilik İngilizce" notuyla listeler. Yazılar site haritasına, RSS akışına (`/blog/feed.xml`) ve Google'ın okuduğu `BlogPosting` verisine otomatik eklenir; yayından sonra Bing'e de otomatik haber gider.
 
 **Bülten aboneleri** Formspree'de "form: newsletter" olarak görünür (Formspree → Submissions). Listeyi oradan CSV olarak indirebilirsiniz.
+
+## Geliştiriciler sayfası
+
+"Geliştiriciler için" sayfası (`/developers/`, Türkçede `/tr/gelistiriciler/`) henüz yayında olmayan API ürünlerini "Planlanıyor" etiketiyle tanıtır. Metinler her dil dosyasında `pages.developers` bölümündedir. Bu sayfada fiyat, çalışma süresi (uptime) veya SLA sözü vermeyin; ürünler gerçekten açılana kadar her şey "planlanıyor" olarak kalmalıdır.
+
+**Erken erişim başvuruları** Formspree'de "form: developers-waitlist" olarak görünür (Formspree → Submissions).

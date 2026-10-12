@@ -270,3 +270,37 @@ test("blog lists every post, posts render and the newsletter form submits @cross
   await expect(form.locator("[data-form-status]")).toHaveText(content.en.newsletter.success);
   expect(errors).toEqual([]);
 });
+
+test("developers page renders in several languages and the early-access form submits to Formspree @cross", async ({ page }) => {
+  const errors = await collectErrors(page);
+  for (const lang of ["en", "de", "ja"]) {
+    const dev = content[lang].pages.developers;
+    await page.goto(pathFor(lang, "developers"));
+    await expect(page.locator("html")).toHaveAttribute("lang", lang);
+    await expect(page.locator("h1")).toHaveText(dev.h1);
+    // Every planned product carries the "Planned" badge; nothing is presented as available.
+    await expect(page.locator("main .tag", { hasText: dev.planned })).toHaveCount(dev.products.items.length);
+  }
+  await page.goto(pathFor("en", "developers"));
+  const form = page.locator("#waitlist form[data-ajax-form]");
+  test.skip((await form.count()) === 0, "Formspree is not configured in this build");
+  // CI builds with a placeholder form id (ZERONE_FORMSPREE_FORM_ID), so check the shape, not the value.
+  await expect(form).toHaveAttribute("action", /^https:\/\/formspree\.io\/f\/[A-Za-z0-9]+$/);
+  await expect(form.locator('input[name="form"]')).toHaveValue("developers-waitlist");
+  let posted = null;
+  await page.route("https://formspree.io/**", (route) => {
+    posted = route.request();
+    return route.fulfill({ status: 200, contentType: "application/json", body: '{"ok":true}' });
+  });
+  await form.locator("#dev-email").fill("dev@example.com");
+  await form.locator("#dev-company").fill("Example Resale Co");
+  await form.locator("#dev-idea").fill("A dashboard that syncs sold items between two marketplaces.");
+  await form.locator("#dev-consent").check();
+  await form.locator("[type=submit]").click();
+  await expect(form.locator("[data-form-status]")).toHaveText(content.en.pages.developers.waitlist.success);
+  expect(posted.method()).toBe("POST");
+  const body = posted.postData();
+  expect(body).toContain("developers-waitlist");
+  expect(body).toContain("dev@example.com");
+  expect(errors).toEqual([]);
+});
