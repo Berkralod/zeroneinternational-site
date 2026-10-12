@@ -5,7 +5,8 @@
 - 15 dilde 480 sayfa: her dilde ana sayfa, hizmetler ve 3 hizmet detayı, ürünler, 20 kullanım senaryosu sayfası, şirket, iletişim ve yasal sayfalar.
 - Latin alfabeli dillerde yerelleştirilmiş adresler (örneğin `/tr/hizmetler/otomasyon-ve-botlar/`).
 - Her sayfada aranan kelimelere göre yazılmış `title` ve `description`, `canonical`, 15 dil + `x-default` için karşılıklı `hreflang` etiketleri.
-- Yapılandırılmış veri (JSON-LD): Organization, WebSite, WebPage, BreadcrumbList, FAQPage, Service, ItemList.
+- Yapılandırılmış veri (JSON-LD): Organization, WebSite, WebPage, BreadcrumbList, FAQPage, Service, ItemList, BlogPosting, SoftwareApplication (ürünler) ve Person (kurucu).
+- Strateji, anahtar kelimeler, blog takvimi ve müşteri kazanma kanalları: [SEO planı](SEO-PLANI.md).
 - Open Graph ve Twitter kartları, 1200×630 paylaşım görseli, favicon, uygulama simgeleri, manifest.
 - Her sayfa için son güncelleme tarihi ve dil alternatifleri içeren `sitemap.xml`, `robots.txt`.
 - Eski adreslerden yenilerine yönlendirme (`/tr.html` → `/tr/`).
