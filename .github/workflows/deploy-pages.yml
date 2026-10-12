@@ -63,6 +63,8 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
+          # v4+ drops dot-files by default; the site needs /.well-known/security.txt.
+          include-hidden-files: true
       - name: Keep this build for a possible rollback
         uses: actions/upload-artifact@v7
         with:
@@ -194,6 +196,7 @@ jobs:
         with:
           path: rollback-site
           name: github-pages-rollback
+          include-hidden-files: true
 
   rollback-deploy:
     needs: rollback-prepare
