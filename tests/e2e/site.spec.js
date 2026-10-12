@@ -10,6 +10,14 @@ async function collectErrors(page) {
   return errors;
 }
 
+// Resizes the viewport and waits until the page has laid out at the new width (newer Chromium
+// applies the resize a frame or two later), so overflow is measured on the final layout.
+async function resizeTo(page, width, height) {
+  await page.setViewportSize({ width, height });
+  await page.waitForFunction((w) => window.innerWidth === w, width);
+  await page.evaluate(() => new Promise((done) => requestAnimationFrame(() => requestAnimationFrame(done))));
+}
+
 async function horizontalOverflow(page) {
   return page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
 }
@@ -51,7 +59,7 @@ for (const lang of languages) {
         await expect(page.locator("h1")).toHaveCount(1);
         await expect(page.locator("h1")).toBeVisible();
         for (const width of [320, 1280]) {
-          await page.setViewportSize({ width, height: 900 });
+          await resizeTo(page, width, 900);
           const overflow = await horizontalOverflow(page);
           const culprits = overflow > 1 ? await overflowingElements(page) : [];
           expect(overflow, `overflow at ${width}px: ${culprits.join(" | ")}`).toBeLessThanOrEqual(1);
@@ -248,7 +256,7 @@ test("blog lists every post, posts render and the newsletter form submits @cross
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
   await expect(page.locator("article h1")).toBeVisible();
   for (const width of [320, 1280]) {
-    await page.setViewportSize({ width, height: 900 });
+    await resizeTo(page, width, 900);
     expect(await horizontalOverflow(page), `overflow at ${width}px`).toBeLessThanOrEqual(1);
   }
   const form = page.locator("section.newsletter form[data-ajax-form]");

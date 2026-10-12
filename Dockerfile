@@ -17,7 +17,7 @@ ARG ZERONE_GOOGLE_SITE_VERIFICATION=""
 ARG ZERONE_BING_SITE_VERIFICATION=""
 RUN python build.py && python tests/validate_site.py
 
-FROM nginxinc/nginx-unprivileged:1.28-alpine
+FROM nginxinc/nginx-unprivileged:1.31-alpine
 ENV PORT=8080
 COPY deploy/nginx/default.conf.template /etc/nginx/templates/default.conf.template
 COPY deploy/nginx/security-headers.conf /etc/nginx/snippets/security-headers.conf
