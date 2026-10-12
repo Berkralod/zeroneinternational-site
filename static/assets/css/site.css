@@ -285,6 +285,7 @@ h3 { font-size: 1.15rem; letter-spacing: -0.005em; }
 .section-title { margin-bottom: 0.4em; }
 .section-intro { color: var(--muted); font-size: 1.125rem; margin: 0; }
 .section-more { margin: 32px 0 0; }
+.section-more + .section-more { margin-top: 12px; }
 .eyebrow {
   display: inline-flex; align-items: center; gap: 8px; margin: 0 0 14px;
   color: var(--accent); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;

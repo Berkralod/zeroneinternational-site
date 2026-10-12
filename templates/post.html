@@ -19,6 +19,23 @@
     </div>
   </div>
 </article>
+{% if post.related %}
+<section class="section section--flush-top" aria-labelledby="related-posts-title">
+  <div class="wrap">
+    {{ blocks.section_head(None, p.related, id="related-posts-title") }}
+    <ul class="card-grid card-grid--3 post-list" role="list">
+    {% for rel in post.related %}
+      <li class="card card--link post-card">
+        <p class="post-meta"><time datetime="{{ rel.date }}">{{ rel.date }}</time> · {{ p.minutes|replace('{n}', rel.minutes) }}</p>
+        <h3 class="card__title"><a href="{{ post_url(rel.slug) }}">{{ rel.title }}</a></h3>
+        <p>{{ rel.description }}</p>
+        <span class="card__more" aria-hidden="true">{{ p.read_more }} {{ icons.icon('arrow') }}</span>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
 {{ blocks.newsletter_form() }}
 {{ blocks.cta_band() }}
 {% endblock %}

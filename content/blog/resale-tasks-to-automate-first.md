@@ -1,6 +1,6 @@
 ---
 title: 5 Resale Tasks You Should Automate First
-description: Which repetitive resale tasks give the best return when automated, from photos and listings to delisting, order updates and profit reporting, and how to choose where to start.
+description: Which repetitive resale tasks pay off most when automated, from listings and delisting to order updates and profit reports, and how to choose where to start.
 date: 2026-10-11
 tags: Automation, Productivity, Operations
 ---

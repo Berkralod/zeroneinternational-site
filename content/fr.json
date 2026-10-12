@@ -555,6 +555,8 @@
       "published": "Publié",
       "updated": "Mis à jour",
       "back": "Tous les articles",
+      "related": "Articles associés",
+      "guides_link": "Lire nos guides pour les revendeurs",
       "rss": "Flux RSS"
     },
     "privacy": {

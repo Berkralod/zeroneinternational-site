@@ -147,6 +147,38 @@ def url_for_file(f: Path) -> str:
     return BASE + "/" + rel
 
 
+REQUIRED_PROPERTIES = {
+    "Organization": ("@id", "name", "url", "logo", "address", "contactPoint"),
+    "WebPage": ("@id", "url", "name", "inLanguage"),
+    "BlogPosting": ("headline", "datePublished", "dateModified", "author", "publisher", "image"),
+    "Person": ("@id", "name"),
+    "SoftwareApplication": ("name", "description", "applicationCategory"),
+    "Service": ("name", "provider"),
+}
+
+
+def structured_data_problems(data):
+    """Required properties per schema.org type, plus a working logo and contact point for the organization."""
+    nodes = data.get("@graph", [data]) if isinstance(data, dict) else []
+    if not isinstance(data, dict) or data.get("@context") != "https://schema.org":
+        yield "@context must be https://schema.org"
+    for node in nodes:
+        kind = node.get("@type")
+        for key in REQUIRED_PROPERTIES.get(kind, ()):
+            if not node.get(key):
+                yield f"{kind} is missing {key}"
+        if kind == "Organization":
+            logo = node.get("logo") or {}
+            target = local_target(logo.get("url", "")) if isinstance(logo, dict) else None
+            if not target or not target[0].is_file():
+                yield f"Organization logo does not exist: {logo}"
+            point = node.get("contactPoint") or {}
+            if not point.get("contactType") or not (point.get("telephone") or point.get("url") or point.get("email")):
+                yield "Organization contactPoint needs contactType and a telephone, url or e-mail"
+            if "streetAddress" in (node.get("address") or {}):
+                yield "Organization address must stay locality/region only"
+
+
 def main() -> int:
     if not DIST.is_dir():
         print("dist/ not found - run build.py first", file=sys.stderr)
@@ -201,9 +233,12 @@ def main() -> int:
             err(f"duplicate ids: {sorted(dupes)}")
         for block in p.jsonld:
             try:
-                json.loads(block)
+                data = json.loads(block)
             except ValueError as exc:
                 err(f"invalid JSON-LD: {exc}")
+                continue
+            for problem in structured_data_problems(data):
+                err(f"JSON-LD: {problem}")
 
         canon = [h for r, h, _ in p.links if r == "canonical"]
         if is_index:

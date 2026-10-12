@@ -1,6 +1,6 @@
 ---
 title: How to Analyze a Liquidation Lot Before You Buy
-description: A step-by-step method for reading a liquidation manifest, estimating resale value and setting a maximum bid, so a pallet makes money instead of filling your garage.
+description: A step-by-step method for reading a liquidation manifest, estimating resale value and setting a maximum bid, so a pallet makes money instead of losing it.
 date: 2026-10-11
 tags: Liquidation, Sourcing, Profit
 ---
