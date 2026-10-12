@@ -8,6 +8,7 @@
 - **Railway'de tam güvenlik başlıkları:** HSTS, CSP, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, COOP/CORP. Ayrıca sunucu sürümü gizlenir, gizli dosyalar engellenir ve GET/HEAD dışındaki istekler reddedilir. nginx root olmayan kullanıcıyla çalışır.
 - **E-posta adresi** sayfa kaynağında düz metin olarak durmaz, JavaScript ile oluşturulur. Bu, e-posta toplayan botların işini zorlaştırır.
 - **Form koruması:** gizli bal tuzağı (`_gotcha`) alanı, uzunluk sınırları ve Formspree'nin spam filtresi. Formspree'de **Allowed domains** ayarı yapılmalı (bkz. [Yayına alma](YAYINA-ALMA.md)).
+- **Ödemeler yalnızca barındırılan sayfalarda:** Kart bilgisi hiçbir zaman sitemize girmez. Ödeme düğmeleri müşteriyi Stripe (`buy.stripe.com`), Square veya PayPal'ın kendi sayfasına götürür; `build.py` bu adreslerin başka bir alan adına işaret etmesine izin vermez.
 - **Gizli anahtar taraması:** `tests/validate_site.py` yayınlanacak her dosyada token/anahtar kalıplarını arar; bulursa yayın durur.
 - **GitHub Actions:** iş akışları en az yetkiyle çalışır (`contents: read`). Pages yayını yalnızca `pages: write` + `id-token` kullanır; artık `main` dalına yazan bir token yoktur. Dependabot, eylem ve paket güncellemelerini haftalık önerir.
 - **`/.well-known/security.txt`** güvenlik araştırmacılarına iletişim yolunu gösterir.

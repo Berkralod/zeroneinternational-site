@@ -497,11 +497,16 @@
     },
     "payment": {
       "title": "Make a Payment – Pay an Invoice | Zerone International",
-      "description": "Pay a Zerone International invoice securely by card, Apple Pay, ACH bank transfer or PayPal. Card details are handled by Square and PayPal, never by our site.",
+      "description": "Pay a Zerone International invoice securely by card, Apple Pay, ACH bank transfer or PayPal. Card details are handled by Stripe, Square and PayPal, never by our site.",
       "eyebrow": "Payments",
       "h1": "Make a payment",
-      "lede": "Pay your invoice securely online. Your card details go straight to Square or PayPal and never touch our website.",
+      "lede": "Pay your invoice securely online. Your card details go straight to Stripe, Square or PayPal and never touch our website.",
       "methods_title": "Choose how to pay",
+      "stripe": {
+        "title": "Pay by card",
+        "text": "Enter the amount shown on your quote or invoice and pay securely by card, Apple Pay or Google Pay on Stripe's payment page. Use the e-mail address from your quote so we can match your payment.",
+        "button": "Pay with card"
+      },
       "square": {
         "title": "Pay a Square invoice",
         "text": "We send every invoice by e-mail through Square. Open the e-mail, select “Pay invoice” and pay by card, Apple Pay, Google Pay or bank transfer (ACH).",
@@ -516,9 +521,9 @@
       "security": {
         "title": "Your payment is protected",
         "items": [
-          "Payments are processed by Square and PayPal, which are certified to the PCI DSS card security standard.",
+          "Payments are processed by Stripe, Square and PayPal, which are certified to the PCI DSS card security standard.",
           "Our website never sees or stores your card or bank details.",
-          "Before you pay, check that the payment page belongs to Square or PayPal.",
+          "Before you pay, check that the payment page belongs to Stripe, Square or PayPal.",
           "We will never ask for card details by e-mail, phone or chat."
         ]
       },
@@ -527,11 +532,11 @@
         "items": [
           {
             "q": "Which currency do you invoice in?",
-            "a": "Invoices are issued in US dollars. PayPal converts other currencies automatically; your bank or PayPal may charge a conversion fee."
+            "a": "Invoices are issued in US dollars, and Stripe's payment page charges in US dollars too. If your card or PayPal account uses another currency, the amount is converted automatically; your bank or PayPal may charge a conversion fee."
           },
           {
             "q": "Will I get a receipt?",
-            "a": "Yes. Square or PayPal e-mails you a receipt as soon as the payment is complete, and we confirm that we have received it."
+            "a": "Yes. Stripe, Square or PayPal e-mails you a receipt as soon as the payment is complete, and we confirm that we have received it."
           },
           {
             "q": "Can a project be paid in stages?",
@@ -674,7 +679,7 @@
         {
           "title": "Payments",
           "paragraphs": [
-            "When you pay an invoice, Square or PayPal process your payment details as independent providers. We receive a confirmation with your name, e-mail address and the amount paid, and keep it for accounting as required by law."
+            "When you pay an invoice, Stripe, Square or PayPal process your payment details as independent providers. We receive a confirmation with your name, e-mail address and the amount paid, and keep it for accounting as required by law."
           ]
         },
         {
@@ -742,7 +747,7 @@
         {
           "title": "Payments",
           "paragraphs": [
-            "Fees, payment terms and milestones for a project are set out in its written proposal or invoice. Payments are processed by Square or PayPal under their own terms; we do not receive or store your card details."
+            "Fees, payment terms and milestones for a project are set out in its written proposal or invoice. Payments are processed by Stripe, Square or PayPal under their own terms; we do not receive or store your card details."
           ]
         },
         {

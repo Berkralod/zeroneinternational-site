@@ -7,7 +7,15 @@
 <section class="section section--flush-top" aria-labelledby="methods-title">
   <div class="wrap">
     {{ blocks.section_head(None, p.methods_title, id="methods-title") }}
-    <div class="card-grid card-grid--2">
+    <div class="card-grid {{ 'card-grid--3' if config.stripe_payment_url else 'card-grid--2' }}">
+      {% if config.stripe_payment_url %}
+      <div class="card card--feature">
+        <span class="card__icon">{{ icons.icon('card') }}</span>
+        <h3 class="card__title">{{ p.stripe.title }}</h3>
+        <p>{{ p.stripe.text }}</p>
+        <div class="actions"><a class="button" href="{{ config.stripe_payment_url }}" rel="noopener" target="_blank">{{ p.stripe.button }} {{ icons.icon('arrow') }}</a></div>
+      </div>
+      {% endif %}
       <div class="card card--feature">
         <span class="card__icon">{{ icons.icon('mail') }}</span>
         <h3 class="card__title">{{ p.square.title }}</h3>

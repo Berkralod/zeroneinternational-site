@@ -497,11 +497,16 @@
     },
     "payment": {
       "title": "Betalen – Uw factuur veilig online betalen | Zerone International",
-      "description": "Betaal uw factuur van Zerone International veilig met uw kaart, Apple Pay, bankoverschrijving (ACH) of PayPal. Uw kaartgegevens worden verwerkt door Square en PayPal.",
+      "description": "Betaal uw factuur van Zerone International veilig met uw kaart, Apple Pay, bankoverschrijving (ACH) of PayPal. Uw kaartgegevens worden verwerkt door Stripe, Square en PayPal.",
       "eyebrow": "Betalingen",
       "h1": "Een betaling doen",
-      "lede": "Betaal uw factuur veilig online. Uw kaartgegevens gaan rechtstreeks naar Square of PayPal en komen nooit op onze website.",
+      "lede": "Betaal uw factuur veilig online. Uw kaartgegevens gaan rechtstreeks naar Stripe, Square of PayPal en komen nooit op onze website.",
       "methods_title": "Kies hoe u wilt betalen",
+      "stripe": {
+        "title": "Betalen per kaart",
+        "text": "Vul het bedrag van uw offerte of factuur in en betaal veilig met uw kaart, Apple Pay of Google Pay op de betaalpagina van Stripe. Gebruik het e-mailadres van uw offerte, zodat wij uw betaling kunnen koppelen.",
+        "button": "Betalen met kaart"
+      },
       "square": {
         "title": "Een Square-factuur betalen",
         "text": "Wij versturen elke factuur per e-mail via Square. Open de e-mail, kies ‘Factuur betalen’ en betaal met uw kaart, Apple Pay, Google Pay of bankoverschrijving (ACH).",
@@ -516,9 +521,9 @@
       "security": {
         "title": "Uw betaling is beschermd",
         "items": [
-          "Betalingen worden verwerkt door Square en PayPal, die gecertificeerd zijn volgens de kaartbeveiligingsstandaard PCI DSS.",
+          "Betalingen worden verwerkt door Stripe, Square en PayPal, die gecertificeerd zijn volgens de kaartbeveiligingsstandaard PCI DSS.",
           "Onze website ziet of bewaart nooit uw kaart- of bankgegevens.",
-          "Controleer voordat u betaalt of de betaalpagina van Square of PayPal is.",
+          "Controleer voordat u betaalt of de betaalpagina van Stripe, Square of PayPal is.",
           "Wij vragen nooit om uw kaartgegevens via e-mail, telefoon of chat."
         ]
       },
@@ -527,11 +532,11 @@
         "items": [
           {
             "q": "In welke valuta factureert u?",
-            "a": "Facturen worden opgesteld in Amerikaanse dollars. PayPal rekent andere valuta automatisch om; uw bank of PayPal kan hiervoor omrekeningskosten in rekening brengen."
+            "a": "Facturen worden opgesteld in Amerikaanse dollars en ook de betaalpagina van Stripe rekent af in dollars. Gebruikt uw kaart of PayPal-rekening een andere valuta, dan wordt het bedrag automatisch omgerekend; uw bank of PayPal kan hiervoor omrekeningskosten in rekening brengen."
           },
           {
             "q": "Krijg ik een betaalbewijs?",
-            "a": "Ja. Square of PayPal stuurt u een betaalbewijs per e-mail zodra de betaling is voltooid, en wij bevestigen dat wij de betaling hebben ontvangen."
+            "a": "Ja. Stripe, Square of PayPal stuurt u een betaalbewijs per e-mail zodra de betaling is voltooid, en wij bevestigen dat wij de betaling hebben ontvangen."
           },
           {
             "q": "Kan een project in termijnen worden betaald?",
@@ -674,7 +679,7 @@
         {
           "title": "Betalingen",
           "paragraphs": [
-            "Wanneer u een factuur betaalt, verwerken Square of PayPal uw betaalgegevens als onafhankelijke aanbieders. Wij ontvangen een bevestiging met uw naam, e-mailadres en het betaalde bedrag, en bewaren deze voor onze boekhouding zoals de wet vereist."
+            "Wanneer u een factuur betaalt, verwerken Stripe, Square of PayPal uw betaalgegevens als onafhankelijke aanbieders. Wij ontvangen een bevestiging met uw naam, e-mailadres en het betaalde bedrag, en bewaren deze voor onze boekhouding zoals de wet vereist."
           ]
         },
         {
@@ -742,7 +747,7 @@
         {
           "title": "Betalingen",
           "paragraphs": [
-            "Tarieven, betalingsvoorwaarden en mijlpalen van een project zijn vastgelegd in het bijbehorende schriftelijke voorstel of de factuur. Betalingen worden verwerkt door Square of PayPal onder hun eigen voorwaarden; wij ontvangen of bewaren uw kaartgegevens niet."
+            "Tarieven, betalingsvoorwaarden en mijlpalen van een project zijn vastgelegd in het bijbehorende schriftelijke voorstel of de factuur. Betalingen worden verwerkt door Stripe, Square of PayPal onder hun eigen voorwaarden; wij ontvangen of bewaren uw kaartgegevens niet."
           ]
         },
         {

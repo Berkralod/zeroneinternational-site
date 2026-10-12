@@ -239,10 +239,17 @@ test("payment page links only to the payment providers' own pages", async ({ pag
   await page.goto(pathFor("en", "payment"));
   const paypal = page.locator(`a[href="${config.paypal_url}"]`);
   await expect(paypal).toHaveCount(config.paypal_url ? 1 : 0);
+  const stripe = page.locator(`main a[href="${config.stripe_payment_url}"]`);
+  await expect(stripe).toHaveCount(config.stripe_payment_url ? 1 : 0);
+  if (config.stripe_payment_url) {
+    await expect(stripe).toHaveAttribute("rel", "noopener");
+    await expect(stripe).toHaveAttribute("target", "_blank");
+    await expect(stripe).toContainText(content.en.pages.payment.stripe.button);
+  }
   // No payment form or card field is ever rendered on our own site.
   await expect(page.locator("main form, main input")).toHaveCount(0);
   for (const href of await page.locator("main a[target=_blank]").evaluateAll((links) => links.map((a) => a.href))) {
-    expect(new URL(href).hostname).toMatch(/(^|\.)(paypal\.(com|me|biz)|square\.link|square\.site|squareup\.com)$/);
+    expect(new URL(href).hostname).toMatch(/(^|\.)(paypal\.(com|me|biz)|square\.link|square\.site|squareup\.com)$|^buy\.stripe\.com$/);
   }
 });
 
