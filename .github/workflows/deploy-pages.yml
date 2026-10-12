@@ -60,7 +60,7 @@ jobs:
       - name: Browser tests must pass before publishing
         run: npx playwright test
         working-directory: tests
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
       - name: Keep this build for a possible rollback
@@ -190,7 +190,7 @@ jobs:
           test -f rollback-site/index.html
           echo "run_id=$id" >> "$GITHUB_OUTPUT"
           echo "sha=$sha" >> "$GITHUB_OUTPUT"
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: rollback-site
           name: github-pages-rollback
