@@ -1,0 +1,58 @@
+name: Domain redirects (Cloudflare)
+
+# Points the extra domains (prismapi.dev, zeroneholding.com) at the main site with a 301 redirect,
+# using the Cloudflare API (deploy/cloudflare_redirects.py). Run by hand; safe to run again.
+# Needs the CLOUDFLARE_API_TOKEN secret. The result is sent to Telegram in Turkish.
+
+on:
+  workflow_dispatch:
+    inputs:
+      domains:
+        description: "Domains to redirect (space separated)"
+        default: "prismapi.dev zeroneholding.com"
+        required: true
+      target:
+        description: "Where they redirect to"
+        default: "https://zeroneinternational.com/"
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: domain-redirects
+  cancel-in-progress: false
+
+jobs:
+  redirects:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Set up the redirects
+        id: setup
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          DOMAINS: ${{ inputs.domains }}
+          TARGET: ${{ inputs.target }}
+          SUMMARY_FILE: redirects.txt
+        run: |
+          read -ra list <<<"$DOMAINS"
+          status=0
+          python3 deploy/cloudflare_redirects.py "$TARGET" "${list[@]}" || status=$?
+          cat redirects.txt >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+      - name: Send the result to Telegram
+        if: always() && steps.setup.outcome != 'skipped'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ "${{ steps.setup.outputs.status }}" = "0" ]; then title="Domain yönlendirmeleri güncellendi"; else title="Domain yönlendirmesinde HATA"; fi
+          { cat redirects.txt 2>/dev/null || echo "Sonuç dosyası oluşmadı."; echo; echo "Ayrıntılar: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"; } \
+            | python3 deploy/notify_telegram.py --title "$title"
+      - name: Mark the run as failed on error
+        if: steps.setup.outputs.status != '0'
+        run: exit 1
