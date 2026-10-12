@@ -1,0 +1,37 @@
+# Cloudflare Worker behind the AI sales assistant. Deployed by .github/workflows/assistant-deploy.yml.
+# Secrets (set by the workflow, never in this file): ANTHROPIC_API_KEY, TELEGRAM_BOT_TOKEN,
+# TELEGRAM_CHAT_ID, IP_HASH_SALT, TURNSTILE_SECRET.
+name = "zerone-assistant"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+compatibility_flags = ["nodejs_compat"]
+# Served at https://zerone-assistant.<account-subdomain>.workers.dev. A custom domain such as
+# assistant.zeroneinternational.com needs the domain's DNS on Cloudflare; see docs/ASISTAN.md.
+workers_dev = true
+preview_urls = false
+
+[vars]
+ALLOWED_ORIGINS = "https://zeroneinternational.com,https://www.zeroneinternational.com"
+# "true" also allows http://localhost and http://127.0.0.1 (local tests only; keep "false" in production).
+ALLOW_LOCALHOST = "false"
+# Hard cap on model requests per UTC day for the whole site. When it is reached the widget shows
+# "assistant busy" with the contact links, and the owner gets one Telegram message.
+DAILY_REQUEST_CAP = "1500"
+
+[[durable_objects.bindings]]
+name = "IP_LIMITER"
+class_name = "IpLimiter"
+
+[[durable_objects.bindings]]
+name = "DAILY_BUDGET"
+class_name = "DailyBudget"
+
+# SQLite-backed Durable Objects are available on the Workers free plan.
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["IpLimiter", "DailyBudget"]
+
+# Workers Logs stay off: invocation logs would keep request metadata such as the visitor's IP address.
+# Our own log lines contain only status codes and token counts (see src/app.js).
+[observability]
+enabled = false

@@ -1,0 +1,34 @@
+{
+  "languages": ["en", "tr", "de", "es", "fr", "it", "pt", "nl", "pl", "ru", "uk", "ar", "hi", "zh", "ja"],
+  "default_language": "en",
+  "base_url": "https://zeroneinternational.com",
+  "version": "test",
+  "knowledge": "Company: Zerone International LLC. Services: automation, web apps, mobile apps.",
+  "links": {
+    "home": {
+      "desc": "Home page",
+      "urls": { "en": "https://zeroneinternational.com/", "tr": "https://zeroneinternational.com/tr/" },
+      "labels": { "en": "Home", "tr": "Ana sayfa" }
+    },
+    "services": {
+      "desc": "Overview of all services",
+      "urls": { "en": "https://zeroneinternational.com/services/", "tr": "https://zeroneinternational.com/tr/hizmetler/" },
+      "labels": { "en": "Services", "tr": "Hizmetler" }
+    },
+    "contact": {
+      "desc": "Contact form",
+      "urls": { "en": "https://zeroneinternational.com/contact/", "tr": "https://zeroneinternational.com/tr/iletisim/" },
+      "labels": { "en": "Contact", "tr": "İletişim" }
+    },
+    "booking": {
+      "desc": "Book a call",
+      "urls": { "en": "https://calendar.app.google/example", "tr": "https://calendar.app.google/example" },
+      "labels": { "en": "Book a call", "tr": "Görüşme planlayın" }
+    },
+    "pay_card": {
+      "desc": "Pay by card on Stripe",
+      "urls": { "en": "https://buy.stripe.com/test_123", "tr": "https://buy.stripe.com/test_123" },
+      "labels": { "en": "Pay with card", "tr": "Kartla öde" }
+    }
+  }
+}

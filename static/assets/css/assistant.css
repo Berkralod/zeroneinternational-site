@@ -1,0 +1,204 @@
+/* Zerone International – AI sales assistant widget. Loaded only when the assistant is enabled.
+   Uses the site's colour tokens (site.css), so light and dark themes follow automatically. */
+
+.zai {
+  --zai-gap: 18px;
+  --zai-launcher: 56px;
+  --zai-bottom: calc(var(--zai-gap) + env(safe-area-inset-bottom));
+  --zai-bot-bg: var(--tint);
+  --zai-user-bg: var(--brand);
+  --zai-user-text: var(--on-brand);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.zai *, .zai *::before, .zai *::after { box-sizing: border-box; }
+.zai [hidden] { display: none !important; }
+.zai-sr {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+.zai-svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ------------------------------------------------------------------ launcher */
+.zai-launcher {
+  position: fixed; z-index: 45; inset-inline-end: var(--zai-gap); bottom: var(--zai-bottom);
+  display: grid; place-items: center; width: var(--zai-launcher); height: var(--zai-launcher); padding: 0;
+  border: 0; border-radius: 50%; cursor: pointer;
+  background: var(--brand); color: var(--on-brand);
+  box-shadow: 0 6px 20px rgb(16 32 46 / 28%), 0 1px 3px rgb(16 32 46 / 20%);
+}
+.zai-launcher .zai-svg { width: 26px; height: 26px; }
+.zai-launcher:hover { background: var(--brand-hover); }
+.zai-launcher:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.zai-badge {
+  position: absolute; top: 3px; inset-inline-end: 3px; width: 13px; height: 13px; border-radius: 50%;
+  background: var(--accent); border: 2px solid var(--bg);
+}
+
+/* Keep clear of the site's own floating controls (site.css): back-to-top moves above the launcher,
+   and on phones the launcher sits above the full-width sticky "Start a project" bar. */
+body.has-assistant .back-to-top { bottom: calc(18px + 56px + 12px); inset-inline-end: 25px; }
+@media (max-width: 640px) {
+  body.has-assistant:has(.sticky-cta) .zai { --zai-bottom: calc(14px + 52px + 12px + env(safe-area-inset-bottom)); }
+  body.has-assistant:has(.sticky-cta) .back-to-top { bottom: calc(14px + 52px + 12px + 56px + 10px); }
+}
+
+/* ------------------------------------------------------------------ panel */
+.zai-panel {
+  position: fixed; z-index: 70; inset-inline-end: var(--zai-gap);
+  bottom: calc(var(--zai-bottom) + var(--zai-launcher) + 12px);
+  width: 380px; max-width: calc(100vw - 2 * var(--zai-gap));
+  height: min(640px, calc(100vh - var(--zai-launcher) - 3 * var(--zai-gap) - 24px));
+  height: min(640px, calc(100dvh - var(--zai-launcher) - 3 * var(--zai-gap) - 24px));
+  display: flex; flex-direction: column; overflow: hidden;
+  background: var(--surface); color: var(--text);
+  border: 1px solid var(--border); border-radius: 20px;
+  box-shadow: 0 24px 60px rgb(16 32 46 / 22%), 0 2px 8px rgb(16 32 46 / 12%);
+}
+.zai-panel:focus { outline: none; }
+@media (max-width: 640px) {
+  .zai-panel {
+    inset: 0; width: 100%; max-width: none; height: 100vh; height: 100dvh;
+    border: 0; border-radius: 0; box-shadow: none;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .zai--open .zai-launcher { display: none; }
+  html.zai-open, html.zai-open body { overflow: hidden; }
+}
+
+.zai-head {
+  display: flex; align-items: center; gap: 10px; padding: 12px 10px 12px 16px;
+  border-bottom: 1px solid var(--border); background: var(--surface);
+}
+[dir="rtl"] .zai-head { padding: 12px 16px 12px 10px; }
+.zai-avatar {
+  flex: none; display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%;
+  background: var(--accent-soft); color: var(--accent); font: 700 1.05rem/1 var(--font-head);
+}
+.zai-head__text { flex: 1; min-width: 0; }
+.zai-title { margin: 0; font: 700 1rem/1.2 var(--font-head); letter-spacing: 0; color: var(--text); }
+.zai-role { margin: 2px 0 0; font-size: 0.8rem; color: var(--muted); line-height: 1.3; }
+.zai-icon {
+  flex: none; display: inline-grid; place-items: center; width: 40px; height: 40px; padding: 0;
+  border: 0; border-radius: 50%; background: transparent; color: var(--muted); cursor: pointer;
+}
+.zai-icon:hover { background: var(--tint); color: var(--text); }
+.zai-icon:disabled { opacity: .45; cursor: default; background: transparent; }
+.zai-icon--small { width: 30px; height: 30px; }
+.zai-icon--small .zai-svg { width: 16px; height: 16px; }
+.zai-icon[aria-pressed="true"] { color: var(--muted); }
+
+.zai-body { flex: 1; overflow-y: auto; overscroll-behavior: contain; padding: 18px 16px 8px; scroll-behavior: auto; }
+.zai-welcome { margin-bottom: 14px; }
+.zai-greeting { margin: 0 0 4px; font: 700 1.15rem/1.3 var(--font-head); color: var(--text); }
+.zai-intro { margin: 0 0 14px; color: var(--muted); font-size: 0.95rem; }
+.zai-notice { margin: 14px 0 0; font-size: 0.8rem; line-height: 1.45; color: var(--muted); }
+.zai-inline-link { color: var(--brand); text-underline-offset: 2px; }
+
+.zai-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.zai-chips--suggest { margin: 4px 0 10px; }
+.zai-chip {
+  min-height: 36px; padding: 7px 13px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--text); font: 600 0.86rem/1.25 var(--font-body);
+  text-align: start; cursor: pointer;
+}
+.zai-chip:hover { border-color: var(--brand); color: var(--brand); }
+.zai-chip:disabled { opacity: .5; cursor: default; }
+.zai-chip--other { border-style: dashed; }
+
+.zai-log { display: flex; flex-direction: column; gap: 10px; }
+.zai-msg {
+  max-width: 88%; padding: 10px 13px; border-radius: 16px; font-size: 0.95rem; line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.zai-msg p { margin: 0; }
+.zai-msg p + p { margin-top: 6px; }
+.zai-msg--bot { align-self: flex-start; background: var(--zai-bot-bg); color: var(--text); border-end-start-radius: 4px; }
+.zai-msg--user { align-self: flex-end; background: var(--zai-user-bg); color: var(--zai-user-text); border-end-end-radius: 4px; }
+.zai-msg__file { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; font-size: 0.85rem; opacity: .9; }
+.zai-msg__file .zai-svg { width: 16px; height: 16px; }
+.zai-links { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+.zai-link {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 40px;
+  padding: 8px 12px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface);
+  color: var(--brand); font-weight: 600; font-size: 0.9rem; text-decoration: none;
+}
+.zai-link:hover { border-color: var(--brand); color: var(--brand); }
+.zai-link__icon { width: 16px; height: 16px; flex: none; }
+[dir="rtl"] .zai-link__icon { transform: scaleX(-1); }
+
+.zai-typing { margin: 10px 0 4px; font-size: 0.85rem; color: var(--muted); }
+.zai-status {
+  margin: 12px 0 6px; padding: 12px 14px; border-radius: 14px;
+  background: var(--accent-soft); color: var(--text); font-size: 0.92rem;
+}
+.zai-status p { margin: 0; }
+.zai-status__wait { margin-top: 4px !important; font-weight: 600; }
+.zai-countdown { font-variant-numeric: tabular-nums; font-weight: 700; }
+
+/* ------------------------------------------------------------------ composer */
+.zai-form { border-top: 1px solid var(--border); padding: 10px 12px 8px; background: var(--surface); }
+.zai-row { display: flex; align-items: flex-end; gap: 6px; }
+.zai-input {
+  flex: 1; min-width: 0; min-height: 42px; max-height: 128px; resize: none; field-sizing: content;
+  padding: 10px 12px; border: 1px solid var(--border); border-radius: 14px;
+  background: var(--bg); color: var(--text); font: 400 16px/1.4 var(--font-body);
+}
+.zai-input::placeholder { color: var(--muted); opacity: 1; }
+.zai-input:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+.zai-input:disabled { opacity: .6; }
+.zai-send { background: var(--brand); color: var(--on-brand); }
+.zai-send:hover { background: var(--brand-hover); color: var(--on-brand); }
+.zai-send:disabled { background: var(--border); color: var(--muted); }
+[dir="rtl"] .zai-send .zai-svg { transform: scaleX(-1); }
+.zai-file {
+  display: flex; align-items: center; gap: 6px; margin-bottom: 8px; padding: 4px 4px 4px 10px;
+  border-radius: 10px; background: var(--tint); font-size: 0.85rem; color: var(--text);
+}
+.zai-file .zai-svg { width: 16px; height: 16px; }
+.zai-file__name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.zai-foot { display: flex; justify-content: center; margin-top: 6px; }
+.zai-textbtn {
+  min-height: 32px; padding: 4px 8px; border: 0; background: none; cursor: pointer;
+  color: var(--brand); font: 600 0.82rem/1.3 var(--font-body); text-decoration: underline; text-underline-offset: 3px;
+}
+.zai-error { margin: 8px 2px 0; font-size: 0.85rem; color: #b42318; }
+:root[data-theme="dark"] .zai-error { color: #ff9a92; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .zai-error { color: #ff9a92; } }
+
+/* ------------------------------------------------------------------ send to team */
+.zai-team { border-top: 1px solid var(--border); padding: 14px 16px; background: var(--surface); display: grid; gap: 6px; }
+.zai-team__text { margin: 0 0 6px; font-size: 0.88rem; color: var(--muted); }
+.zai-label { font-weight: 600; font-size: 0.85rem; }
+.zai-field {
+  min-height: 42px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 12px;
+  background: var(--bg); color: var(--text); font: 400 16px/1.4 var(--font-body);
+}
+.zai-field:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+.zai-consent { display: flex; gap: 8px; align-items: flex-start; margin-top: 6px; font-size: 0.82rem; line-height: 1.45; }
+.zai-consent input { flex: none; width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--brand); }
+.zai-team__actions { display: flex; gap: 8px; margin-top: 8px; }
+.zai-button {
+  min-height: 42px; padding: 8px 16px; border-radius: 999px; border: 1.5px solid var(--brand);
+  background: var(--brand); color: var(--on-brand); font: 600 0.9rem/1.2 var(--font-body); cursor: pointer;
+}
+.zai-button:disabled { opacity: .6; cursor: default; }
+.zai-button--ghost { background: transparent; color: var(--brand); border-color: var(--border); }
+
+.zai-turnstile:empty { display: none; }
+.zai-turnstile { display: flex; justify-content: center; padding: 0 12px 10px; }
+
+/* ------------------------------------------------------------------ motion (only when wanted) */
+@media (prefers-reduced-motion: no-preference) {
+  .zai-launcher { transition: transform .2s ease, background-color .2s ease; }
+  .zai-launcher:hover { transform: translateY(-2px); }
+  .zai-panel:not([hidden]) { animation: zai-in .22s ease-out; }
+  .zai-badge:not([hidden]) { animation: zai-pop .3s ease-out; }
+  .zai-typing:not([hidden])::after { content: "…"; display: inline-block; animation: zai-blink 1.2s steps(2, start) infinite; }
+}
+@keyframes zai-in { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes zai-pop { from { transform: scale(.4); } to { transform: none; } }
+@keyframes zai-blink { to { visibility: hidden; } }
+
+@media print { .zai { display: none !important; } }

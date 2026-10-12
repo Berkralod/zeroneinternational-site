@@ -41,6 +41,7 @@ npx lhci autorun        # Lighthouse puanları
 - [Railway](docs/RAILWAY.md)
 - [SEO kontrol listesi](docs/SEO-KONTROL-LISTESI.md)
 - [Güvenlik](docs/GUVENLIK.md)
+- [Yapay zekâ satış asistanı](docs/ASISTAN.md)
 
 ## Önemli kurallar
 
