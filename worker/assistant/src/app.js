@@ -110,8 +110,21 @@ function hex(buffer) {
   return [...new Uint8Array(buffer)].map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
+// IPv6 visitors usually control a whole /64 network, so limits apply per /64 prefix, not per address.
+export function ipKey(ip) {
+  const value = String(ip || "").trim().toLowerCase();
+  if (!value.includes(":")) return value;
+  const [head, tail = ""] = value.split("::");
+  const left = head ? head.split(":") : [];
+  const right = value.includes("::") && tail ? tail.split(":") : [];
+  if (right.some((part) => part.includes(".")) || left.some((part) => part.includes("."))) return value; // IPv4-mapped
+  const fill = value.includes("::") ? Array(Math.max(0, 8 - left.length - right.length)).fill("0") : [];
+  const groups = [...left, ...fill, ...right].map((g) => g.replace(/^0+(?=.)/, ""));
+  return `${groups.slice(0, 4).join(":")}::/64`;
+}
+
 export async function hashIp(salt, ip) {
-  return hex(await crypto.subtle.digest("SHA-256", encoder.encode(`${salt}|${ip}`)));
+  return hex(await crypto.subtle.digest("SHA-256", encoder.encode(`${salt}|${ipKey(ip)}`)));
 }
 
 // Assistant messages are kept in the visitor's browser and sent back with each request. They are
@@ -241,6 +254,11 @@ export function createApp({ siteData, makeClient, fetchImpl = (...args) => fetch
     const nameLang = LANGS.includes(body.name_lang) ? body.name_lang : "";
     const pagePath = typeof body.page === "string" && pagePaths.has(body.page) ? body.page : "";
     const messages = await normalizeMessages(body.messages, env, conversation, { requireUserLast: true });
+
+    // A blocked visitor is turned away before any further work (file checks, Turnstile, model).
+    const state = await call({ op: "peek" });
+    if (state.blocked_until > now()) throw blocked(state);
+
     let attachment = null;
     try {
       attachment = validateAttachment(body.attachment);
@@ -250,9 +268,6 @@ export function createApp({ siteData, makeClient, fetchImpl = (...args) => fetch
     }
     const lastUser = messages[messages.length - 1];
     if (!lastUser || lastUser.role !== "user" || (!lastUser.content && !attachment)) throw new HttpError(400, "bad_request");
-
-    const state = await call({ op: "peek" });
-    if (state.blocked_until > now()) throw blocked(state);
     let verifiedNow = false;
     if (!state.verified) {
       await requireHuman(env, body.turnstile, ip);
@@ -305,6 +320,7 @@ export function createApp({ siteData, makeClient, fetchImpl = (...args) => fetch
 
     const fallbackLang = nameLang || pageLang;
     let result;
+    let refused = false;
     if (response.stop_reason === "end_turn") {
       const text = (response.content || []).filter((b) => b.type === "text").map((b) => b.text).join("");
       try {
@@ -315,6 +331,8 @@ export function createApp({ siteData, makeClient, fetchImpl = (...args) => fetch
       }
     } else {
       // "refusal" (safety classifier), "max_tokens" (cut-off JSON) or anything unexpected.
+      // A refusal means the message tripped a safety classifier: it counts as a strike.
+      refused = response.stop_reason === "refusal";
       result = fallbackResult(fallbackLang);
     }
 
@@ -332,7 +350,7 @@ export function createApp({ siteData, makeClient, fetchImpl = (...args) => fetch
       now: now(),
     };
 
-    if (result.off_topic || result.abuse) {
+    if (result.off_topic || result.abuse || refused) {
       const strike = await call({ op: "strike" });
       if (strike.blocked_until) {
         answer.blocked_until = strike.blocked_until;
