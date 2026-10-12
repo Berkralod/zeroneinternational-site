@@ -1873,24 +1873,53 @@ body.has-assistant .back-to-top { bottom: calc(18px + 56px + 12px); inset-inline
     }
     return { b64: window.btoa(binary), binary: binary };
   }
+  // Large photos are scaled down in the browser (longest side 1568 px, which is all the model uses):
+  // faster uploads, fewer tokens, and a phone photo over 4 MB still fits. GIFs and PDFs are sent as they are.
+  var MAX_SOURCE_IMAGE = 20 * 1024 * 1024;
+  var MAX_SIDE = 1568;
+  function shrinkImage(file) {
+    if (!window.createImageBitmap || file.type === "image/gif") return Promise.resolve(null);
+    return window.createImageBitmap(file).then(function (bitmap) {
+      var scale = Math.min(1, MAX_SIDE / Math.max(bitmap.width, bitmap.height));
+      if (scale === 1 && file.size <= 1024 * 1024) return null;
+      var canvas = document.createElement("canvas");
+      canvas.width = Math.max(1, Math.round(bitmap.width * scale));
+      canvas.height = Math.max(1, Math.round(bitmap.height * scale));
+      var ctx = canvas.getContext("2d");
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+      if (bitmap.close) bitmap.close();
+      return new Promise(function (resolve) {
+        canvas.toBlob(function (blob) { resolve(blob ? { blob: blob, resized: scale < 1 } : null); }, "image/jpeg", 0.85);
+      });
+    }).catch(function () { return null; });
+  }
   function pickFile(file) {
     showError(formError, "");
     if (!file) return;
     if ((state.uploads || 0) >= MAX_UPLOADS) { showError(formError, T.file_limit); clearFile(); return; }
     if (FILE_TYPES.indexOf(file.type) === -1) { showError(formError, T.file_type); clearFile(); return; }
-    if (file.size > MAX_FILE || file.size === 0) { showError(formError, T.file_too_big); clearFile(); return; }
-    file.arrayBuffer().then(function (buffer) {
-      var bytes = new Uint8Array(buffer);
-      if (!magicOk(file.type, bytes)) { showError(formError, T.file_type); clearFile(); return; }
-      var encoded = toBase64(bytes);
-      if (file.type === "application/pdf") {
-        var pages = (encoded.binary.match(/\/Type\s*\/Page(?![a-zA-Z])/g) || []).length;
-        if (pages > MAX_PDF_PAGES) { showError(formError, T.file_type); clearFile(); return; }
-      }
-      pendingFile = { name: String(file.name || "file").slice(0, 80), type: file.type, data: encoded.b64 };
-      fileName.textContent = pendingFile.name;
-      fileRow.hidden = false;
-      input.focus();
+    var isImage = file.type !== "application/pdf";
+    if (file.size === 0 || file.size > (isImage ? MAX_SOURCE_IMAGE : MAX_FILE)) { showError(formError, T.file_too_big); clearFile(); return; }
+    var name = String(file.name || "file").slice(0, 80);
+    (isImage ? shrinkImage(file) : Promise.resolve(null)).then(function (smaller) {
+      // A resized photo is always used; otherwise the re-encoded one only when it is smaller.
+      var chosen = smaller && (smaller.resized || smaller.blob.size < file.size) ? smaller.blob : file;
+      if (chosen.size > MAX_FILE) { showError(formError, T.file_too_big); clearFile(); return null; }
+      return chosen.arrayBuffer().then(function (buffer) {
+        var bytes = new Uint8Array(buffer);
+        if (!magicOk(chosen.type, bytes)) { showError(formError, T.file_type); clearFile(); return; }
+        var encoded = toBase64(bytes);
+        if (chosen.type === "application/pdf") {
+          var pages = (encoded.binary.match(/\/Type\s*\/Page(?![a-zA-Z])/g) || []).length;
+          if (pages > MAX_PDF_PAGES) { showError(formError, T.file_type); clearFile(); return; }
+        }
+        pendingFile = { name: name, type: chosen.type, data: encoded.b64 };
+        fileName.textContent = name;
+        fileRow.hidden = false;
+        input.focus();
+      });
     }).catch(function () { showError(formError, T.file_type); clearFile(); });
   }
 

@@ -226,6 +226,35 @@ test.describe("AI sales assistant", () => {
     await expect(page.locator(".zai-file")).toBeHidden();
   });
 
+  test("large photos are scaled down in the browser before upload", async ({ page }) => {
+    const { requests } = await openWith(page, "/", () => ({ json: answer() }));
+    await page.locator(".zai-launcher").click();
+    await page.evaluate(async () => {
+      const canvas = document.createElement("canvas");
+      canvas.width = 3000;
+      canvas.height = 2000;
+      const ctx = canvas.getContext("2d");
+      for (let i = 0; i < 400; i++) {
+        ctx.fillStyle = `hsl(${i * 37 % 360} 70% 50%)`;
+        ctx.fillRect((i * 97) % 3000, (i * 53) % 2000, 120, 80);
+      }
+      const blob = await new Promise((r) => canvas.toBlob(r, "image/png"));
+      const input = document.querySelector(".zai-form input[type=file]");
+      const dt = new DataTransfer();
+      dt.items.add(new File([blob], "photo.png", { type: "image/png" }));
+      input.files = dt.files;
+      input.dispatchEvent(new Event("change"));
+    });
+    await expect(page.locator(".zai-file__name")).toHaveText("photo.png");
+    await page.locator("textarea").fill("Our warehouse");
+    await page.keyboard.press("Enter");
+    await expect(page.locator(".zai-msg--bot")).toHaveCount(1);
+    expect(requests[0].body.attachment.type).toBe("image/jpeg");
+    const bytes = Buffer.from(requests[0].body.attachment.data, "base64");
+    expect(bytes[0]).toBe(0xff);
+    expect(bytes.length).toBeLessThan(4 * 1024 * 1024);
+  });
+
   test("badge and sound setting: a reply while the panel is closed shows the badge; mute is remembered", async ({ page }) => {
     await openWith(page, "/", async () => {
       await new Promise((r) => setTimeout(r, 600));
