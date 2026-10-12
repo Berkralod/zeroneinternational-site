@@ -53,6 +53,18 @@ jobs:
       - name: Lighthouse (performance, accessibility, best practices, SEO)
         run: npx lhci autorun
         working-directory: tests
+      # The live site ships with the AI assistant switched off (the run above). This builds it once more
+      # with the widget switched on and a fake endpoint, and runs the browser tests that cover it,
+      # including the page checks and axe on every page with the chat button present.
+      - name: Build with the AI assistant switched on (test endpoint)
+        env:
+          ZERONE_FORMSPREE_FORM_ID: ${{ vars.FORMSPREE_FORM_ID || 'testform' }}
+          ZERONE_ASSISTANT_ENDPOINT: https://assistant.test.invalid
+          ZERONE_ASSISTANT_TURNSTILE_SITEKEY: 1x00000000000000000000AA
+        run: python build.py && python tests/validate_site.py
+      - name: Browser tests with the AI assistant switched on
+        run: npx playwright test e2e/assistant.spec.js e2e/a11y.spec.js
+        working-directory: tests
       - uses: actions/upload-artifact@v7
         if: always()
         with:
@@ -93,6 +105,31 @@ jobs:
         env:
           ALL_BROWSERS: "1"
 
+  worker:
+    # Unit tests of the AI assistant's Cloudflare Worker (mocked Anthropic client, no network).
+    name: Assistant Worker tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Is there a Worker?
+        id: exists
+        run: if [ -f worker/assistant/package.json ]; then echo "worker=true" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/setup-node@v4
+        if: steps.exists.outputs.worker == 'true'
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: worker/assistant/package-lock.json
+      - run: npm ci
+        if: steps.exists.outputs.worker == 'true'
+        working-directory: worker/assistant
+      - run: npm test
+        if: steps.exists.outputs.worker == 'true'
+        working-directory: worker/assistant
+
   docker:
     name: Railway image
     runs-on: ubuntu-latest
@@ -111,7 +148,7 @@ jobs:
     # feature-branch failures show up on the pull request itself, so they stay quiet.
     # Skipped silently when the TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID secrets are missing.
     name: Telegram alert on failure
-    needs: [test, cross-browser, docker]
+    needs: [test, cross-browser, worker, docker]
     if: failure() && (github.event_name == 'schedule' || github.ref == 'refs/heads/main')
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -128,6 +165,7 @@ jobs:
           TEST: ${{ needs.test.result }}
           CROSS: ${{ needs.cross-browser.result }}
           DOCKER: ${{ needs.docker.result }}
+          WORKER: ${{ needs.worker.result }}
         run: |
           if [ "$GITHUB_EVENT_NAME" = schedule ]; then title="Haftalık otomatik test BAŞARISIZ"; else title="Ana daldaki (main) testler BAŞARISIZ"; fi
           {
@@ -135,6 +173,7 @@ jobs:
             echo "Derleme ve testler: $TEST"
             echo "Firefox ve Safari testleri: $CROSS"
             echo "Railway imajı: $DOCKER"
+            echo "AI asistan Worker testleri: $WORKER"
             echo "(success = başarılı, failure = başarısız, skipped = atlandı)"
             echo "Canlı site bu kontrolden etkilenmez; bu yalnızca erken bir uyarıdır. Claude'a haber verin."
             echo "Ayrıntılar: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
