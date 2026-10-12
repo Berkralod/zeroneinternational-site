@@ -284,7 +284,8 @@ test("developers page renders in several languages and the early-access form sub
   await page.goto(pathFor("en", "developers"));
   const form = page.locator("#waitlist form[data-ajax-form]");
   test.skip((await form.count()) === 0, "Formspree is not configured in this build");
-  await expect(form).toHaveAttribute("action", `https://formspree.io/f/${config.formspree_form_id}`);
+  // CI builds with a placeholder form id (ZERONE_FORMSPREE_FORM_ID), so check the shape, not the value.
+  await expect(form).toHaveAttribute("action", /^https:\/\/formspree\.io\/f\/[A-Za-z0-9]+$/);
   await expect(form.locator('input[name="form"]')).toHaveValue("developers-waitlist");
   let posted = null;
   await page.route("https://formspree.io/**", (route) => {
