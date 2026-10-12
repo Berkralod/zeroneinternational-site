@@ -52,6 +52,6 @@ test("URL stripping keeps catalogue URLs and removes look-alikes", () => {
       "[click](javascript:alert(1)) and HTTPS://EVIL.EXAMPLE/x.",
     allowed
   );
-  assert.ok(out.includes("https://zeroneinternational.com/contact/"), out);
+  assert.deepEqual(out.match(/https?:\/\/[^\s)]+/gi), ["https://zeroneinternational.com/contact/"], out);
   assert.equal(/evil|javascript/i.test(out), false, out);
 });
