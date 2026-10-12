@@ -69,3 +69,11 @@ Token sızdığından şüphelenirseniz: @BotFather → `/revoke` ile yeni token
 ## Bir güvenlik sorunu fark ederseniz
 
 Sitedeki iletişim formunu veya e-posta adresini kullanın. Açık bir GitHub issue'su açmayın.
+
+## Ek domainlerin yönlendirilmesi (Cloudflare)
+
+prismapi.dev ve zeroneholding.com, Cloudflare üzerinden ana siteye (301) yönlendirilir. İşi `Domain redirects (Cloudflare)` iş akışı yapar; Claude çalıştırır, sonuç Telegram'a Türkçe gelir.
+
+- Gerekli anahtar: GitHub'da `CLOUDFLARE_API_TOKEN` adlı secret (Cloudflare'de bir kez oluşturulur, sohbete asla yapıştırılmaz).
+- Elle yapılan tek adım: Namecheap'te domainin "Nameservers" kısmına, iş akışının Telegram mesajında yazan iki Cloudflare adresini girmek.
+- prismapi.dev satılırsa: Cloudflare'den domain silinir, alıcı kendi ayarını yapar.
