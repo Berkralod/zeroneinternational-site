@@ -1,0 +1,42 @@
+name: Weekly traffic report
+
+# Every Monday: visits, page views, top pages, countries and referrers for the last 7 days from
+# Cloudflare Web Analytics (deploy/traffic_report.py), sent to the owner's Telegram in Turkish.
+# Needs the CLOUDFLARE_API_TOKEN secret with Account Analytics: Read.
+
+on:
+  schedule:
+    - cron: "52 7 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Build the report
+        id: report
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          status=0
+          python3 deploy/traffic_report.py > report.txt || status=$?
+          cat report.txt >> "$GITHUB_STEP_SUMMARY"
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+      - name: Send it to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          STATUS: ${{ steps.report.outputs.status }}
+        run: |
+          if [ "$STATUS" = "0" ]; then title="Haftalık trafik raporu"; else title="Haftalık trafik raporu hazırlanamadı"; fi
+          python3 deploy/notify_telegram.py --title "$title" < report.txt
+      - name: Mark the run as failed when the data could not be read
+        if: steps.report.outputs.status != '0'
+        run: exit 1
