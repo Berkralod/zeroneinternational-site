@@ -77,3 +77,7 @@ prismapi.dev ve zeroneholding.com, Cloudflare üzerinden ana siteye (301) yönle
 - Gerekli anahtar: GitHub'da `CLOUDFLARE_API_TOKEN` adlı secret (Cloudflare'de bir kez oluşturulur, sohbete asla yapıştırılmaz).
 - Elle yapılan tek adım: Namecheap'te domainin "Nameservers" kısmına, iş akışının Telegram mesajında yazan iki Cloudflare adresini girmek.
 - prismapi.dev satılırsa: Cloudflare'den domain silinir, alıcı kendi ayarını yapar.
+
+## Haftalık trafik raporu
+
+Her pazartesi `Weekly traffic report` iş akışı Cloudflare Web Analytics'ten son 7 günün verisini çeker (ziyaret, sayfa görüntüleme, en çok bakılan sayfalar, ülkeler, ziyaretçiyi getiren siteler) ve Telegram'a Türkçe gönderir. `CLOUDFLARE_API_TOKEN` anahtarında `Account Analytics: Read` izni olmalıdır.
