@@ -6,3 +6,4 @@
 - All alerts go to the owner's private Telegram bot (deploy/notify_telegram.py), in Turkish.
 - Payments: hosted options only (PayPal, Square invoices, Stripe Payment Links). No integrations that make us handle card data.
 - Changes go through a PR from the designated branch; run build.py, tests/validate_site.py and the Playwright suite before pushing.
+- AI sales assistant (docs/ASISTAN.md): widget in static/assets/{js,css}/assistant.*, Cloudflare Worker in worker/assistant (deployed by assistant-deploy.yml). It is on only when site.config.json has assistant_endpoint (+ assistant_turnstile_sitekey); empty it to switch the assistant off. Run `npm test` in worker/assistant after Worker changes.

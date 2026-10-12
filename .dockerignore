@@ -11,3 +11,6 @@ tests/playwright-report
 .env.*
 *.pem
 *.key
+worker/assistant/node_modules
+worker/assistant/.wrangler
+preview
