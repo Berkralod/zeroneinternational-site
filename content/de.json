@@ -497,11 +497,16 @@
     },
     "payment": {
       "title": "Zahlung – Rechnung sicher online bezahlen | Zerone International",
-      "description": "Bezahlen Sie Ihre Rechnung von Zerone International sicher per Karte, Apple Pay, Banküberweisung (ACH) oder PayPal. Kartendaten verarbeiten nur Square und PayPal.",
+      "description": "Bezahlen Sie Ihre Rechnung von Zerone International sicher per Karte, Apple Pay, Banküberweisung (ACH) oder PayPal. Kartendaten verarbeiten nur Stripe, Square und PayPal.",
       "eyebrow": "Zahlungen",
       "h1": "Zahlung leisten",
-      "lede": "Bezahlen Sie Ihre Rechnung sicher online. Ihre Kartendaten gehen direkt an Square oder PayPal und berühren unsere Website nie.",
+      "lede": "Bezahlen Sie Ihre Rechnung sicher online. Ihre Kartendaten gehen direkt an Stripe, Square oder PayPal und berühren unsere Website nie.",
       "methods_title": "Wählen Sie Ihre Zahlungsart",
+      "stripe": {
+        "title": "Kartenzahlung",
+        "text": "Geben Sie den Betrag aus Ihrem Angebot oder Ihrer Rechnung ein und bezahlen Sie sicher per Karte, Apple Pay oder Google Pay auf der Zahlungsseite von Stripe. Verwenden Sie die E-Mail-Adresse aus Ihrem Angebot, damit wir Ihre Zahlung zuordnen können.",
+        "button": "Mit Karte bezahlen"
+      },
       "square": {
         "title": "Square-Rechnung bezahlen",
         "text": "Wir versenden jede Rechnung per E-Mail über Square. Öffnen Sie die E-Mail, wählen Sie „Rechnung bezahlen“ und zahlen Sie per Karte, Apple Pay, Google Pay oder Banküberweisung (ACH).",
@@ -516,9 +521,9 @@
       "security": {
         "title": "Ihre Zahlung ist geschützt",
         "items": [
-          "Zahlungen werden von Square und PayPal abgewickelt, die nach dem Kartensicherheitsstandard PCI DSS zertifiziert sind.",
+          "Zahlungen werden von Stripe, Square und PayPal abgewickelt, die nach dem Kartensicherheitsstandard PCI DSS zertifiziert sind.",
           "Unsere Website sieht oder speichert Ihre Karten- oder Bankdaten zu keinem Zeitpunkt.",
-          "Prüfen Sie vor der Zahlung, ob die Zahlungsseite zu Square oder PayPal gehört.",
+          "Prüfen Sie vor der Zahlung, ob die Zahlungsseite zu Stripe, Square oder PayPal gehört.",
           "Wir fragen Sie niemals per E-Mail, Telefon oder Chat nach Ihren Kartendaten."
         ]
       },
@@ -527,11 +532,11 @@
         "items": [
           {
             "q": "In welcher Währung stellen Sie Rechnungen?",
-            "a": "Rechnungen werden in US-Dollar ausgestellt. PayPal rechnet andere Währungen automatisch um; Ihre Bank oder PayPal kann dafür eine Umrechnungsgebühr berechnen."
+            "a": "Rechnungen werden in US-Dollar ausgestellt, und auch die Zahlungsseite von Stripe rechnet in US-Dollar ab. Läuft Ihre Karte oder Ihr PayPal-Konto in einer anderen Währung, wird der Betrag automatisch umgerechnet; Ihre Bank oder PayPal kann dafür eine Umrechnungsgebühr berechnen."
           },
           {
             "q": "Erhalte ich eine Quittung?",
-            "a": "Ja. Square oder PayPal sendet Ihnen eine Quittung per E-Mail, sobald die Zahlung abgeschlossen ist, und wir bestätigen Ihnen den Zahlungseingang."
+            "a": "Ja. Stripe, Square oder PayPal sendet Ihnen eine Quittung per E-Mail, sobald die Zahlung abgeschlossen ist, und wir bestätigen Ihnen den Zahlungseingang."
           },
           {
             "q": "Kann ein Projekt in Etappen bezahlt werden?",
@@ -674,7 +679,7 @@
         {
           "title": "Zahlungen",
           "paragraphs": [
-            "Wenn Sie eine Rechnung bezahlen, verarbeiten Square oder PayPal Ihre Zahlungsdaten als unabhängige Anbieter. Wir erhalten eine Bestätigung mit Ihrem Namen, Ihrer E-Mail-Adresse und dem gezahlten Betrag und bewahren diese gemäß den gesetzlichen Aufbewahrungspflichten für die Buchhaltung auf."
+            "Wenn Sie eine Rechnung bezahlen, verarbeiten Stripe, Square oder PayPal Ihre Zahlungsdaten als unabhängige Anbieter. Wir erhalten eine Bestätigung mit Ihrem Namen, Ihrer E-Mail-Adresse und dem gezahlten Betrag und bewahren diese gemäß den gesetzlichen Aufbewahrungspflichten für die Buchhaltung auf."
           ]
         },
         {
@@ -742,7 +747,7 @@
         {
           "title": "Zahlungen",
           "paragraphs": [
-            "Honorare, Zahlungsbedingungen und Meilensteine eines Projekts sind im jeweiligen schriftlichen Angebot oder in der Rechnung festgelegt. Zahlungen werden von Square oder PayPal nach deren eigenen Bedingungen abgewickelt; wir erhalten oder speichern Ihre Kartendaten nicht."
+            "Honorare, Zahlungsbedingungen und Meilensteine eines Projekts sind im jeweiligen schriftlichen Angebot oder in der Rechnung festgelegt. Zahlungen werden von Stripe, Square oder PayPal nach deren eigenen Bedingungen abgewickelt; wir erhalten oder speichern Ihre Kartendaten nicht."
           ]
         },
         {

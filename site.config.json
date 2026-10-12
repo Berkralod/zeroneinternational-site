@@ -19,6 +19,7 @@
   "telegram_username": "zeroneintl",
   "paypal_url": "https://www.paypal.biz/zeroneinternational",
   "square_payment_url": "",
+  "stripe_payment_url": "https://buy.stripe.com/bJecN7ctSdREffM2z46kg00",
   "cloudflare_analytics_token": "4827c1398525463397377eb88ef93b99",
   "google_site_verification": "",
   "bing_site_verification": "",

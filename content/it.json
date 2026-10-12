@@ -497,11 +497,16 @@
     },
     "payment": {
       "title": "Pagamento sicuro delle fatture | Zerone International",
-      "description": "Paghi in sicurezza la sua fattura Zerone International con carta, Apple Pay, bonifico bancario (ACH) o PayPal. I dati della carta sono gestiti da Square e PayPal.",
+      "description": "Paghi in sicurezza la sua fattura Zerone International con carta, Apple Pay, bonifico bancario (ACH) o PayPal. I dati della carta sono gestiti da Stripe, Square e PayPal.",
       "eyebrow": "Pagamenti",
       "h1": "Effettuare un pagamento",
-      "lede": "Paghi la sua fattura online in tutta sicurezza. I dati della sua carta vanno direttamente a Square o PayPal e non passano mai dal nostro sito.",
+      "lede": "Paghi la sua fattura online in tutta sicurezza. I dati della sua carta vanno direttamente a Stripe, Square o PayPal e non passano mai dal nostro sito.",
       "methods_title": "Scelga come pagare",
+      "stripe": {
+        "title": "Pagare con carta",
+        "text": "Inserisca l’importo indicato nel suo preventivo o nella sua fattura e paghi in sicurezza con carta, Apple Pay o Google Pay sulla pagina di pagamento di Stripe. Usi l’indirizzo e-mail del preventivo, così potremo abbinare il suo pagamento.",
+        "button": "Paga con carta"
+      },
       "square": {
         "title": "Pagare una fattura Square",
         "text": "Inviamo ogni fattura via e-mail tramite Square. Apra l’e-mail, selezioni «Paga fattura» e paghi con carta, Apple Pay, Google Pay o bonifico bancario (ACH).",
@@ -516,9 +521,9 @@
       "security": {
         "title": "Il suo pagamento è protetto",
         "items": [
-          "I pagamenti sono elaborati da Square e PayPal, certificati secondo lo standard di sicurezza delle carte PCI DSS.",
+          "I pagamenti sono elaborati da Stripe, Square e PayPal, certificati secondo lo standard di sicurezza delle carte PCI DSS.",
           "Il nostro sito non vede né memorizza mai i dati della sua carta o del suo conto bancario.",
-          "Prima di pagare, verifichi che la pagina di pagamento appartenga a Square o PayPal.",
+          "Prima di pagare, verifichi che la pagina di pagamento appartenga a Stripe, Square o PayPal.",
           "Non le chiederemo mai i dati della carta via e-mail, telefono o chat."
         ]
       },
@@ -527,11 +532,11 @@
         "items": [
           {
             "q": "In quale valuta emettete le fatture?",
-            "a": "Le fatture sono emesse in dollari statunitensi. PayPal converte automaticamente le altre valute; la sua banca o PayPal potrebbero applicare una commissione di conversione."
+            "a": "Le fatture sono emesse in dollari statunitensi e anche la pagina di pagamento di Stripe addebita in dollari. Se la sua carta o il suo conto PayPal usa un’altra valuta, l’importo viene convertito automaticamente; la sua banca o PayPal potrebbero applicare una commissione di conversione."
           },
           {
             "q": "Riceverò una ricevuta?",
-            "a": "Sì. Square o PayPal le inviano una ricevuta via e-mail non appena il pagamento è completato, e noi le confermiamo di averlo ricevuto."
+            "a": "Sì. Stripe, Square o PayPal le inviano una ricevuta via e-mail non appena il pagamento è completato, e noi le confermiamo di averlo ricevuto."
           },
           {
             "q": "È possibile pagare un progetto per fasi?",
@@ -674,7 +679,7 @@
         {
           "title": "Pagamenti",
           "paragraphs": [
-            "Quando paga una fattura, Square o PayPal trattano i suoi dati di pagamento in qualità di fornitori indipendenti. Riceviamo una conferma con il suo nome, l’indirizzo e-mail e l’importo pagato, che conserviamo a fini contabili come previsto dalla legge."
+            "Quando paga una fattura, Stripe, Square o PayPal trattano i suoi dati di pagamento in qualità di fornitori indipendenti. Riceviamo una conferma con il suo nome, l’indirizzo e-mail e l’importo pagato, che conserviamo a fini contabili come previsto dalla legge."
           ]
         },
         {
@@ -742,7 +747,7 @@
         {
           "title": "Pagamenti",
           "paragraphs": [
-            "Compensi, termini di pagamento e milestone di un progetto sono indicati nella relativa proposta scritta o fattura. I pagamenti sono elaborati da Square o PayPal secondo i rispettivi termini; non riceviamo né conserviamo i dati della sua carta."
+            "Compensi, termini di pagamento e milestone di un progetto sono indicati nella relativa proposta scritta o fattura. I pagamenti sono elaborati da Stripe, Square o PayPal secondo i rispettivi termini; non riceviamo né conserviamo i dati della sua carta."
           ]
         },
         {

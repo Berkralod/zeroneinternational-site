@@ -344,7 +344,7 @@ def build(check_only=False):
         config["languages"] = os.environ["ZERONE_LANGS"].split(",")
     # Settings can also come from the environment (e.g. GitHub repository variables).
     for key in ("formspree_form_id", "booking_url", "whatsapp_number", "telegram_username", "paypal_url",
-                "square_payment_url", "cloudflare_analytics_token",
+                "square_payment_url", "stripe_payment_url", "cloudflare_analytics_token",
                 "google_site_verification", "bing_site_verification"):
         value = os.environ.get(f"ZERONE_{key.upper()}")
         if value:
@@ -355,9 +355,10 @@ def build(check_only=False):
         "booking_url": r"https://[A-Za-z0-9.-]+(/[A-Za-z0-9._~/%-]*)?",
         "whatsapp_number": r"[0-9]{7,15}",
         "telegram_username": r"[A-Za-z][A-Za-z0-9_]{4,31}",
-        # Hosted payment pages only: the card form always lives on Square's or PayPal's own domain.
+        # Hosted payment pages only: the card form always lives on Stripe's, Square's or PayPal's own domain.
         "paypal_url": r"https://(www\.)?(paypal\.com|paypal\.me|paypal\.biz)/[A-Za-z0-9._/?=&-]+",
         "square_payment_url": r"https://(square\.link|checkout\.square\.site|squareup\.com)/[A-Za-z0-9._/?=&-]+",
+        "stripe_payment_url": r"https://buy\.stripe\.com/[A-Za-z0-9_-]+",
         "cloudflare_analytics_token": r"[A-Za-z0-9]{16,64}",
         "google_site_verification": r"[A-Za-z0-9_-]{10,100}",
         "bing_site_verification": r"[A-Za-z0-9_-]{10,100}",

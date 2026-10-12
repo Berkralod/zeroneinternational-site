@@ -36,6 +36,8 @@ Her dilin adres kısmı `"slugs"` bölümündedir (örneğin Türkçede `hizmetl
 | `formspree_form_id` | Formspree formunun kısa kimliği (ör. `xayzabcd`). Boşsa form yerine e-posta kutusu görünür. |
 | `booking_url` | Calendly vb. randevu bağlantısı (`https://` ile). Doluysa iletişim sayfasında "Görüşme planla" düğmesi çıkar. |
 | `whatsapp_number` | Ülke koduyla, sadece rakam (ör. `16315550123`). Doluysa WhatsApp düğmesi çıkar. |
+| `stripe_payment_url` | Stripe Payment Link adresi (`https://buy.stripe.com/...`). Doluysa ödeme sayfasında ilk sırada "Kartla ödeyin" kartı çıkar; müşteri teklif veya faturadaki tutarı kendisi girer ve kart, Apple Pay veya Google Pay ile Stripe'ın sayfasında öder (USD). |
+| `paypal_url`, `square_payment_url` | PayPal işletme profili ve Square ödeme bağlantısı. Doluysa ödeme sayfasında ilgili düğme çıkar. |
 | `cloudflare_analytics_token` | Cloudflare Web Analytics kimliği (çerezsiz istatistik). |
 | `google_site_verification`, `bing_site_verification` | Search Console / Bing Webmaster doğrulama kodları. |
 | `same_as` | Şirketin LinkedIn, X vb. profil adresleri (Google bilgi kartı için). |

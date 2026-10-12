@@ -497,11 +497,16 @@
     },
     "payment": {
       "title": "Płatności – bezpieczne opłacanie faktur | Zerone International",
-      "description": "Fakturę Zerone International można bezpiecznie opłacić kartą, Apple Pay, przelewem bankowym (ACH) lub przez PayPal. Dane karty obsługują wyłącznie Square i PayPal.",
+      "description": "Fakturę Zerone International można bezpiecznie opłacić kartą, Apple Pay, przelewem bankowym (ACH) lub przez PayPal. Dane karty obsługują wyłącznie Stripe, Square i PayPal.",
       "eyebrow": "Płatności",
       "h1": "Płatność online",
-      "lede": "Fakturę można bezpiecznie opłacić online. Dane karty trafiają bezpośrednio do Square lub PayPal i nigdy nie przechodzą przez naszą stronę.",
+      "lede": "Fakturę można bezpiecznie opłacić online. Dane karty trafiają bezpośrednio do Stripe, Square lub PayPal i nigdy nie przechodzą przez naszą stronę.",
       "methods_title": "Wybór metody płatności",
+      "stripe": {
+        "title": "Płatność kartą",
+        "text": "Wystarczy wpisać kwotę z oferty lub faktury i bezpiecznie zapłacić kartą, Apple Pay lub Google Pay na stronie płatności Stripe. Prosimy podać adres e-mail z oferty, abyśmy mogli przypisać płatność.",
+        "button": "Zapłać kartą"
+      },
       "square": {
         "title": "Płatność za fakturę Square",
         "text": "Każdą fakturę wysyłamy e-mailem za pośrednictwem Square. Wystarczy otworzyć wiadomość, wybrać „Zapłać fakturę” i zapłacić kartą, Apple Pay, Google Pay lub przelewem bankowym (ACH).",
@@ -516,9 +521,9 @@
       "security": {
         "title": "Płatność jest chroniona",
         "items": [
-          "Płatności obsługują Square i PayPal, posiadające certyfikat zgodności ze standardem bezpieczeństwa kart PCI DSS.",
+          "Płatności obsługują Stripe, Square i PayPal, posiadające certyfikat zgodności ze standardem bezpieczeństwa kart PCI DSS.",
           "Nasza strona nigdy nie widzi ani nie przechowuje danych karty ani rachunku bankowego.",
-          "Przed dokonaniem płatności prosimy sprawdzić, czy strona płatności należy do Square lub PayPal.",
+          "Przed dokonaniem płatności prosimy sprawdzić, czy strona płatności należy do Stripe, Square lub PayPal.",
           "Nigdy nie prosimy o dane karty e-mailem, telefonicznie ani na czacie."
         ]
       },
@@ -527,11 +532,11 @@
         "items": [
           {
             "q": "W jakiej walucie wystawiane są faktury?",
-            "a": "Faktury wystawiamy w dolarach amerykańskich. PayPal automatycznie przelicza inne waluty; bank lub PayPal może pobrać opłatę za przewalutowanie."
+            "a": "Faktury wystawiamy w dolarach amerykańskich, a strona płatności Stripe również pobiera kwotę w dolarach. Jeśli karta lub konto PayPal działa w innej walucie, kwota zostanie przeliczona automatycznie; bank lub PayPal może pobrać opłatę za przewalutowanie."
           },
           {
             "q": "Czy otrzymam potwierdzenie płatności?",
-            "a": "Tak. Square lub PayPal wysyła potwierdzenie e-mailem zaraz po zakończeniu płatności, a my potwierdzamy jej otrzymanie."
+            "a": "Tak. Stripe, Square lub PayPal wysyła potwierdzenie e-mailem zaraz po zakończeniu płatności, a my potwierdzamy jej otrzymanie."
           },
           {
             "q": "Czy projekt można opłacić etapami?",
@@ -674,7 +679,7 @@
         {
           "title": "Płatności",
           "paragraphs": [
-            "Przy opłacaniu faktury dane płatnicze przetwarzają Square lub PayPal jako niezależni dostawcy. Otrzymujemy potwierdzenie zawierające imię i nazwisko, adres e-mail oraz zapłaconą kwotę i przechowujemy je do celów księgowych zgodnie z wymogami prawa."
+            "Przy opłacaniu faktury dane płatnicze przetwarzają Stripe, Square lub PayPal jako niezależni dostawcy. Otrzymujemy potwierdzenie zawierające imię i nazwisko, adres e-mail oraz zapłaconą kwotę i przechowujemy je do celów księgowych zgodnie z wymogami prawa."
           ]
         },
         {
@@ -742,7 +747,7 @@
         {
           "title": "Płatności",
           "paragraphs": [
-            "Opłaty, warunki płatności i etapy projektu określa pisemna oferta lub faktura. Płatności obsługują Square lub PayPal na podstawie własnych regulaminów; nie otrzymujemy ani nie przechowujemy danych karty."
+            "Opłaty, warunki płatności i etapy projektu określa pisemna oferta lub faktura. Płatności obsługują Stripe, Square lub PayPal na podstawie własnych regulaminów; nie otrzymujemy ani nie przechowujemy danych karty."
           ]
         },
         {

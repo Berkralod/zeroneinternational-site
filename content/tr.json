@@ -497,11 +497,16 @@
     },
     "payment": {
       "title": "Ödeme Yapın – Faturanızı Güvenle Ödeyin | Zerone International",
-      "description": "Zerone International faturanızı kart, Apple Pay, banka havalesi (ACH) veya PayPal ile güvenle ödeyin. Kart bilgileri sitemizde değil, Square ve PayPal'da işlenir.",
+      "description": "Zerone International faturanızı kart, Apple Pay, banka havalesi (ACH) veya PayPal ile güvenle ödeyin. Kart bilgileri sitemizde değil, Stripe, Square ve PayPal'da işlenir.",
       "eyebrow": "Ödemeler",
       "h1": "Ödeme yapın",
-      "lede": "Faturanızı çevrimiçi ve güvenli bir şekilde ödeyin. Kart bilgileriniz doğrudan Square veya PayPal'a iletilir ve web sitemizden hiçbir zaman geçmez.",
+      "lede": "Faturanızı çevrimiçi ve güvenli bir şekilde ödeyin. Kart bilgileriniz doğrudan Stripe'a, Square'e veya PayPal'a iletilir ve web sitemizden hiçbir zaman geçmez.",
       "methods_title": "Ödeme yönteminizi seçin",
+      "stripe": {
+        "title": "Kartla ödeyin",
+        "text": "Teklifinizde veya faturanızda yazan tutarı girin ve Stripe'ın ödeme sayfasında kart, Apple Pay veya Google Pay ile güvenle ödeyin. Ödemenizi eşleştirebilmemiz için teklifteki e-posta adresinizi kullanın.",
+        "button": "Kartla öde"
+      },
       "square": {
         "title": "Square faturasını ödeyin",
         "text": "Tüm faturalarımızı Square üzerinden e-postayla göndeririz. E-postayı açın, “Faturayı öde” seçeneğine tıklayın ve kart, Apple Pay, Google Pay veya banka havalesi (ACH) ile ödeyin.",
@@ -516,9 +521,9 @@
       "security": {
         "title": "Ödemeniz güvence altında",
         "items": [
-          "Ödemeler, PCI DSS kart güvenliği standardına göre sertifikalı Square ve PayPal tarafından işlenir.",
+          "Ödemeler, PCI DSS kart güvenliği standardına göre sertifikalı Stripe, Square ve PayPal tarafından işlenir.",
           "Web sitemiz kart veya banka bilgilerinizi hiçbir zaman görmez ve saklamaz.",
-          "Ödeme yapmadan önce ödeme sayfasının Square'e veya PayPal'a ait olduğunu kontrol edin.",
+          "Ödeme yapmadan önce ödeme sayfasının Stripe'a, Square'e veya PayPal'a ait olduğunu kontrol edin.",
           "Kart bilgilerinizi asla e-posta, telefon veya sohbet yoluyla istemeyiz."
         ]
       },
@@ -527,11 +532,11 @@
         "items": [
           {
             "q": "Faturalarınız hangi para biriminde düzenleniyor?",
-            "a": "Faturalar ABD doları cinsinden düzenlenir. PayPal diğer para birimlerini otomatik olarak dönüştürür; bankanız veya PayPal döviz çevirme ücreti alabilir."
+            "a": "Faturalar ABD doları cinsinden düzenlenir; Stripe ödeme sayfası da ABD doları ile tahsilat yapar. Kartınız veya PayPal hesabınız başka bir para birimindeyse tutar otomatik olarak dönüştürülür; bankanız veya PayPal döviz çevirme ücreti alabilir."
           },
           {
             "q": "Makbuz alacak mıyım?",
-            "a": "Evet. Ödeme tamamlanır tamamlanmaz Square veya PayPal size e-postayla bir makbuz gönderir; biz de ödemeyi aldığımızı ayrıca onaylarız."
+            "a": "Evet. Ödeme tamamlanır tamamlanmaz Stripe, Square veya PayPal size e-postayla bir makbuz gönderir; biz de ödemeyi aldığımızı ayrıca onaylarız."
           },
           {
             "q": "Bir proje aşamalı olarak ödenebilir mi?",
@@ -674,7 +679,7 @@
         {
           "title": "Ödemeler",
           "paragraphs": [
-            "Bir faturayı ödediğinizde ödeme bilgileriniz, bağımsız hizmet sağlayıcılar olarak Square veya PayPal tarafından işlenir. Adınızı, e-posta adresinizi ve ödenen tutarı içeren bir onay alırız ve bunu yasaların gerektirdiği şekilde muhasebe amacıyla saklarız."
+            "Bir faturayı ödediğinizde ödeme bilgileriniz, bağımsız hizmet sağlayıcılar olarak Stripe, Square veya PayPal tarafından işlenir. Adınızı, e-posta adresinizi ve ödenen tutarı içeren bir onay alırız ve bunu yasaların gerektirdiği şekilde muhasebe amacıyla saklarız."
           ]
         },
         {
@@ -742,7 +747,7 @@
         {
           "title": "Ödemeler",
           "paragraphs": [
-            "Bir projeye ait ücretler, ödeme koşulları ve kilometre taşları, ilgili yazılı teklifte veya faturada belirtilir. Ödemeler, Square veya PayPal tarafından kendi koşulları çerçevesinde işlenir; kart bilgilerinizi almayız ve saklamayız."
+            "Bir projeye ait ücretler, ödeme koşulları ve kilometre taşları, ilgili yazılı teklifte veya faturada belirtilir. Ödemeler, Stripe, Square veya PayPal tarafından kendi koşulları çerçevesinde işlenir; kart bilgilerinizi almayız ve saklamayız."
           ]
         },
         {
