@@ -2,6 +2,15 @@ name: Deploy to GitHub Pages
 
 # Publishes the site at https://zeroneinternational.com whenever main changes.
 # Requires: Settings → Pages → Build and deployment → Source = "GitHub Actions".
+#
+# Self-healing: after publishing, "smoke" runs deploy/health_check.py against the live site. If it
+# fails, the last known-good build (the dist/ kept as artifact "site-<sha>" by the most recent
+# *successful* run of this workflow on main) is published again - but only if the "baseline" check
+# found the site healthy just before this deploy (otherwise the cause is elsewhere and a rollback
+# would only block every new deploy). A rolled-back run ends as
+# "failure", so a bad build can never become the "last known-good" one, and the rollback never
+# commits or triggers anything, so it cannot loop. A Telegram message reports the outcome
+# (skipped when the TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID secrets are missing).
 
 on:
   push:
@@ -54,9 +63,49 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+      - name: Keep this build for a possible rollback
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-${{ github.sha }}
+          path: dist
+          retention-days: 30
+          include-hidden-files: true
+          if-no-files-found: error
+          overwrite: true
+
+  baseline:
+    # Is the live site healthy *before* this deploy? Runs while the build is still testing.
+    # Rollback only happens when it was: if the site was already failing for another reason
+    # (DNS, certificate, GitHub Pages outage), rolling back would only block every new deploy.
+    name: Live site before deploy
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    outputs:
+      healthy: ${{ steps.check.outputs.healthy }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check the live site
+        id: check
+        run: |
+          healthy=false
+          for attempt in 1 2; do
+            if python3 deploy/health_check.py --no-cert-expiry; then
+              healthy=true
+              break
+            fi
+            if [ "$attempt" -lt 2 ]; then sleep 30; fi
+          done
+          echo "healthy=$healthy" >> "$GITHUB_OUTPUT"
 
   deploy:
-    needs: build
+    # Waits for the baseline check so it measures the old site, but does not depend on its result.
+    needs: [build, baseline]
+    if: ${{ !cancelled() && needs.build.result == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -69,9 +118,202 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v4
 
-  indexnow:
-    # Asks Bing (and other IndexNow engines) to recrawl the site; never blocks a deploy.
+  smoke:
+    name: Post-deploy smoke test
     needs: deploy
+    if: ${{ !cancelled() && needs.deploy.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check the live site (with time for the CDN to pick up the new build)
+        run: |
+          sleep 60
+          for attempt in 1 2 3 4; do
+            # Certificate expiry is left to the hourly health check: a rollback cannot renew it.
+            if python3 deploy/health_check.py --no-cert-expiry; then
+              exit 0
+            fi
+            if [ "$attempt" -lt 4 ]; then
+              echo "Attempt $attempt failed; waiting 45 seconds before checking again."
+              sleep 45
+            fi
+          done
+          echo "::error::The live site fails the health check after this deploy."
+          exit 1
+
+  rollback-prepare:
+    # Only on main, after a successful publish whose live check failed while the site had been
+    # healthy just before. Runs at most once per run and nothing it does starts another run.
+    needs: [baseline, deploy, smoke]
+    if: >-
+      always() && github.ref == 'refs/heads/main' && needs.baseline.outputs.healthy == 'true'
+      && needs.deploy.result == 'success' && needs.smoke.result == 'failure'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      actions: read
+    outputs:
+      run_id: ${{ steps.find.outputs.run_id }}
+      sha: ${{ steps.find.outputs.sha }}
+    steps:
+      - name: Download the last known-good build
+        id: find
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CURRENT_RUN: ${{ github.run_id }}
+        run: |
+          # Successful runs of this workflow on main, newest first. A run only ends "success" when
+          # its smoke test passed, so these are builds that were verified live.
+          runs="$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/deploy-pages.yml/runs?branch=main&status=success&per_page=30" \
+            --jq '.workflow_runs[] | "\(.id) \(.head_sha)"')"
+          found=""
+          while read -r id sha; do
+            if [ -z "$id" ] || [ "$id" = "$CURRENT_RUN" ]; then continue; fi
+            if gh api "repos/$GITHUB_REPOSITORY/actions/runs/$id/artifacts?name=site-$sha" \
+                 --jq '.artifacts[] | select(.expired == false) | .id' | grep -q .; then
+              found="$id $sha"
+              break
+            fi
+          done <<< "$runs"
+          if [ -z "$found" ]; then
+            echo "::error::No earlier successful deploy with a kept build (artifact site-<sha>, 30 days) was found."
+            exit 1
+          fi
+          read -r id sha <<< "$found"
+          echo "Rolling back to $sha (run $id)."
+          gh run download "$id" --repo "$GITHUB_REPOSITORY" --name "site-$sha" --dir rollback-site
+          test -f rollback-site/index.html
+          echo "run_id=$id" >> "$GITHUB_OUTPUT"
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: rollback-site
+          name: github-pages-rollback
+
+  rollback-deploy:
+    needs: rollback-prepare
+    if: always() && needs.rollback-prepare.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-rollback
+
+  notify:
+    # Telegram summary of the run. Never fails the run (a failed run would stop counting as
+    # "known-good" for future rollbacks).
+    needs: [build, baseline, deploy, smoke, rollback-prepare, rollback-deploy]
+    if: ${{ !cancelled() }}
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Send the Telegram message
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          BUILD: ${{ needs.build.result }}
+          DEPLOY: ${{ needs.deploy.result }}
+          SMOKE: ${{ needs.smoke.result }}
+          BASELINE_HEALTHY: ${{ needs.baseline.outputs.healthy }}
+          PREPARE: ${{ needs.rollback-prepare.result }}
+          ROLLBACK: ${{ needs.rollback-deploy.result }}
+          ROLLBACK_SHA: ${{ needs.rollback-prepare.outputs.sha }}
+          BEFORE: ${{ github.event.before }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
+            echo "Telegram not configured; skipping."
+            exit 0
+          fi
+          site="$(python3 -c 'import json; print(json.load(open("site.config.json"))["base_url"].rstrip("/"))')"
+          blog="$(python3 -c 'import json; c = json.load(open("site.config.json")); d = c["default_language"]; print(c["base_url"].rstrip("/") + "/" + json.load(open(f"content/{d}.json"))["slugs"]["blog"] + "/")')"
+          run_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          short="${GITHUB_SHA:0:7}"
+
+          # Commit title; for a merge commit, the pull request title on the following lines.
+          message="$(git log -1 --format=%B "$GITHUB_SHA")"
+          subject="$(printf '%s\n' "$message" | head -n 1)"
+          case "$subject" in
+            "Merge pull request"*|"Merge branch"*)
+              alt="$(printf '%s\n' "$message" | sed '1d' | grep -m 1 -v '^[[:space:]]*$' || true)"
+              if [ -n "$alt" ]; then subject="$alt"; fi ;;
+          esac
+
+          # Blog posts added or changed by this push.
+          base=""
+          if [ -n "$BEFORE" ] && ! [[ "$BEFORE" =~ ^0+$ ]] && git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+            base="$BEFORE"
+          elif git rev-parse -q --verify "$GITHUB_SHA^1" >/dev/null; then
+            base="$GITHUB_SHA^1"
+          fi
+          added=""; modified=""
+          if [ -n "$base" ]; then
+            added="$(git diff --name-only --diff-filter=A "$base" "$GITHUB_SHA" -- 'content/blog/*.md')"
+            modified="$(git diff --name-only --diff-filter=M "$base" "$GITHUB_SHA" -- 'content/blog/*.md')"
+          fi
+          post_urls() { for f in $1; do echo "$blog$(basename "$f" .md)/"; done; }
+
+          if [ "$SMOKE" = success ]; then
+            if [ -n "$added" ]; then
+              title="New blog post published"
+              body="$(post_urls "$added")"$'\n\n'"$subject ($short)"
+            elif [[ "$subject" == Blog:* ]]; then
+              title="Blog post updated"
+              body="$(post_urls "$modified")"$'\n\n'"$subject ($short)"$'\n'"$blog"
+            else
+              title="Deploy succeeded"
+              body="$subject ($short)"$'\n'"$site/"
+            fi
+          elif [ "$BUILD" = failure ]; then
+            title="Deploy stopped: build or tests failed"
+            body="The live site was not changed."$'\n'"$subject ($short)"$'\n'"$run_url"
+          elif [ "$DEPLOY" = failure ]; then
+            title="Deploy to GitHub Pages failed"
+            body="The live site is probably unchanged."$'\n'"$subject ($short)"$'\n'"$run_url"
+          elif [ "$SMOKE" = failure ] && [ "$ROLLBACK" = success ]; then
+            sleep 60
+            if python3 deploy/health_check.py --no-cert-expiry > verify.txt 2>&1; then
+              verify="The site passes the health check again."
+            else
+              verify="The site STILL fails the health check after the rollback; the hourly check keeps reporting."
+            fi
+            title="Rolled back: new deploy failed the live check"
+            body="Failed commit: $subject ($short)"$'\n'"Restored build: ${ROLLBACK_SHA:0:7}"$'\n'"$verify"$'\n'"$run_url"
+          elif [ "$SMOKE" = failure ] && [ "$BASELINE_HEALTHY" != true ]; then
+            title="Deployed, but the live site was already failing"
+            body="The site failed the health check before this deploy too, so the cause is probably not this commit and nothing was rolled back. The hourly health check keeps reporting."$'\n'"Commit: $subject ($short)"$'\n'"$run_url"
+          elif [ "$SMOKE" = failure ]; then
+            title="Live site failing after deploy, rollback FAILED"
+            body="Failed commit: $subject ($short)"$'\n'"Rollback: prepare=$PREPARE, deploy=$ROLLBACK (no known-good build, or the redeploy failed)."$'\n'"Fix or revert the commit on main: $run_url"
+          else
+            echo "Nothing to report (build=$BUILD deploy=$DEPLOY smoke=$SMOKE)."
+            exit 0
+          fi
+          printf '%s\n' "$body" | python3 deploy/notify_telegram.py --title "$title"
+
+  indexnow:
+    # Asks Bing (and other IndexNow engines) to recrawl the site once the live check passed;
+    # never blocks a deploy.
+    needs: smoke
     runs-on: ubuntu-latest
     timeout-minutes: 10
     continue-on-error: true

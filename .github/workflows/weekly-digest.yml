@@ -1,0 +1,80 @@
+name: Weekly security and maintenance digest
+
+# Every Monday: one Telegram message with open Dependabot pull requests, open code-scanning
+# (CodeQL) alerts, the live-site health status and the latest deploy and weekly test results.
+# Read-only; uses no pull_request_target trigger. Without the TELEGRAM_BOT_TOKEN /
+# TELEGRAM_CHAT_ID secrets the digest is only written to the run summary.
+
+on:
+  schedule:
+    # After the weekly CI run (06:23 UTC Monday), so its result is included.
+    - cron: "37 7 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      actions: read
+      issues: read
+      pull-requests: read
+      security-events: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Collect the digest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          repo="$GITHUB_REPOSITORY"
+          repo_url="$GITHUB_SERVER_URL/$repo"
+          last_run() {  # workflow file, extra gh flags...
+            local wf="$1"; shift
+            gh run list --repo "$repo" --workflow "$wf" --limit 1 "$@" \
+              --json conclusion,status,createdAt --jq 'if length == 0 then "no runs yet" else (.[0] | "\(if (.conclusion // "") == "" then .status else .conclusion end) (\(.createdAt[0:10]))") end' 2>/dev/null || echo "unknown"
+          }
+
+          deps="$(gh pr list --repo "$repo" --author 'app/dependabot' --state open --limit 50 \
+            --json number,title --jq '.[] | "#\(.number) \(.title)"' 2>/dev/null || echo "(could not list)")"
+          deps_count="$(printf '%s' "$deps" | grep -c . || true)"
+
+          if alerts="$(gh api --paginate "repos/$repo/code-scanning/alerts?state=open&per_page=100" \
+              --jq '.[] | "\(.rule.security_severity_level // .rule.severity // "unknown"): \(.rule.description) (\(.most_recent_instance.location.path))"' 2>/dev/null)"; then
+            alerts_count="$(printf '%s' "$alerts" | grep -c . || true)"
+          else
+            alerts="(code scanning not available)"; alerts_count="?"
+          fi
+
+          health_issues="$(gh issue list --repo "$repo" --label health-check --state open --json number --jq 'length' 2>/dev/null || echo "?")"
+          if [ "$health_issues" = 0 ]; then health="healthy"; elif [ "$health_issues" = "?" ]; then health="unknown"; else health="FAILING (open health-check issue)"; fi
+
+          {
+            echo "Live site: $health"
+            echo "Last health check: $(last_run health-check.yml)"
+            echo "Last deploy: $(last_run deploy-pages.yml --branch main)"
+            echo "Last weekly test run: $(last_run ci.yml --event schedule)"
+            echo
+            echo "Open Dependabot pull requests: $deps_count"
+            if [ "$deps_count" != 0 ]; then printf '%s\n' "$deps" | head -n 10; fi
+            echo
+            echo "Open code-scanning alerts: $alerts_count"
+            if [ "$alerts_count" != 0 ]; then printf '%s\n' "$alerts" | head -n 10; fi
+            echo
+            echo "Health status: $repo_url/actions/workflows/health-check.yml"
+            echo "Pull requests: $repo_url/pulls"
+            echo "Security: $repo_url/security"
+          } > digest.txt
+          cat digest.txt
+          { echo '```'; cat digest.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - name: Send to Telegram
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python3 deploy/notify_telegram.py --title "Weekly security and maintenance digest" < digest.txt

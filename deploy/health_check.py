@@ -1,10 +1,13 @@
-"""Daily check of the live website. Exits with an error (and lists every problem) when something is wrong.
+"""Hourly check of the live website. Exits with an error (and lists every problem) when something is wrong.
 
 Checks: every sitemap URL answers 200, key pages carry their SEO and security tags, unknown pages
 answer 404, http and www redirect to https://zeroneinternational.com, and the TLS certificate is
 not about to expire.
 
-Usage:  python3 deploy/health_check.py [base_url]     (default: base_url from site.config.json)
+Usage:  python3 deploy/health_check.py [--no-cert-expiry] [base_url]   (default: base_url from site.config.json)
+
+--no-cert-expiry skips only the "certificate expires soon" warning (the TLS handshake is still
+checked). The post-deploy smoke test uses it, because rolling back a build cannot renew a certificate.
 """
 import datetime as dt
 import json
@@ -20,7 +23,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 config = json.loads((ROOT / "site.config.json").read_text(encoding="utf-8"))
-BASE = (sys.argv[1] if len(sys.argv) > 1 else config["base_url"]).rstrip("/")
+flags = {arg for arg in sys.argv[1:] if arg.startswith("--")}
+positional = [arg for arg in sys.argv[1:] if not arg.startswith("--")]
+BASE = (positional[0] if positional else config["base_url"]).rstrip("/")
+CHECK_CERT_EXPIRY = "--no-cert-expiry" not in flags
 HOST = urllib.parse.urlsplit(BASE).hostname
 HEADERS = {"User-Agent": "zeroneinternational-health-check/1.0 (+https://zeroneinternational.com)"}
 CERT_WARN_DAYS = 21
@@ -86,7 +92,7 @@ if BASE.startswith("https://"):
             with context.wrap_socket(sock, server_hostname=HOST) as tls:
                 expires = dt.datetime.fromtimestamp(ssl.cert_time_to_seconds(tls.getpeercert()["notAfter"]), dt.timezone.utc)
         days = (expires - dt.datetime.now(dt.timezone.utc)).days
-        if days < CERT_WARN_DAYS:
+        if CHECK_CERT_EXPIRY and days < CERT_WARN_DAYS:
             problems.append(f"TLS certificate expires in {days} days ({expires:%Y-%m-%d})")
     except (OSError, ssl.SSLError, KeyError) as error:
         problems.append(f"TLS check failed: {error}")

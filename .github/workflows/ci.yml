@@ -105,3 +105,36 @@ jobs:
         run: docker build -t zerone-site:ci .
       - name: Smoke test (health, headers, redirects, 404, caching)
         run: tests/docker-smoke.sh zerone-site:ci
+
+  notify-failure:
+    # Telegram alert when the scheduled weekly run, or a run on main, fails. Pull request and
+    # feature-branch failures show up on the pull request itself, so they stay quiet.
+    # Skipped silently when the TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID secrets are missing.
+    name: Telegram alert on failure
+    needs: [test, cross-browser, docker]
+    if: failure() && (github.event_name == 'schedule' || github.ref == 'refs/heads/main')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Send the Telegram message
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TEST: ${{ needs.test.result }}
+          CROSS: ${{ needs.cross-browser.result }}
+          DOCKER: ${{ needs.docker.result }}
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = schedule ]; then title="Weekly test run failed"; else title="CI failed on main"; fi
+          {
+            echo "Trigger: $GITHUB_EVENT_NAME on $GITHUB_REF_NAME (${GITHUB_SHA:0:7})"
+            echo "Build, validate and test: $TEST"
+            echo "Firefox and Safari: $CROSS"
+            echo "Railway image: $DOCKER"
+            echo "The live site is not changed by this workflow; this is an early warning."
+            echo "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          } | python3 deploy/notify_telegram.py --title "$title"
