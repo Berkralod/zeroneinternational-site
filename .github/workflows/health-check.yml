@@ -95,16 +95,19 @@ jobs:
           ISSUE_URL: ${{ steps.alert.outputs.issue_url }}
         run: |
           if [ "$NOTIFY" = new ]; then
-            title="Site health check FAILING"
+            title="Site sağlık kontrolü BAŞARISIZ"
           else
-            title="Site still failing (6-hour reminder)"
+            title="Site hâlâ sorunlu (6 saatlik hatırlatma)"
           fi
           {
+            echo "Canlı sitede sorun bulundu. Claude'a haber verin."
+            echo
+            echo "Teknik ayrıntılar:"
             grep -E '^(Checked|[0-9]+ problem)' report.txt || true
             grep -E '^- ' report.txt | head -n 15 || true
             echo
-            echo "Issue: $ISSUE_URL"
-            echo "Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            echo "Kayıt (issue): $ISSUE_URL"
+            echo "Çalıştırma: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
           } | python3 deploy/notify_telegram.py --title "$title"
 
       - name: Mark the run as failed when an alert was sent
@@ -133,7 +136,8 @@ jobs:
           CLOSED: ${{ steps.recover.outputs.closed }}
         run: |
           {
+            echo "Tüm kontroller yeniden başarılı. Bir şey yapmanız gerekmiyor."
+            echo "Kapatılan kayıt (issue):$CLOSED"
             grep -E '^Checked' report.txt || true
-            echo "All checks pass again; closed issue$CLOSED."
-            echo "Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
-          } | python3 deploy/notify_telegram.py --title "Site recovered"
+            echo "Çalıştırma: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          } | python3 deploy/notify_telegram.py --title "Site tekrar çalışıyor"

@@ -37,38 +37,38 @@ jobs:
           last_run() {  # workflow file, extra gh flags...
             local wf="$1"; shift
             gh run list --repo "$repo" --workflow "$wf" --limit 1 "$@" \
-              --json conclusion,status,createdAt --jq 'if length == 0 then "no runs yet" else (.[0] | "\(if (.conclusion // "") == "" then .status else .conclusion end) (\(.createdAt[0:10]))") end' 2>/dev/null || echo "unknown"
+              --json conclusion,status,createdAt --jq '{"success": "başarılı", "failure": "BAŞARISIZ", "cancelled": "iptal edildi", "skipped": "atlandı", "in_progress": "çalışıyor", "queued": "sırada"} as $tr | if length == 0 then "henüz çalışmadı" else (.[0] | (if (.conclusion // "") == "" then .status else .conclusion end) as $s | "\($tr[$s] // $s) (\(.createdAt[0:10]))") end' 2>/dev/null || echo "bilinmiyor"
           }
 
           deps="$(gh pr list --repo "$repo" --author 'app/dependabot' --state open --limit 50 \
-            --json number,title --jq '.[] | "#\(.number) \(.title)"' 2>/dev/null || echo "(could not list)")"
+            --json number,title --jq '.[] | "#\(.number) \(.title)"' 2>/dev/null || echo "(listelenemedi)")"
           deps_count="$(printf '%s' "$deps" | grep -c . || true)"
 
           if alerts="$(gh api --paginate "repos/$repo/code-scanning/alerts?state=open&per_page=100" \
               --jq '.[] | "\(.rule.security_severity_level // .rule.severity // "unknown"): \(.rule.description) (\(.most_recent_instance.location.path))"' 2>/dev/null)"; then
             alerts_count="$(printf '%s' "$alerts" | grep -c . || true)"
           else
-            alerts="(code scanning not available)"; alerts_count="?"
+            alerts="(güvenlik taraması kullanılamıyor)"; alerts_count="?"
           fi
 
           health_issues="$(gh issue list --repo "$repo" --label health-check --state open --json number --jq 'length' 2>/dev/null || echo "?")"
-          if [ "$health_issues" = 0 ]; then health="healthy"; elif [ "$health_issues" = "?" ]; then health="unknown"; else health="FAILING (open health-check issue)"; fi
+          if [ "$health_issues" = 0 ]; then health="sağlıklı"; elif [ "$health_issues" = "?" ]; then health="bilinmiyor"; else health="SORUNLU (açık health-check kaydı var, Claude'a haber verin)"; fi
 
           {
-            echo "Live site: $health"
-            echo "Last health check: $(last_run health-check.yml)"
-            echo "Last deploy: $(last_run deploy-pages.yml --branch main)"
-            echo "Last weekly test run: $(last_run ci.yml --event schedule)"
+            echo "Canlı site: $health"
+            echo "Son sağlık kontrolü: $(last_run health-check.yml)"
+            echo "Son yayın: $(last_run deploy-pages.yml --branch main)"
+            echo "Son haftalık test: $(last_run ci.yml --event schedule)"
             echo
-            echo "Open Dependabot pull requests: $deps_count"
+            echo "Açık güncelleme önerileri (Dependabot): $deps_count"
             if [ "$deps_count" != 0 ]; then printf '%s\n' "$deps" | head -n 10; fi
             echo
-            echo "Open code-scanning alerts: $alerts_count"
+            echo "Açık güvenlik tarama uyarıları: $alerts_count"
             if [ "$alerts_count" != 0 ]; then printf '%s\n' "$alerts" | head -n 10; fi
             echo
-            echo "Health status: $repo_url/actions/workflows/health-check.yml"
-            echo "Pull requests: $repo_url/pulls"
-            echo "Security: $repo_url/security"
+            echo "Sağlık kontrolü geçmişi: $repo_url/actions/workflows/health-check.yml"
+            echo "Değişiklik önerileri (pull request): $repo_url/pulls"
+            echo "Güvenlik: $repo_url/security"
           } > digest.txt
           cat digest.txt
           { echo '```'; cat digest.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
@@ -77,4 +77,4 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python3 deploy/notify_telegram.py --title "Weekly security and maintenance digest" < digest.txt
+        run: python3 deploy/notify_telegram.py --title "Haftalık güvenlik ve bakım özeti" < digest.txt
