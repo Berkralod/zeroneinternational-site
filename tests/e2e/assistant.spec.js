@@ -163,10 +163,11 @@ test.describe("AI sales assistant", () => {
     });
     const t = content.en.assistant;
     await page.locator(".zai-launcher").click();
-    for (const q of ["How many goals did Fenerbahçe score this week?", "And the weather?", "Who won?"]) {
+    const questions = ["How many goals did Fenerbahçe score this week?", "And the weather?", "Who won?"];
+    for (const [i, q] of questions.entries()) {
       await page.locator("textarea").fill(q);
       await page.keyboard.press("Enter");
-      await expect(page.locator(".zai-msg--bot")).toHaveCount(Math.min(n + 0, 3));
+      await expect(page.locator(".zai-msg--bot")).toHaveCount(i + 1);
     }
     const status = page.locator(".zai-status");
     await expect(status).toBeVisible();
@@ -219,6 +220,7 @@ test.describe("AI sales assistant", () => {
     await page.locator("textarea").fill("This is our current workflow");
     await page.keyboard.press("Enter");
     await expect(page.locator(".zai-msg--user .zai-msg__file")).toContainText("workflow.png");
+    await expect(page.locator(".zai-msg--bot")).toHaveCount(1);
     expect(requests[0].body.attachment.type).toBe("image/png");
     expect(requests[0].body.attachment.data).toBe(png.toString("base64"));
     await expect(page.locator(".zai-file")).toBeHidden();
@@ -298,8 +300,9 @@ test.describe("AI sales assistant", () => {
       expect(overlap, `launcher overlaps ${other}`).toBe(false);
     }
     await page.locator(".zai-launcher").click();
+    // Measured after the opening animation (if motion is allowed) has finished.
+    await expect.poll(async () => Math.round((await box(".zai-panel")).width)).toBe(390);
     const panel = await box(".zai-panel");
-    expect(panel.width).toBe(390);
     expect(panel.height).toBeGreaterThanOrEqual(840);
     expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(1);
   });

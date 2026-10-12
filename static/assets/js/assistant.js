@@ -498,7 +498,8 @@
     if (!isBlocked()) {
       status.hidden = true;
       status.textContent = "";
-      setDisabled(busy);
+      setDisabled(false);
+      sendBtn.disabled = busy;
       return;
     }
     setDisabled(true);
@@ -654,7 +655,8 @@
     busy = value;
     typing.hidden = !value;
     form.setAttribute("aria-busy", value ? "true" : "false");
-    if (!isBlocked()) setDisabled(value);
+    // The text box stays enabled (and focused) while waiting; only sending is paused.
+    if (!isBlocked()) sendBtn.disabled = value;
     if (value) scrollDown();
   }
 
@@ -879,13 +881,13 @@
   }
   launcher.addEventListener("click", function () { panel.hidden ? open() : close(); });
   closeBtn.addEventListener("click", close);
+  document.addEventListener("keydown", function (event) {
+    if (event.key !== "Escape" || panel.hidden) return;
+    event.preventDefault();
+    if (!team.hidden) closeTeam();
+    else close();
+  });
   panel.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-      event.preventDefault();
-      if (!team.hidden) closeTeam();
-      else close();
-      return;
-    }
     if (event.key !== "Tab") return;
     var items = focusables();
     if (!items.length) return;
