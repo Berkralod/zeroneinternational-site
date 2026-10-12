@@ -16,6 +16,7 @@
     "contact": "contato",
     "payment": "pagamento",
     "blog": "blog",
+    "developers": "desenvolvedores",
     "privacy": "privacidade",
     "terms": "termos-de-uso",
     "cookies": "cookies"
@@ -56,6 +57,7 @@
     "use_cases": "Casos de uso",
     "company": "Empresa",
     "blog": "Blog",
+    "developers": "Para desenvolvedores",
     "contact": "Contato"
   },
   "footer": {
@@ -558,6 +560,84 @@
       "related": "Artigos relacionados",
       "guides_link": "Leia os nossos guias para revendedores",
       "rss": "Feed RSS"
+    },
+    "developers": {
+      "title": "APIs para revendedores – Acesso antecipado | Zerone International",
+      "description": "A Zerone International planeja APIs para revendedores: normalização de anúncios, sincronização de estoque, análise de lotes e calculadoras de taxas.",
+      "eyebrow": "Para desenvolvedores",
+      "h1": "APIs e ferramentas para revendedores",
+      "lede": "Estamos abrindo o acesso antecipado às ferramentas para desenvolvedores que criamos para o nosso próprio negócio de revenda. Ainda nada está no ar; entre na lista e ajude a decidir o que vem primeiro.",
+      "hero_button": "Entrar no acesso antecipado",
+      "planned": "Planejado",
+      "products": {
+        "title": "Produtos de API planejados",
+        "intro": "São planos, não produtos prontos. O escopo e os prazos podem mudar conforme o retorno do acesso antecipado.",
+        "items": [
+          {
+            "name": "Normalização de dados de anúncios",
+            "text": "Transforme dados de produtos de diferentes marketplaces em um único formato de catálogo consistente, pronto para anúncios multicanal."
+          },
+          {
+            "name": "Sincronização de estoque e vendas",
+            "text": "Mantenha o estoque alinhado entre marketplaces e sinalize itens vendidos em outro canal para evitar vendas duplicadas."
+          },
+          {
+            "name": "Análise de lotes e manifestos",
+            "text": "Leia um manifesto de liquidação e estime valor de revenda, taxas e margem antes de comprar o lote."
+          },
+          {
+            "name": "Calculadoras de preços e taxas",
+            "text": "Calcule taxas do marketplace, frete e conversão de moeda para ver quanto realmente sobra de uma venda."
+          }
+        ]
+      },
+      "access": {
+        "title": "Como o acesso vai funcionar",
+        "intro": "Os detalhes ainda estão sendo definidos. Este é o modelo geral que planejamos.",
+        "items": [
+          {
+            "title": "Chaves de API por conta",
+            "text": "Cada conta terá suas próprias chaves, que você poderá criar e revogar."
+          },
+          {
+            "title": "Planos por uso",
+            "text": "Os planos vão depender do quanto você usar. Os preços serão publicados antes do início de qualquer plano pago."
+          },
+          {
+            "title": "Documentação",
+            "text": "Cada endpoint será documentado com exemplos antes de ser aberto aos usuários do acesso antecipado."
+          },
+          {
+            "title": "Sandbox",
+            "text": "Um ambiente de testes com dados de exemplo permitirá testar sem mexer em anúncios ou contas reais."
+          }
+        ]
+      },
+      "waitlist": {
+        "title": "Entre na lista de acesso antecipado para desenvolvedores",
+        "text": "Conte o que você gostaria de criar. Entraremos em contato quando o acesso antecipado abrir. Sem compromisso.",
+        "idea": "O que você criaria?",
+        "idea_hint": "Por exemplo, os marketplaces, os dados ou o fluxo de trabalho envolvidos. Não envie senhas nem chaves de API.",
+        "submit": "Pedir acesso antecipado",
+        "success": "Obrigado! Você está na lista de acesso antecipado para desenvolvedores."
+      },
+      "faq": {
+        "title": "Dúvidas de desenvolvedores",
+        "items": [
+          {
+            "q": "A API já está disponível?",
+            "a": "Não. Tudo nesta página está planejado e ainda não está disponível. Entrar na lista não cria uma conta nem qualquer obrigação."
+          },
+          {
+            "q": "Quanto vai custar?",
+            "a": "Os preços ainda não foram definidos. Planejamos planos por uso e publicaremos os preços antes do início de qualquer plano pago."
+          },
+          {
+            "q": "Quais marketplaces serão compatíveis?",
+            "a": "Depende da demanda no acesso antecipado e do que o acesso oficial e os termos de cada marketplace permitem. Diga no formulário quais são importantes para você."
+          }
+        ]
+      }
     },
     "privacy": {
       "title": "Política de Privacidade | Zerone International",

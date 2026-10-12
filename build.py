@@ -32,7 +32,8 @@ BLOG = CONTENT / "blog"
 
 PAGE_IDS = [
     "home", "services", "service_automation", "service_web", "service_mobile",
-    "products", "use_cases", "company", "contact", "payment", "blog", "privacy", "terms", "cookies",
+    "products", "use_cases", "company", "contact", "payment", "blog", "developers",
+    "privacy", "terms", "cookies",
 ]
 TEMPLATE_FOR = {
     "home": "home.html",
@@ -46,6 +47,7 @@ TEMPLATE_FOR = {
     "contact": "contact.html",
     "payment": "payment.html",
     "blog": "blog.html",
+    "developers": "developers.html",
     "privacy": "legal.html",
     "terms": "legal.html",
     "cookies": "legal.html",
@@ -495,8 +497,8 @@ def build(check_only=False):
             faq = t["pages"]["home"]["faq"]["items"]
         elif page_id == "services":
             faq = t["pages"]["services"]["faq"]["items"]
-        elif page_id == "payment":
-            faq = t["pages"]["payment"]["faq"]["items"]
+        elif page_id in ("payment", "developers"):
+            faq = t["pages"][page_id]["faq"]["items"]
         if faq:
             graph.append({
                 "@type": "FAQPage",

@@ -16,6 +16,7 @@
     "contact": "kontakt",
     "payment": "zahlung",
     "blog": "blog",
+    "developers": "entwickler",
     "privacy": "datenschutz",
     "terms": "nutzungsbedingungen",
     "cookies": "cookies"
@@ -56,6 +57,7 @@
     "use_cases": "Anwendungsfälle",
     "company": "Unternehmen",
     "blog": "Blog",
+    "developers": "Für Entwickler",
     "contact": "Kontakt"
   },
   "footer": {
@@ -558,6 +560,84 @@
       "related": "Ähnliche Artikel",
       "guides_link": "Unsere Ratgeber für Wiederverkäufer lesen",
       "rss": "RSS-Feed"
+    },
+    "developers": {
+      "title": "APIs für Reseller – früher Zugang | Zerone International",
+      "description": "Zerone International plant APIs für Reseller: Normalisierung von Angebotsdaten, Bestandsabgleich, Lot-Analyse und Gebührenrechner. Jetzt für frühen Zugang eintragen.",
+      "eyebrow": "Für Entwickler",
+      "h1": "APIs und Tools für Reseller",
+      "lede": "Wir öffnen den frühen Zugang zu den Entwickler-Tools, die wir für unser eigenes Reselling-Geschäft bauen. Noch ist nichts live – tragen Sie sich ein und entscheiden Sie mit, was zuerst kommt.",
+      "hero_button": "Frühen Zugang sichern",
+      "planned": "Geplant",
+      "products": {
+        "title": "Geplante API-Produkte",
+        "intro": "Dies sind Pläne, keine fertigen Produkte. Umfang und Zeitplan können sich durch das Feedback im frühen Zugang ändern.",
+        "items": [
+          {
+            "name": "Normalisierung von Angebotsdaten",
+            "text": "Produktdaten verschiedener Marktplätze in ein einheitliches Katalogformat bringen – bereit für Crosslisting."
+          },
+          {
+            "name": "Bestands- und Verkaufsabgleich",
+            "text": "Bestände über Marktplätze hinweg abgleichen und anderswo verkaufte Artikel markieren, um Doppelverkäufe zu vermeiden."
+          },
+          {
+            "name": "Lot- und Manifest-Analyse",
+            "text": "Ein Restposten-Manifest auslesen und Wiederverkaufswert, Gebühren und Marge schätzen, bevor Sie den Posten kaufen."
+          },
+          {
+            "name": "Preis- und Gebührenrechner",
+            "text": "Marktplatzgebühren, Versand und Währungsumrechnung berechnen und sehen, was von einem Verkauf wirklich bleibt."
+          }
+        ]
+      },
+      "access": {
+        "title": "So soll der Zugang funktionieren",
+        "intro": "Die Details stehen noch nicht fest. Dies ist das grundsätzliche Modell, das wir planen.",
+        "items": [
+          {
+            "title": "API-Schlüssel pro Konto",
+            "text": "Jedes Konto erhält eigene Schlüssel, die Sie selbst erstellen und widerrufen können."
+          },
+          {
+            "title": "Nutzungsbasierte Tarife",
+            "text": "Die Tarife richten sich nach der Nutzung. Preise werden veröffentlicht, bevor ein kostenpflichtiger Tarif startet."
+          },
+          {
+            "title": "Dokumentation",
+            "text": "Jeder Endpunkt wird mit Beispielen dokumentiert, bevor er für Nutzer im frühen Zugang freigegeben wird."
+          },
+          {
+            "title": "Sandbox",
+            "text": "In einer Sandbox mit Beispieldaten testen Sie, ohne echte Angebote oder Marktplatzkonten zu berühren."
+          }
+        ]
+      },
+      "waitlist": {
+        "title": "Für den frühen Entwickler-Zugang eintragen",
+        "text": "Erzählen Sie uns, was Sie bauen möchten. Wir melden uns, sobald der frühe Zugang öffnet. Es entsteht keine Verpflichtung.",
+        "idea": "Was würden Sie bauen?",
+        "idea_hint": "Zum Beispiel die beteiligten Marktplätze, Daten oder Abläufe. Bitte senden Sie keine Passwörter oder API-Schlüssel.",
+        "submit": "Frühen Zugang anfragen",
+        "success": "Vielen Dank! Sie stehen auf der Liste für den frühen Entwickler-Zugang."
+      },
+      "faq": {
+        "title": "Fragen von Entwicklern",
+        "items": [
+          {
+            "q": "Ist die API schon verfügbar?",
+            "a": "Nein. Alles auf dieser Seite ist geplant und noch nicht verfügbar. Die Anmeldung erstellt kein Konto und keine Verpflichtung."
+          },
+          {
+            "q": "Was wird es kosten?",
+            "a": "Die Preise stehen noch nicht fest. Wir planen nutzungsbasierte Tarife und veröffentlichen die Preise, bevor ein kostenpflichtiger Tarif startet."
+          },
+          {
+            "q": "Welche Marktplätze werden unterstützt?",
+            "a": "Das hängt von der Nachfrage im frühen Zugang ab und davon, was der offizielle Zugang und die Bedingungen des jeweiligen Marktplatzes erlauben. Nennen Sie uns im Formular die für Sie wichtigen."
+          }
+        ]
+      }
     },
     "privacy": {
       "title": "Datenschutzerklärung | Zerone International",

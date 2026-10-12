@@ -16,6 +16,7 @@
     "contact": "contact",
     "payment": "betaling",
     "blog": "blog",
+    "developers": "ontwikkelaars",
     "privacy": "privacy",
     "terms": "gebruiksvoorwaarden",
     "cookies": "cookies"
@@ -56,6 +57,7 @@
     "use_cases": "Toepassingen",
     "company": "Bedrijf",
     "blog": "Blog",
+    "developers": "Voor ontwikkelaars",
     "contact": "Contact"
   },
   "footer": {
@@ -558,6 +560,84 @@
       "related": "Gerelateerde artikelen",
       "guides_link": "Lees onze gidsen voor wederverkopers",
       "rss": "RSS-feed"
+    },
+    "developers": {
+      "title": "API's voor doorverkopers – Vroege toegang | Zerone International",
+      "description": "Zerone International plant API's voor doorverkopers: normalisatie van advertenties, voorraadsynchronisatie, partij-analyse en kostencalculators.",
+      "eyebrow": "Voor ontwikkelaars",
+      "h1": "API's en tools voor doorverkopers",
+      "lede": "We openen vroege toegang tot de ontwikkelaarstools die we bouwen voor ons eigen doorverkoopbedrijf. Er is nog niets live; meld u aan en beslis mee wat er eerst komt.",
+      "hero_button": "Vroege toegang aanvragen",
+      "planned": "Gepland",
+      "products": {
+        "title": "Geplande API-producten",
+        "intro": "Dit zijn plannen, geen kant-en-klare producten. Inhoud en planning kunnen veranderen op basis van feedback uit de vroege toegang.",
+        "items": [
+          {
+            "name": "Normalisatie van advertentiedata",
+            "text": "Zet productdata van verschillende marktplaatsen om naar één consistent catalogusformaat, klaar voor crosslisting."
+          },
+          {
+            "name": "Voorraad- en verkoopsynchronisatie",
+            "text": "Houd voorraad gelijk over marktplaatsen en markeer artikelen die elders verkocht zijn, om dubbele verkoop te voorkomen."
+          },
+          {
+            "name": "Analyse van partijen en manifesten",
+            "text": "Lees een liquidatiemanifest en schat doorverkoopwaarde, kosten en marge voordat u de partij koopt."
+          },
+          {
+            "name": "Prijs- en kostencalculators",
+            "text": "Bereken marktplaatskosten, verzending en valutaomrekening en zie wat u echt overhoudt aan een verkoop."
+          }
+        ]
+      },
+      "access": {
+        "title": "Hoe de toegang gaat werken",
+        "intro": "De details liggen nog niet vast. Dit is het algemene model dat we plannen.",
+        "items": [
+          {
+            "title": "API-sleutels per account",
+            "text": "Elk account krijgt eigen sleutels, die u zelf kunt aanmaken en intrekken."
+          },
+          {
+            "title": "Abonnementen op basis van gebruik",
+            "text": "Abonnementen hangen af van uw gebruik. Prijzen worden gepubliceerd voordat een betaald abonnement start."
+          },
+          {
+            "title": "Documentatie",
+            "text": "Elk endpoint wordt met voorbeelden gedocumenteerd voordat het opengaat voor gebruikers met vroege toegang."
+          },
+          {
+            "title": "Sandbox",
+            "text": "In een sandbox met voorbeelddata test u zonder echte advertenties of marktplaatsaccounts aan te raken."
+          }
+        ]
+      },
+      "waitlist": {
+        "title": "Meld u aan voor vroege toegang voor ontwikkelaars",
+        "text": "Vertel ons wat u wilt bouwen. We nemen contact op zodra de vroege toegang opengaat. U zit nergens aan vast.",
+        "idea": "Wat zou u bouwen?",
+        "idea_hint": "Bijvoorbeeld de betrokken marktplaatsen, data of werkwijze. Stuur geen wachtwoorden of API-sleutels.",
+        "submit": "Vroege toegang aanvragen",
+        "success": "Bedankt! U staat op de lijst voor vroege toegang voor ontwikkelaars."
+      },
+      "faq": {
+        "title": "Vragen van ontwikkelaars",
+        "items": [
+          {
+            "q": "Is de API al beschikbaar?",
+            "a": "Nee. Alles op deze pagina is gepland en nog niet beschikbaar. Aanmelden maakt geen account aan en verplicht u tot niets."
+          },
+          {
+            "q": "Wat gaat het kosten?",
+            "a": "De prijzen liggen nog niet vast. We plannen abonnementen op basis van gebruik en publiceren de prijzen voordat een betaald abonnement start."
+          },
+          {
+            "q": "Welke marktplaatsen worden ondersteund?",
+            "a": "Dat hangt af van de vraag tijdens de vroege toegang en van wat de officiële toegang en voorwaarden van elke marktplaats toestaan. Laat in het formulier weten welke voor u belangrijk zijn."
+          }
+        ]
+      }
     },
     "privacy": {
       "title": "Privacyverklaring | Zerone International",

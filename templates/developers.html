@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% import "partials/blocks.html" as blocks with context %}
+{% import "partials/icons.html" as icons %}
+{% set p = t.pages.developers %}
+{% block content %}
+{{ blocks.page_hero(p.eyebrow, p.h1, p.lede, None, actions=[(p.hero_button, '#waitlist', 'primary')]) }}
+<section class="section section--flush-top" aria-labelledby="planned-title">
+  <div class="wrap">
+    {{ blocks.section_head(None, p.products.title, p.products.intro, id="planned-title") }}
+    {# Nothing here is live: every card carries the "Planned" badge, and no prices, limits or uptime are promised. #}
+    <ul class="card-grid card-grid--2" role="list">
+    {% for item in p.products["items"] %}
+      <li class="card card--feature">
+        <span class="dev-card__head"><span class="card__icon">{{ icons.icon(('box', 'automation', 'chart', 'card')[loop.index0]) }}</span><span class="tag tag--soft">{{ p.planned }}</span></span>
+        <h3 class="card__title">{{ item.name }}</h3>
+        <p>{{ item.text }}</p>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+</section>
+<section class="section section--tint" aria-labelledby="access-title">
+  <div class="wrap">
+    {{ blocks.section_head(None, p.access.title, p.access.intro, id="access-title") }}
+    <ul class="card-grid card-grid--4" role="list">
+    {% for item in p.access["items"] %}
+      <li class="card">
+        <span class="card__icon">{{ icons.icon(('shield', 'chart', 'web', 'spark')[loop.index0]) }}</span>
+        <h3 class="card__title">{{ item.title }}</h3>
+        <p>{{ item.text }}</p>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+</section>
+<section class="section" id="waitlist" aria-labelledby="waitlist-title">
+  <div class="wrap wrap--narrow">
+    {{ blocks.section_head(None, p.waitlist.title, p.waitlist.text, id="waitlist-title") }}
+    {% if config.formspree_form_id %}
+    <form class="form" action="https://formspree.io/f/{{ config.formspree_form_id }}" method="POST" data-ajax-form data-sending="{{ t.form.sending }}" data-success="{{ p.waitlist.success }}" data-error="{{ t.form.error }}">
+      <input type="hidden" name="form" value="developers-waitlist">
+      <input type="hidden" name="_language" value="{{ lang }}">
+      <input type="hidden" name="_subject" value="Developer early access ({{ lang }}) – {{ config.site_name }}">
+      <div class="form__trap" aria-hidden="true"><label>Leave empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+      <div class="form__row form__row--2">
+        <div class="field">
+          <label for="dev-email">{{ t.form.email }}</label>
+          <input id="dev-email" name="email" type="email" autocomplete="email" required maxlength="200">
+        </div>
+        <div class="field">
+          <label for="dev-company">{{ t.form.company }} <span class="field__opt">({{ t.form.optional }})</span></label>
+          <input id="dev-company" name="company" type="text" autocomplete="organization" maxlength="160">
+        </div>
+      </div>
+      <div class="field">
+        <label for="dev-idea">{{ p.waitlist.idea }} <span class="field__opt">({{ t.form.optional }})</span></label>
+        <textarea id="dev-idea" name="what_would_you_build" rows="5" maxlength="3000" aria-describedby="dev-idea-hint"></textarea>
+        <p class="field__hint" id="dev-idea-hint">{{ p.waitlist.idea_hint }}</p>
+      </div>
+      <div class="field field--check">
+        <input id="dev-consent" name="consent" type="checkbox" value="yes" required>
+        <label for="dev-consent">{{ t.form.consent|with_link(url('privacy'), t.form.consent_link) }}</label>
+      </div>
+      <button class="button" type="submit">{{ p.waitlist.submit }} {{ icons.icon('arrow') }}</button>
+      <p class="form__status" role="status" aria-live="polite" data-form-status></p>
+    </form>
+    {% else %}
+    <div class="notice"><p>{{ t.form.not_configured }}</p>{{ blocks.email_link() }}</div>
+    {% endif %}
+  </div>
+</section>
+{{ blocks.faq(p.faq.title, p.faq["items"]) }}
+{% endblock %}

@@ -16,6 +16,7 @@
     "contact": "contact",
     "payment": "paiement",
     "blog": "blog",
+    "developers": "developpeurs",
     "privacy": "confidentialite",
     "terms": "conditions-utilisation",
     "cookies": "cookies"
@@ -56,6 +57,7 @@
     "use_cases": "Cas d’usage",
     "company": "Entreprise",
     "blog": "Blog",
+    "developers": "Pour les développeurs",
     "contact": "Contact"
   },
   "footer": {
@@ -558,6 +560,84 @@
       "related": "Articles associés",
       "guides_link": "Lire nos guides pour les revendeurs",
       "rss": "Flux RSS"
+    },
+    "developers": {
+      "title": "API pour revendeurs – Accès anticipé | Zerone International",
+      "description": "Zerone International prépare des API pour revendeurs : normalisation des annonces, synchronisation des stocks, analyse de lots et calcul des frais.",
+      "eyebrow": "Pour les développeurs",
+      "h1": "Des API et des outils pour les revendeurs",
+      "lede": "Nous ouvrons l’accès anticipé aux outils pour développeurs que nous créons pour notre propre activité de revente. Rien n’est encore en ligne ; inscrivez-vous et aidez-nous à choisir les priorités.",
+      "hero_button": "Rejoindre l’accès anticipé",
+      "planned": "Prévu",
+      "products": {
+        "title": "Produits API prévus",
+        "intro": "Ce sont des projets, pas des produits finis. Le périmètre et le calendrier peuvent évoluer selon les retours de l’accès anticipé.",
+        "items": [
+          {
+            "name": "Normalisation des données d’annonces",
+            "text": "Transformez les données produit de différentes places de marché en un seul format de catalogue cohérent, prêt pour la publication multicanale."
+          },
+          {
+            "name": "Synchronisation des stocks et des ventes",
+            "text": "Gardez les stocks alignés entre places de marché et signalez les articles vendus ailleurs pour éviter les doubles ventes."
+          },
+          {
+            "name": "Analyse de lots et de manifestes",
+            "text": "Lisez un manifeste de liquidation et estimez la valeur de revente, les frais et la marge avant d’acheter le lot."
+          },
+          {
+            "name": "Calculateurs de prix et de frais",
+            "text": "Calculez les frais de place de marché, la livraison et la conversion de devises pour voir ce qu’une vente vous rapporte vraiment."
+          }
+        ]
+      },
+      "access": {
+        "title": "Comment l’accès fonctionnera",
+        "intro": "Les détails ne sont pas encore arrêtés. Voici le modèle général que nous prévoyons.",
+        "items": [
+          {
+            "title": "Clés API par compte",
+            "text": "Chaque compte disposera de ses propres clés, que vous pourrez créer et révoquer vous-même."
+          },
+          {
+            "title": "Formules selon l’usage",
+            "text": "Les formules dépendront de votre utilisation. Les prix seront publiés avant le lancement de toute formule payante."
+          },
+          {
+            "title": "Documentation",
+            "text": "Chaque endpoint sera documenté avec des exemples avant d’être ouvert aux utilisateurs de l’accès anticipé."
+          },
+          {
+            "title": "Bac à sable",
+            "text": "Un bac à sable avec des données d’exemple vous permettra de tester sans toucher à de vraies annonces ni à vos comptes."
+          }
+        ]
+      },
+      "waitlist": {
+        "title": "Rejoindre la liste d’accès anticipé pour développeurs",
+        "text": "Dites-nous ce que vous aimeriez construire. Nous vous contacterons à l’ouverture de l’accès anticipé. Sans engagement.",
+        "idea": "Que construiriez-vous ?",
+        "idea_hint": "Par exemple les places de marché, les données ou le processus concernés. Merci de ne pas envoyer de mots de passe ni de clés API.",
+        "submit": "Demander l’accès anticipé",
+        "success": "Merci ! Vous êtes inscrit(e) sur la liste d’accès anticipé pour développeurs."
+      },
+      "faq": {
+        "title": "Questions des développeurs",
+        "items": [
+          {
+            "q": "L’API est-elle déjà disponible ?",
+            "a": "Non. Tout ce qui figure sur cette page est prévu et pas encore disponible. L’inscription ne crée ni compte ni engagement."
+          },
+          {
+            "q": "Combien cela coûtera-t-il ?",
+            "a": "Les prix ne sont pas encore fixés. Nous prévoyons des formules selon l’usage et publierons les prix avant le lancement de toute formule payante."
+          },
+          {
+            "q": "Quelles places de marché seront prises en charge ?",
+            "a": "Cela dépendra de la demande lors de l’accès anticipé et de ce que permettent l’accès officiel et les conditions de chaque place de marché. Indiquez-nous dans le formulaire celles qui comptent pour vous."
+          }
+        ]
+      }
     },
     "privacy": {
       "title": "Politique de confidentialité | Zerone International",
