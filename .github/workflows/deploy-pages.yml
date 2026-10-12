@@ -274,36 +274,36 @@ jobs:
 
           if [ "$SMOKE" = success ]; then
             if [ -n "$added" ]; then
-              title="New blog post published"
-              body="$(post_urls "$added")"$'\n\n'"$subject ($short)"
+              title="Yeni blog yazısı yayınlandı"
+              body="$(post_urls "$added")"$'\n\n'"Değişiklik: $subject ($short)"
             elif [[ "$subject" == Blog:* ]]; then
-              title="Blog post updated"
-              body="$(post_urls "$modified")"$'\n\n'"$subject ($short)"$'\n'"$blog"
+              title="Blog yazısı güncellendi"
+              body="$(post_urls "$modified")"$'\n\n'"Değişiklik: $subject ($short)"$'\n'"Blog: $blog"
             else
-              title="Deploy succeeded"
-              body="$subject ($short)"$'\n'"$site/"
+              title="Yayın başarılı"
+              body="Değişiklik: $subject ($short)"$'\n'"Site: $site/"
             fi
           elif [ "$BUILD" = failure ]; then
-            title="Deploy stopped: build or tests failed"
-            body="The live site was not changed."$'\n'"$subject ($short)"$'\n'"$run_url"
+            title="Yayın durduruldu: derleme veya testler başarısız"
+            body="Canlı site değişmedi, eski sürüm yayında. Claude'a haber verin."$'\n'"Değişiklik: $subject ($short)"$'\n'"Ayrıntılar: $run_url"
           elif [ "$DEPLOY" = failure ]; then
-            title="Deploy to GitHub Pages failed"
-            body="The live site is probably unchanged."$'\n'"$subject ($short)"$'\n'"$run_url"
+            title="GitHub Pages'e yayınlama başarısız"
+            body="Canlı site büyük ihtimalle değişmedi. Claude'a haber verin."$'\n'"Değişiklik: $subject ($short)"$'\n'"Ayrıntılar: $run_url"
           elif [ "$SMOKE" = failure ] && [ "$ROLLBACK" = success ]; then
             sleep 60
             if python3 deploy/health_check.py --no-cert-expiry > verify.txt 2>&1; then
-              verify="The site passes the health check again."
+              verify="Site sağlık kontrolünden yeniden geçiyor. Bir şey yapmanız gerekmiyor."
             else
-              verify="The site STILL fails the health check after the rollback; the hourly check keeps reporting."
+              verify="Geri almaya rağmen site HÂLÂ sağlık kontrolünden geçemiyor; saatlik kontrol bildirmeye devam edecek. Claude'a haber verin."
             fi
-            title="Rolled back: new deploy failed the live check"
-            body="Failed commit: $subject ($short)"$'\n'"Restored build: ${ROLLBACK_SHA:0:7}"$'\n'"$verify"$'\n'"$run_url"
+            title="Bozuk güncelleme geri alındı"
+            body="Yeni sürüm canlı kontrolden geçemedi, sistem otomatik olarak eski sürüme döndü."$'\n'"Hatalı değişiklik: $subject ($short)"$'\n'"Geri yüklenen sürüm: ${ROLLBACK_SHA:0:7}"$'\n'"$verify"$'\n'"Ayrıntılar: $run_url"
           elif [ "$SMOKE" = failure ] && [ "$BASELINE_HEALTHY" != true ]; then
-            title="Deployed, but the live site was already failing"
-            body="The site failed the health check before this deploy too, so the cause is probably not this commit and nothing was rolled back. The hourly health check keeps reporting."$'\n'"Commit: $subject ($short)"$'\n'"$run_url"
+            title="Yayınlandı, ancak canlı site zaten sorunluydu"
+            body="Site bu yayından önce de sağlık kontrolünden geçemiyordu; sorunun kaynağı büyük ihtimalle bu değişiklik değil, bu yüzden geri alma yapılmadı. Saatlik sağlık kontrolü bildirmeye devam edecek."$'\n'"Değişiklik: $subject ($short)"$'\n'"Ayrıntılar: $run_url"
           elif [ "$SMOKE" = failure ]; then
-            title="Live site failing after deploy, rollback FAILED"
-            body="Failed commit: $subject ($short)"$'\n'"Rollback: prepare=$PREPARE, deploy=$ROLLBACK (no known-good build, or the redeploy failed)."$'\n'"Fix or revert the commit on main: $run_url"
+            title="ACİL: Yayından sonra site bozuk, geri alma BAŞARISIZ"
+            body="Hatalı değişiklik: $subject ($short)"$'\n'"Geri alma: hazırlık=$PREPARE, yayın=$ROLLBACK (çalışan eski sürüm bulunamadı ya da yeniden yayın başarısız)."$'\n'"Hemen Claude'a haber verin; main dalındaki değişiklik düzeltilmeli veya geri alınmalı."$'\n'"Ayrıntılar: $run_url"
           else
             echo "Nothing to report (build=$BUILD deploy=$DEPLOY smoke=$SMOKE)."
             exit 0

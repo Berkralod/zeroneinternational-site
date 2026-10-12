@@ -39,7 +39,7 @@ def build_text(title, body):
         # Leave room for the title; cut on the plain text so no escape sequence is split.
         room = MAX_LENGTH - len(title or "") - 40
         if len(body) > room:
-            body = body[:room].rstrip() + "\n…(truncated)"
+            body = body[:room].rstrip() + "\n…(kısaltıldı)"
         parts.append(html.escape(body, quote=False))
     return "\n".join(parts)
 

@@ -41,19 +41,19 @@ Token sızdığından şüphelenirseniz: @BotFather → `/revoke` ile yeni token
 
 | Mesaj | Anlamı | Ne yapmalı? |
 | --- | --- | --- |
-| **Site health check FAILING** | Canlı site saatlik kontrolde iki kez üst üste hata verdi. Mesajda sorunlar ve GitHub issue bağlantısı var. | Issue'daki listeye bakın; gerekirse bana iletin. |
-| **Site still failing (6-hour reminder)** | Sorun hâlâ sürüyor. En fazla 6 saatte bir gelir. | Aynı issue üzerinden takip edin. |
-| **Site recovered** | Kontroller yeniden geçti; issue kapatıldı. | Bir şey yapmanıza gerek yok. |
-| **Deploy succeeded** | `main`'deki değişiklik yayınlandı ve canlıda kontrolü geçti. Commit başlığı ve site adresi yazılır. | Yok. |
-| **New blog post published** | Yeni bir blog yazısı yayında; mesajda yazının adresi var. | İsterseniz sosyal medyada paylaşın. |
-| **Blog post updated** | Başlığı `Blog:` ile başlayan ve mevcut bir yazıyı değiştiren commit yayınlandı. | Yok. |
-| **Deploy stopped: build or tests failed** | Yeni sürüm testleri geçemedi, **yayınlanmadı**. Canlı site değişmedi. | Değişikliği düzeltin. |
-| **Deploy to GitHub Pages failed** | GitHub Pages yayını reddetti (çoğunlukla GitHub tarafında geçici sorun). | Actions'ta çalıştırmayı **Re-run** edin. |
-| **Rolled back: new deploy failed the live check** | Yeni sürüm yayınlandı ama canlıda bozuk çıktı; son sağlam sürüm otomatik geri yüklendi. Mesaj, sitenin geri yüklemeden sonra sağlıklı olup olmadığını da söyler. | Hatalı commit'i düzeltin veya geri alın (`git revert`). |
-| **Deployed, but the live site was already failing** | Yeni sürüm yayınlandı; site yayından önce de hata veriyordu, yani sorun büyük olasılıkla bu değişiklikte değil (DNS, sertifika, GitHub kesintisi). Geri alma yapılmadı. | Saatlik kontrolün açtığı issue'ya bakın. |
-| **Live site failing after deploy, rollback FAILED** | Yeni sürüm canlıda bozuk ve geri alma yapılamadı (ör. son 30 günde sağlam bir yayın yok). | Acil: commit'i hemen geri alın veya düzeltin. |
-| **CI failed on main / Weekly test run failed** | `main` üzerindeki veya haftalık test çalıştırması başarısız. Canlı site etkilenmez; erken uyarıdır. | Bağlantıdaki kayda bakın. |
-| **Weekly security and maintenance digest** | Pazartesi özeti: açık Dependabot PR'ları, CodeQL uyarıları, sağlık durumu. | Bekleyen güncellemeleri birleştirin. |
+| **Site sağlık kontrolü BAŞARISIZ** | Canlı site saatlik kontrolde iki kez üst üste hata verdi. Mesajda sorunlar ve GitHub issue bağlantısı var. | Issue'daki listeye bakın; gerekirse bana iletin. |
+| **Site hâlâ sorunlu (6 saatlik hatırlatma)** | Sorun hâlâ sürüyor. En fazla 6 saatte bir gelir. | Aynı issue üzerinden takip edin. |
+| **Site tekrar çalışıyor** | Kontroller yeniden geçti; issue kapatıldı. | Bir şey yapmanıza gerek yok. |
+| **Yayın başarılı** | `main`'deki değişiklik yayınlandı ve canlıda kontrolü geçti. Commit başlığı ve site adresi yazılır. | Yok. |
+| **Yeni blog yazısı yayınlandı** | Yeni bir blog yazısı yayında; mesajda yazının adresi var. | İsterseniz sosyal medyada paylaşın. |
+| **Blog yazısı güncellendi** | Başlığı `Blog:` ile başlayan ve mevcut bir yazıyı değiştiren commit yayınlandı. | Yok. |
+| **Yayın durduruldu: derleme veya testler başarısız** | Yeni sürüm testleri geçemedi, **yayınlanmadı**. Canlı site değişmedi. | Değişikliği düzeltin. |
+| **GitHub Pages'e yayınlama başarısız** | GitHub Pages yayını reddetti (çoğunlukla GitHub tarafında geçici sorun). | Actions'ta çalıştırmayı **Re-run** edin. |
+| **Bozuk güncelleme geri alındı** | Yeni sürüm yayınlandı ama canlıda bozuk çıktı; son sağlam sürüm otomatik geri yüklendi. Mesaj, sitenin geri yüklemeden sonra sağlıklı olup olmadığını da söyler. | Hatalı commit'i düzeltin veya geri alın (`git revert`). |
+| **Yayınlandı, ancak canlı site zaten sorunluydu** | Yeni sürüm yayınlandı; site yayından önce de hata veriyordu, yani sorun büyük olasılıkla bu değişiklikte değil (DNS, sertifika, GitHub kesintisi). Geri alma yapılmadı. | Saatlik kontrolün açtığı issue'ya bakın. |
+| **ACİL: Yayından sonra site bozuk, geri alma BAŞARISIZ** | Yeni sürüm canlıda bozuk ve geri alma yapılamadı (ör. son 30 günde sağlam bir yayın yok). | Acil: commit'i hemen geri alın veya düzeltin. |
+| **Ana daldaki (main) testler BAŞARISIZ / Haftalık otomatik test BAŞARISIZ** | `main` üzerindeki veya haftalık test çalıştırması başarısız. Canlı site etkilenmez; erken uyarıdır. | Bağlantıdaki kayda bakın. |
+| **Haftalık güvenlik ve bakım özeti** | Pazartesi özeti: açık Dependabot PR'ları, CodeQL uyarıları, sağlık durumu. | Bekleyen güncellemeleri birleştirin. |
 
 ## GitHub hesabında sizin yapmanız gerekenler
 

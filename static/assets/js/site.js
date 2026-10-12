@@ -3,6 +3,12 @@
   "use strict";
 
   var root = document.documentElement;
+
+  // Only same-site paths ("/tr/", "/de/kontakt/") are accepted for links built from page data.
+  function sitePath(value) {
+    var v = String(value || "");
+    return /^\/(?!\/)[A-Za-z0-9._~\/%-]*$/.test(v) ? v : null;
+  }
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function store(key, value) {
@@ -94,7 +100,9 @@
     bar.setAttribute("dir", match === "ar" ? "rtl" : "ltr");
     msg.textContent = info.msg;
     go.textContent = info.go;
-    go.setAttribute("href", info.url);
+    var target = sitePath(info.url);
+    if (!target) return;
+    go.setAttribute("href", target);
     go.setAttribute("hreflang", match);
     close.setAttribute("aria-label", info.dismiss);
     go.addEventListener("click", function () { store("zerone-lang", match); });
@@ -149,6 +157,7 @@
   /* ---------------------------------------------------------------- e-mail address (kept out of the HTML source) */
   document.querySelectorAll("[data-email-user]").forEach(function (link) {
     var address = link.getAttribute("data-email-user") + "@" + link.getAttribute("data-email-domain");
+    if (!/^[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(address)) return;
     link.setAttribute("href", "mailto:" + address);
     var label = link.querySelector("span");
     if (label) label.textContent = address;
@@ -206,7 +215,8 @@
         document.querySelector("[data-nf=text]").textContent = t.text;
         var home = document.querySelector("[data-nf=home]");
         home.firstChild.textContent = t.home + " ";
-        home.setAttribute("href", t.url);
+        var homePath = sitePath(t.url);
+        if (homePath) home.setAttribute("href", homePath);
       }
     } catch (e) { /* keep the default language */ }
   }
