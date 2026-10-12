@@ -16,6 +16,10 @@
     <p>{{ para }}</p>
     {% endfor %}
   {% endfor %}
+  {% if assistant and page_id == 'privacy' %}
+    <h2>{{ t.assistant.privacy_title }}</h2>
+    <p>{{ t.assistant.privacy_text }}</p>
+  {% endif %}
   {% if lang != 'en' %}
     <p class="fineprint">{{ t.ui.legal_note }}</p>
   {% endif %}
