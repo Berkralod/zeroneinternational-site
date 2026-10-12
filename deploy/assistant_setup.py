@@ -73,12 +73,6 @@ def output(**values):
                 handle.write(f"{key}={value}\n")
 
 
-def mask(value):
-    """Hide a generated secret in GitHub Actions logs, in case anything ever echoes it."""
-    if os.environ.get("GITHUB_ACTIONS") == "true" and value:
-        print(f"::add-mask::{value}")
-
-
 def account_id():
     if os.environ.get("CLOUDFLARE_ACCOUNT_ID"):
         return os.environ["CLOUDFLARE_ACCOUNT_ID"].strip()
@@ -139,13 +133,11 @@ def configure_secrets():
             lines.append(f"{name}: GitHub'da yok, atlandı (müşteri bildirimleri Telegram'a gitmez)")
     if "IP_HASH_SALT" not in existing:
         salt = secrets.token_hex(32)
-        mask(salt)
         put_secret(account, "IP_HASH_SALT", salt)
         lines.append("IP_HASH_SALT: yeni oluşturuldu")
     else:
         lines.append("IP_HASH_SALT: zaten vardı, korundu")
     sitekey, secret, created = ensure_widget(account)
-    mask(secret)
     put_secret(account, "TURNSTILE_SECRET", secret)
     lines.append(f"Turnstile (bot koruması): {'yeni oluşturuldu' if created else 'zaten vardı'}, gizli anahtar Worker'a kaydedildi")
     subdomain = ensure_subdomain(account)

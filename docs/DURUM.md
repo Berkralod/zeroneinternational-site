@@ -9,7 +9,7 @@ Son güncelleme: 2026-10-12. Yeni bir oturum veya sohbet özetlemesinden sonra C
 - Otomasyonlar: saatlik sağlık kontrolü, yayın sonrası duman testi + otomatik geri alma, CodeQL, Dependabot (öneriler incelenip birleştirilir), haftalık güvenlik özeti, haftalık trafik raporu (Cloudflare), hepsi Telegram'a Türkçe.
 
 ## Açık işler
-- **PR #29 (yapay zekâ asistanı, kapalı gelir):** testler yeşil; CodeQL tek uyarı `deploy/assistant_setup.py` içindeki `mask()` (üretilen gizli değerleri `::add-mask::` ile loga yazıyor). Çözüm: `mask()` ve iki çağrısını silmek. Sahibin onayı bekleniyor ("Onaylıyorum, kaldır"). Sonra birleştir.
+- **PR #29 (yapay zekâ asistanı, kapalı gelir):** sahip onayıyla `mask()` kaldırıldı; CI yeşil olunca birleştirilecek.
 - Asistanı açmak (bilgisayarda): `docs/ASISTAN.md` adımları → Anthropic anahtarı + harcama limiti, Cloudflare token'a Workers Scripts/Turnstile Edit, GitHub secret `ANTHROPIC_API_KEY`, `assistant-deploy.yml` çalıştır, sonra Claude `assistant_endpoint` ve `assistant_turnstile_sitekey` değerlerini ayarlar.
 - Dependabot #10 (Playwright 1.64): WebKit'te iletişim sayfasında CSP style-src uyarısı ve tema testi zamanlaması incelenecek.
 
