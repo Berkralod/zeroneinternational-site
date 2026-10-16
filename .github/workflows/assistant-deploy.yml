@@ -63,6 +63,38 @@ jobs:
             echo "Eksik GitHub secret:$missing" | tee summary.txt
             exit 1
           fi
+      - name: Check the Anthropic key
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        # One cheap request (list one model) proves the key works before anything is deployed.
+        # Only the outcome is printed, never the key.
+        run: |
+          python3 - <<'PY'
+          import os, sys, urllib.error, urllib.request
+          key = os.environ["ANTHROPIC_API_KEY"]
+          problem = ""
+          if any(c.isspace() for c in key.strip()):
+              problem = "anahtarın içinde satır sonu veya boşluk var (kopyalarken bozulmuş)"
+          elif not key.strip().startswith("sk-ant-"):
+              problem = "anahtar 'sk-ant-' ile başlamıyor"
+          else:
+              request = urllib.request.Request("https://api.anthropic.com/v1/models?limit=1", headers={
+                  "x-api-key": key.strip(), "anthropic-version": "2023-06-01"})
+              try:
+                  urllib.request.urlopen(request, timeout=20).close()
+              except urllib.error.HTTPError as error:
+                  problem = {401: "Anthropic anahtarı kabul etmedi (geçersiz veya silinmiş)",
+                             403: "anahtarın yetkisi yok"}.get(error.code, f"Anthropic HTTP {error.code} döndürdü")
+              except OSError as error:
+                  print(f"Uyarı: Anthropic'e ulaşılamadı ({error.__class__.__name__}); kontrol atlandı.")
+          if problem:
+              text = (f"ANTHROPIC_API_KEY sorunu: {problem}. Anthropic konsolunda yeni anahtar oluşturup "
+                      "'Copy' düğmesiyle kopyalayın ve GitHub secret'ını güncelleyin (docs/ASISTAN.md, 1. ve 3. adım).")
+              print(text)
+              open("summary.txt", "w", encoding="utf-8").write(text + "\n")
+              sys.exit(1)
+          print("Anthropic anahtarı çalışıyor.")
+          PY
       - name: Prepare the Cloudflare account
         id: prepare
         env:

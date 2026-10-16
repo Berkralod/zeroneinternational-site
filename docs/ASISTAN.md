@@ -55,8 +55,8 @@ Toplam 15–20 dakika sürer. Hiçbir anahtarı sohbete yapıştırmayın; hepsi
 1. https://console.anthropic.com adresine girin (yoksa `berk@zeroneinternational.com` ile hesap açın).
 2. **Settings → Billing**: bir ödeme yöntemi ekleyin ve küçük bir bakiye yükleyin (ör. 10 $).
 3. **Settings → Limits**: **Monthly spend limit** (aylık harcama limiti) alanına örneğin **20 $** yazıp kaydedin. Bu, ne olursa olsun aşılamayacak üst sınırdır.
-4. **Settings → API Keys → Create Key**: ad olarak `zerone-assistant` yazın, **Create** deyin.
-5. Gösterilen anahtarı (`sk-ant-...` ile başlar) kopyalayın. Bu anahtar bir daha gösterilmez; hemen 3. adıma geçin.
+4. **Settings → API Keys → Create Key**: ad olarak `zerone-assistant` yazın. **Scope** alanında **Organization değil**, asistan için açtığınız çalışma alanını (`zerone-site`) seçin; organizasyon kapsamlı anahtarlarla asistan çalışmaz. **Create** deyin.
+5. Gösterilen anahtarı (`sk-ant-...` ile başlar) **yanındaki Copy düğmesiyle** kopyalayın; fareyle seçerek kopyalamayın (satır kayıp anahtar bozulabiliyor). Bu anahtar bir daha gösterilmez; hemen 3. adıma geçin.
 
 ### 2. Cloudflare API anahtarına izin eklemek
 
@@ -96,6 +96,8 @@ Claude'a şunu yazın: **"Asistan kurulum mesajı geldi, asistanı sitede aç."*
 ## Asistanı kapatmak
 
 `site.config.json` içinde `assistant_endpoint` değerini boşaltmak (`""`) yeterlidir. Claude'a **"Asistanı kapat"** demeniz de olur. Site bir sonraki yayında asistansız hâline döner; Cloudflare'deki Worker zararsız şekilde beklemeye devam eder.
+
+**Asistan "Bir sorun oluştu" diyorsa:** Actions sekmesinde **AI assistant diagnosis** iş akışını çalıştırın (Claude da çalıştırabilir). Asistanın yapay zekâya gönderdiği isteğin aynısını bir kez gönderir ve sonucu (durum kodu, anahtarın uzunluğu/biçimi; anahtarın kendisi asla) kayda yazar. Kurulum iş akışı da anahtarı her kurulumdan önce dener; bozuksa Telegram'a Türkçe uyarı gelir.
 
 Acil durumda (ör. beklenmedik harcama): Anthropic konsolunda **API Keys** sayfasından anahtarı **Disable** edin. Asistan hemen "tekrar deneyin / bize ulaşın" moduna geçer, site çalışmaya devam eder.
 
