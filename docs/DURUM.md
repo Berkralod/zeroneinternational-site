@@ -17,7 +17,7 @@ Son güncelleme: 2026-10-16. Yeni bir oturum veya sohbet özetlemesinden sonra C
 - Dependabot #10 (Playwright 1.64): WebKit'te iletişim sayfasında CSP style-src uyarısı ve tema testi zamanlaması incelenecek.
 
 ## Dışarıdan beklenen
-- Stripe: vergi numarası incelemesi (In review). 11 Kasım 2026 veya $600 hacimden önce bitmeli.
+- Stripe: vergi numarası incelemesi tamamlandı (16 Ekim 2026).
 - Google Search Console: www kopya sayfa uyarısı için "Validate fix" başlatıldı.
 
 ## Bilgisayar listesi (sahiple yapılacak)

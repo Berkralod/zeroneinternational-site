@@ -23,6 +23,7 @@ import json
 import os
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 
 API = "https://api.cloudflare.com/client/v4"
@@ -129,6 +130,11 @@ def main():
     if len(sys.argv) < 3:
         sys.exit(__doc__)
     target, domains = sys.argv[1], sys.argv[2:]
+    # This script replaces the bare domain's records with a redirect placeholder; on the main site's
+    # domain that would take the website down. The main domain is prepared by cloudflare_zone_import.py.
+    main_host = urllib.parse.urlsplit(target).hostname.removeprefix("www.")
+    if any(d.lower().removeprefix("www.") == main_host for d in domains):
+        sys.exit(f"Refusing to redirect {main_host}: it is the main site (use deploy/cloudflare_zone_import.py).")
     if not target.startswith("https://"):
         sys.exit("TARGET_URL must start with https://")
     if not TOKEN:
