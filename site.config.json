@@ -24,7 +24,7 @@
   "google_site_verification": "",
   "bing_site_verification": "",
   "indexnow_key": "94d49004ef11e588dddb9c6ba0ac2921",
-  "assistant_endpoint": "",
-  "assistant_turnstile_sitekey": "",
+  "assistant_endpoint": "https://zerone-assistant.zerone-5dc7de.workers.dev",
+  "assistant_turnstile_sitekey": "0x4AAAAAAFYLkLgnQtDb0PiL",
   "same_as": ["https://t.me/zeroneintl"]
 }

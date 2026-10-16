@@ -1,6 +1,6 @@
 # Proje durumu (Claude'un devir notu)
 
-Son güncelleme: 2026-10-12. Yeni bir oturum veya sohbet özetlemesinden sonra Claude buradan devam eder.
+Son güncelleme: 2026-10-16. Yeni bir oturum veya sohbet özetlemesinden sonra Claude buradan devam eder.
 
 ## Canlıda olanlar
 - 15 dilli site (GitHub Pages), blog (her salı otomatik yazı), "Geliştiriciler için" sayfası.
@@ -8,10 +8,10 @@ Son güncelleme: 2026-10-12. Yeni bir oturum veya sohbet özetlemesinden sonra C
 - prismapi.dev ve zeroneholding.com → Cloudflare 301 yönlendirmesi (`domain-redirects.yml`).
 - PayPal: Mercury banka hesapları bağlandı (12 Ekim 2026). "Activations Agent" e-postaları otomatik satış mesajı, cevap gerekmez.
 - Apple Business: Zerone International LLC doğrulandı (12 Ekim 2026). Logo/marka kartı bilgisayarda eklenecek.
+- Yapay zekâ satış asistanı açık (16 Ekim 2026): Worker `zerone-assistant.zerone-5dc7de.workers.dev`. Anthropic'te ayrı çalışma alanı `zerone-site`, aylık limit 20 $, anahtar `zerone-assistant` (bitiş tarihi konsolda; dolmadan yenilenecek).
 - Otomasyonlar: saatlik sağlık kontrolü, yayın sonrası duman testi + otomatik geri alma, CodeQL, Dependabot (öneriler incelenip birleştirilir), haftalık güvenlik özeti, haftalık trafik raporu (Cloudflare), hepsi Telegram'a Türkçe.
 
 ## Açık işler
-- Asistanı açmak (bilgisayarda): `docs/ASISTAN.md` adımları → Anthropic anahtarı + harcama limiti, Cloudflare token'a Workers Scripts/Turnstile Edit, GitHub secret `ANTHROPIC_API_KEY`, `assistant-deploy.yml` çalıştır, sonra Claude `assistant_endpoint` ve `assistant_turnstile_sitekey` değerlerini ayarlar.
 - Dependabot #10 (Playwright 1.64): WebKit'te iletişim sayfasında CSP style-src uyarısı ve tema testi zamanlaması incelenecek.
 
 ## Dışarıdan beklenen
@@ -19,7 +19,6 @@ Son güncelleme: 2026-10-12. Yeni bir oturum veya sohbet özetlemesinden sonra C
 - Google Search Console: www kopya sayfa uyarısı için "Validate fix" başlatıldı.
 
 ## Bilgisayar listesi (sahiple yapılacak)
-1. Yapay zekâ asistanını açmak
 2. LinkedIn şirket sayfası + profil
 3. Railway etkinleştirme + Discourse topluluk
 4. Square tam logo + Apple Business marka logosu
