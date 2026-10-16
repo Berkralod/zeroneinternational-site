@@ -1,0 +1,44 @@
+name: AI assistant diagnosis
+
+# Sends the Worker's exact model request (model, prompt, schema, limits) to Anthropic once and prints
+# the outcome (status, stop reason, token counts), never the key. Use it when the chat shows
+# "Bir sorun oluştu". Run by hand from the Actions tab.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/perplexity-improvements-pl88ei]
+    paths: [.github/workflows/assistant-diagnose.yml, worker/assistant/scripts/diagnose.mjs]
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Build the site data for the Worker
+        run: |
+          python build.py
+          cp build/assistant-data.json worker/assistant/src/site-data.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: worker/assistant/package-lock.json
+      - run: npm ci
+        working-directory: worker/assistant
+      - name: Call the model like the Worker does
+        working-directory: worker/assistant
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/diagnose.mjs
