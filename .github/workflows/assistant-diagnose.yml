@@ -6,9 +6,6 @@ name: AI assistant diagnosis
 
 on:
   workflow_dispatch:
-  push:
-    branches: [claude/perplexity-improvements-pl88ei]
-    paths: [.github/workflows/assistant-diagnose.yml, worker/assistant/scripts/diagnose.mjs]
 
 permissions:
   contents: read
