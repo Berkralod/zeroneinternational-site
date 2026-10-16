@@ -12,6 +12,8 @@ Son güncelleme: 2026-10-16. Yeni bir oturum veya sohbet özetlemesinden sonra C
 - Otomasyonlar: saatlik sağlık kontrolü, yayın sonrası duman testi + otomatik geri alma, CodeQL, Dependabot (öneriler incelenip birleştirilir), haftalık güvenlik özeti, haftalık trafik raporu (Cloudflare), hepsi Telegram'a Türkçe.
 
 ## Açık işler
+- **Asistan anahtarı:** ilk `ANTHROPIC_API_KEY` kopyalanırken bozuldu (içinde satır sonu, eksik karakter); asistan "Bir sorun oluştu" diyor. Sahip yeni anahtarı Copy düğmesiyle girecek, Claude `assistant-deploy.yml`'yi çalıştırıp `assistant-diagnose.yml` ile doğrulayacak.
+- **Yerel işletme hizmetleri** (sahibin 15 Ekim planı): kararlar verildi — telefon ve "Book a call" Ava (AI telefon hattı) hazır olana kadar kaldırıldı; altyapı Cloudflare (Workers + D1), Railway/n8n/Discourse ertelendi; marka "ZERONE International — Local Services" (`/local/`). Ayrıntılı plan ve hedef listesi gizli `zerone-local` deposuna konacak (sahip depoyu açıp Claude GitHub App'e erişim verecek). Herkese açık bu depoya iç maliyet, hedef işletme veya müşteri verisi yazılmaz.
 - Dependabot #10 (Playwright 1.64): WebKit'te iletişim sayfasında CSP style-src uyarısı ve tema testi zamanlaması incelenecek.
 
 ## Dışarıdan beklenen
