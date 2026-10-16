@@ -43,7 +43,7 @@ async function attempt(label, maxTokens) {
     console.log(`${label}: reply excerpt: ${text.slice(0, 300).replace(/\s+/g, " ")}`);
   } catch (error) {
     const body = error && error.error ? JSON.stringify(error.error).slice(0, 500) : "";
-    console.log(`${label}: ERROR status=${error && error.status} name=${error && error.name} body=${redact(body)} message=${redact(error && error.message)} cause=${redact(error && error.cause && error.cause.message)}`);
+    console.log(`${label}: ERROR status=${error && error.status} type=${error && error.error && error.error.error ? error.error.error.type : "-"} name=${error && error.name} body=${redact(body)} message=${redact(error && error.message)} cause=${redact(error && error.cause && error.cause.message)}`);
   }
 }
 
@@ -51,3 +51,10 @@ console.log(`key: ${keyShape(rawKey)}`);
 console.log(`model=${MODEL} system_chars=${system.length} link_ids=${Object.keys(siteData.links).length} worker_max_tokens=${LIMITS.maxTokens}`);
 await attempt("A (worker settings)", LIMITS.maxTokens);
 await attempt("B (max_tokens 2000)", 2000);
+if (/\s/.test(rawKey)) {
+  // Line breaks pasted into the secret: try once more with all whitespace removed.
+  const stripped = rawKey.replace(/\s+/g, "");
+  console.log(`stripped key: ${keyShape(stripped)}`);
+  client.apiKey = stripped;
+  await attempt("C (whitespace removed)", LIMITS.maxTokens);
+}
