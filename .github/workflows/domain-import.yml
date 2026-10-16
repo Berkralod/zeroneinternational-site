@@ -1,0 +1,57 @@
+name: Main domain to Cloudflare (preparation)
+
+# Copies zeroneinternational.com's live DNS records into Cloudflare as a pending zone
+# (deploy/cloudflare_zone_import.py). The website is not affected: nothing changes until the owner
+# switches the nameservers at Namecheap. Run by hand; safe to run again. Result goes to Telegram in Turkish.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "dry-run = only list the live records; apply = add the pending zone and copy them"
+        type: choice
+        options: [dry-run, apply]
+        default: dry-run
+
+permissions:
+  contents: read
+
+concurrency:
+  group: domain-import
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Copy the records
+        id: run
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          MODE: ${{ inputs.mode }}
+          SUMMARY_FILE: zone.txt
+        run: |
+          status=0
+          if [ "$MODE" = "apply" ]; then
+            python3 deploy/cloudflare_zone_import.py || status=$?
+          else
+            python3 deploy/cloudflare_zone_import.py --dry-run || status=$?
+          fi
+          cat zone.txt >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+      - name: Send the result to Telegram
+        if: always() && steps.run.outcome != 'skipped' && inputs.mode == 'apply'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ "${{ steps.run.outputs.status }}" = "0" ]; then title="Ana alan adı Cloudflare'e hazırlandı (site etkilenmedi)"; else title="Alan adı hazırlığında HATA (site etkilenmedi)"; fi
+          { cat zone.txt 2>/dev/null || echo "Sonuç dosyası oluşmadı."; echo; echo "Ayrıntılar: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"; } \
+            | python3 deploy/notify_telegram.py --title "$title"
+      - name: Mark the run as failed on error
+        if: steps.run.outputs.status != '0'
+        run: exit 1
