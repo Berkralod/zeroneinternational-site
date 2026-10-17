@@ -12,9 +12,13 @@ This prepares the nameserver move for zeroneinternational.com without changing a
 The website keeps working exactly as before: nothing changes until the nameservers are switched at
 Namecheap, which only the owner does, after comparing the list. Running it again is safe.
 
-Usage:  python3 deploy/cloudflare_zone_import.py [--dry-run | --email-routing] [DOMAIN]   (default: host of base_url)
+Usage:  python3 deploy/cloudflare_zone_import.py [--dry-run | --email-routing | --wait-active] [DOMAIN]
+        (default DOMAIN: host of base_url)
         --dry-run only reads and lists the live records; Cloudflare is not touched.
-        --email-routing replaces the copied Namecheap mail-forwarding records with Cloudflare Email Routing.
+        --email-routing replaces the copied Namecheap mail-forwarding records with Cloudflare Email Routing
+          (Cloudflare allows this only once the zone is active).
+        --wait-active waits up to $WAIT_MINUTES (default 320) for the nameserver switch to make the zone
+          active, asking Cloudflare for an activation check once an hour, then does --email-routing at once.
 
 Configuration (GitHub Actions secret, passed in as an environment variable):
     CLOUDFLARE_API_TOKEN   Zone:Zone:Edit, Zone:DNS:Edit and Account:Account Settings:Read.
@@ -25,6 +29,7 @@ Never use deploy/cloudflare_redirects.py on this domain: it replaces the bare do
 import json
 import os
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -166,7 +171,11 @@ def enable_email_routing(domain):
     zones = call("GET", f"/zones?name={domain}")
     if not zones:
         raise CloudflareError(f"{domain} is not in Cloudflare yet")
+    if zones[0].get("status") != "active":
+        raise CloudflareError(f"{domain} is not active on Cloudflare yet (nameservers not switched)")
     zid = zones[0]["id"]
+    if routing_ready(zid):
+        return ["Cloudflare Email Routing zaten açık; hiçbir şey değiştirilmedi."]
     lines = []
     records = call("GET", f"/zones/{zid}/dns_records?per_page=500") or []
     old = [r for r in records if is_namecheap_forwarding(r)]
@@ -189,9 +198,45 @@ def enable_email_routing(domain):
     mx = sorted(r["content"] for r in call("GET", f"/zones/{zid}/dns_records?type=MX&per_page=50") or [])
     lines.append(f"Cloudflare Email Routing açıldı; {len(old)} eski Namecheap yönlendirme kaydı kaldırıldı. "
                  f"Yeni MX: {', '.join(mx) or 'yok'}.")
-    if zones[0].get("status") != "active":
-        lines.append("Alan adı henüz beklemede: e-postalar nameserver değişene kadar Namecheap üzerinden gelmeye devam eder.")
+    lines.append(f"Yönlendirme durumu: {'hazır' if routing_ready(zid) else 'Cloudflare kayıtları kontrol ediyor (birkaç dakika sürebilir)'}.")
     return lines
+
+
+def routing_ready(zid):
+    try:
+        settings = call("GET", f"/zones/{zid}/email/routing") or {}
+    except CloudflareError:
+        return False
+    return bool(settings.get("enabled")) and settings.get("status") == "ready"
+
+
+POLL_SECONDS = 120
+RECHECK_SECONDS = 3600  # Cloudflare runs at most one requested activation check per hour on the free plan
+
+
+def wait_until_active(domain, minutes, sleep=time.sleep, clock=time.monotonic):
+    """True once Cloudflare sees the new nameservers (zone active), False after `minutes`."""
+    zones = call("GET", f"/zones?name={domain}")
+    if not zones:
+        raise CloudflareError(f"{domain} is not in Cloudflare yet")
+    zone, start, last_check, errors = zones[0], clock(), None, 0
+    while zone.get("status") != "active":
+        if clock() - start >= minutes * 60:
+            return False
+        if last_check is None or clock() - last_check >= RECHECK_SECONDS:
+            try:
+                call("PUT", f"/zones/{zone['id']}/activation_check")
+            except CloudflareError:
+                pass  # rate-limited or not needed; Cloudflare also checks on its own
+            last_check = clock()
+        sleep(POLL_SECONDS)
+        try:
+            zone, errors = call("GET", f"/zones/{zone['id']}"), 0
+        except CloudflareError:
+            errors += 1  # a passing network or API hiccup; keep the last known state
+            if errors >= 10:
+                raise
+    return True
 
 
 def main():
@@ -199,6 +244,7 @@ def main():
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     dry_run = "--dry-run" in sys.argv[1:]
     email_routing = "--email-routing" in sys.argv[1:]
+    wait_active = "--wait-active" in sys.argv[1:]
     domain = (args[0] if args else urllib.parse.urlsplit(config["base_url"]).hostname).lower()
     if domain.startswith("www."):
         domain = domain[4:]
@@ -206,9 +252,18 @@ def main():
         sys.exit("CLOUDFLARE_API_TOKEN is not set.")
 
     lines, failed = [], False
-    if email_routing:
+    if email_routing or wait_active:
         try:
-            lines.extend(enable_email_routing(domain))
+            minutes = int(os.environ.get("WAIT_MINUTES") or 320)
+            active = wait_until_active(domain, minutes) if wait_active else True
+            if not active:
+                failed = True
+                lines.append(f"{domain} {minutes} dakika içinde Cloudflare'de aktif olmadı (nameserver değişikliği henüz "
+                             "görünmüyor). Hiçbir şey değiştirilmedi; e-posta Namecheap üzerinden gelmeye devam ediyor.")
+            else:
+                if wait_active:
+                    lines.append(f"{domain} Cloudflare'de AKTİF: nameserver değişikliği tamamlandı, site kayıtları aynen korunuyor.")
+                lines.extend(enable_email_routing(domain))
         except CloudflareError as error:
             failed = True
             lines.append("E-posta yönlendirmesi AÇILAMADI; Namecheap yönlendirme kayıtları yerinde bırakıldı "

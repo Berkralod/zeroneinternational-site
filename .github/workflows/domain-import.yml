@@ -2,28 +2,31 @@ name: Main domain to Cloudflare (preparation)
 
 # Copies zeroneinternational.com's live DNS records into Cloudflare as a pending zone
 # (deploy/cloudflare_zone_import.py). The website is not affected: nothing changes until the owner
-# switches the nameservers at Namecheap. Run by hand; safe to run again. Result goes to Telegram in Turkish.
+# switches the nameservers at Namecheap. wait-activate is started just before that switch: it waits for
+# Cloudflare to see it and then turns on Cloudflare Email Routing straight away, so mail keeps flowing.
+# Run by hand; safe to run again. Result goes to Telegram in Turkish.
 
 on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "dry-run = only list the live records; apply = add the pending zone and copy them; email-routing = switch the mail records to Cloudflare Email Routing"
+        description: "dry-run = only list the live records; apply = add the pending zone and copy them; email-routing = switch the mail records to Cloudflare Email Routing (zone must be active); wait-activate = wait for the nameserver switch, then email-routing"
         type: choice
-        options: [dry-run, apply, email-routing]
+        options: [dry-run, apply, email-routing, wait-activate]
         default: dry-run
 
 permissions:
   contents: read
 
 concurrency:
-  group: domain-import
+  # The long wait-activate run must not hold up a quick apply or dry-run.
+  group: domain-import-${{ inputs.mode == 'wait-activate' && 'wait' || 'change' }}
   cancel-in-progress: false
 
 jobs:
   import:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: ${{ inputs.mode == 'wait-activate' && 340 || 10 }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -34,12 +37,15 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           MODE: ${{ inputs.mode }}
           SUMMARY_FILE: zone.txt
+          WAIT_MINUTES: "320"
         run: |
           status=0
           if [ "$MODE" = "apply" ]; then
             python3 deploy/cloudflare_zone_import.py || status=$?
           elif [ "$MODE" = "email-routing" ]; then
             python3 deploy/cloudflare_zone_import.py --email-routing || status=$?
+          elif [ "$MODE" = "wait-activate" ]; then
+            python3 deploy/cloudflare_zone_import.py --wait-active || status=$?
           else
             python3 deploy/cloudflare_zone_import.py --dry-run || status=$?
           fi
@@ -50,8 +56,15 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MODE: ${{ inputs.mode }}
+          STATUS: ${{ steps.run.outputs.status }}
         run: |
-          if [ "${{ steps.run.outputs.status }}" = "0" ]; then title="Ana alan adı Cloudflare'e hazırlandı (site etkilenmedi)"; else title="Alan adı hazırlığında HATA (site etkilenmedi)"; fi
+          case "$MODE:$STATUS" in
+            apply:0) title="Ana alan adı Cloudflare'e hazırlandı (site etkilenmedi)" ;;
+            apply:*) title="Alan adı hazırlığında HATA (site etkilenmedi)" ;;
+            *:0) title="Alan adı taşındı: e-posta artık Cloudflare'den yönlendiriliyor" ;;
+            *) title="E-posta adımı tamamlanmadı (e-posta etkilenmedi)" ;;
+          esac
           { cat zone.txt 2>/dev/null || echo "Sonuç dosyası oluşmadı."; echo; echo "Ayrıntılar: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"; } \
             | python3 deploy/notify_telegram.py --title "$title"
       - name: Mark the run as failed on error
