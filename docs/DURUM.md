@@ -1,6 +1,6 @@
 # Proje durumu (Claude'un devir notu)
 
-Son güncelleme: 2026-10-16. Yeni bir oturum veya sohbet özetlemesinden sonra Claude buradan devam eder.
+Son güncelleme: 2026-10-17. Yeni bir oturum veya sohbet özetlemesinden sonra Claude buradan devam eder.
 
 ## Canlıda olanlar
 - 15 dilli site (GitHub Pages), blog (her salı otomatik yazı), "Geliştiriciler için" sayfası.
@@ -12,8 +12,8 @@ Son güncelleme: 2026-10-16. Yeni bir oturum veya sohbet özetlemesinden sonra C
 - Otomasyonlar: saatlik sağlık kontrolü, yayın sonrası duman testi + otomatik geri alma, CodeQL, Dependabot (öneriler incelenip birleştirilir), haftalık güvenlik özeti, haftalık trafik raporu (Cloudflare), hepsi Telegram'a Türkçe.
 
 ## Açık işler
-- **Asistan anahtarı:** ilk `ANTHROPIC_API_KEY` kopyalanırken bozuldu (içinde satır sonu, eksik karakter); asistan "Bir sorun oluştu" diyor. Sahip yeni anahtarı Copy düğmesiyle girecek, Claude `assistant-deploy.yml`'yi çalıştırıp `assistant-diagnose.yml` ile doğrulayacak.
-- **Yerel işletme hizmetleri** (sahibin 15 Ekim planı): kararlar verildi — telefon ve "Book a call" Ava (AI telefon hattı) hazır olana kadar kaldırıldı; altyapı Cloudflare (Workers + D1), Railway/n8n/Discourse ertelendi; marka "ZERONE International — Local Services" (`/local/`). Ayrıntılı plan ve hedef listesi gizli `zerone-local` deposuna konacak (sahip depoyu açıp Claude GitHub App'e erişim verecek). Herkese açık bu depoya iç maliyet, hedef işletme veya müşteri verisi yazılmaz.
+- **Ana alan adı Cloudflare DNS'e taşınıyor** (site GitHub Pages'te kalır): zon Cloudflare'de beklemede, canlı kayıtlar DNS-only kopyalandı, DNSSEC kapalı. E-posta Cloudflare Email Routing'e geçecek (berk@ ve diğer tüm adresler → şirket Gmail'i; sahip onayladı, 17 Ekim). Cloudflare yönlendirmeyi ancak alan adı aktif olunca açıyor, bu yüzden `domain-import.yml` mode `wait-activate` nameserver değişikliğini bekleyip yönlendirmeyi hemen kendisi açar. Sahibin tek adımı: Namecheap'te Custom DNS → carrera.ns.cloudflare.com, nikon.ns.cloudflare.com. Sonra: `apply` ile son kontrol, site/MX/Search Console doğrulaması.
+- **Yerel işletme hizmetleri** (sahibin 15 Ekim planı): kararlar verildi — telefon ve "Book a call" Ava (AI telefon hattı) hazır olana kadar kaldırıldı; altyapı Cloudflare (Workers + D1), Railway/n8n/Discourse ertelendi; marka "ZERONE International — Local Services" (`/local/`). Plan, durum ve hedef listesi gizli `zerone-local` deposunda (`docs/DURUM-LOCAL.md`). Herkese açık bu depoya iç maliyet, hedef işletme veya müşteri verisi yazılmaz.
 - Dependabot #10 (Playwright 1.64): WebKit'te iletişim sayfasında CSP style-src uyarısı ve tema testi zamanlaması incelenecek.
 
 ## Dışarıdan beklenen
@@ -22,12 +22,12 @@ Son güncelleme: 2026-10-16. Yeni bir oturum veya sohbet özetlemesinden sonra C
 
 ## Bilgisayar listesi (sahiple yapılacak)
 2. LinkedIn şirket sayfası + profil
-3. Railway etkinleştirme + Discourse topluluk
+3. ~~Railway etkinleştirme + Discourse topluluk~~ ertelendi: Cloudflare aynı işi ücretsiz yapıyor; ancak bir ihtiyaç doğarsa açılır.
 4. Square tam logo + Apple Business marka logosu
 5. Google Search Console API (haftalık SEO raporu için)
-6. Sanal ofis/posta adresi (faturalarda ev adresi görünmesin)
-7. Muhasebeciye: satış vergisi (Stripe Tax kapalı)
-8. Telegram faz 2 (satış/üyelik bildirimleri), ücretli üyelik planı, API ürünleri, sosyal medya hesapları (Instagram, Facebook, X, YouTube)
+6. ~~Sanal ofis/posta adresi~~ iptal (16 Ekim): sahip faturalarda ve yasal sayfalarda şirketin kendi adresinin görünmesini kabul etti.
+7. Muhasebeci ve satış vergisi: sahip kendisi yürütüyor.
+8. Telegram faz 2: satış onay botu "ZERONE Satış" (gizli depo); ücretli üyelik planı, API ürünleri, sosyal medya hesapları (Instagram, Facebook, X, YouTube) sonra.
 
 ## Hesaplar ve önemli notlar
 - Şirket Gmail: zeronellc01@gmail.com (Stripe girişi Google ile, 2FA açık). Apple Business: berk@zeroneinternational.com.
