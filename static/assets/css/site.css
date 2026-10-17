@@ -516,6 +516,7 @@ a.tag:hover { border-color: var(--brand); color: var(--brand); }
 .notice { padding: 24px; border-radius: var(--radius-lg); background: var(--accent-soft); }
 .email-link, .phone-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: var(--brand); word-break: break-all; }
 .phone-link { margin-top: 10px; word-break: normal; }
+.phone-note { margin: 14px 0 0; font-size: .925rem; color: var(--muted); }
 .mini-steps { margin: 0; padding-inline-start: 1.2em; color: var(--muted); }
 .mini-steps li + li { margin-top: 4px; }
 

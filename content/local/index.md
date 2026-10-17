@@ -9,6 +9,8 @@ Most customers find a local business on their phone, often in the evening, and d
 
 We are a small company based in Farmingville, NY. Everything we do can be handled in writing, by e-mail or chat, so you never have to find time for a long phone call.
 
+**Call [(631) 900-2595](tel:+16319002595)** any time: Ava, our own AI phone assistant, answers 24/7 and you get a written proposal by e-mail. Prefer to text? **[(631) 319-7032](sms:+16313197032)**.
+
 ## What we can do for your business
 
 - **A website that works on every phone.** Your services, prices, opening hours, a map, "Call" and "Directions" buttons, and a quote or booking form. It runs on your own domain. Hosting, security and small edits are included in the monthly plan.
@@ -16,7 +18,7 @@ We are a small company based in Farmingville, NY. Everything we do can be handle
 - **A steady flow of reviews.** After each job, every customer gets a short, polite request with a link. We ask all of your customers, not only the happy ones, and we never offer rewards for reviews. Both are Google's rules.
 - **Replies that don't fall through the cracks.** Reply drafts for every new review, ready for you to approve.
 - **Missed-call text-back.** When you can't answer, the caller gets an instant text with a link to book or ask a question. *This needs a carrier registration for your business, which usually takes 2–4 weeks.*
-- **An AI phone assistant** *(coming soon)*. It answers your calls around the clock, says that it is an AI assistant, takes messages, books appointments and texts you anything urgent. It is not an emergency service.
+- **An AI phone assistant.** It answers your calls around the clock, says that it is an AI assistant, takes messages, books appointments and texts you anything urgent. It is not an emergency service. Hear it for yourself: call our own line, (631) 900-2595.
 - **A short monthly report.** Website visits, new requests, reviews and calls, in plain words.
 
 ## How it works
@@ -39,7 +41,7 @@ Simple monthly plans: **Starter from $149 a month** (website and Google Business
 ## Questions
 
 **Do I need to talk to you on the phone?**
-No. Everything works by e-mail, chat or our website form. If you prefer, we can also meet in person on Long Island.
+No. Everything works by e-mail, text message, chat or our website form. If you'd like to call, Ava, our AI assistant, answers (631) 900-2595 around the clock, and we follow up in writing. We can also meet in person on Long Island.
 
 **Who are you?**
 ZERONE International LLC, a small technology company in Farmingville, NY. We build websites, automation and AI assistants for small businesses.

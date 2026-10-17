@@ -510,7 +510,9 @@ def assistant_knowledge(site, config):
     add("Contact form on the contact page (link id contact); we aim to reply within two business days.")
     add(f"E-mail: {config['email_user']}@{config['email_domain']}")
     if config.get("telephone"):
-        add(f"Phone: {config['telephone']}")
+        add(f"Phone: {config['telephone']} (answered 24/7 by Ava, our AI phone assistant, in English)")
+    if config.get("sms_number"):
+        add(f"Text messages (SMS): {config['sms_number']} (read and answered by the team)")
     for key, label, link_id in (("booking_url", "Book a call", "booking"), ("whatsapp_number", "WhatsApp", "whatsapp"),
                                 ("telegram_username", "Telegram", "telegram")):
         if config.get(key):
@@ -596,6 +598,7 @@ def build(check_only=False):
         "google_site_verification": r"[A-Za-z0-9_-]{10,100}",
         "bing_site_verification": r"[A-Za-z0-9_-]{10,100}",
         "telephone": r"\+[0-9][0-9-]{6,18}",
+        "sms_number": r"\+[0-9][0-9-]{6,18}",
         "indexnow_key": r"[a-f0-9]{32}",
         # The Cloudflare Worker of the AI assistant, e.g. https://zerone-assistant.<account>.workers.dev
         "assistant_endpoint": r"https://[A-Za-z0-9.-]+(:[0-9]{2,5})?(/[A-Za-z0-9._~-]+)*/?",

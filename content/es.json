@@ -541,6 +541,8 @@
       "lede": "Cuéntenos su idea o el problema que quiere resolver. Intentamos responder en un plazo de dos días hábiles.",
       "email_title": "¿Prefiere el correo electrónico?",
       "email_text": "También puede escribirnos directamente:",
+      "phone_note": "Llámenos: nuestra asistente de IA, Ava, atiende 24/7 (en inglés).",
+      "sms": "Envíenos un SMS",
       "booking": "Reservar una llamada",
       "whatsapp": "Escribir por WhatsApp",
       "telegram": "Escribir por Telegram",
