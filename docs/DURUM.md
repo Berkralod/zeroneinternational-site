@@ -28,14 +28,23 @@ Son güncelleme: 2026-10-17. Yeni bir oturum veya sohbet özetlemesinden sonra C
 - Stripe: vergi numarası incelemesi tamamlandı (16 Ekim 2026).
 - Google Search Console: www kopya sayfa uyarısı için "Validate fix" başlatıldı.
 
-## Bilgisayar listesi (sahiple yapılacak)
-2. LinkedIn şirket sayfası + profil
-3. ~~Railway etkinleştirme + Discourse topluluk~~ ertelendi: Cloudflare aynı işi ücretsiz yapıyor; ancak bir ihtiyaç doğarsa açılır.
-4. Square tam logo + Apple Business marka logosu
-5. Google Search Console API (haftalık SEO raporu için)
-6. ~~Sanal ofis/posta adresi~~ iptal (16 Ekim): sahip faturalarda ve yasal sayfalarda şirketin kendi adresinin görünmesini kabul etti.
-7. Muhasebeci ve satış vergisi: sahip kendisi yürütüyor.
-8. Telegram faz 2: satış onay botu "ZERONE Satış" (gizli depo); ücretli üyelik planı, API ürünleri, sosyal medya hesapları (Instagram, Facebook, X, YouTube) sonra.
+## Bilgisayar listesi (sahiple yapılacak) — durum 17 Ekim 2026 akşamı
+Kurulum aşaması bitti. Güncel ve tam liste gizli depoda: `zerone-local/plan/YOL-HARITASI.md` → "GÜNCEL DURUM" bölümü.
+1. ~~Asistan anahtarını yenile~~ ✅ yapıldı.
+2. LinkedIn şirket sayfası + profil: ⏳ bilerek sonraya, ilk müşterilerden sonra (sosyal medya ile birlikte).
+3. ~~Railway + Discourse~~ ertelendi: Cloudflare aynı işi ücretsiz yapıyor. İhtiyaç doğarsa açılır.
+4. Square tam logo + Apple Business marka logosu: ⏳ **açık**, sahip panelden yükleyecek (~15 dk, API yok).
+5. Google Search Console API (haftalık SEO raporu): ⏳ bilerek sonraya.
+6. ~~Sanal ofis/posta adresi~~ iptal (16 Ekim): sahip şirket adresinin görünmesini kabul etti.
+7. Muhasebeci ve satış vergisi: ✅ sahip kendisi yürütüyor.
+8. ~~Telegram faz 2 "ZERONE Satış" botu~~ ✅ yapıldı. Ücretli üyelik, API ürünleri ve sosyal medya (Instagram, Facebook, X, YouTube) sonraya.
+
+**Sıradaki işler:**
+- İlk müşterilere ulaşma planı (sahip "müşteri bulmaya başlayalım" deyince).
+- Stripe abonelik ödeme linkleri ($149 / $249).
+- SMS operatör kaydı (ilk Growth müşterisinde).
+- Müşteriye özel Ava.
+- İlk ücretli teslimattan önce sigorta.
 
 ## Hesaplar ve önemli notlar
 - Şirket Gmail: zeronellc01@gmail.com (Stripe girişi Google ile, 2FA açık). Apple Business: berk@zeroneinternational.com.
