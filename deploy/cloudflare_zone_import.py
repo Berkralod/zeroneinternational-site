@@ -19,6 +19,9 @@ Usage:  python3 deploy/cloudflare_zone_import.py [--dry-run | --email-routing | 
           (Cloudflare allows this only once the zone is active).
         --wait-active waits up to $WAIT_MINUTES (default 320) for the nameserver switch to make the zone
           active, asking Cloudflare for an activation check once an hour, then does --email-routing at once.
+        --watch is one quiet check for a schedule (domain-watch.yml): while the zone is pending it only asks
+          for an activation check; once the zone is active it does --email-routing if routing is not on yet.
+          Writes state=pending|changed|done|error to $GITHUB_OUTPUT.
 
 Configuration (GitHub Actions secret, passed in as an environment variable):
     CLOUDFLARE_API_TOKEN   Zone:Zone:Edit, Zone:DNS:Edit and Account:Account Settings:Read.
@@ -239,12 +242,38 @@ def wait_until_active(domain, minutes, sleep=time.sleep, clock=time.monotonic):
     return True
 
 
+def watch(domain):
+    """One quiet check: (state, lines). Nothing is reported while the zone is pending or already done."""
+    zones = call("GET", f"/zones?name={domain}")
+    if not zones:
+        raise CloudflareError(f"{domain} is not in Cloudflare yet")
+    zone = zones[0]
+    if zone.get("status") != "active":
+        try:
+            call("PUT", f"/zones/{zone['id']}/activation_check")
+        except CloudflareError:
+            pass  # one check an hour on the free plan; the other requests are refused harmlessly
+        return "pending", []
+    if routing_ready(zone["id"]):
+        return "done", []
+    lines = [f"{domain} Cloudflare'de AKTİF: nameserver değişikliği tamamlandı, site kayıtları aynen korunuyor."]
+    return "changed", lines + enable_email_routing(domain)
+
+
+def output(**values):
+    path = os.environ.get("GITHUB_OUTPUT")
+    if path:
+        with open(path, "a", encoding="utf-8") as handle:
+            handle.writelines(f"{key}={value}\n" for key, value in values.items())
+
+
 def main():
     config = json.loads((ROOT / "site.config.json").read_text(encoding="utf-8"))
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     dry_run = "--dry-run" in sys.argv[1:]
     email_routing = "--email-routing" in sys.argv[1:]
     wait_active = "--wait-active" in sys.argv[1:]
+    watch_mode = "--watch" in sys.argv[1:]
     domain = (args[0] if args else urllib.parse.urlsplit(config["base_url"]).hostname).lower()
     if domain.startswith("www."):
         domain = domain[4:]
@@ -252,6 +281,17 @@ def main():
         sys.exit("CLOUDFLARE_API_TOKEN is not set.")
 
     lines, failed = [], False
+    if watch_mode:
+        try:
+            state, lines = watch(domain)
+        except CloudflareError as error:
+            state, lines = "error", ["E-posta yönlendirmesi AÇILAMADI; Namecheap yönlendirme kayıtları yerinde bırakıldı "
+                                     f"(e-posta etkilenmez). Otomatik kontrol durduruldu, Claude bakacak. Ayrıntı: {error}"]
+        output(state=state)
+        print("\n".join(lines) or f"{domain}: durum {state}, yapılacak bir şey yok.")
+        if lines and os.environ.get("SUMMARY_FILE"):
+            Path(os.environ["SUMMARY_FILE"]).write_text("\n".join(lines) + "\n", encoding="utf-8")
+        sys.exit(0)
     if email_routing or wait_active:
         try:
             minutes = int(os.environ.get("WAIT_MINUTES") or 320)

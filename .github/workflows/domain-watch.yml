@@ -1,0 +1,54 @@
+name: Main domain move watch (every 15 minutes)
+
+# Safety net for the nameserver switch at Namecheap, whenever the owner makes it: every 15 minutes it
+# asks Cloudflare whether zeroneinternational.com is active yet (deploy/cloudflare_zone_import.py --watch).
+# Once it is, it turns on Cloudflare Email Routing straight away, tells the owner in Turkish, and then
+# switches itself off. If enabling fails, the old mail records are restored, the owner is told once,
+# and the watch also switches itself off so Claude can look. Nothing is reported while it waits.
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write # only to switch this workflow off when its job is done
+
+concurrency:
+  # Shares the group with domain-import.yml's wait-activate run, so the two never enable routing at once.
+  group: domain-import-wait
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Check the zone
+        id: run
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          SUMMARY_FILE: zone.txt
+        run: python3 deploy/cloudflare_zone_import.py --watch
+      - name: Send the result to Telegram
+        if: steps.run.outputs.state == 'changed' || steps.run.outputs.state == 'error'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          STATE: ${{ steps.run.outputs.state }}
+        run: |
+          if [ "$STATE" = "changed" ]; then title="Alan adı taşındı: e-posta artık Cloudflare'den yönlendiriliyor"; else title="E-posta adımı tamamlanmadı (e-posta etkilenmedi)"; fi
+          { cat zone.txt; echo; echo "Ayrıntılar: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"; } \
+            | python3 deploy/notify_telegram.py --title "$title"
+      - name: Switch this watch off
+        if: steps.run.outputs.state == 'changed' || steps.run.outputs.state == 'done' || steps.run.outputs.state == 'error'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl -fsS -X PUT -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+            "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/actions/workflows/domain-watch.yml/disable"
+          echo "Watch switched off (state: ${{ steps.run.outputs.state }})."
