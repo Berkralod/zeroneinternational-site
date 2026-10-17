@@ -29,6 +29,10 @@ STATIC = ROOT / "static"
 DIST = ROOT / "dist"
 BUILD_META = ROOT / "build"
 BLOG = CONTENT / "blog"
+# ZERONE International — Local Services: English-only pages under /local/ (content/local/*.md).
+LOCAL = CONTENT / "local"
+LOCAL_PATH = "/local/"
+LOCAL_ORDER = ["index", "privacy", "terms"]
 
 PAGE_IDS = [
     "home", "services", "service_automation", "service_web", "service_mobile",
@@ -182,6 +186,47 @@ def load_posts():
     for post in posts:
         post["related"] = related_posts(post, posts)
     return posts
+
+
+def load_local_pages():
+    """Local Services pages, English only: content/local/<slug>.md, with index.md as the /local/ hub.
+
+    Front matter: title, description, nav (label in the section menu), updated; legal texts also carry
+    a version. Pages are ordered as in LOCAL_ORDER, any others follow alphabetically."""
+    pages = []
+    for path in LOCAL.glob("*.md"):
+        text = path.read_text(encoding="utf-8")
+        match = FRONT_MATTER_RE.match(text)
+        if not match:
+            raise BuildError(f"local/{path.name}: missing '---' front matter")
+        meta = {}
+        for line in match.group(1).splitlines():
+            key, _, value = line.partition(":")
+            meta[key.strip()] = value.strip()
+        for key in ("title", "description", "nav", "updated"):
+            if not meta.get(key):
+                raise BuildError(f"local/{path.name}: front matter needs '{key}'")
+        if not SLUG_RE.match(path.stem):
+            raise BuildError(f"local/{path.name}: file name must be a lowercase slug")
+        try:
+            updated = dt.date.fromisoformat(meta["updated"]).isoformat()
+        except ValueError as exc:
+            raise BuildError(f"local/{path.name}: dates must look like 2026-10-17 ({exc})") from None
+        pages.append({
+            "slug": path.stem,
+            "path": LOCAL_PATH if path.stem == "index" else f"{LOCAL_PATH}{path.stem}/",
+            "title": meta["title"],
+            "description": meta["description"],
+            "nav": meta["nav"],
+            "version": meta.get("version", ""),
+            "updated": updated,
+            "html": Markup(markdown.markdown(text[match.end():], extensions=["extra", "sane_lists"], output_format="html")),
+        })
+    rank = {slug: i for i, slug in enumerate(LOCAL_ORDER)}
+    pages.sort(key=lambda page: (rank.get(page["slug"], len(rank)), page["slug"]))
+    if pages and pages[0]["slug"] != "index":
+        raise BuildError("content/local/ needs an index.md for the /local/ hub")
+    return pages
 
 
 def related_posts(post, posts, limit=3):
@@ -562,6 +607,7 @@ def build(check_only=False):
     content = load_content(config)
     site = Site(config, content)
     posts = load_posts()
+    local_pages = load_local_pages()
     if check_only:
         print(f"Content OK: {len(site.langs)} languages, identical structure.")
         return
@@ -638,6 +684,7 @@ def build(check_only=False):
         # Form answers reach the inbox in English whatever language the visitor used.
         form_en=content[config["default_language"]]["form"],
         post_url=lambda slug: site.post_path(slug),
+        local_path=LOCAL_PATH,
         logo=lambda suffix: Markup(logo_source.replace("logo-globe", f"logo-globe-{suffix}")),
     )
 
@@ -877,6 +924,68 @@ def build(check_only=False):
         out.write_text(env.get_template("post.html").render(**ctx), encoding="utf-8")
         rendered += 1
         sitemap_entries.append((site.abs(here), post["updated"], alternates))
+
+    # Local Services pages (English only, like blog posts): hreflang points to themselves and x-default.
+    for page in local_pages:
+        lang = site.default
+        t = content[lang]
+        here = page["path"]
+
+        def url(target, case=None, _lang=lang):
+            return site.path(_lang, target, case)
+
+        alternates = [(lang, site.abs(here)), ("x-default", site.abs(here))]
+        crumbs = [(t["ui"]["home"], url("home")), (t["nav"]["local"], LOCAL_PATH)]
+        if page["slug"] != "index":
+            crumbs.append((page["title"], here))
+        graph = [
+            organization(site),
+            {
+                "@type": "WebPage",
+                "@id": site.abs(here) + "#webpage",
+                "url": site.abs(here),
+                "name": page["title"],
+                "description": page["description"],
+                "inLanguage": lang,
+                "dateModified": page["updated"],
+                "isPartOf": {"@id": site.abs("/#website")},
+                "about": {"@id": site.abs("/#organization")},
+                "breadcrumb": {"@id": site.abs(here) + "#breadcrumb"},
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": site.abs(here) + "#breadcrumb",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": i + 1, "name": name, "item": site.abs(link)}
+                    for i, (name, link) in enumerate(crumbs)
+                ],
+            },
+        ]
+        if page["slug"] == "index":
+            graph.append({
+                "@type": "Service",
+                "@id": site.abs(here) + "#service",
+                "name": "ZERONE International — Local Services",
+                "description": page["description"],
+                "provider": {"@id": site.abs("/#organization")},
+                "areaServed": {"@type": "AdministrativeArea", "name": "Long Island, New York"},
+                "url": site.abs(here),
+            })
+        ctx = dict(
+            lang=lang, meta=t["meta"], t=t, page=page, page_id="local", local_pages=local_pages,
+            case=None, case_index=None, service_key=None,
+            title=page_title(page["title"], config["site_name"], "Zerone"), description=page["description"],
+            canonical=site.abs(here), here=here, url=url, abs_url=site.abs, alternates=alternates,
+            # The pages exist in English only, so the language menu leads to each language's home page.
+            lang_links=[(content[c]["meta"], here if c == lang else site.path(c, "home")) for c in site.langs],
+            crumbs=crumbs, jsonld=jsonld_script(graph), suggest_json=None, og_locales=[],
+            robots="index,follow", og_type="website", posts=posts, feed_url=None,
+        )
+        out = DIST / here.lstrip("/") / "index.html"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(env.get_template("local.html").render(**ctx), encoding="utf-8")
+        rendered += 1
+        sitemap_entries.append((site.abs(here), page["updated"], alternates))
 
     # RSS feed of the blog.
     def rfc822(day):

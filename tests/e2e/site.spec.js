@@ -278,6 +278,29 @@ test("blog lists every post, posts render and the newsletter form submits @cross
   expect(errors).toEqual([]);
 });
 
+test("local services pages are reached from every language's footer and link to each other @cross", async ({ page }) => {
+  const errors = await collectErrors(page);
+  await page.goto(pathFor("tr", "home"));
+  await page.locator(".site-footer").getByRole("link", { name: content.tr.nav.local }).click();
+  await expect(page).toHaveURL(/\/local\/$/);
+  await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  await expect(page.locator("article h1")).toHaveText("Local Services for Long Island businesses");
+  const menu = page.locator(".local-nav");
+  await expect(menu.locator('[aria-current="page"]')).toHaveText("Overview");
+  await menu.getByRole("link", { name: "Privacy" }).click();
+  await expect(page).toHaveURL(/\/local\/privacy\/$/);
+  await expect(page.locator(".post-meta")).toContainText("Version LS-PRIV-1");
+  await expect(page.locator(".post-body table").first()).toBeVisible();
+  for (const width of [320, 1280]) {
+    await resizeTo(page, width, 900);
+    expect(await horizontalOverflow(page), `overflow at ${width}px`).toBeLessThanOrEqual(1);
+  }
+  await menu.getByRole("link", { name: "Terms" }).click();
+  await expect(page.locator(".post-meta")).toContainText("Version LS-TERMS-1");
+  await expect(page.locator(".breadcrumbs")).toContainText(content.en.nav.local);
+  expect(errors).toEqual([]);
+});
+
 test("developers page renders in several languages and the early-access form submits to Formspree @cross", async ({ page }) => {
   const errors = await collectErrors(page);
   for (const lang of ["en", "de", "ja"]) {
