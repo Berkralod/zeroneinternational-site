@@ -8,9 +8,9 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "dry-run = only list the live records; apply = add the pending zone and copy them"
+        description: "dry-run = only list the live records; apply = add the pending zone and copy them; email-routing = switch the mail records to Cloudflare Email Routing"
         type: choice
-        options: [dry-run, apply]
+        options: [dry-run, apply, email-routing]
         default: dry-run
 
 permissions:
@@ -38,13 +38,15 @@ jobs:
           status=0
           if [ "$MODE" = "apply" ]; then
             python3 deploy/cloudflare_zone_import.py || status=$?
+          elif [ "$MODE" = "email-routing" ]; then
+            python3 deploy/cloudflare_zone_import.py --email-routing || status=$?
           else
             python3 deploy/cloudflare_zone_import.py --dry-run || status=$?
           fi
           cat zone.txt >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
           echo "status=$status" >> "$GITHUB_OUTPUT"
       - name: Send the result to Telegram
-        if: always() && steps.run.outcome != 'skipped' && inputs.mode == 'apply'
+        if: always() && steps.run.outcome != 'skipped' && inputs.mode != 'dry-run'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}

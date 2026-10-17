@@ -11,8 +11,9 @@ This prepares the nameserver move for zeroneinternational.com without changing a
 The website keeps working exactly as before: nothing changes until the nameservers are switched at
 Namecheap, which only the owner does, after comparing the list. Running it again is safe.
 
-Usage:  python3 deploy/cloudflare_zone_import.py [--dry-run] [DOMAIN]   (default: the host of base_url)
+Usage:  python3 deploy/cloudflare_zone_import.py [--dry-run | --email-routing] [DOMAIN]   (default: host of base_url)
         --dry-run only reads and lists the live records; Cloudflare is not touched.
+        --email-routing replaces the copied Namecheap mail-forwarding records with Cloudflare Email Routing.
 
 Configuration (GitHub Actions secret, passed in as an environment variable):
     CLOUDFLARE_API_TOKEN   Zone:Zone:Edit, Zone:DNS:Edit and Account:Account Settings:Read.
@@ -40,7 +41,9 @@ COMMENT = "Imported from the live DNS before the nameserver move (deploy/cloudfl
 
 
 class CloudflareError(Exception):
-    pass
+    def __init__(self, message, status=None):
+        super().__init__(message)
+        self.status = status
 
 
 def call(method, path, body=None):
@@ -55,12 +58,15 @@ def call(method, path, body=None):
         try:
             payload = json.loads(error.read().decode())
         except ValueError:
-            raise CloudflareError(f"{method} {path}: HTTP {error.code}") from None
+            raise CloudflareError(f"{method} {path}: HTTP {error.code}", error.code) from None
+        status = error.code
     except OSError as error:
         raise CloudflareError(f"{method} {path}: {error}") from None
+    else:
+        status = 200
     if not payload.get("success"):
         messages = "; ".join(f"{e.get('code')}: {e.get('message')}" for e in payload.get("errors", []))
-        raise CloudflareError(f"{method} {path}: {messages or 'unknown error'}")
+        raise CloudflareError(f"{method} {path}: {messages or 'unknown error'}", status)
     return payload.get("result")
 
 
@@ -122,10 +128,51 @@ def describe(record):
     return f"{record['type']} {record['name']} → {value}{priority}"
 
 
+def enable_email_routing(domain):
+    """Switch the zone's mail from Namecheap forwarding to Cloudflare Email Routing (MX + SPF records).
+
+    The routing rules and the destination address live in the private zerone-local repository; this
+    step needs Zone Settings Write and DNS Edit, which the site's token has. If enabling fails, the
+    Namecheap forwarding records are put back, so the zone is never left without MX records.
+    """
+    zones = call("GET", f"/zones?name={domain}")
+    if not zones:
+        raise CloudflareError(f"{domain} is not in Cloudflare yet")
+    zid = zones[0]["id"]
+    lines = []
+    records = call("GET", f"/zones/{zid}/dns_records?per_page=500") or []
+    old = [r for r in records
+           if (r["type"] == "MX" and r["content"].rstrip(".").endswith("registrar-servers.com"))
+           or (r["type"] == "TXT" and "spf.efwd.registrar-servers.com" in r["content"])]
+    for record in old:
+        call("DELETE", f"/zones/{zid}/dns_records/{record['id']}")
+    try:
+        try:
+            call("POST", f"/zones/{zid}/email/routing/dns", {"name": domain})
+        except CloudflareError as error:
+            if error.status not in (404, 405):
+                raise
+            call("POST", f"/zones/{zid}/email/routing/enable", {})
+    except CloudflareError:
+        for record in old:
+            body = {k: record[k] for k in ("type", "name", "content") if k in record}
+            if record["type"] == "MX":
+                body["priority"] = record.get("priority", 10)
+            call("POST", f"/zones/{zid}/dns_records", {**body, "ttl": 1, "comment": COMMENT})
+        raise
+    mx = sorted(r["content"] for r in call("GET", f"/zones/{zid}/dns_records?type=MX&per_page=50") or [])
+    lines.append(f"Cloudflare Email Routing açıldı; {len(old)} eski Namecheap yönlendirme kaydı kaldırıldı. "
+                 f"Yeni MX: {', '.join(mx) or 'yok'}.")
+    if zones[0].get("status") != "active":
+        lines.append("Alan adı henüz beklemede: e-postalar nameserver değişene kadar Namecheap üzerinden gelmeye devam eder.")
+    return lines
+
+
 def main():
     config = json.loads((ROOT / "site.config.json").read_text(encoding="utf-8"))
-    args = [a for a in sys.argv[1:] if a != "--dry-run"]
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
     dry_run = "--dry-run" in sys.argv[1:]
+    email_routing = "--email-routing" in sys.argv[1:]
     domain = (args[0] if args else urllib.parse.urlsplit(config["base_url"]).hostname).lower()
     if domain.startswith("www."):
         domain = domain[4:]
@@ -133,6 +180,18 @@ def main():
         sys.exit("CLOUDFLARE_API_TOKEN is not set.")
 
     lines, failed = [], False
+    if email_routing:
+        try:
+            lines.extend(enable_email_routing(domain))
+        except CloudflareError as error:
+            failed = True
+            lines.append("E-posta yönlendirmesi AÇILAMADI; Namecheap yönlendirme kayıtları yerinde bırakıldı "
+                         f"(e-posta etkilenmez). Ayrıntı: {error}")
+        text = "\n".join(lines)
+        print(text)
+        if os.environ.get("SUMMARY_FILE"):
+            Path(os.environ["SUMMARY_FILE"]).write_text(text + "\n", encoding="utf-8")
+        sys.exit(1 if failed else 0)
     try:
         records = snapshot(domain)
     except OSError as error:
@@ -168,6 +227,11 @@ def main():
                 call("POST", f"/zones/{zone['id']}/dns_records", body)
                 added.append(record)
             status = zone.get("status")
+            if status != "active" and not created:
+                try:
+                    call("PUT", f"/zones/{zone['id']}/activation_check")  # speeds up activation after the NS switch
+                except CloudflareError:
+                    pass  # rate-limited checks are harmless; Cloudflare also checks on its own
             lines.append(f"{domain} Cloudflare'e {'eklendi' if created else 'zaten ekliydi'} (durum: "
                          f"{'AKTİF' if status == 'active' else 'beklemede — site hâlâ Namecheap DNS ile çalışıyor'}).")
             lines.append(f"Kopyalanan kayıtlar ({len(added)} yeni, {len(kept)} zaten vardı):")
