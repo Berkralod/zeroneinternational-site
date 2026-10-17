@@ -186,9 +186,10 @@ def enable_email_routing(domain):
         call("DELETE", f"/zones/{zid}/dns_records/{record['id']}")
     try:
         try:
-            call("POST", f"/zones/{zid}/email/routing/dns", {"name": domain})
+            # No "name": that field is only for subdomains ("2007: must be a subdomain"); empty means the apex.
+            call("POST", f"/zones/{zid}/email/routing/dns", {})
         except CloudflareError as error:
-            if error.status not in (404, 405):
+            if error.status not in (400, 404, 405):
                 raise
             call("POST", f"/zones/{zid}/email/routing/enable", {})
     except CloudflareError:
