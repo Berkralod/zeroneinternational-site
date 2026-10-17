@@ -13,6 +13,7 @@
         <li><a href="{{ url('service_mobile') }}">{{ t.services_list.mobile.name }}</a></li>
         <li><a href="{{ url('products') }}">{{ t.nav.products }}</a></li>
         <li><a href="{{ url('developers') }}">{{ t.nav.developers }}</a></li>
+        <li><a href="{{ local_path }}"{% if lang != 'en' %} hreflang="en"{% endif %}>{{ t.nav.local }}</a></li>
       </ul>
     </nav>
     <nav aria-label="{{ t.footer.company }}">

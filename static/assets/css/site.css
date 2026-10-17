@@ -622,6 +622,13 @@ a.tag:hover { border-color: var(--brand); color: var(--brand); }
 .post-body a { color: var(--brand); text-underline-offset: 3px; }
 .post-body blockquote { margin: 24px 0; padding: 16px 20px; border-inline-start: 4px solid var(--accent); background: var(--accent-soft); border-radius: var(--radius); }
 .post-body blockquote p { margin: 0; }
+.post-body table { display: block; overflow-x: auto; border-collapse: collapse; margin: 24px 0; font-size: 0.98rem; line-height: 1.5; }
+.post-body th, .post-body td { padding: 10px 14px; border: 1px solid var(--border); text-align: start; vertical-align: top; }
+.post-body th { background: var(--tint); }
+.local-nav ul { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 20px 0 0; padding: 0; }
+.local-nav a { display: inline-block; padding: 6px 14px; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); font-weight: 600; font-size: 0.95rem; text-decoration: none; }
+.local-nav a:hover { color: var(--text); background: var(--tint); }
+.local-nav a[aria-current="page"] { color: var(--text); background: var(--tint); border-color: var(--brand); }
 .newsletter .form { max-width: 520px; }
 
 /* developers page */
