@@ -34,7 +34,7 @@ We are a small company based in Farmingville, NY. Everything we do can be handle
 
 ## Prices
 
-Simple monthly plans, with setup included in the first weeks of work. We are finishing our price list and will publish it here soon. Until then, ask us for a written quote. It's free and there is no obligation. Prices do not include applicable sales tax.
+Simple monthly plans: **Starter from $149 a month** (website and Google Business Profile care) and **Growth from $249 a month** (adds review requests, reply drafts, a booking form and missed-call text-back). 3-month minimum, then month to month, with a 14-day satisfaction guarantee. See all [prices and what each plan includes](/local/pricing/). Prices do not include applicable sales tax.
 
 ## Questions
 

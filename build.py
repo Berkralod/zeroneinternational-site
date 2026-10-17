@@ -32,7 +32,7 @@ BLOG = CONTENT / "blog"
 # ZERONE International — Local Services: English-only pages under /local/ (content/local/*.md).
 LOCAL = CONTENT / "local"
 LOCAL_PATH = "/local/"
-LOCAL_ORDER = ["index", "privacy", "terms"]
+LOCAL_ORDER = ["index", "pricing", "privacy", "terms"]
 
 PAGE_IDS = [
     "home", "services", "service_automation", "service_web", "service_mobile",
