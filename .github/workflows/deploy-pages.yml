@@ -48,7 +48,7 @@ jobs:
           ZERONE_BING_SITE_VERIFICATION: ${{ vars.BING_SITE_VERIFICATION }}
         run: python build.py
       - run: python tests/validate_site.py
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: "22"
           cache: npm
