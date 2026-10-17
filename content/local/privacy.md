@@ -2,7 +2,7 @@
 title: Local Services Privacy Notice
 description: How ZERONE International handles data in its local business services: preview pages, calls to our AI assistant, text messages, do-not-contact requests and retention.
 nav: Privacy
-version: LS-PRIV-1
+version: LS-PRIV-2
 updated: 2026-10-17
 ---
 
@@ -35,15 +35,15 @@ When a preview page is opened, we record the time, which page was opened and how
 
 ## 4. Calls to our AI phone assistant
 
-When you call our number, an AI assistant named Ava answers. At the start of the call, Ava says that it is an AI assistant and that the call is recorded. If you do not want the call to be recorded, you can hang up and contact us in writing instead.
+When you call our number, (631) 900-2595, an AI assistant named Ava answers. At the start of the call, Ava says that it is an AI assistant and that the call is recorded. If you do not want the call to be recorded, you can hang up and contact us in writing instead.
 
-Our voice provider gives us the recording, a written transcript and a short summary. We use them to answer your request, to follow up with you if you asked us to, and to improve our answers. We keep transcripts and summaries for 90 days. Recordings stay with our voice provider and are deleted after 30 days, unless you ask us to delete them sooner or we must keep them for a legal reason.
+Our voice provider gives us the recording, a written transcript and a short summary. We use them to answer your request, to follow up with you if you asked us to, and to improve our answers. If you give Ava your e-mail address and ask for a proposal, an AI model reads the transcript and drafts a written proposal; a person checks every proposal before it is sent to you. We keep transcripts and summaries for 90 days. Recordings stay with our voice provider and are deleted after 30 days, unless you ask us to delete them sooner or we must keep them for a legal reason.
 
 Ava is not an emergency service. If you have an emergency, call 911.
 
 ## 5. Text messages and consent records
 
-We send text messages only to people who gave us their prior express consent for the specific kind of message, for example a callback they requested. Message frequency varies. Message and data rates may apply. Reply **STOP** to stop messages at any time, or **HELP** for help.
+Text messages you send to our text number, (631) 319-7032, are received through Google Voice and read by our team; we answer them personally. We send text messages only to people who gave us their prior express consent for the specific kind of message, for example a callback they requested. Message frequency varies. Message and data rates may apply. Reply **STOP** to stop messages at any time, or **HELP** for help.
 
 **We do not sell, rent or share mobile phone numbers or text-message consent with third parties or affiliates for their marketing purposes.** Our phone and messaging providers process numbers only to deliver our messages.
 
@@ -71,9 +71,10 @@ We use the following providers. They process data on our behalf, only to provide
 | Provider | What for |
 |---|---|
 | Cloudflare | Hosting, database, preview pages, e-mail forwarding, bot protection |
-| Anthropic | AI model for summaries, translations, drafts and the website chat assistant |
-| Retell AI and Twilio | Phone answering, phone numbers and text messages, once our phone line is live |
-| Google Workspace | Business e-mail, once set up |
+| Anthropic | AI model for summaries, translations, drafts, written proposals and the website chat assistant |
+| Retell AI and Twilio | Phone answering and our phone number |
+| Google (Gmail, Google Voice) | Business e-mail and the text messages you send to our text number |
+| Brevo | Sending our business e-mail |
 | Stripe, Square, PayPal | Payments (as independent providers) |
 | Formspree | Website forms |
 | Telegram | Internal notifications to our team, for example "a new request arrived" or "please approve this message" |

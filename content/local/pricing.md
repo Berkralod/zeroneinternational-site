@@ -42,11 +42,11 @@ Two simple monthly plans, an AI phone assistant you can add later, and a few one
 - 80% are more likely to use a business that replies to all of its reviews (BrightLocal, 2026).
 - In one 2024 test of 85 small businesses, only about 4 in 10 calls were answered by a person (411 Locals).
 
-## AI phone assistant — add-on, coming soon
+## AI phone assistant — add-on
 
 **+$149 a month on top of either plan, including 300 call minutes. Extra minutes $0.25 each.**
 
-An AI assistant answers your calls around the clock. It says that it is an AI assistant, answers common questions, takes messages, books appointments and texts you anything urgent. It is not an emergency service. We are finishing it now; ask us to put you on the list.
+An AI assistant answers your calls around the clock. It says that it is an AI assistant, answers common questions, takes messages, books appointments and texts you anything urgent. It is not an emergency service. **Want to hear it first? Call our own line, [(631) 900-2595](tel:+16319002595), and talk to Ava.** We are setting it up for our first client businesses now; texting features follow once your carrier registration is approved.
 
 ## One-time work
 

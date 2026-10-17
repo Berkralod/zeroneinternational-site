@@ -15,7 +15,11 @@
         <p>{{ p.email_text }}</p>
         {{ blocks.email_link() }}
         {% if config.telephone %}
+        <p class="phone-note">{{ p.phone_note }}</p>
         <a class="phone-link" href="tel:{{ config.telephone|replace('-', '') }}" dir="ltr">{{ icons.icon('phone') }} {% set ph = config.telephone.split('-') %}<span>{{ ph[0] }} ({{ ph[1] }}) {{ ph[2:]|join('-') }}</span></a>
+        {% endif %}
+        {% if config.sms_number %}
+        <a class="phone-link" href="sms:{{ config.sms_number|replace('-', '') }}">{{ icons.icon('chat') }} <span>{{ p.sms }}: <bdi dir="ltr">{% set sm = config.sms_number.split('-') %}{{ sm[0] }} ({{ sm[1] }}) {{ sm[2:]|join('-') }}</bdi></span></a>
         {% endif %}
         {% if config.booking_url or config.whatsapp_number or config.telegram_username %}
         <div class="actions actions--stack">

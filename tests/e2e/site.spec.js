@@ -200,6 +200,14 @@ test("e-mail address is assembled by JavaScript", async ({ page }) => {
   await expect(link).toHaveAttribute("href", `mailto:${config.email_user}@${config.email_domain}`);
 });
 
+test("contact page offers Ava's phone line and the text number", async ({ page }) => {
+  await page.goto(pathFor("en", "contact"));
+  const aside = page.locator(".contact-aside");
+  await expect(aside.locator('a[href^="tel:"]')).toHaveAttribute("href", `tel:${config.telephone.replaceAll("-", "")}`);
+  await expect(aside.locator('a[href^="sms:"]')).toHaveAttribute("href", `sms:${config.sms_number.replaceAll("-", "")}`);
+  await expect(aside.locator(".phone-note")).toContainText("Ava");
+});
+
 test("old URLs redirect to the new pages", async ({ page }) => {
   await page.goto("/tr.html");
   await expect(page).toHaveURL(/\/tr\/$/);
@@ -289,7 +297,7 @@ test("local services pages are reached from every language's footer and link to 
   await expect(menu.locator('[aria-current="page"]')).toHaveText("Overview");
   await menu.getByRole("link", { name: "Privacy" }).click();
   await expect(page).toHaveURL(/\/local\/privacy\/$/);
-  await expect(page.locator(".post-meta")).toContainText("Version LS-PRIV-1");
+  await expect(page.locator(".post-meta")).toContainText("Version LS-PRIV-2");
   await expect(page.locator(".post-body table").first()).toBeVisible();
   for (const width of [320, 1280]) {
     await resizeTo(page, width, 900);

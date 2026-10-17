@@ -541,6 +541,8 @@
       "lede": "Tell us about your idea or the problem you want to solve. We aim to reply within two business days.",
       "email_title": "Prefer e-mail?",
       "email_text": "You can also write to us directly:",
+      "phone_note": "Call us: our AI assistant Ava answers 24/7 (in English).",
+      "sms": "Text us",
       "booking": "Book a call",
       "whatsapp": "Message on WhatsApp",
       "telegram": "Message on Telegram",

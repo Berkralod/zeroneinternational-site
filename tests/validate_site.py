@@ -124,7 +124,7 @@ def display_width(text: str) -> int:
 def local_target(url: str):
     """Map an internal URL to a file in dist; None for external URLs."""
     parsed = urlparse(url)
-    if parsed.scheme in ("mailto", "tel", "data", "javascript"):
+    if parsed.scheme in ("mailto", "tel", "sms", "data", "javascript"):
         return None
     if parsed.scheme in ("http", "https"):
         if not url.startswith(BASE):

@@ -14,6 +14,13 @@ Son güncelleme: 2026-10-17. Yeni bir oturum veya sohbet özetlemesinden sonra C
 
 ## Açık işler
 - **Yerel işletme hizmetleri** (sahibin 15 Ekim planı): kararlar verildi — telefon ve "Book a call" Ava (AI telefon hattı) hazır olana kadar kaldırıldı; altyapı Cloudflare (Workers + D1), Railway/n8n/Discourse ertelendi; marka "ZERONE International — Local Services" (`/local/`). Plan, durum ve hedef listesi gizli `zerone-local` deposunda (`docs/DURUM-LOCAL.md`). Herkese açık bu depoya iç maliyet, hedef işletme veya müşteri verisi yazılmaz.
+- **Telefon ve SMS (17 Ekim, sahibin kararı):**
+  - Sitede iki numara var.
+  - **Arama: (631) 900-2595.** Bu numarayı AI telefon asistanı Ava açıyor, 7/24 ve İngilizce konuşuyor.
+  - **SMS: (631) 319-7032.** Bu sahibin Google Voice numarası. Mesajları ekip kendisi okuyup cevaplıyor.
+  - Numaraların göründüğü yerler: iletişim sayfası (15 dil), `/local/` genel bakış ve fiyat sayfaları, şirket bilgisi (schema), sohbet asistanının bilgisi.
+  - Gizlilik eki LS-PRIV-2 olarak güncellendi: Google Voice, Brevo ve yazılı teklif eklendi.
+  - Ava'nın kurulumu gizli depoda (`zerone-local`: `ava/`, `docs/AVA.md`, `docs/TEKLIF.md`).
 - **`/local/` bölümü (ZERONE International — Local Services)**, sadece İngilizce: genel bakış (`content/local/index.md`), yerel hizmetler gizlilik eki (LS-PRIV-1) ve hizmet şartları (LS-TERMS-1). 15 dilde site altına "For local businesses" bağlantısı eklendi. Fiyat sayfası henüz yok: sahibin fiyat kararı ve istatistiklerin birincil kaynaktan doğrulanması bekleniyor. Yasal metinler ilk müşteriden önce avukata gösterilecek (taslaklar gizli depoda: `legal-drafts/`). Sahip yayını onayladı (17 Ekim). Memnuniyet garantisi 14 gün (sahibin kararı). Fiyatları sahip Claude'a bıraktı; fiyat sayfası araştırmayla hazırlanıyor.
 - Dependabot #10 (Playwright 1.64): WebKit'te iletişim sayfasında CSP style-src uyarısı ve tema testi zamanlaması incelenecek.
 

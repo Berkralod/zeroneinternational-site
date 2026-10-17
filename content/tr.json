@@ -541,6 +541,8 @@
       "lede": "Fikrinizi veya çözmek istediğiniz sorunu anlatın. İki iş günü içinde yanıt vermeyi hedefliyoruz.",
       "email_title": "E-postayı mı tercih edersiniz?",
       "email_text": "Bize doğrudan da yazabilirsiniz:",
+      "phone_note": "Bizi arayın: yapay zekâ asistanımız Ava 7/24 yanıt verir (İngilizce).",
+      "sms": "SMS gönderin",
       "booking": "Görüşme planla",
       "whatsapp": "WhatsApp'tan yazın",
       "telegram": "Telegram'dan yazın",
