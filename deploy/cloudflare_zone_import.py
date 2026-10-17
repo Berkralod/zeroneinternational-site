@@ -128,6 +128,21 @@ def describe(record):
     return f"{record['type']} {record['name']} → {value}{priority}"
 
 
+# Namecheap's free e-mail forwarding: these exact MX hosts and SPF include, nothing else.
+NAMECHEAP_MX = frozenset(f"eforward{n}.registrar-servers.com" for n in range(1, 6))
+NAMECHEAP_SPF_INCLUDE = "include:spf.efwd.registrar-servers.com"
+
+
+def is_namecheap_forwarding(record):
+    """True for the MX records and the SPF record that Namecheap's e-mail forwarding needs."""
+    if record["type"] == "MX":
+        return record["content"].rstrip(".").lower() in NAMECHEAP_MX
+    if record["type"] == "TXT":
+        tokens = record["content"].strip('"').split()
+        return bool(tokens) and tokens[0] == "v=spf1" and any(t == NAMECHEAP_SPF_INCLUDE for t in tokens)
+    return False
+
+
 def enable_email_routing(domain):
     """Switch the zone's mail from Namecheap forwarding to Cloudflare Email Routing (MX + SPF records).
 
@@ -141,9 +156,7 @@ def enable_email_routing(domain):
     zid = zones[0]["id"]
     lines = []
     records = call("GET", f"/zones/{zid}/dns_records?per_page=500") or []
-    old = [r for r in records
-           if (r["type"] == "MX" and r["content"].rstrip(".").endswith("registrar-servers.com"))
-           or (r["type"] == "TXT" and "spf.efwd.registrar-servers.com" in r["content"])]
+    old = [r for r in records if is_namecheap_forwarding(r)]
     for record in old:
         call("DELETE", f"/zones/{zid}/dns_records/{record['id']}")
     try:
