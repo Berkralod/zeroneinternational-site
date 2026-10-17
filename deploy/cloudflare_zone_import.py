@@ -6,7 +6,8 @@ This prepares the nameserver move for zeroneinternational.com without changing a
   2. adds the domain to Cloudflare if needed (no automatic record scan, so nothing is guessed),
   3. creates each record found, DNS only (never proxied: GitHub Pages needs direct DNS for its certificate),
      and leaves records that already exist untouched,
-  4. reports the Cloudflare nameservers and the record list in Turkish.
+  4. reports the Cloudflare nameservers and the record list in Turkish, and warns if DNSSEC is still on at
+     the registrar (a DS record left there would break the domain after the move).
 
 The website keeps working exactly as before: nothing changes until the nameservers are switched at
 Namecheap, which only the owner does, after comparing the list. Running it again is safe.
@@ -33,7 +34,7 @@ ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.cloudflare.com/client/v4"
 DOH = "https://cloudflare-dns.com/dns-query"
 TOKEN = os.environ.get("CLOUDFLARE_API_TOKEN", "").strip()
-TYPES = {"A": 1, "AAAA": 28, "CNAME": 5, "MX": 15, "TXT": 16, "CAA": 257}
+TYPES = {"A": 1, "AAAA": 28, "CNAME": 5, "MX": 15, "TXT": 16, "CAA": 257, "DS": 43}
 # Names to look up besides the bare domain: www, mail and the verification records seen on this kind of site.
 SUBNAMES = ["www", "_dmarc", "_github-pages-challenge-berkralod", "google._domainkey", "default._domainkey",
             "k1._domainkey", "selector1._domainkey", "selector2._domainkey", "mail", "autodiscover", "_domainconnect"]
@@ -110,6 +111,18 @@ def snapshot(domain):
                     record["content"] = data
                 records.append(record)
     return records
+
+
+def dnssec_line(domain):
+    """The registrar's DS record must be gone before the nameserver move, or validating resolvers reject the domain."""
+    try:
+        signed = bool(lookup(domain, "DS"))
+    except OSError:
+        return "DNSSEC durumu okunamadı; nameserver değişmeden önce tekrar kontrol edilmeli."
+    if signed:
+        return ("DİKKAT: DNSSEC Namecheap'te AÇIK. Nameserver değişmeden önce Namecheap'te kapatılmalı; "
+                "yoksa alan adı birçok kullanıcı için açılmaz.")
+    return "DNSSEC: kapalı (nameserver değişikliğine engel yok)."
 
 
 def same(existing, record):
@@ -200,6 +213,7 @@ def main():
             failed = True
             lines.append("E-posta yönlendirmesi AÇILAMADI; Namecheap yönlendirme kayıtları yerinde bırakıldı "
                          f"(e-posta etkilenmez). Ayrıntı: {error}")
+        lines.append(dnssec_line(domain))
         text = "\n".join(lines)
         print(text)
         if os.environ.get("SUMMARY_FILE"):
@@ -255,6 +269,8 @@ def main():
         except CloudflareError as error:
             failed = True
             lines.append(f"Cloudflare hatası: {error}")
+    if records:
+        lines.append(dnssec_line(domain))
 
     text = "\n".join(lines)
     print(text)
