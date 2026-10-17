@@ -38,7 +38,7 @@ Some features depend on third parties. Text-message features need a carrier regi
 
 ## 5. Satisfaction guarantee
 
-If you are not satisfied, tell us in writing within 30 days after your first monthly payment. We will then refund your first month's fee and end the services. The setup fee is not refunded once the work is delivered. This guarantee applies once per business.
+If you are not satisfied, tell us in writing within 14 days after your first monthly payment. We will then refund your first month's fee and end the services. The setup fee is not refunded once the work is delivered. This guarantee applies once per business.
 
 ## 6. What stays yours
 
