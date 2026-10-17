@@ -27,7 +27,7 @@ jobs:
         run: |
           python build.py
           cp build/assistant-data.json worker/assistant/src/site-data.json
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: "22"
           cache: npm

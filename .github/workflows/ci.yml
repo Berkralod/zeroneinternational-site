@@ -38,7 +38,7 @@ jobs:
         run: python build.py
       - name: Static checks (links, SEO tags, hreflang, CSP, secrets)
         run: python tests/validate_site.py
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: "22"
           cache: npm
@@ -91,7 +91,7 @@ jobs:
       - run: python build.py
         env:
           ZERONE_FORMSPREE_FORM_ID: ${{ vars.FORMSPREE_FORM_ID || 'testform' }}
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: "22"
           cache: npm
@@ -117,7 +117,7 @@ jobs:
       - name: Is there a Worker?
         id: exists
         run: if [ -f worker/assistant/package.json ]; then echo "worker=true" >> "$GITHUB_OUTPUT"; fi
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         if: steps.exists.outputs.worker == 'true'
         with:
           node-version: "22"
