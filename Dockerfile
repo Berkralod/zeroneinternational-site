@@ -3,7 +3,7 @@
 # (the analytics "token" is a public beacon ID that ends up in every page anyway)
 # Railway (or any Docker host) image: builds the static site, then serves it with nginx.
 
-FROM python:3.12-slim AS build
+FROM python:3.14-slim AS build
 WORKDIR /src
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
