@@ -634,6 +634,7 @@ def build(check_only=False):
         "bing_site_verification": r"[A-Za-z0-9_-]{10,100}",
         "telephone": r"\+[0-9][0-9-]{6,18}",
         "founder_linkedin": r"https://www\.linkedin\.com/in/[A-Za-z0-9-]+/",
+        "youtube_url": r"https://www\.youtube\.com/@[A-Za-z0-9._-]+",
         "sms_number": r"\+[0-9][0-9-]{6,18}",
         "indexnow_key": r"[a-f0-9]{32}",
         # The Cloudflare Worker of the AI assistant, e.g. https://zerone-assistant.<account>.workers.dev
