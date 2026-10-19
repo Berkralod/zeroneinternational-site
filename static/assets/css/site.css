@@ -545,6 +545,8 @@ a.tag:hover { border-color: var(--brand); color: var(--brand); }
 .footer-brand .brand svg { height: 40px; }
 .footer-location { display: flex; gap: 8px; align-items: center; }
 .footer-location .icon { color: var(--accent); }
+.footer-social a { display: inline-flex; gap: 10px; align-items: center; color: var(--text); text-decoration: none; font-weight: 600; }
+.footer-social a:hover { text-decoration: underline; }
 .footer-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 14px; }
 .site-footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .site-footer nav a { text-decoration: none; color: var(--text); }
@@ -655,3 +657,4 @@ a.tag:hover { border-color: var(--brand); color: var(--brand); }
 .goog-tooltip, .goog-tooltip:hover, .VIpgJd-yAWNEb-L7lbkb, .VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
 .VIpgJd-ZVi9od-ORHb-OEVmcd, .VIpgJd-ZVi9od-l4eHX-hSRGPd { display: none !important; }
 .VIpgJd-yAWNEb-OQAXze, font.VIpgJd-yAWNEb-OQAXze { background: none !important; box-shadow: none !important; }
+.break-any { overflow-wrap: anywhere; }

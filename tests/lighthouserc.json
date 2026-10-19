@@ -6,7 +6,7 @@
         "http://localhost/index.html",
         "http://localhost/services/automation-bots/index.html",
         "http://localhost/tr/index.html",
-        "http://localhost/ar/use-cases/stock-intake/index.html",
+        "http://localhost/ar/use-cases/appointment-reminders/index.html",
         "http://localhost/ja/contact/index.html"
       ],
       "numberOfRuns": 3,

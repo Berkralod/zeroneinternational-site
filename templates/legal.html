@@ -5,7 +5,7 @@
   <div class="wrap wrap--narrow">
     <h1>{{ p.h1 }}</h1>
     <p class="lede">{{ p.intro }}</p>
-    <p class="fineprint">{{ t.ui.updated }}: <time datetime="2026-10-10">2026-10-10</time></p>
+    <p class="fineprint">{{ t.ui.updated }}: <time datetime="{{ '2026-10-19' if page_id in ('privacy', 'terms') and config.youtube_url else '2026-10-10' }}">{{ '2026-10-19' if page_id in ('privacy', 'terms') and config.youtube_url else '2026-10-10' }}</time></p>
   </div>
 </section>
 <section class="section section--flush-top">
@@ -19,6 +19,21 @@
   {% if assistant and page_id == 'privacy' %}
     <h2>{{ t.assistant.privacy_title }}</h2>
     <p>{{ t.assistant.privacy_text }}</p>
+  {% endif %}
+  {% if config.youtube_url and page_id == 'privacy' %}
+  <div{% if lang != 'en' %} lang="en"{% endif %} id="youtube">
+    <h2>YouTube API Services</h2>
+    <p>We publish our own company videos on our YouTube channel (<a href="{{ config.youtube_url }}" rel="noopener" class="break-any">{{ config.youtube_url }}</a>) with an internal tool that uses the YouTube API Services. The tool works only with the {{ config.site_name }} channel, with our own authorization. It does not access, collect or store data of other YouTube users or of visitors to this website.</p>
+    <p>Data the tool uses: our channel's name and ID, and the videos we upload (title, description, thumbnail, playlist and processing status). The access token is stored encrypted and used only to publish and correct our own videos. We do not sell or share this data.</p>
+    <p>When you watch our videos on YouTube, the <a href="https://www.youtube.com/t/terms" rel="noopener">YouTube Terms of Service</a> and the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a> apply.</p>
+    <p>Authorization can be revoked at any time on the <a href="https://myaccount.google.com/connections" rel="noopener">Google security settings page</a> (third-party connections). After revocation, or if you ask us, we delete the stored token and any related data within 7 days. Contact us through the contact page with any question or deletion request.</p>
+  </div>
+  {% endif %}
+  {% if config.youtube_url and page_id == 'terms' %}
+  <div{% if lang != 'en' %} lang="en"{% endif %} id="youtube">
+    <h2>YouTube</h2>
+    <p>Our videos are published on YouTube using the YouTube API Services. By watching or using our content on YouTube you agree to be bound by the <a href="https://www.youtube.com/t/terms" rel="noopener">YouTube Terms of Service</a>; the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a> also applies. See our privacy policy for how the YouTube API Services are used.</p>
+  </div>
   {% endif %}
   {% if lang != 'en' %}
     <p class="fineprint">{{ t.ui.legal_note }}</p>
