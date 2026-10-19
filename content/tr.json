@@ -7,6 +7,8 @@
   },
   "slugs": {
     "services": "hizmetler",
+    "service_presence": "hizmetler/web-siteleri-yerel-seo",
+    "service_phone": "hizmetler/yapay-zeka-telefon-asistani",
     "service_automation": "hizmetler/otomasyon-ve-botlar",
     "service_web": "hizmetler/web-uygulamalari",
     "service_mobile": "hizmetler/mobil-uygulamalar",
@@ -49,31 +51,40 @@
     "challenge": "Sorun",
     "approach": "Yazılım nasıl yardımcı olur",
     "includes": "Neler içerebilir",
-    "legal_note": "Bu çeviri kolaylık amacıyla sunulmuştur. Herhangi bir farklılık durumunda İngilizce metin geçerlidir."
+    "legal_note": "Bu çeviri kolaylık amacıyla sunulmuştur. Herhangi bir farklılık durumunda İngilizce metin geçerlidir.",
+    "see_plans": "Paketleri ve fiyatları görün"
   },
   "nav": {
     "services": "Hizmetler",
+    "plans": "Paketler ve fiyatlar",
     "products": "Ürünler",
     "use_cases": "Kullanım senaryoları",
     "company": "Şirket",
     "blog": "Blog",
     "developers": "Geliştiriciler için",
-    "local": "Yerel işletmeler için",
     "contact": "İletişim"
   },
   "footer": {
-    "tagline": "Kendi online yeniden satış işini yürüten bir ekipten özel yazılım, otomasyon ve yeniden satış araçları.",
+    "tagline": "New York'tan, ABD genelindeki işletmeler için web siteleri, yapay zekâ telefon asistanları, otomasyon ve özel yazılım.",
     "services": "Hizmetler",
     "company": "Şirket",
     "legal": "Yasal",
     "rights": "Tüm hakları saklıdır.",
     "trademark": "Bu sitede adı geçen pazaryeri isimleri ilgili sahiplerinin ticari markalarıdır. Zerone International LLC bu şirketlerle bağlantılı değildir ve onlar tarafından desteklenmemektedir.",
-    "location": "Farmingville, New York, Amerika Birleşik Devletleri"
+    "location": "Farmingville, New York · ABD genelindeki müşterilere hizmet veriyoruz"
   },
   "services_list": {
+    "presence": {
+      "name": "Web siteleri ve Google görünürlüğü",
+      "short": "Mobil uyumlu web siteleri, doğru bir Google Business Profile, yerel SEO ve düzenli gelen yorumlar; müşteriler sizi bulsun ve sizi seçsin."
+    },
+    "phone": {
+      "name": "Yapay zekâ telefon asistanı",
+      "short": "Aramalarınızı 7/24 yanıtlayan, sık sorulan soruları cevaplayan, mesaj alan ve randevu oluşturan bir yapay zekâ asistanı; hiçbir arayan sesli mesaja düşmez."
+    },
     "automation": {
       "name": "Otomasyon ve botlar",
-      "short": "Tekrarlayan işleri ortadan kaldırın: veri hazırlama, ilanlar, bildirimler ve kendiliğinden çalışan zamanlanmış görevler."
+      "short": "Tekrarlayan işlerden kurtulun: veri girişi, belgeler, bildirimler ve kendi kendine çalışan zamanlanmış görevler."
     },
     "web": {
       "name": "Web uygulamaları",
@@ -81,7 +92,7 @@
     },
     "mobile": {
       "name": "Mobil uygulamalar",
-      "short": "Ekibinizin mağazada, depoda veya yolda yaptığı işler için iOS ve Android uygulamaları."
+      "short": "Ekibinizin sahada, işyerinde veya yolda yaptığı işler için iOS ve Android uygulamaları."
     }
   },
   "process": {
@@ -127,8 +138,8 @@
     ]
   },
   "cta": {
-    "title": "Çok zaman alan bir süreciniz mi var?",
-    "text": "Neyi iyileştirmek istediğinizi anlatın. Kapsamı, takvimi ve fiyatı belli net bir teklif alın.",
+    "title": "Daha az elle işle daha fazla müşteri kazanmaya hazır mısınız?",
+    "text": "Neyi iyileştirmek istediğinizi anlatın. Kapsamı, takvimi ve fiyatı belli yazılı bir teklif alın.",
     "button": "Proje başlat"
   },
   "form": {
@@ -138,19 +149,21 @@
     "optional": "isteğe bağlı",
     "project_type": "Proje türü",
     "types": {
+      "presence": "Web sitesi veya Google görünürlüğü",
+      "phone": "Yapay zekâ telefon asistanı",
       "automation": "Otomasyon veya bot",
       "web": "Web uygulaması",
       "mobile": "Mobil uygulama",
-      "resale": "Yeniden satış araçları",
       "other": "Başka bir şey"
     },
     "choose": "Lütfen seçin",
     "budget": "Tahmini bütçe",
     "budgets": [
-      "5.000 $ altı",
-      "5.000 – 15.000 $",
-      "15.000 – 50.000 $",
-      "50.000 $ üzeri",
+      "Aylık paket (aylık $149'dan başlayan)",
+      "$5,000'ın altında",
+      "$5,000 – $15,000",
+      "$15,000 – $50,000",
+      "$50,000'ın üzerinde",
       "Henüz emin değilim"
     ],
     "timeline": "Takvim",
@@ -161,7 +174,7 @@
       "Esnek"
     ],
     "message": "Proje detayları",
-    "message_hint": "İyileştirmek istediğiniz işi, kullanılan platformları ve ihtiyaç duyduğunuz kullanıcı rollerini anlatın. Lütfen şifre veya API anahtarı göndermeyin.",
+    "message_hint": "İşletmenizi, neyi iyileştirmek istediğinizi ve hâlihazırda kullandığınız araçları anlatın. Lütfen şifre veya API anahtarı göndermeyin.",
     "consent": "Bilgilerimin talebimi yanıtlamak amacıyla {link} kapsamında işlenmesini kabul ediyorum.",
     "consent_link": "Gizlilik Politikası",
     "submit": "Talebi gönder",
@@ -189,13 +202,13 @@
     "unread": "Yeni yanıt",
     "role": "Yapay zekâ satış asistanı",
     "greeting": "Merhaba, ben {name}.",
-    "intro": "Özel yazılım, otomasyon ve ikinci el satıcı araçlarımızla ilgili sorularınızı yanıtlayabilir, sizi doğru sayfaya yönlendirebilirim. Size nasıl yardımcı olabilirim?",
+    "intro": "Web sitelerimiz, yapay zekâ telefon asistanımız, otomasyon ve özel yazılım hizmetlerimizle ilgili sorularınızı yanıtlayabilir, sizi doğru sayfaya yönlendirebilirim. Size nasıl yardımcı olabilirim?",
     "notice": "Bir yapay zekâ asistanıyla konuşuyorsunuz; yanıtlarda hata olabilir. Lütfen şifre veya kart numarası paylaşmayın. {link}",
     "chips_label": "Bir konu seçin",
     "chips": [
-      "İşletmem için özel yazılım veya otomasyon",
-      "İkinci el satıcılar için araçlar (çapraz listeleme, stok senkronizasyonu)",
-      "Botlar ve entegrasyonlar",
+      "İşletmem için web sitesi veya Google görünürlüğü",
+      "Yapay zekâ telefon asistanı",
+      "Otomasyon ve botlar",
       "Web veya mobil uygulama",
       "Fiyatlandırma ve proje süreci",
       "Ödemeler ve faturalar"
@@ -236,73 +249,78 @@
   },
   "pages": {
     "home": {
-      "title": "Özel Yazılım, Otomasyon ve Bot Geliştirme | Zerone International",
-      "description": "Zerone International; özel otomasyon, bot, web ve mobil uygulamalar geliştirir ve online satıcılar için araçlar üretir. New York merkezli, 15 dilde dünya çapında hizmet.",
-      "h1": "İşinizin çalışma şekline uyan yazılım",
+      "title": "Web Siteleri, Yapay Zekâ Asistanları ve Özel Yazılım | Zerone",
+      "description": "Zerone International, New York merkezli bir teknoloji şirketi: ABD genelindeki işletmeler için web sitesi, yerel SEO, yapay zekâ telefon asistanı ve uygulamalar.",
+      "h1": "İşletmenizin bulunmasını, her aramayı yanıtlamasını ve zaman kazanmasını sağlayan teknoloji",
       "hero": {
-        "eyebrow": "Özel yazılım · New York",
-        "lede": "Gerçek iş akışınıza göre otomasyonlar, botlar, web uygulamaları ve mobil uygulamalar geliştiriyor; online satıcılar için araçlar üretiyoruz.",
+        "eyebrow": "New York · ABD genelindeki işletmelere hizmet",
+        "lede": "New York merkezli bir teknoloji şirketiyiz. Müşteri getiren web siteleri, her aramayı yanıtlayan yapay zekâ asistanları ve ekibinizi tekrarlayan işlerden kurtaran yazılımlar geliştiriyoruz; tek sayfalık bir web sitesinden özel bir uygulamaya kadar.",
         "primary": "Proje başlat",
         "secondary": "Hizmetleri keşfet",
         "points": [
-          "Kapsamı belli yazılı teklif",
-          "İşletme sahibi, yönetici ve çalışan rolleri",
-          "Online yeniden satış işini bizzat yürüten bir ekip"
+          "Çalışma başlamadan önce yazılı teklif ve fiyat",
+          "Her şey yazılı yürüyebilir: e-posta, SMS veya sohbet",
+          "New York merkezli, ülke genelinde müşterilerle çalışıyoruz"
         ]
       },
       "services": {
-        "eyebrow": "Neler geliştiriyoruz",
-        "title": "Zaman kazanmanın üç yolu",
-        "intro": "Her proje sizin iş akışınızla başlar. Ardından doğru formatı seçeriz: otomasyon, web uygulaması, mobil uygulama ya da bunların birleşimi."
+        "eyebrow": "Neler yapıyoruz",
+        "title": "İşletmenize beş şekilde yardımcı oluyoruz",
+        "intro": "Müşterilerinizin gördüğü yüzden başlayın, ardından ekibinizi yavaşlatan işleri ortadan kaldırın. Tek bir hizmet seçin ya da birkaçını birleştirin."
       },
-      "resale": {
-        "eyebrow": "Yeniden satış deneyimi",
-        "title": "Online yeniden satışı içeriden biliyoruz",
-        "text": "Zerone International, online pazaryerlerinde ikinci el ve stok fazlası ürünler satar. Bu günlük deneyim geliştirdiğimiz araçları şekillendiriyor: bir çapraz listeleme sistemi ve bir likidasyon lotu analiz aracı.",
-        "link": "Ürünlerimizi görün"
+      "reach": {
+        "eyebrow": "Nerede çalışıyoruz",
+        "title": "New York'tan tüm ülkeye",
+        "text": "New York merkezliyiz; bu yüzden önceliğimiz New York City ve Long Island, buralarda yüz yüze de görüşebiliriz. Geri kalan her şey uzaktan yürür; böylece her eyaletteki işletmeler aynı süreci, aynı yazılı teklifleri ve aynı desteği alır.",
+        "areas": [
+          "New York City: Manhattan, Brooklyn, Queens, the Bronx ve Staten Island",
+          "Long Island: Nassau ve Suffolk ilçeleri ile the Hamptons",
+          "50 eyaletin tamamında uzaktan projeler"
+        ],
+        "link": "Paketleri ve fiyatları görün"
       },
       "cases": {
         "eyebrow": "Kullanım senaryoları",
         "title": "Üzerine inşa edebileceğiniz fikirler",
-        "intro": "Özel yazılımın yeniden satıcılar ve küçük işletmeler için neler yapabileceğine dair yirmi örnek."
+        "intro": "Hizmet işletmeleri, mağazalar, restoranlar, ofisler ve büyüyen ekipler için geliştirdiklerimizden yirmi örnek."
       },
       "faq": {
         "eyebrow": "SSS",
         "title": "Sık sorulan sorular",
         "items": [
           {
-            "q": "Şimdi özel bir yazılım projesi talep edebilir miyim?",
-            "a": "Evet. İhtiyaçlarınızı iletişim formuyla gönderin. Uygulanabilirliği değerlendirir ve size yazılı bir teklif göndeririz."
+            "q": "Yalnızca New York'taki işletmelerle mi çalışıyorsunuz?",
+            "a": "Hayır. New York merkezliyiz ve yüz yüze de görüşebildiğimiz New York City ile Long Island'a öncelik veriyoruz. ABD'nin her yerindeki işletmelerle uzaktan çalışıyoruz."
           },
           {
-            "q": "Özel bir proje ne kadar tutar?",
-            "a": "Kapsama bağlıdır. Küçük otomasyonlar birkaç bin dolardan başlayabilir; büyük uygulamalar keşif aşamasından sonra fiyatlandırılır. Çalışma başlamadan önce fiyatı her zaman bilirsiniz."
+            "q": "Ücreti ne kadar?",
+            "a": "Küçük işletme paketleri, Google Business Profile bakımı dahil bir web sitesi için aylık $149'dan başlar. Özel yazılım kısa bir ön analizden sonra fiyatlandırılır ve genellikle birkaç bin dolardan başlar. Fiyatı her zaman çalışma başlamadan önce yazılı olarak alırsınız."
           },
           {
             "q": "Bir proje ne kadar sürer?",
-            "a": "Basit otomasyonlar genellikle iki ila dört hafta sürer. Web ve mobil uygulamalar ise özelliklere bağlı olarak genellikle bir ila dört ay sürer."
+            "a": "Küçük işletme web siteleri genellikle birkaç hafta içinde yayına girer. Otomasyonlar çoğunlukla iki ila dört hafta; web ve mobil uygulamalar ise özelliklere bağlı olarak bir ila dört ay sürer."
+          },
+          {
+            "q": "Sizinle telefonda konuşmak zorunda mıyım?",
+            "a": "Hayır. Her şey yazılı yürüyebilir: e-posta, SMS, sohbet veya iletişim formumuz üzerinden. Aramayı tercih ederseniz yapay zekâ telefon asistanımız Ava 7/24 yanıt verir, biz de yazılı olarak dönüş yaparız."
+          },
+          {
+            "q": "Web sitem, Google profilim ve kodum kime ait?",
+            "a": "Size. Alan adınız, Google Business Profile'ınız ve hesaplarınız her zaman işletmenizin adına kalır. Özel yazılımda sahiplik teklifte belirlenir; projelerin çoğunda son ödemeden sonra tüm sahiplik müşteriye geçer."
           },
           {
             "q": "Uygulamamda farklı kullanıcı panelleri olabilir mi?",
-            "a": "Evet. İşletme sahibi, yönetici ve çalışan panelleri, her biri kendi yetkileriyle eklenebilir."
-          },
-          {
-            "q": "Pazaryeri API'leriyle çalışıyor musunuz?",
-            "a": "Evet, resmi API'ler ve izin verilen erişim yöntemleriyle. Her entegrasyon teklife eklenmeden önce platformun kurallarına göre incelenir."
-          },
-          {
-            "q": "Yeniden satış araçlarınız kullanıma açık mı?",
-            "a": "Çapraz listeleme sistemi ve lot analiz aracı geliştirme aşamasında. Ürünler sayfasından bekleme listesine katılabilirsiniz."
+            "a": "Evet. Her biri kendi yetkilerine sahip işletme sahibi, yönetici ve çalışan panelleri eklenebilir."
           }
         ]
       }
     },
     "services": {
-      "title": "Özel Yazılım Geliştirme Hizmetleri | Zerone International",
-      "description": "Küçük işletmeler ve online satıcılar için özel otomasyon, bot, web uygulaması ve mobil uygulama geliştirme. Net teklifler, rol bazlı erişim ve sürekli destek.",
+      "title": "Web Siteleri, Yapay Zekâ Telefon Asistanı ve Yazılım | Zerone",
+      "description": "ABD genelindeki işletmeler için web siteleri ve yerel SEO, yapay zekâ telefon asistanları, otomasyon, web ve mobil uygulamalar. New York merkezli, net yazılı tekliflerle.",
       "eyebrow": "Hizmetler",
-      "h1": "Özel yazılım geliştirme",
-      "lede": "Tekrarlayan, elle yapılan veya dağınık işleri güvenilir yazılıma dönüştürüyoruz. Tam olarak ihtiyacınız olan özellikleri alırsınız; kullanmayacağınız hiçbir şey için ödeme yapmazsınız.",
+      "h1": "Hizmetlerimiz",
+      "lede": "İnternetteki ilk izlenimden ekibinizin her gün kullandığı yazılıma kadar. Tam ihtiyacınız olanı, yazılı olarak kararlaştırılmış şekilde alırsınız; hiç kullanmayacağınız bir şeye para ödemezsiniz.",
       "faq": {
         "title": "Hizmetlerimiz hakkında sorular",
         "items": [
@@ -323,15 +341,95 @@
             "a": "Evet. Mevcut bir sistemi inceleyip iyileştirmeler, yeni özellikler veya bir geçiş planı önerebiliriz."
           },
           {
-            "q": "ABD dışındaki müşterilerle çalışıyor musunuz?",
-            "a": "Evet. Dünyanın her yerinden müşterilerle uzaktan çalışıyor, İngilizce ve Türkçe iletişim kuruyoruz."
+            "q": "New York dışındaki müşterilerle de çalışıyor musunuz?",
+            "a": "Evet. ABD genelindeki işletmelere hizmet veriyoruz. New York City'de ve Long Island'da yüz yüze de görüşebiliriz; diğer her yerde e-posta, sohbet ve görüntülü görüşmeyle uzaktan çalışıyoruz. İngilizce ve Türkçe iletişim kuruyoruz."
           }
         ]
       }
     },
+    "service_presence": {
+      "title": "Küçük İşletmeler için Web Sitesi ve Yerel SEO | Zerone",
+      "description": "New York ve ABD genelindeki işletmeler için mobil uyumlu web siteleri, Google Business Profile bakımı, yerel SEO ve yorum talepleri. Paketler aylık $149'dan.",
+      "eyebrow": "Web siteleri ve Google görünürlüğü",
+      "h1": "Web siteleri, yerel SEO ve Google görünürlüğü",
+      "lede": "Müşterilerin çoğu bir işletmeyi telefonundan bulur ve bir iki dakika içinde karar verir. O dakikayı değerli kılıyoruz: her yerde doğru bilgiler, sorularını yanıtlayan bir web sitesi ve size kolayca ulaşma imkânı.",
+      "features_title": "Neler yapıyoruz",
+      "features": [
+        {
+          "title": "Müşteri getiren web siteleri",
+          "text": "Kendi alan adınızda; hizmetleriniz, fiyatlarınız, çalışma saatleriniz, harita, arama ve yol tarifi butonları ile teklif veya randevu formu içeren mobil uyumlu web siteleri."
+        },
+        {
+          "title": "Google Business Profile",
+          "text": "Çalışma saatleri, kategoriler, hizmetler ve fotoğraflar doğru ve güncel tutulur. Profilin kendisi Google'da ücretsizdir; yalnızca bizim emeğimiz için ödeme yaparsınız."
+        },
+        {
+          "title": "Yerel SEO",
+          "text": "Hızlı sayfalar, net yapı, yapılandırılmış veriler ve rehberlerde tutarlı işletme bilgileri; böylece arama motorları ne yaptığınızı ve nerede olduğunuzu anlar."
+        },
+        {
+          "title": "Yorumlar",
+          "text": "Her işin ardından tüm müşterilerinize giden kibar bir yorum talebi ve her yeni yorum için onayınıza hazır yanıt taslakları."
+        },
+        {
+          "title": "Cevapsız aramaya SMS",
+          "text": "Yanıtlayamadığınız arayanlara, randevu almak veya soru sormak için bağlantı içeren anında bir SMS gider; bunun için işletmenizin operatör kaydının onaylanması gerekir."
+        },
+        {
+          "title": "Aylık rapor",
+          "text": "Web sitesi ziyaretleri, yeni talepler, yorumlar ve aramalar; her ay sade bir dille açıklanır."
+        }
+      ],
+      "notes_title": "Bilmeniz gerekenler",
+      "notes": [
+        "Alan adınız, Google Business Profile'ınız ve hesaplarınız her zaman işletmenizin adına kalır.",
+        "Google'ın kurallarına uyarız: asla yorum satın almayız, karşılığında ödül vermeyiz veya yalnızca memnun müşterilerden istemeyiz.",
+        "Aylık paketler $149'dan başlar; en az 3 ay, sonrasında aydan aya devam eder."
+      ]
+    },
+    "service_phone": {
+      "title": "İşletmeler için Yapay Zekâ Telefon Asistanı | Zerone",
+      "description": "İşletme aramalarınızı 7/24 yanıtlayan, yapay zekâ olduğunu söyleyen, soruları cevaplayan ve randevu alan telefon asistanı. Dinlemek için (631) 900-2595'i arayın.",
+      "eyebrow": "Yapay zekâ telefon asistanı",
+      "h1": "İşletmeniz için yapay zekâ telefon asistanı",
+      "lede": "Her cevapsız arama, kaçan bir müşteri olabilir. Yapay zekâ asistanı gece gündüz her aramayı açar, güler yüzlü bir sesle yanıt verir ve her görüşmenin yazılı özetini size gönderir.",
+      "features_title": "Neler yapar",
+      "features": [
+        {
+          "title": "7/24 yanıt verir",
+          "text": "Akşamlar, hafta sonları ve tatiller dahil her arama yanıtlanır."
+        },
+        {
+          "title": "Yapay zekâ olduğunu açıkça söyler",
+          "text": "Arayanlara bir yapay zekâ asistanı olduğunu ve görüşmenin kaydedildiğini bildirir."
+        },
+        {
+          "title": "Sık sorulan soruları yanıtlar",
+          "text": "Onayladığınız bilgilere dayanarak çalışma saatleri, hizmetler, fiyatlar ve yol tarifi."
+        },
+        {
+          "title": "Mesajlar ve randevular",
+          "text": "Mesajları ve randevu taleplerini alır, ayrıntıları size yazılı olarak iletir."
+        },
+        {
+          "title": "Acil bildirimler",
+          "text": "Acil olan her şey SMS veya sohbet yoluyla hemen size ulaşır."
+        },
+        {
+          "title": "Arama özetleri",
+          "text": "Her aramanın kısa yazılı özeti; kimin aradığını ve neye ihtiyacı olduğunu bilirsiniz."
+        }
+      ],
+      "notes_title": "Bilmeniz gerekenler",
+      "notes": [
+        "Bir acil durum hizmeti değildir.",
+        "Kendiniz dinleyin: kendi hattımız (631) 900-2595'i arayın ve Ava ile konuşun.",
+        "Küçük işletme paketlerimize ek hizmet olarak veya özel bir projenin parçası olarak sunulur."
+      ]
+    },
     "service_automation": {
       "title": "İş Süreçleri Otomasyonu ve Özel Bot Geliştirme | Zerone International",
-      "description": "Veri hazırlayan, ilan oluşturan, bildirim gönderen ve zamanlanmış görevleri yürüten özel otomasyonlar ve botlar; ekibiniz kararlara odaklanabilsin.",
+      "description": "Veri ve belge hazırlayan, bildirim gönderen, araçlarınızı birbirine bağlayan ve zamanlanmış görevleri çalıştıran özel otomasyonlar ve botlar; ekibiniz müşterilere odaklansın.",
       "eyebrow": "Otomasyon ve botlar",
       "h1": "İş süreçleri otomasyonu ve özel botlar",
       "lede": "Ekibiniz her gün aynı adımları kopyalıyor, yapıştırıyor, kontrol ediyor ve tekrarlıyorsa bu adımlar genellikle otomatikleştirilebilir. Güvenilir çalışan ve ne yaptığını raporlayan otomasyonlar geliştiriyoruz.",
@@ -342,8 +440,8 @@
           "text": "Tabloları, notları ve tedarikçi dosyalarını temiz, yapılandırılmış verilere dönüştürün."
         },
         {
-          "title": "İlan süreçleri",
-          "text": "Başlıkları, açıklamaları ve ürün özelliklerini yayından önce kontrol için hazırlayın."
+          "title": "Belge iş akışları",
+          "text": "Formları, e-postaları ve dosyaları kontrole hazır tekliflere, faturalara ve kayıtlara dönüştürün."
         },
         {
           "title": "Bildirimler",
@@ -379,7 +477,7 @@
       "features": [
         {
           "title": "Yönetim panelleri",
-          "text": "Satışların, stokların, görevlerin ve önem verdiğiniz metriklerin canlı görünümü."
+          "text": "Satışların, işlerin, görevlerin ve önemsediğiniz rakamların canlı özetleri."
         },
         {
           "title": "Şirket içi araçlar",
@@ -411,10 +509,10 @@
     },
     "service_mobile": {
       "title": "Özel Mobil Uygulama Geliştirme (iOS ve Android) | Zerone International",
-      "description": "Saha ekipleri, depolar ve operasyonlar için özel iOS ve Android uygulamaları: görev listeleri, stok girişi, fotoğraflar ve bildirimler.",
+      "description": "Saha ekipleri, teknisyenler ve operasyon için özel iOS ve Android uygulamaları: görev listeleri, iş kayıtları, fotoğraflar, kontrol listeleri ve bildirimler.",
       "eyebrow": "Mobil uygulamalar",
       "h1": "Özel mobil uygulama geliştirme",
-      "lede": "Bazı işler masa başında yapılmaz. Ekibinizin mağazada, depoda veya yolda yaptığı görevler için mobil uygulamalar geliştiriyoruz.",
+      "lede": "Bazı işler masa başında yapılmaz. Ekibinizin işyerinde, sahada veya yolda yaptığı görevler için mobil uygulamalar geliştiriyoruz.",
       "features_title": "Neler geliştiriyoruz",
       "features": [
         {
@@ -422,12 +520,12 @@
           "text": "Atanan görevler, kontrol listeleri ve durum güncellemeleri her çalışanın cebinde."
         },
         {
-          "title": "Stok girişi",
-          "text": "Gelen ürünleri barkod okuma ve fotoğraflarla kaydedin."
+          "title": "İş ve saha kayıtları",
+          "text": "Ziyaretleri, ölçümleri ve imzaları yerinde kaydedin; gerektiğinde barkod tarama ile."
         },
         {
           "title": "Fotoğraf süreçleri",
-          "text": "Ürün fotoğraflarını ürünlerin bulunduğu yerde çekin ve düzenleyin."
+          "text": "İşlerin, ürünlerin veya sahaların fotoğraflarını tam işin yapıldığı yerde çekin ve düzenleyin."
         },
         {
           "title": "Anlık bildirimler",
@@ -450,11 +548,11 @@
       ]
     },
     "products": {
-      "title": "Çapraz Listeleme ve Likidasyon Lotu Analiz Araçları | Zerone International",
-      "description": "Zerone International, online satıcılar için bir çapraz listeleme sistemi ve likidasyon lotu analiz aracı geliştiriyor. Erken erişim için bekleme listesine katılın.",
+      "title": "Kendi Yazılım Ürünlerimiz | Zerone International",
+      "description": "Zerone International, müşteri projelerinin yanında kendi yazılım ürünlerini de geliştiriyor. İlk ürünler: online satıcılar için çapraz ilan sistemi ve lot analiz aracı.",
       "eyebrow": "Ürünler",
-      "h1": "Online satıcılar için araçlar",
-      "lede": "Kendi yeniden satış işimiz için istediğimiz araçları geliştiriyoruz. İkisi de geliştirme aşamasında; erken erişim açıldığında haberdar olmak için bekleme listesine katılın.",
+      "h1": "Kendi ürünlerimiz",
+      "lede": "Müşteri projelerinin yanında kendi yazılım ürünlerimizi de geliştiriyoruz. İlk ikisi online satıcılar için araçlar ve ikisi de geliştirme aşamasında. Erken erişim açıldığında haberdar olmak için bekleme listesine katılın.",
       "items": [
         {
           "name": "Çapraz listeleme sistemi",
@@ -479,33 +577,65 @@
       ]
     },
     "use_cases": {
-      "title": "Satıcılar ve Küçük İşletmeler için 20 Yazılım Senaryosu | Zerone",
-      "description": "Online satıcılar ve küçük işletmeler için özel otomasyon, web ve mobil yazılımdan yirmi örnek: ilanlar, lot analizi, stok, raporlama ve ekipler.",
+      "title": "20 Kullanım Senaryosu: Web, Yapay Zekâ ve Yazılım | Zerone",
+      "description": "Hizmet işletmeleri, mağazalar, restoranlar, ofisler ve büyüyen ekipler için web sitesi, yapay zekâ telefon asistanı, otomasyon, web ve mobil yazılımdan yirmi örnek.",
       "eyebrow": "Kullanım senaryoları",
-      "h1": "Özel yazılım için 20 kullanım senaryosu",
-      "lede": "Yeniden satıcılar ve küçük işletmeler için neler geliştirebileceğimize dair örnekler. Her biri iş akışınıza, platformlarınıza ve ekibinize uyarlanabilir.",
+      "h1": "20 kullanım senaryosu",
+      "lede": "Neler geliştirebileceğimize dair örnekler. Her biri işletmenize, hâlihazırda kullandığınız araçlara ve ekibinize göre uyarlanabilir.",
       "note": "Bunlar proje fikirleridir, tamamlanmış müşteri projeleri değildir. Platform erişimi ve özellikler her teklif için ayrıca değerlendirilir."
     },
     "company": {
-      "title": "Zerone International LLC Hakkında – Vizyon ve Misyon",
-      "description": "Zerone International LLC, online yeniden satışı özel yazılım geliştirmeyle birleştiren New York merkezli bir şirkettir. Vizyonumuzu, misyonumuzu ve değerlerimizi tanıyın.",
+      "title": "Hakkımızda – New York'lu Teknoloji Şirketi | Zerone International",
+      "description": "Zerone International LLC, ABD genelindeki işletmelere web siteleri, yapay zekâ asistanları, otomasyon ve özel yazılımla yardımcı olan New York merkezli bir teknoloji şirketi.",
       "eyebrow": "Şirket",
       "h1": "Zerone International hakkında",
-      "lede": "Online ticaret ile yazılımın kesiştiği noktada çalışan New York merkezli bir şirketiz.",
+      "lede": "Basit bir hedefi olan New York merkezli bir teknoloji şirketi: her işletmenin kullanabileceği faydalı teknoloji.",
       "about": {
         "title": "Biz kimiz",
         "text": [
-          "Zerone International LLC, New York eyaletinin Farmingville kasabasında yer alır. Online pazaryerlerinde ikinci el ve stok fazlası ürünler satıyor; hem kendi operasyonlarımız hem de müşterilerimiz için yazılım geliştiriyoruz.",
-          "Her gün bir yeniden satış işi yürütmek, zamanın nerede kaybolduğunu bize gösteriyor: ilan hazırlamak, lotları incelemek, stok takibi yapmak ve ekibi koordine etmek. Her yazılım projesine bu deneyimi taşıyoruz."
+          "Zerone International LLC, Long Island'daki Farmingville, New York'ta yer alan bir teknoloji şirketidir. İşletmelerin internette bulunmasına, her müşteriye yanıt vermesine ve elle yapılan işleri güvenilir yazılımlarla değiştirmesine yardımcı oluyoruz.",
+          "İşe yakınımızdan, New York City ve Long Island'dan başlıyor, her eyaletteki işletmelerle uzaktan çalışıyoruz. Kendi şirketimizi de müşterilerimiz için geliştirdiğimiz araçlarla yönetiyoruz: telefon hattımızı bir yapay zekâ asistanı yanıtlıyor, tekliflerimizi otomasyonlar hazırlıyor ve her anlaşma yazılı yapılıyor.",
+          "Müşteri projelerinin yanında, online satıcılar için araçlarla başlayarak kendi yazılım ürünlerimizi de geliştiriyoruz."
         ]
+      },
+      "founder": {
+        "eyebrow": "Kurucu",
+        "title": "Kurucuyla tanışın",
+        "role": "Kurucu ve CEO",
+        "bio": [
+          "Berk Divaroren, Zerone International'ı küçük ve büyüyen işletmelere, büyük şirketlerin olağan saydığı teknolojiyi sunmak için kurdu: müşteri getiren bir web sitesi, her zaman yanıtlanan bir telefon ve tekrarlayan işleri yapan yazılım.",
+          "İlk şirketini, bilgisayar yazılımı ve donanımı alanında faaliyet gösteren bir işletmeyi, 2019'da Adana'da kurdu. Anadolu Üniversitesi Uluslararası Ticaret ve Lojistik bölümünden lisans derecesine sahiptir. Ocak 2022'de New York'a taşındı ve burada New York Institute of Finance'ta bilgisayar uygulamaları, işletme ve yönetim alanlarında eğitimine devam etti.",
+          "Zerone International'ı kurmadan önce büyük ABD pazaryerlerinde online ticaret konusunda uygulamalı deneyim kazandı. Bugün yapay zekâ telefon asistanından otomatik yazılı tekliflere ve 15 dildeki bu web sitesine kadar şirketin kendi sistemlerinin tasarımına liderlik ediyor ve her müşteriyle doğrudan çalışıyor."
+        ],
+        "facts_title": "Kısaca",
+        "facts": [
+          {
+            "label": "Bulunduğu yer",
+            "value": "New York, Ocak 2022'den beri"
+          },
+          {
+            "label": "Eğitim",
+            "value": "Uluslararası Ticaret ve Lojistik lisans derecesi, Anadolu Üniversitesi; bilgisayar uygulamaları, işletme ve yönetim, New York Institute of Finance"
+          },
+          {
+            "label": "Diller",
+            "value": "İngilizce, Türkçe, Arapça"
+          },
+          {
+            "label": "Odak alanı",
+            "value": "Web siteleri, yapay zekâ asistanları, otomasyon ve özel yazılım"
+          }
+        ],
+        "linkedin": "LinkedIn'de bağlantı kurun",
+        "photo_alt": "Zerone International'ın kurucusu Berk Divaroren"
       },
       "vision": {
         "title": "Vizyonumuz",
-        "text": "Küçük işletmelerin zamanlarını önemli kararlara ayırabilmeleri için faydalı ve anlaşılır yazılımı erişilebilir kılmak."
+        "text": "New York'tan başlayarak Amerika genelindeki işletmelerin güvendiği teknoloji ortağı olmak; her işletme için faydalı, anlaşılır ve uygun fiyatlı teknolojiyle."
       },
       "mission": {
         "title": "Misyonumuz",
-        "text": "Gerçek iş ihtiyaçlarını net bir kapsam, adil fiyat ve her kullanıcı için doğru yetkilerle güvenilir yazılıma dönüştürmek."
+        "text": "Gerçek iş ihtiyaçlarını net bir kapsam, adil fiyatlandırma ve dürüst iletişimle güvenilir web sitelerine, asistanlara ve yazılımlara dönüştürmek."
       },
       "values": {
         "title": "Değer verdiklerimiz",
@@ -529,16 +659,16 @@
         ]
       },
       "location": {
-        "title": "Neredeyiz",
-        "text": "Farmingville, New York, Amerika Birleşik Devletleri. Dünyanın dört bir yanındaki müşterilerle uzaktan çalışıyoruz."
+        "title": "Nerede çalışıyoruz",
+        "text": "Merkezimiz Farmingville, New York'ta. New York City ve Long Island'da müşterilerle yüz yüze görüşüyor, ABD genelindeki işletmelerle uzaktan çalışıyoruz."
       }
     },
     "contact": {
-      "title": "İletişim – Yazılım Projenizi Başlatın | Zerone International",
-      "description": "Özel otomasyon, bot, web veya mobil uygulama projenizi görüşmek için Zerone International ile iletişime geçin. Sorularımızla veya yazılı bir teklifle dönüş yapıyoruz.",
+      "title": "İletişim – Projenizi Başlatın | Zerone International",
+      "description": "Web sitesi, yapay zekâ telefon asistanı, otomasyon, web veya mobil uygulama için Zerone International ile iletişime geçin. Arayın, SMS veya e-posta gönderin; yazılı yanıt veririz.",
       "eyebrow": "İletişim",
       "h1": "Projenizi başlatın",
-      "lede": "Fikrinizi veya çözmek istediğiniz sorunu anlatın. İki iş günü içinde yanıt vermeyi hedefliyoruz.",
+      "lede": "Bize işletmenizi veya çözmek istediğiniz sorunu anlatın. İki iş günü içinde yanıt vermeyi hedefliyoruz.",
       "email_title": "E-postayı mı tercih edersiniz?",
       "email_text": "Bize doğrudan da yazabilirsiniz:",
       "phone_note": "Bizi arayın: yapay zekâ asistanımız Ava 7/24 yanıt verir (İngilizce).",
@@ -604,11 +734,11 @@
       }
     },
     "blog": {
-      "title": "Blog – Yeniden Satış Otomasyonu Rehberleri | Zerone International",
-      "description": "Çapraz listeleme, likidasyon lotu analizi ve satış süreçlerinin otomasyonu üzerine pratik rehberler; kendi çevrimiçi satış işini yürüten bir ekipten.",
+      "title": "Blog – Web, Yapay Zekâ ve Otomasyon Rehberleri | Zerone",
+      "description": "New York merkezli bir teknoloji şirketinden küçük ve büyüyen işletmeler için web siteleri, yerel SEO, yapay zekâ asistanları ve otomasyon üzerine pratik rehberler.",
       "eyebrow": "Blog",
-      "h1": "Satıcılar ve büyüyen ekipler için rehberler",
-      "lede": "Çapraz listeleme, likidasyon lotu satın alma ve yeniden satıştaki tekrarlayan işleri otomatikleştirme üzerine pratik makaleler.",
+      "h1": "Büyüyen işletmeler için rehberler",
+      "lede": "İnternette bulunmak, her müşteriye yanıt vermek ve tekrarlayan işleri otomatikleştirmek üzerine pratik yazılar. Önceki yazılarımız online satışı konu alıyor.",
       "language_note": "Makalelerimiz şu anda İngilizce olarak yayımlanmaktadır.",
       "read_more": "Makaleyi okuyun",
       "minutes": "{n} dk okuma",
@@ -616,15 +746,15 @@
       "updated": "Güncellenme",
       "back": "Tüm makaleler",
       "related": "İlgili makaleler",
-      "guides_link": "Satıcılar için rehberlerimizi okuyun",
+      "guides_link": "Rehberlerimizi okuyun",
       "rss": "RSS beslemesi"
     },
     "developers": {
-      "title": "Yeniden Satış İçin API'ler – Erken Erişim | Zerone International",
-      "description": "Zerone International yeniden satıcılar için API'ler planlıyor: ilan verisi düzenleme, stok eşitleme, lot analizi ve ücret hesaplama. Erken erişim listesine katılın.",
+      "title": "Geliştirici API'leri – Erken Erişim | Zerone International",
+      "description": "Zerone International online satıcılar için API'ler planlıyor: ilan standardizasyonu, stok senkronizasyonu, lot analizi ve ücret hesaplayıcıları. Erken erişim listesine katılın.",
       "eyebrow": "Geliştiriciler için",
-      "h1": "Yeniden satıcılar için API'ler ve araçlar",
-      "lede": "Kendi yeniden satış işimiz için geliştirdiğimiz geliştirici araçlarında erken erişimi açıyoruz. Henüz hiçbiri yayında değil; listeye katılın, önceliklere birlikte karar verelim.",
+      "h1": "Online satıcılar için API'ler",
+      "lede": "Online satıcılara yönelik kendi ürünlerimizden doğan geliştirici araçları için erken erişim açıyoruz. Henüz hiçbiri yayında değil; listeye katılın ve önce neyin geleceğine birlikte karar verelim.",
       "hero_button": "Erken erişime katılın",
       "planned": "Planlanıyor",
       "products": {
@@ -846,243 +976,243 @@
   },
   "cases": [
     {
-      "slug": "ebay-ilan-hazirligi",
-      "title": "eBay ilan hazırlığı",
-      "summary": "Ürün notlarını kontrole hazır başlık, açıklama ve ürün özelliği taslaklarına dönüştürün.",
-      "challenge": "İyi eBay ilanlarını tek tek yazmak zaman alır ve ürün özellikleri kolayca atlanır.",
-      "approach": "Bir otomasyon ürün notlarınızı veya tablonuzu okuyup yapılandırılmış taslaklar hazırlar; ekibiniz yalnızca kontrol edip onaylar.",
+      "slug": "ev-hizmetleri-icin-web-sitesi",
+      "title": "Ev hizmetleri şirketi için web sitesi",
+      "summary": "Yerel aramaları telefon aramalarına ve teklif taleplerine dönüştüren mobil uyumlu bir web sitesi.",
+      "challenge": "Müşteriler telefonlarında birkaç firmayı karşılaştırır ve güvendikleri firmayı arar.",
+      "approach": "Hizmetleriniz, hizmet bölgeleriniz, gerçek fotoğraflar ve yorumlarla hızlı bir web sitesi, tek dokunuşla arama ve teklif butonları ve arkasında doğru bir Google Business Profile.",
       "includes": [
-        "Başlık ve açıklama taslakları",
-        "Ürün özellikleri kontrol listesi",
-        "Yayından önce onay adımı"
+        "Hizmet ve hizmet bölgesi sayfaları",
+        "Arama, SMS ve teklif butonları",
+        "Google Business Profile kurulumu"
       ]
     },
     {
-      "slug": "poshmark-satis-surecleri",
-      "title": "Poshmark satış süreçleri",
-      "summary": "Giyim ürünlerinin bilgilerini düzenleyin, Poshmark ve diğer kanallar için ilanlar hazırlayın.",
-      "challenge": "Giyimde beden, marka, durum ve ölçüler gerekir; bunları tekrar tekrar girmek yavaştır.",
-      "approach": "Yapılandırılmış bir giriş formu giyim bilgilerini bir kez toplar ve platform kurallarına uygun olarak her kanal için taslak hazırlar.",
+      "slug": "google-business-profile-duzenleme",
+      "title": "Google Business Profile düzenleme",
+      "summary": "Doğru müşteriler sizi Google Maps'te bulsun diye saatleri, kategorileri, hizmetleri ve fotoğrafları düzeltin.",
+      "challenge": "Yanlış saatler, belirsiz bir kategori veya eski fotoğraflar müşterileri rakibe gönderir.",
+      "approach": "Profili Google'ın yönergelerine göre inceler, her alanı düzeltir, hizmet ve fotoğraf ekler ve onu güncel tutan basit bir rutin kurarız.",
       "includes": [
-        "Giyim veri şablonu",
-        "Kanala özel taslaklar",
-        "Ürün bazında durum takibi"
+        "Kategori ve hizmet incelemesi",
+        "Çalışma saatleri, tatil saatleri ve fotoğraflar",
+        "Aylık doğruluk kontrolü"
       ]
     },
     {
-      "slug": "amazon-katalog-hazirligi",
-      "title": "Amazon katalog hazırlığı",
-      "summary": "Ürün verilerini düzenleyin ve listeleme öncesinde zorunlu alanları kontrol edin.",
-      "challenge": "Eksik veya tutarsız alanlar reddedilen ilanlara ve zaman kaybına yol açar.",
-      "approach": "Bir doğrulama aracı ürün verilerinizi gereken alanlara göre kontrol eder ve yüklemeden önce eksikleri gösterir.",
+      "slug": "her-isten-sonra-yorum-talebi",
+      "title": "Her işten sonra yorum talebi",
+      "summary": "İş tamamlanınca her müşteriye doğrudan bağlantı içeren kibar bir talep gider.",
+      "challenge": "Memnun müşteriler nadiren kendiliğinden yorum yazar; elle istemek ise kolayca unutulur.",
+      "approach": "Tamamlanan her işten sonra Google'ın kurallarına uygun kısa bir talep e-posta veya SMS ile gider; her yeni yorum için yanıt taslakları onayınızı bekler.",
       "includes": [
-        "Zorunlu alan kontrolleri",
-        "Toplu veri temizliği",
-        "Dışa aktarılabilir yükleme dosyaları"
+        "Her işten sonra otomatik talep",
+        "Onayınıza sunulan yanıt taslakları",
+        "Ödül yok, müşteri filtreleme yok"
       ]
     },
     {
-      "slug": "walmart-stok-surecleri",
-      "title": "Walmart stok süreçleri",
-      "summary": "Walmart Marketplace için stok ve ürün verilerini izin verilen erişimle takip edin.",
-      "challenge": "Stok seviyelerini ve ürün verilerini kanallar arasında elle uyumlu tutmak zordur.",
-      "approach": "Bir web paneli stok ve ürün verilerini bir araya getirir ve işlem gerektiren farklılıkları işaretler.",
+      "slug": "birden-fazla-sube-icin-yerel-seo",
+      "title": "Birden fazla şube için yerel SEO",
+      "summary": "Birden fazla şubesi olan bir işletme için tutarlı sayfalar ve kayıtlar.",
+      "challenge": "Rehberlerdeki farklı bilgiler hem müşterilerin hem arama motorlarının kafasını karıştırır.",
+      "approach": "Yapılandırılmış veriyle her şube için bir sayfa, ana rehberlerde aynı işletme bilgileri ve şube bazında aramaları ve talepleri gösteren bir rapor.",
       "includes": [
-        "Stok genel görünümü",
-        "Farklılık uyarıları",
-        "Değişiklik geçmişi"
+        "Her şube için bir sayfa",
+        "Tutarlı rehber kayıtları",
+        "Şube bazında aramalar ve talepler"
       ]
     },
     {
-      "slug": "etsy-urun-aciklamalari",
-      "title": "Etsy ürün açıklamaları",
-      "summary": "Malzeme veya köken uydurmadan net ürün açıklamaları hazırlayın.",
-      "challenge": "İyi açıklamalar satar ama her ürün için yazmak çok zaman alır.",
-      "approach": "Bir taslak aracı açıklamaları yalnızca sizin verdiğiniz bilgilerden oluşturur; düzenleyip onaylamanız için hazır olur.",
+      "slug": "ofisler-icin-yapay-zeka-resepsiyonist",
+      "title": "Profesyonel ofis için yapay zekâ resepsiyonist",
+      "summary": "Mesai dışında bile her aramayı yanıtlayın, çalışma saatlerini paylaşın ve randevu taleplerini alın.",
+      "challenge": "Resepsiyon ekibi yüz yüze müşteriyle ilgilenirken her aramaya yetişemez.",
+      "approach": "Hat meşgulken veya ofis kapalıyken bir yapay zekâ asistanı yanıt verir, yapay zekâ olduğunu söyler, sık sorulan soruları cevaplar ve her talebi ekibe yazılı iletir.",
       "includes": [
-        "Bilgiye dayalı taslaklar",
-        "Üslup ve uzunluk ayarları",
-        "Kullanmadan önce onay"
+        "Mesai dışı ve yoğunluk anında yanıt",
+        "Yazılı randevu talepleri",
+        "Yapay zekâ olduğunun açıkça belirtilmesi"
       ]
     },
     {
-      "slug": "b-stock-lot-degerlendirme",
-      "title": "B-Stock lot değerlendirmesi",
-      "summary": "Bir lotun fiyatını tahmini ücretler, lojistik ve satış değeriyle karşılaştırın.",
-      "challenge": "Bir lot; ücretler, kargo ve satılamayan ürünler hesaba katılana kadar ucuz görünebilir.",
-      "approach": "Bir hesaplama aracı alış fiyatını, ücretleri, lojistiği ve satış varsayımlarınızı tek ve net bir tahminde birleştirir.",
+      "slug": "ustalar-icin-mesai-disi-aramalar",
+      "title": "Ustalar ve müteahhitler için mesai dışı aramalar",
+      "summary": "Gece ve hafta sonu gelen işleri kaçırmayın.",
+      "challenge": "Ustalar çalışırken telefona bakamaz; akşam arayanlar da doğrudan bir sonraki firmayı arar.",
+      "approach": "Asistan yanıt verir, adres, sorun ve aciliyet gibi sizin seçtiğiniz soruları sorar ve acil olanları hemen size SMS ile iletir.",
       "includes": [
-        "Maliyet dökümü",
-        "Ayarlanabilir varsayımlar",
-        "Kaydedilen değerlendirmeler"
+        "Kendi ön bilgi sorularınız",
+        "Acil işler size SMS ile",
+        "Her aramanın özeti"
       ]
     },
     {
-      "slug": "liquidation-teklif-planlama",
-      "title": "Liquidation.com teklif planlama",
-      "summary": "Ne kadar teklif vereceğinize karar vermeden önce net sonucu tahmin edin.",
-      "challenge": "Bir üst fiyat belirlemeden teklif vermek fazla ödemeyi kolaylaştırır.",
-      "approach": "Bir planlama aracı hedef kâr marjınızdan ve maliyet varsayımlarınızdan önerilen en yüksek teklifi hesaplar.",
+      "slug": "restoran-telefon-aramalari",
+      "title": "Restoran için telefon aramaları",
+      "summary": "Akşam yoğunluğunda çalışma saatleri, menü ve rezervasyonlarla ilgili soruları yanıtlayın.",
+      "challenge": "Telefon en çok mutfağın en yoğun olduğu anda çalar; açılmayan aramalar masa kaybettirir.",
+      "approach": "Asistan sık sorulan soruları yanıtlar, rezervasyon taleplerini alır ve diğer her şeyi her arama için yazılı bir notla personele iletir.",
       "includes": [
-        "Hedef marj ayarları",
-        "En yüksek teklif tahmini",
-        "Senaryo karşılaştırması"
+        "Saatler, menü ve yol tarifi hakkında yanıtlar",
+        "Rezervasyon talepleri",
+        "Personel için notlar"
       ]
     },
     {
-      "slug": "iade-karsiligi",
-      "title": "İade karşılığı",
-      "summary": "Satış ekonomisini değerlendirirken iadeler için ayarlanabilir bir pay ekleyin.",
-      "challenge": "İadeler gerçek kârı azaltır ama hesaplarda çoğu zaman unutulur.",
-      "approach": "Analiz aracınız, kategoriye veya kendi geçmiş verilerinize göre ayarlanabilen bir iade karşılığı içerir.",
+      "slug": "arama-ozetleri-ve-yazili-takip",
+      "title": "Arama özetleri ve yazılı takip",
+      "summary": "Her arama kısa bir yazılı özete, gerektiğinde de bir takip e-postası taslağına dönüşür.",
+      "challenge": "Telefon görüşmelerindeki ayrıntılar kaybolur; yazılı takip ise zaman alır.",
+      "approach": "Her aramadan sonra arayanın ihtiyaçlarını ve iletişim bilgilerini içeren bir özet size ulaşır ve onayınız için bir takip taslağı hazırlanır.",
       "includes": [
-        "Kategori bazlı oranlar",
-        "Geçmiş verilere göre ayar",
-        "İadeler sonrası net marj"
+        "Her aramanın yazılı özeti",
+        "Takip e-postası taslakları",
+        "Onayınız olmadan hiçbir şey gönderilmez"
       ]
     },
     {
-      "slug": "kargo-maliyeti-tahmini",
-      "title": "Kargo maliyeti tahmini",
-      "summary": "Planlamanızda ağırlığı, ölçüleri ve kargo seçeneklerini hesaba katın.",
-      "challenge": "Kargo maliyetleri çok değişkendir ve kârlı bir ürünü zarara çevirebilir.",
-      "approach": "Bir planlama aracı ağırlık ve ölçülerden kargo maliyetini tahmin eder ve her hesaba dahil eder.",
+      "slug": "tek-formdan-teklif-ve-fatura",
+      "title": "Tek formdan teklif ve fatura",
+      "summary": "Müşteri talebini teklife, kabul edilen teklifi de faturaya dönüştürün.",
+      "challenge": "Aynı müşteri bilgilerini birkaç araca tekrar tekrar yazmak zaman kaybettirir ve hatalara yol açar.",
+      "approach": "Akışı bir form veya e-posta başlatır: bilgiler bir teklif taslağına, müşteri kabul ettiğinde de barındırılan ödeme bağlantılı bir faturaya dönüşür.",
       "includes": [
-        "Ağırlık ve ölçü girişleri",
-        "Kargo firması fiyat tabloları",
-        "Ürün başına maliyet"
+        "Kontrole hazır teklif taslakları",
+        "Ödeme bağlantılı faturalar",
+        "Sistemlerinizde kart verisi yok"
       ]
     },
     {
-      "slug": "sahip-paneli",
-      "title": "İşletme sahibi paneli",
-      "summary": "İşletme sahibinin ihtiyaç duyduğu bilgileri ve kontrolleri tek panelde toplayın.",
-      "challenge": "İşletme sahipleri, işlerin nasıl gittiğini anlamak için çoğu zaman rakamları pek çok yerden toplar.",
-      "approach": "Bir sahip paneli temel rakamları, kullanıcıları ve ayarları tek ve güvenli bir yerde gösterir.",
+      "slug": "talep-yonlendirme-ve-bildirimler",
+      "title": "Talep yönlendirme ve anında bildirimler",
+      "summary": "Her yeni talebi saniyeler içinde doğru kişiye e-posta, sohbet veya SMS ile iletin.",
+      "challenge": "Talepler web sitesi, e-posta ve sosyal medyadan gelir; bazıları günlerce yanıt bekler.",
+      "approach": "Tüm talepler tek bir yerde toplanır, türe ve bölgeye göre ayrılır ve doğru kişi bir yanıt şablonuyla birlikte bildirim alır.",
       "includes": [
-        "Bir bakışta temel metrikler",
-        "Kullanıcı ve yetki yönetimi",
-        "Dışa aktarılabilir raporlar"
+        "Tüm talepler için tek gelen kutusu",
+        "E-posta, sohbet veya SMS ile bildirim",
+        "Yanıt şablonları"
       ]
     },
     {
-      "slug": "yonetici-koordinasyonu",
-      "title": "Yönetici koordinasyonu",
-      "summary": "Görev atamak ve operasyonu takip etmek için bir çalışma alanı.",
-      "challenge": "Ortak bir görünüm olmadığında görevler mesajlar ve tablolar arasında kaybolur.",
-      "approach": "Bir yönetici çalışma alanı; iş atamayı, öncelik belirlemeyi ve ilerlemeyi anlık görmeyi sağlar.",
+      "slug": "randevu-hatirlatmalari",
+      "title": "Randevu hatırlatmaları",
+      "summary": "Gelmeyen müşteri sayısını azaltan otomatik hatırlatmalar ve onaylar.",
+      "challenge": "Kaçırılan randevular zaman ve para kaybettirir; herkesi bir gün önceden aramak da gerçekçi değil.",
+      "approach": "Hatırlatmalar seçtiğiniz saatlerde gider, müşteriler tek tıkla onaylar veya randevuyu değiştirir, takviminiz kendiliğinden güncellenir.",
       "includes": [
-        "Görev atama",
-        "Öncelik ve son tarih takibi",
-        "Ekip ilerleme görünümü"
+        "E-posta veya SMS ile hatırlatma",
+        "Tek tıkla onay veya erteleme",
+        "Takvim güncellemeleri"
       ]
     },
     {
-      "slug": "calisan-gorev-panelleri",
-      "title": "Çalışan görev panelleri",
-      "summary": "Her çalışana tam olarak ihtiyaç duyduğu görevleri ve bilgileri gösterin.",
-      "challenge": "Çalışanlar talimat aramaya veya sıradaki işi sormaya zaman kaybeder.",
-      "approach": "Basit bir mobil panel, her kişinin görevlerini tamamlamak için gereken detaylarla birlikte listeler.",
+      "slug": "haftalik-isletme-raporlari",
+      "title": "Haftalık işletme raporları",
+      "summary": "Her pazartesi, gerçekten baktığınız rakamlarla sade dilde bir rapor.",
+      "challenge": "Satışlar, aramalar, yorumlar ve site ziyaretleri farklı araçlarda durur; kimse hepsine birden bakmaz.",
+      "approach": "Zamanlanmış bir görev verileri toplar, önceki haftayla karşılaştırır ve e-posta veya sohbet yoluyla kısa bir rapor gönderir.",
       "includes": [
-        "Kişisel görev listesi",
-        "Talimatlar ve fotoğraflar",
-        "Tek dokunuşla durum güncelleme"
+        "Zaten kullandığınız araçlardan veriler",
+        "Haftadan haftaya karşılaştırma",
+        "E-posta veya sohbetle teslim"
       ]
     },
     {
-      "slug": "stok-girisi",
-      "title": "Stok girişi",
-      "summary": "Gelen ürünleri kaydedin ve satış için gerekenleri düzenleyin.",
-      "challenge": "Kaydedilmemiş ürünleri sonradan bulmak, fiyatlamak ve listelemek zordur.",
-      "approach": "Bir mobil giriş uygulaması ürünleri geldikleri anda barkod, fotoğraf, durum ve konum bilgisiyle kaydeder.",
+      "slug": "musteri-portali",
+      "title": "Müşteri portalı",
+      "summary": "Müşteriler durumu, belgeleri ve faturaları aramadan kontrol edebilsin.",
+      "challenge": "Müşteriler işin ne durumda olduğunu sormak için arar; personel saatlerce aynı soruları yanıtlar.",
+      "approach": "Güvenli bir portal her müşteriye kendi siparişlerini, belgelerini ve faturalarını gösterir; bir şey değiştiğinde bildirim gönderir.",
       "includes": [
-        "Barkod okuma",
-        "Durum ve konum alanları",
-        "Panele anında senkronizasyon"
+        "Güvenli müşteri girişi",
+        "Durum, belgeler ve faturalar",
+        "Değişiklik bildirimleri"
       ]
     },
     {
-      "slug": "urun-fotografi-gorevleri",
-      "title": "Ürün fotoğrafı görevleri",
-      "summary": "Ürün fotoğraflarını ve ilan hazırlığını tek bir akışta koordine edin.",
-      "challenge": "Farklı telefonlarla çekilen fotoğraflar dağınık ve etiketsiz kalır.",
-      "approach": "Bir mobil iş akışı her fotoğraf setini doğru ürüne bağlar ve ilana hazır olarak işaretler.",
+      "slug": "isletme-sahipleri-icin-operasyon-paneli",
+      "title": "İşletme sahipleri için operasyon paneli",
+      "summary": "Satışlar, işler, aramalar ve yorumlar otomatik güncellenen tek bir ekranda.",
+      "challenge": "İşletme sahipleri tablolar, e-postalar ve birkaç uygulamadan resmin tamamını kendileri birleştirir.",
+      "approach": "Bir panel temel rakamları araçlarınızdan çeker ve eğilimleri gösterir; işletme sahipleri, yöneticiler ve çalışanlar için ayrı görünümlerle.",
       "includes": [
-        "Ürün başına fotoğraf setleri",
-        "Çekim kontrol listeleri",
-        "İlana hazır durumu"
-      ]
-    },
-    {
-      "slug": "csv-hazirligi",
-      "title": "CSV hazırlığı",
-      "summary": "Üzerinde anlaşılan tablo formatlarını temiz, yapılandırılmış verilere dönüştürün.",
-      "challenge": "Tedarikçi ve pazaryeri dosyaları nadiren aynı sütunları veya formatları kullanır.",
-      "approach": "Bir otomasyon tablo verilerini eşler, temizler ve tam ihtiyacınız olan formata göre doğrular.",
-      "includes": [
-        "Sütun eşleştirme",
-        "Veri temizleme kuralları",
-        "Hata raporu"
-      ]
-    },
-    {
-      "slug": "ozel-raporlama",
-      "title": "Özel raporlama",
-      "summary": "Seçtiğiniz metriklere ve veri kaynaklarına göre hazırlanan raporlar.",
-      "challenge": "Standart raporlar, işiniz için önemli olan sorulara nadiren cevap verir.",
-      "approach": "Kendi veri kaynaklarınızdan raporlar hazırlar; bunları panel olarak veya zamanlanmış e-postalarla sunarız.",
-      "includes": [
-        "Özel metrikler",
-        "Zamanlanmış gönderim",
+        "Canlı temel rakamlar",
+        "Role göre görünümler",
         "CSV ve PDF dışa aktarma"
       ]
     },
     {
-      "slug": "bildirim-botlari",
-      "title": "Bildirim botları",
-      "summary": "Ekibinizin zaten kullandığı kanallardan otomatik uyarılar ve hatırlatmalar.",
-      "challenge": "Birinin elle kontrol etmesi gerektiğinde önemli değişiklikler çok geç fark edilir.",
-      "approach": "Bir bot önem verdiğiniz olayları izler ve işlem gerektiği anda mesaj gönderir.",
+      "slug": "online-randevu-sistemi",
+      "title": "Online randevu sistemi",
+      "summary": "Personel takvimleri, ara süreler ve onaylarla online randevu.",
+      "challenge": "Telefon ve e-postayla alınan randevular çift rezervasyona ve bitmeyen yazışmalara yol açar.",
+      "approach": "Müşteriler online boş bir saat seçer, her personel kendi takvimini görür; onaylar ve hatırlatmalar otomatik gider.",
       "includes": [
-        "Olay bazlı uyarılar",
-        "E-posta ve mesajlaşma ile iletim",
-        "Günlük özetler"
+        "Online randevu sayfası",
+        "Personel takvimleri",
+        "Otomatik onaylar"
       ]
     },
     {
-      "slug": "mobil-operasyon-araclari",
-      "title": "Mobil operasyon araçları",
-      "summary": "Ekibinizin masa başı dışında yaptığı işler için mobil iş akışları.",
-      "challenge": "Kâğıt notlar ve sahadan gelen mesajlar yavaştır ve hataya açıktır.",
-      "approach": "Bir mobil uygulama saha işini yapılandırılmış adımlara dönüştürür ve sistemlerinizi anında günceller.",
+      "slug": "tablolardan-web-uygulamasina",
+      "title": "Tablolardan web uygulamasına",
+      "summary": "Paylaşılan tabloları tek, düzenli ve güvenli bir çalışma alanıyla değiştirin.",
+      "challenge": "Birkaç kişi aynı anda düzenleyince tablolar bozulur ve kimse hangi sürümün doğru olduğunu bilmez.",
+      "approach": "Tabloyu formlar, yetkiler, geçmiş ve raporlar içeren bir web uygulamasına dönüştürür, mevcut verilerinizi de aktarırız.",
       "includes": [
-        "Adım adım iş akışları",
-        "Çevrimdışı destek",
-        "Anlık güncellemeler"
+        "Veri aktarımı",
+        "Yetkiler ve geçmiş",
+        "Raporlar ve dışa aktarma"
       ]
     },
     {
-      "slug": "web-tabanli-calisma-alanlari",
-      "title": "Web tabanlı çalışma alanları",
-      "summary": "Seçilen iş akışlarını tarayıcı tabanlı tek bir uygulamada toplayın.",
-      "challenge": "Pek çok araca ve dosyaya dağılmış işleri yönetmek ve güvende tutmak zordur.",
-      "approach": "Bir web çalışma alanı en önemli iş akışlarını, her rol için uygun erişimle bir araya getirir.",
+      "slug": "saha-servis-uygulamasi",
+      "title": "Saha servis uygulaması",
+      "summary": "İşler, adresler, kontrol listeleri ve fotoğraflar her teknisyenin cebinde.",
+      "challenge": "Teknisyenler iş ayrıntıları için ofisi arar ve kaybolup giden kâğıt formlar doldurur.",
+      "approach": "Mobil uygulama her teknisyene işlerini, kontrol listelerini ve müşteri notlarını gösterir; fotoğrafları ve imzaları ofise geri gönderir.",
       "includes": [
-        "Merkezi çalışma alanı",
-        "Rol bazlı erişim",
-        "İşlem geçmişi"
+        "İş listesi ve yol tarifi",
+        "Kontrol listeleri, fotoğraflar ve imzalar",
+        "Ofisle senkronizasyon"
       ]
     },
     {
-      "slug": "cok-kanalli-planlama",
-      "title": "Çok kanallı planlama",
-      "summary": "API erişimini inceledikten sonra stoku birden fazla satış kanalında planlayın.",
-      "challenge": "Birden fazla pazaryerinde satış yapmak, her şeyi senkronize tutma işini katlar.",
-      "approach": "Her platformun API erişimini ve kurallarını inceler, ardından kanalları uyumlu tutan bir otomasyon tasarlarız.",
+      "slug": "denetim-ve-saha-kontrol-listeleri",
+      "title": "Denetim ve saha kontrol listeleri",
+      "summary": "Çevrimdışı çalışan ve raporu anında üreten dijital kontrol listeleri.",
+      "challenge": "Kâğıt kontrol listeleri zor okunur, kolay kaybolur ve rapora dönüştürülmesi uzun sürer.",
+      "approach": "Denetçiler kontrol listelerini bağlantı olmasa bile telefon veya tablette doldurur ve otomatik olarak bir PDF rapor oluşturulur.",
       "includes": [
-        "Platform erişim incelemesi",
-        "Senkronizasyon kuralları",
-        "Çakışma uyarıları"
+        "Çevrimdışı mod",
+        "Her madde için fotoğraf ve not",
+        "Otomatik PDF raporlar"
+      ]
+    },
+    {
+      "slug": "sadakat-ve-randevu-uygulamasi",
+      "title": "Sadakat ve randevu uygulaması",
+      "summary": "Düzenli müşterilerin randevu aldığı ve ödül topladığı markalı bir uygulama.",
+      "challenge": "Düzenli müşteriler en değerli müşterilerdir, ancak onlarla iletişimde kalmanın basit bir yolu yoktur.",
+      "approach": "Randevu, anlık bildirimler ve basit bir sadakat programı içeren, mevcut sistemlerinize bağlı bir iOS ve Android uygulaması.",
+      "includes": [
+        "Uygulama içinden randevu",
+        "Anlık bildirimler",
+        "Basit bir sadakat programı"
+      ]
+    },
+    {
+      "slug": "ekip-gorevleri-ve-mesai-takibi",
+      "title": "Ekip görevleri ve mesai takibi",
+      "summary": "Görev atayın, çalışma saatlerini takip edin ve ilerlemeyi her telefondan görün.",
+      "challenge": "Saatler kâğıda yazılır, görevler mesajla dağıtılır; hafta sonunda hiçbir şey tutmaz.",
+      "approach": "Çalışanlar görevlerini görür ve uygulamada giriş-çıkış yapar; yöneticiler ilerlemeyi görür ve bordro için saatleri dışa aktarır.",
+      "includes": [
+        "Görev atama",
+        "Giriş ve çıkış kaydı",
+        "Bordro için saat dışa aktarma"
       ]
     }
   ]

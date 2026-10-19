@@ -7,6 +7,8 @@
   },
   "slugs": {
     "services": "diensten",
+    "service_presence": "diensten/websites-lokale-seo",
+    "service_phone": "diensten/ai-telefoonassistent",
     "service_automation": "diensten/automatisering-bots",
     "service_web": "diensten/webapplicaties",
     "service_mobile": "diensten/mobiele-apps",
@@ -49,31 +51,40 @@
     "challenge": "De uitdaging",
     "approach": "Hoe software helpt",
     "includes": "Wat erin kan zitten",
-    "legal_note": "Deze vertaling is bedoeld als hulpmiddel. Bij verschillen geldt de Engelse versie."
+    "legal_note": "Deze vertaling is bedoeld als hulpmiddel. Bij verschillen geldt de Engelse versie.",
+    "see_plans": "Bekijk pakketten en prijzen"
   },
   "nav": {
     "services": "Diensten",
+    "plans": "Pakketten en prijzen",
     "products": "Producten",
     "use_cases": "Toepassingen",
     "company": "Bedrijf",
     "blog": "Blog",
     "developers": "Voor ontwikkelaars",
-    "local": "Voor lokale bedrijven",
     "contact": "Contact"
   },
   "footer": {
-    "tagline": "Maatwerksoftware, automatisering en resale-tools van een team dat zelf een online doorverkoopbedrijf runt.",
+    "tagline": "Websites, AI-telefoonassistenten, automatisering en maatwerksoftware voor bedrijven in de hele Verenigde Staten, vanuit New York.",
     "services": "Diensten",
     "company": "Bedrijf",
     "legal": "Juridisch",
     "rights": "Alle rechten voorbehouden.",
     "trademark": "De namen van marktplaatsen op deze site zijn handelsmerken van hun respectieve eigenaren. Zerone International LLC is niet aan hen verbonden en wordt niet door hen onderschreven.",
-    "location": "Farmingville, New York, Verenigde Staten"
+    "location": "Farmingville, New York · voor klanten in de hele Verenigde Staten"
   },
   "services_list": {
+    "presence": {
+      "name": "Websites en vindbaarheid op Google",
+      "short": "Mobielvriendelijke websites, een correct Google Business Profile, lokale SEO en een gestage stroom reviews, zodat klanten u vinden en voor u kiezen."
+    },
+    "phone": {
+      "name": "AI-telefoonassistent",
+      "short": "Een AI-assistent die uw telefoon 24/7 opneemt, veelgestelde vragen beantwoordt, berichten aanneemt en afspraken inplant, zodat geen beller op de voicemail belandt."
+    },
     "automation": {
       "name": "Automatisering en bots",
-      "short": "Weg met repetitief werk: gegevens voorbereiden, advertenties, meldingen en geplande taken die vanzelf draaien."
+      "short": "Weg met repetitief werk: gegevensinvoer, documenten, meldingen en geplande taken die vanzelf draaien."
     },
     "web": {
       "name": "Webapplicaties",
@@ -81,7 +92,7 @@
     },
     "mobile": {
       "name": "Mobiele apps",
-      "short": "iOS- en Android-apps voor het werk van uw team in de winkel, in het magazijn of onderweg."
+      "short": "iOS- en Android-apps voor het werk dat uw team op locatie, in het veld of onderweg doet."
     }
   },
   "process": {
@@ -127,8 +138,8 @@
     ]
   },
   "cta": {
-    "title": "Kost een proces u te veel tijd?",
-    "text": "Vertel ons wat u wilt verbeteren. U ontvangt een helder voorstel met scope, planning en prijs.",
+    "title": "Klaar om meer klanten te winnen met minder handwerk?",
+    "text": "Vertel ons wat u wilt verbeteren. U ontvangt een schriftelijk voorstel met scope, planning en prijs.",
     "button": "Start een project"
   },
   "form": {
@@ -138,19 +149,21 @@
     "optional": "optioneel",
     "project_type": "Soort project",
     "types": {
+      "presence": "Website of vindbaarheid op Google",
+      "phone": "AI-telefoonassistent",
       "automation": "Automatisering of bot",
       "web": "Webapplicatie",
       "mobile": "Mobiele app",
-      "resale": "Resale-tools",
       "other": "Iets anders"
     },
     "choose": "Maak een keuze",
     "budget": "Geschat budget",
     "budgets": [
-      "Minder dan $ 5.000",
-      "$ 5.000 – 15.000",
-      "$ 15.000 – 50.000",
-      "Meer dan $ 50.000",
+      "Maandpakket (vanaf $149 per maand)",
+      "Minder dan $5,000",
+      "$5,000 – $15,000",
+      "$15,000 – $50,000",
+      "Meer dan $50,000",
       "Weet ik nog niet"
     ],
     "timeline": "Planning",
@@ -161,7 +174,7 @@
       "Flexibel"
     ],
     "message": "Projectdetails",
-    "message_hint": "Beschrijf de taak die u wilt verbeteren, de betrokken platforms en de gebruikersrollen die u nodig heeft. Stuur geen wachtwoorden of API-sleutels.",
+    "message_hint": "Beschrijf uw bedrijf, wat u wilt verbeteren en de tools die u al gebruikt. Stuur ons geen wachtwoorden of API-sleutels.",
     "consent": "Ik ga ermee akkoord dat mijn gegevens worden verwerkt om mijn aanvraag te beantwoorden, zoals beschreven in de {link}.",
     "consent_link": "privacyverklaring",
     "submit": "Aanvraag versturen",
@@ -189,13 +202,13 @@
     "unread": "Nieuw antwoord",
     "role": "AI-verkoopassistent",
     "greeting": "Hallo, ik ben {name}.",
-    "intro": "Ik beantwoord vragen over onze maatwerksoftware, automatisering en tools voor resellers, en wijs u de juiste pagina. Waarmee kan ik helpen?",
+    "intro": "Ik beantwoord vragen over onze websites, AI-telefoonassistent, automatisering en maatwerksoftware, en wijs u de juiste pagina. Waarmee kan ik helpen?",
     "notice": "U chat met een AI-assistent; antwoorden kunnen fouten bevatten. Deel geen wachtwoorden of kaartnummers. {link}",
     "chips_label": "Kies een onderwerp",
     "chips": [
-      "Maatwerksoftware of automatisering voor mijn bedrijf",
-      "Tools voor resellers (crosslisting, voorraadsynchronisatie)",
-      "Bots en integraties",
+      "Een website of vindbaarheid op Google voor mijn bedrijf",
+      "Een AI-telefoonassistent",
+      "Automatisering en bots",
       "Een web- of mobiele app",
       "Prijzen en hoe een project verloopt",
       "Betalingen en facturen"
@@ -236,73 +249,78 @@
   },
   "pages": {
     "home": {
-      "title": "Maatwerksoftware, automatisering en bots | Zerone International",
-      "description": "Zerone International bouwt maatwerk automatiseringen, bots, web- en mobiele apps en ontwikkelt tools voor doorverkopers. Gevestigd in New York, wereldwijd actief in 15 talen.",
-      "h1": "Software die werkt zoals uw bedrijf werkt",
+      "title": "Websites, AI-assistenten en maatwerksoftware | Zerone",
+      "description": "Zerone International uit New York: websites en lokale SEO, AI-telefoonassistenten, automatisering, web- en mobiele apps voor bedrijven in de hele VS.",
+      "h1": "Technologie waarmee uw bedrijf gevonden wordt, elke oproep beantwoordt en tijd bespaart",
       "hero": {
-        "eyebrow": "Maatwerksoftware · New York",
-        "lede": "We bouwen automatiseringen, bots, webapplicaties en mobiele apps rond uw echte werkwijze, en we ontwikkelen tools voor online doorverkopers.",
+        "eyebrow": "New York · voor bedrijven in de hele VS",
+        "lede": "We zijn een technologiebedrijf uit New York. We bouwen websites die klanten opleveren, AI-assistenten die elke oproep beantwoorden en software die uw team repetitief werk uit handen neemt, van een website van één pagina tot een applicatie op maat.",
         "primary": "Start een project",
         "secondary": "Bekijk onze diensten",
         "points": [
-          "Schriftelijk voorstel met vaste scope",
-          "Rollen voor eigenaar, manager en medewerker",
-          "Gebouwd door mensen die zelf online doorverkopen"
+          "Schriftelijk voorstel en prijs voordat het werk begint",
+          "Alles kan schriftelijk: per e-mail, sms of chat",
+          "Gevestigd in New York, met klanten in het hele land"
         ]
       },
       "services": {
-        "eyebrow": "Wat we bouwen",
-        "title": "Drie manieren om tijd te besparen",
-        "intro": "Elk project begint bij uw werkwijze. Daarna kiezen we het juiste formaat: automatisering, een webapplicatie, een mobiele app of een combinatie."
+        "eyebrow": "Wat we doen",
+        "title": "Vijf manieren waarop we uw bedrijf helpen",
+        "intro": "Begin bij wat uw klanten zien en schrap daarna het werk dat uw team ophoudt. Kies één dienst of combineer ze."
       },
-      "resale": {
-        "eyebrow": "Ervaring met doorverkoop",
-        "title": "We kennen online doorverkoop van binnenuit",
-        "text": "Zerone International verkoopt gebruikte goederen en overtollige voorraad via online marktplaatsen. Die dagelijkse ervaring bepaalt de tools die we bouwen: een crosslisting-systeem en een analysetool voor liquidatiepartijen.",
-        "link": "Bekijk onze producten"
+      "reach": {
+        "eyebrow": "Waar we werken",
+        "title": "Van New York naar het hele land",
+        "text": "We zijn gevestigd in New York, dus New York City en Long Island komen eerst, en daar kunnen we ook persoonlijk afspreken. Al het andere gaat op afstand, zodat bedrijven in elke staat hetzelfde proces, dezelfde schriftelijke voorstellen en dezelfde ondersteuning krijgen.",
+        "areas": [
+          "New York City: Manhattan, Brooklyn, Queens, the Bronx en Staten Island",
+          "Long Island: de county's Nassau en Suffolk en the Hamptons",
+          "Projecten op afstand in alle 50 staten"
+        ],
+        "link": "Bekijk pakketten en prijzen"
       },
       "cases": {
         "eyebrow": "Toepassingen",
         "title": "Ideeën om op voort te bouwen",
-        "intro": "Twintig voorbeelden van wat maatwerksoftware kan doen voor doorverkopers en kleine bedrijven."
+        "intro": "Twintig voorbeelden van wat we bouwen voor dienstverleners, winkels, restaurants, kantoren en groeiende teams."
       },
       "faq": {
         "eyebrow": "FAQ",
         "title": "Veelgestelde vragen",
         "items": [
           {
-            "q": "Kan ik nu een maatwerkproject aanvragen?",
-            "a": "Ja. Stuur uw wensen via het contactformulier. Wij beoordelen de haalbaarheid en sturen u een schriftelijk voorstel."
+            "q": "Werkt u alleen met bedrijven in New York?",
+            "a": "Nee. We zijn gevestigd in New York en geven voorrang aan New York City en Long Island, waar we ook persoonlijk kunnen afspreken. Op afstand werken we met bedrijven overal in de Verenigde Staten."
           },
           {
-            "q": "Wat kost een maatwerkproject?",
-            "a": "Dat hangt af van de scope. Kleine automatiseringen beginnen vanaf enkele duizenden dollars; grotere applicaties worden na de verkenning geprijsd. U kent de prijs altijd voordat het werk begint."
+            "q": "Wat kost het?",
+            "a": "Pakketten voor kleine bedrijven beginnen bij $149 per maand voor een website met beheer van uw Google Business Profile. Maatwerksoftware prijzen we na een korte verkenning en begint meestal bij enkele duizenden dollars. U krijgt de prijs altijd schriftelijk voordat het werk begint."
           },
           {
             "q": "Hoe lang duurt een project?",
-            "a": "Eenvoudige automatiseringen duren vaak twee tot vier weken. Web- en mobiele applicaties duren meestal één tot vier maanden, afhankelijk van de functies."
+            "a": "Een website voor een klein bedrijf staat meestal binnen een paar weken online. Automatiseringen duren vaak twee tot vier weken; web- en mobiele applicaties één tot vier maanden, afhankelijk van de functies."
           },
           {
-            "q": "Kan mijn applicatie verschillende gebruikersomgevingen hebben?",
-            "a": "Ja. Omgevingen voor eigenaar, managers en medewerkers zijn mogelijk, elk met eigen rechten."
+            "q": "Moet ik u telefonisch spreken?",
+            "a": "Nee. Alles kan schriftelijk: per e-mail, sms, chat of via ons contactformulier. Belt u liever? Dan neemt Ava, onze AI-telefoonassistent, 24/7 op en volgen wij schriftelijk op."
           },
           {
-            "q": "Werken jullie met API’s van marktplaatsen?",
-            "a": "Ja, via officiële API’s en toegestane toegangsmethoden. Elke integratie wordt getoetst aan de regels van het platform voordat ze in een voorstel komt."
+            "q": "Van wie zijn mijn website, mijn Google-profiel en mijn code?",
+            "a": "Van u. Uw domein, Google Business Profile en accounts blijven altijd op naam van uw bedrijf. Bij maatwerksoftware wordt het eigendom in het voorstel vastgelegd; bij de meeste projecten krijgt de klant na de laatste betaling het volledige eigendom."
           },
           {
-            "q": "Zijn jullie resale-tools al beschikbaar?",
-            "a": "Het crosslisting-systeem en de analysetool voor partijen zijn in ontwikkeling. U kunt zich op de productpagina aanmelden voor de wachtlijst."
+            "q": "Kan mijn applicatie verschillende gebruikerspanelen hebben?",
+            "a": "Ja. Er kunnen panelen voor eigenaar, manager en medewerker worden opgenomen, elk met eigen rechten."
           }
         ]
       }
     },
     "services": {
-      "title": "Maatwerk softwareontwikkeling | Zerone International",
-      "description": "Maatwerk automatiseringen, bots, webapplicaties en mobiele apps voor kleine bedrijven en online doorverkopers. Heldere voorstellen, toegang per rol en doorlopende support.",
+      "title": "Websites, AI-telefoonassistenten en maatwerksoftware | Zerone",
+      "description": "Websites en lokale SEO, AI-telefoonassistenten, automatisering, web- en mobiele apps voor bedrijven in de VS. Vanuit New York, met heldere voorstellen.",
       "eyebrow": "Diensten",
-      "h1": "Maatwerk softwareontwikkeling",
-      "lede": "We maken van repetitief, handmatig of versnipperd werk betrouwbare software. U krijgt precies de functies die u nodig heeft en betaalt niet voor wat u nooit gebruikt.",
+      "h1": "Onze diensten",
+      "lede": "Van de eerste indruk online tot de software die uw team elke dag gebruikt. U krijgt precies wat u nodig hebt, schriftelijk vastgelegd, en niets waarvoor u betaalt maar dat u nooit gebruikt.",
       "faq": {
         "title": "Vragen over onze diensten",
         "items": [
@@ -323,15 +341,95 @@
             "a": "Ja. We kunnen een bestaand systeem beoordelen en verbeteringen, nieuwe functies of een migratieplan voorstellen."
           },
           {
-            "q": "Werken jullie met klanten buiten de Verenigde Staten?",
-            "a": "Ja. We werken op afstand met klanten wereldwijd en communiceren in het Engels en Turks."
+            "q": "Werkt u met klanten buiten New York?",
+            "a": "Ja. We bedienen bedrijven in de hele Verenigde Staten. In New York City en op Long Island kunnen we ook persoonlijk afspreken; elders werken we op afstand via e-mail, chat en videogesprekken. We communiceren in het Engels en het Turks."
           }
         ]
       }
     },
+    "service_presence": {
+      "title": "Websites en lokale SEO voor kleine bedrijven | Zerone",
+      "description": "Mobielvriendelijke websites, Google Business Profile-beheer, lokale SEO en reviewverzoeken voor bedrijven in New York en de VS. Vanaf $149 per maand.",
+      "eyebrow": "Websites en vindbaarheid op Google",
+      "h1": "Websites, lokale SEO en vindbaarheid op Google",
+      "lede": "De meeste klanten vinden een bedrijf op hun telefoon en beslissen binnen een minuut of twee. Wij zorgen dat die minuut telt: overal juiste informatie, een website die hun vragen beantwoordt en een eenvoudige manier om u te bereiken.",
+      "features_title": "Wat we doen",
+      "features": [
+        {
+          "title": "Websites die klanten opleveren",
+          "text": "Mobielvriendelijke websites op uw eigen domein met uw diensten, prijzen, openingstijden, een kaart, knoppen om te bellen en de route te plannen, en een formulier voor offertes of afspraken."
+        },
+        {
+          "title": "Google Business Profile",
+          "text": "Openingstijden, categorieën, diensten en foto's die juist en actueel blijven. Het profiel zelf is gratis van Google; u betaalt alleen voor ons werk."
+        },
+        {
+          "title": "Lokale SEO",
+          "text": "Snelle pagina's, een heldere structuur, gestructureerde gegevens en consistente bedrijfsgegevens in online gidsen, zodat zoekmachines begrijpen wat u doet en waar."
+        },
+        {
+          "title": "Reviews",
+          "text": "Na elke klus een beleefd reviewverzoek aan al uw klanten, en conceptantwoorden op elke nieuwe review, klaar voor uw goedkeuring."
+        },
+        {
+          "title": "Sms bij gemiste oproep",
+          "text": "Bellers die u niet kon opnemen, krijgen direct een sms met een link om een afspraak te maken of een vraag te stellen, zodra de registratie van uw bedrijf bij de provider is goedgekeurd."
+        },
+        {
+          "title": "Maandrapport",
+          "text": "Websitebezoeken, nieuwe aanvragen, reviews en oproepen, elke maand in begrijpelijke taal uitgelegd."
+        }
+      ],
+      "notes_title": "Goed om te weten",
+      "notes": [
+        "Uw domein, Google Business Profile en accounts blijven altijd op naam van uw bedrijf.",
+        "We volgen de regels van Google: we kopen nooit reviews, bieden er geen beloningen voor en vragen ze niet alleen aan tevreden klanten.",
+        "Maandpakketten beginnen bij $149 per maand, met een minimale looptijd van 3 maanden en daarna maandelijks opzegbaar."
+      ]
+    },
+    "service_phone": {
+      "title": "AI-telefoonassistent voor bedrijven | Zerone International",
+      "description": "Een AI-telefoonassistent die 24/7 opneemt, zegt dat hij een AI is, vragen beantwoordt, berichten aanneemt en afspraken inplant. Bel (631) 900-2595.",
+      "eyebrow": "AI-telefoonassistent",
+      "h1": "Een AI-telefoonassistent voor uw bedrijf",
+      "lede": "Elke gemiste oproep kan een gemiste klant zijn. Een AI-assistent neemt elke oproep aan, dag en nacht, antwoordt met een vriendelijke stem en stuurt u van elk gesprek een schriftelijke samenvatting.",
+      "features_title": "Wat hij doet",
+      "features": [
+        {
+          "title": "Neemt 24/7 op",
+          "text": "Elke oproep wordt beantwoord, ook 's avonds, in het weekend en op feestdagen."
+        },
+        {
+          "title": "Eerlijk over AI",
+          "text": "Hij vertelt bellers dat hij een AI-assistent is en dat het gesprek wordt opgenomen."
+        },
+        {
+          "title": "Beantwoordt veelgestelde vragen",
+          "text": "Openingstijden, diensten, prijzen en routebeschrijving, op basis van informatie die u hebt goedgekeurd."
+        },
+        {
+          "title": "Berichten en afspraken",
+          "text": "Hij neemt berichten en afspraakverzoeken aan en stuurt u de details schriftelijk."
+        },
+        {
+          "title": "Spoedmeldingen",
+          "text": "Alles wat dringend is, bereikt u meteen per sms of chat."
+        },
+        {
+          "title": "Gesprekssamenvattingen",
+          "text": "Een korte schriftelijke samenvatting van elk gesprek, zodat u weet wie er belde en wat diegene nodig heeft."
+        }
+      ],
+      "notes_title": "Goed om te weten",
+      "notes": [
+        "Het is geen noodhulpdienst.",
+        "Hoor het zelf: bel ons eigen nummer, (631) 900-2595, en praat met Ava.",
+        "Beschikbaar als uitbreiding van onze pakketten voor kleine bedrijven of als onderdeel van een maatwerkproject."
+      ]
+    },
     "service_automation": {
       "title": "Procesautomatisering en maatwerk bots | Zerone International",
-      "description": "Maatwerk automatiseringen en bots die gegevens voorbereiden, advertenties maken, meldingen sturen en geplande taken uitvoeren, zodat uw team zich op beslissingen kan richten.",
+      "description": "Automatisering en bots op maat: gegevens en documenten voorbereiden, meldingen sturen, tools koppelen en geplande taken, zodat uw team zich op klanten richt.",
       "eyebrow": "Automatisering en bots",
       "h1": "Procesautomatisering en maatwerk bots",
       "lede": "Als uw team elke dag dezelfde stappen kopieert, plakt, controleert en herhaalt, kunnen die stappen meestal geautomatiseerd worden. We bouwen automatiseringen die betrouwbaar draaien en rapporteren wat ze hebben gedaan.",
@@ -342,8 +440,8 @@
           "text": "Zet spreadsheets, notities en leveranciersbestanden om in schone, gestructureerde gegevens."
         },
         {
-          "title": "Advertentieprocessen",
-          "text": "Bereid titels, beschrijvingen en kenmerken voor ter controle vóór publicatie."
+          "title": "Documentworkflows",
+          "text": "Zet formulieren, e-mails en bestanden om in offertes, facturen en dossiers die klaar zijn voor controle."
         },
         {
           "title": "Meldingen",
@@ -379,7 +477,7 @@
       "features": [
         {
           "title": "Dashboards",
-          "text": "Live overzicht van verkoop, voorraad, taken en de cijfers die voor u tellen."
+          "text": "Live overzichten van verkoop, opdrachten, taken en de cijfers die voor u belangrijk zijn."
         },
         {
           "title": "Interne tools",
@@ -411,10 +509,10 @@
     },
     "service_mobile": {
       "title": "Maatwerk app-ontwikkeling voor iOS en Android | Zerone International",
-      "description": "Maatwerk iOS- en Android-apps voor buitendienst, magazijnen en operaties: takenlijsten, goederenontvangst, foto’s en meldingen.",
+      "description": "iOS- en Android-apps op maat voor buitendienstteams, monteurs en operations: takenlijsten, opdrachtverslagen, foto's, checklists en meldingen.",
       "eyebrow": "Mobiele apps",
       "h1": "Ontwikkeling van maatwerk mobiele apps",
-      "lede": "Niet al het werk gebeurt achter een bureau. We bouwen mobiele apps voor de taken die uw team uitvoert in de winkel, in het magazijn of onderweg.",
+      "lede": "Niet al het werk gebeurt achter een bureau. We bouwen mobiele apps voor de taken die uw team op locatie, in het veld of onderweg uitvoert.",
       "features_title": "Wat we bouwen",
       "features": [
         {
@@ -422,12 +520,12 @@
           "text": "Toegewezen taken, checklists en statusupdates in de broekzak van elke medewerker."
         },
         {
-          "title": "Goederenontvangst",
-          "text": "Registreer binnenkomende goederen met barcodescan en foto’s."
+          "title": "Opdracht- en locatieverslagen",
+          "text": "Leg bezoeken, metingen en handtekeningen ter plekke vast, met barcodescanning waar nodig."
         },
         {
           "title": "Fotoprocessen",
-          "text": "Maak en orden productfoto’s direct waar de artikelen liggen."
+          "text": "Maak en orden foto's van opdrachten, artikelen of locaties precies daar waar het werk gebeurt."
         },
         {
           "title": "Pushmeldingen",
@@ -450,11 +548,11 @@
       ]
     },
     "products": {
-      "title": "Crosslisting- en partij-analysetools | Zerone International",
-      "description": "Zerone International ontwikkelt een crosslisting-systeem en een analysetool voor liquidatiepartijen voor online doorverkopers. Meld u aan voor de wachtlijst.",
+      "title": "Onze eigen softwareproducten | Zerone International",
+      "description": "Naast klantwerk bouwt Zerone International eigen software. Als eerste: een crosslisting-systeem en een analysetool voor liquidatiepartijen voor online verkopers.",
       "eyebrow": "Producten",
-      "h1": "Tools voor online doorverkopers",
-      "lede": "We bouwen de tools die we zelf wilden voor ons doorverkoopbedrijf. Beide zijn in ontwikkeling; meld u aan voor de wachtlijst om te horen wanneer vroege toegang opengaat.",
+      "h1": "Onze eigen producten",
+      "lede": "Naast klantprojecten bouwen we onze eigen softwareproducten. De eerste twee zijn tools voor online verkopers, en beide zijn in ontwikkeling. Meld u aan voor de wachtlijst om te horen wanneer de vroege toegang opent.",
       "items": [
         {
           "name": "Crosslisting-systeem",
@@ -479,33 +577,65 @@
       ]
     },
     "use_cases": {
-      "title": "20 softwaretoepassingen voor doorverkopers en mkb | Zerone",
-      "description": "Twintig voorbeelden van maatwerk automatisering, web- en mobiele software voor online doorverkopers en kleine bedrijven: advertenties, partij-analyse, voorraad, rapportage en teams.",
+      "title": "20 toepassingen: websites, AI en maatwerksoftware | Zerone",
+      "description": "Twintig voorbeelden van websites, AI-telefoonassistenten, automatisering, web- en mobiele software voor dienstverleners, winkels, horeca, kantoren en teams.",
       "eyebrow": "Toepassingen",
-      "h1": "20 toepassingen voor maatwerksoftware",
-      "lede": "Voorbeelden van wat we voor doorverkopers en kleine bedrijven kunnen bouwen. Elk voorbeeld is aan te passen aan uw werkwijze, platforms en team.",
+      "h1": "20 toepassingen",
+      "lede": "Voorbeelden van wat we kunnen bouwen. Elk voorbeeld kan worden aangepast aan uw bedrijf, de tools die u al gebruikt en uw team.",
       "note": "Dit zijn projectideeën, geen afgeronde klantprojecten. Platformtoegang en functies worden per voorstel beoordeeld."
     },
     "company": {
-      "title": "Over Zerone International LLC – Visie en missie",
-      "description": "Zerone International LLC is een bedrijf uit New York dat online doorverkoop combineert met maatwerk softwareontwikkeling. Lees over onze visie, missie en waarden.",
+      "title": "Over Zerone International – technologiebedrijf uit New York",
+      "description": "Zerone International LLC is een technologiebedrijf uit New York dat bedrijven in de hele VS helpt met websites, AI-assistenten, automatisering en maatwerksoftware.",
       "eyebrow": "Bedrijf",
       "h1": "Over Zerone International",
-      "lede": "We zijn een bedrijf uit New York op het snijvlak van online handel en software.",
+      "lede": "Een technologiebedrijf uit New York met een eenvoudig doel: nuttige technologie die elk bedrijf kan gebruiken.",
       "about": {
         "title": "Wie we zijn",
         "text": [
-          "Zerone International LLC is gevestigd in Farmingville, New York. We verkopen gebruikte goederen en overtollige voorraad via online marktplaatsen en ontwikkelen software, voor onze eigen bedrijfsvoering en voor klanten.",
-          "Elke dag een doorverkoopbedrijf runnen laat zien waar tijd verloren gaat: advertenties maken, partijen beoordelen, voorraad bijhouden en mensen aansturen. Die kennis nemen we mee in elk softwareproject."
+          "Zerone International LLC is een technologiebedrijf gevestigd in Farmingville, New York, op Long Island. We helpen bedrijven online gevonden te worden, elke klant te woord te staan en handwerk te vervangen door betrouwbare software.",
+          "We beginnen dicht bij huis, in New York City en op Long Island, en werken op afstand met bedrijven in elke staat. We runnen ons eigen bedrijf met dezelfde tools die we voor klanten bouwen: een AI-assistent neemt onze telefoon op, automatiseringen stellen onze voorstellen op en elke afspraak wordt schriftelijk gemaakt.",
+          "Naast klantwerk bouwen we onze eigen softwareproducten, te beginnen met tools voor online verkopers."
         ]
+      },
+      "founder": {
+        "eyebrow": "Oprichter",
+        "title": "Maak kennis met de oprichter",
+        "role": "Oprichter en CEO",
+        "bio": [
+          "Berk Divaroren richtte Zerone International op om kleine en groeiende bedrijven de technologie te geven die grote bedrijven vanzelfsprekend vinden: een website die klanten oplevert, een telefoon die altijd wordt opgenomen en software die het repetitieve werk doet.",
+          "Hij begon zijn eerste bedrijf, een bedrijf in computersoftware en -hardware in Adana, Turkije, in 2019. Hij heeft een bachelordiploma in Internationale Handel en Logistiek van de Anadolu-universiteit en verhuisde in januari 2022 naar New York, waar hij zijn studie in computertoepassingen, bedrijfskunde en management voortzette aan het New York Institute of Finance.",
+          "Voordat hij Zerone International oprichtte, deed hij praktijkervaring op in online handel op grote Amerikaanse marktplaatsen. Vandaag leidt hij het ontwerp van de eigen systemen van het bedrijf, van de AI-telefoonassistent en geautomatiseerde schriftelijke voorstellen tot deze website in 15 talen, en werkt hij rechtstreeks met elke klant."
+        ],
+        "facts_title": "In het kort",
+        "facts": [
+          {
+            "label": "Woonplaats",
+            "value": "New York, sinds januari 2022"
+          },
+          {
+            "label": "Opleiding",
+            "value": "Bachelor Internationale Handel en Logistiek, Anadolu-universiteit; computertoepassingen, bedrijfskunde en management, New York Institute of Finance"
+          },
+          {
+            "label": "Talen",
+            "value": "Engels, Turks, Arabisch"
+          },
+          {
+            "label": "Focus",
+            "value": "Websites, AI-assistenten, automatisering en maatwerksoftware"
+          }
+        ],
+        "linkedin": "Verbind op LinkedIn",
+        "photo_alt": "Berk Divaroren, oprichter van Zerone International"
       },
       "vision": {
         "title": "Onze visie",
-        "text": "Nuttige, begrijpelijke software toegankelijk maken voor kleine bedrijven, zodat zij hun tijd kunnen besteden aan de beslissingen die ertoe doen."
+        "text": "De technologiepartner zijn die bedrijven in heel Amerika vertrouwen, te beginnen in New York, met technologie die nuttig, begrijpelijk en betaalbaar is voor elk bedrijf."
       },
       "mission": {
         "title": "Onze missie",
-        "text": "Echte bedrijfsbehoeften omzetten in betrouwbare software, met een heldere scope, een eerlijke prijs en de juiste rechten voor elke gebruiker."
+        "text": "Echte bedrijfsbehoeften omzetten in betrouwbare websites, assistenten en software, met een heldere scope, eerlijke prijzen en open communicatie."
       },
       "values": {
         "title": "Waar we voor staan",
@@ -529,16 +659,16 @@
         ]
       },
       "location": {
-        "title": "Waar we zijn",
-        "text": "Farmingville, New York, Verenigde Staten. We werken op afstand met klanten over de hele wereld."
+        "title": "Waar we werken",
+        "text": "Hoofdkantoor in Farmingville, New York. We spreken klanten persoonlijk in New York City en op Long Island en werken op afstand met bedrijven in de hele Verenigde Staten."
       }
     },
     "contact": {
-      "title": "Contact – Start een softwareproject | Zerone International",
-      "description": "Neem contact op met Zerone International over een maatwerk automatisering, bot, web- of mobiele app. We reageren met vragen of een schriftelijk voorstel.",
+      "title": "Contact met Zerone International – start uw project",
+      "description": "Neem contact op over een website, AI-telefoonassistent, automatisering, web- of mobiele app. Bel, sms, mail of gebruik het formulier; we antwoorden schriftelijk.",
       "eyebrow": "Contact",
       "h1": "Start uw project",
-      "lede": "Vertel ons over uw idee of het probleem dat u wilt oplossen. We streven ernaar binnen twee werkdagen te reageren.",
+      "lede": "Vertel ons over uw bedrijf of het probleem dat u wilt oplossen. We streven ernaar binnen twee werkdagen te antwoorden.",
       "email_title": "Liever e-mail?",
       "email_text": "U kunt ons ook rechtstreeks mailen:",
       "phone_note": "Bel ons: onze AI-assistent Ava neemt 24/7 op (in het Engels).",
@@ -604,11 +734,11 @@
       }
     },
     "blog": {
-      "title": "Blog – Gidsen voor resale-automatisering | Zerone International",
-      "description": "Praktische gidsen over crosslisting, analyse van liquidatiepartijen en automatisering van doorverkoop, van een team met een eigen online doorverkoopbedrijf.",
+      "title": "Blog – gidsen over websites, AI en automatisering | Zerone",
+      "description": "Praktische gidsen over websites, lokale SEO, AI-assistenten en automatisering voor kleine en groeiende bedrijven, van een technologiebedrijf uit New York.",
       "eyebrow": "Blog",
-      "h1": "Gidsen voor doorverkopers en groeiende teams",
-      "lede": "Praktische artikelen over crosslisting, het inkopen van liquidatiepartijen en het automatiseren van repetitief werk bij doorverkoop.",
+      "h1": "Gidsen voor groeiende bedrijven",
+      "lede": "Praktische artikelen over online gevonden worden, elke klant te woord staan en repetitief werk automatiseren. Onze eerdere artikelen gaan over online verkopen.",
       "language_note": "De artikelen worden momenteel in het Engels gepubliceerd.",
       "read_more": "Artikel lezen",
       "minutes": "{n} min leestijd",
@@ -616,15 +746,15 @@
       "updated": "Bijgewerkt",
       "back": "Alle artikelen",
       "related": "Gerelateerde artikelen",
-      "guides_link": "Lees onze gidsen voor wederverkopers",
+      "guides_link": "Lees onze gidsen",
       "rss": "RSS-feed"
     },
     "developers": {
-      "title": "API's voor doorverkopers – Vroege toegang | Zerone International",
-      "description": "Zerone International plant API's voor doorverkopers: normalisatie van advertenties, voorraadsynchronisatie, partij-analyse en kostencalculators.",
+      "title": "API's voor ontwikkelaars – vroege toegang | Zerone International",
+      "description": "Zerone International plant API's voor online verkopers: normalisatie van advertenties, voorraadsync, partijanalyse en kostencalculators. Meld u aan.",
       "eyebrow": "Voor ontwikkelaars",
-      "h1": "API's en tools voor doorverkopers",
-      "lede": "We openen vroege toegang tot de ontwikkelaarstools die we bouwen voor ons eigen doorverkoopbedrijf. Er is nog niets live; meld u aan en beslis mee wat er eerst komt.",
+      "h1": "API's voor online verkopers",
+      "lede": "We openen vroege toegang tot ontwikkelaarstools die voortkomen uit onze eigen producten voor online verkopers. Er is nog niets live; meld u aan en help bepalen wat er eerst komt.",
       "hero_button": "Vroege toegang aanvragen",
       "planned": "Gepland",
       "products": {
@@ -846,243 +976,243 @@
   },
   "cases": [
     {
-      "slug": "ebay-advertenties-voorbereiden",
-      "title": "eBay-advertenties voorbereiden",
-      "summary": "Zet productnotities om in concepttitels, -beschrijvingen en kenmerken, klaar voor controle.",
-      "challenge": "Goede eBay-advertenties één voor één schrijven kost tijd, en kenmerken worden snel vergeten.",
-      "approach": "Een automatisering leest uw productnotities of spreadsheet en maakt gestructureerde concepten; uw team controleert en keurt alleen nog goed.",
+      "slug": "website-voor-thuisdiensten",
+      "title": "Een website voor een bedrijf in thuisdiensten",
+      "summary": "Een mobielvriendelijke website die lokale zoekopdrachten omzet in oproepen en offertes.",
+      "challenge": "Klanten vergelijken op hun telefoon een paar bedrijven en bellen wie ze vertrouwen.",
+      "approach": "Een snelle website met uw diensten, werkgebieden, echte foto's en reviews, knoppen om met één tik te bellen of een offerte te vragen, en een correct Google Business Profile erachter.",
       "includes": [
-        "Concepten voor titel en beschrijving",
-        "Checklist voor kenmerken",
-        "Controle vóór publicatie"
+        "Pagina's per dienst en werkgebied",
+        "Knoppen voor bellen, sms en offerte",
+        "Inrichting van uw Google Business Profile"
       ]
     },
     {
-      "slug": "poshmark-verkoopprocessen",
-      "title": "Poshmark-verkoopprocessen",
-      "summary": "Orden kledinggegevens en bereid advertenties voor Poshmark en andere kanalen voor.",
-      "challenge": "Kleding vraagt om maten, merken, staat en afmetingen, en die steeds opnieuw invoeren is traag.",
-      "approach": "Een gestructureerd invoerformulier verzamelt de gegevens één keer en maakt concepten per kanaal volgens de platformregels.",
+      "slug": "google-bedrijfsprofiel-opschonen",
+      "title": "Google Business Profile opschonen",
+      "summary": "Juiste openingstijden, categorieën, diensten en foto's, zodat klanten u op Google Maps vinden.",
+      "challenge": "Foute tijden, een vage categorie of oude foto's sturen klanten naar de concurrent.",
+      "approach": "We toetsen het profiel aan de richtlijnen van Google, corrigeren elk veld, voegen diensten en foto's toe en zetten een eenvoudige routine op die het actueel houdt.",
       "includes": [
-        "Gegevenssjabloon voor kleding",
-        "Concepten per kanaal",
-        "Status per artikel"
+        "Controle van categorie en diensten",
+        "Openingstijden, feestdagen en foto's",
+        "Maandelijkse controle op juistheid"
       ]
     },
     {
-      "slug": "amazon-catalogus-voorbereiden",
-      "title": "Amazon-catalogus voorbereiden",
-      "summary": "Orden productgegevens en controleer verplichte velden vóór het plaatsen.",
-      "challenge": "Ontbrekende of inconsistente velden leiden tot afgewezen advertenties en tijdverlies.",
-      "approach": "Een validatietool toetst uw productgegevens aan de vereiste velden en toont wat ontbreekt vóór de upload.",
+      "slug": "reviewverzoeken-na-elke-klus",
+      "title": "Reviewverzoeken na elke klus",
+      "summary": "Na afloop van het werk krijgt elke klant een beleefd verzoek met een directe link.",
+      "challenge": "Tevreden klanten laten zelden uit zichzelf een review achter, en zelf vragen vergeet u snel.",
+      "approach": "Na elke afgeronde klus gaat er een kort verzoek uit per e-mail of sms, volgens de regels van Google, en conceptantwoorden op elke nieuwe review wachten op uw goedkeuring.",
       "includes": [
-        "Controle van verplichte velden",
-        "Gegevens in bulk opschonen",
-        "Exporteerbare uploadbestanden"
+        "Automatisch verzoek na elke klus",
+        "Conceptantwoorden voor uw goedkeuring",
+        "Geen beloningen, geen selectie van klanten"
       ]
     },
     {
-      "slug": "walmart-voorraadprocessen",
-      "title": "Walmart-voorraadprocessen",
-      "summary": "Volg voorraad en productgegevens voor Walmart Marketplace via toegestane toegang.",
-      "challenge": "Voorraad en productgegevens handmatig gelijk houden over kanalen is lastig.",
-      "approach": "Een webdashboard brengt voorraad- en productgegevens samen en markeert verschillen die actie vragen.",
+      "slug": "lokale-seo-meerdere-locaties",
+      "title": "Lokale SEO voor meerdere locaties",
+      "summary": "Consistente pagina's en vermeldingen voor een bedrijf met meerdere vestigingen.",
+      "challenge": "Afwijkende gegevens in online gidsen verwarren klanten en zoekmachines.",
+      "approach": "Eén pagina per locatie met gestructureerde gegevens, dezelfde bedrijfsgegevens in de belangrijkste gidsen en een rapport met oproepen en aanvragen per locatie.",
       "includes": [
-        "Voorraadoverzicht",
-        "Meldingen bij verschillen",
-        "Wijzigingsgeschiedenis"
+        "Een pagina per locatie",
+        "Consistente vermeldingen in gidsen",
+        "Oproepen en aanvragen per locatie"
       ]
     },
     {
-      "slug": "etsy-productbeschrijvingen",
-      "title": "Etsy-productbeschrijvingen",
-      "summary": "Schrijf heldere productbeschrijvingen zonder materialen of herkomst te verzinnen.",
-      "challenge": "Goede beschrijvingen verkopen, maar ze voor elk artikel schrijven kost veel tijd.",
-      "approach": "Een concepttool maakt beschrijvingen uitsluitend op basis van de feiten die u aanlevert, klaar om te bewerken en goed te keuren.",
+      "slug": "ai-receptionist-voor-kantoren",
+      "title": "AI-receptionist voor een praktijk of kantoor",
+      "summary": "Beantwoord elke oproep, deel openingstijden en neem afspraakverzoeken aan, ook 's avonds.",
+      "challenge": "Baliemedewerkers kunnen niet elke oproep aannemen als ze klanten aan de balie helpen.",
+      "approach": "Een AI-assistent neemt op als de lijn bezet is of het kantoor gesloten is, zegt dat hij een AI is, beantwoordt veelgestelde vragen en stuurt elk verzoek schriftelijk naar het team.",
       "includes": [
-        "Feitelijke concepten",
-        "Instellingen voor toon en lengte",
-        "Goedkeuring vóór gebruik"
+        "Opnemen na sluitingstijd en bij drukte",
+        "Afspraakverzoeken op schrift",
+        "Duidelijke melding dat het een AI is"
       ]
     },
     {
-      "slug": "b-stock-partijbeoordeling",
-      "title": "B-Stock-partijbeoordeling",
-      "summary": "Vergelijk de prijs van een partij met geschatte kosten, logistiek en verkoopwaarde.",
-      "challenge": "Een partij lijkt goedkoop totdat kosten, verzending en onverkoopbare artikelen worden meegeteld.",
-      "approach": "Een rekentool combineert inkoopprijs, kosten, logistiek en uw verkoopaannames in één duidelijke schatting.",
+      "slug": "avondoproepen-voor-aannemers",
+      "title": "Oproepen na werktijd voor vakmensen",
+      "summary": "Mis geen klussen meer die 's avonds en in het weekend binnenkomen.",
+      "challenge": "Vakmensen kunnen niet opnemen tijdens het werk, en wie 's avonds belt, belt gewoon het volgende bedrijf.",
+      "approach": "De assistent neemt op, stelt de vragen die u kiest, zoals adres, probleem en urgentie, en stuurt u de dringende meteen per sms.",
       "includes": [
-        "Kostenopbouw",
-        "Aanpasbare aannames",
-        "Opgeslagen beoordelingen"
+        "Uw eigen intakevragen",
+        "Spoedklussen per sms naar u",
+        "Een samenvatting van elk gesprek"
       ]
     },
     {
-      "slug": "liquidation-biedplanning",
-      "title": "Liquidation.com-biedplanning",
-      "summary": "Schat het nettoresultaat in voordat u bepaalt hoeveel u biedt.",
-      "challenge": "Bieden zonder maximumprijs maakt het makkelijk om te veel te betalen.",
-      "approach": "Een planningstool berekent een aanbevolen maximumbod op basis van uw doelmarge en kostenaannames.",
+      "slug": "telefoon-voor-restaurants",
+      "title": "Telefoontjes voor een restaurant",
+      "summary": "Beantwoord vragen over openingstijden, de kaart en reserveringen tijdens de dinerdrukte.",
+      "challenge": "De telefoon gaat als de keuken het drukst is, en gemiste oproepen kosten tafels.",
+      "approach": "De assistent beantwoordt veelgestelde vragen, neemt reserveringsverzoeken aan en geeft al het andere door aan het personeel, met een schriftelijke notitie per gesprek.",
       "includes": [
-        "Instelling van de doelmarge",
-        "Schatting van het maximumbod",
-        "Scenario’s vergelijken"
+        "Antwoorden over openingstijden, kaart en route",
+        "Reserveringsverzoeken",
+        "Notities voor het personeel"
       ]
     },
     {
-      "slug": "retourreserve",
-      "title": "Retourreserve",
-      "summary": "Neem een instelbare reserve voor retouren op bij het beoordelen van de verkoopeconomie.",
-      "challenge": "Retouren verlagen de echte winst, maar worden vaak niet meegerekend.",
-      "approach": "Uw analysetool bevat een instelbare retourreserve per categorie of op basis van uw eigen historie.",
+      "slug": "gesprekssamenvattingen-en-opvolging",
+      "title": "Gesprekssamenvattingen en schriftelijke opvolging",
+      "summary": "Elk gesprek wordt een korte schriftelijke samenvatting en, waar nuttig, een concept-e-mail.",
+      "challenge": "Details uit telefoongesprekken raken zoek, en schriftelijk opvolgen kost tijd.",
+      "approach": "Na elk gesprek ontvangt u een samenvatting met de wensen en contactgegevens van de beller, en er staat een concept voor opvolging klaar voor uw goedkeuring.",
       "includes": [
-        "Percentages per categorie",
-        "Aanpassing op basis van historie",
-        "Nettomarge na retouren"
+        "Een schriftelijke samenvatting per gesprek",
+        "Concept-e-mails voor opvolging",
+        "Niets wordt verstuurd zonder uw goedkeuring"
       ]
     },
     {
-      "slug": "verzendkosten-schatten",
-      "title": "Verzendkosten schatten",
-      "summary": "Houd in uw planning rekening met gewicht, afmetingen en verzendopties.",
-      "challenge": "Verzendkosten lopen sterk uiteen en kunnen een winstgevend artikel verliesgevend maken.",
-      "approach": "Een planningstool schat verzendkosten op basis van gewicht en afmetingen en neemt ze mee in elke berekening.",
+      "slug": "offertes-en-facturen-uit-een-formulier",
+      "title": "Offertes en facturen uit één formulier",
+      "summary": "Maak van een klantaanvraag een offerte, en van een geaccepteerde offerte een factuur.",
+      "challenge": "Dezelfde klantgegevens in meerdere tools typen kost tijd en leidt tot fouten.",
+      "approach": "Een formulier of e-mail start de flow: de gegevens worden een conceptofferte en, zodra de klant akkoord gaat, een factuur met een gehoste betaallink.",
       "includes": [
-        "Invoer van gewicht en afmetingen",
-        "Tarieftabellen van vervoerders",
-        "Kosten per artikel"
+        "Conceptoffertes ter controle",
+        "Facturen met betaallinks",
+        "Geen kaartgegevens op uw systemen"
       ]
     },
     {
-      "slug": "overzicht-voor-eigenaar",
-      "title": "Overzicht voor de eigenaar",
-      "summary": "Eén omgeving met de bedrijfsinformatie en instellingen die een eigenaar nodig heeft.",
-      "challenge": "Eigenaren verzamelen vaak cijfers uit veel bronnen om te zien hoe het bedrijf ervoor staat.",
-      "approach": "Een eigenaarsdashboard toont kerncijfers, gebruikers en instellingen op één veilige plek.",
+      "slug": "leads-doorsturen-en-meldingen",
+      "title": "Leads doorsturen en directe meldingen",
+      "summary": "Elke nieuwe aanvraag binnen seconden bij de juiste persoon, per e-mail, chat of sms.",
+      "challenge": "Aanvragen komen via website, e-mail en sociale media, en sommige wachten dagen op antwoord.",
+      "approach": "Alle aanvragen komen op één plek binnen, worden gesorteerd op type en regio, en de juiste persoon krijgt een melding met een antwoordsjabloon.",
       "includes": [
-        "Kerncijfers in één oogopslag",
-        "Beheer van gebruikers en rechten",
-        "Exporteerbare rapporten"
+        "Eén inbox voor alle aanvragen",
+        "Meldingen per e-mail, chat of sms",
+        "Antwoordsjablonen"
       ]
     },
     {
-      "slug": "coordinatie-voor-managers",
-      "title": "Coördinatie voor managers",
-      "summary": "Een werkomgeving om taken toe te wijzen en de operatie te volgen.",
-      "challenge": "Zonder gedeeld overzicht raken taken zoek tussen berichten en spreadsheets.",
-      "approach": "Een managersomgeving maakt het mogelijk werk toe te wijzen, prioriteiten te stellen en voortgang live te volgen.",
+      "slug": "afspraakherinneringen",
+      "title": "Afspraakherinneringen",
+      "summary": "Automatische herinneringen en bevestigingen die no-shows verminderen.",
+      "challenge": "Gemiste afspraken kosten tijd en geld, en iedereen de dag ervoor bellen is niet haalbaar.",
+      "approach": "Herinneringen gaan uit op de tijden die u kiest, klanten bevestigen of verzetten met één klik en uw agenda werkt zichzelf bij.",
       "includes": [
-        "Taken toewijzen",
-        "Prioriteiten en deadlines bewaken",
-        "Voortgang van het team"
+        "Herinneringen per e-mail of sms",
+        "Bevestigen of verzetten met één klik",
+        "Agenda-updates"
       ]
     },
     {
-      "slug": "takenpanelen-medewerkers",
-      "title": "Takenpanelen voor medewerkers",
-      "summary": "Toon elke medewerker precies de taken en informatie die hij nodig heeft.",
-      "challenge": "Medewerkers verliezen tijd met zoeken naar instructies of vragen wat de volgende taak is.",
-      "approach": "Een eenvoudig mobiel paneel toont de taken van iedere persoon met de details om ze af te ronden.",
+      "slug": "wekelijkse-bedrijfsrapporten",
+      "title": "Wekelijkse bedrijfsrapporten",
+      "summary": "Elke maandag een rapport in gewone taal met de cijfers waar u echt naar kijkt.",
+      "challenge": "Verkoop, oproepen, reviews en websitebezoek staan in losse tools, dus niemand bekijkt alles.",
+      "approach": "Een geplande taak verzamelt de gegevens, vergelijkt ze met de vorige week en stuurt een kort rapport per e-mail of chat.",
       "includes": [
-        "Persoonlijke takenlijst",
-        "Instructies en foto’s",
-        "Status bijwerken met één tik"
+        "Gegevens uit de tools die u al gebruikt",
+        "Vergelijking met de vorige week",
+        "Per e-mail of chat bezorgd"
       ]
     },
     {
-      "slug": "goederenontvangst",
-      "title": "Goederenontvangst",
-      "summary": "Registreer binnenkomende goederen en organiseer wat nodig is voor doorverkoop.",
-      "challenge": "Niet-geregistreerde artikelen zijn later moeilijk te vinden, te prijzen en te plaatsen.",
-      "approach": "Een mobiele ontvangstapp legt artikelen bij aankomst vast met barcode, foto’s, staat en locatie.",
+      "slug": "klantenportaal",
+      "title": "Klantenportaal",
+      "summary": "Laat klanten de status, documenten en facturen bekijken zonder te bellen.",
+      "challenge": "Klanten bellen om te vragen hoe het ervoor staat, en medewerkers zijn uren kwijt aan dezelfde vragen.",
+      "approach": "Een beveiligd portaal toont elke klant de eigen bestellingen, documenten en facturen, met een melding zodra er iets verandert.",
       "includes": [
-        "Barcodescan",
-        "Velden voor staat en locatie",
-        "Direct gesynchroniseerd met het dashboard"
+        "Beveiligde klantlogin",
+        "Status, documenten en facturen",
+        "Meldingen bij wijzigingen"
       ]
     },
     {
-      "slug": "productfoto-taken",
-      "title": "Productfototaken",
-      "summary": "Coördineer productfoto’s en advertentievoorbereiding in één proces.",
-      "challenge": "Foto’s van verschillende telefoons raken verspreid en zonder label.",
-      "approach": "Een mobiel proces koppelt elke fotoset aan het juiste product en markeert het als klaar om te plaatsen.",
+      "slug": "operationeel-dashboard",
+      "title": "Operationeel dashboard voor eigenaren",
+      "summary": "Eén scherm met verkoop, opdrachten, oproepen en reviews, automatisch bijgewerkt.",
+      "challenge": "Eigenaren puzzelen het beeld bij elkaar uit spreadsheets, e-mails en verschillende apps.",
+      "approach": "Een dashboard haalt de belangrijkste cijfers uit uw tools en toont de trends, met aparte weergaven voor eigenaren, managers en medewerkers.",
       "includes": [
-        "Fotosets per product",
-        "Checklists voor opnames",
-        "Status klaar voor plaatsing"
-      ]
-    },
-    {
-      "slug": "csv-voorbereiding",
-      "title": "CSV-voorbereiding",
-      "summary": "Zet afgesproken spreadsheetformaten om in schone, gestructureerde gegevens.",
-      "challenge": "Bestanden van leveranciers en marktplaatsen gebruiken zelden dezelfde kolommen of formaten.",
-      "approach": "Een automatisering koppelt, schoont en valideert spreadsheetgegevens in precies het formaat dat u nodig heeft.",
-      "includes": [
-        "Kolomtoewijzing",
-        "Regels voor opschoning",
-        "Foutrapport"
-      ]
-    },
-    {
-      "slug": "maatwerkrapportage",
-      "title": "Maatwerkrapportage",
-      "summary": "Rapporten rond de cijfers en gegevensbronnen die u kiest.",
-      "challenge": "Standaardrapporten beantwoorden zelden de vragen die voor uw bedrijf belangrijk zijn.",
-      "approach": "We bouwen rapporten op basis van uw eigen gegevensbronnen, als dashboard of geplande e-mail.",
-      "includes": [
-        "Eigen kerncijfers",
-        "Geplande verzending",
+        "Live kerncijfers",
+        "Weergaven per rol",
         "Export naar CSV en PDF"
       ]
     },
     {
-      "slug": "meldingsbots",
-      "title": "Meldingsbots",
-      "summary": "Automatische meldingen en herinneringen via de kanalen die uw team al gebruikt.",
-      "challenge": "Belangrijke wijzigingen worden te laat opgemerkt als iemand handmatig moet controleren.",
-      "approach": "Een bot houdt de gebeurtenissen in de gaten die voor u belangrijk zijn en stuurt een bericht zodra actie nodig is.",
+      "slug": "online-boekingssysteem",
+      "title": "Online boekingssysteem",
+      "summary": "Online boeken met agenda's per medewerker, buffertijden en bevestigingen.",
+      "challenge": "Boekingen per telefoon en e-mail leiden tot dubbele boekingen en eindeloos heen-en-weer.",
+      "approach": "Klanten kiezen online een vrij tijdstip, elke medewerker ziet de eigen agenda, en bevestigingen en herinneringen gaan automatisch uit.",
       "includes": [
-        "Meldingen op basis van gebeurtenissen",
-        "Verzending via e-mail en chat",
-        "Dagelijkse samenvattingen"
+        "Online boekingspagina",
+        "Agenda's per medewerker",
+        "Automatische bevestigingen"
       ]
     },
     {
-      "slug": "mobiele-operationele-tools",
-      "title": "Mobiele operationele tools",
-      "summary": "Mobiele processen voor taken die uw team buiten het kantoor uitvoert.",
-      "challenge": "Papieren notities en berichten van de werkvloer zijn traag en foutgevoelig.",
-      "approach": "Een mobiele app zet veldwerk om in gestructureerde stappen die uw systemen direct bijwerken.",
+      "slug": "van-spreadsheets-naar-webapp",
+      "title": "Van spreadsheets naar een webapp",
+      "summary": "Vervang gedeelde spreadsheets door één gestructureerde, veilige werkomgeving.",
+      "challenge": "Spreadsheets lopen vast als meerdere mensen ze bewerken, en niemand weet welke versie klopt.",
+      "approach": "We maken van de spreadsheet een webapplicatie met formulieren, rechten, geschiedenis en rapporten, en zetten uw bestaande gegevens over.",
       "includes": [
-        "Stapsgewijze processen",
-        "Offline ondersteuning",
-        "Realtime updates"
+        "Gegevensmigratie",
+        "Rechten en geschiedenis",
+        "Rapporten en exports"
       ]
     },
     {
-      "slug": "webwerkomgevingen",
-      "title": "Webwerkomgevingen",
-      "summary": "Breng geselecteerde processen samen in één browserapplicatie.",
-      "challenge": "Werk dat verspreid is over veel tools en bestanden is moeilijk te beheren en te beveiligen.",
-      "approach": "Een webwerkomgeving bundelt de belangrijkste processen, met passende toegang voor elke rol.",
+      "slug": "buitendienst-app",
+      "title": "App voor de buitendienst",
+      "summary": "Opdrachten, adressen, checklists en foto's op zak bij elke monteur.",
+      "challenge": "Monteurs bellen het kantoor voor opdrachtdetails en vullen papieren formulieren in die zoekraken.",
+      "approach": "Een mobiele app toont elke monteur de eigen opdrachten, checklists en klantnotities, en stuurt foto's en handtekeningen terug naar kantoor.",
       "includes": [
-        "Centrale werkomgeving",
-        "Toegang per rol",
-        "Auditgeschiedenis"
+        "Opdrachtenlijst en routebeschrijving",
+        "Checklists, foto's en handtekeningen",
+        "Synchronisatie met kantoor"
       ]
     },
     {
-      "slug": "multichannelplanning",
-      "title": "Multichannelplanning",
-      "summary": "Plan voorraad over meerdere verkoopkanalen na beoordeling van de API-toegang.",
-      "challenge": "Verkopen op meerdere marktplaatsen vermenigvuldigt het werk om alles synchroon te houden.",
-      "approach": "We beoordelen de API-toegang en regels van elk platform en ontwerpen daarna een automatisering die de kanalen gelijk houdt.",
+      "slug": "inspectiechecklists",
+      "title": "Checklists voor inspecties en locaties",
+      "summary": "Digitale checklists die offline werken en ter plekke een rapport opleveren.",
+      "challenge": "Papieren checklists zijn slecht leesbaar, raken snel zoek en zijn traag om te zetten in rapporten.",
+      "approach": "Inspecteurs vullen checklists in op een telefoon of tablet, ook zonder verbinding, en er wordt automatisch een PDF-rapport gemaakt.",
       "includes": [
-        "Beoordeling van platformtoegang",
-        "Synchronisatieregels",
-        "Meldingen bij conflicten"
+        "Offlinemodus",
+        "Foto's en notities per onderdeel",
+        "Automatische PDF-rapporten"
+      ]
+    },
+    {
+      "slug": "loyaliteits-en-boekingsapp",
+      "title": "Loyaliteits- en boekingsapp",
+      "summary": "Een app in uw eigen huisstijl waarin vaste klanten boeken en beloningen sparen.",
+      "challenge": "Vaste klanten zijn het waardevolst, maar er is geen eenvoudige manier om contact te houden.",
+      "approach": "Een iOS- en Android-app met boeken, pushmeldingen en een eenvoudig loyaliteitsprogramma, gekoppeld aan uw bestaande systemen.",
+      "includes": [
+        "Boeken in de app",
+        "Pushmeldingen",
+        "Een eenvoudig loyaliteitsprogramma"
+      ]
+    },
+    {
+      "slug": "teamtaken-en-urenregistratie",
+      "title": "Teamtaken en urenregistratie",
+      "summary": "Wijs taken toe, registreer uren en volg de voortgang vanaf elke telefoon.",
+      "challenge": "Uren staan op papier en taken worden per sms uitgedeeld, dus aan het eind van de week klopt er niets.",
+      "approach": "Medewerkers zien hun taken en klokken in en uit in de app; managers zien de voortgang en exporteren uren voor de salarisadministratie.",
+      "includes": [
+        "Taken toewijzen",
+        "In- en uitklokken",
+        "Urenexport voor de salarisadministratie"
       ]
     }
   ]
