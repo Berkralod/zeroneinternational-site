@@ -8,7 +8,7 @@
 <section class="section" aria-label="{{ p.h1 }}">
   <div class="wrap">
     <div class="service-rows">
-    {% for key in ("automation", "web", "mobile") %}
+    {% for key in service_page %}
       {% set sp = t.pages[service_page[key]] %}
       <article class="service-row">
         <div class="service-row__art">{{ art.art(key) }}</div>

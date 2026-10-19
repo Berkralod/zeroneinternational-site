@@ -1,12 +1,13 @@
-{% set nav_items = [("services", t.nav.services), ("products", t.nav.products), ("use_cases", t.nav.use_cases), ("company", t.nav.company), ("blog", t.nav.blog), ("contact", t.nav.contact)] %}
+{# The plans pages exist in English only, so other languages link to them with hreflang="en". #}
+{% set nav_items = [("services", url("services"), t.nav.services), ("plans", plans_path, t.nav.plans), ("use_cases", url("use_cases"), t.nav.use_cases), ("company", url("company"), t.nav.company), ("blog", url("blog"), t.nav.blog), ("contact", url("contact"), t.nav.contact)] %}
 {% set section = "services" if page_id.startswith("service") else ("use_cases" if page_id == "case" else ("blog" if page_id == "post" else page_id)) %}
 <header class="site-header">
   <div class="wrap header-bar">
     <a class="brand" href="{{ url('home') }}" aria-label="{{ config.legal_name }} – {{ t.ui.home }}">{{ logo('h') }}</a>
     <nav class="primary-nav" aria-label="{{ t.ui.nav_label }}">
       <ul>
-      {% for key, label in nav_items %}
-        <li><a href="{{ url(key) }}"{% if section == key %} aria-current="page"{% endif %}>{{ label }}</a></li>
+      {% for key, href, label in nav_items %}
+        <li><a href="{{ href }}"{% if key == "plans" and lang != "en" %} hreflang="en"{% endif %}{% if section == key %} aria-current="page"{% endif %}>{{ label }}</a></li>
       {% endfor %}
       </ul>
     </nav>
@@ -27,8 +28,8 @@
         <summary aria-label="{{ t.ui.menu }}">{{ icons.icon('menu') }}</summary>
         <nav class="dropdown__panel nav-menu__panel" aria-label="{{ t.ui.nav_label }}">
           <ul>
-          {% for key, label in nav_items %}
-            <li><a href="{{ url(key) }}"{% if section == key %} aria-current="page"{% endif %}>{{ label }}</a></li>
+          {% for key, href, label in nav_items %}
+            <li><a href="{{ href }}"{% if key == "plans" and lang != "en" %} hreflang="en"{% endif %}{% if section == key %} aria-current="page"{% endif %}>{{ label }}</a></li>
           {% endfor %}
           </ul>
           <a class="button" href="{{ url('contact') }}">{{ t.ui.start_project }}</a>

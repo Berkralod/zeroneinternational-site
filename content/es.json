@@ -7,6 +7,8 @@
   },
   "slugs": {
     "services": "servicios",
+    "service_presence": "servicios/sitios-web-seo-local",
+    "service_phone": "servicios/asistente-telefonico-ia",
     "service_automation": "servicios/automatizacion-bots",
     "service_web": "servicios/aplicaciones-web",
     "service_mobile": "servicios/aplicaciones-moviles",
@@ -49,31 +51,40 @@
     "challenge": "El reto",
     "approach": "Cómo ayuda el software",
     "includes": "Qué puede incluir",
-    "legal_note": "Esta traducción se ofrece por comodidad. En caso de discrepancia, prevalece la versión en inglés."
+    "legal_note": "Esta traducción se ofrece por comodidad. En caso de discrepancia, prevalece la versión en inglés.",
+    "see_plans": "Ver planes y precios"
   },
   "nav": {
     "services": "Servicios",
+    "plans": "Planes y precios",
     "products": "Productos",
     "use_cases": "Casos de uso",
     "company": "Empresa",
     "blog": "Blog",
     "developers": "Para desarrolladores",
-    "local": "Para negocios locales",
     "contact": "Contacto"
   },
   "footer": {
-    "tagline": "Software a medida, automatización y herramientas de reventa de un equipo que dirige su propio negocio de reventa online.",
+    "tagline": "Sitios web, asistentes telefónicos con IA, automatización y software a medida para negocios de todo Estados Unidos, desde Nueva York.",
     "services": "Servicios",
     "company": "Empresa",
     "legal": "Legal",
     "rights": "Todos los derechos reservados.",
     "trademark": "Los nombres de marketplaces mencionados en este sitio son marcas comerciales de sus respectivos propietarios. Zerone International LLC no está afiliada a ellos ni cuenta con su respaldo.",
-    "location": "Farmingville, Nueva York, Estados Unidos"
+    "location": "Farmingville, Nueva York · clientes en todo Estados Unidos"
   },
   "services_list": {
+    "presence": {
+      "name": "Sitios web y presencia en Google",
+      "short": "Sitios web adaptados al móvil, un Perfil de Empresa en Google al día, SEO local y reseñas constantes, para que los clientes le encuentren y le elijan."
+    },
+    "phone": {
+      "name": "Asistente telefónico con IA",
+      "short": "Un asistente con IA que atiende sus llamadas 24/7, responde preguntas frecuentes, toma mensajes y agenda citas, para que nadie acabe en el buzón de voz."
+    },
     "automation": {
       "name": "Automatización y bots",
-      "short": "Elimine el trabajo repetitivo: preparación de datos, anuncios, notificaciones y tareas programadas que funcionan solas."
+      "short": "Elimine el trabajo repetitivo: entrada de datos, documentos, notificaciones y tareas programadas que se ejecutan solas."
     },
     "web": {
       "name": "Aplicaciones web",
@@ -81,7 +92,7 @@
     },
     "mobile": {
       "name": "Aplicaciones móviles",
-      "short": "Apps para iOS y Android para el trabajo que su equipo hace en la tienda, en el almacén o en la calle."
+      "short": "Apps para iOS y Android para el trabajo que su equipo hace en el sitio, sobre el terreno o en ruta."
     }
   },
   "process": {
@@ -127,8 +138,8 @@
     ]
   },
   "cta": {
-    "title": "¿Tiene un proceso que le quita demasiado tiempo?",
-    "text": "Cuéntenos qué quiere mejorar. Recibirá una propuesta clara con alcance, plazos y precio.",
+    "title": "¿Listo para ganar más clientes con menos trabajo manual?",
+    "text": "Cuéntenos qué quiere mejorar. Recibirá una propuesta por escrito con alcance, plazos y precio.",
     "button": "Iniciar un proyecto"
   },
   "form": {
@@ -138,19 +149,21 @@
     "optional": "opcional",
     "project_type": "Tipo de proyecto",
     "types": {
+      "presence": "Sitio web o presencia en Google",
+      "phone": "Asistente telefónico con IA",
       "automation": "Automatización o bot",
       "web": "Aplicación web",
       "mobile": "Aplicación móvil",
-      "resale": "Herramientas de reventa",
       "other": "Otra cosa"
     },
     "choose": "Seleccione una opción",
     "budget": "Presupuesto estimado",
     "budgets": [
-      "Menos de 5.000 $",
-      "5.000 – 15.000 $",
-      "15.000 – 50.000 $",
-      "Más de 50.000 $",
+      "Plan mensual (desde $149 al mes)",
+      "Menos de $5,000",
+      "$5,000 – $15,000",
+      "$15,000 – $50,000",
+      "Más de $50,000",
       "Aún no lo sé"
     ],
     "timeline": "Plazo",
@@ -161,7 +174,7 @@
       "Flexible"
     ],
     "message": "Detalles del proyecto",
-    "message_hint": "Describa la tarea que quiere mejorar, las plataformas implicadas y los roles de usuario que necesita. Por favor, no envíe contraseñas ni claves de API.",
+    "message_hint": "Describa su negocio, lo que quiere mejorar y las herramientas que ya utiliza. Por favor, no envíe contraseñas ni claves de API.",
     "consent": "Acepto que mis datos se traten para responder a mi solicitud, tal como se describe en la {link}.",
     "consent_link": "Política de privacidad",
     "submit": "Enviar solicitud",
@@ -189,13 +202,13 @@
     "unread": "Nueva respuesta",
     "role": "Asistente de ventas con IA",
     "greeting": "Hola, soy {name}.",
-    "intro": "Puedo responder preguntas sobre nuestro software a medida, la automatización y nuestras herramientas para revendedores, y llevarle a la página adecuada. ¿En qué puedo ayudarle?",
+    "intro": "Puedo responder preguntas sobre nuestros sitios web, el asistente telefónico con IA, la automatización y el software a medida, y llevarle a la página adecuada. ¿En qué puedo ayudarle?",
     "notice": "Está conversando con un asistente de IA y las respuestas pueden contener errores. No comparta contraseñas ni números de tarjeta. {link}",
     "chips_label": "Elija un tema",
     "chips": [
-      "Software a medida o automatización para mi negocio",
-      "Herramientas para revendedores (crosslisting, sincronización de inventario)",
-      "Bots e integraciones",
+      "Un sitio web o presencia en Google para mi negocio",
+      "Un asistente telefónico con IA",
+      "Automatización y bots",
       "Una aplicación web o móvil",
       "Precios y cómo funciona un proyecto",
       "Pagos y facturas"
@@ -236,73 +249,78 @@
   },
   "pages": {
     "home": {
-      "title": "Software a medida, automatización y bots | Zerone International",
-      "description": "Zerone International desarrolla automatizaciones, bots, aplicaciones web y móviles a medida, y herramientas para revendedores. Con sede en Nueva York, trabajamos en todo el mundo en 15 idiomas.",
-      "h1": "Software que funciona como funciona su negocio",
+      "title": "Sitios web, asistentes con IA y software a medida | Zerone",
+      "description": "Zerone International es una empresa tecnológica de Nueva York: sitios web y SEO local, asistentes telefónicos con IA, automatización y apps para negocios de EE. UU.",
+      "h1": "Tecnología para que su negocio se encuentre, atienda cada llamada y ahorre tiempo",
       "hero": {
-        "eyebrow": "Software a medida · Nueva York",
-        "lede": "Creamos automatizaciones, bots, aplicaciones web y apps móviles en torno a su flujo de trabajo real, y desarrollamos herramientas para revendedores online.",
+        "eyebrow": "Nueva York · al servicio de negocios en todo EE. UU.",
+        "lede": "Somos una empresa tecnológica de Nueva York. Creamos sitios web que atraen clientes, asistentes con IA que atienden cada llamada y software que libera a su equipo del trabajo repetitivo, desde un sitio de una sola página hasta una aplicación a medida.",
         "primary": "Iniciar un proyecto",
         "secondary": "Ver servicios",
         "points": [
-          "Propuesta por escrito con alcance cerrado",
-          "Roles de propietario, responsable y empleado",
-          "Hecho por quienes dirigen un negocio de reventa online"
+          "Propuesta y precio por escrito antes de empezar",
+          "Todo puede gestionarse por escrito: correo, mensaje de texto o chat",
+          "Con sede en Nueva York y clientes en todo el país"
         ]
       },
       "services": {
-        "eyebrow": "Qué desarrollamos",
-        "title": "Tres formas de ahorrar tiempo",
-        "intro": "Cada proyecto empieza por su flujo de trabajo. Después elegimos el formato adecuado: automatización, aplicación web, app móvil o una combinación."
+        "eyebrow": "Qué hacemos",
+        "title": "Cinco formas de ayudar a su negocio",
+        "intro": "Empiece por lo que ven sus clientes y después elimine el trabajo que frena a su equipo. Elija un servicio o combínelos."
       },
-      "resale": {
-        "eyebrow": "Experiencia en reventa",
-        "title": "Conocemos la reventa online desde dentro",
-        "text": "Zerone International vende artículos usados y excedentes de stock en marketplaces online. Esa experiencia diaria da forma a las herramientas que desarrollamos: un sistema de publicación multicanal y una herramienta de análisis de lotes de liquidación.",
-        "link": "Ver nuestros productos"
+      "reach": {
+        "eyebrow": "Dónde trabajamos",
+        "title": "De Nueva York a todo el país",
+        "text": "Tenemos sede en Nueva York, así que la ciudad de Nueva York y Long Island son nuestra prioridad, y allí también podemos reunirnos en persona. Todo lo demás funciona en remoto, de modo que los negocios de cualquier estado reciben el mismo proceso, las mismas propuestas por escrito y el mismo soporte.",
+        "areas": [
+          "Ciudad de Nueva York: Manhattan, Brooklyn, Queens, the Bronx y Staten Island",
+          "Long Island: los condados de Nassau y Suffolk y the Hamptons",
+          "Proyectos en remoto en los 50 estados"
+        ],
+        "link": "Ver planes y precios"
       },
       "cases": {
         "eyebrow": "Casos de uso",
         "title": "Ideas sobre las que construir",
-        "intro": "Veinte ejemplos de lo que el software a medida puede hacer por revendedores y pequeñas empresas."
+        "intro": "Veinte ejemplos de lo que creamos para empresas de servicios, tiendas, restaurantes, oficinas y equipos en crecimiento."
       },
       "faq": {
         "eyebrow": "Preguntas frecuentes",
         "title": "Preguntas frecuentes",
         "items": [
           {
-            "q": "¿Puedo solicitar ahora un proyecto de software a medida?",
-            "a": "Sí. Envíenos sus requisitos mediante el formulario de contacto. Analizamos la viabilidad y le enviamos una propuesta por escrito."
+            "q": "¿Solo trabajan con negocios de Nueva York?",
+            "a": "No. Tenemos sede en Nueva York y damos prioridad a la ciudad de Nueva York y Long Island, donde también podemos reunirnos en persona. Trabajamos en remoto con negocios de cualquier lugar de Estados Unidos."
           },
           {
-            "q": "¿Cuánto cuesta un proyecto a medida?",
-            "a": "Depende del alcance. Las automatizaciones pequeñas pueden empezar en unos pocos miles de dólares; las aplicaciones más grandes se presupuestan tras la fase de descubrimiento. Siempre conoce el precio antes de empezar."
+            "q": "¿Cuánto cuesta?",
+            "a": "Los planes para pequeñas empresas empiezan en $149 al mes por un sitio web con gestión del Perfil de Empresa en Google. El software a medida se presupuesta tras una breve fase de descubrimiento y suele empezar en unos pocos miles de dólares. Siempre recibe el precio por escrito antes de empezar."
           },
           {
             "q": "¿Cuánto dura un proyecto?",
-            "a": "Las automatizaciones sencillas suelen llevar de dos a cuatro semanas. Las aplicaciones web y móviles suelen llevar de uno a cuatro meses, según sus funciones."
+            "a": "Un sitio web para una pequeña empresa suele estar en línea en pocas semanas. Las automatizaciones suelen llevar de dos a cuatro semanas; las aplicaciones web y móviles, de uno a cuatro meses, según sus funciones."
+          },
+          {
+            "q": "¿Tengo que hablar con ustedes por teléfono?",
+            "a": "No. Todo puede gestionarse por escrito: por correo electrónico, mensaje de texto, chat o nuestro formulario de contacto. Si prefiere llamar, Ava, nuestra asistente telefónica con IA, responde 24/7 y le damos seguimiento por escrito."
+          },
+          {
+            "q": "¿De quién son mi sitio web, mi perfil de Google y mi código?",
+            "a": "Suyos. Su dominio, su Perfil de Empresa en Google y sus cuentas siempre quedan a nombre de su negocio. En el software a medida, la propiedad se define en la propuesta; en la mayoría de los proyectos el cliente recibe la propiedad total tras el pago final."
           },
           {
             "q": "¿Puede mi aplicación tener distintos paneles de usuario?",
-            "a": "Sí. Se pueden incluir paneles para propietario, responsables y empleados, cada uno con sus propios permisos."
-          },
-          {
-            "q": "¿Trabajan con las API de los marketplaces?",
-            "a": "Sí, mediante API oficiales y métodos de acceso permitidos. Cada integración se revisa según las reglas de la plataforma antes de incluirla en una propuesta."
-          },
-          {
-            "q": "¿Están disponibles sus herramientas de reventa?",
-            "a": "El sistema de publicación multicanal y la herramienta de análisis de lotes están en desarrollo. Puede unirse a la lista de espera en la página de productos."
+            "a": "Sí. Se pueden incluir paneles para el propietario, los responsables y los empleados, cada uno con sus propios permisos."
           }
         ]
       }
     },
     "services": {
-      "title": "Servicios de desarrollo de software a medida | Zerone International",
-      "description": "Automatizaciones, bots, aplicaciones web y móviles a medida para pequeñas empresas y revendedores online. Propuestas claras, acceso por roles y soporte continuo.",
+      "title": "Sitios web, asistentes telefónicos IA y software | Zerone",
+      "description": "Sitios web y SEO local, asistentes telefónicos con IA, automatización y apps web y móviles para negocios de EE. UU. Desde Nueva York, con propuestas por escrito.",
       "eyebrow": "Servicios",
-      "h1": "Desarrollo de software a medida",
-      "lede": "Convertimos el trabajo repetitivo, manual o disperso en software fiable. Obtiene exactamente las funciones que necesita y no paga por nada que no vaya a usar.",
+      "h1": "Nuestros servicios",
+      "lede": "Desde la primera impresión en internet hasta el software que su equipo usa a diario. Recibe exactamente lo que necesita, acordado por escrito, y nada que vaya a pagar sin usar nunca.",
       "faq": {
         "title": "Preguntas sobre nuestros servicios",
         "items": [
@@ -323,15 +341,95 @@
             "a": "Sí. Podemos revisar un sistema existente y proponer mejoras, nuevas funciones o un plan de migración."
           },
           {
-            "q": "¿Trabajan con clientes fuera de Estados Unidos?",
-            "a": "Sí. Trabajamos en remoto con clientes de todo el mundo y nos comunicamos en inglés y turco."
+            "q": "¿Trabajan con clientes fuera de Nueva York?",
+            "a": "Sí. Atendemos a negocios de todo Estados Unidos. En la ciudad de Nueva York y Long Island también podemos reunirnos en persona; en el resto del país trabajamos en remoto por correo electrónico, chat y videollamada. Nos comunicamos en inglés y en turco."
           }
         ]
       }
     },
+    "service_presence": {
+      "title": "Sitios web y SEO local para pymes | Zerone International",
+      "description": "Sitios web adaptados al móvil, Perfil de Empresa en Google, SEO local y solicitud de reseñas para negocios de Nueva York y todo EE. UU. Planes desde $149 al mes.",
+      "eyebrow": "Sitios web y presencia en Google",
+      "h1": "Sitios web, SEO local y presencia en Google",
+      "lede": "La mayoría de los clientes encuentra un negocio desde el móvil y decide en uno o dos minutos. Hacemos que ese minuto cuente: información correcta en todas partes, un sitio web que responde a sus preguntas y una forma fácil de contactarle.",
+      "features_title": "Qué hacemos",
+      "features": [
+        {
+          "title": "Sitios web que atraen clientes",
+          "text": "Sitios web adaptados al móvil en su propio dominio, con sus servicios, precios, horario, un mapa, botones para llamar y cómo llegar, y un formulario de presupuesto o reserva."
+        },
+        {
+          "title": "Perfil de Empresa en Google",
+          "text": "Horario, categorías, servicios y fotos siempre correctos y actualizados. El perfil en sí es gratuito en Google; usted solo paga por nuestro trabajo."
+        },
+        {
+          "title": "SEO local",
+          "text": "Páginas rápidas, estructura clara, datos estructurados y datos del negocio coherentes en los directorios, para que los buscadores entiendan qué hace y dónde."
+        },
+        {
+          "title": "Reseñas",
+          "text": "Una amable solicitud de reseña tras cada trabajo, enviada a todos sus clientes, y borradores de respuesta para cada reseña nueva, listos para su aprobación."
+        },
+        {
+          "title": "Respuesta por SMS a llamadas perdidas",
+          "text": "Quien llama y no recibe respuesta obtiene al instante un SMS con un enlace para reservar o preguntar, una vez aprobado el registro de su negocio ante el operador."
+        },
+        {
+          "title": "Informe mensual",
+          "text": "Visitas al sitio web, nuevas solicitudes, reseñas y llamadas, explicadas cada mes con palabras sencillas."
+        }
+      ],
+      "notes_title": "Conviene saber",
+      "notes": [
+        "Su dominio, su Perfil de Empresa en Google y sus cuentas siempre quedan a nombre de su negocio.",
+        "Seguimos las normas de Google: nunca compramos reseñas, no ofrecemos recompensas por ellas ni pedimos reseñas solo a los clientes satisfechos.",
+        "Los planes mensuales empiezan en $149 al mes, con un mínimo de 3 meses y después mes a mes."
+      ]
+    },
+    "service_phone": {
+      "title": "Asistente telefónico con IA para negocios | Zerone International",
+      "description": "Un asistente telefónico con IA que atiende sus llamadas 24/7, avisa de que es una IA, responde, toma mensajes y agenda citas. Llame al (631) 900-2595 y escúchelo.",
+      "eyebrow": "Asistente telefónico con IA",
+      "h1": "Un asistente telefónico con IA para su negocio",
+      "lede": "Cada llamada perdida puede ser un cliente perdido. Un asistente con IA contesta todas las llamadas, de día y de noche, responde con una voz amable y le envía un resumen por escrito de cada conversación.",
+      "features_title": "Qué hace",
+      "features": [
+        {
+          "title": "Atiende 24/7",
+          "text": "Se responde cada llamada, también por la noche, los fines de semana y los días festivos."
+        },
+        {
+          "title": "Transparente: dice que es una IA",
+          "text": "Informa a quien llama de que es un asistente con IA y de que la llamada se graba."
+        },
+        {
+          "title": "Responde preguntas frecuentes",
+          "text": "Horario, servicios, precios y cómo llegar, a partir de información que usted ha aprobado."
+        },
+        {
+          "title": "Mensajes y citas",
+          "text": "Toma mensajes y solicitudes de cita y le envía los detalles por escrito."
+        },
+        {
+          "title": "Avisos urgentes",
+          "text": "Todo lo urgente le llega al momento por mensaje de texto o chat."
+        },
+        {
+          "title": "Resúmenes de llamadas",
+          "text": "Un breve resumen por escrito de cada llamada, para que sepa quién llamó y qué necesita."
+        }
+      ],
+      "notes_title": "Conviene saber",
+      "notes": [
+        "No es un servicio de emergencias.",
+        "Compruébelo usted mismo: llame a nuestra línea, (631) 900-2595, y hable con Ava.",
+        "Disponible como complemento de nuestros planes para pequeñas empresas o como parte de un proyecto a medida."
+      ]
+    },
     "service_automation": {
       "title": "Automatización de procesos y bots a medida | Zerone International",
-      "description": "Automatizaciones y bots a medida que preparan datos, crean anuncios, envían notificaciones y ejecutan tareas programadas, para que su equipo se centre en las decisiones.",
+      "description": "Automatizaciones y bots a medida que preparan datos y documentos, envían avisos, conectan sus herramientas y ejecutan tareas programadas por usted.",
       "eyebrow": "Automatización y bots",
       "h1": "Automatización de procesos y bots a medida",
       "lede": "Si su equipo copia, pega, revisa y repite los mismos pasos cada día, normalmente esos pasos se pueden automatizar. Creamos automatizaciones que funcionan de forma fiable e informan de lo que han hecho.",
@@ -342,8 +440,8 @@
           "text": "Convierta hojas de cálculo, notas y archivos de proveedores en datos limpios y estructurados."
         },
         {
-          "title": "Flujos de publicación",
-          "text": "Prepare títulos, descripciones y características para revisarlos antes de publicar."
+          "title": "Flujos de documentos",
+          "text": "Convierta formularios, correos y archivos en presupuestos, facturas y registros listos para revisar."
         },
         {
           "title": "Notificaciones",
@@ -379,7 +477,7 @@
       "features": [
         {
           "title": "Paneles de control",
-          "text": "Una visión en tiempo real de ventas, stock, tareas y las métricas que le importan."
+          "text": "Vistas en tiempo real de ventas, trabajos, tareas y las cifras que le importan."
         },
         {
           "title": "Herramientas internas",
@@ -411,10 +509,10 @@
     },
     "service_mobile": {
       "title": "Desarrollo de apps móviles a medida (iOS y Android) | Zerone International",
-      "description": "Apps a medida para iOS y Android para equipos de campo, almacenes y operaciones: listas de tareas, entrada de stock, fotos y notificaciones.",
+      "description": "Apps a medida para iOS y Android para equipos de campo, técnicos y operaciones: listas de tareas, registros de trabajos, fotos, checklists y notificaciones.",
       "eyebrow": "Aplicaciones móviles",
       "h1": "Desarrollo de aplicaciones móviles a medida",
-      "lede": "Hay trabajo que no se hace en un escritorio. Creamos apps móviles para las tareas que su equipo realiza en la tienda, en el almacén o en ruta.",
+      "lede": "Hay trabajo que no se hace en un escritorio. Creamos apps móviles para las tareas que su equipo realiza en el sitio, sobre el terreno o en ruta.",
       "features_title": "Qué desarrollamos",
       "features": [
         {
@@ -422,12 +520,12 @@
           "text": "Tareas asignadas, listas de control y actualizaciones de estado en el bolsillo de cada empleado."
         },
         {
-          "title": "Entrada de stock",
-          "text": "Registre la mercancía entrante con lectura de códigos de barras y fotos."
+          "title": "Registros de trabajos y obras",
+          "text": "Registre visitas, mediciones y firmas en el lugar, con lectura de códigos de barras cuando haga falta."
         },
         {
           "title": "Flujos de fotografía",
-          "text": "Tome y organice las fotos de producto justo donde están los artículos."
+          "text": "Tome y organice fotos de trabajos, artículos o instalaciones justo donde se hace el trabajo."
         },
         {
           "title": "Notificaciones push",
@@ -450,11 +548,11 @@
       ]
     },
     "products": {
-      "title": "Herramientas de publicación multicanal y análisis de lotes | Zerone International",
-      "description": "Zerone International desarrolla un sistema de publicación multicanal y una herramienta de análisis de lotes de liquidación para revendedores online. Únase a la lista de espera.",
+      "title": "Nuestros propios productos de software | Zerone International",
+      "description": "Además del trabajo para clientes, Zerone International crea sus propios productos: un sistema de crosslisting y análisis de lotes para vendedores online.",
       "eyebrow": "Productos",
-      "h1": "Herramientas para revendedores online",
-      "lede": "Estamos creando las herramientas que queríamos para nuestro propio negocio de reventa. Ambas están en desarrollo; únase a la lista de espera para saber cuándo abre el acceso anticipado.",
+      "h1": "Nuestros propios productos",
+      "lede": "Además de los proyectos para clientes, creamos nuestros propios productos de software. Los dos primeros son herramientas para vendedores online y ambos están en desarrollo. Únase a la lista de espera para saber cuándo se abre el acceso anticipado.",
       "items": [
         {
           "name": "Sistema de publicación multicanal",
@@ -479,33 +577,65 @@
       ]
     },
     "use_cases": {
-      "title": "20 casos de uso de software para revendedores y pymes | Zerone",
-      "description": "Veinte ejemplos de automatización, software web y móvil a medida para revendedores online y pequeñas empresas: anuncios, análisis de lotes, stock, informes y equipos.",
+      "title": "20 casos de uso: sitios web, IA y software a medida | Zerone",
+      "description": "Veinte ejemplos de sitios web, asistentes telefónicos con IA, automatización y software web y móvil para empresas de servicios, tiendas, restaurantes y oficinas.",
       "eyebrow": "Casos de uso",
-      "h1": "20 casos de uso de software a medida",
-      "lede": "Ejemplos de lo que podemos desarrollar para revendedores y pequeñas empresas. Cada uno puede adaptarse a su flujo de trabajo, sus plataformas y su equipo.",
+      "h1": "20 casos de uso",
+      "lede": "Ejemplos de lo que podemos crear. Cada uno puede adaptarse a su negocio, a las herramientas que ya utiliza y a su equipo.",
       "note": "Son ideas de proyecto, no proyectos de clientes terminados. El acceso a plataformas y las funciones se revisan en cada propuesta."
     },
     "company": {
-      "title": "Sobre Zerone International LLC – Visión y misión",
-      "description": "Zerone International LLC es una empresa de Nueva York que combina la reventa online con el desarrollo de software a medida. Conozca nuestra visión, misión y valores.",
+      "title": "Sobre Zerone International – Empresa tecnológica de Nueva York",
+      "description": "Zerone International LLC es una empresa tecnológica de Nueva York: sitios web, asistentes con IA, automatización y software a medida para negocios de EE. UU.",
       "eyebrow": "Empresa",
       "h1": "Sobre Zerone International",
-      "lede": "Somos una empresa de Nueva York que trabaja donde se cruzan el comercio online y el software.",
+      "lede": "Una empresa tecnológica de Nueva York con un objetivo sencillo: tecnología útil que cualquier negocio pueda usar.",
       "about": {
         "title": "Quiénes somos",
         "text": [
-          "Zerone International LLC tiene su sede en Farmingville, Nueva York. Vendemos artículos usados y excedentes de stock en marketplaces online y desarrollamos software, tanto para nuestras propias operaciones como para clientes.",
-          "Llevar un negocio de reventa cada día nos muestra dónde se pierde el tiempo: preparar anuncios, revisar lotes, controlar el stock y coordinar a las personas. Ese conocimiento es el que aportamos a cada proyecto de software."
+          "Zerone International LLC es una empresa tecnológica con sede en Farmingville, Nueva York, en Long Island. Ayudamos a los negocios a ser encontrados en internet, atender a cada cliente y sustituir el trabajo manual por software fiable.",
+          "Empezamos cerca de casa, en la ciudad de Nueva York y Long Island, y trabajamos en remoto con negocios de todos los estados. Dirigimos nuestra propia empresa con las mismas herramientas que creamos para nuestros clientes: un asistente con IA atiende nuestra línea telefónica, las automatizaciones preparan nuestras propuestas y todos los acuerdos se hacen por escrito.",
+          "Además del trabajo para clientes, creamos nuestros propios productos de software, empezando por herramientas para vendedores online."
         ]
+      },
+      "founder": {
+        "eyebrow": "Fundador",
+        "title": "Conozca al fundador",
+        "role": "Fundador y CEO",
+        "bio": [
+          "Berk Divaroren fundó Zerone International para ofrecer a las pequeñas empresas y a las que están creciendo la tecnología que las grandes compañías dan por sentada: un sitio web que atrae clientes, un teléfono que siempre se atiende y software que hace el trabajo repetitivo.",
+          "Fundó su primera empresa, un negocio de software y hardware informático en Adana (Turquía), en 2019. Es licenciado en Comercio Internacional y Logística por la Universidad de Anadolu y se trasladó a Nueva York en enero de 2022, donde continuó sus estudios de aplicaciones informáticas, negocios y gestión en el New York Institute of Finance.",
+          "Antes de fundar Zerone International, adquirió experiencia práctica en comercio online en los principales marketplaces de EE. UU. Hoy dirige el diseño de los sistemas propios de la empresa, desde su asistente telefónico con IA y sus propuestas automatizadas por escrito hasta este sitio web en 15 idiomas, y trabaja directamente con cada cliente."
+        ],
+        "facts_title": "En resumen",
+        "facts": [
+          {
+            "label": "Residencia",
+            "value": "Nueva York, desde enero de 2022"
+          },
+          {
+            "label": "Formación",
+            "value": "Licenciatura en Comercio Internacional y Logística, Universidad de Anadolu; aplicaciones informáticas, negocios y gestión, New York Institute of Finance"
+          },
+          {
+            "label": "Idiomas",
+            "value": "Inglés, turco, árabe"
+          },
+          {
+            "label": "Especialidad",
+            "value": "Sitios web, asistentes con IA, automatización y software a medida"
+          }
+        ],
+        "linkedin": "Conectar en LinkedIn",
+        "photo_alt": "Berk Divaroren, fundador de Zerone International"
       },
       "vision": {
         "title": "Nuestra visión",
-        "text": "Hacer accesible a las pequeñas empresas un software útil y comprensible, para que puedan dedicar su tiempo a las decisiones que importan."
+        "text": "Ser el socio tecnológico en el que confían los negocios de todo Estados Unidos, empezando desde Nueva York, con tecnología útil, comprensible y asequible para cualquier negocio."
       },
       "mission": {
         "title": "Nuestra misión",
-        "text": "Convertir necesidades reales del negocio en software fiable, con un alcance claro, precios justos y los permisos adecuados para cada usuario."
+        "text": "Convertir necesidades reales de los negocios en sitios web, asistentes y software fiables, con un alcance claro, precios justos y una comunicación honesta."
       },
       "values": {
         "title": "Lo que valoramos",
@@ -529,16 +659,16 @@
         ]
       },
       "location": {
-        "title": "Dónde estamos",
-        "text": "Farmingville, Nueva York, Estados Unidos. Trabajamos en remoto con clientes de todo el mundo."
+        "title": "Dónde trabajamos",
+        "text": "Con sede central en Farmingville, Nueva York. Nos reunimos en persona con clientes en la ciudad de Nueva York y Long Island y trabajamos en remoto con negocios de todo Estados Unidos."
       }
     },
     "contact": {
-      "title": "Contacto – Inicie un proyecto de software | Zerone International",
-      "description": "Contacte con Zerone International para hablar de un proyecto de automatización, bot, aplicación web o móvil a medida. Respondemos con preguntas o una propuesta por escrito.",
+      "title": "Contacte con Zerone International – Inicie su proyecto",
+      "description": "Contacte con Zerone International para un sitio web, un asistente telefónico con IA, automatización o una app web o móvil. Llame, escriba o use el formulario.",
       "eyebrow": "Contacto",
       "h1": "Inicie su proyecto",
-      "lede": "Cuéntenos su idea o el problema que quiere resolver. Intentamos responder en un plazo de dos días hábiles.",
+      "lede": "Cuéntenos sobre su negocio o el problema que quiere resolver. Procuramos responder en un plazo de dos días hábiles.",
       "email_title": "¿Prefiere el correo electrónico?",
       "email_text": "También puede escribirnos directamente:",
       "phone_note": "Llámenos: nuestra asistente de IA, Ava, atiende 24/7 (en inglés).",
@@ -604,11 +734,11 @@
       }
     },
     "blog": {
-      "title": "Blog – Guías de automatización de reventa | Zerone International",
-      "description": "Guías prácticas sobre crosslisting, análisis de lotes de liquidación y automatización de la reventa, escritas por un equipo con su propio negocio online.",
+      "title": "Blog – Guías de sitios web, IA y automatización | Zerone",
+      "description": "Guías prácticas sobre sitios web, SEO local, asistentes con IA y automatización para pequeñas empresas y negocios en crecimiento, desde Nueva York.",
       "eyebrow": "Blog",
-      "h1": "Guías para revendedores y equipos en crecimiento",
-      "lede": "Artículos prácticos sobre crosslisting, compra de lotes de liquidación y automatización de las tareas repetitivas de la reventa.",
+      "h1": "Guías para negocios en crecimiento",
+      "lede": "Artículos prácticos para ser encontrado en internet, atender a cada cliente y automatizar el trabajo repetitivo. Nuestros artículos anteriores tratan sobre la venta online.",
       "language_note": "Por ahora, los artículos se publican en inglés.",
       "read_more": "Leer artículo",
       "minutes": "{n} min de lectura",
@@ -616,15 +746,15 @@
       "updated": "Actualizado",
       "back": "Todos los artículos",
       "related": "Artículos relacionados",
-      "guides_link": "Lea nuestras guías para revendedores",
+      "guides_link": "Leer nuestras guías",
       "rss": "Feed RSS"
     },
     "developers": {
-      "title": "API para revendedores – Acceso anticipado | Zerone International",
-      "description": "Zerone International prepara API para revendedores: normalización de anuncios, sincronización de inventario, análisis de lotes y calculadoras de comisiones.",
+      "title": "APIs para desarrolladores – Acceso anticipado | Zerone",
+      "description": "Zerone International prepara APIs para vendedores online: normalización de anuncios, sincronización de inventario, análisis de lotes y cálculo de comisiones.",
       "eyebrow": "Para desarrolladores",
-      "h1": "API y herramientas para revendedores",
-      "lede": "Abrimos el acceso anticipado a las herramientas para desarrolladores que estamos creando para nuestro propio negocio de reventa. Aún no hay nada disponible; únase a la lista y ayúdenos a decidir qué llega primero.",
+      "h1": "APIs para vendedores online",
+      "lede": "Abrimos el acceso anticipado a herramientas para desarrolladores que nacen de nuestros propios productos para vendedores online. Aún no hay nada disponible; únase a la lista y ayúdenos a decidir qué llega primero.",
       "hero_button": "Unirse al acceso anticipado",
       "planned": "Previsto",
       "products": {
@@ -846,243 +976,243 @@
   },
   "cases": [
     {
-      "slug": "preparacion-anuncios-ebay",
-      "title": "Preparación de anuncios en eBay",
-      "summary": "Convierta notas de producto en borradores de títulos, descripciones y características, listos para revisar.",
-      "challenge": "Redactar buenos anuncios de eBay uno a uno lleva tiempo y es fácil olvidar características.",
-      "approach": "Una automatización lee sus notas u hoja de cálculo y prepara borradores estructurados; su equipo solo revisa y aprueba.",
+      "slug": "sitio-web-servicios-hogar",
+      "title": "Un sitio web para una empresa de servicios del hogar",
+      "summary": "Un sitio web adaptado al móvil que convierte búsquedas locales en llamadas y presupuestos.",
+      "challenge": "Los clientes comparan unas pocas empresas en el móvil y llaman a la que les da confianza.",
+      "approach": "Un sitio web rápido con sus servicios, zonas de servicio, fotos reales y reseñas, botones para llamar y pedir presupuesto con un toque, y un Perfil de Empresa en Google correcto detrás.",
       "includes": [
-        "Borradores de título y descripción",
-        "Lista de control de características",
-        "Paso de revisión antes de publicar"
+        "Páginas de servicios y zonas de servicio",
+        "Botones para llamar, escribir y pedir presupuesto",
+        "Configuración del Perfil de Empresa en Google"
       ]
     },
     {
-      "slug": "reventa-en-poshmark",
-      "title": "Flujos de reventa en Poshmark",
-      "summary": "Organice los datos de ropa y prepare anuncios para Poshmark y otros canales.",
-      "challenge": "La ropa requiere tallas, marcas, estado y medidas, e introducirlos una y otra vez es lento.",
-      "approach": "Un formulario de entrada estructurado recoge los datos una vez y prepara borradores para cada canal según sus reglas.",
+      "slug": "limpieza-perfil-empresa-google",
+      "title": "Puesta al día del Perfil de Empresa en Google",
+      "summary": "Corrija horario, categorías, servicios y fotos para que le encuentren en Google Maps.",
+      "challenge": "Un horario erróneo, una categoría vaga o fotos viejas llevan clientes a la competencia.",
+      "approach": "Revisamos el perfil según las directrices de Google, corregimos cada campo, añadimos servicios y fotos y establecemos una rutina sencilla para mantenerlo al día.",
       "includes": [
-        "Plantilla de datos de ropa",
-        "Borradores por canal",
-        "Seguimiento del estado de cada artículo"
+        "Revisión de categorías y servicios",
+        "Horario, horario festivo y fotos",
+        "Control mensual de exactitud"
       ]
     },
     {
-      "slug": "preparacion-catalogo-amazon",
-      "title": "Preparación del catálogo de Amazon",
-      "summary": "Organice los datos de producto y revise los campos obligatorios antes de publicar.",
-      "challenge": "Los campos que faltan o son incoherentes provocan anuncios rechazados y pérdida de tiempo.",
-      "approach": "Una herramienta de validación revisa sus datos según los campos necesarios y señala lo que falta antes de subirlos.",
+      "slug": "resenas-tras-cada-trabajo",
+      "title": "Solicitud de reseñas tras cada trabajo",
+      "summary": "Una amable solicitud con un enlace directo llega a cada cliente al terminar el trabajo.",
+      "challenge": "Los clientes satisfechos rara vez dejan una reseña solos, y pedirla a mano se olvida.",
+      "approach": "Tras cada trabajo terminado sale una breve solicitud por correo o SMS, conforme a las normas de Google, y los borradores de respuesta a cada reseña nueva esperan su aprobación.",
       "includes": [
-        "Comprobación de campos obligatorios",
-        "Limpieza masiva de datos",
-        "Archivos de carga exportables"
+        "Solicitud automática tras cada trabajo",
+        "Borradores de respuesta para su aprobación",
+        "Sin recompensas ni filtrado de clientes"
       ]
     },
     {
-      "slug": "inventario-walmart",
-      "title": "Flujos de inventario para Walmart",
-      "summary": "Controle el stock y los datos de producto de Walmart Marketplace mediante acceso permitido.",
-      "challenge": "Mantener alineados el stock y los datos de producto entre canales a mano es difícil.",
-      "approach": "Un panel web reúne los datos de stock y de producto y señala las diferencias que requieren acción.",
+      "slug": "seo-local-varias-ubicaciones",
+      "title": "SEO local para varias ubicaciones",
+      "summary": "Páginas y fichas coherentes para un negocio con varias ubicaciones.",
+      "challenge": "Datos distintos en cada directorio confunden por igual a los clientes y a los buscadores.",
+      "approach": "Una página por ubicación con datos estructurados, los mismos datos del negocio en los principales directorios y un informe de llamadas y solicitudes por ubicación.",
       "includes": [
-        "Vista general del stock",
-        "Alertas de diferencias",
-        "Historial de cambios"
+        "Una página por ubicación",
+        "Fichas coherentes en directorios",
+        "Llamadas y solicitudes por ubicación"
       ]
     },
     {
-      "slug": "descripciones-etsy",
-      "title": "Descripciones de productos para Etsy",
-      "summary": "Prepare descripciones claras sin inventar materiales ni procedencia.",
-      "challenge": "Las buenas descripciones venden, pero escribirlas para cada artículo lleva mucho tiempo.",
-      "approach": "Una herramienta de borradores crea descripciones solo con los datos que usted aporta, listas para editar y aprobar.",
+      "slug": "recepcionista-ia-oficinas",
+      "title": "Recepcionista con IA para un despacho profesional",
+      "summary": "Atienda cada llamada, informe del horario y recoja citas, incluso fuera de horario.",
+      "challenge": "Recepción no puede atender cada llamada mientras ayuda a clientes en persona.",
+      "approach": "Un asistente con IA responde cuando la línea está ocupada o la oficina está cerrada, dice que es una IA, responde preguntas frecuentes y envía cada solicitud al equipo por escrito.",
       "includes": [
-        "Borradores basados en hechos",
-        "Ajustes de tono y extensión",
-        "Aprobación antes de usarlas"
+        "Atención fuera de horario y en picos de llamadas",
+        "Solicitudes de cita por escrito",
+        "Aviso claro de que es una IA"
       ]
     },
     {
-      "slug": "evaluacion-lotes-b-stock",
-      "title": "Evaluación de lotes en B-Stock",
-      "summary": "Compare el precio de un lote con las comisiones, la logística y el valor de reventa estimados.",
-      "challenge": "Un lote puede parecer barato hasta que se suman comisiones, envío y artículos invendibles.",
-      "approach": "Una calculadora combina precio de compra, comisiones, logística y sus supuestos de reventa en una estimación clara.",
+      "slug": "llamadas-fuera-de-horario-contratistas",
+      "title": "Llamadas fuera de horario para contratistas",
+      "summary": "Capte los trabajos que llegan de noche y los fines de semana.",
+      "challenge": "Los contratistas no pueden contestar mientras trabajan, y quien llama de noche llama a la siguiente empresa.",
+      "approach": "El asistente contesta, hace las preguntas que usted elija, como dirección, problema y urgencia, y le envía al momento un SMS con los casos urgentes.",
       "includes": [
-        "Desglose de costes",
-        "Supuestos ajustables",
-        "Evaluaciones guardadas"
+        "Sus propias preguntas de recepción",
+        "Trabajos urgentes por SMS",
+        "Un resumen de cada llamada"
       ]
     },
     {
-      "slug": "planificacion-pujas-liquidation",
-      "title": "Planificación de pujas en Liquidation.com",
-      "summary": "Estime el resultado neto antes de decidir cuánto pujar.",
-      "challenge": "Pujar sin un precio máximo facilita pagar de más.",
-      "approach": "Una herramienta de planificación calcula una puja máxima recomendada a partir de su margen objetivo y sus costes.",
+      "slug": "llamadas-restaurante",
+      "title": "Llamadas para un restaurante",
+      "summary": "Responda sobre horario, menú y reservas en plena hora punta de la cena.",
+      "challenge": "El teléfono suena más cuando la cocina está más ocupada, y cada llamada sin atender cuesta mesas.",
+      "approach": "El asistente responde preguntas frecuentes, recoge solicitudes de reserva y pasa todo lo demás al personal, con una nota escrita de cada llamada.",
       "includes": [
-        "Ajustes de margen objetivo",
-        "Estimación de puja máxima",
-        "Comparación de escenarios"
+        "Respuestas sobre horario, menú y cómo llegar",
+        "Solicitudes de reserva",
+        "Notas para el personal"
       ]
     },
     {
-      "slug": "reserva-devoluciones",
-      "title": "Reserva para devoluciones",
-      "summary": "Incluya un margen ajustable para devoluciones al evaluar la rentabilidad de la reventa.",
-      "challenge": "Las devoluciones reducen el beneficio real, pero a menudo se omiten en los cálculos.",
-      "approach": "Su herramienta de análisis incluye una reserva configurable para devoluciones según la categoría o su propio historial.",
+      "slug": "resumenes-y-seguimiento-llamadas",
+      "title": "Resúmenes de llamadas y seguimiento por escrito",
+      "summary": "Cada llamada se convierte en un breve resumen y, si conviene, en un borrador de seguimiento.",
+      "challenge": "Los detalles de las llamadas se pierden y el seguimiento por escrito lleva tiempo.",
+      "approach": "Tras cada llamada le llega un resumen con las necesidades y los datos de contacto de quien llamó, y se prepara un borrador de seguimiento para su aprobación.",
       "includes": [
-        "Tasas por categoría",
-        "Ajustes según el historial",
-        "Margen neto tras devoluciones"
+        "Un resumen escrito de cada llamada",
+        "Borradores de correos de seguimiento",
+        "No se envía nada sin su aprobación"
       ]
     },
     {
-      "slug": "estimacion-costes-envio",
-      "title": "Estimación de costes de envío",
-      "summary": "Tenga en cuenta peso, dimensiones y opciones de envío en su planificación.",
-      "challenge": "Los costes de envío varían mucho y pueden convertir un artículo rentable en una pérdida.",
-      "approach": "Una herramienta de planificación estima el coste de envío a partir del peso y las medidas y lo incluye en cada cálculo.",
+      "slug": "presupuestos-y-facturas-desde-un-formulario",
+      "title": "Presupuestos y facturas desde un solo formulario",
+      "summary": "Convierta una solicitud en presupuesto, y un presupuesto aceptado en factura.",
+      "challenge": "Escribir los mismos datos del cliente en varias herramientas hace perder tiempo y provoca errores.",
+      "approach": "Un formulario o un correo inicia el flujo: los datos se convierten en un borrador de presupuesto y, cuando el cliente lo acepta, en una factura con un enlace de pago alojado.",
       "includes": [
-        "Datos de peso y medidas",
-        "Tablas de tarifas de transportistas",
-        "Coste por artículo"
+        "Borradores de presupuesto para revisar",
+        "Facturas con enlaces de pago",
+        "Sin datos de tarjeta en sus sistemas"
       ]
     },
     {
-      "slug": "panel-del-propietario",
-      "title": "Panel del propietario",
-      "summary": "Un único panel con la información y los controles que necesita un propietario.",
-      "challenge": "Los propietarios suelen reunir cifras de muchos sitios para saber cómo va el negocio.",
-      "approach": "Un panel del propietario muestra las cifras clave, los usuarios y la configuración en un solo lugar seguro.",
+      "slug": "reparto-de-contactos-y-avisos",
+      "title": "Reparto de contactos y avisos al instante",
+      "summary": "Envíe cada nueva consulta a la persona adecuada en segundos, por correo, chat o SMS.",
+      "challenge": "Las consultas llegan por la web, el correo y las redes sociales, y algunas esperan días.",
+      "approach": "Todas las consultas llegan a un mismo lugar, se clasifican por tipo y zona, y la persona adecuada recibe un aviso con una plantilla de respuesta.",
       "includes": [
-        "Métricas clave de un vistazo",
-        "Gestión de usuarios y permisos",
-        "Informes exportables"
+        "Una bandeja para todas las consultas",
+        "Avisos por correo, chat o SMS",
+        "Plantillas de respuesta"
       ]
     },
     {
-      "slug": "coordinacion-de-responsables",
-      "title": "Coordinación de responsables",
-      "summary": "Un espacio de trabajo para asignar tareas y seguir las operaciones.",
-      "challenge": "Sin una vista compartida, las tareas se pierden entre mensajes y hojas de cálculo.",
-      "approach": "Un espacio para responsables permite asignar trabajo, fijar prioridades y ver el progreso en tiempo real.",
+      "slug": "recordatorios-de-citas",
+      "title": "Recordatorios de citas",
+      "summary": "Recordatorios y confirmaciones automáticos que reducen las ausencias.",
+      "challenge": "Las citas perdidas cuestan tiempo y dinero, y llamar a todos el día anterior no es realista.",
+      "approach": "Los recordatorios salen a las horas que usted elija, los clientes confirman o cambian la cita con un clic y su calendario se actualiza solo.",
       "includes": [
-        "Asignación de tareas",
-        "Seguimiento de prioridades y plazos",
-        "Vista del progreso del equipo"
+        "Recordatorios por correo o SMS",
+        "Confirmar o cambiar con un clic",
+        "Calendario actualizado"
       ]
     },
     {
-      "slug": "paneles-de-tareas-empleados",
-      "title": "Paneles de tareas para empleados",
-      "summary": "Muestre a cada empleado exactamente las tareas y la información que necesita.",
-      "challenge": "Los empleados pierden tiempo buscando instrucciones o preguntando qué hacer a continuación.",
-      "approach": "Un panel móvil sencillo enumera las tareas de cada persona con los detalles necesarios para completarlas.",
+      "slug": "informes-semanales-del-negocio",
+      "title": "Informes semanales del negocio",
+      "summary": "Un informe en lenguaje sencillo cada lunes con las cifras que de verdad mira.",
+      "challenge": "Ventas, llamadas, reseñas y visitas web están en herramientas distintas, y nadie las mira todas.",
+      "approach": "Una tarea programada recopila los datos, los compara con la semana anterior y envía un breve informe por correo o chat.",
       "includes": [
-        "Lista personal de tareas",
-        "Instrucciones y fotos",
-        "Actualización de estado con un toque"
+        "Datos de las herramientas que ya usa",
+        "Comparación semana a semana",
+        "Envío por correo o chat"
       ]
     },
     {
-      "slug": "entrada-de-stock",
-      "title": "Entrada de stock",
-      "summary": "Registre la mercancía entrante y organice lo necesario para la reventa.",
-      "challenge": "Los artículos sin registrar son difíciles de encontrar, valorar y publicar después.",
-      "approach": "Una app móvil de entrada registra cada artículo al llegar con código de barras, fotos, estado y ubicación.",
+      "slug": "portal-de-clientes",
+      "title": "Portal de clientes",
+      "summary": "Que los clientes consulten estado, documentos y facturas sin llamar.",
+      "challenge": "Los clientes llaman para preguntar cómo va todo y el personal pasa horas respondiendo lo mismo.",
+      "approach": "Un portal seguro muestra a cada cliente sus propios pedidos, documentos y facturas, con un aviso cuando algo cambia.",
       "includes": [
-        "Lectura de códigos de barras",
-        "Campos de estado y ubicación",
-        "Sincronización inmediata con el panel"
+        "Acceso seguro para clientes",
+        "Estado, documentos y facturas",
+        "Avisos de cambios"
       ]
     },
     {
-      "slug": "tareas-de-fotografia",
-      "title": "Tareas de fotografía de producto",
-      "summary": "Coordine las fotos de producto y la preparación de anuncios en un solo flujo.",
-      "challenge": "Las fotos hechas con distintos móviles acaban dispersas y sin etiquetar.",
-      "approach": "Un flujo móvil vincula cada serie de fotos al producto correcto y la marca como lista para publicar.",
+      "slug": "panel-de-operaciones",
+      "title": "Panel de operaciones para propietarios",
+      "summary": "Una sola pantalla con ventas, trabajos, llamadas y reseñas, actualizada automáticamente.",
+      "challenge": "Los propietarios montan la imagen completa con hojas de cálculo, correos y varias apps.",
+      "approach": "Un panel reúne las cifras clave de sus herramientas y muestra las tendencias, con vistas separadas para propietarios, responsables y empleados.",
       "includes": [
-        "Series de fotos por producto",
-        "Listas de control de tomas",
-        "Estado de listo para publicar"
-      ]
-    },
-    {
-      "slug": "preparacion-csv",
-      "title": "Preparación de CSV",
-      "summary": "Convierta formatos de hoja de cálculo acordados en datos limpios y estructurados.",
-      "challenge": "Los archivos de proveedores y marketplaces rara vez usan las mismas columnas o formatos.",
-      "approach": "Una automatización asigna, limpia y valida los datos en el formato exacto que necesita.",
-      "includes": [
-        "Asignación de columnas",
-        "Reglas de limpieza de datos",
-        "Informe de errores"
-      ]
-    },
-    {
-      "slug": "informes-a-medida",
-      "title": "Informes a medida",
-      "summary": "Informes basados en las métricas y fuentes de datos que usted elija.",
-      "challenge": "Los informes estándar rara vez responden a las preguntas que importan a su negocio.",
-      "approach": "Creamos informes a partir de sus propias fuentes de datos, como paneles o correos programados.",
-      "includes": [
-        "Métricas personalizadas",
-        "Envío programado",
+        "Cifras clave en tiempo real",
+        "Vistas según el rol",
         "Exportación a CSV y PDF"
       ]
     },
     {
-      "slug": "bots-de-notificacion",
-      "title": "Bots de notificación",
-      "summary": "Alertas y recordatorios automáticos por los canales que su equipo ya utiliza.",
-      "challenge": "Los cambios importantes se detectan demasiado tarde cuando alguien tiene que revisarlos a mano.",
-      "approach": "Un bot vigila los eventos que le interesan y envía un mensaje en cuanto hace falta actuar.",
+      "slug": "sistema-de-reservas-online",
+      "title": "Sistema de reservas online",
+      "summary": "Reservas online con calendarios del personal, márgenes entre citas y confirmaciones.",
+      "challenge": "Reservar por teléfono y correo provoca reservas duplicadas y un ir y venir interminable.",
+      "approach": "Los clientes eligen un hueco libre online, cada miembro del personal ve su propio calendario y las confirmaciones y recordatorios salen automáticamente.",
       "includes": [
-        "Alertas basadas en eventos",
-        "Envío por correo y mensajería",
-        "Resúmenes diarios"
+        "Página de reservas online",
+        "Calendarios del personal",
+        "Confirmaciones automáticas"
       ]
     },
     {
-      "slug": "herramientas-operativas-moviles",
-      "title": "Herramientas operativas móviles",
-      "summary": "Flujos móviles para las tareas que su equipo realiza lejos del escritorio.",
-      "challenge": "Las notas en papel y los mensajes desde el almacén son lentos y propensos a errores.",
-      "approach": "Una app móvil convierte el trabajo de campo en pasos estructurados que actualizan sus sistemas al instante.",
+      "slug": "de-hojas-de-calculo-a-app-web",
+      "title": "De hojas de cálculo a una aplicación web",
+      "summary": "Sustituya las hojas de cálculo compartidas por un espacio estructurado y seguro.",
+      "challenge": "Las hojas de cálculo fallan cuando varias personas las editan y nadie sabe qué versión vale.",
+      "approach": "Convertimos la hoja de cálculo en una aplicación web con formularios, permisos, historial e informes, y trasladamos sus datos existentes.",
       "includes": [
-        "Flujos paso a paso",
-        "Funcionamiento sin conexión",
-        "Actualizaciones en tiempo real"
+        "Migración de datos",
+        "Permisos e historial",
+        "Informes y exportaciones"
       ]
     },
     {
-      "slug": "espacios-de-trabajo-web",
-      "title": "Espacios de trabajo web",
-      "summary": "Reúna flujos de trabajo seleccionados en una sola aplicación en el navegador.",
-      "challenge": "El trabajo repartido entre muchas herramientas y archivos es difícil de gestionar y de proteger.",
-      "approach": "Un espacio de trabajo web reúne los flujos más importantes, con acceso adecuado para cada rol.",
+      "slug": "app-servicio-de-campo",
+      "title": "App para servicio de campo",
+      "summary": "Trabajos, direcciones, checklists y fotos en el bolsillo de cada técnico.",
+      "challenge": "Los técnicos llaman a la oficina para pedir detalles y rellenan formularios en papel que se pierden.",
+      "approach": "Una app móvil muestra a cada técnico sus trabajos, checklists y notas del cliente, y envía fotos y firmas a la oficina.",
       "includes": [
-        "Espacio de trabajo central",
-        "Acceso por roles",
-        "Historial de auditoría"
+        "Lista de trabajos y cómo llegar",
+        "Checklists, fotos y firmas",
+        "Sincronización con la oficina"
       ]
     },
     {
-      "slug": "planificacion-multicanal",
-      "title": "Planificación multicanal",
-      "summary": "Planifique el inventario en varios canales de venta tras revisar el acceso a las API.",
-      "challenge": "Vender en varios marketplaces multiplica el trabajo de mantenerlo todo sincronizado.",
-      "approach": "Revisamos el acceso a la API y las reglas de cada plataforma y diseñamos una automatización que mantiene los canales alineados.",
+      "slug": "checklists-de-inspeccion",
+      "title": "Checklists de inspección y de obra",
+      "summary": "Checklists digitales que funcionan sin conexión y generan un informe al momento.",
+      "challenge": "Las checklists en papel son difíciles de leer, fáciles de perder y lentas de pasar a informe.",
+      "approach": "Los inspectores rellenan las checklists en un teléfono o una tableta, incluso sin conexión, y se genera automáticamente un informe en PDF.",
       "includes": [
-        "Revisión del acceso a plataformas",
-        "Reglas de sincronización",
-        "Alertas de conflictos"
+        "Modo sin conexión",
+        "Fotos y notas por punto",
+        "Informes PDF automáticos"
+      ]
+    },
+    {
+      "slug": "app-de-fidelizacion-y-reservas",
+      "title": "App de fidelización y reservas",
+      "summary": "Una app con su marca donde los clientes habituales reservan y suman recompensas.",
+      "challenge": "Los clientes habituales son los más valiosos, pero no hay una forma sencilla de seguir en contacto.",
+      "approach": "Una app para iOS y Android con reservas, notificaciones push y un programa de fidelización sencillo, conectada a sus sistemas actuales.",
+      "includes": [
+        "Reservas en la app",
+        "Notificaciones push",
+        "Un programa de fidelización sencillo"
+      ]
+    },
+    {
+      "slug": "tareas-y-control-horario-del-equipo",
+      "title": "Tareas y control horario del equipo",
+      "summary": "Asigne tareas, registre horas y vea el avance desde cualquier teléfono.",
+      "challenge": "Las horas se apuntan en papel y las tareas se reparten por SMS: nada cuadra al final de la semana.",
+      "approach": "Los empleados ven sus tareas y fichan la entrada y la salida en la app; los responsables ven el avance y exportan las horas para la nómina.",
+      "includes": [
+        "Asignación de tareas",
+        "Fichaje de entrada y salida",
+        "Exportación de horas para la nómina"
       ]
     }
   ]

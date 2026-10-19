@@ -7,6 +7,8 @@
   },
   "slugs": {
     "services": "services",
+    "service_presence": "services/websites-local-seo",
+    "service_phone": "services/ai-phone-assistant",
     "service_automation": "services/automation-bots",
     "service_web": "services/web-applications",
     "service_mobile": "services/mobile-apps",
@@ -49,31 +51,40 @@
     "challenge": "The challenge",
     "approach": "How software helps",
     "includes": "What it can include",
-    "legal_note": "This translation is provided for convenience. If there is any difference, the English version applies."
+    "legal_note": "This translation is provided for convenience. If there is any difference, the English version applies.",
+    "see_plans": "See plans and prices"
   },
   "nav": {
     "services": "Services",
+    "plans": "Plans & pricing",
     "products": "Products",
     "use_cases": "Use cases",
     "company": "Company",
     "blog": "Blog",
     "developers": "For developers",
-    "local": "For local businesses",
     "contact": "Contact"
   },
   "footer": {
-    "tagline": "Custom software, automation and resale tools from a team that runs its own online resale business.",
+    "tagline": "Websites, AI phone assistants, automation and custom software for businesses across the United States, from New York.",
     "services": "Services",
     "company": "Company",
     "legal": "Legal",
     "rights": "All rights reserved.",
     "trademark": "Marketplace names mentioned on this site are trademarks of their respective owners. Zerone International LLC is not affiliated with or endorsed by them.",
-    "location": "Farmingville, New York, United States"
+    "location": "Farmingville, New York · serving clients across the United States"
   },
   "services_list": {
+    "presence": {
+      "name": "Websites & Google presence",
+      "short": "Mobile-friendly websites, an accurate Google Business Profile, local SEO and a steady flow of reviews, so customers find and choose you."
+    },
+    "phone": {
+      "name": "AI phone assistant",
+      "short": "An AI assistant that answers your calls 24/7, answers common questions, takes messages and books appointments, so no caller is left with voicemail."
+    },
     "automation": {
       "name": "Automation & bots",
-      "short": "Remove repetitive work: data preparation, listings, notifications and scheduled tasks that run on their own."
+      "short": "Remove repetitive work: data entry, documents, notifications and scheduled tasks that run on their own."
     },
     "web": {
       "name": "Web applications",
@@ -81,7 +92,7 @@
     },
     "mobile": {
       "name": "Mobile apps",
-      "short": "iOS and Android apps for the work your team does on the floor, in the warehouse or on the road."
+      "short": "iOS and Android apps for the work your team does on site, in the field or on the road."
     }
   },
   "process": {
@@ -127,8 +138,8 @@
     ]
   },
   "cta": {
-    "title": "Have a process that takes too much time?",
-    "text": "Tell us what you want to improve. You will receive a clear proposal with scope, timeline and price.",
+    "title": "Ready to win more customers with less manual work?",
+    "text": "Tell us what you want to improve. You will receive a written proposal with scope, timeline and price.",
     "button": "Start a project"
   },
   "form": {
@@ -138,15 +149,17 @@
     "optional": "optional",
     "project_type": "Project type",
     "types": {
+      "presence": "Website or Google presence",
+      "phone": "AI phone assistant",
       "automation": "Automation or bot",
       "web": "Web application",
       "mobile": "Mobile app",
-      "resale": "Resale tools",
       "other": "Something else"
     },
     "choose": "Please choose",
     "budget": "Estimated budget",
     "budgets": [
+      "Monthly plan (from $149 a month)",
       "Under $5,000",
       "$5,000 – $15,000",
       "$15,000 – $50,000",
@@ -161,7 +174,7 @@
       "Flexible"
     ],
     "message": "Project details",
-    "message_hint": "Describe the task you want to improve, the platforms involved and the user roles you need. Please do not send passwords or API keys.",
+    "message_hint": "Describe your business, what you want to improve and the tools you already use. Please do not send passwords or API keys.",
     "consent": "I agree that my details are processed to answer my request, as described in the {link}.",
     "consent_link": "Privacy Policy",
     "submit": "Send request",
@@ -189,13 +202,13 @@
     "unread": "New reply",
     "role": "AI sales assistant",
     "greeting": "Hi, I'm {name}.",
-    "intro": "I can answer questions about our custom software, automation and resale tools, and point you to the right page. What can I help you with?",
+    "intro": "I can answer questions about our websites, AI phone assistant, automation and custom software, and point you to the right page. What can I help you with?",
     "notice": "You are chatting with an AI assistant, and answers may contain mistakes. Please don't share passwords or card numbers. {link}",
     "chips_label": "Choose a topic",
     "chips": [
-      "Custom software or automation for my business",
-      "Tools for resale sellers (crosslisting, inventory sync)",
-      "Bots and integrations",
+      "A website or Google presence for my business",
+      "An AI phone assistant",
+      "Automation and bots",
       "A web or mobile app",
       "Pricing and how a project works",
       "Payments and invoices"
@@ -236,73 +249,78 @@
   },
   "pages": {
     "home": {
-      "title": "Custom Software, Bots & Resale Tools | Zerone International",
-      "description": "Zerone International builds custom automation, bots, web and mobile apps, and develops resale tools. Based in New York, working worldwide in 15 languages.",
-      "h1": "Software that works the way your business works",
+      "title": "Websites, AI Assistants & Custom Software | Zerone",
+      "description": "Zerone International is a New York technology company: websites and local SEO, AI phone assistants, automation, web and mobile apps for businesses across the US.",
+      "h1": "Technology that helps your business get found, answer every call and save time",
       "hero": {
-        "eyebrow": "Custom software · New York",
-        "lede": "We build automation, bots, web applications and mobile apps around your real workflow, and we develop tools for online resellers.",
+        "eyebrow": "New York · serving businesses across the US",
+        "lede": "We are a New York technology company. We build websites that bring in customers, AI assistants that answer every call, and software that takes repetitive work off your team, from a one-page website to a custom application.",
         "primary": "Start a project",
         "secondary": "Explore services",
         "points": [
-          "Written proposal with fixed scope",
-          "Owner, manager and employee roles",
-          "Built by people who run an online resale business"
+          "Written proposal and price before any work starts",
+          "Everything can be handled in writing: e-mail, text or chat",
+          "Based in New York, working with clients nationwide"
         ]
       },
       "services": {
-        "eyebrow": "What we build",
-        "title": "Three ways to save time",
-        "intro": "Every project starts with your workflow. We then choose the right format: automation, a web application, a mobile app or a combination."
+        "eyebrow": "What we do",
+        "title": "Five ways we help your business",
+        "intro": "Start with what your customers see, then remove the work that slows your team down. Choose one service or combine them."
       },
-      "resale": {
-        "eyebrow": "Resale experience",
-        "title": "We know online resale from the inside",
-        "text": "Zerone International sells used and overstock goods on online marketplaces. That daily experience shapes the tools we are building: a crosslisting system and a liquidation lot analysis tool.",
-        "link": "See our products"
+      "reach": {
+        "eyebrow": "Where we work",
+        "title": "From New York to the whole country",
+        "text": "We are based in New York, so New York City and Long Island come first, and there we can also meet in person. Everything else works remotely, so businesses in every state get the same process, the same written proposals and the same support.",
+        "areas": [
+          "New York City: Manhattan, Brooklyn, Queens, the Bronx and Staten Island",
+          "Long Island: Nassau and Suffolk counties and the Hamptons",
+          "Remote projects in all 50 states"
+        ],
+        "link": "See plans and prices"
       },
       "cases": {
         "eyebrow": "Use cases",
         "title": "Ideas you can build on",
-        "intro": "Twenty examples of what custom software can do for resellers and small businesses."
+        "intro": "Twenty examples of what we build for service businesses, shops, restaurants, offices and growing teams."
       },
       "faq": {
         "eyebrow": "FAQ",
         "title": "Frequently asked questions",
         "items": [
           {
-            "q": "Can I request a custom software project now?",
-            "a": "Yes. Send us your requirements through the contact form. We review feasibility and send you a written proposal."
+            "q": "Do you only work with businesses in New York?",
+            "a": "No. We are based in New York and give priority to New York City and Long Island, where we can also meet in person. We work remotely with businesses anywhere in the United States."
           },
           {
-            "q": "How much does a custom project cost?",
-            "a": "It depends on scope. Small automations can start at a few thousand dollars; larger applications are priced after discovery. You always receive the price before work starts."
+            "q": "How much does it cost?",
+            "a": "Small-business plans start at $149 a month for a website with Google Business Profile care. Custom software is priced after a short discovery and usually starts at a few thousand dollars. You always receive the price in writing before work starts."
           },
           {
             "q": "How long does a project take?",
-            "a": "Simple automations often take two to four weeks. Web and mobile applications usually take one to four months, depending on features."
+            "a": "A small-business website usually goes live within a few weeks. Automations often take two to four weeks; web and mobile applications one to four months, depending on features."
+          },
+          {
+            "q": "Do I have to talk to you on the phone?",
+            "a": "No. Everything can be handled in writing: by e-mail, text message, chat or our contact form. If you prefer to call, Ava, our AI phone assistant, answers 24/7 and we follow up in writing."
+          },
+          {
+            "q": "Who owns my website, my Google profile and my code?",
+            "a": "You do. Your domain, Google Business Profile and accounts always stay in your business's name. For custom software, ownership is set out in the proposal; in most projects the client receives full ownership after final payment."
           },
           {
             "q": "Can my application have different user panels?",
             "a": "Yes. Owner, manager and employee panels can be included, each with its own permissions."
-          },
-          {
-            "q": "Do you work with marketplace APIs?",
-            "a": "Yes, through official APIs and permitted access methods. Each integration is reviewed against the platform's rules before it is included in a proposal."
-          },
-          {
-            "q": "Are your resale tools available?",
-            "a": "The crosslisting system and the lot analysis tool are in development. You can join the waiting list on the products page."
           }
         ]
       }
     },
     "services": {
-      "title": "Custom Software Development Services | Zerone International",
-      "description": "Custom automation, bots, web applications and mobile apps for small businesses and online resellers. Clear proposals, role-based access and ongoing support.",
+      "title": "Websites, AI Phone Assistants & Custom Software | Zerone",
+      "description": "Websites and local SEO, AI phone assistants, automation, web and mobile apps for businesses across the US. Based in New York, with clear written proposals.",
       "eyebrow": "Services",
-      "h1": "Custom software development",
-      "lede": "We turn repetitive, manual or scattered work into reliable software. You get exactly the features you need, nothing you will pay for and never use.",
+      "h1": "Our services",
+      "lede": "From the first impression online to the software your team uses every day. You get exactly what you need, agreed in writing, and nothing you will pay for and never use.",
       "faq": {
         "title": "Questions about our services",
         "items": [
@@ -323,15 +341,95 @@
             "a": "Yes. We can review an existing system and propose improvements, new features or a migration plan."
           },
           {
-            "q": "Do you work with clients outside the United States?",
-            "a": "Yes. We work remotely with clients worldwide and communicate in English and Turkish."
+            "q": "Do you work with clients outside New York?",
+            "a": "Yes. We serve businesses across the United States. In New York City and on Long Island we can also meet in person; everywhere else we work remotely by e-mail, chat and video calls. We communicate in English and Turkish."
           }
         ]
       }
     },
+    "service_presence": {
+      "title": "Small Business Websites & Local SEO | Zerone International",
+      "description": "Mobile-friendly websites, Google Business Profile care, local SEO and review requests for businesses in New York and across the US. Plans from $149 a month.",
+      "eyebrow": "Websites & Google presence",
+      "h1": "Websites, local SEO and Google presence",
+      "lede": "Most customers find a business on their phone and decide within a minute or two. We make that minute count: accurate information everywhere, a website that answers their questions, and an easy way to reach you.",
+      "features_title": "What we do",
+      "features": [
+        {
+          "title": "Websites that bring in customers",
+          "text": "Mobile-friendly websites on your own domain with your services, prices, hours, a map, call and directions buttons, and a quote or booking form."
+        },
+        {
+          "title": "Google Business Profile",
+          "text": "Hours, categories, services and photos kept accurate and up to date. The profile itself is free from Google; you only pay for our work."
+        },
+        {
+          "title": "Local SEO",
+          "text": "Fast pages, clear structure, structured data and consistent business details across directories, so search engines understand what you do and where."
+        },
+        {
+          "title": "Reviews",
+          "text": "A polite review request after every job, sent to all of your customers, and reply drafts for every new review, ready for your approval."
+        },
+        {
+          "title": "Missed-call text-back",
+          "text": "Callers you couldn't answer get an instant text with a link to book or ask a question, once the carrier registration for your business is approved."
+        },
+        {
+          "title": "Monthly report",
+          "text": "Website visits, new requests, reviews and calls, explained in plain words every month."
+        }
+      ],
+      "notes_title": "Good to know",
+      "notes": [
+        "Your domain, Google Business Profile and accounts always stay in your business's name.",
+        "We follow Google's rules: we never buy reviews, offer rewards for them or ask only happy customers.",
+        "Monthly plans start at $149 a month, with a 3-month minimum and then month to month."
+      ]
+    },
+    "service_phone": {
+      "title": "AI Phone Assistant for Businesses | Zerone International",
+      "description": "An AI phone assistant that answers your business calls 24/7, says it is an AI, answers questions, takes messages and books appointments. Call (631) 900-2595 to hear ours.",
+      "eyebrow": "AI phone assistant",
+      "h1": "An AI phone assistant for your business",
+      "lede": "Every missed call can be a missed customer. An AI assistant picks up every call, day and night, answers in a friendly voice and sends you a written summary of each conversation.",
+      "features_title": "What it does",
+      "features": [
+        {
+          "title": "Answers 24/7",
+          "text": "Every call is answered, including evenings, weekends and holidays."
+        },
+        {
+          "title": "Honest about being an AI",
+          "text": "It tells callers that it is an AI assistant and that the call is recorded."
+        },
+        {
+          "title": "Answers common questions",
+          "text": "Hours, services, prices and directions, from information you have approved."
+        },
+        {
+          "title": "Messages and appointments",
+          "text": "It takes messages and appointment requests and sends the details to you in writing."
+        },
+        {
+          "title": "Urgent alerts",
+          "text": "Anything urgent reaches you right away by text or chat."
+        },
+        {
+          "title": "Call summaries",
+          "text": "A short written summary of every call, so you know who called and what they need."
+        }
+      ],
+      "notes_title": "Good to know",
+      "notes": [
+        "It is not an emergency service.",
+        "Hear it for yourself: call our own line, (631) 900-2595, and talk to Ava.",
+        "Available as an add-on to our small-business plans or as part of a custom project."
+      ]
+    },
     "service_automation": {
       "title": "Business Automation & Custom Bot Development | Zerone",
-      "description": "Custom automation and bots that prepare data, create listings, send notifications and run scheduled tasks, so your team can focus on decisions.",
+      "description": "Custom automation and bots that prepare data and documents, send notifications, connect your tools and run scheduled tasks, so your team can focus on customers.",
       "eyebrow": "Automation & bots",
       "h1": "Business automation and custom bots",
       "lede": "If your team copies, pastes, checks and repeats the same steps every day, those steps can usually be automated. We build automations that run reliably and report what they did.",
@@ -342,8 +440,8 @@
           "text": "Turn spreadsheets, notes and supplier files into clean, structured data."
         },
         {
-          "title": "Listing workflows",
-          "text": "Prepare titles, descriptions and item details for review before publishing."
+          "title": "Document workflows",
+          "text": "Turn forms, e-mails and files into quotes, invoices and records that are ready for review."
         },
         {
           "title": "Notifications",
@@ -379,7 +477,7 @@
       "features": [
         {
           "title": "Dashboards",
-          "text": "Live overviews of sales, stock, tasks and the metrics you care about."
+          "text": "Live overviews of sales, jobs, tasks and the numbers you care about."
         },
         {
           "title": "Internal tools",
@@ -411,10 +509,10 @@
     },
     "service_mobile": {
       "title": "iOS & Android App Development | Zerone International",
-      "description": "Custom iOS and Android apps for field teams, warehouses and operations: task lists, stock intake, photos and notifications.",
+      "description": "Custom iOS and Android apps for field teams, technicians and operations: task lists, job records, photos, checklists and notifications.",
       "eyebrow": "Mobile apps",
       "h1": "Custom mobile app development",
-      "lede": "Some work does not happen at a desk. We build mobile apps for the tasks your team performs on the floor, in the warehouse or on the road.",
+      "lede": "Some work does not happen at a desk. We build mobile apps for the tasks your team performs on site, in the field or on the road.",
       "features_title": "What we build",
       "features": [
         {
@@ -422,12 +520,12 @@
           "text": "Assigned tasks, checklists and status updates in every employee's pocket."
         },
         {
-          "title": "Stock intake",
-          "text": "Record incoming goods with barcode scanning and photos."
+          "title": "Job and site records",
+          "text": "Record visits, measurements and signatures on site, with barcode scanning where needed."
         },
         {
           "title": "Photo workflows",
-          "text": "Capture and organize product photos directly where the items are."
+          "text": "Capture and organize photos of jobs, items or sites right where the work happens."
         },
         {
           "title": "Push notifications",
@@ -450,11 +548,11 @@
       ]
     },
     "products": {
-      "title": "Crosslisting & Liquidation Lot Analysis Tools | Zerone",
-      "description": "Zerone International is developing a crosslisting system and a liquidation lot analysis tool for online resellers. Join the waiting list for early access.",
+      "title": "Our Own Software Products | Zerone International",
+      "description": "Alongside client work, Zerone International builds its own software products. First up: a crosslisting system and a liquidation lot analysis tool for online sellers.",
       "eyebrow": "Products",
-      "h1": "Tools for online resellers",
-      "lede": "We are building the tools we wanted for our own resale business. Both are in development; join the waiting list to hear when early access opens.",
+      "h1": "Our own products",
+      "lede": "Alongside client projects, we build our own software products. The first two are tools for online sellers, and both are in development. Join the waiting list to hear when early access opens.",
       "items": [
         {
           "name": "Crosslisting system",
@@ -479,33 +577,65 @@
       ]
     },
     "use_cases": {
-      "title": "Software Use Cases for Resellers & Small Businesses | Zerone",
-      "description": "Twenty examples of custom automation, web and mobile software for online resellers and small businesses: listings, lot analysis, stock, reporting and teams.",
+      "title": "20 Use Cases: Websites, AI & Custom Software | Zerone",
+      "description": "Twenty examples of websites, AI phone assistants, automation, web and mobile software for service businesses, shops, restaurants, offices and growing teams.",
       "eyebrow": "Use cases",
-      "h1": "20 use cases for custom software",
-      "lede": "Examples of what we can build for resellers and small businesses. Each one can be adapted to your workflow, your platforms and your team.",
+      "h1": "20 use cases",
+      "lede": "Examples of what we can build. Each one can be adapted to your business, the tools you already use and your team.",
       "note": "These are project ideas, not completed client projects. Platform access and features are reviewed for every proposal."
     },
     "company": {
-      "title": "About Zerone International LLC – Vision & Mission",
-      "description": "Zerone International LLC is a New York company combining online resale with custom software development. Learn about our vision, mission and values.",
+      "title": "About Zerone International – New York Technology Company",
+      "description": "Zerone International LLC is a New York technology company helping businesses across the United States with websites, AI assistants, automation and custom software.",
       "eyebrow": "Company",
       "h1": "About Zerone International",
-      "lede": "We are a New York company working at the intersection of online commerce and software.",
+      "lede": "A New York technology company with a simple goal: useful technology that every business can use.",
       "about": {
         "title": "Who we are",
         "text": [
-          "Zerone International LLC is based in Farmingville, New York. We sell used and overstock goods on online marketplaces, and we develop software, both for our own operations and for clients.",
-          "Running a resale business every day shows us where time is lost: preparing listings, checking lots, tracking stock and coordinating people. That is the knowledge we bring to every software project."
+          "Zerone International LLC is a technology company based in Farmingville, New York, on Long Island. We help businesses get found online, answer every customer and replace manual work with reliable software.",
+          "We start close to home, in New York City and on Long Island, and work remotely with businesses in every state. We run our own company on the same tools we build for clients: an AI assistant answers our phone line, automations prepare our proposals, and every agreement is made in writing.",
+          "Alongside client work, we build our own software products, starting with tools for online sellers."
         ]
+      },
+      "founder": {
+        "eyebrow": "Founder",
+        "title": "Meet the founder",
+        "role": "Founder & CEO",
+        "bio": [
+          "Berk Divaroren founded Zerone International to give small and growing businesses the kind of technology that large companies take for granted: a website that brings in customers, a phone that is always answered, and software that does the repetitive work.",
+          "He started his first company, a computer software and hardware business in Adana, Turkey, in 2019. He holds a bachelor's degree in International Trade and Logistics from Anadolu University and moved to New York in January 2022, where he continued his studies in computer applications, business and management at the New York Institute of Finance.",
+          "Before founding Zerone International, he gained hands-on experience in online commerce on major US marketplaces. Today he leads the design of the company's own systems, from its AI phone assistant and automated written proposals to this website in 15 languages, and works directly with every client."
+        ],
+        "facts_title": "At a glance",
+        "facts": [
+          {
+            "label": "Based in",
+            "value": "New York, since January 2022"
+          },
+          {
+            "label": "Education",
+            "value": "Bachelor's degree in International Trade and Logistics, Anadolu University; computer applications, business and management, New York Institute of Finance"
+          },
+          {
+            "label": "Languages",
+            "value": "English, Turkish, Arabic"
+          },
+          {
+            "label": "Focus",
+            "value": "Websites, AI assistants, automation and custom software"
+          }
+        ],
+        "linkedin": "Connect on LinkedIn",
+        "photo_alt": "Berk Divaroren, founder of Zerone International"
       },
       "vision": {
         "title": "Our vision",
-        "text": "To make useful, understandable software accessible to small businesses, so they can spend their time on the decisions that matter."
+        "text": "To be the technology partner that businesses across America trust, starting from New York, with technology that is useful, understandable and affordable for every business."
       },
       "mission": {
         "title": "Our mission",
-        "text": "To turn real business needs into reliable software with a clear scope, fair pricing and the right permissions for every user."
+        "text": "To turn real business needs into reliable websites, assistants and software, with a clear scope, fair pricing and honest communication."
       },
       "values": {
         "title": "What we value",
@@ -529,16 +659,16 @@
         ]
       },
       "location": {
-        "title": "Where we are",
-        "text": "Farmingville, New York, United States. We work remotely with clients around the world."
+        "title": "Where we work",
+        "text": "Headquartered in Farmingville, New York. We meet clients in person in New York City and on Long Island and work remotely with businesses across the United States."
       }
     },
     "contact": {
-      "title": "Contact – Start a Software Project | Zerone International",
-      "description": "Contact Zerone International to discuss a custom automation, bot, web or mobile app project. We reply with questions or a written proposal.",
+      "title": "Contact Zerone International – Start Your Project",
+      "description": "Contact Zerone International about a website, AI phone assistant, automation, web or mobile app. Call, text, e-mail or use the form; we reply in writing.",
       "eyebrow": "Contact",
       "h1": "Start your project",
-      "lede": "Tell us about your idea or the problem you want to solve. We aim to reply within two business days.",
+      "lede": "Tell us about your business or the problem you want to solve. We aim to reply within two business days.",
       "email_title": "Prefer e-mail?",
       "email_text": "You can also write to us directly:",
       "phone_note": "Call us: our AI assistant Ava answers 24/7 (in English).",
@@ -604,11 +734,11 @@
       }
     },
     "blog": {
-      "title": "Blog – Resale Automation & Software Guides | Zerone",
-      "description": "Practical guides on crosslisting, liquidation lot analysis and automating resale work, from a team that runs its own online resale business.",
+      "title": "Blog – Websites, AI & Automation Guides | Zerone",
+      "description": "Practical guides on websites, local SEO, AI assistants and automation for small and growing businesses, from a New York technology company.",
       "eyebrow": "Blog",
-      "h1": "Guides for resellers and growing teams",
-      "lede": "Practical articles on crosslisting, buying liquidation lots and automating the repetitive parts of resale.",
+      "h1": "Guides for growing businesses",
+      "lede": "Practical articles on getting found online, answering every customer and automating repetitive work. Our earlier articles cover online selling.",
       "language_note": "Articles are currently published in English.",
       "read_more": "Read article",
       "minutes": "{n} min read",
@@ -616,15 +746,15 @@
       "updated": "Updated",
       "back": "All articles",
       "related": "Related articles",
-      "guides_link": "Read our guides for resellers",
+      "guides_link": "Read our guides",
       "rss": "RSS feed"
     },
     "developers": {
-      "title": "APIs for Resale Sellers – Early Access | Zerone International",
-      "description": "Zerone International is planning APIs for resale sellers: listing normalization, inventory sync, lot analysis and fee calculators. Join the early-access list.",
+      "title": "Developer APIs – Early Access | Zerone International",
+      "description": "Zerone International is planning APIs for online sellers: listing normalization, inventory sync, lot analysis and fee calculators. Join the early-access list.",
       "eyebrow": "For developers",
-      "h1": "APIs and tools for resale sellers",
-      "lede": "We are opening early access to the developer tools we are building for our own resale business. Nothing is live yet; join the list and help decide what comes first.",
+      "h1": "APIs for online sellers",
+      "lede": "We are opening early access to developer tools that grow out of our own products for online sellers. Nothing is live yet; join the list and help decide what comes first.",
       "hero_button": "Join early access",
       "planned": "Planned",
       "products": {
@@ -846,243 +976,243 @@
   },
   "cases": [
     {
-      "slug": "ebay-listing-preparation",
-      "title": "eBay listing preparation",
-      "summary": "Turn product notes into draft titles, descriptions and item specifics for review.",
-      "challenge": "Writing eBay listings one by one is slow, and item specifics are easy to miss.",
-      "approach": "An automation reads your product notes or spreadsheet and prepares structured drafts, so your team only reviews and approves.",
+      "slug": "website-for-home-services",
+      "title": "A website for a home services company",
+      "summary": "A mobile-friendly website that turns local searches into calls and quote requests.",
+      "challenge": "Customers compare a few companies on their phone and call the one they trust.",
+      "approach": "A fast website with your services, service areas, real photos and reviews, one-tap call and quote buttons, and an accurate Google Business Profile behind it.",
       "includes": [
-        "Title and description drafts",
-        "Item specifics checklist",
-        "Review step before publishing"
+        "Service and service-area pages",
+        "Call, text and quote buttons",
+        "Google Business Profile set-up"
       ]
     },
     {
-      "slug": "poshmark-resale-workflows",
-      "title": "Poshmark resale workflows",
-      "summary": "Organize apparel details and prepare listings for Poshmark and other channels.",
-      "challenge": "Apparel needs sizes, brands, conditions and measurements; retyping them is slow.",
-      "approach": "A structured intake form collects apparel details once and prepares drafts for each channel within platform rules.",
+      "slug": "google-business-profile-cleanup",
+      "title": "Google Business Profile clean-up",
+      "summary": "Fix hours, categories, services and photos so the right customers find you on Google Maps.",
+      "challenge": "Wrong hours, a vague category or old photos send customers to a competitor.",
+      "approach": "We review the profile against Google's guidelines, correct every field, add services and photos, and set up a simple routine that keeps it current.",
       "includes": [
-        "Apparel data template",
-        "Channel-specific drafts",
-        "Status tracking per item"
+        "Category and service review",
+        "Hours, holiday hours and photos",
+        "Monthly accuracy check"
       ]
     },
     {
-      "slug": "amazon-catalog-preparation",
-      "title": "Amazon catalog preparation",
-      "summary": "Organize product data and check required fields before a listing workflow.",
-      "challenge": "Missing or inconsistent fields cause rejected listings and lost time.",
-      "approach": "A validation tool checks your product data against the fields you need and highlights what is missing before upload.",
+      "slug": "review-requests-after-every-job",
+      "title": "Review requests after every job",
+      "summary": "A polite request with a direct link goes to every customer once the work is done.",
+      "challenge": "Happy customers rarely leave a review on their own, and asking by hand is easy to forget.",
+      "approach": "After each completed job, a short request goes out by e-mail or text, following Google's rules, and reply drafts for every new review wait for your approval.",
       "includes": [
-        "Required-field checks",
-        "Bulk data cleanup",
-        "Exportable upload files"
+        "Automatic request after each job",
+        "Reply drafts for your approval",
+        "No rewards, no filtering of customers"
       ]
     },
     {
-      "slug": "walmart-inventory-workflows",
-      "title": "Walmart inventory workflows",
-      "summary": "Track stock and product data for Walmart Marketplace through permitted access.",
-      "challenge": "Keeping stock and product data aligned across channels is hard to do by hand.",
-      "approach": "A web dashboard brings stock and product data together and flags differences that need action.",
+      "slug": "local-seo-for-several-locations",
+      "title": "Local SEO for several locations",
+      "summary": "Consistent pages and listings for a business with several locations.",
+      "challenge": "Different details across directories confuse customers and search engines alike.",
+      "approach": "One page per location with structured data, the same business details across the main directories, and a report with calls and requests per location.",
       "includes": [
-        "Stock overview",
-        "Difference alerts",
-        "Change history"
+        "A page per location",
+        "Consistent directory listings",
+        "Calls and requests per location"
       ]
     },
     {
-      "slug": "etsy-product-descriptions",
-      "title": "Etsy product descriptions",
-      "summary": "Prepare clear product descriptions without inventing materials or origin.",
-      "challenge": "Good descriptions sell, but writing them for every item is time-consuming.",
-      "approach": "A drafting tool builds descriptions only from the facts you provide, ready for you to edit and approve.",
+      "slug": "ai-receptionist-for-offices",
+      "title": "AI receptionist for a professional office",
+      "summary": "Answer every call, share opening hours and take appointment requests, even after hours.",
+      "challenge": "Front-desk staff can't answer every call while helping clients in person.",
+      "approach": "An AI assistant answers when the line is busy or the office is closed, says that it is an AI, answers common questions and sends each request to the team in writing.",
       "includes": [
-        "Fact-based drafts",
-        "Tone and length settings",
-        "Approval before use"
+        "After-hours and overflow answering",
+        "Appointment requests in writing",
+        "Clear AI disclosure"
       ]
     },
     {
-      "slug": "b-stock-lot-evaluation",
-      "title": "B-Stock lot evaluation",
-      "summary": "Compare a lot's price with estimated fees, logistics and resale value.",
-      "challenge": "A lot can look cheap until fees, shipping and unsellable items are counted.",
-      "approach": "A calculator combines purchase price, fees, logistics and your resale assumptions into one clear estimate.",
+      "slug": "after-hours-calls-for-contractors",
+      "title": "After-hours calls for contractors",
+      "summary": "Capture the jobs that come in at night and on weekends.",
+      "challenge": "Contractors can't answer while they work, and evening callers simply call the next company.",
+      "approach": "The assistant answers, asks the questions you choose, such as address, problem and urgency, and texts you the urgent ones right away.",
       "includes": [
-        "Cost breakdown",
-        "Adjustable assumptions",
-        "Saved evaluations"
+        "Your own intake questions",
+        "Urgent jobs texted to you",
+        "A summary of every call"
       ]
     },
     {
-      "slug": "liquidation-bid-planning",
-      "title": "Liquidation.com bid planning",
-      "summary": "Estimate net outcomes before deciding how much to bid.",
-      "challenge": "Bidding on a liquidation lot without a maximum price makes it easy to overpay.",
-      "approach": "A planning tool calculates a suggested maximum bid from your target margin and cost assumptions.",
+      "slug": "restaurant-phone-calls",
+      "title": "Phone calls for a restaurant",
+      "summary": "Answer questions about hours, the menu and reservations during the dinner rush.",
+      "challenge": "The phone rings most when the kitchen is busiest, and unanswered calls cost tables.",
+      "approach": "The assistant answers common questions, takes reservation requests and passes everything else to the staff, with a written note for each call.",
       "includes": [
-        "Target margin settings",
-        "Maximum bid estimate",
-        "Scenario comparison"
+        "Answers on hours, menu and directions",
+        "Reservation requests",
+        "Notes for the staff"
       ]
     },
     {
-      "slug": "returns-reserve",
-      "title": "Returns reserve",
-      "summary": "Include an adjustable allowance for returns when evaluating resale economics.",
-      "challenge": "Returns reduce real profit, but they are often left out of calculations.",
-      "approach": "Your analysis tool includes a configurable returns reserve based on category or your own history.",
+      "slug": "call-summaries-and-follow-up",
+      "title": "Call summaries and written follow-up",
+      "summary": "Every call becomes a short written summary and, where useful, a draft follow-up e-mail.",
+      "challenge": "Details from phone calls get lost, and following up in writing takes time.",
+      "approach": "After each call, a summary with the caller's needs and contact details reaches you, and a follow-up draft is prepared for your approval.",
       "includes": [
-        "Category-based rates",
-        "Historical adjustments",
-        "Net margin after returns"
+        "A written summary of each call",
+        "Follow-up e-mail drafts",
+        "Nothing is sent without your approval"
       ]
     },
     {
-      "slug": "shipping-cost-estimates",
-      "title": "Shipping cost estimates",
-      "summary": "Account for weight, dimensions and shipping options in your planning.",
-      "challenge": "Shipping costs vary widely and can turn a profitable item into a loss.",
-      "approach": "A planning tool estimates shipping costs from weight and dimensions and includes them in each calculation.",
+      "slug": "quotes-and-invoices-from-one-form",
+      "title": "Quotes and invoices from one form",
+      "summary": "Turn a customer request into a quote, and an accepted quote into an invoice.",
+      "challenge": "Typing the same customer details into several tools wastes time and causes mistakes.",
+      "approach": "A form or an e-mail starts the flow: the details become a quote draft, and once the customer accepts, an invoice with a hosted payment link.",
       "includes": [
-        "Weight and size inputs",
-        "Carrier rate tables",
-        "Cost per item"
+        "Quote drafts for review",
+        "Invoices with payment links",
+        "No card data on your systems"
       ]
     },
     {
-      "slug": "owner-overview",
-      "title": "Owner overview",
-      "summary": "A single panel with the business information and controls an owner needs.",
-      "challenge": "Owners often collect numbers from many places to understand how the business is doing.",
-      "approach": "An owner dashboard shows key figures, users and settings in one secure place.",
+      "slug": "lead-routing-and-alerts",
+      "title": "Lead routing and instant alerts",
+      "summary": "Send every new inquiry to the right person within seconds, by e-mail, chat or text.",
+      "challenge": "Inquiries arrive by website, e-mail and social media, and some wait days for a reply.",
+      "approach": "All inquiries flow into one place, are sorted by type and area, and the right person gets an alert with a reply template.",
       "includes": [
-        "Key metrics at a glance",
-        "User and permission management",
-        "Exportable reports"
+        "One inbox for all inquiries",
+        "Alerts by e-mail, chat or text",
+        "Reply templates"
       ]
     },
     {
-      "slug": "manager-coordination",
-      "title": "Manager coordination",
-      "summary": "A workspace for assigning tasks and keeping track of operations.",
-      "challenge": "Without one shared view, tasks get lost between messages and spreadsheets.",
-      "approach": "A manager workspace lets managers assign work, set priorities and see progress in real time.",
+      "slug": "appointment-reminders",
+      "title": "Appointment reminders",
+      "summary": "Automatic reminders and confirmations that reduce no-shows.",
+      "challenge": "Missed appointments cost time and money, and calling everyone the day before is not realistic.",
+      "approach": "Reminders go out at the times you choose, customers confirm or reschedule with one click, and your calendar updates itself.",
+      "includes": [
+        "Reminders by e-mail or text",
+        "One-click confirm or reschedule",
+        "Calendar updates"
+      ]
+    },
+    {
+      "slug": "weekly-business-reports",
+      "title": "Weekly business reports",
+      "summary": "A plain-language report every Monday with the numbers you actually look at.",
+      "challenge": "Sales, calls, reviews and website visits live in different tools, so nobody looks at all of them.",
+      "approach": "A scheduled job collects the data, compares it with the previous week and sends a short report by e-mail or chat.",
+      "includes": [
+        "Data from the tools you already use",
+        "Week-over-week comparison",
+        "Delivered by e-mail or chat"
+      ]
+    },
+    {
+      "slug": "customer-portal",
+      "title": "Customer portal",
+      "summary": "Let customers check status, documents and invoices without calling.",
+      "challenge": "Customers call to ask where things stand, and staff spend hours answering the same questions.",
+      "approach": "A secure portal shows each customer their own orders, documents and invoices, with a notification when something changes.",
+      "includes": [
+        "Secure customer login",
+        "Status, documents and invoices",
+        "Change notifications"
+      ]
+    },
+    {
+      "slug": "operations-dashboard",
+      "title": "Operations dashboard for owners",
+      "summary": "One screen with sales, jobs, calls and reviews, updated automatically.",
+      "challenge": "Owners piece the picture together from spreadsheets, e-mails and several apps.",
+      "approach": "A dashboard pulls the key numbers from your tools and shows the trends, with separate views for owners, managers and employees.",
+      "includes": [
+        "Live key numbers",
+        "Role-based views",
+        "CSV and PDF exports"
+      ]
+    },
+    {
+      "slug": "online-booking-system",
+      "title": "Online booking system",
+      "summary": "Online booking with staff calendars, buffer times and confirmations.",
+      "challenge": "Bookings by phone and e-mail lead to double bookings and endless back-and-forth.",
+      "approach": "Customers pick a free time online, each staff member sees their own calendar, and confirmations and reminders go out automatically.",
+      "includes": [
+        "Online booking page",
+        "Staff calendars",
+        "Automatic confirmations"
+      ]
+    },
+    {
+      "slug": "spreadsheets-to-web-app",
+      "title": "From spreadsheets to a web app",
+      "summary": "Replace shared spreadsheets with one structured, secure workspace.",
+      "challenge": "Spreadsheets break when several people edit them, and nobody knows which version is right.",
+      "approach": "We turn the spreadsheet into a web application with forms, permissions, history and reports, and move your existing data over.",
+      "includes": [
+        "Data migration",
+        "Permissions and history",
+        "Reports and exports"
+      ]
+    },
+    {
+      "slug": "field-service-app",
+      "title": "Field service app",
+      "summary": "Jobs, addresses, checklists and photos in every technician's pocket.",
+      "challenge": "Technicians call the office for job details and fill in paper forms that get lost.",
+      "approach": "A mobile app shows each technician their jobs, checklists and customer notes, and sends photos and signatures back to the office.",
+      "includes": [
+        "Job list and directions",
+        "Checklists, photos and signatures",
+        "Sync with the office"
+      ]
+    },
+    {
+      "slug": "inspection-checklists",
+      "title": "Inspection and site checklists",
+      "summary": "Digital checklists that work offline and produce a report on the spot.",
+      "challenge": "Paper checklists are hard to read, easy to lose and slow to turn into reports.",
+      "approach": "Inspectors fill in checklists on a phone or tablet, even without a connection, and a PDF report is created automatically.",
+      "includes": [
+        "Offline mode",
+        "Photos and notes per item",
+        "Automatic PDF reports"
+      ]
+    },
+    {
+      "slug": "loyalty-and-booking-app",
+      "title": "Loyalty and booking app",
+      "summary": "A branded app where regular customers book and collect rewards.",
+      "challenge": "Regular customers are the most valuable ones, but there is no simple way to stay in touch with them.",
+      "approach": "An iOS and Android app with booking, push notifications and a simple loyalty program, connected to your existing systems.",
+      "includes": [
+        "Booking in the app",
+        "Push notifications",
+        "A simple loyalty program"
+      ]
+    },
+    {
+      "slug": "team-tasks-and-time-tracking",
+      "title": "Team tasks and time tracking",
+      "summary": "Assign tasks, track hours and see progress from any phone.",
+      "challenge": "Hours are written on paper and tasks are handed out by text, so nothing adds up at the end of the week.",
+      "approach": "Employees see their tasks and clock in and out in the app; managers see the progress and export hours for payroll.",
       "includes": [
         "Task assignment",
-        "Priority and deadline tracking",
-        "Team progress view"
-      ]
-    },
-    {
-      "slug": "employee-task-panels",
-      "title": "Employee task panels",
-      "summary": "Show every employee exactly the tasks and information they need.",
-      "challenge": "Employees lose time searching for instructions or asking what to do next.",
-      "approach": "A simple mobile panel lists each person's tasks with the details needed to complete them.",
-      "includes": [
-        "Personal task list",
-        "Instructions and photos",
-        "One-tap status updates"
-      ]
-    },
-    {
-      "slug": "stock-intake",
-      "title": "Stock intake",
-      "summary": "Record incoming goods and organize what is needed for resale.",
-      "challenge": "Items that are not recorded on arrival are hard to find, price and list later.",
-      "approach": "A mobile intake app records items with barcode, photos, condition and location as they arrive.",
-      "includes": [
-        "Barcode scanning",
-        "Condition and location fields",
-        "Instant sync to the dashboard"
-      ]
-    },
-    {
-      "slug": "product-photo-tasks",
-      "title": "Product photography tasks",
-      "summary": "Coordinate product photos and listing preparation in one flow.",
-      "challenge": "Photos taken on different phones end up scattered and unlabeled.",
-      "approach": "A mobile workflow links each photo set to the right product and marks it ready for listing.",
-      "includes": [
-        "Photo sets per product",
-        "Shot checklists",
-        "Ready-for-listing status"
-      ]
-    },
-    {
-      "slug": "csv-preparation",
-      "title": "CSV preparation",
-      "summary": "Convert agreed spreadsheet formats into clean, structured data.",
-      "challenge": "Supplier and marketplace files rarely use the same columns or formats.",
-      "approach": "An automation maps, cleans and validates spreadsheet data into the exact format you need.",
-      "includes": [
-        "Column mapping",
-        "Data cleanup rules",
-        "Error report"
-      ]
-    },
-    {
-      "slug": "custom-reporting",
-      "title": "Custom reporting",
-      "summary": "Reports built around the metrics and data sources you choose.",
-      "challenge": "Standard reports rarely answer the questions that matter to your business.",
-      "approach": "We build reports from your own data sources, delivered as dashboards or scheduled e-mails.",
-      "includes": [
-        "Custom metrics",
-        "Scheduled delivery",
-        "CSV and PDF export"
-      ]
-    },
-    {
-      "slug": "notification-bots",
-      "title": "Notification bots",
-      "summary": "Automatic alerts and reminders through the channels your team already uses.",
-      "challenge": "Important changes are noticed too late when someone has to check manually.",
-      "approach": "A bot watches the events you care about and sends a message the moment action is needed.",
-      "includes": [
-        "Event-based alerts",
-        "E-mail and chat delivery",
-        "Daily summaries"
-      ]
-    },
-    {
-      "slug": "mobile-operations-tools",
-      "title": "Mobile operations tools",
-      "summary": "Mobile workflows for tasks your team performs away from a desk.",
-      "challenge": "Paper notes and messages from the floor are slow and error-prone.",
-      "approach": "A mobile app turns field work into structured steps that update your systems immediately.",
-      "includes": [
-        "Step-by-step workflows",
-        "Offline support",
-        "Real-time updates"
-      ]
-    },
-    {
-      "slug": "web-workspaces",
-      "title": "Web-based workspaces",
-      "summary": "Bring selected workflows into one browser-based application.",
-      "challenge": "Work spread across many tools and files is hard to manage and to secure.",
-      "approach": "A web workspace brings the most important workflows together, with access for each role.",
-      "includes": [
-        "Central workspace",
-        "Role-based access",
-        "Audit history"
-      ]
-    },
-    {
-      "slug": "cross-channel-planning",
-      "title": "Cross-channel planning",
-      "summary": "Plan inventory across several sales channels after reviewing API access.",
-      "challenge": "Selling on several marketplaces multiplies the work of keeping everything in sync.",
-      "approach": "We review each platform's API access and rules, then design an automation that keeps channels aligned.",
-      "includes": [
-        "Platform access review",
-        "Sync rules",
-        "Conflict alerts"
+        "Clock in and out",
+        "Hours export for payroll"
       ]
     }
   ]

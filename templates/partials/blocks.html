@@ -32,7 +32,7 @@
 
 {% macro services_grid(headings=3) -%}
 <ul class="card-grid card-grid--3" role="list">
-{% for key in ("automation", "web", "mobile") %}
+{% for key in service_page %}
   <li class="card card--link">
     <span class="card__icon">{{ icons.icon(key) }}</span>
     <h{{ headings }} class="card__title"><a href="{{ url(service_page[key]) }}">{{ t.services_list[key].name }}</a></h{{ headings }}>

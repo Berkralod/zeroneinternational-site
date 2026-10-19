@@ -9,7 +9,7 @@ Telefonunuzda nasıl görüneceğini görmek için: `preview/assistant-demo.html
 ## Ne yapar?
 
 - Ziyaretçi hangi dilde yazarsa o dilde cevap verir (sitenin 15 dili). Kendini o dile uygun bir kadın adıyla tanıtır: İngilizce Emma, Türkçe Elif, Almanca Lena, İspanyolca Lucía, Fransızca Camille, İtalyanca Giulia, Portekizce Beatriz, Felemenkçe Sanne, Lehçe Zofia, Rusça Anna, Ukraynaca Olena, Arapça Layla, Hintçe Ananya, Çince Lin, Japonca Yui.
-- Açılışta kısa bir karşılama ve konu düğmeleri gösterir: özel yazılım/otomasyon, ikinci el satıcı araçları, botlar ve entegrasyonlar, web veya mobil uygulama, fiyat ve proje süreci, ödemeler ve faturalar, "Diğer".
+- Açılışta kısa bir karşılama ve konu düğmeleri gösterir: web sitesi ve Google görünürlüğü, AI telefon asistanı, otomasyon ve botlar, web veya mobil uygulama, fiyatlar ve süreç, ödemeler.
 - Cevaplarının altına ilgili sayfaları **düğme** olarak koyar (yeni sekmede açılır). Bu bağlantılar sadece sitemizin kendi sayfaları, randevu, WhatsApp, Telegram, ödeme sayfaları ve blog yazılarıdır. Yapay zekâ kendi başına bağlantı uyduramaz.
 - Randevu almaz, ödeme almaz, e-posta göndermez. Ziyaretçiye sadece doğru bağlantıyı verir.
 - Fiyat, teslim tarihi veya garanti uydurmaz; teklif için iletişim sayfasına veya görüşmeye yönlendirir. Hukuki veya vergi tavsiyesi vermez.

@@ -8,12 +8,12 @@
     <nav aria-label="{{ t.footer.services }}">
       <h2 class="footer-title">{{ t.footer.services }}</h2>
       <ul>
-        <li><a href="{{ url('service_automation') }}">{{ t.services_list.automation.name }}</a></li>
-        <li><a href="{{ url('service_web') }}">{{ t.services_list.web.name }}</a></li>
-        <li><a href="{{ url('service_mobile') }}">{{ t.services_list.mobile.name }}</a></li>
+      {% for key, pid in service_page.items() %}
+        <li><a href="{{ url(pid) }}">{{ t.services_list[key].name }}</a></li>
+      {% endfor %}
+        <li><a href="{{ plans_path }}"{% if lang != 'en' %} hreflang="en"{% endif %}>{{ t.nav.plans }}</a></li>
         <li><a href="{{ url('products') }}">{{ t.nav.products }}</a></li>
         <li><a href="{{ url('developers') }}">{{ t.nav.developers }}</a></li>
-        <li><a href="{{ local_path }}"{% if lang != 'en' %} hreflang="en"{% endif %}>{{ t.nav.local }}</a></li>
       </ul>
     </nav>
     <nav aria-label="{{ t.footer.company }}">

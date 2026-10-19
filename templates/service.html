@@ -23,6 +23,9 @@
         <li>{{ icons.icon('check') }}<span>{{ n }}</span></li>
       {% endfor %}
       </ul>
+      {% if service_key in ("presence", "phone") %}
+      <p class="section-more"><a class="text-link" href="{{ plans_path }}pricing/"{% if lang != 'en' %} hreflang="en"{% endif %}>{{ t.ui.see_plans }} {{ icons.icon('arrow') }}</a></p>
+      {% endif %}
     </div>
   </div>
 </section>

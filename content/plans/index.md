@@ -1,13 +1,13 @@
 ---
-title: Local Services for Long Island businesses
-description: Websites, Google Business Profile updates, review requests and an AI phone assistant for small businesses on Long Island, from a company in Farmingville, NY.
+title: Small business plans
+description: Websites, Google Business Profile care, review requests and an AI phone assistant for small businesses in New York and across the US. Monthly plans from $149.
 nav: Overview
-updated: 2026-10-17
+updated: 2026-10-19
 ---
 
-Most customers find a local business on their phone, often in the evening, and decide in a minute or two. **ZERONE International — Local Services** helps small businesses on Long Island make that minute count: accurate information, a page that answers their questions, and a fast reply when they get in touch.
+Most customers find a business on their phone, often in the evening, and decide in a minute or two. **ZERONE International — Small Business Plans** help small businesses make that minute count: accurate information, a page that answers their questions, and a fast reply when they get in touch.
 
-We are a small company based in Farmingville, NY. Everything we do can be handled in writing, by e-mail or chat, so you never have to find time for a long phone call.
+We are a technology company based in New York. We work with businesses in New York City and on Long Island first, where we can also meet in person, and remotely with businesses in every state. Everything we do can be handled in writing, by e-mail or chat, so you never have to find time for a long phone call.
 
 **Call [(631) 900-2595](tel:+16319002595)** any time: Ava, our own AI phone assistant, answers 24/7 and you get a written proposal by e-mail. Prefer to text? **[(631) 319-7032](sms:+16313197032)**.
 
@@ -36,15 +36,18 @@ We are a small company based in Farmingville, NY. Everything we do can be handle
 
 ## Prices
 
-Simple monthly plans: **Starter from $149 a month** (website and Google Business Profile care) and **Growth from $249 a month** (adds review requests, reply drafts, a booking form and missed-call text-back). 3-month minimum, then month to month, with a 14-day satisfaction guarantee. See all [prices and what each plan includes](/local/pricing/). Prices do not include applicable sales tax.
+Simple monthly plans: **Starter from $149 a month** (website and Google Business Profile care) and **Growth from $249 a month** (adds review requests, reply drafts, a booking form and missed-call text-back). 3-month minimum, then month to month, with a 14-day satisfaction guarantee. See all [prices and what each plan includes](/plans/pricing/). Prices do not include applicable sales tax.
 
 ## Questions
 
 **Do I need to talk to you on the phone?**
-No. Everything works by e-mail, text message, chat or our website form. If you'd like to call, Ava, our AI assistant, answers (631) 900-2595 around the clock, and we follow up in writing. We can also meet in person on Long Island.
+No. Everything works by e-mail, text message, chat or our website form. If you'd like to call, Ava, our AI assistant, answers (631) 900-2595 around the clock, and we follow up in writing. We can also meet in person in New York City or on Long Island.
 
 **Who are you?**
-ZERONE International LLC, a small technology company in Farmingville, NY. We build websites, automation and AI assistants for small businesses.
+ZERONE International LLC, a technology company based in Farmingville, New York. We build websites, AI assistants, automation and custom software for businesses across the United States.
+
+**Do you work with businesses outside New York?**
+Yes. New York City and Long Island come first, but everything can be done remotely, so we work with businesses anywhere in the United States.
 
 **Do you work with Turkish-speaking business owners?**
 Yes. <span lang="tr">Türkçe de yazışabiliriz.</span>

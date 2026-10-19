@@ -4,13 +4,13 @@
 <article class="post local-page" aria-labelledby="local-title">
   <header class="page-hero page-hero--compact">
     <div class="wrap wrap--narrow">
-      <p class="eyebrow">ZERONE International — Local Services</p>
+      <p class="eyebrow">ZERONE International — Small Business Plans</p>
       <h1 id="local-title">{{ page.title }}</h1>
       <p class="lede">{{ page.description }}</p>
       {% if page.version %}<p class="post-meta">Version {{ page.version }} · {{ t.ui.updated }} <time datetime="{{ page.updated }}">{{ page.updated }}</time></p>{% endif %}
-      <nav class="local-nav" aria-label="Local Services">
+      <nav class="local-nav" aria-label="Small Business Plans">
         <ul role="list">
-        {% for item in local_pages %}
+        {% for item in plan_pages %}
           <li><a href="{{ item.path }}"{% if item.path == here %} aria-current="page"{% endif %}>{{ item.nav }}</a></li>
         {% endfor %}
         </ul>
@@ -27,7 +27,7 @@
   <div class="wrap cta-band__inner">
     <div>
       <h2 id="cta-title">Want to see a free preview for your business?</h2>
-      <p>Tell us your business name and town. We reply in writing, usually within one business day.</p>
+      <p>Tell us your business name and city. We reply in writing, usually within one business day.</p>
     </div>
     <a class="button button--light" href="{{ url('contact') }}">Ask for a free preview {{ icons.icon('arrow') }}</a>
   </div>

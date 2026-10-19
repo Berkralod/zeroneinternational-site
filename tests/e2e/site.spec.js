@@ -213,6 +213,10 @@ test("old URLs redirect to the new pages", async ({ page }) => {
   await expect(page).toHaveURL(/\/tr\/$/);
   await page.goto("/services.html");
   await expect(page).toHaveURL(/\/services\/$/);
+  await page.goto("/local/pricing/");
+  await expect(page).toHaveURL(/\/plans\/pricing\/$/);
+  await page.goto("/use-cases/ebay-listing-preparation/");
+  await expect(page).toHaveURL(/\/use-cases\/$/);
 });
 
 test("contact form submits to Formspree and shows a confirmation @cross", async ({ page }) => {
@@ -225,7 +229,7 @@ test("contact form submits to Formspree and shows a confirmation @cross", async 
   await form.locator("#f-name").fill("Test Person");
   await form.locator("#f-email").fill("test@example.com");
   await form.locator("#f-type").selectOption("web");
-  await form.locator("#f-message").fill("We would like a dashboard for our resale team, please.");
+  await form.locator("#f-message").fill("We would like a dashboard for our service team, please.");
   await form.locator("#project-consent").check();
   await form.locator("[type=submit]").click();
   await expect(form.locator("[data-form-status]")).toHaveText(content.en.form.success);
@@ -286,26 +290,26 @@ test("blog lists every post, posts render and the newsletter form submits @cross
   expect(errors).toEqual([]);
 });
 
-test("local services pages are reached from every language's footer and link to each other @cross", async ({ page }) => {
+test("small-business plan pages are reached from every language's footer and link to each other @cross", async ({ page }) => {
   const errors = await collectErrors(page);
   await page.goto(pathFor("tr", "home"));
-  await page.locator(".site-footer").getByRole("link", { name: content.tr.nav.local }).click();
-  await expect(page).toHaveURL(/\/local\/$/);
+  await page.locator(".site-footer").getByRole("link", { name: content.tr.nav.plans }).click();
+  await expect(page).toHaveURL(/\/plans\/$/);
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
-  await expect(page.locator("article h1")).toHaveText("Local Services for Long Island businesses");
+  await expect(page.locator("article h1")).toHaveText("Small business plans");
   const menu = page.locator(".local-nav");
   await expect(menu.locator('[aria-current="page"]')).toHaveText("Overview");
   await menu.getByRole("link", { name: "Privacy" }).click();
-  await expect(page).toHaveURL(/\/local\/privacy\/$/);
-  await expect(page.locator(".post-meta")).toContainText("Version LS-PRIV-2");
+  await expect(page).toHaveURL(/\/plans\/privacy\/$/);
+  await expect(page.locator(".post-meta")).toContainText("Version LS-PRIV-3");
   await expect(page.locator(".post-body table").first()).toBeVisible();
   for (const width of [320, 1280]) {
     await resizeTo(page, width, 900);
     expect(await horizontalOverflow(page), `overflow at ${width}px`).toBeLessThanOrEqual(1);
   }
   await menu.getByRole("link", { name: "Terms" }).click();
-  await expect(page.locator(".post-meta")).toContainText("Version LS-TERMS-1");
-  await expect(page.locator(".breadcrumbs")).toContainText(content.en.nav.local);
+  await expect(page.locator(".post-meta")).toContainText("Version LS-TERMS-2");
+  await expect(page.locator(".breadcrumbs")).toContainText(content.en.nav.plans);
   expect(errors).toEqual([]);
 });
 
@@ -331,7 +335,7 @@ test("developers page renders in several languages and the early-access form sub
     return route.fulfill({ status: 200, contentType: "application/json", body: '{"ok":true}' });
   });
   await form.locator("#dev-email").fill("dev@example.com");
-  await form.locator("#dev-company").fill("Example Resale Co");
+  await form.locator("#dev-company").fill("Example Shop Co");
   await form.locator("#dev-idea").fill("A dashboard that syncs sold items between two marketplaces.");
   await form.locator("#dev-consent").check();
   await form.locator("[type=submit]").click();

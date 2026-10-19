@@ -21,7 +21,7 @@ async function settings(page) {
 
 function answer(fields = {}) {
   return {
-    reply: "We build custom automation for resale businesses. What would you like to automate first?",
+    reply: "We build websites, AI assistants and custom automation. What would you like to automate first?",
     sig: "a".repeat(64),
     fallback: false,
     lang: "en",
@@ -111,7 +111,7 @@ test.describe("AI sales assistant", () => {
     await page.locator(".zai-launcher").click();
     await page.locator(".zai-welcome .zai-chip").first().click();
     const bot = page.locator(".zai-msg--bot").last();
-    await expect(bot).toContainText("We build custom automation");
+    await expect(bot).toContainText("We build websites, AI assistants");
     expect(requests[0].path).toBe("/chat");
     expect(requests[0].body.messages.at(-1)).toEqual({ role: "user", content: t.chips[0] });
     expect(requests[0].body.turnstile).toBe("test-token");

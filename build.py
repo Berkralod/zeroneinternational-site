@@ -29,19 +29,30 @@ STATIC = ROOT / "static"
 DIST = ROOT / "dist"
 BUILD_META = ROOT / "build"
 BLOG = CONTENT / "blog"
-# ZERONE International — Local Services: English-only pages under /local/ (content/local/*.md).
-LOCAL = CONTENT / "local"
-LOCAL_PATH = "/local/"
-LOCAL_ORDER = ["index", "pricing", "privacy", "terms"]
+# Small-business plans: English-only pages under /plans/ (content/plans/*.md); /local/ was the old path.
+PLANS = CONTENT / "plans"
+PLANS_PATH = "/plans/"
+PLANS_ORDER = ["index", "pricing", "privacy", "terms"]
+# Old paths that moved (content/redirects.json): "/old/path/" -> "/new/path/".
+REDIRECTS = CONTENT / "redirects.json"
+# Based in New York, serving the whole country: New York City and Long Island first.
+AREA_SERVED = [
+    {"@type": "Country", "name": "United States"},
+    {"@type": "City", "name": "New York City"},
+    {"@type": "AdministrativeArea", "name": "Nassau County, New York"},
+    {"@type": "AdministrativeArea", "name": "Suffolk County, New York"},
+]
 
 PAGE_IDS = [
-    "home", "services", "service_automation", "service_web", "service_mobile",
-    "products", "use_cases", "company", "contact", "payment", "blog", "developers",
+    "home", "services", "service_presence", "service_phone", "service_automation", "service_web",
+    "service_mobile", "products", "use_cases", "company", "contact", "payment", "blog", "developers",
     "privacy", "terms", "cookies",
 ]
 TEMPLATE_FOR = {
     "home": "home.html",
     "services": "services.html",
+    "service_presence": "service.html",
+    "service_phone": "service.html",
     "service_automation": "service.html",
     "service_web": "service.html",
     "service_mobile": "service.html",
@@ -58,19 +69,19 @@ TEMPLATE_FOR = {
     "case": "use_case.html",
 }
 PARENT = {
+    "service_presence": "services",
+    "service_phone": "services",
     "service_automation": "services",
     "service_web": "services",
     "service_mobile": "services",
     "case": "use_cases",
 }
-SERVICE_PAGE = {"automation": "service_automation", "web": "service_web", "mobile": "service_mobile"}
+SERVICE_PAGE = {"presence": "service_presence", "phone": "service_phone", "automation": "service_automation",
+                "web": "service_web", "mobile": "service_mobile"}
 # Which service each of the twenty use cases belongs to (same order in every language).
-CASE_SERVICES = [
-    "automation", "automation", "automation", "web", "automation",
-    "web", "web", "web", "web", "web",
-    "web", "mobile", "mobile", "mobile", "automation",
-    "web", "automation", "mobile", "web", "automation",
-]
+CASE_SERVICES = ["presence"] * 4 + ["phone"] * 4 + ["automation"] * 4 + ["web"] * 4 + ["mobile"] * 4
+# Optional portrait for the company page; the founder section works without it.
+FOUNDER_PHOTO = "/assets/img/founder.jpg"
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*(?:/[a-z0-9]+(?:-[a-z0-9]+)*)*$")
 HASHED_SUFFIXES = {".css", ".js"}
 # The AI sales assistant (see docs/ASISTAN.md) is published only when site.config.json has an
@@ -138,7 +149,7 @@ def load_content(config):
             errors.append(f"{code}: duplicate use-case slugs")
         if len(set(data["slugs"].values())) != len(data["slugs"]):
             errors.append(f"{code}: duplicate page slugs")
-        for page in ("service_automation", "service_web", "service_mobile"):
+        for page in SERVICE_PAGE.values():
             if not data["slugs"][page].startswith(data["slugs"]["services"] + "/"):
                 errors.append(f"{code}: slug for {page} must live under the services slug")
     if errors:
@@ -188,33 +199,33 @@ def load_posts():
     return posts
 
 
-def load_local_pages():
-    """Local Services pages, English only: content/local/<slug>.md, with index.md as the /local/ hub.
+def load_plan_pages():
+    """Small-business plan pages, English only: content/plans/<slug>.md, with index.md as the /plans/ hub.
 
     Front matter: title, description, nav (label in the section menu), updated; legal texts also carry
-    a version. Pages are ordered as in LOCAL_ORDER, any others follow alphabetically."""
+    a version. Pages are ordered as in PLANS_ORDER, any others follow alphabetically."""
     pages = []
-    for path in LOCAL.glob("*.md"):
+    for path in PLANS.glob("*.md"):
         text = path.read_text(encoding="utf-8")
         match = FRONT_MATTER_RE.match(text)
         if not match:
-            raise BuildError(f"local/{path.name}: missing '---' front matter")
+            raise BuildError(f"plans/{path.name}: missing '---' front matter")
         meta = {}
         for line in match.group(1).splitlines():
             key, _, value = line.partition(":")
             meta[key.strip()] = value.strip()
         for key in ("title", "description", "nav", "updated"):
             if not meta.get(key):
-                raise BuildError(f"local/{path.name}: front matter needs '{key}'")
+                raise BuildError(f"plans/{path.name}: front matter needs '{key}'")
         if not SLUG_RE.match(path.stem):
-            raise BuildError(f"local/{path.name}: file name must be a lowercase slug")
+            raise BuildError(f"plans/{path.name}: file name must be a lowercase slug")
         try:
             updated = dt.date.fromisoformat(meta["updated"]).isoformat()
         except ValueError as exc:
-            raise BuildError(f"local/{path.name}: dates must look like 2026-10-17 ({exc})") from None
+            raise BuildError(f"plans/{path.name}: dates must look like 2026-10-17 ({exc})") from None
         pages.append({
             "slug": path.stem,
-            "path": LOCAL_PATH if path.stem == "index" else f"{LOCAL_PATH}{path.stem}/",
+            "path": PLANS_PATH if path.stem == "index" else f"{PLANS_PATH}{path.stem}/",
             "title": meta["title"],
             "description": meta["description"],
             "nav": meta["nav"],
@@ -222,11 +233,21 @@ def load_local_pages():
             "updated": updated,
             "html": Markup(markdown.markdown(text[match.end():], extensions=["extra", "sane_lists"], output_format="html")),
         })
-    rank = {slug: i for i, slug in enumerate(LOCAL_ORDER)}
+    rank = {slug: i for i, slug in enumerate(PLANS_ORDER)}
     pages.sort(key=lambda page: (rank.get(page["slug"], len(rank)), page["slug"]))
     if pages and pages[0]["slug"] != "index":
-        raise BuildError("content/local/ needs an index.md for the /local/ hub")
+        raise BuildError("content/plans/ needs an index.md for the /plans/ hub")
     return pages
+
+
+def load_redirects():
+    """Moved paths from content/redirects.json; both sides must be site paths ending in '/'."""
+    redirects = load_json(REDIRECTS)
+    for old, new in redirects.items():
+        for path in (old, new):
+            if not re.fullmatch(r"/([a-z0-9-]+/)*", path):
+                raise BuildError(f"redirects.json: {path!r} must look like /some/path/")
+    return redirects
 
 
 def related_posts(post, posts, limit=3):
@@ -369,25 +390,27 @@ def csp(config):
 # --------------------------------------------------------------------------- AI sales assistant
 
 PAGE_DESCRIPTIONS = {
-    "home": "Home page: overview of services, resale experience, use cases and FAQ",
-    "services": "Overview of all custom software services, with the services FAQ",
-    "service_automation": "Automation & bots: data preparation, listings, notifications, scheduled tasks, integrations",
+    "home": "Home page: overview of services, where we work, use cases and FAQ",
+    "services": "Overview of all services, with the services FAQ",
+    "service_presence": "Websites & Google presence: websites, Google Business Profile, local SEO, reviews, monthly plans",
+    "service_phone": "AI phone assistant: answers calls 24/7, questions, messages, appointments, call summaries",
+    "service_automation": "Automation & bots: data entry, documents, notifications, scheduled tasks, integrations",
     "service_web": "Web applications: dashboards, internal tools, customer portals with user roles",
-    "service_mobile": "Mobile apps: iOS and Android apps for teams on the floor, in the warehouse or on the road",
-    "products": "Resale tools in development: crosslisting system and liquidation lot analysis (waiting list)",
-    "use_cases": "All 20 use cases for resellers and small businesses",
+    "service_mobile": "Mobile apps: iOS and Android apps for teams on site, in the field or on the road",
+    "products": "Our own products in development: crosslisting system and liquidation lot analysis for online sellers (waiting list)",
+    "use_cases": "All 20 use cases: websites, AI phone assistant, automation, web and mobile apps",
     "company": "About the company: who we are, vision, mission, values, location",
     "contact": "Contact form to start a project or ask for a quote",
     "payment": "Pay an invoice: card via Stripe, Square invoices, PayPal",
-    "blog": "Blog with guides for resale sellers",
-    "developers": "Planned APIs for resale sellers and the developer early-access list",
+    "blog": "Blog with guides on websites, local SEO, AI and automation (older posts cover online selling)",
+    "developers": "Planned APIs for online sellers and the developer early-access list",
     "privacy": "Privacy policy (also covers this AI assistant)",
     "terms": "Terms of use",
     "cookies": "Cookie policy",
 }
 
 
-def assistant_catalog(site, config, posts):
+def assistant_catalog(site, config, posts, plan_pages=()):
     """Every link the assistant may hand out: id -> {desc, urls per language, labels per language}.
 
     The Worker shows the model only these ids and maps the ids it returns back to URLs; the widget
@@ -445,6 +468,13 @@ def assistant_catalog(site, config, posts):
     if config.get("paypal_url"):
         external("pay_paypal", config["paypal_url"], "Pay an invoice with PayPal",
                  lambda t: t["pages"]["payment"]["paypal"]["button"])
+    for page in plan_pages:  # English only, so every language links to the same page
+        link_id = "plans" if page["slug"] == "index" else f"plans_{page['slug']}"
+        links[link_id] = {
+            "desc": f"Small-business plans (English page): {page['title']} – {page['description']}",
+            "urls": {code: site.abs(page["path"]) for code in langs},
+            "labels": {code: (content[code]["nav"]["plans"] if page["slug"] == "index" else page["title"]) for code in langs},
+        }
     for post in posts:
         url = site.abs(site.post_path(post["slug"]))
         links[f"post-{post['slug']}"[:64]] = {
@@ -466,7 +496,9 @@ def assistant_knowledge(site, config):
     add = out.append
     add(f"Company: {config['legal_name']} ({config['site_name']}), founded by {config['founder']}, "
         f"based in {config['address']['locality']}, {config['address']['region']}, {config['address']['country']}; "
-        "works remotely with clients worldwide. The website is in 15 languages; the team communicates in English and Turkish.")
+        "serves businesses across the United States: New York City (Manhattan, Brooklyn, Queens, the Bronx, Staten "
+        "Island) and Long Island (Nassau, Suffolk, the Hamptons) first, where in-person meetings are possible, and "
+        "every other state remotely. The website is in 15 languages; the team communicates in English and Turkish.")
     add(" ".join(p["company"]["about"]["text"]))
     add(f"Mission: {p['company']['mission']['text']}")
     add("Values: " + "; ".join(f"{v['title']}: {v['text']}" for v in p["company"]["values"]["items"]))
@@ -478,11 +510,14 @@ def assistant_knowledge(site, config):
         add("  Features: " + "; ".join(f"{f['title']} ({f['text']})" for f in page["features"]))
         add("  Notes: " + " ".join(page["notes"]))
     add(f"Role-based access: {t['roles']['intro']} " + "; ".join(f"{r['title']}: {r['text']}" for r in t["roles"]["items"]))
-    add("\nPRODUCTS FOR RESALE SELLERS (both in development, not available yet; visitors can join the waiting list on the products page)")
+    add(f"Where we work: {p['home']['reach']['text']} " + "; ".join(p["home"]["reach"]["areas"]))
+    add("Small-business plans (websites, Google Business Profile, reviews, AI phone add-on) are described in English "
+        "on the plans pages (link ids plans and plans_pricing): Starter from $149 a month, Growth from $249 a month, "
+        "AI phone assistant add-on +$149 a month; prices exclude applicable sales tax.")
+    add("\nOUR OWN PRODUCTS FOR ONLINE SELLERS (both in development, not available yet; visitors can join the waiting list on the products page)")
     add(p["products"]["lede"])
     for item in p["products"]["items"]:
         add(f"- {item['name']}: {item['text']} Planned features: " + "; ".join(item["features"]))
-    add(p["home"]["resale"]["text"])
     add("\nPLANNED DEVELOPER APIS (plans only, nothing is live; early-access list on the developers page)")
     add(p["developers"]["products"]["intro"])
     for item in p["developers"]["products"]["items"]:
@@ -520,13 +555,13 @@ def assistant_knowledge(site, config):
     return "\n".join(out)
 
 
-def assistant_data(site, config, posts):
+def assistant_data(site, config, posts, plan_pages=()):
     """Everything the Worker needs from the site: the link catalogue and the business facts."""
     data = {
         "languages": site.langs,
         "default_language": site.default,
         "base_url": site.base,
-        "links": assistant_catalog(site, config, posts),
+        "links": assistant_catalog(site, config, posts, plan_pages),
         "knowledge": assistant_knowledge(site, config),
     }
     data["version"] = hashlib.sha256(json.dumps(data, sort_keys=True).encode()).hexdigest()[:10]
@@ -557,7 +592,7 @@ def organization(site):
             "addressCountry": c["address"]["country"],
         },
         **({"telephone": c["telephone"]} if c.get("telephone") else {}),
-        "areaServed": "Worldwide",
+        "areaServed": AREA_SERVED,
         "knowsLanguage": site.langs,
         "contactPoint": {
             "@type": "ContactPoint",
@@ -598,6 +633,7 @@ def build(check_only=False):
         "google_site_verification": r"[A-Za-z0-9_-]{10,100}",
         "bing_site_verification": r"[A-Za-z0-9_-]{10,100}",
         "telephone": r"\+[0-9][0-9-]{6,18}",
+        "founder_linkedin": r"https://www\.linkedin\.com/in/[A-Za-z0-9-]+/",
         "sms_number": r"\+[0-9][0-9-]{6,18}",
         "indexnow_key": r"[a-f0-9]{32}",
         # The Cloudflare Worker of the AI assistant, e.g. https://zerone-assistant.<account>.workers.dev
@@ -610,7 +646,8 @@ def build(check_only=False):
     content = load_content(config)
     site = Site(config, content)
     posts = load_posts()
-    local_pages = load_local_pages()
+    plan_pages = load_plan_pages()
+    moved = load_redirects()
     if check_only:
         print(f"Content OK: {len(site.langs)} languages, identical structure.")
         return
@@ -623,10 +660,11 @@ def build(check_only=False):
     BUILD_META.mkdir()
     assistant_on = bool(config.get("assistant_endpoint"))
     assets = copy_static(skip=() if assistant_on else ASSISTANT_ASSETS)
+    founder_photo = FOUNDER_PHOTO in assets
 
     # The Worker is deployed with this file (.github/workflows/assistant-deploy.yml), also while
     # the widget is still switched off on the site.
-    worker_data = assistant_data(site, config, posts)
+    worker_data = assistant_data(site, config, posts, plan_pages)
     (BUILD_META / "assistant-data.json").write_text(
         json.dumps(worker_data, ensure_ascii=False, indent=1), encoding="utf-8")
     assistant_json = None
@@ -687,7 +725,8 @@ def build(check_only=False):
         # Form answers reach the inbox in English whatever language the visitor used.
         form_en=content[config["default_language"]]["form"],
         post_url=lambda slug: site.post_path(slug),
-        local_path=LOCAL_PATH,
+        plans_path=PLANS_PATH,
+        founder_photo=FOUNDER_PHOTO if FOUNDER_PHOTO in assets else None,
         logo=lambda suffix: Markup(logo_source.replace("logo-globe", f"logo-globe-{suffix}")),
     )
 
@@ -792,7 +831,7 @@ def build(check_only=False):
                 "name": t["services_list"][service_key]["name"],
                 "description": description,
                 "provider": {"@id": site.abs("/#organization")},
-                "areaServed": "Worldwide",
+                "areaServed": AREA_SERVED,
                 "url": site.abs(here),
             })
         if page_id == "company":
@@ -800,9 +839,12 @@ def build(check_only=False):
                 "@type": "Person",
                 "@id": site.abs("/#founder"),
                 "name": config["founder"],
-                "jobTitle": "Founder",
+                "jobTitle": "Founder & CEO",
                 "worksFor": {"@id": site.abs("/#organization")},
                 "url": site.abs(site.path(site.default, "company")),
+                "knowsLanguage": ["en", "tr", "ar"],
+                **({"image": site.abs(FOUNDER_PHOTO)} if founder_photo else {}),
+                **({"sameAs": [config["founder_linkedin"]]} if config.get("founder_linkedin") else {}),
             })
         if page_id == "products":
             # Both products are still in development: no offers, prices or ratings are claimed.
@@ -928,8 +970,8 @@ def build(check_only=False):
         rendered += 1
         sitemap_entries.append((site.abs(here), post["updated"], alternates))
 
-    # Local Services pages (English only, like blog posts): hreflang points to themselves and x-default.
-    for page in local_pages:
+    # Small-business plan pages (English only, like blog posts): hreflang points to themselves and x-default.
+    for page in plan_pages:
         lang = site.default
         t = content[lang]
         here = page["path"]
@@ -938,7 +980,7 @@ def build(check_only=False):
             return site.path(_lang, target, case)
 
         alternates = [(lang, site.abs(here)), ("x-default", site.abs(here))]
-        crumbs = [(t["ui"]["home"], url("home")), (t["nav"]["local"], LOCAL_PATH)]
+        crumbs = [(t["ui"]["home"], url("home")), (t["nav"]["plans"], PLANS_PATH)]
         if page["slug"] != "index":
             crumbs.append((page["title"], here))
         graph = [
@@ -968,14 +1010,14 @@ def build(check_only=False):
             graph.append({
                 "@type": "Service",
                 "@id": site.abs(here) + "#service",
-                "name": "ZERONE International — Local Services",
+                "name": "ZERONE International — Small Business Plans",
                 "description": page["description"],
                 "provider": {"@id": site.abs("/#organization")},
-                "areaServed": {"@type": "AdministrativeArea", "name": "Long Island, New York"},
+                "areaServed": AREA_SERVED,
                 "url": site.abs(here),
             })
         ctx = dict(
-            lang=lang, meta=t["meta"], t=t, page=page, page_id="local", local_pages=local_pages,
+            lang=lang, meta=t["meta"], t=t, page=page, page_id="plans", plan_pages=plan_pages,
             case=None, case_index=None, service_key=None,
             title=page_title(page["title"], config["site_name"], "Zerone"), description=page["description"],
             canonical=site.abs(here), here=here, url=url, abs_url=site.abs, alternates=alternates,
@@ -986,7 +1028,7 @@ def build(check_only=False):
         )
         out = DIST / here.lstrip("/") / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(env.get_template("local.html").render(**ctx), encoding="utf-8")
+        out.write_text(env.get_template("plans.html").render(**ctx), encoding="utf-8")
         rendered += 1
         sitemap_entries.append((site.abs(here), page["updated"], alternates))
 
@@ -1048,12 +1090,18 @@ def build(check_only=False):
     for code in site.langs:
         if code != site.default:
             redirects[f"/{code}.html"] = site.path(code, "home")
+    redirects.update(moved)
     redirect_tpl = env.get_template("redirect.html")
     for old, new in redirects.items():
         if old == "/index.html":
             continue  # served by the new home page itself
-        (DIST / old.lstrip("/")).write_text(
-            redirect_tpl.render(target=new, absolute=site.abs(new)), encoding="utf-8")
+        out = DIST / old.lstrip("/")
+        if old.endswith("/"):
+            out = out / "index.html"
+        if out.exists():
+            raise BuildError(f"redirects.json: {old} is a live page, it cannot be redirected")
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(redirect_tpl.render(target=new, absolute=site.abs(new)), encoding="utf-8")
     # /index.html is excluded: nginx serves "/" through it internally, a redirect would loop.
     (BUILD_META / "redirects.conf").write_text(
         "".join(f"location = {old} {{ return 301 {new}; }}\n"

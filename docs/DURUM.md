@@ -1,6 +1,6 @@
 # Proje durumu (Claude'un devir notu)
 
-Son güncelleme: 2026-10-17. Yeni bir oturum veya sohbet özetlemesinden sonra Claude buradan devam eder.
+Son güncelleme: 2026-10-19. Yeni bir oturum veya sohbet özetlemesinden sonra Claude buradan devam eder.
 
 ## Canlıda olanlar
 - 15 dilli site (GitHub Pages), blog (her salı otomatik yazı), "Geliştiriciler için" sayfası.
@@ -13,15 +13,19 @@ Son güncelleme: 2026-10-17. Yeni bir oturum veya sohbet özetlemesinden sonra C
 - Otomasyonlar: saatlik sağlık kontrolü, yayın sonrası duman testi + otomatik geri alma, CodeQL, Dependabot (öneriler incelenip birleştirilir), haftalık güvenlik özeti, haftalık trafik raporu (Cloudflare), hepsi Telegram'a Türkçe.
 
 ## Açık işler
-- **Yerel işletme hizmetleri** (sahibin 15 Ekim planı): kararlar verildi — telefon ve "Book a call" Ava (AI telefon hattı) hazır olana kadar kaldırıldı; altyapı Cloudflare (Workers + D1), Railway/n8n/Discourse ertelendi; marka "ZERONE International — Local Services" (`/local/`). Plan, durum ve hedef listesi gizli `zerone-local` deposunda (`docs/DURUM-LOCAL.md`). Herkese açık bu depoya iç maliyet, hedef işletme veya müşteri verisi yazılmaz.
-- **Telefon ve SMS (17 Ekim, sahibin kararı):**
-  - Sitede iki numara var.
-  - **Arama: (631) 900-2595.** Bu numarayı AI telefon asistanı Ava açıyor, 7/24 ve İngilizce konuşuyor.
-  - **SMS: (631) 319-7032.** Bu sahibin Google Voice numarası. Mesajları ekip kendisi okuyup cevaplıyor.
-  - Numaraların göründüğü yerler: iletişim sayfası (15 dil), `/local/` genel bakış ve fiyat sayfaları, şirket bilgisi (schema), sohbet asistanının bilgisi.
-  - Gizlilik eki LS-PRIV-2 olarak güncellendi: Google Voice, Brevo ve yazılı teklif eklendi.
+- **Yeni konumlandırma (19 Ekim 2026, Berk'in kararı):** Site artık "e-ticaret / resale araçları" değil, **New York merkezli, tüm ABD'ye hizmet veren teknoloji ve büyüme ortağı**. Öncelik New York City (Manhattan, Brooklyn, Queens, Bronx, Staten Island) ve Long Island (Nassau, Suffolk, Hamptons); diğer eyaletler uzaktan. Metinlerde "sadece yerel" vurgusu yapılmaz.
+  - 5 hizmet sayfası (15 dil): Websites & Google presence (`service_presence`), AI phone assistant (`service_phone`), Automation & bots, Web applications, Mobile apps.
+  - 20 kullanım örneği yenilendi (her hizmete 4). Eski örnek adresleri `content/redirects.json` ile kullanım örnekleri sayfasına yönleniyor.
+  - Ana menü: Services · Plans & pricing · Use cases · Company · Blog · Contact. Products ve Developers (online satıcı araçları, geliştirme aşamasında) sadece alt menüde.
+  - Şirket sayfasında kurucu bölümü (Berk'in özgeçmişi, LinkedIn). Fotoğraf: `static/assets/img/founder.jpg` (640×640, 19 Ekim).
+  - Schema `areaServed`: ABD + New York City + Nassau + Suffolk.
+- **Small Business Plans (`/plans/`, eski adı Local Services, eski adres `/local/` otomatik yönleniyor)**, sadece İngilizce: genel bakış, fiyatlar (Starter $149, Growth $249, AI telefon eki +$149), gizlilik eki LS-PRIV-3, hizmet şartları LS-TERMS-2. Plan, durum ve hedef listesi gizli `zerone-local` deposunda (`docs/DURUM-LOCAL.md`). Herkese açık bu depoya iç maliyet, hedef işletme veya müşteri verisi yazılmaz. Yasal metinler ilk müşteriden önce gözden geçirilecek (taslaklar gizli depoda: `legal-drafts/`). Memnuniyet garantisi 14 gün.
+- **Telefon ve SMS (17 Ekim, Berk'in kararı):**
+  - **Arama: (631) 900-2595.** AI telefon asistanı Ava açıyor, 7/24, İngilizce.
+  - **SMS: (631) 319-7032.** Berk'in Google Voice numarası; mesajları ekip okuyup cevaplıyor.
+  - Numaraların göründüğü yerler: iletişim sayfası (15 dil), `/plans/` sayfaları, AI telefon hizmet sayfası, şirket bilgisi (schema), sohbet asistanının bilgisi.
   - Ava'nın kurulumu gizli depoda (`zerone-local`: `ava/`, `docs/AVA.md`, `docs/TEKLIF.md`).
-- **`/local/` bölümü (ZERONE International — Local Services)**, sadece İngilizce: genel bakış (`content/local/index.md`), yerel hizmetler gizlilik eki (LS-PRIV-1) ve hizmet şartları (LS-TERMS-1). 15 dilde site altına "For local businesses" bağlantısı eklendi. Fiyat sayfası henüz yok: sahibin fiyat kararı ve istatistiklerin birincil kaynaktan doğrulanması bekleniyor. Yasal metinler ilk müşteriden önce avukata gösterilecek (taslaklar gizli depoda: `legal-drafts/`). Sahip yayını onayladı (17 Ekim). Memnuniyet garantisi 14 gün (sahibin kararı). Fiyatları sahip Claude'a bıraktı; fiyat sayfası araştırmayla hazırlanıyor.
+- **Blog:** Her salı otomatik yazı (zamanlanmış görev 19 Ekim'de güncellendi). Konular: küçük işletmeler için web sitesi, yerel SEO, Google profili, yorumlar, AI asistanlar ve otomasyon (eski yazılar online satış üzerine, yerinde kalıyor).
 - Dependabot #10 (Playwright 1.64): WebKit'te iletişim sayfasında CSP style-src uyarısı ve tema testi zamanlaması incelenecek.
 
 ## Dışarıdan beklenen

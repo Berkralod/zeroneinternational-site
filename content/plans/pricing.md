@@ -1,8 +1,8 @@
 ---
-title: Local Services pricing
-description: Simple monthly plans for Long Island small businesses: a website with Google Business Profile care from $149 a month, or reviews and fast replies from $249. No long contracts.
+title: Plans and prices
+description: Monthly plans for small businesses in New York and across the US: a website with Google profile care from $149, reviews and fast replies from $249.
 nav: Pricing
-updated: 2026-10-17
+updated: 2026-10-19
 ---
 
 Two simple monthly plans, an AI phone assistant you can add later, and a few one-time jobs. Every plan has a 3-month minimum, then runs month to month. Prices do not include applicable sales tax.
@@ -63,6 +63,6 @@ An AI assistant answers your calls around the clock. It says that it is an AI as
 - **Founding client offer.** For our first 5 clients, we waive the setup fee in return for permission to show your new website in our portfolio. Nothing else is asked: no reviews, no testimonials.
 - **What stays yours.** Your domain, your Google Business Profile and your accounts are always in your business's name.
 - **How you pay.** Through secure payment pages from Stripe, Square or PayPal. We never see or store your card details.
-- **No surprises.** Larger changes beyond the small edits are quoted in writing before we start. Full details are in our [terms](/local/terms/).
+- **No surprises.** Larger changes beyond the small edits are quoted in writing before we start. Full details are in our [terms](/plans/terms/).
 
 *Example calculations are illustrations, not promises. Results vary.*

@@ -1,9 +1,9 @@
 ---
-title: Local Services Terms of Service
-description: The terms for ZERONE International's local business services: plans, setup, billing, cancellation, the satisfaction guarantee, ownership of your accounts and AI features.
+title: Small Business Plans Terms of Service
+description: The terms for ZERONE International's small-business plans: plans, setup, billing, cancellation, the satisfaction guarantee, ownership of your accounts and AI features.
 nav: Terms
-version: LS-TERMS-1
-updated: 2026-10-17
+version: LS-TERMS-2
+updated: 2026-10-19
 ---
 
 These terms apply when a business ("you") orders services from ZERONE International LLC ("ZERONE", "we") through an order form, an online order page or a written proposal (each an "Order"). The Order and these terms together are the whole agreement. If the Order and these terms differ, the Order applies.
@@ -86,7 +86,7 @@ Our services rely on providers such as Google, Cloudflare, phone carriers, Twili
 
 ## 13. Confidentiality and data
 
-We keep your business information confidential and use it only to provide the services. We handle personal data as described in our [Privacy Policy](/privacy/) and the [Local Services Privacy Notice](/local/privacy/). When we process your customers' data for you, we act as your service provider (see section 7 of that notice).
+We keep your business information confidential and use it only to provide the services. We handle personal data as described in our [Privacy Policy](/privacy/) and the [Small Business Plans Privacy Notice](/plans/privacy/). When we process your customers' data for you, we act as your service provider (see section 7 of that notice).
 
 ## 14. Changes to these terms
 

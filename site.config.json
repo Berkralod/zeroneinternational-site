@@ -5,6 +5,7 @@
   "default_language": "en",
   "languages": ["en", "tr", "de", "es", "fr", "it", "pt", "nl", "pl", "ru", "uk", "ar", "hi", "zh", "ja"],
   "founder": "Berk Divaroren",
+  "founder_linkedin": "https://www.linkedin.com/in/berk-divaroren-0a426420b/",
   "email_user": "berk",
   "email_domain": "zeroneinternational.com",
   "address": {

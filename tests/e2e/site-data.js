@@ -20,4 +20,4 @@ export function pathFor(lang, pageId, caseIndex) {
 }
 
 // A representative page of every template, per language.
-export const samplePages = ["home", "services", "service_automation", "products", "use_cases", "company", "contact", "payment", "blog", "developers", "privacy"];
+export const samplePages = ["home", "services", "service_automation", "service_presence", "service_phone", "products", "use_cases", "company", "contact", "payment", "blog", "developers", "privacy"];
