@@ -7,6 +7,8 @@
   },
   "slugs": {
     "services": "leistungen",
+    "service_presence": "leistungen/websites-lokales-seo",
+    "service_phone": "leistungen/ki-telefonassistent",
     "service_automation": "leistungen/automatisierung-bots",
     "service_web": "leistungen/webanwendungen",
     "service_mobile": "leistungen/mobile-apps",
@@ -49,31 +51,40 @@
     "challenge": "Die Herausforderung",
     "approach": "Wie Software hilft",
     "includes": "Was enthalten sein kann",
-    "legal_note": "Diese Übersetzung dient der Information. Bei Abweichungen gilt die englische Fassung."
+    "legal_note": "Diese Übersetzung dient der Information. Bei Abweichungen gilt die englische Fassung.",
+    "see_plans": "Pakete und Preise ansehen"
   },
   "nav": {
     "services": "Leistungen",
+    "plans": "Pakete & Preise",
     "products": "Produkte",
     "use_cases": "Anwendungsfälle",
     "company": "Unternehmen",
     "blog": "Blog",
     "developers": "Für Entwickler",
-    "local": "Für lokale Unternehmen",
     "contact": "Kontakt"
   },
   "footer": {
-    "tagline": "Individuelle Software, Automatisierung und Reselling-Tools von einem Team, das selbst einen Online-Wiederverkauf betreibt.",
+    "tagline": "Websites, KI-Telefonassistenten, Automatisierung und individuelle Software für Unternehmen in den gesamten USA – aus New York.",
     "services": "Leistungen",
     "company": "Unternehmen",
     "legal": "Rechtliches",
     "rights": "Alle Rechte vorbehalten.",
     "trademark": "Die auf dieser Website genannten Marktplatznamen sind Marken ihrer jeweiligen Inhaber. Zerone International LLC ist nicht mit ihnen verbunden und wird nicht von ihnen unterstützt.",
-    "location": "Farmingville, New York, Vereinigte Staaten"
+    "location": "Farmingville, New York · für Kunden in den gesamten USA"
   },
   "services_list": {
+    "presence": {
+      "name": "Websites & Google-Präsenz",
+      "short": "Mobilfreundliche Websites, ein korrektes Google Business Profile, lokales SEO und stetig neue Bewertungen – damit Kunden Sie finden und sich für Sie entscheiden."
+    },
+    "phone": {
+      "name": "KI-Telefonassistent",
+      "short": "Ein KI-Assistent, der Ihre Anrufe rund um die Uhr annimmt, häufige Fragen beantwortet, Nachrichten aufnimmt und Termine vereinbart – kein Anrufer landet auf der Mailbox."
+    },
     "automation": {
       "name": "Automatisierung & Bots",
-      "short": "Schluss mit Routinearbeit: Datenaufbereitung, Inserate, Benachrichtigungen und geplante Aufgaben, die von selbst laufen."
+      "short": "Schluss mit Routinearbeit: Dateneingabe, Dokumente, Benachrichtigungen und geplante Aufgaben, die von selbst laufen."
     },
     "web": {
       "name": "Webanwendungen",
@@ -81,7 +92,7 @@
     },
     "mobile": {
       "name": "Mobile Apps",
-      "short": "iOS- und Android-Apps für die Arbeit Ihres Teams im Laden, im Lager oder unterwegs."
+      "short": "iOS- und Android-Apps für die Arbeit Ihres Teams vor Ort, im Außendienst oder unterwegs."
     }
   },
   "process": {
@@ -127,8 +138,8 @@
     ]
   },
   "cta": {
-    "title": "Kostet ein Ablauf zu viel Zeit?",
-    "text": "Sagen Sie uns, was Sie verbessern möchten. Sie erhalten ein klares Angebot mit Umfang, Zeitplan und Preis.",
+    "title": "Bereit für mehr Kunden mit weniger Handarbeit?",
+    "text": "Sagen Sie uns, was Sie verbessern möchten. Sie erhalten ein schriftliches Angebot mit Umfang, Zeitplan und Preis.",
     "button": "Projekt starten"
   },
   "form": {
@@ -138,20 +149,22 @@
     "optional": "optional",
     "project_type": "Projektart",
     "types": {
+      "presence": "Website oder Google-Präsenz",
+      "phone": "KI-Telefonassistent",
       "automation": "Automatisierung oder Bot",
       "web": "Webanwendung",
       "mobile": "Mobile App",
-      "resale": "Reselling-Tools",
       "other": "Etwas anderes"
     },
     "choose": "Bitte auswählen",
     "budget": "Geschätztes Budget",
     "budgets": [
-      "Unter 5.000 $",
-      "5.000 – 15.000 $",
-      "15.000 – 50.000 $",
-      "Über 50.000 $",
-      "Noch unklar"
+      "Monatspaket (ab $149 pro Monat)",
+      "Unter $5,000",
+      "$5,000 – $15,000",
+      "$15,000 – $50,000",
+      "Über $50,000",
+      "Noch unsicher"
     ],
     "timeline": "Zeitrahmen",
     "timelines": [
@@ -161,7 +174,7 @@
       "Flexibel"
     ],
     "message": "Projektbeschreibung",
-    "message_hint": "Beschreiben Sie die Aufgabe, die Sie verbessern möchten, die beteiligten Plattformen und die benötigten Nutzerrollen. Bitte senden Sie keine Passwörter oder API-Schlüssel.",
+    "message_hint": "Beschreiben Sie Ihr Unternehmen, was Sie verbessern möchten und welche Tools Sie bereits nutzen. Bitte senden Sie keine Passwörter oder API-Schlüssel.",
     "consent": "Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden, wie in der {link} beschrieben.",
     "consent_link": "Datenschutzerklärung",
     "submit": "Anfrage senden",
@@ -189,13 +202,13 @@
     "unread": "Neue Antwort",
     "role": "KI-Vertriebsassistentin",
     "greeting": "Hallo, ich bin {name}.",
-    "intro": "Ich beantworte Fragen zu unserer individuellen Software, Automatisierung und unseren Tools für Reseller und zeige Ihnen die passende Seite. Wobei kann ich helfen?",
+    "intro": "Ich beantworte Fragen zu unseren Websites, unserem KI-Telefonassistenten, Automatisierung und individueller Software und zeige Ihnen die passende Seite. Wobei kann ich helfen?",
     "notice": "Sie chatten mit einem KI-Assistenten; Antworten können Fehler enthalten. Bitte teilen Sie keine Passwörter oder Kartennummern. {link}",
     "chips_label": "Thema wählen",
     "chips": [
-      "Individuelle Software oder Automatisierung für mein Unternehmen",
-      "Tools für Reseller (Crosslisting, Bestandsabgleich)",
-      "Bots und Integrationen",
+      "Eine Website oder Google-Präsenz für mein Unternehmen",
+      "Ein KI-Telefonassistent",
+      "Automatisierung und Bots",
       "Eine Web- oder Mobile-App",
       "Preise und Projektablauf",
       "Zahlungen und Rechnungen"
@@ -236,73 +249,78 @@
   },
   "pages": {
     "home": {
-      "title": "Individualsoftware, Automatisierung & Bots | Zerone International",
-      "description": "Zerone International entwickelt individuelle Automatisierungen, Bots, Web- und Mobile-Apps sowie Tools für Reseller. Mit Sitz in New York, weltweit tätig in 15 Sprachen.",
-      "h1": "Software, die so arbeitet wie Ihr Unternehmen",
+      "title": "Websites, KI-Assistenten & individuelle Software | Zerone",
+      "description": "Zerone International ist ein Technologieunternehmen aus New York: Websites, lokales SEO, KI-Telefonassistenten, Automatisierung und Apps für Unternehmen in den USA.",
+      "h1": "Technologie, mit der Ihr Unternehmen gefunden wird, jeden Anruf annimmt und Zeit spart",
       "hero": {
-        "eyebrow": "Individualsoftware · New York",
-        "lede": "Wir entwickeln Automatisierungen, Bots, Webanwendungen und mobile Apps rund um Ihre tatsächlichen Abläufe – und Tools für Online-Reseller.",
+        "eyebrow": "New York · für Unternehmen in den gesamten USA",
+        "lede": "Wir sind ein Technologieunternehmen aus New York. Wir entwickeln Websites, die Kunden bringen, KI-Assistenten, die jeden Anruf annehmen, und Software, die Ihrem Team Routinearbeit abnimmt – von der einseitigen Website bis zur individuellen Anwendung.",
         "primary": "Projekt starten",
         "secondary": "Leistungen ansehen",
         "points": [
-          "Schriftliches Angebot mit festem Umfang",
-          "Rollen für Inhaber, Manager und Mitarbeitende",
-          "Entwickelt von Menschen, die selbst online verkaufen"
+          "Schriftliches Angebot mit Preis, bevor die Arbeit beginnt",
+          "Alles lässt sich schriftlich klären: per E-Mail, SMS oder Chat",
+          "Sitz in New York, Kunden im ganzen Land"
         ]
       },
       "services": {
-        "eyebrow": "Was wir entwickeln",
-        "title": "Drei Wege, Zeit zu sparen",
-        "intro": "Jedes Projekt beginnt mit Ihren Abläufen. Danach wählen wir das passende Format: Automatisierung, Webanwendung, mobile App oder eine Kombination."
+        "eyebrow": "Was wir tun",
+        "title": "Fünf Wege, wie wir Ihrem Unternehmen helfen",
+        "intro": "Beginnen Sie mit dem, was Ihre Kunden sehen, und beseitigen Sie dann die Arbeit, die Ihr Team ausbremst. Wählen Sie eine Leistung oder kombinieren Sie mehrere."
       },
-      "resale": {
-        "eyebrow": "Reselling-Erfahrung",
-        "title": "Wir kennen den Online-Wiederverkauf von innen",
-        "text": "Zerone International verkauft gebrauchte Waren und Überbestände auf Online-Marktplätzen. Diese tägliche Erfahrung prägt die Tools, die wir entwickeln: ein Crosslisting-System und ein Tool zur Analyse von Restpostenlosen.",
-        "link": "Unsere Produkte ansehen"
+      "reach": {
+        "eyebrow": "Wo wir arbeiten",
+        "title": "Von New York aus ins ganze Land",
+        "text": "Unser Sitz ist in New York, daher haben New York City und Long Island Vorrang – dort können wir uns auch persönlich treffen. Alles andere läuft remote, sodass Unternehmen in jedem Bundesstaat denselben Ablauf, dieselben schriftlichen Angebote und denselben Support erhalten.",
+        "areas": [
+          "New York City: Manhattan, Brooklyn, Queens, die Bronx und Staten Island",
+          "Long Island: die Countys Nassau und Suffolk sowie die Hamptons",
+          "Remote-Projekte in allen 50 Bundesstaaten"
+        ],
+        "link": "Pakete und Preise ansehen"
       },
       "cases": {
         "eyebrow": "Anwendungsfälle",
         "title": "Ideen, auf denen Sie aufbauen können",
-        "intro": "Zwanzig Beispiele dafür, was Individualsoftware für Reseller und kleine Unternehmen leisten kann."
+        "intro": "Zwanzig Beispiele dafür, was wir für Dienstleister, Geschäfte, Restaurants, Büros und wachsende Teams entwickeln."
       },
       "faq": {
         "eyebrow": "FAQ",
         "title": "Häufig gestellte Fragen",
         "items": [
           {
-            "q": "Kann ich jetzt ein Softwareprojekt anfragen?",
-            "a": "Ja. Senden Sie uns Ihre Anforderungen über das Kontaktformular. Wir prüfen die Umsetzbarkeit und schicken Ihnen ein schriftliches Angebot."
+            "q": "Arbeiten Sie nur mit Unternehmen in New York?",
+            "a": "Nein. Unser Sitz ist in New York, und wir geben New York City und Long Island Vorrang, wo wir uns auch persönlich treffen können. Mit Unternehmen überall in den USA arbeiten wir remote."
           },
           {
-            "q": "Was kostet ein individuelles Projekt?",
-            "a": "Das hängt vom Umfang ab. Kleine Automatisierungen beginnen bei einigen tausend Dollar; größere Anwendungen werden nach der Analyse kalkuliert. Den Preis kennen Sie immer vor Arbeitsbeginn."
+            "q": "Was kostet das?",
+            "a": "Pakete für kleine Unternehmen beginnen bei $149 pro Monat für eine Website inklusive Pflege des Google Business Profile. Individuelle Software wird nach einer kurzen Analyse kalkuliert und beginnt meist bei einigen tausend Dollar. Den Preis erhalten Sie immer schriftlich, bevor die Arbeit beginnt."
           },
           {
             "q": "Wie lange dauert ein Projekt?",
-            "a": "Einfache Automatisierungen dauern oft zwei bis vier Wochen. Web- und mobile Anwendungen je nach Funktionsumfang meist ein bis vier Monate."
+            "a": "Eine Website für ein kleines Unternehmen geht in der Regel innerhalb weniger Wochen online. Automatisierungen dauern meist zwei bis vier Wochen, Web- und mobile Anwendungen je nach Funktionsumfang ein bis vier Monate."
           },
           {
-            "q": "Kann meine Anwendung verschiedene Nutzerbereiche haben?",
-            "a": "Ja. Bereiche für Inhaber, Manager und Mitarbeitende sind möglich – jeweils mit eigenen Berechtigungen."
+            "q": "Muss ich mit Ihnen telefonieren?",
+            "a": "Nein. Alles lässt sich schriftlich klären: per E-Mail, SMS, Chat oder über unser Kontaktformular. Wenn Sie lieber anrufen, nimmt Ava, unser KI-Telefonassistent, rund um die Uhr ab, und wir melden uns schriftlich zurück."
           },
           {
-            "q": "Arbeiten Sie mit Marktplatz-APIs?",
-            "a": "Ja, über offizielle APIs und zulässige Zugangswege. Jede Integration wird vor der Aufnahme ins Angebot anhand der Plattformregeln geprüft."
+            "q": "Wem gehören meine Website, mein Google-Profil und mein Code?",
+            "a": "Ihnen. Ihre Domain, Ihr Google Business Profile und Ihre Konten laufen immer auf den Namen Ihres Unternehmens. Bei individueller Software werden die Eigentumsrechte im Angebot festgelegt; bei den meisten Projekten erhält der Kunde nach der Schlusszahlung das volle Eigentum."
           },
           {
-            "q": "Sind Ihre Reselling-Tools verfügbar?",
-            "a": "Das Crosslisting-System und das Analyse-Tool für Restpostenlose sind in Entwicklung. Auf der Produktseite können Sie sich für die Warteliste eintragen."
+            "q": "Kann meine Anwendung verschiedene Benutzerbereiche haben?",
+            "a": "Ja. Bereiche für Inhaber, Manager und Mitarbeiter können enthalten sein, jeweils mit eigenen Berechtigungen."
           }
         ]
       }
     },
     "services": {
-      "title": "Individuelle Softwareentwicklung | Zerone International",
-      "description": "Individuelle Automatisierungen, Bots, Webanwendungen und mobile Apps für kleine Unternehmen und Online-Reseller. Klare Angebote, rollenbasierter Zugriff und laufender Support.",
+      "title": "Websites, KI-Telefonassistenten & Software | Zerone",
+      "description": "Websites, lokales SEO, KI-Telefonassistenten, Automatisierung, Web- und mobile Apps für Unternehmen in den USA. Sitz in New York, klare schriftliche Angebote.",
       "eyebrow": "Leistungen",
-      "h1": "Individuelle Softwareentwicklung",
-      "lede": "Wir machen aus wiederkehrender, manueller oder verstreuter Arbeit zuverlässige Software. Sie bekommen genau die Funktionen, die Sie brauchen – und zahlen nichts, was Sie nie nutzen.",
+      "h1": "Unsere Leistungen",
+      "lede": "Vom ersten Eindruck im Netz bis zur Software, die Ihr Team jeden Tag nutzt. Sie bekommen genau das, was Sie brauchen, schriftlich vereinbart – und nichts, wofür Sie zahlen, ohne es je zu nutzen.",
       "faq": {
         "title": "Fragen zu unseren Leistungen",
         "items": [
@@ -323,15 +341,95 @@
             "a": "Ja. Wir prüfen ein bestehendes System und schlagen Verbesserungen, neue Funktionen oder einen Migrationsplan vor."
           },
           {
-            "q": "Arbeiten Sie mit Kunden außerhalb der USA?",
-            "a": "Ja. Wir arbeiten remote mit Kunden weltweit und kommunizieren auf Englisch und Türkisch."
+            "q": "Arbeiten Sie auch mit Kunden außerhalb von New York?",
+            "a": "Ja. Wir betreuen Unternehmen in den gesamten USA. In New York City und auf Long Island können wir uns auch persönlich treffen; überall sonst arbeiten wir remote per E-Mail, Chat und Videocall. Wir kommunizieren auf Englisch und Türkisch."
           }
         ]
       }
     },
+    "service_presence": {
+      "title": "Websites & lokales SEO für kleine Unternehmen | Zerone",
+      "description": "Mobilfreundliche Websites, Pflege des Google Business Profile, lokales SEO und Bewertungsanfragen für Unternehmen in New York und den USA. Pakete ab $149 im Monat.",
+      "eyebrow": "Websites & Google-Präsenz",
+      "h1": "Websites, lokales SEO und Google-Präsenz",
+      "lede": "Die meisten Kunden finden ein Unternehmen auf dem Smartphone und entscheiden sich innerhalb von ein, zwei Minuten. Wir sorgen dafür, dass diese Minute zählt: korrekte Angaben überall, eine Website, die ihre Fragen beantwortet, und ein einfacher Weg, Sie zu erreichen.",
+      "features_title": "Was wir tun",
+      "features": [
+        {
+          "title": "Websites, die Kunden bringen",
+          "text": "Mobilfreundliche Websites auf Ihrer eigenen Domain mit Ihren Leistungen, Preisen, Öffnungszeiten, einer Karte, Anruf- und Routen-Buttons sowie einem Angebots- oder Buchungsformular."
+        },
+        {
+          "title": "Google Business Profile",
+          "text": "Öffnungszeiten, Kategorien, Leistungen und Fotos bleiben korrekt und aktuell. Das Profil selbst ist bei Google kostenlos; Sie zahlen nur für unsere Arbeit."
+        },
+        {
+          "title": "Lokales SEO",
+          "text": "Schnelle Seiten, klare Struktur, strukturierte Daten und einheitliche Unternehmensangaben in Verzeichnissen, damit Suchmaschinen verstehen, was Sie tun und wo."
+        },
+        {
+          "title": "Bewertungen",
+          "text": "Nach jedem Auftrag eine höfliche Bewertungsanfrage an alle Ihre Kunden und Antwortentwürfe für jede neue Bewertung, bereit zu Ihrer Freigabe."
+        },
+        {
+          "title": "SMS bei verpassten Anrufen",
+          "text": "Anrufer, die Sie nicht erreichen konnten, erhalten sofort eine SMS mit einem Link zum Buchen oder Nachfragen – sobald die Netzbetreiber-Registrierung Ihres Unternehmens genehmigt ist."
+        },
+        {
+          "title": "Monatsbericht",
+          "text": "Website-Besuche, neue Anfragen, Bewertungen und Anrufe – jeden Monat verständlich erklärt."
+        }
+      ],
+      "notes_title": "Gut zu wissen",
+      "notes": [
+        "Ihre Domain, Ihr Google Business Profile und Ihre Konten laufen immer auf den Namen Ihres Unternehmens.",
+        "Wir halten uns an die Regeln von Google: Wir kaufen nie Bewertungen, bieten keine Belohnungen dafür und fragen nicht nur zufriedene Kunden.",
+        "Monatspakete beginnen bei $149 pro Monat, mit 3 Monaten Mindestlaufzeit und danach monatlich kündbar."
+      ]
+    },
+    "service_phone": {
+      "title": "KI-Telefonassistent für Unternehmen | Zerone International",
+      "description": "Ein KI-Telefonassistent, der Geschäftsanrufe rund um die Uhr annimmt, sich als KI zu erkennen gibt und Termine bucht. Rufen Sie (631) 900-2595 an, um ihn zu hören.",
+      "eyebrow": "KI-Telefonassistent",
+      "h1": "Ein KI-Telefonassistent für Ihr Unternehmen",
+      "lede": "Jeder verpasste Anruf kann ein verlorener Kunde sein. Ein KI-Assistent nimmt jeden Anruf an, Tag und Nacht, antwortet mit freundlicher Stimme und schickt Ihnen zu jedem Gespräch eine schriftliche Zusammenfassung.",
+      "features_title": "Was er kann",
+      "features": [
+        {
+          "title": "Rund um die Uhr erreichbar",
+          "text": "Jeder Anruf wird angenommen, auch abends, am Wochenende und an Feiertagen."
+        },
+        {
+          "title": "Ehrlich als KI erkennbar",
+          "text": "Er teilt Anrufern mit, dass er ein KI-Assistent ist und das Gespräch aufgezeichnet wird."
+        },
+        {
+          "title": "Beantwortet häufige Fragen",
+          "text": "Öffnungszeiten, Leistungen, Preise und Anfahrt – auf Grundlage der von Ihnen freigegebenen Informationen."
+        },
+        {
+          "title": "Nachrichten und Termine",
+          "text": "Er nimmt Nachrichten und Terminanfragen auf und schickt Ihnen die Details schriftlich."
+        },
+        {
+          "title": "Dringende Benachrichtigungen",
+          "text": "Alles Dringende erreicht Sie sofort per SMS oder Chat."
+        },
+        {
+          "title": "Anrufzusammenfassungen",
+          "text": "Eine kurze schriftliche Zusammenfassung jedes Anrufs, damit Sie wissen, wer angerufen hat und was er braucht."
+        }
+      ],
+      "notes_title": "Gut zu wissen",
+      "notes": [
+        "Er ist kein Notrufdienst.",
+        "Hören Sie selbst: Rufen Sie unsere eigene Nummer (631) 900-2595 an und sprechen Sie mit Ava.",
+        "Erhältlich als Zusatz zu unseren Paketen für kleine Unternehmen oder als Teil eines individuellen Projekts."
+      ]
+    },
     "service_automation": {
       "title": "Prozessautomatisierung & individuelle Bots | Zerone International",
-      "description": "Individuelle Automatisierungen und Bots, die Daten aufbereiten, Inserate erstellen, Benachrichtigungen senden und geplante Aufgaben ausführen – damit Ihr Team sich auf Entscheidungen konzentriert.",
+      "description": "Individuelle Automatisierungen und Bots, die Daten und Dokumente aufbereiten, Benachrichtigungen senden, Ihre Tools verbinden und geplante Aufgaben ausführen.",
       "eyebrow": "Automatisierung & Bots",
       "h1": "Prozessautomatisierung und individuelle Bots",
       "lede": "Wenn Ihr Team jeden Tag dieselben Schritte kopiert, einfügt, prüft und wiederholt, lassen sich diese meist automatisieren. Wir entwickeln Automatisierungen, die zuverlässig laufen und berichten, was sie getan haben.",
@@ -342,8 +440,8 @@
           "text": "Tabellen, Notizen und Lieferantendateien in saubere, strukturierte Daten verwandeln."
         },
         {
-          "title": "Inserats-Workflows",
-          "text": "Titel, Beschreibungen und Artikelmerkmale vor der Veröffentlichung zur Prüfung vorbereiten."
+          "title": "Dokumenten-Workflows",
+          "text": "Formulare, E-Mails und Dateien in prüfbereite Angebote, Rechnungen und Datensätze verwandeln."
         },
         {
           "title": "Benachrichtigungen",
@@ -379,7 +477,7 @@
       "features": [
         {
           "title": "Dashboards",
-          "text": "Live-Überblick über Umsätze, Bestände, Aufgaben und die Kennzahlen, die Ihnen wichtig sind."
+          "text": "Live-Übersichten zu Umsätzen, Aufträgen, Aufgaben und den Kennzahlen, die Ihnen wichtig sind."
         },
         {
           "title": "Interne Tools",
@@ -411,10 +509,10 @@
     },
     "service_mobile": {
       "title": "Individuelle App-Entwicklung für iOS & Android | Zerone International",
-      "description": "Individuelle iOS- und Android-Apps für Außendienst, Lager und Betrieb: Aufgabenlisten, Wareneingang, Fotos und Benachrichtigungen.",
+      "description": "Individuelle iOS- und Android-Apps für Außendienstteams, Techniker und den Betrieb: Aufgabenlisten, Auftragsdaten, Fotos, Checklisten und Benachrichtigungen.",
       "eyebrow": "Mobile Apps",
       "h1": "Individuelle Entwicklung mobiler Apps",
-      "lede": "Manche Arbeit findet nicht am Schreibtisch statt. Wir entwickeln mobile Apps für die Aufgaben Ihres Teams im Laden, im Lager oder unterwegs.",
+      "lede": "Manche Arbeit findet nicht am Schreibtisch statt. Wir entwickeln mobile Apps für die Aufgaben, die Ihr Team vor Ort, im Außendienst oder unterwegs erledigt.",
       "features_title": "Was wir entwickeln",
       "features": [
         {
@@ -422,12 +520,12 @@
           "text": "Zugewiesene Aufgaben, Checklisten und Statusmeldungen in der Tasche jedes Mitarbeitenden."
         },
         {
-          "title": "Wareneingang",
-          "text": "Eingehende Ware mit Barcode-Scan und Fotos erfassen."
+          "title": "Auftrags- und Einsatzdaten",
+          "text": "Besuche, Messwerte und Unterschriften direkt vor Ort erfassen, bei Bedarf mit Barcode-Scan."
         },
         {
           "title": "Foto-Workflows",
-          "text": "Produktfotos direkt dort aufnehmen und ordnen, wo sich die Artikel befinden."
+          "text": "Fotos von Aufträgen, Artikeln oder Einsatzorten genau dort aufnehmen und ordnen, wo die Arbeit passiert."
         },
         {
           "title": "Push-Benachrichtigungen",
@@ -450,11 +548,11 @@
       ]
     },
     "products": {
-      "title": "Crosslisting- & Restposten-Analyse-Tools | Zerone International",
-      "description": "Zerone International entwickelt ein Crosslisting-System und ein Analyse-Tool für Restpostenlose für Online-Reseller. Tragen Sie sich für den frühen Zugang ein.",
+      "title": "Eigene Softwareprodukte | Zerone International",
+      "description": "Neben Kundenprojekten entwickelt Zerone International eigene Software. Zuerst: ein Crosslisting-System und ein Analysetool für Restposten-Lots für Online-Händler.",
       "eyebrow": "Produkte",
-      "h1": "Tools für Online-Reseller",
-      "lede": "Wir entwickeln die Tools, die wir uns für unser eigenes Reselling-Geschäft gewünscht haben. Beide sind in Entwicklung – tragen Sie sich in die Warteliste ein, um vom frühen Zugang zu erfahren.",
+      "h1": "Unsere eigenen Produkte",
+      "lede": "Neben Kundenprojekten entwickeln wir eigene Softwareprodukte. Die ersten beiden sind Tools für Online-Händler, und beide befinden sich in der Entwicklung. Tragen Sie sich in die Warteliste ein, um zu erfahren, wann der frühe Zugang startet.",
       "items": [
         {
           "name": "Crosslisting-System",
@@ -479,33 +577,65 @@
       ]
     },
     "use_cases": {
-      "title": "20 Software-Anwendungsfälle für Reseller & KMU | Zerone",
-      "description": "Zwanzig Beispiele für individuelle Automatisierung, Web- und Mobile-Software für Online-Reseller und kleine Unternehmen: Inserate, Losanalyse, Bestand, Berichte und Teams.",
+      "title": "20 Anwendungsfälle: Websites, KI & Software | Zerone",
+      "description": "Zwanzig Beispiele für Websites, KI-Telefonassistenten, Automatisierung, Web- und mobile Software für Dienstleister, Geschäfte, Restaurants, Büros und Teams.",
       "eyebrow": "Anwendungsfälle",
-      "h1": "20 Anwendungsfälle für Individualsoftware",
-      "lede": "Beispiele dafür, was wir für Reseller und kleine Unternehmen entwickeln können. Jedes lässt sich an Ihre Abläufe, Plattformen und Ihr Team anpassen.",
+      "h1": "20 Anwendungsfälle",
+      "lede": "Beispiele dafür, was wir entwickeln können. Jedes lässt sich an Ihr Unternehmen, Ihre bestehenden Tools und Ihr Team anpassen.",
       "note": "Dies sind Projektideen, keine abgeschlossenen Kundenprojekte. Plattformzugang und Funktionen werden für jedes Angebot geprüft."
     },
     "company": {
-      "title": "Über Zerone International LLC – Vision & Mission",
-      "description": "Zerone International LLC ist ein Unternehmen aus New York, das Online-Wiederverkauf mit individueller Softwareentwicklung verbindet. Erfahren Sie mehr über Vision, Mission und Werte.",
+      "title": "Über Zerone International – Technologie aus New York",
+      "description": "Zerone International LLC ist ein Technologieunternehmen aus New York, das Firmen in den USA mit Websites, KI-Assistenten, Automatisierung und Software unterstützt.",
       "eyebrow": "Unternehmen",
       "h1": "Über Zerone International",
-      "lede": "Wir sind ein Unternehmen aus New York an der Schnittstelle von Onlinehandel und Software.",
+      "lede": "Ein Technologieunternehmen aus New York mit einem einfachen Ziel: nützliche Technologie, die jedes Unternehmen nutzen kann.",
       "about": {
         "title": "Wer wir sind",
         "text": [
-          "Zerone International LLC hat seinen Sitz in Farmingville, New York. Wir verkaufen gebrauchte Waren und Überbestände auf Online-Marktplätzen und entwickeln Software – für unseren eigenen Betrieb und für Kunden.",
-          "Ein Reselling-Geschäft jeden Tag zu führen zeigt uns, wo Zeit verloren geht: beim Erstellen von Inseraten, beim Prüfen von Losen, bei der Bestandsführung und bei der Koordination von Menschen. Dieses Wissen bringen wir in jedes Softwareprojekt ein."
+          "Zerone International LLC ist ein Technologieunternehmen mit Sitz in Farmingville, New York, auf Long Island. Wir helfen Unternehmen, online gefunden zu werden, jedem Kunden zu antworten und Handarbeit durch zuverlässige Software zu ersetzen.",
+          "Wir beginnen vor der Haustür, in New York City und auf Long Island, und arbeiten remote mit Unternehmen in jedem Bundesstaat. Unser eigenes Unternehmen führen wir mit denselben Tools, die wir für Kunden bauen: Ein KI-Assistent nimmt unsere Anrufe an, Automatisierungen bereiten unsere Angebote vor, und jede Vereinbarung wird schriftlich getroffen.",
+          "Neben Kundenprojekten entwickeln wir eigene Softwareprodukte, beginnend mit Tools für Online-Händler."
         ]
+      },
+      "founder": {
+        "eyebrow": "Gründer",
+        "title": "Der Gründer",
+        "role": "Gründer & CEO",
+        "bio": [
+          "Berk Divaroren gründete Zerone International, um kleinen und wachsenden Unternehmen die Technologie zu bieten, die für große Unternehmen selbstverständlich ist: eine Website, die Kunden bringt, ein Telefon, das immer angenommen wird, und Software, die Routinearbeit erledigt.",
+          "Sein erstes Unternehmen, einen Betrieb für Computersoftware und -hardware in Adana in der Türkei, gründete er 2019. Er hat einen Bachelor-Abschluss in Internationalem Handel und Logistik der Anadolu-Universität und zog im Januar 2022 nach New York, wo er sein Studium in Computeranwendungen, Betriebswirtschaft und Management am New York Institute of Finance fortsetzte.",
+          "Vor der Gründung von Zerone International sammelte er praktische Erfahrung im Onlinehandel auf großen US-Marktplätzen. Heute leitet er die Gestaltung der eigenen Systeme des Unternehmens – vom KI-Telefonassistenten über automatisierte schriftliche Angebote bis zu dieser Website in 15 Sprachen – und arbeitet direkt mit jedem Kunden."
+        ],
+        "facts_title": "Auf einen Blick",
+        "facts": [
+          {
+            "label": "Standort",
+            "value": "New York, seit Januar 2022"
+          },
+          {
+            "label": "Ausbildung",
+            "value": "Bachelor in Internationalem Handel und Logistik, Anadolu-Universität; Computeranwendungen, Betriebswirtschaft und Management, New York Institute of Finance"
+          },
+          {
+            "label": "Sprachen",
+            "value": "Englisch, Türkisch, Arabisch"
+          },
+          {
+            "label": "Schwerpunkt",
+            "value": "Websites, KI-Assistenten, Automatisierung und individuelle Software"
+          }
+        ],
+        "linkedin": "Auf LinkedIn vernetzen",
+        "photo_alt": "Berk Divaroren, Gründer von Zerone International"
       },
       "vision": {
         "title": "Unsere Vision",
-        "text": "Nützliche, verständliche Software für kleine Unternehmen zugänglich machen, damit sie ihre Zeit für die wirklich wichtigen Entscheidungen nutzen können."
+        "text": "Von New York aus der Technologiepartner zu werden, dem Unternehmen in ganz Amerika vertrauen – mit Technologie, die für jedes Unternehmen nützlich, verständlich und bezahlbar ist."
       },
       "mission": {
         "title": "Unsere Mission",
-        "text": "Echte geschäftliche Anforderungen in zuverlässige Software verwandeln – mit klarem Umfang, fairen Preisen und den richtigen Berechtigungen für jeden Nutzer."
+        "text": "Echte geschäftliche Anforderungen in zuverlässige Websites, Assistenten und Software umzusetzen – mit klarem Umfang, fairen Preisen und ehrlicher Kommunikation."
       },
       "values": {
         "title": "Was uns wichtig ist",
@@ -529,16 +659,16 @@
         ]
       },
       "location": {
-        "title": "Wo wir sind",
-        "text": "Farmingville, New York, Vereinigte Staaten. Wir arbeiten remote mit Kunden auf der ganzen Welt."
+        "title": "Wo wir arbeiten",
+        "text": "Hauptsitz in Farmingville, New York. In New York City und auf Long Island treffen wir Kunden persönlich, mit Unternehmen in den gesamten USA arbeiten wir remote."
       }
     },
     "contact": {
-      "title": "Kontakt – Softwareprojekt starten | Zerone International",
-      "description": "Kontaktieren Sie Zerone International, um ein individuelles Automatisierungs-, Bot-, Web- oder App-Projekt zu besprechen. Wir antworten mit Rückfragen oder einem schriftlichen Angebot.",
+      "title": "Kontakt – Starten Sie Ihr Projekt | Zerone International",
+      "description": "Kontaktieren Sie Zerone International zu Website, KI-Telefonassistent, Automatisierung oder App. Anruf, SMS, E-Mail oder Formular; wir antworten schriftlich.",
       "eyebrow": "Kontakt",
       "h1": "Starten Sie Ihr Projekt",
-      "lede": "Erzählen Sie uns von Ihrer Idee oder dem Problem, das Sie lösen möchten. Wir antworten in der Regel innerhalb von zwei Werktagen.",
+      "lede": "Erzählen Sie uns von Ihrem Unternehmen oder dem Problem, das Sie lösen möchten. Wir antworten möglichst innerhalb von zwei Werktagen.",
       "email_title": "Lieber per E-Mail?",
       "email_text": "Sie können uns auch direkt schreiben:",
       "phone_note": "Rufen Sie uns an: Unsere KI-Assistentin Ava nimmt rund um die Uhr ab (auf Englisch).",
@@ -604,11 +734,11 @@
       }
     },
     "blog": {
-      "title": "Blog – Reselling- und Software-Ratgeber | Zerone International",
-      "description": "Praxisnahe Ratgeber zu Crosslisting, der Analyse von Restposten-Lots und der Automatisierung im Wiederverkauf – von einem Team mit eigenem Online-Handel.",
+      "title": "Blog – Ratgeber zu Websites, KI & Automatisierung | Zerone",
+      "description": "Praktische Ratgeber zu Websites, lokalem SEO, KI-Assistenten und Automatisierung für kleine und wachsende Unternehmen – von einem Tech-Unternehmen aus New York.",
       "eyebrow": "Blog",
-      "h1": "Ratgeber für Wiederverkäufer und wachsende Teams",
-      "lede": "Praxisnahe Artikel zu Crosslisting, zum Einkauf von Restposten-Lots und zur Automatisierung wiederkehrender Aufgaben im Wiederverkauf.",
+      "h1": "Ratgeber für wachsende Unternehmen",
+      "lede": "Praktische Artikel dazu, online gefunden zu werden, jedem Kunden zu antworten und Routinearbeit zu automatisieren. Unsere früheren Artikel behandeln den Onlinehandel.",
       "language_note": "Die Artikel erscheinen derzeit auf Englisch.",
       "read_more": "Artikel lesen",
       "minutes": "{n} Min. Lesezeit",
@@ -616,15 +746,15 @@
       "updated": "Aktualisiert",
       "back": "Alle Artikel",
       "related": "Ähnliche Artikel",
-      "guides_link": "Unsere Ratgeber für Wiederverkäufer lesen",
+      "guides_link": "Unsere Ratgeber lesen",
       "rss": "RSS-Feed"
     },
     "developers": {
-      "title": "APIs für Reseller – früher Zugang | Zerone International",
-      "description": "Zerone International plant APIs für Reseller: Normalisierung von Angebotsdaten, Bestandsabgleich, Lot-Analyse und Gebührenrechner. Jetzt für frühen Zugang eintragen.",
+      "title": "Entwickler-APIs – Früher Zugang | Zerone International",
+      "description": "Zerone International plant APIs für Online-Händler: Inserats-Normalisierung, Bestandssynchronisierung, Lot-Analyse und Gebührenrechner. Jetzt vormerken lassen.",
       "eyebrow": "Für Entwickler",
-      "h1": "APIs und Tools für Reseller",
-      "lede": "Wir öffnen den frühen Zugang zu den Entwickler-Tools, die wir für unser eigenes Reselling-Geschäft bauen. Noch ist nichts live – tragen Sie sich ein und entscheiden Sie mit, was zuerst kommt.",
+      "h1": "APIs für Online-Händler",
+      "lede": "Wir öffnen den frühen Zugang zu Entwickler-Tools, die aus unseren eigenen Produkten für Online-Händler entstehen. Noch ist nichts live; tragen Sie sich ein und entscheiden Sie mit, was zuerst kommt.",
       "hero_button": "Frühen Zugang sichern",
       "planned": "Geplant",
       "products": {
@@ -846,243 +976,243 @@
   },
   "cases": [
     {
-      "slug": "ebay-inserate-vorbereiten",
-      "title": "eBay-Inserate vorbereiten",
-      "summary": "Produktnotizen in Entwürfe für Titel, Beschreibungen und Artikelmerkmale verwandeln – bereit zur Prüfung.",
-      "challenge": "Gute eBay-Inserate einzeln zu schreiben kostet Zeit, und Artikelmerkmale gehen leicht vergessen.",
-      "approach": "Eine Automatisierung liest Ihre Produktnotizen oder Tabelle und erstellt strukturierte Entwürfe; Ihr Team prüft und gibt nur noch frei.",
+      "slug": "website-fuer-hausdienstleister",
+      "title": "Eine Website für einen Hausdienstleister",
+      "summary": "Eine mobilfreundliche Website, die lokale Suchen in Anrufe und Angebotsanfragen verwandelt.",
+      "challenge": "Kunden vergleichen Firmen auf dem Smartphone und rufen die an, der sie vertrauen.",
+      "approach": "Eine schnelle Website mit Ihren Leistungen, Einsatzgebieten, echten Fotos und Bewertungen, Anruf- und Angebots-Buttons per Fingertipp und einem korrekten Google Business Profile dahinter.",
       "includes": [
-        "Entwürfe für Titel und Beschreibung",
-        "Checkliste für Artikelmerkmale",
-        "Prüfschritt vor der Veröffentlichung"
+        "Seiten für Leistungen und Einsatzgebiete",
+        "Buttons für Anruf, SMS und Angebot",
+        "Einrichtung des Google Business Profile"
       ]
     },
     {
-      "slug": "poshmark-verkaufsablaeufe",
-      "title": "Poshmark-Verkaufsabläufe",
-      "summary": "Angaben zu Bekleidung ordnen und Inserate für Poshmark und weitere Kanäle vorbereiten.",
-      "challenge": "Bekleidung braucht Größen, Marken, Zustand und Maße – diese immer wieder einzugeben ist mühsam.",
-      "approach": "Ein strukturiertes Erfassungsformular sammelt die Angaben einmal und erstellt Entwürfe für jeden Kanal gemäß den Plattformregeln.",
+      "slug": "google-business-profile-bereinigen",
+      "title": "Google Business Profile bereinigen",
+      "summary": "Zeiten, Kategorien, Leistungen und Fotos korrigieren, damit Kunden Sie auf Google Maps finden.",
+      "challenge": "Falsche Zeiten, vage Kategorien oder alte Fotos schicken Kunden zur Konkurrenz.",
+      "approach": "Wir prüfen das Profil anhand der Google-Richtlinien, korrigieren jedes Feld, ergänzen Leistungen und Fotos und richten eine einfache Routine ein, die es aktuell hält.",
       "includes": [
-        "Datenvorlage für Bekleidung",
-        "Kanalspezifische Entwürfe",
-        "Statusverfolgung pro Artikel"
+        "Prüfung von Kategorie und Leistungen",
+        "Öffnungszeiten, Feiertagszeiten und Fotos",
+        "Monatliche Kontrolle der Angaben"
       ]
     },
     {
-      "slug": "amazon-katalog-vorbereiten",
-      "title": "Amazon-Katalog vorbereiten",
-      "summary": "Produktdaten ordnen und Pflichtfelder vor dem Listing prüfen.",
-      "challenge": "Fehlende oder uneinheitliche Felder führen zu abgelehnten Inseraten und Zeitverlust.",
-      "approach": "Ein Prüf-Tool gleicht Ihre Produktdaten mit den benötigten Feldern ab und zeigt Lücken vor dem Upload.",
+      "slug": "bewertungsanfragen-nach-jedem-auftrag",
+      "title": "Bewertungsanfragen nach jedem Auftrag",
+      "summary": "Nach getaner Arbeit erhält jeder Kunde eine höfliche Anfrage mit direktem Link.",
+      "challenge": "Zufriedene Kunden bewerten selten von selbst, und manuelles Nachfragen wird leicht vergessen.",
+      "approach": "Nach jedem abgeschlossenen Auftrag geht eine kurze Anfrage per E-Mail oder SMS raus, gemäß den Google-Regeln; Antwortentwürfe für jede neue Bewertung warten auf Ihre Freigabe.",
       "includes": [
-        "Prüfung der Pflichtfelder",
-        "Massenbereinigung von Daten",
-        "Exportierbare Upload-Dateien"
+        "Automatische Anfrage nach jedem Auftrag",
+        "Antwortentwürfe zur Freigabe",
+        "Keine Belohnungen, keine Kundenauswahl"
       ]
     },
     {
-      "slug": "walmart-bestandsablaeufe",
-      "title": "Walmart-Bestandsabläufe",
-      "summary": "Bestand und Produktdaten für Walmart Marketplace über zulässigen Zugang verfolgen.",
-      "challenge": "Bestände und Produktdaten über Kanäle hinweg von Hand abzugleichen ist schwierig.",
-      "approach": "Ein Web-Dashboard führt Bestands- und Produktdaten zusammen und markiert Abweichungen, die Handlung erfordern.",
+      "slug": "lokales-seo-fuer-mehrere-standorte",
+      "title": "Lokales SEO für mehrere Standorte",
+      "summary": "Einheitliche Seiten und Einträge für ein Unternehmen mit mehreren Standorten.",
+      "challenge": "Abweichende Angaben in Verzeichnissen verwirren Kunden und Suchmaschinen gleichermaßen.",
+      "approach": "Eine Seite pro Standort mit strukturierten Daten, dieselben Unternehmensangaben in den wichtigsten Verzeichnissen und ein Bericht mit Anrufen und Anfragen pro Standort.",
       "includes": [
-        "Bestandsübersicht",
-        "Hinweise bei Abweichungen",
-        "Änderungsverlauf"
+        "Eine Seite pro Standort",
+        "Einheitliche Verzeichniseinträge",
+        "Anrufe und Anfragen pro Standort"
       ]
     },
     {
-      "slug": "etsy-produktbeschreibungen",
-      "title": "Etsy-Produktbeschreibungen",
-      "summary": "Klare Produktbeschreibungen erstellen, ohne Materialien oder Herkunft zu erfinden.",
-      "challenge": "Gute Beschreibungen verkaufen, aber sie für jeden Artikel zu schreiben dauert.",
-      "approach": "Ein Entwurfs-Tool erstellt Beschreibungen nur aus den Fakten, die Sie angeben – bereit zum Bearbeiten und Freigeben.",
+      "slug": "ki-empfang-fuer-bueros",
+      "title": "KI-Empfang für eine Kanzlei oder Praxis",
+      "summary": "Jeden Anruf annehmen, Öffnungszeiten nennen und Terminanfragen aufnehmen, auch abends.",
+      "challenge": "Der Empfang kann nicht jeden Anruf annehmen, während er Kunden vor Ort betreut.",
+      "approach": "Ein KI-Assistent nimmt ab, wenn die Leitung besetzt oder das Büro geschlossen ist, sagt, dass er eine KI ist, beantwortet häufige Fragen und gibt jede Anfrage schriftlich ans Team weiter.",
       "includes": [
-        "Faktenbasierte Entwürfe",
-        "Einstellungen für Ton und Länge",
-        "Freigabe vor der Nutzung"
+        "Annahme nach Feierabend und bei Überlastung",
+        "Terminanfragen schriftlich",
+        "Klarer Hinweis auf die KI"
       ]
     },
     {
-      "slug": "b-stock-losbewertung",
-      "title": "B-Stock-Losbewertung",
-      "summary": "Den Preis eines Loses mit geschätzten Gebühren, Logistik und Wiederverkaufswert vergleichen.",
-      "challenge": "Ein Los wirkt günstig, bis Gebühren, Versand und unverkäufliche Artikel eingerechnet sind.",
-      "approach": "Ein Rechner fasst Kaufpreis, Gebühren, Logistik und Ihre Annahmen zum Wiederverkauf zu einer klaren Schätzung zusammen.",
+      "slug": "anrufe-nach-feierabend-fuer-handwerker",
+      "title": "Anrufe nach Feierabend für Handwerker",
+      "summary": "Aufträge sichern, die nachts und am Wochenende hereinkommen.",
+      "challenge": "Handwerker können bei der Arbeit nicht abnehmen, und Anrufer am Abend rufen einfach die nächste Firma an.",
+      "approach": "Der Assistent nimmt ab, stellt die von Ihnen gewählten Fragen, etwa nach Adresse, Problem und Dringlichkeit, und schickt Ihnen dringende Fälle sofort per SMS.",
       "includes": [
-        "Kostenaufstellung",
-        "Anpassbare Annahmen",
-        "Gespeicherte Bewertungen"
+        "Ihre eigenen Erfassungsfragen",
+        "Dringende Aufträge per SMS an Sie",
+        "Eine Zusammenfassung jedes Anrufs"
       ]
     },
     {
-      "slug": "liquidation-gebotsplanung",
-      "title": "Liquidation.com-Gebotsplanung",
-      "summary": "Nettoergebnisse schätzen, bevor Sie über die Höhe Ihres Gebots entscheiden.",
-      "challenge": "Ohne Höchstpreis zu bieten führt leicht dazu, zu viel zu bezahlen.",
-      "approach": "Ein Planungs-Tool berechnet aus Ihrer Zielmarge und Ihren Kostenannahmen ein empfohlenes Höchstgebot.",
+      "slug": "telefonanrufe-fuer-restaurants",
+      "title": "Telefonanrufe für ein Restaurant",
+      "summary": "Fragen zu Öffnungszeiten, Speisekarte und Reservierungen beantworten – auch abends.",
+      "challenge": "Das Telefon klingelt, wenn die Küche am vollsten ist, und verpasste Anrufe kosten Tische.",
+      "approach": "Der Assistent beantwortet häufige Fragen, nimmt Reservierungsanfragen auf und gibt alles Weitere mit einer schriftlichen Notiz pro Anruf ans Personal weiter.",
       "includes": [
-        "Einstellungen für die Zielmarge",
-        "Schätzung des Höchstgebots",
-        "Vergleich von Szenarien"
+        "Antworten zu Öffnungszeiten, Speisekarte und Anfahrt",
+        "Reservierungsanfragen",
+        "Notizen für das Personal"
       ]
     },
     {
-      "slug": "retourenreserve",
-      "title": "Retourenreserve",
-      "summary": "Einen anpassbaren Puffer für Retouren in die Wirtschaftlichkeitsrechnung einbeziehen.",
-      "challenge": "Retouren schmälern den tatsächlichen Gewinn, fehlen aber oft in der Kalkulation.",
-      "approach": "Ihr Analyse-Tool enthält eine einstellbare Retourenreserve nach Kategorie oder auf Basis Ihrer eigenen Historie.",
+      "slug": "anrufzusammenfassungen-und-nachfassen",
+      "title": "Anrufzusammenfassungen und schriftliches Nachfassen",
+      "summary": "Aus jedem Anruf wird eine kurze Zusammenfassung und, wo sinnvoll, ein E-Mail-Entwurf zum Nachfassen.",
+      "challenge": "Details aus Telefonaten gehen verloren, und Nachfassen kostet Zeit.",
+      "approach": "Nach jedem Anruf erhalten Sie eine Zusammenfassung mit Anliegen und Kontaktdaten des Anrufers, und ein Folgeentwurf wird zu Ihrer Freigabe vorbereitet.",
       "includes": [
-        "Quoten nach Kategorie",
-        "Anpassung an Ihre Historie",
-        "Nettomarge nach Retouren"
+        "Eine schriftliche Zusammenfassung jedes Anrufs",
+        "Entwürfe für Folge-E-Mails",
+        "Nichts wird ohne Ihre Freigabe versendet"
       ]
     },
     {
-      "slug": "versandkosten-schaetzen",
-      "title": "Versandkosten schätzen",
-      "summary": "Gewicht, Maße und Versandoptionen in der Planung berücksichtigen.",
-      "challenge": "Versandkosten schwanken stark und können einen rentablen Artikel zum Verlustgeschäft machen.",
-      "approach": "Ein Planungs-Tool schätzt die Versandkosten aus Gewicht und Maßen und bezieht sie in jede Rechnung ein.",
+      "slug": "angebote-und-rechnungen-aus-einem-formular",
+      "title": "Angebote und Rechnungen aus einem Formular",
+      "summary": "Aus einer Kundenanfrage wird ein Angebot, aus einem angenommenen Angebot eine Rechnung.",
+      "challenge": "Dieselben Kundendaten in mehrere Tools zu tippen kostet Zeit und führt zu Fehlern.",
+      "approach": "Ein Formular oder eine E-Mail startet den Ablauf: Aus den Angaben wird ein Angebotsentwurf und nach Annahme durch den Kunden eine Rechnung mit gehostetem Zahlungslink.",
       "includes": [
-        "Eingabe von Gewicht und Maßen",
-        "Tariftabellen der Versanddienstleister",
-        "Kosten pro Artikel"
+        "Angebotsentwürfe zur Prüfung",
+        "Rechnungen mit Zahlungslinks",
+        "Keine Kartendaten auf Ihren Systemen"
       ]
     },
     {
-      "slug": "inhaber-uebersicht",
-      "title": "Inhaber-Übersicht",
-      "summary": "Ein Bereich mit allen Geschäftsinformationen und Steuerungsmöglichkeiten, die ein Inhaber braucht.",
-      "challenge": "Inhaber sammeln oft Zahlen aus vielen Quellen, um zu verstehen, wie das Geschäft läuft.",
-      "approach": "Ein Inhaber-Dashboard zeigt Kennzahlen, Nutzer und Einstellungen an einem sicheren Ort.",
+      "slug": "anfragen-weiterleiten-und-benachrichtigen",
+      "title": "Anfragen weiterleiten und sofort benachrichtigen",
+      "summary": "Jede neue Anfrage in Sekunden an die richtige Person – per E-Mail, Chat oder SMS.",
+      "challenge": "Anfragen kommen über Website, E-Mail und Social Media, manche warten tagelang auf Antwort.",
+      "approach": "Alle Anfragen laufen an einer Stelle zusammen, werden nach Art und Gebiet sortiert, und die richtige Person erhält eine Benachrichtigung mit Antwortvorlage.",
       "includes": [
-        "Kennzahlen auf einen Blick",
-        "Verwaltung von Nutzern und Rechten",
-        "Exportierbare Berichte"
+        "Ein Posteingang für alle Anfragen",
+        "Benachrichtigung per E-Mail, Chat oder SMS",
+        "Antwortvorlagen"
       ]
     },
     {
-      "slug": "manager-koordination",
-      "title": "Manager-Koordination",
-      "summary": "Ein Arbeitsbereich zum Verteilen von Aufgaben und zum Überblick über den Betrieb.",
-      "challenge": "Ohne gemeinsame Ansicht gehen Aufgaben zwischen Nachrichten und Tabellen verloren.",
-      "approach": "Ein Manager-Arbeitsbereich ermöglicht es, Arbeit zuzuweisen, Prioritäten zu setzen und den Fortschritt in Echtzeit zu sehen.",
+      "slug": "terminerinnerungen",
+      "title": "Terminerinnerungen",
+      "summary": "Automatische Erinnerungen und Bestätigungen, die Terminausfälle reduzieren.",
+      "challenge": "Versäumte Termine kosten Zeit und Geld, und alle am Vortag anzurufen ist nicht realistisch.",
+      "approach": "Erinnerungen gehen zu den von Ihnen gewählten Zeiten raus, Kunden bestätigen oder verschieben mit einem Klick, und Ihr Kalender aktualisiert sich selbst.",
       "includes": [
-        "Aufgabenverteilung",
-        "Prioritäten und Fristen",
-        "Fortschrittsansicht für das Team"
+        "Erinnerungen per E-Mail oder SMS",
+        "Bestätigen oder verschieben mit einem Klick",
+        "Kalender-Aktualisierungen"
       ]
     },
     {
-      "slug": "aufgabenbereiche-mitarbeitende",
-      "title": "Aufgabenbereiche für Mitarbeitende",
-      "summary": "Jedem Mitarbeitenden genau die Aufgaben und Informationen zeigen, die er braucht.",
-      "challenge": "Mitarbeitende verlieren Zeit mit der Suche nach Anweisungen oder der Frage, was als Nächstes zu tun ist.",
-      "approach": "Eine einfache mobile Ansicht listet die Aufgaben jeder Person mit allen nötigen Details auf.",
+      "slug": "woechentliche-geschaeftsberichte",
+      "title": "Wöchentliche Geschäftsberichte",
+      "summary": "Jeden Montag ein klarer Bericht mit den Zahlen, die Sie wirklich ansehen.",
+      "challenge": "Umsätze, Anrufe, Bewertungen und Website-Besuche liegen in verschiedenen Tools – keiner sieht alle an.",
+      "approach": "Ein geplanter Job sammelt die Daten, vergleicht sie mit der Vorwoche und sendet einen kurzen Bericht per E-Mail oder Chat.",
       "includes": [
-        "Persönliche Aufgabenliste",
-        "Anweisungen und Fotos",
-        "Status mit einem Fingertipp aktualisieren"
+        "Daten aus den Tools, die Sie bereits nutzen",
+        "Vergleich mit der Vorwoche",
+        "Zustellung per E-Mail oder Chat"
       ]
     },
     {
-      "slug": "wareneingang",
-      "title": "Wareneingang",
-      "summary": "Eingehende Ware erfassen und alles für den Wiederverkauf organisieren.",
-      "challenge": "Nicht erfasste Artikel sind später schwer zu finden, zu bepreisen und zu inserieren.",
-      "approach": "Eine mobile Erfassungs-App speichert Artikel bei Ankunft mit Barcode, Fotos, Zustand und Lagerort.",
+      "slug": "kundenportal",
+      "title": "Kundenportal",
+      "summary": "Kunden sehen Status, Dokumente und Rechnungen, ohne anrufen zu müssen.",
+      "challenge": "Kunden rufen an, um nach dem Stand zu fragen, und das Personal beantwortet stundenlang dieselben Fragen.",
+      "approach": "Ein sicheres Portal zeigt jedem Kunden seine eigenen Aufträge, Dokumente und Rechnungen und benachrichtigt ihn, wenn sich etwas ändert.",
       "includes": [
-        "Barcode-Scan",
-        "Felder für Zustand und Lagerort",
-        "Sofortige Synchronisierung mit dem Dashboard"
+        "Sicherer Kunden-Login",
+        "Status, Dokumente und Rechnungen",
+        "Benachrichtigung bei Änderungen"
       ]
     },
     {
-      "slug": "produktfoto-aufgaben",
-      "title": "Produktfoto-Aufgaben",
-      "summary": "Produktfotos und Inseratsvorbereitung in einem Ablauf koordinieren.",
-      "challenge": "Mit verschiedenen Handys aufgenommene Fotos landen verstreut und unbeschriftet.",
-      "approach": "Ein mobiler Ablauf ordnet jedes Fotoset dem richtigen Produkt zu und markiert es als bereit zum Inserieren.",
+      "slug": "betriebs-dashboard-fuer-inhaber",
+      "title": "Betriebs-Dashboard für Inhaber",
+      "summary": "Ein Bildschirm mit Umsätzen, Aufträgen, Anrufen und Bewertungen, automatisch aktualisiert.",
+      "challenge": "Inhaber setzen das Gesamtbild aus Tabellen, E-Mails und mehreren Apps zusammen.",
+      "approach": "Ein Dashboard holt die wichtigsten Kennzahlen aus Ihren Tools und zeigt die Trends, mit eigenen Ansichten für Inhaber, Manager und Mitarbeiter.",
       "includes": [
-        "Fotosets pro Produkt",
-        "Checklisten für Aufnahmen",
-        "Status „bereit zum Inserieren“"
+        "Kennzahlen in Echtzeit",
+        "Rollenbasierte Ansichten",
+        "CSV- und PDF-Export"
       ]
     },
     {
-      "slug": "csv-aufbereitung",
-      "title": "CSV-Aufbereitung",
-      "summary": "Vereinbarte Tabellenformate in saubere, strukturierte Daten umwandeln.",
-      "challenge": "Lieferanten- und Marktplatzdateien nutzen selten dieselben Spalten oder Formate.",
-      "approach": "Eine Automatisierung ordnet Tabellendaten zu, bereinigt und prüft sie im exakt benötigten Format.",
+      "slug": "online-buchungssystem",
+      "title": "Online-Buchungssystem",
+      "summary": "Online-Buchung mit Mitarbeiterkalendern, Pufferzeiten und Bestätigungen.",
+      "challenge": "Buchungen per Telefon und E-Mail führen zu Doppelbuchungen und endlosem Hin und Her.",
+      "approach": "Kunden wählen online einen freien Termin, jeder Mitarbeiter sieht seinen eigenen Kalender, und Bestätigungen und Erinnerungen gehen automatisch raus.",
       "includes": [
-        "Spaltenzuordnung",
-        "Regeln zur Datenbereinigung",
-        "Fehlerbericht"
+        "Online-Buchungsseite",
+        "Mitarbeiterkalender",
+        "Automatische Bestätigungen"
       ]
     },
     {
-      "slug": "individuelle-berichte",
-      "title": "Individuelle Berichte",
-      "summary": "Berichte rund um die Kennzahlen und Datenquellen, die Sie wählen.",
-      "challenge": "Standardberichte beantworten selten die Fragen, die für Ihr Geschäft zählen.",
-      "approach": "Wir erstellen Berichte aus Ihren eigenen Datenquellen – als Dashboard oder als geplante E-Mail.",
+      "slug": "von-tabellen-zur-web-app",
+      "title": "Von Tabellen zur Web-App",
+      "summary": "Geteilte Tabellen durch einen strukturierten, sicheren Arbeitsbereich ersetzen.",
+      "challenge": "Tabellen gehen kaputt, wenn mehrere sie bearbeiten, und keiner weiß, welche Version stimmt.",
+      "approach": "Wir machen aus der Tabelle eine Webanwendung mit Formularen, Berechtigungen, Verlauf und Berichten und übernehmen Ihre vorhandenen Daten.",
       "includes": [
-        "Individuelle Kennzahlen",
-        "Geplanter Versand",
-        "Export als CSV und PDF"
+        "Datenmigration",
+        "Berechtigungen und Verlauf",
+        "Berichte und Exporte"
       ]
     },
     {
-      "slug": "benachrichtigungs-bots",
-      "title": "Benachrichtigungs-Bots",
-      "summary": "Automatische Hinweise und Erinnerungen über die Kanäle, die Ihr Team bereits nutzt.",
-      "challenge": "Wichtige Änderungen werden zu spät bemerkt, wenn jemand manuell nachsehen muss.",
-      "approach": "Ein Bot überwacht die für Sie wichtigen Ereignisse und sendet eine Nachricht, sobald Handlungsbedarf besteht.",
+      "slug": "aussendienst-app",
+      "title": "Außendienst-App",
+      "summary": "Aufträge, Adressen, Checklisten und Fotos in der Tasche jedes Technikers.",
+      "challenge": "Techniker rufen für Auftragsdetails im Büro an und füllen Papierformulare aus, die verloren gehen.",
+      "approach": "Eine mobile App zeigt jedem Techniker seine Aufträge, Checklisten und Kundennotizen und schickt Fotos und Unterschriften zurück ins Büro.",
       "includes": [
-        "Ereignisbasierte Hinweise",
-        "Zustellung per E-Mail und Chat",
-        "Tägliche Zusammenfassungen"
+        "Auftragsliste und Navigation",
+        "Checklisten, Fotos und Unterschriften",
+        "Synchronisierung mit dem Büro"
       ]
     },
     {
-      "slug": "mobile-betriebs-tools",
-      "title": "Mobile Betriebs-Tools",
-      "summary": "Mobile Abläufe für Aufgaben, die Ihr Team abseits des Schreibtischs erledigt.",
-      "challenge": "Papiernotizen und Nachrichten aus dem Betrieb sind langsam und fehleranfällig.",
-      "approach": "Eine mobile App macht aus der Arbeit vor Ort strukturierte Schritte, die Ihre Systeme sofort aktualisieren.",
+      "slug": "pruef-und-einsatz-checklisten",
+      "title": "Prüf- und Einsatz-Checklisten",
+      "summary": "Digitale Checklisten, die offline funktionieren und den Bericht sofort erstellen.",
+      "challenge": "Papier-Checklisten sind schwer lesbar, gehen leicht verloren und werden langsam zu Berichten.",
+      "approach": "Prüfer füllen Checklisten auf Smartphone oder Tablet aus, auch ohne Verbindung, und ein PDF-Bericht wird automatisch erstellt.",
       "includes": [
-        "Schritt-für-Schritt-Abläufe",
-        "Offline-Unterstützung",
-        "Aktualisierung in Echtzeit"
+        "Offline-Modus",
+        "Fotos und Notizen pro Punkt",
+        "Automatische PDF-Berichte"
       ]
     },
     {
-      "slug": "web-arbeitsbereiche",
-      "title": "Webbasierte Arbeitsbereiche",
-      "summary": "Ausgewählte Abläufe in einer einzigen Browser-Anwendung bündeln.",
-      "challenge": "Arbeit, die über viele Tools und Dateien verteilt ist, lässt sich schwer steuern und absichern.",
-      "approach": "Ein Web-Arbeitsbereich bündelt die wichtigsten Abläufe – mit passendem Zugriff für jede Rolle.",
+      "slug": "treue-und-buchungs-app",
+      "title": "Treue- und Buchungs-App",
+      "summary": "Eine App in Ihrem Branding, in der Stammkunden buchen und Prämien sammeln.",
+      "challenge": "Stammkunden sind die wertvollsten, doch es fehlt ein einfacher Weg, mit ihnen in Kontakt zu bleiben.",
+      "approach": "Eine iOS- und Android-App mit Buchung, Push-Benachrichtigungen und einem einfachen Treueprogramm, verbunden mit Ihren bestehenden Systemen.",
       "includes": [
-        "Zentraler Arbeitsbereich",
-        "Rollenbasierter Zugriff",
-        "Protokoll aller Änderungen"
+        "Buchung in der App",
+        "Push-Benachrichtigungen",
+        "Ein einfaches Treueprogramm"
       ]
     },
     {
-      "slug": "kanaluebergreifende-planung",
-      "title": "Kanalübergreifende Planung",
-      "summary": "Bestände über mehrere Verkaufskanäle planen, nachdem der API-Zugang geprüft wurde.",
-      "challenge": "Der Verkauf auf mehreren Marktplätzen vervielfacht den Aufwand, alles synchron zu halten.",
-      "approach": "Wir prüfen API-Zugang und Regeln jeder Plattform und entwerfen dann eine Automatisierung, die die Kanäle abgleicht.",
+      "slug": "teamaufgaben-und-zeiterfassung",
+      "title": "Teamaufgaben und Zeiterfassung",
+      "summary": "Aufgaben zuweisen, Stunden erfassen und Fortschritt auf jedem Smartphone sehen.",
+      "challenge": "Stunden stehen auf Papier, Aufgaben kommen per SMS, und am Ende der Woche passt nichts zusammen.",
+      "approach": "Mitarbeiter sehen ihre Aufgaben und stempeln in der App ein und aus; Manager sehen den Fortschritt und exportieren die Stunden für die Lohnabrechnung.",
       "includes": [
-        "Prüfung des Plattformzugangs",
-        "Synchronisierungsregeln",
-        "Hinweise bei Konflikten"
+        "Aufgabenzuweisung",
+        "Ein- und Ausstempeln",
+        "Stundenexport für die Lohnabrechnung"
       ]
     }
   ]

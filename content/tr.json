@@ -317,7 +317,7 @@
     },
     "services": {
       "title": "Web Siteleri, Yapay Zekâ Telefon Asistanı ve Yazılım | Zerone",
-      "description": "ABD genelindeki işletmeler için web siteleri ve yerel SEO, yapay zekâ telefon asistanları, otomasyon, web ve mobil uygulamalar. New York merkezli, net yazılı tekliflerle.",
+      "description": "ABD genelindeki işletmeler için web siteleri, yerel SEO, yapay zekâ telefon asistanları, otomasyon, web ve mobil uygulamalar. New York merkezli, net yazılı teklif.",
       "eyebrow": "Hizmetler",
       "h1": "Hizmetlerimiz",
       "lede": "İnternetteki ilk izlenimden ekibinizin her gün kullandığı yazılıma kadar. Tam ihtiyacınız olanı, yazılı olarak kararlaştırılmış şekilde alırsınız; hiç kullanmayacağınız bir şeye para ödemezsiniz.",
@@ -429,7 +429,7 @@
     },
     "service_automation": {
       "title": "İş Süreçleri Otomasyonu ve Özel Bot Geliştirme | Zerone International",
-      "description": "Veri ve belge hazırlayan, bildirim gönderen, araçlarınızı birbirine bağlayan ve zamanlanmış görevleri çalıştıran özel otomasyonlar ve botlar; ekibiniz müşterilere odaklansın.",
+      "description": "Veri ve belge hazırlayan, bildirim gönderen, araçlarınızı bağlayan ve zamanlanmış görevleri yürüten özel otomasyonlar ve botlar; ekibiniz müşterilere odaklansın.",
       "eyebrow": "Otomasyon ve botlar",
       "h1": "İş süreçleri otomasyonu ve özel botlar",
       "lede": "Ekibiniz her gün aynı adımları kopyalıyor, yapıştırıyor, kontrol ediyor ve tekrarlıyorsa bu adımlar genellikle otomatikleştirilebilir. Güvenilir çalışan ve ne yaptığını raporlayan otomasyonlar geliştiriyoruz.",
@@ -549,7 +549,7 @@
     },
     "products": {
       "title": "Kendi Yazılım Ürünlerimiz | Zerone International",
-      "description": "Zerone International, müşteri projelerinin yanında kendi yazılım ürünlerini de geliştiriyor. İlk ürünler: online satıcılar için çapraz ilan sistemi ve lot analiz aracı.",
+      "description": "Zerone International, müşteri projelerinin yanında kendi yazılımlarını da geliştiriyor. İlk ürünler: online satıcılar için çapraz ilan sistemi ve lot analiz aracı.",
       "eyebrow": "Ürünler",
       "h1": "Kendi ürünlerimiz",
       "lede": "Müşteri projelerinin yanında kendi yazılım ürünlerimizi de geliştiriyoruz. İlk ikisi online satıcılar için araçlar ve ikisi de geliştirme aşamasında. Erken erişim açıldığında haberdar olmak için bekleme listesine katılın.",
@@ -586,7 +586,7 @@
     },
     "company": {
       "title": "Hakkımızda – New York'lu Teknoloji Şirketi | Zerone International",
-      "description": "Zerone International LLC, ABD genelindeki işletmelere web siteleri, yapay zekâ asistanları, otomasyon ve özel yazılımla yardımcı olan New York merkezli bir teknoloji şirketi.",
+      "description": "Zerone International LLC, ABD genelindeki işletmelere web sitesi, yapay zekâ asistanı, otomasyon ve özel yazılımla destek veren New York merkezli teknoloji şirketi.",
       "eyebrow": "Şirket",
       "h1": "Zerone International hakkında",
       "lede": "Basit bir hedefi olan New York merkezli bir teknoloji şirketi: her işletmenin kullanabileceği faydalı teknoloji.",
@@ -665,7 +665,7 @@
     },
     "contact": {
       "title": "İletişim – Projenizi Başlatın | Zerone International",
-      "description": "Web sitesi, yapay zekâ telefon asistanı, otomasyon, web veya mobil uygulama için Zerone International ile iletişime geçin. Arayın, SMS veya e-posta gönderin; yazılı yanıt veririz.",
+      "description": "Web sitesi, yapay zekâ telefon asistanı, otomasyon, web veya mobil uygulama için bize ulaşın. Arayın, SMS, e-posta veya form gönderin; yazılı yanıt veririz.",
       "eyebrow": "İletişim",
       "h1": "Projenizi başlatın",
       "lede": "Bize işletmenizi veya çözmek istediğiniz sorunu anlatın. İki iş günü içinde yanıt vermeyi hedefliyoruz.",
@@ -751,7 +751,7 @@
     },
     "developers": {
       "title": "Geliştirici API'leri – Erken Erişim | Zerone International",
-      "description": "Zerone International online satıcılar için API'ler planlıyor: ilan standardizasyonu, stok senkronizasyonu, lot analizi ve ücret hesaplayıcıları. Erken erişim listesine katılın.",
+      "description": "Zerone International online satıcılar için API'ler planlıyor: ilan standardizasyonu, stok senkronizasyonu, lot analizi ve ücret hesaplayıcılar. Listeye katılın.",
       "eyebrow": "Geliştiriciler için",
       "h1": "Online satıcılar için API'ler",
       "lede": "Online satıcılara yönelik kendi ürünlerimizden doğan geliştirici araçları için erken erişim açıyoruz. Henüz hiçbiri yayında değil; listeye katılın ve önce neyin geleceğine birlikte karar verelim.",
@@ -978,8 +978,8 @@
     {
       "slug": "ev-hizmetleri-icin-web-sitesi",
       "title": "Ev hizmetleri şirketi için web sitesi",
-      "summary": "Yerel aramaları telefon aramalarına ve teklif taleplerine dönüştüren mobil uyumlu bir web sitesi.",
-      "challenge": "Müşteriler telefonlarında birkaç firmayı karşılaştırır ve güvendikleri firmayı arar.",
+      "summary": "Yerel aramaları telefonlara ve teklif taleplerine dönüştüren mobil uyumlu bir web sitesi.",
+      "challenge": "Müşteriler telefonda birkaç firmayı karşılaştırır ve güvendiği firmayı arar.",
       "approach": "Hizmetleriniz, hizmet bölgeleriniz, gerçek fotoğraflar ve yorumlarla hızlı bir web sitesi, tek dokunuşla arama ve teklif butonları ve arkasında doğru bir Google Business Profile.",
       "includes": [
         "Hizmet ve hizmet bölgesi sayfaları",
@@ -990,8 +990,8 @@
     {
       "slug": "google-business-profile-duzenleme",
       "title": "Google Business Profile düzenleme",
-      "summary": "Doğru müşteriler sizi Google Maps'te bulsun diye saatleri, kategorileri, hizmetleri ve fotoğrafları düzeltin.",
-      "challenge": "Yanlış saatler, belirsiz bir kategori veya eski fotoğraflar müşterileri rakibe gönderir.",
+      "summary": "Saatleri, kategorileri, hizmetleri ve fotoğrafları düzeltin; müşteriler sizi Google Maps'te bulsun.",
+      "challenge": "Yanlış saatler, belirsiz kategori veya eski fotoğraflar müşteriyi rakibe yollar.",
       "approach": "Profili Google'ın yönergelerine göre inceler, her alanı düzeltir, hizmet ve fotoğraf ekler ve onu güncel tutan basit bir rutin kurarız.",
       "includes": [
         "Kategori ve hizmet incelemesi",
@@ -1050,7 +1050,7 @@
     {
       "slug": "restoran-telefon-aramalari",
       "title": "Restoran için telefon aramaları",
-      "summary": "Akşam yoğunluğunda çalışma saatleri, menü ve rezervasyonlarla ilgili soruları yanıtlayın.",
+      "summary": "Akşam yoğunluğunda saatler, menü ve rezervasyonlarla ilgili soruları yanıtlayın.",
       "challenge": "Telefon en çok mutfağın en yoğun olduğu anda çalar; açılmayan aramalar masa kaybettirir.",
       "approach": "Asistan sık sorulan soruları yanıtlar, rezervasyon taleplerini alır ve diğer her şeyi her arama için yazılı bir notla personele iletir.",
       "includes": [
@@ -1195,7 +1195,7 @@
       "slug": "sadakat-ve-randevu-uygulamasi",
       "title": "Sadakat ve randevu uygulaması",
       "summary": "Düzenli müşterilerin randevu aldığı ve ödül topladığı markalı bir uygulama.",
-      "challenge": "Düzenli müşteriler en değerli müşterilerdir, ancak onlarla iletişimde kalmanın basit bir yolu yoktur.",
+      "challenge": "Düzenli müşteriler en değerli müşterilerdir, ama onlarla iletişimde kalmanın basit bir yolu yoktur.",
       "approach": "Randevu, anlık bildirimler ve basit bir sadakat programı içeren, mevcut sistemlerinize bağlı bir iOS ve Android uygulaması.",
       "includes": [
         "Uygulama içinden randevu",
