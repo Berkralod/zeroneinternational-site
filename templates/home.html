@@ -31,18 +31,18 @@
   </div>
 </section>
 
-<section class="section section--tint" aria-labelledby="resale-title">
+<section class="section section--tint" aria-labelledby="reach-title">
   <div class="wrap split">
-    <div class="split__art">{{ art.art('crosslisting') }}</div>
+    <div class="split__art">{{ art.art('reach') }}</div>
     <div>
-      {{ blocks.section_head(p.resale.eyebrow, p.resale.title, id="resale-title") }}
-      <p>{{ p.resale.text }}</p>
-      <ul class="product-mini" role="list">
-      {% for item in t.pages.products["items"] %}
-        <li><span class="card__icon">{{ icons.icon(('box', 'chart')[loop.index0]) }}</span><span><strong>{{ item.name }}</strong><span class="tag tag--soft">{{ t.ui.in_development }}</span></span></li>
+      {{ blocks.section_head(p.reach.eyebrow, p.reach.title, id="reach-title") }}
+      <p>{{ p.reach.text }}</p>
+      <ul class="checklist" role="list">
+      {% for area in p.reach.areas %}
+        <li>{{ icons.icon('pin') }}<span>{{ area }}</span></li>
       {% endfor %}
       </ul>
-      <a class="text-link" href="{{ url('products') }}">{{ p.resale.link }} {{ icons.icon('arrow') }}</a>
+      <a class="text-link" href="{{ plans_path }}"{% if lang != 'en' %} hreflang="en"{% endif %}>{{ p.reach.link }} {{ icons.icon('arrow') }}</a>
     </div>
   </div>
 </section>
@@ -53,7 +53,7 @@
   <div class="wrap">
     {{ blocks.section_head(p.cases.eyebrow, p.cases.title, p.cases.intro, id="cases-title") }}
     <ul class="card-grid card-grid--3" role="list">
-    {% for i in (0, 5, 9, 12, 16, 19) %}
+    {% for i in (0, 4, 8, 12, 16, 6) %}
       {{ blocks.case_card(i) }}
     {% endfor %}
     </ul>

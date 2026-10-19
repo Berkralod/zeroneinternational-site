@@ -51,8 +51,8 @@ await render("og-image.png", 1200, 630, `
               font-family:Montserrat, Inter, system-ui, sans-serif;color:#fff">
     <img src="${dataUri(logoWhite)}" style="width:430px">
     <div>
-      <div style="font-size:60px;font-weight:700;line-height:1.1;letter-spacing:-1px;max-width:900px">Custom software, automation &amp; resale tools</div>
-      <div style="margin-top:28px;font-size:28px;color:#c9d6e1">zeroneinternational.com · New York · 15 languages</div>
+      <div style="font-size:60px;font-weight:700;line-height:1.1;letter-spacing:-1px;max-width:900px">Websites, AI assistants &amp; custom software</div>
+      <div style="margin-top:28px;font-size:28px;color:#c9d6e1">zeroneinternational.com · New York · serving the US</div>
     </div>
   </div>`);
 

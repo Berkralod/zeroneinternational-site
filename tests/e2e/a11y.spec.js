@@ -44,12 +44,12 @@ for (const scheme of ["light", "dark"]) {
   });
 }
 
-// Local Services pages (English only).
-const localSlugs = readdirSync(new URL("../../content/local/", import.meta.url)).filter((f) => f.endsWith(".md")).map((f) => f.slice(0, -3));
+// Small-business plan pages (English only).
+const planSlugs = readdirSync(new URL("../../content/plans/", import.meta.url)).filter((f) => f.endsWith(".md")).map((f) => f.slice(0, -3));
 for (const scheme of ["light", "dark"]) {
-  test.describe(`accessibility of the local services pages (${scheme})`, () => {
+  test.describe(`accessibility of the small-business plan pages (${scheme})`, () => {
     test.use({ colorScheme: scheme });
-    for (const path of localSlugs.map((s) => (s === "index" ? "/local/" : `/local/${s}/`))) {
+    for (const path of planSlugs.map((s) => (s === "index" ? "/plans/" : `/plans/${s}/`))) {
       test(path, async ({ page }) => {
         await page.goto(path);
         const results = await new AxeBuilder({ page })

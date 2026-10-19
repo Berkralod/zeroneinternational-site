@@ -4,9 +4,21 @@ Bu belge teknik bilgi gerektirmeden okunacak şekilde yazıldı. Sitenin teknik 
 
 > **Sayılar hakkında:** Aşağıda arama hacmi veya "şu kadar trafik gelir" gibi tahminler yok, çünkü doğrulanmış veri olmadan sayı vermek yanıltıcı olur. Hacimleri kendi hesabınızla **Google Ads → Anahtar Kelime Planlayıcı** üzerinden ve site yayına girdikten sonra **Search Console → Performans** raporundan görebilirsiniz. Belgede kullanılan birkaç sayının kaynağı yanında verildi.
 
+> **19 Ekim 2026 güncellemesi — yön değişti.** Şirket artık "New York merkezli, tüm ABD'ye hizmet veren teknoloji ve büyüme ortağı" olarak konumlanıyor. Aşağıdaki bölümlerin çoğu eski "online satıcı (resale) araçları" odaklı plandır ve sadece **ürünler** sayfası için geçerlidir. Yeni ana hedef aramalar:
+>
+> | Öncelik | Arama grubu | Örnek aramalar | Hedef sayfa |
+> |---|---|---|---|
+> | 1 | Küçük işletme web sitesi | small business website design new york, web design long island, website for contractors, website for restaurants | Websites & Google presence, /plans/pricing/ |
+> | 2 | Yerel SEO ve Google profili | local seo nassau county, google business profile management, google maps ranking help, more google reviews | Websites & Google presence |
+> | 3 | AI telefon asistanı | ai receptionist for small business, ai phone answering service, after hours answering service, virtual receptionist new york | AI phone assistant |
+> | 4 | Otomasyon | small business automation, automate quotes and invoices, appointment reminder automation | Automation & bots |
+> | 5 | Özel yazılım | custom software development new york, web app developer long island, mobile app developer nyc | Web / Mobile |
+>
+> Bölge önceliği: New York City (Manhattan, Brooklyn, Queens) ve Long Island (Nassau, Suffolk, Hamptons); ardından tüm ABD. Sosyal medya, profil ve haftalık SEO raporu planı gizli depoda: `zerone-local/plan/SOSYAL-SEO-YOL-HARITASI.md`.
+
 ---
 
-## 1. Durum özeti: kiminle yarışıyoruz?
+## 1. Durum özeti: kiminle yarışıyoruz? (eski, ürünler için)
 
 - **"Crosslisting app / software" aramaları çok rekabetçi.** Bu aramalarda üst sıralar, ürünü hazır olan firmaların kendi karşılaştırma yazılarıyla dolu: Vendoo, List Perfectly, Crosslist, Closo, FlowLister ve benzerleri ([crosslist.com](https://crosslist.com/blog/best-crosslisting-apps-for-resellers), [closo.co](https://closo.co/blogs/blog/best-crosslisting-app-for-resellers), [flowlister.com](https://flowlister.com/best-crosslisting-apps-2026/), [resaleos.co](https://www.resaleos.co/blog/comparing-the-20-best-cross-listing-software-for-resellers-in-2026-the-complete-buyer-s-guide)). Ürünümüz henüz "geliştirme aşamasında" olduğu için bu genel aramalarda şimdilik iddialı olmak gerçekçi değil.
 - **Liquidation (toptan iade/palet) analizi alanında da araçlar var:** Pallet Analyzer Pro, Pallet IQ AI ve ücretsiz hesap makineleri ([palletanalyzerpro.com](https://palletanalyzerpro.com/), [palletiqai.com](https://palletiqai.com/tools/manifest-analyzer), [royalcloseouts.com](https://royalcloseouts.com/pallet-roi-calculator)). Ancak bu alan crosslisting'e göre daha az kalabalık ve **"nasıl yapılır"** tipi soruların cevabı hâlâ dağınık.

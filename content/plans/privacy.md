@@ -1,12 +1,12 @@
 ---
-title: Local Services Privacy Notice
-description: How ZERONE International handles data in its local business services: preview pages, calls to our AI assistant, text messages, do-not-contact requests and retention.
+title: Small Business Plans Privacy Notice
+description: How ZERONE International handles data in its small-business services: preview pages, calls to our AI assistant, text messages, do-not-contact requests and retention.
 nav: Privacy
-version: LS-PRIV-2
-updated: 2026-10-17
+version: LS-PRIV-3
+updated: 2026-10-19
 ---
 
-This notice adds to our main [Privacy Policy](/privacy/). It applies to ZERONE International — Local Services: the websites, Google Business Profile help, review requests, missed-call text-back, AI phone answering and related services we offer to local businesses. It also applies to how we contact local businesses about these services. Where this notice and the main Privacy Policy differ, this notice applies to these services.
+This notice adds to our main [Privacy Policy](/privacy/). It applies to ZERONE International — Small Business Plans (formerly called Local Services): the websites, Google Business Profile help, review requests, missed-call text-back, AI phone answering and related services we offer to businesses. It also applies to how we contact businesses about these services. Where this notice and the main Privacy Policy differ, this notice applies to these services.
 
 **Who we are.** ZERONE International LLC, Farmingville, NY 11738, United States. E-mail: berk@zeroneinternational.com.
 

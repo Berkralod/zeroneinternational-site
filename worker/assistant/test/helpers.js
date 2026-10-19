@@ -45,7 +45,7 @@ class Namespace {
 
 export function reply(fields = {}) {
   return {
-    reply: "We build custom automation for resale businesses. What would you like to automate?",
+    reply: "We build websites, AI assistants and custom automation. What would you like to automate?",
     lang: "en",
     links: ["services"],
     suggestions: ["How does a project work?"],

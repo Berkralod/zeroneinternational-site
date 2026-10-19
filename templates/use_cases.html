@@ -7,7 +7,7 @@
   <div class="wrap">
     <div class="filters" data-filters hidden role="group" aria-label="{{ t.ui.filter_label }}">
       <button type="button" class="chip" data-filter="all" aria-pressed="true">{{ t.ui.all }}</button>
-      {% for key in ("automation", "web", "mobile") %}
+      {% for key in service_page %}
       <button type="button" class="chip" data-filter="{{ key }}" aria-pressed="false">{{ t.services_list[key].name }}</button>
       {% endfor %}
     </div>

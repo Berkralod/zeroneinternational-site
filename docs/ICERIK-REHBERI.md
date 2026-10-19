@@ -60,7 +60,7 @@ Bu ayarlar dosyaya yazılmak yerine GitHub **Settings → Secrets and variables 
 title: Yazının başlığı (en fazla ~60 karakter)
 description: Google'da görünecek bir-iki cümlelik özet (~150 karakter)
 date: 2026-10-11
-tags: Crosslisting, Automation
+tags: Local SEO, Automation
 ---
 ```
 

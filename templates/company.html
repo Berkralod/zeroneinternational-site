@@ -16,8 +16,37 @@
     </div>
   </div>
 </section>
-<section class="section section--tint" aria-label="{{ p.vision.title }} · {{ p.mission.title }}">
-  <div class="wrap card-grid card-grid--2">
+{% set f = p.founder %}
+<section class="section section--tint" aria-labelledby="founder-title">
+  <div class="wrap founder">
+    {% if founder_photo %}
+    <figure class="founder__photo">
+      <img src="{{ asset(founder_photo) }}" alt="{{ f.photo_alt }}" width="640" height="640" loading="lazy" decoding="async">
+    </figure>
+    {% endif %}
+    <div class="founder__text">
+      {{ blocks.section_head(f.eyebrow, f.title, id="founder-title") }}
+      <p class="founder__name"><strong>{{ config.founder }}</strong> · {{ f.role }}</p>
+      <div class="prose">
+      {% for para in f.bio %}
+        <p>{{ para }}</p>
+      {% endfor %}
+      </div>
+      <h3 class="founder__facts-title">{{ f.facts_title }}</h3>
+      <dl class="founder__facts">
+      {% for item in f.facts %}
+        <div><dt>{{ item.label }}</dt><dd>{{ item.value }}</dd></div>
+      {% endfor %}
+      </dl>
+      {% if config.founder_linkedin %}
+      <a class="text-link" href="{{ config.founder_linkedin }}" rel="me noopener" target="_blank">{{ f.linkedin }} {{ icons.icon('arrow') }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+<section class="section" aria-label="{{ p.vision.title }} · {{ p.mission.title }}">
+  <div class="wrap">
+  <div class="card-grid card-grid--2">
     <div class="card card--feature">
       <span class="card__icon">{{ icons.icon('eye') }}</span>
       <h2 class="card__title" id="vision">{{ p.vision.title }}</h2>
@@ -29,8 +58,9 @@
       <p>{{ p.mission.text }}</p>
     </div>
   </div>
+  </div>
 </section>
-<section class="section" aria-labelledby="values-title">
+<section class="section section--tint" aria-labelledby="values-title">
   <div class="wrap">
     {{ blocks.section_head(None, p["values"].title, id="values-title") }}
     <ul class="card-grid card-grid--4" role="list">
@@ -44,7 +74,7 @@
     </ul>
   </div>
 </section>
-<section class="section section--tint" aria-labelledby="location-title">
+<section class="section" aria-labelledby="location-title">
   <div class="wrap split split--text">
     <h2 id="location-title">{{ p.location.title }}</h2>
     <p class="location">{{ icons.icon('pin') }} <span>{{ p.location.text }}</span></p>

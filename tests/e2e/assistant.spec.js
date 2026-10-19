@@ -21,7 +21,7 @@ async function settings(page) {
 
 function answer(fields = {}) {
   return {
-    reply: "We build custom automation for resale businesses. What would you like to automate first?",
+    reply: "We build websites, AI assistants and custom automation. What would you like to automate first?",
     sig: "a".repeat(64),
     fallback: false,
     lang: "en",
