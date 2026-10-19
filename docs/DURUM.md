@@ -17,7 +17,7 @@ Son güncelleme: 2026-10-19. Yeni bir oturum veya sohbet özetlemesinden sonra C
   - 5 hizmet sayfası (15 dil): Websites & Google presence (`service_presence`), AI phone assistant (`service_phone`), Automation & bots, Web applications, Mobile apps.
   - 20 kullanım örneği yenilendi (her hizmete 4). Eski örnek adresleri `content/redirects.json` ile kullanım örnekleri sayfasına yönleniyor.
   - Ana menü: Services · Plans & pricing · Use cases · Company · Blog · Contact. Products ve Developers (online satıcı araçları, geliştirme aşamasında) sadece alt menüde.
-  - Şirket sayfasında kurucu bölümü (Berk'in özgeçmişi, LinkedIn). Fotoğraf `static/assets/img/founder.jpg` eklenince kendiliğinden görünür.
+  - Şirket sayfasında kurucu bölümü (Berk'in özgeçmişi, LinkedIn). Fotoğraf: `static/assets/img/founder.jpg` (640×640, 19 Ekim).
   - Schema `areaServed`: ABD + New York City + Nassau + Suffolk.
 - **Small Business Plans (`/plans/`, eski adı Local Services, eski adres `/local/` otomatik yönleniyor)**, sadece İngilizce: genel bakış, fiyatlar (Starter $149, Growth $249, AI telefon eki +$149), gizlilik eki LS-PRIV-3, hizmet şartları LS-TERMS-2. Plan, durum ve hedef listesi gizli `zerone-local` deposunda (`docs/DURUM-LOCAL.md`). Herkese açık bu depoya iç maliyet, hedef işletme veya müşteri verisi yazılmaz. Yasal metinler ilk müşteriden önce gözden geçirilecek (taslaklar gizli depoda: `legal-drafts/`). Memnuniyet garantisi 14 gün.
 - **Telefon ve SMS (17 Ekim, Berk'in kararı):**
@@ -25,7 +25,7 @@ Son güncelleme: 2026-10-19. Yeni bir oturum veya sohbet özetlemesinden sonra C
   - **SMS: (631) 319-7032.** Berk'in Google Voice numarası; mesajları ekip okuyup cevaplıyor.
   - Numaraların göründüğü yerler: iletişim sayfası (15 dil), `/plans/` sayfaları, AI telefon hizmet sayfası, şirket bilgisi (schema), sohbet asistanının bilgisi.
   - Ava'nın kurulumu gizli depoda (`zerone-local`: `ava/`, `docs/AVA.md`, `docs/TEKLIF.md`).
-- **Blog:** Her salı otomatik yazı. 19 Ekim'den itibaren konular: küçük işletmeler için web sitesi, yerel SEO, Google profili, yorumlar, AI asistanlar ve otomasyon (eski yazılar online satış üzerine, yerinde kalıyor).
+- **Blog:** Her salı otomatik yazı (zamanlanmış görev 19 Ekim'de güncellendi). Konular: küçük işletmeler için web sitesi, yerel SEO, Google profili, yorumlar, AI asistanlar ve otomasyon (eski yazılar online satış üzerine, yerinde kalıyor).
 - Dependabot #10 (Playwright 1.64): WebKit'te iletişim sayfasında CSP style-src uyarısı ve tema testi zamanlaması incelenecek.
 
 ## Dışarıdan beklenen
