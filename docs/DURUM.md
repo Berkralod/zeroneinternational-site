@@ -1,6 +1,6 @@
 # Proje durumu (Claude'un devir notu)
 
-Son güncelleme: 2026-10-19. Yeni bir oturum veya sohbet özetlemesinden sonra Claude buradan devam eder.
+Son güncelleme: 2026-10-20. Yeni bir oturum veya sohbet özetlemesinden sonra Claude buradan devam eder.
 
 ## Canlıda olanlar
 - 15 dilli site (GitHub Pages), blog (her salı otomatik yazı), "Geliştiriciler için" sayfası.
@@ -13,6 +13,7 @@ Son güncelleme: 2026-10-19. Yeni bir oturum veya sohbet özetlemesinden sonra C
 - Otomasyonlar: saatlik sağlık kontrolü, yayın sonrası duman testi + otomatik geri alma, CodeQL, Dependabot (öneriler incelenip birleştirilir), haftalık güvenlik özeti, haftalık trafik raporu (Cloudflare), hepsi Telegram'a Türkçe.
 
 ## Açık işler
+- **Karma konumlandırma ve SEO hamlesi (20 Ekim 2026, Berk'in kararı):** "New York merkezli, önce ABD, dünyaya açık". Web siteleri, web/mobil uygulamalar ve otomasyon dünya çapında uzaktan; Google Business Profile bakımı ve Ava sadece ABD. Tüm sayfa başlıkları ve açıklamaları yeniden yazıldı (15 dil). Ürünler sayfası: Ava (AI resepsiyonist) ve otomasyon kitleri; Geliştiriciler sayfası: iş otomasyonu API'leri (planlı). 5 eski e-ticaret blog yazısı `/blog/`'a yönlendirildi; yerine 3 yeni rehber (cevapsız aramalar, hizmet bölgeli işletmeler için Google Business Profile, AI resepsiyonist vs. çağrı merkezi). Sırada: bölge sayfaları (Suffolk, Nassau, Hamptons, Manhattan), Google Business Profile ve dizin kayıtları. Search Console bağlı; haftalık SEO raporu zerone-local'den Telegram'a gidiyor.
 - **Yeni konumlandırma (19 Ekim 2026, Berk'in kararı):** Site artık "e-ticaret / resale araçları" değil, **New York merkezli, tüm ABD'ye hizmet veren teknoloji ve büyüme ortağı**. Öncelik New York City (Manhattan, Brooklyn, Queens, Bronx, Staten Island) ve Long Island (Nassau, Suffolk, Hamptons); diğer eyaletler uzaktan. Metinlerde "sadece yerel" vurgusu yapılmaz.
   - 5 hizmet sayfası (15 dil): Websites & Google presence (`service_presence`), AI phone assistant (`service_phone`), Automation & bots, Web applications, Mobile apps.
   - 20 kullanım örneği yenilendi (her hizmete 4). Eski örnek adresleri `content/redirects.json` ile kullanım örnekleri sayfasına yönleniyor.

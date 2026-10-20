@@ -65,13 +65,13 @@
     "contact": "Contact"
   },
   "footer": {
-    "tagline": "Websites, AI-telefoonassistenten, automatisering en maatwerksoftware voor bedrijven in de hele Verenigde Staten, vanuit New York.",
+    "tagline": "Websites, AI-telefoonassistenten, automatisering en maatwerksoftware vanuit New York, voor Amerikaanse bedrijven en klanten wereldwijd.",
     "services": "Diensten",
     "company": "Bedrijf",
     "legal": "Juridisch",
     "rights": "Alle rechten voorbehouden.",
-    "trademark": "De namen van marktplaatsen op deze site zijn handelsmerken van hun respectieve eigenaren. Zerone International LLC is niet aan hen verbonden en wordt niet door hen onderschreven.",
-    "location": "Farmingville, New York · voor klanten in de hele Verenigde Staten"
+    "trademark": "Product- en platformnamen op deze site zijn handelsmerken van hun respectieve eigenaren. Zerone International LLC is niet aan hen verbonden en wordt niet door hen onderschreven.",
+    "location": "Farmingville, New York · klanten in de hele VS en wereldwijd"
   },
   "services_list": {
     "presence": {
@@ -181,10 +181,10 @@
     "sending": "Bezig met versturen…",
     "success": "Bedankt! Uw bericht is verzonden. We nemen snel contact met u op.",
     "error": "Uw bericht kon niet worden verzonden. Probeer het opnieuw of mail ons.",
-    "waitlist_title": "Zet u op de wachtlijst",
-    "waitlist_text": "Laat uw e-mailadres achter en we laten het u weten zodra vroege toegang opengaat.",
+    "waitlist_title": "Krijg vroege toegang",
+    "waitlist_text": "Laat uw e-mailadres achter en we laten het u weten zodra u het kunt uitproberen.",
     "waitlist_product": "Ik ben geïnteresseerd in",
-    "waitlist_both": "Beide tools",
+    "waitlist_both": "Beide",
     "waitlist_submit": "Aanmelden",
     "waitlist_success": "Bedankt! U staat op de lijst.",
     "not_configured": "Het online formulier wordt ingericht. Neem in de tussentijd per e-mail contact met ons op."
@@ -249,18 +249,18 @@
   },
   "pages": {
     "home": {
-      "title": "Websites, AI-assistenten en maatwerksoftware | Zerone",
-      "description": "Zerone International uit New York: websites en lokale SEO, AI-telefoonassistenten, automatisering, web- en mobiele apps voor bedrijven in de hele VS.",
+      "title": "Websites, AI-receptionist en maatwerkapps – New York | Zerone",
+      "description": "Techbedrijf uit New York: websites, lokale SEO, een AI-receptionist die 24/7 opneemt, automatisering, web- en mobiele apps. Eerst de VS, software wereldwijd.",
       "h1": "Technologie waarmee uw bedrijf gevonden wordt, elke oproep beantwoordt en tijd bespaart",
       "hero": {
-        "eyebrow": "New York · voor bedrijven in de hele VS",
+        "eyebrow": "New York · eerst Amerikaanse bedrijven, klanten wereldwijd",
         "lede": "We zijn een technologiebedrijf uit New York. We bouwen websites die klanten opleveren, AI-assistenten die elke oproep beantwoorden en software die uw team repetitief werk uit handen neemt, van een website van één pagina tot een applicatie op maat.",
         "primary": "Start een project",
         "secondary": "Bekijk onze diensten",
         "points": [
           "Schriftelijk voorstel en prijs voordat het werk begint",
           "Alles kan schriftelijk: per e-mail, sms of chat",
-          "Gevestigd in New York, met klanten in het hele land"
+          "Gevestigd in New York, met klanten in de hele VS en daarbuiten"
         ]
       },
       "services": {
@@ -270,12 +270,12 @@
       },
       "reach": {
         "eyebrow": "Waar we werken",
-        "title": "Van New York naar het hele land",
-        "text": "We zijn gevestigd in New York, dus New York City en Long Island komen eerst, en daar kunnen we ook persoonlijk afspreken. Al het andere gaat op afstand, zodat bedrijven in elke staat hetzelfde proces, dezelfde schriftelijke voorstellen en dezelfde ondersteuning krijgen.",
+        "title": "Van New York naar het hele land, en verder",
+        "text": "We zijn gevestigd in New York, dus New York City en Long Island komen eerst, en daar kunnen we ook persoonlijk afspreken. Al het andere gaat op afstand: bedrijven in elke staat krijgen hetzelfde proces, dezelfde schriftelijke voorstellen en dezelfde ondersteuning, en we bouwen ook websites, apps en automatiseringen voor klanten in andere landen.",
         "areas": [
           "New York City: Manhattan, Brooklyn, Queens, the Bronx en Staten Island",
           "Long Island: de county's Nassau en Suffolk en the Hamptons",
-          "Projecten op afstand in alle 50 staten"
+          "Projecten op afstand in alle 50 staten en, voor software, wereldwijd"
         ],
         "link": "Bekijk pakketten en prijzen"
       },
@@ -316,8 +316,8 @@
       }
     },
     "services": {
-      "title": "Websites, AI-telefoonassistenten en maatwerksoftware | Zerone",
-      "description": "Websites en lokale SEO, AI-telefoonassistenten, automatisering, web- en mobiele apps voor bedrijven in de VS. Vanuit New York, met heldere voorstellen.",
+      "title": "Diensten: websites, AI-receptionist, automatisering, apps | Zerone",
+      "description": "Websites en lokale SEO, een AI-telefoonassistent, automatisering, web- en mobiele apps. Vanuit New York; eerst Amerikaanse bedrijven, softwareprojecten wereldwijd.",
       "eyebrow": "Diensten",
       "h1": "Onze diensten",
       "lede": "Van de eerste indruk online tot de software die uw team elke dag gebruikt. U krijgt precies wat u nodig hebt, schriftelijk vastgelegd, en niets waarvoor u betaalt maar dat u nooit gebruikt.",
@@ -342,14 +342,14 @@
           },
           {
             "q": "Werkt u met klanten buiten New York?",
-            "a": "Ja. We bedienen bedrijven in de hele Verenigde Staten. In New York City en op Long Island kunnen we ook persoonlijk afspreken; elders werken we op afstand via e-mail, chat en videogesprekken. We communiceren in het Engels en het Turks."
+            "a": "Ja. We bedienen bedrijven in de hele Verenigde Staten en we maken ook websites, web- en mobiele apps en automatisering voor klanten in andere landen. In New York City en op Long Island kunnen we ook persoonlijk afspreken; elders werken we op afstand via e-mail, chat en videogesprekken. Google Business Profile-beheer en onze AI-telefoonassistent bieden we aan Amerikaanse bedrijven aan. We communiceren in het Engels, het Turks en het Arabisch."
           }
         ]
       }
     },
     "service_presence": {
-      "title": "Websites en lokale SEO voor kleine bedrijven | Zerone",
-      "description": "Mobielvriendelijke websites, Google Business Profile-beheer, lokale SEO en reviewverzoeken voor bedrijven in New York en de VS. Vanaf $149 per maand.",
+      "title": "Websites en Google-profiel voor kleine bedrijven vanaf $149/mnd",
+      "description": "Mobielvriendelijke websites, Google Business Profile-beheer, lokale SEO en reviewverzoeken voor Amerikaanse bedrijven, vanuit New York. Vanaf $149 per maand.",
       "eyebrow": "Websites en vindbaarheid op Google",
       "h1": "Websites, lokale SEO en vindbaarheid op Google",
       "lede": "De meeste klanten vinden een bedrijf op hun telefoon en beslissen binnen een minuut of twee. Wij zorgen dat die minuut telt: overal juiste informatie, een website die hun vragen beantwoordt en een eenvoudige manier om u te bereiken.",
@@ -388,8 +388,8 @@
       ]
     },
     "service_phone": {
-      "title": "AI-telefoonassistent voor bedrijven | Zerone International",
-      "description": "Een AI-telefoonassistent die 24/7 opneemt, zegt dat hij een AI is, vragen beantwoordt, berichten aanneemt en afspraken inplant. Bel (631) 900-2595.",
+      "title": "AI-receptionist voor kleine bedrijven – neemt 24/7 op | Zerone",
+      "description": "Een AI-telefoonassistent die 24/7 opneemt, zegt dat hij een AI is, vragen beantwoordt, berichten aanneemt en afspraken inplant. Bel (631) 900-2595 en hoor de onze.",
       "eyebrow": "AI-telefoonassistent",
       "h1": "Een AI-telefoonassistent voor uw bedrijf",
       "lede": "Elke gemiste oproep kan een gemiste klant zijn. Een AI-assistent neemt elke oproep aan, dag en nacht, antwoordt met een vriendelijke stem en stuurt u van elk gesprek een schriftelijke samenvatting.",
@@ -428,8 +428,8 @@
       ]
     },
     "service_automation": {
-      "title": "Procesautomatisering en maatwerk bots | Zerone International",
-      "description": "Automatisering en bots op maat: gegevens en documenten voorbereiden, meldingen sturen, tools koppelen en geplande taken, zodat uw team zich op klanten richt.",
+      "title": "Automatisering en maatwerkbots – bespaar wekelijks uren | Zerone",
+      "description": "Automatiseringen en bots die documenten opstellen, meldingen sturen, uw tools koppelen en geplande taken uitvoeren. Gebouwd in New York voor klanten in de VS en daarbuiten.",
       "eyebrow": "Automatisering en bots",
       "h1": "Procesautomatisering en maatwerk bots",
       "lede": "Als uw team elke dag dezelfde stappen kopieert, plakt, controleert en herhaalt, kunnen die stappen meestal geautomatiseerd worden. We bouwen automatiseringen die betrouwbaar draaien en rapporteren wat ze hebben gedaan.",
@@ -468,8 +468,8 @@
       ]
     },
     "service_web": {
-      "title": "Maatwerk webapplicaties ontwikkelen | Zerone International",
-      "description": "Maatwerk webapplicaties, dashboards, interne tools en klantportalen met toegang per rol voor eigenaren, managers en medewerkers.",
+      "title": "Maatwerk webapps ontwikkelen: dashboards en portalen | Zerone",
+      "description": "Maatwerk webapplicaties, dashboards, interne tools en klantportalen met toegang per rol. Gebouwd in New York voor klanten in de VS en wereldwijd.",
       "eyebrow": "Webapplicaties",
       "h1": "Ontwikkeling van maatwerk webapplicaties",
       "lede": "Breng uw processen samen in één applicatie in de browser. Geen installatie, toegang vanaf elk apparaat en de juiste rechten voor elke gebruiker.",
@@ -508,8 +508,8 @@
       ]
     },
     "service_mobile": {
-      "title": "Maatwerk app-ontwikkeling voor iOS en Android | Zerone International",
-      "description": "iOS- en Android-apps op maat voor buitendienstteams, monteurs en operations: takenlijsten, opdrachtverslagen, foto's, checklists en meldingen.",
+      "title": "iOS- en Android-appontwikkeling voor bedrijven | Zerone",
+      "description": "Maatwerk iOS- en Android-apps voor buitendienstteams en operations: taken, opdrachtverslagen, foto's, checklists en meldingen. Uit New York, voor klanten wereldwijd.",
       "eyebrow": "Mobiele apps",
       "h1": "Ontwikkeling van maatwerk mobiele apps",
       "lede": "Niet al het werk gebeurt achter een bureau. We bouwen mobiele apps voor de taken die uw team op locatie, in het veld of onderweg uitvoert.",
@@ -548,30 +548,30 @@
       ]
     },
     "products": {
-      "title": "Onze eigen softwareproducten | Zerone International",
-      "description": "Naast klantwerk bouwt Zerone International eigen software. Als eerste: een crosslisting-systeem en een analysetool voor liquidatiepartijen voor online verkopers.",
+      "title": "Ava AI-receptionist en automatiseringskits | Zerone International",
+      "description": "Onze eigen producten: Ava, de AI-receptionist die onze telefoonlijn al beantwoordt, en kant-en-klare automatiseringskits voor bedrijven. Meld u aan voor vroege toegang.",
       "eyebrow": "Producten",
       "h1": "Onze eigen producten",
-      "lede": "Naast klantprojecten bouwen we onze eigen softwareproducten. De eerste twee zijn tools voor online verkopers, en beide zijn in ontwikkeling. Meld u aan voor de wachtlijst om te horen wanneer de vroege toegang opent.",
+      "lede": "Naast klantprojecten bouwen we eigen producten en gebruiken we ze eerst in ons eigen bedrijf. Ava beantwoordt onze telefoonlijn al; de automatiseringskits verzorgen onze eigen offertes en opvolging. Meld u aan voor vroege toegang om ze uit te proberen.",
       "items": [
         {
-          "name": "Crosslisting-systeem",
-          "text": "Leg een product één keer vast en beheer de advertenties op meerdere marktplaatsen vanaf één plek.",
+          "name": "Ava, de AI-receptionist",
+          "text": "Een AI-telefoonassistent die elk gesprek aanneemt, zegt dat ze een AI is, veelgestelde vragen beantwoordt en berichten aanneemt. Bel (631) 900-2595 en hoor hoe ze onze eigen lijn beantwoordt.",
           "features": [
-            "Eén productrecord voor elk kanaal",
-            "Concepttitels en -beschrijvingen ter controle",
-            "Voorraadstatus over alle kanalen",
-            "Integraties via toegestane platformtoegang"
+            "Neemt 24/7 op met de gegevens van uw bedrijf",
+            "Schriftelijke samenvatting na elk gesprek",
+            "Berichten en terugbelverzoeken naar u doorgestuurd",
+            "Binnenkort voor Amerikaanse bedrijven als uitbreiding op uw pakket"
           ]
         },
         {
-          "name": "Analyse van liquidatiepartijen",
-          "text": "Schat in of een liquidatiepartij de moeite waard is voordat u een bod doet.",
+          "name": "Automatiseringskits voor bedrijven",
+          "text": "Kant-en-klare automatiseringen die we in ons eigen bedrijf gebruiken, aangepast aan uw tools: schriftelijke offertes, opvolging en dagrapporten zonder handwerk.",
           "features": [
-            "Inkoopprijs, kosten en verzending in één overzicht",
-            "Instelbare reserves voor retouren en schade",
-            "Geschatte verkoopwaarde en nettomarge",
-            "Meerdere partijen naast elkaar vergelijken"
+            "Offertes en facturen vanuit één formulier",
+            "Opvolgherinneringen die op tijd worden verstuurd",
+            "Een dagelijks overzicht van nieuwe leads en opdrachten",
+            "Ingericht voor uw tools en uw formuleringen"
           ]
         }
       ]
@@ -586,7 +586,7 @@
     },
     "company": {
       "title": "Over Zerone International – technologiebedrijf uit New York",
-      "description": "Zerone International LLC is een technologiebedrijf uit New York dat bedrijven in de hele VS helpt met websites, AI-assistenten, automatisering en maatwerksoftware.",
+      "description": "Zerone International LLC is een techbedrijf uit New York: websites, AI-assistenten, automatisering en maatwerksoftware voor Amerikaanse bedrijven en klanten wereldwijd.",
       "eyebrow": "Bedrijf",
       "h1": "Over Zerone International",
       "lede": "Een technologiebedrijf uit New York met een eenvoudig doel: nuttige technologie die elk bedrijf kan gebruiken.",
@@ -660,12 +660,12 @@
       },
       "location": {
         "title": "Waar we werken",
-        "text": "Hoofdkantoor in Farmingville, New York. We spreken klanten persoonlijk in New York City en op Long Island en werken op afstand met bedrijven in de hele Verenigde Staten."
+        "text": "Hoofdkantoor in Farmingville, New York. We spreken klanten persoonlijk in New York City en op Long Island en werken op afstand met bedrijven in de hele Verenigde Staten en, voor softwareprojecten, over de hele wereld."
       }
     },
     "contact": {
-      "title": "Contact met Zerone International – start uw project",
-      "description": "Neem contact op over een website, AI-telefoonassistent, automatisering, web- of mobiele app. Bel, sms, mail of gebruik het formulier; we antwoorden schriftelijk.",
+      "title": "Contact met Zerone – schriftelijk voorstel en prijs | New York",
+      "description": "Vertel ons over uw website, AI-telefoonassistent, automatisering of app. Bel, sms, mail of gebruik het formulier; u krijgt een schriftelijk voorstel en een prijs.",
       "eyebrow": "Contact",
       "h1": "Start uw project",
       "lede": "Vertel ons over uw bedrijf of het probleem dat u wilt oplossen. We streven ernaar binnen twee werkdagen te antwoorden.",
@@ -734,8 +734,8 @@
       }
     },
     "blog": {
-      "title": "Blog – gidsen over websites, AI en automatisering | Zerone",
-      "description": "Praktische gidsen over websites, lokale SEO, AI-assistenten en automatisering voor kleine en groeiende bedrijven, van een technologiebedrijf uit New York.",
+      "title": "Gidsen voor kleine bedrijven: websites, lokale SEO en AI | Zerone",
+      "description": "Praktische gidsen voor kleine bedrijven over websites, Google Business Profile, lokale SEO, elk gesprek aannemen en automatisering, van een techbedrijf uit New York.",
       "eyebrow": "Blog",
       "h1": "Gidsen voor groeiende bedrijven",
       "lede": "Praktische artikelen over online gevonden worden, elke klant te woord staan en repetitief werk automatiseren. Onze eerdere artikelen gaan over online verkopen.",
@@ -750,11 +750,11 @@
       "rss": "RSS-feed"
     },
     "developers": {
-      "title": "API's voor ontwikkelaars – vroege toegang | Zerone International",
-      "description": "Zerone International plant API's voor online verkopers: normalisatie van advertenties, voorraadsync, partijanalyse en kostencalculators. Meld u aan.",
+      "title": "Vroege toegang tot de API – Ava en automatisering | Zerone",
+      "description": "Zerone International plant API's voor bedrijfsautomatisering: gesprekssamenvattingen van Ava, lead-webhooks, documentgeneratie en rapporten. Meld u aan.",
       "eyebrow": "Voor ontwikkelaars",
-      "h1": "API's voor online verkopers",
-      "lede": "We openen vroege toegang tot ontwikkelaarstools die voortkomen uit onze eigen producten voor online verkopers. Er is nog niets live; meld u aan en help bepalen wat er eerst komt.",
+      "h1": "API's voor bedrijfsautomatisering",
+      "lede": "We openen vroege toegang tot ontwikkelaarstools die voortkomen uit onze eigen producten: Ava, onze AI-receptionist, en onze automatiseringskits. Er is nog niets live; meld u aan en help bepalen wat er eerst komt.",
       "hero_button": "Vroege toegang aanvragen",
       "planned": "Gepland",
       "products": {
@@ -762,20 +762,20 @@
         "intro": "Dit zijn plannen, geen kant-en-klare producten. Inhoud en planning kunnen veranderen op basis van feedback uit de vroege toegang.",
         "items": [
           {
-            "name": "Normalisatie van advertentiedata",
-            "text": "Zet productdata van verschillende marktplaatsen om naar één consistent catalogusformaat, klaar voor crosslisting."
+            "name": "API voor gesprekssamenvattingen",
+            "text": "Ontvang de gesprekssamenvattingen, berichten en terugbelverzoeken van Ava als gestructureerde data in uw eigen CRM of app."
           },
           {
-            "name": "Voorraad- en verkoopsynchronisatie",
-            "text": "Houd voorraad gelijk over marktplaatsen en markeer artikelen die elders verkocht zijn, om dubbele verkoop te voorkomen."
+            "name": "Webhooks voor leads en formulieren",
+            "text": "Stuur nieuwe leads uit formulieren, gesprekken en chats naar de tools die u al gebruikt, met spam eruit gefilterd."
           },
           {
-            "name": "Analyse van partijen en manifesten",
-            "text": "Lees een liquidatiemanifest en schat doorverkoopwaarde, kosten en marge voordat u de partij koopt."
+            "name": "Documentgeneratie",
+            "text": "Maak met één verzoek offertes, facturen en rapporten als PDF op basis van uw data en sjablonen."
           },
           {
-            "name": "Prijs- en kostencalculators",
-            "text": "Bereken marktplaatskosten, verzending en valutaomrekening en zie wat u echt overhoudt aan een verkoop."
+            "name": "Rapportagedata",
+            "text": "Haal dagelijkse en wekelijkse cijfers over gesprekken, leads en opdrachten naar uw eigen dashboards."
           }
         ]
       },
@@ -797,7 +797,7 @@
           },
           {
             "title": "Sandbox",
-            "text": "In een sandbox met voorbeelddata test u zonder echte advertenties of marktplaatsaccounts aan te raken."
+            "text": "In een sandbox met voorbeelddata test u zonder echte gesprekken, klanten of accounts aan te raken."
           }
         ]
       },
@@ -805,7 +805,7 @@
         "title": "Meld u aan voor vroege toegang voor ontwikkelaars",
         "text": "Vertel ons wat u wilt bouwen. We nemen contact op zodra de vroege toegang opengaat. U zit nergens aan vast.",
         "idea": "Wat zou u bouwen?",
-        "idea_hint": "Bijvoorbeeld de betrokken marktplaatsen, data of werkwijze. Stuur geen wachtwoorden of API-sleutels.",
+        "idea_hint": "Bijvoorbeeld de betrokken tools, data of werkwijze. Stuur geen wachtwoorden of API-sleutels.",
         "submit": "Vroege toegang aanvragen",
         "success": "Bedankt! U staat op de lijst voor vroege toegang voor ontwikkelaars."
       },
@@ -821,8 +821,8 @@
             "a": "De prijzen liggen nog niet vast. We plannen abonnementen op basis van gebruik en publiceren de prijzen voordat een betaald abonnement start."
           },
           {
-            "q": "Welke marktplaatsen worden ondersteund?",
-            "a": "Dat hangt af van de vraag tijdens de vroege toegang en van wat de officiële toegang en voorwaarden van elke marktplaats toestaan. Laat in het formulier weten welke voor u belangrijk zijn."
+            "q": "Met welke tools gaat het werken?",
+            "a": "Dat hangt af van de vraag tijdens de vroege toegang. We plannen standaard webhooks en een REST API die werken met de meeste CRM's en zakelijke tools. Laat in het formulier weten welke voor u belangrijk zijn."
           }
         ]
       }

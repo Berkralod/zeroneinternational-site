@@ -397,13 +397,13 @@ PAGE_DESCRIPTIONS = {
     "service_automation": "Automation & bots: data entry, documents, notifications, scheduled tasks, integrations",
     "service_web": "Web applications: dashboards, internal tools, customer portals with user roles",
     "service_mobile": "Mobile apps: iOS and Android apps for teams on site, in the field or on the road",
-    "products": "Our own products in development: crosslisting system and liquidation lot analysis for online sellers (waiting list)",
+    "products": "Our own products: Ava the AI receptionist and business automation kits (early-access list)",
     "use_cases": "All 20 use cases: websites, AI phone assistant, automation, web and mobile apps",
     "company": "About the company: who we are, vision, mission, values, location",
     "contact": "Contact form to start a project or ask for a quote",
     "payment": "Pay an invoice: card via Stripe, Square invoices, PayPal",
-    "blog": "Blog with guides on websites, local SEO, AI and automation (older posts cover online selling)",
-    "developers": "Planned APIs for online sellers and the developer early-access list",
+    "blog": "Blog with guides on websites, Google Business Profile, local SEO, AI receptionists and automation",
+    "developers": "Planned business-automation APIs (Ava call summaries, lead webhooks, documents, reports) and the developer early-access list",
     "privacy": "Privacy policy (also covers this AI assistant)",
     "terms": "Terms of use",
     "cookies": "Cookie policy",
@@ -514,7 +514,7 @@ def assistant_knowledge(site, config):
     add("Small-business plans (websites, Google Business Profile, reviews, AI phone add-on) are described in English "
         "on the plans pages (link ids plans and plans_pricing): Starter from $149 a month, Growth from $249 a month, "
         "AI phone assistant add-on +$149 a month; prices exclude applicable sales tax.")
-    add("\nOUR OWN PRODUCTS FOR ONLINE SELLERS (both in development, not available yet; visitors can join the waiting list on the products page)")
+    add("\nOUR OWN PRODUCTS (Ava answers our own line; both are opening to clients step by step; visitors can join the early-access list on the products page)")
     add(p["products"]["lede"])
     for item in p["products"]["items"]:
         add(f"- {item['name']}: {item['text']} Planned features: " + "; ".join(item["features"]))
@@ -848,7 +848,7 @@ def build(check_only=False):
                 **({"sameAs": [config["founder_linkedin"]]} if config.get("founder_linkedin") else {}),
             })
         if page_id == "products":
-            # Both products are still in development: no offers, prices or ratings are claimed.
+            # Neither product is sold on its own yet: no offers, prices or ratings are claimed.
             for i, item in enumerate(t["pages"]["products"]["items"]):
                 graph.append({
                     "@type": "SoftwareApplication",
