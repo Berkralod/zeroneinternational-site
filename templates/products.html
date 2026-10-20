@@ -9,7 +9,7 @@
   <div class="wrap product-list">
   {% for item in p["items"] %}
     <article class="split product{% if loop.index is even %} split--reverse{% endif %}">
-      <div class="split__art">{{ art.art(('crosslisting', 'lots')[loop.index0]) }}</div>
+      <div class="split__art">{{ art.art(('phone', 'automation')[loop.index0]) }}</div>
       <div>
         <span class="tag tag--soft">{{ t.ui.in_development }}</span>
         <h2>{{ item.name }}</h2>

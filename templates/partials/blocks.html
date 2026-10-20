@@ -165,7 +165,7 @@
     </div>
     <fieldset class="field choice-group">
       <legend>{{ t.form.waitlist_product }}</legend>
-      {% for value, label in [("crosslisting", t.pages.products["items"][0].name), ("lot-analysis", t.pages.products["items"][1].name), ("both", t.form.waitlist_both)] %}
+      {% for value, label in [("ava", t.pages.products["items"][0].name), ("automation-kits", t.pages.products["items"][1].name), ("both", t.form.waitlist_both)] %}
       <label class="choice"><input type="radio" name="product" value="{{ value }}"{% if loop.first %} checked{% endif %}> <span>{{ label }}</span></label>
       {% endfor %}
     </fieldset>

@@ -336,7 +336,7 @@ test("developers page renders in several languages and the early-access form sub
   });
   await form.locator("#dev-email").fill("dev@example.com");
   await form.locator("#dev-company").fill("Example Shop Co");
-  await form.locator("#dev-idea").fill("A dashboard that syncs sold items between two marketplaces.");
+  await form.locator("#dev-idea").fill("Push Ava call summaries into our CRM.");
   await form.locator("#dev-consent").check();
   await form.locator("[type=submit]").click();
   await expect(form.locator("[data-form-status]")).toHaveText(content.en.pages.developers.waitlist.success);
