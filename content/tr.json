@@ -65,13 +65,13 @@
     "contact": "İletişim"
   },
   "footer": {
-    "tagline": "New York'tan, ABD genelindeki işletmeler için web siteleri, yapay zekâ telefon asistanları, otomasyon ve özel yazılım.",
+    "tagline": "New York'tan ABD'deki işletmeler ve dünya genelindeki müşteriler için web siteleri, yapay zekâ telefon asistanları, otomasyon ve özel yazılım.",
     "services": "Hizmetler",
     "company": "Şirket",
     "legal": "Yasal",
     "rights": "Tüm hakları saklıdır.",
-    "trademark": "Bu sitede adı geçen pazaryeri isimleri ilgili sahiplerinin ticari markalarıdır. Zerone International LLC bu şirketlerle bağlantılı değildir ve onlar tarafından desteklenmemektedir.",
-    "location": "Farmingville, New York · ABD genelindeki müşterilere hizmet veriyoruz"
+    "trademark": "Bu sitede adı geçen ürün ve platform isimleri ilgili sahiplerinin ticari markalarıdır. Zerone International LLC bu şirketlerle bağlantılı değildir ve onlar tarafından desteklenmemektedir.",
+    "location": "Farmingville, New York · ABD genelinde ve dünyanın dört bir yanında müşteriler"
   },
   "services_list": {
     "presence": {
@@ -181,10 +181,10 @@
     "sending": "Gönderiliyor…",
     "success": "Teşekkürler! Mesajınız gönderildi. En kısa sürede size dönüş yapacağız.",
     "error": "Mesajınız gönderilemedi. Lütfen tekrar deneyin veya bize e-posta ile ulaşın.",
-    "waitlist_title": "Bekleme listesine katılın",
-    "waitlist_text": "E-posta adresinizi bırakın, erken erişim açıldığında size haber verelim.",
+    "waitlist_title": "Erken erişim alın",
+    "waitlist_text": "E-posta adresinizi bırakın, denemeye başlayabileceğiniz zaman size haber verelim.",
     "waitlist_product": "İlgilendiğim ürün",
-    "waitlist_both": "Her iki araç",
+    "waitlist_both": "Her ikisi",
     "waitlist_submit": "Listeye katıl",
     "waitlist_success": "Teşekkürler! Listeye eklendiniz.",
     "not_configured": "Online form hazırlanıyor. Bu süre içinde lütfen bize e-posta ile ulaşın."
@@ -249,18 +249,18 @@
   },
   "pages": {
     "home": {
-      "title": "Web Siteleri, Yapay Zekâ Asistanları ve Özel Yazılım | Zerone",
-      "description": "Zerone International, New York merkezli bir teknoloji şirketi: ABD genelindeki işletmeler için web sitesi, yerel SEO, yapay zekâ telefon asistanı ve uygulamalar.",
+      "title": "Web Sitesi, Yapay Zekâ Resepsiyonist, Uygulama – New York | Zerone",
+      "description": "New York merkezli teknoloji şirketi: web sitesi, yerel SEO, 7/24 yanıt veren yapay zekâ resepsiyonist, otomasyon, web ve mobil uygulama. Önce ABD, yazılımda dünya.",
       "h1": "İşletmenizin bulunmasını, her aramayı yanıtlamasını ve zaman kazanmasını sağlayan teknoloji",
       "hero": {
-        "eyebrow": "New York · ABD genelindeki işletmelere hizmet",
+        "eyebrow": "New York · Önce ABD'deki işletmeler, müşterilerimiz dünya genelinde",
         "lede": "New York merkezli bir teknoloji şirketiyiz. Müşteri getiren web siteleri, her aramayı yanıtlayan yapay zekâ asistanları ve ekibinizi tekrarlayan işlerden kurtaran yazılımlar geliştiriyoruz; tek sayfalık bir web sitesinden özel bir uygulamaya kadar.",
         "primary": "Proje başlat",
         "secondary": "Hizmetleri keşfet",
         "points": [
           "Çalışma başlamadan önce yazılı teklif ve fiyat",
           "Her şey yazılı yürüyebilir: e-posta, SMS veya sohbet",
-          "New York merkezli, ülke genelinde müşterilerle çalışıyoruz"
+          "New York merkezliyiz; ABD genelinde ve yurt dışındaki müşterilerle çalışıyoruz"
         ]
       },
       "services": {
@@ -270,12 +270,12 @@
       },
       "reach": {
         "eyebrow": "Nerede çalışıyoruz",
-        "title": "New York'tan tüm ülkeye",
-        "text": "New York merkezliyiz; bu yüzden önceliğimiz New York City ve Long Island, buralarda yüz yüze de görüşebiliriz. Geri kalan her şey uzaktan yürür; böylece her eyaletteki işletmeler aynı süreci, aynı yazılı teklifleri ve aynı desteği alır.",
+        "title": "New York'tan tüm ülkeye ve ötesine",
+        "text": "New York merkezliyiz; bu yüzden önceliğimiz New York City ve Long Island, buralarda yüz yüze de görüşebiliriz. Geri kalan her şey uzaktan yürür: her eyaletteki işletmeler aynı süreci, yazılı teklifleri ve desteği alır; diğer ülkelerdeki müşteriler için de web siteleri, uygulamalar ve otomasyonlar geliştiriyoruz.",
         "areas": [
           "New York City: Manhattan, Brooklyn, Queens, the Bronx ve Staten Island",
           "Long Island: Nassau ve Suffolk ilçeleri ile the Hamptons",
-          "50 eyaletin tamamında uzaktan projeler"
+          "50 eyaletin tamamında uzaktan projeler; yazılımda tüm dünyada"
         ],
         "link": "Paketleri ve fiyatları görün"
       },
@@ -316,8 +316,8 @@
       }
     },
     "services": {
-      "title": "Web Siteleri, Yapay Zekâ Telefon Asistanı ve Yazılım | Zerone",
-      "description": "ABD genelindeki işletmeler için web siteleri, yerel SEO, yapay zekâ telefon asistanları, otomasyon, web ve mobil uygulamalar. New York merkezli, net yazılı teklif.",
+      "title": "Web Sitesi, Yapay Zekâ Resepsiyonist, Otomasyon, Uygulama | Zerone",
+      "description": "Web sitesi ve yerel SEO, yapay zekâ telefon asistanı, otomasyon, web ve mobil uygulama. New York merkezli; önce ABD'deki işletmeler, yazılımda tüm dünya.",
       "eyebrow": "Hizmetler",
       "h1": "Hizmetlerimiz",
       "lede": "İnternetteki ilk izlenimden ekibinizin her gün kullandığı yazılıma kadar. Tam ihtiyacınız olanı, yazılı olarak kararlaştırılmış şekilde alırsınız; hiç kullanmayacağınız bir şeye para ödemezsiniz.",
@@ -342,14 +342,14 @@
           },
           {
             "q": "New York dışındaki müşterilerle de çalışıyor musunuz?",
-            "a": "Evet. ABD genelindeki işletmelere hizmet veriyoruz. New York City'de ve Long Island'da yüz yüze de görüşebiliriz; diğer her yerde e-posta, sohbet ve görüntülü görüşmeyle uzaktan çalışıyoruz. İngilizce ve Türkçe iletişim kuruyoruz."
+            "a": "Evet. ABD genelindeki işletmelere hizmet veriyoruz; web siteleri, web ve mobil uygulamalar ile otomasyon projelerini diğer ülkelerdeki müşteriler için de üstleniyoruz. New York City'de ve Long Island'da yüz yüze de görüşebiliriz; diğer her yerde e-posta, sohbet ve görüntülü görüşmeyle uzaktan çalışıyoruz. Google Business Profile bakımı ve yapay zekâ telefon asistanımız ABD'deki işletmelere sunulur. İngilizce, Türkçe ve Arapça iletişim kuruyoruz."
           }
         ]
       }
     },
     "service_presence": {
-      "title": "Küçük İşletmeler için Web Sitesi ve Yerel SEO | Zerone",
-      "description": "New York ve ABD genelindeki işletmeler için mobil uyumlu web siteleri, Google Business Profile bakımı, yerel SEO ve yorum talepleri. Paketler aylık $149'dan.",
+      "title": "KOBİ'lere Web Sitesi ve Google Profil Bakımı, aylık $149'dan",
+      "description": "New York'tan ABD'deki işletmeler için mobil uyumlu web siteleri, Google Business Profile bakımı, yerel SEO ve yorum talepleri. Paketler aylık $149'dan.",
       "eyebrow": "Web siteleri ve Google görünürlüğü",
       "h1": "Web siteleri, yerel SEO ve Google görünürlüğü",
       "lede": "Müşterilerin çoğu bir işletmeyi telefonundan bulur ve bir iki dakika içinde karar verir. O dakikayı değerli kılıyoruz: her yerde doğru bilgiler, sorularını yanıtlayan bir web sitesi ve size kolayca ulaşma imkânı.",
@@ -388,8 +388,8 @@
       ]
     },
     "service_phone": {
-      "title": "İşletmeler için Yapay Zekâ Telefon Asistanı | Zerone",
-      "description": "İşletme aramalarınızı 7/24 yanıtlayan, yapay zekâ olduğunu söyleyen, soruları cevaplayan ve randevu alan telefon asistanı. Dinlemek için (631) 900-2595'i arayın.",
+      "title": "Küçük İşletmeye Yapay Zekâ Resepsiyonist – 7/24 Yanıt | Zerone",
+      "description": "Aramalarınızı 7/24 yanıtlayan, yapay zekâ olduğunu söyleyen, soruları cevaplayan, mesaj alan ve randevu veren telefon asistanı. Dinlemek için: (631) 900-2595.",
       "eyebrow": "Yapay zekâ telefon asistanı",
       "h1": "İşletmeniz için yapay zekâ telefon asistanı",
       "lede": "Her cevapsız arama, kaçan bir müşteri olabilir. Yapay zekâ asistanı gece gündüz her aramayı açar, güler yüzlü bir sesle yanıt verir ve her görüşmenin yazılı özetini size gönderir.",
@@ -428,8 +428,8 @@
       ]
     },
     "service_automation": {
-      "title": "İş Süreçleri Otomasyonu ve Özel Bot Geliştirme | Zerone International",
-      "description": "Veri ve belge hazırlayan, bildirim gönderen, araçlarınızı bağlayan ve zamanlanmış görevleri yürüten özel otomasyonlar ve botlar; ekibiniz müşterilere odaklansın.",
+      "title": "İş Otomasyonu ve Özel Botlar – Her Hafta Saatler Kazanın | Zerone",
+      "description": "Belge hazırlayan, bildirim gönderen, araçlarınızı bağlayan ve zamanlanmış görevleri yürüten otomasyon ve botlar. New York'tan ABD ve dünya geneline.",
       "eyebrow": "Otomasyon ve botlar",
       "h1": "İş süreçleri otomasyonu ve özel botlar",
       "lede": "Ekibiniz her gün aynı adımları kopyalıyor, yapıştırıyor, kontrol ediyor ve tekrarlıyorsa bu adımlar genellikle otomatikleştirilebilir. Güvenilir çalışan ve ne yaptığını raporlayan otomasyonlar geliştiriyoruz.",
@@ -468,8 +468,8 @@
       ]
     },
     "service_web": {
-      "title": "Özel Web Uygulaması Geliştirme | Zerone International",
-      "description": "İşletme sahibi, yönetici ve çalışanlar için rol bazlı erişime sahip özel web uygulamaları, paneller, şirket içi araçlar ve müşteri portalları.",
+      "title": "Özel Web Uygulaması Geliştirme: Paneller ve Portallar | Zerone",
+      "description": "Rol bazlı erişimli özel web uygulamaları, paneller, şirket içi araçlar ve müşteri portalları. New York'ta, ABD ve dünyadaki müşteriler için geliştiriyoruz.",
       "eyebrow": "Web uygulamaları",
       "h1": "Özel web uygulaması geliştirme",
       "lede": "Operasyonlarınızı tarayıcı tabanlı tek bir uygulamada toplayın. Kurulum gerektirmez, her cihazdan erişilir ve her kullanıcıya doğru yetkiler verilir.",
@@ -508,8 +508,8 @@
       ]
     },
     "service_mobile": {
-      "title": "Özel Mobil Uygulama Geliştirme (iOS ve Android) | Zerone International",
-      "description": "Saha ekipleri, teknisyenler ve operasyon için özel iOS ve Android uygulamaları: görev listeleri, iş kayıtları, fotoğraflar, kontrol listeleri ve bildirimler.",
+      "title": "İşletmeler için iOS ve Android Uygulama Geliştirme | Zerone",
+      "description": "Saha ekipleri ve operasyon için özel iOS ve Android uygulamaları: görevler, iş kayıtları, fotoğraflar, kontrol listeleri ve bildirimler. New York'ta, tüm dünya için.",
       "eyebrow": "Mobil uygulamalar",
       "h1": "Özel mobil uygulama geliştirme",
       "lede": "Bazı işler masa başında yapılmaz. Ekibinizin işyerinde, sahada veya yolda yaptığı görevler için mobil uygulamalar geliştiriyoruz.",
@@ -548,30 +548,30 @@
       ]
     },
     "products": {
-      "title": "Kendi Yazılım Ürünlerimiz | Zerone International",
-      "description": "Zerone International, müşteri projelerinin yanında kendi yazılımlarını da geliştiriyor. İlk ürünler: online satıcılar için çapraz ilan sistemi ve lot analiz aracı.",
+      "title": "Ava AI Resepsiyonist ve Otomasyon Setleri | Zerone International",
+      "description": "Kendi ürünlerimiz: telefon hattımızı zaten yanıtlayan yapay zekâ resepsiyonist Ava ve hazır iş otomasyonu setleri. Erken erişim listesine katılın.",
       "eyebrow": "Ürünler",
       "h1": "Kendi ürünlerimiz",
-      "lede": "Müşteri projelerinin yanında kendi yazılım ürünlerimizi de geliştiriyoruz. İlk ikisi online satıcılar için araçlar ve ikisi de geliştirme aşamasında. Erken erişim açıldığında haberdar olmak için bekleme listesine katılın.",
+      "lede": "Müşteri projelerinin yanında kendi ürünlerimizi de geliştiriyor ve önce kendi şirketimizde kullanıyoruz. Ava telefon hattımızı zaten yanıtlıyor; otomasyon setleri kendi tekliflerimizi ve takiplerimizi yürütüyor. Denemek için erken erişim listesine katılın.",
       "items": [
         {
-          "name": "Çapraz listeleme sistemi",
-          "text": "Bir ürünü bir kez hazırlayın, birden fazla pazaryerindeki ilanlarını tek bir yerden yönetin.",
+          "name": "Ava, yapay zekâ resepsiyonist",
+          "text": "Her aramayı yanıtlayan, yapay zekâ olduğunu söyleyen, sık sorulan soruları cevaplayan ve mesaj alan bir yapay zekâ telefon asistanı. Kendi hattımızı nasıl yanıtladığını dinlemek için (631) 900-2595'i arayın.",
           "features": [
-            "Tüm kanallar için tek ürün kaydı",
-            "Kontrol için başlık ve açıklama taslakları",
-            "Kanallar genelinde stok durumu",
-            "İzin verilen platform erişimiyle entegrasyonlar"
+            "İşletme bilgilerinizle 7/24 yanıt verir",
+            "Her aramadan sonra yazılı arama özeti",
+            "Mesajlar ve geri arama talepleri size iletilir",
+            "ABD'deki işletmelere paket eklentisi olarak açılıyor"
           ]
         },
         {
-          "name": "Likidasyon lotu analizi",
-          "text": "Teklif vermeden önce bir likidasyon lotunun almaya değip değmeyeceğini tahmin edin.",
+          "name": "İş otomasyonu setleri",
+          "text": "Kendi şirketimizde kullandığımız, araçlarınıza uyarlanmış hazır otomasyonlar: elle uğraşmadan yazılı teklifler, takipler ve günlük raporlar.",
           "features": [
-            "Alış fiyatı, ücretler ve kargo tek ekranda",
-            "Ayarlanabilir iade ve hasar payları",
-            "Tahmini satış değeri ve net kâr marjı",
-            "Birden fazla lotu yan yana karşılaştırma"
+            "Tek bir formdan teklif ve fatura",
+            "Zamanında gönderilen takip hatırlatmaları",
+            "Yeni talepler ve işlerin günlük özeti",
+            "Araçlarınıza ve üslubunuza göre kurulur"
           ]
         }
       ]
@@ -586,7 +586,7 @@
     },
     "company": {
       "title": "Hakkımızda – New York'lu Teknoloji Şirketi | Zerone International",
-      "description": "Zerone International LLC, ABD genelindeki işletmelere web sitesi, yapay zekâ asistanı, otomasyon ve özel yazılımla destek veren New York merkezli teknoloji şirketi.",
+      "description": "Zerone International LLC, New York'lu teknoloji şirketi: ABD'deki işletmeler ve dünyadaki müşteriler için web sitesi, yapay zekâ asistanı, otomasyon ve özel yazılım.",
       "eyebrow": "Şirket",
       "h1": "Zerone International hakkında",
       "lede": "Basit bir hedefi olan New York merkezli bir teknoloji şirketi: her işletmenin kullanabileceği faydalı teknoloji.",
@@ -660,12 +660,12 @@
       },
       "location": {
         "title": "Nerede çalışıyoruz",
-        "text": "Merkezimiz Farmingville, New York'ta. New York City ve Long Island'da müşterilerle yüz yüze görüşüyor, ABD genelindeki işletmelerle uzaktan çalışıyoruz."
+        "text": "Merkezimiz Farmingville, New York'ta. New York City ve Long Island'da müşterilerle yüz yüze görüşüyor; ABD genelindeki işletmelerle ve yazılım projelerinde dünyanın dört bir yanındaki müşterilerle uzaktan çalışıyoruz."
       }
     },
     "contact": {
-      "title": "İletişim – Projenizi Başlatın | Zerone International",
-      "description": "Web sitesi, yapay zekâ telefon asistanı, otomasyon, web veya mobil uygulama için bize ulaşın. Arayın, SMS, e-posta veya form gönderin; yazılı yanıt veririz.",
+      "title": "Zerone İletişim – Yazılı Teklif ve Fiyat Alın | New York",
+      "description": "Web sitesi, yapay zekâ telefon asistanı, otomasyon veya uygulama projenizi anlatın. Arayın ya da SMS, e-posta veya formu kullanın; yazılı teklif ve fiyat alın.",
       "eyebrow": "İletişim",
       "h1": "Projenizi başlatın",
       "lede": "Bize işletmenizi veya çözmek istediğiniz sorunu anlatın. İki iş günü içinde yanıt vermeyi hedefliyoruz.",
@@ -734,8 +734,8 @@
       }
     },
     "blog": {
-      "title": "Blog – Web, Yapay Zekâ ve Otomasyon Rehberleri | Zerone",
-      "description": "New York merkezli bir teknoloji şirketinden küçük ve büyüyen işletmeler için web siteleri, yerel SEO, yapay zekâ asistanları ve otomasyon üzerine pratik rehberler.",
+      "title": "Küçük İşletme Rehberleri: Web, Yerel SEO ve Yapay Zekâ | Zerone",
+      "description": "New York'lu bir teknoloji şirketinden küçük işletmelere web sitesi, Google Business Profile, yerel SEO, her aramayı yanıtlama ve otomasyon üzerine pratik rehberler.",
       "eyebrow": "Blog",
       "h1": "Büyüyen işletmeler için rehberler",
       "lede": "İnternette bulunmak, her müşteriye yanıt vermek ve tekrarlayan işleri otomatikleştirmek üzerine pratik yazılar. Önceki yazılarımız online satışı konu alıyor.",
@@ -750,11 +750,11 @@
       "rss": "RSS beslemesi"
     },
     "developers": {
-      "title": "Geliştirici API'leri – Erken Erişim | Zerone International",
-      "description": "Zerone International online satıcılar için API'ler planlıyor: ilan standardizasyonu, stok senkronizasyonu, lot analizi ve ücret hesaplayıcılar. Listeye katılın.",
+      "title": "Geliştirici API'si Erken Erişim – Ava ve Otomasyon | Zerone",
+      "description": "Zerone International iş otomasyonu için API'ler planlıyor: Ava'dan arama özetleri, talep webhook'ları, belge oluşturma ve raporlar. Erken erişime katılın.",
       "eyebrow": "Geliştiriciler için",
-      "h1": "Online satıcılar için API'ler",
-      "lede": "Online satıcılara yönelik kendi ürünlerimizden doğan geliştirici araçları için erken erişim açıyoruz. Henüz hiçbiri yayında değil; listeye katılın ve önce neyin geleceğine birlikte karar verelim.",
+      "h1": "İş otomasyonu için API'ler",
+      "lede": "Kendi ürünlerimizden doğan geliştirici araçları için erken erişim açıyoruz: yapay zekâ resepsiyonistimiz Ava ve otomasyon setlerimiz. Henüz hiçbiri yayında değil; listeye katılın ve önce neyin geleceğine birlikte karar verelim.",
       "hero_button": "Erken erişime katılın",
       "planned": "Planlanıyor",
       "products": {
@@ -762,20 +762,20 @@
         "intro": "Bunlar bitmiş ürünler değil, planlardır. Kapsam ve zamanlama erken erişim geri bildirimlerine göre değişebilir.",
         "items": [
           {
-            "name": "İlan verisi düzenleme",
-            "text": "Farklı pazar yerlerinden gelen ürün verisini çapraz listelemeye hazır, tutarlı tek bir katalog biçimine dönüştürün."
+            "name": "Arama özetleri API'si",
+            "text": "Ava'nın arama özetlerini, mesajlarını ve geri arama taleplerini kendi CRM'inize veya uygulamanıza yapılandırılmış veri olarak alın."
           },
           {
-            "name": "Stok ve satılan ürün eşitleme",
-            "text": "Stoku pazar yerleri arasında eşit tutun ve başka yerde satılan ürünleri işaretleyin; böylece çift satışın önüne geçin."
+            "name": "Talep ve form webhook'ları",
+            "text": "Formlardan, aramalardan ve sohbetlerden gelen yeni talepleri, spam ayıklanmış olarak zaten kullandığınız araçlara gönderin."
           },
           {
-            "name": "Lot ve manifest analizi",
-            "text": "Bir likidasyon manifestini okuyun; lotu almadan önce yeniden satış değerini, ücretleri ve kârı tahmin edin."
+            "name": "Belge oluşturma",
+            "text": "Tek bir istekle verilerinizden ve şablonlarınızdan PDF olarak teklif, fatura ve rapor oluşturun."
           },
           {
-            "name": "Fiyat ve ücret hesaplayıcıları",
-            "text": "Pazar yeri ücretlerini, kargoyu ve kur dönüşümünü hesaplayarak bir satıştan elinize gerçekte ne kaldığını görün."
+            "name": "Raporlama verileri",
+            "text": "Aramalar, talepler ve işlerle ilgili günlük ve haftalık rakamları kendi panellerinize çekin."
           }
         ]
       },
@@ -797,7 +797,7 @@
           },
           {
             "title": "Test ortamı (sandbox)",
-            "text": "Örnek verili bir test ortamında gerçek ilanlara veya pazar yeri hesaplarına dokunmadan deneme yapabileceksiniz."
+            "text": "Örnek verili bir test ortamında gerçek aramalara, müşterilere veya hesaplara dokunmadan deneme yapabileceksiniz."
           }
         ]
       },
@@ -805,7 +805,7 @@
         "title": "Geliştirici erken erişim listesine katılın",
         "text": "Ne geliştirmek istediğinizi anlatın. Erken erişim açıldığında sizinle iletişime geçeceğiz. Herhangi bir taahhüt yoktur.",
         "idea": "Ne geliştirmek isterdiniz?",
-        "idea_hint": "Örneğin ilgili pazar yerleri, veriler veya iş akışı. Lütfen şifre veya API anahtarı göndermeyin.",
+        "idea_hint": "Örneğin ilgili araçlar, veriler veya iş akışı. Lütfen şifre veya API anahtarı göndermeyin.",
         "submit": "Erken erişim isteyin",
         "success": "Teşekkürler! Geliştirici erken erişim listesine eklendiniz."
       },
@@ -821,8 +821,8 @@
             "a": "Fiyatlar henüz belirlenmedi. Kullanıma göre planlar düşünüyoruz ve ücretli bir plan başlamadan önce fiyatları yayımlayacağız."
           },
           {
-            "q": "Hangi pazar yerleri desteklenecek?",
-            "a": "Bu, erken erişim talebine ve her pazar yerinin resmî erişim imkânlarına ve kurallarına bağlı. Sizin için önemli olanları formda belirtin."
+            "q": "Hangi araçlarla çalışacak?",
+            "a": "Bu, erken erişim talebine bağlı. Çoğu CRM ve iş aracıyla çalışan standart webhook'lar ve bir REST API planlıyoruz. Sizin için önemli olanları formda belirtin."
           }
         ]
       }

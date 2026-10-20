@@ -65,13 +65,13 @@
     "contact": "Kontakt"
   },
   "footer": {
-    "tagline": "Websites, KI-Telefonassistenten, Automatisierung und individuelle Software für Unternehmen in den gesamten USA – aus New York.",
+    "tagline": "Websites, KI-Telefonassistenten, Automatisierung und individuelle Software aus New York – für Unternehmen in den USA und Kunden weltweit.",
     "services": "Leistungen",
     "company": "Unternehmen",
     "legal": "Rechtliches",
     "rights": "Alle Rechte vorbehalten.",
-    "trademark": "Die auf dieser Website genannten Marktplatznamen sind Marken ihrer jeweiligen Inhaber. Zerone International LLC ist nicht mit ihnen verbunden und wird nicht von ihnen unterstützt.",
-    "location": "Farmingville, New York · für Kunden in den gesamten USA"
+    "trademark": "Die auf dieser Website genannten Produkt- und Plattformnamen sind Marken ihrer jeweiligen Inhaber. Zerone International LLC ist nicht mit ihnen verbunden und wird nicht von ihnen unterstützt.",
+    "location": "Farmingville, New York · Kunden in den gesamten USA und weltweit"
   },
   "services_list": {
     "presence": {
@@ -181,10 +181,10 @@
     "sending": "Wird gesendet …",
     "success": "Vielen Dank! Ihre Nachricht wurde gesendet. Wir melden uns in Kürze.",
     "error": "Ihre Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie uns eine E-Mail.",
-    "waitlist_title": "Auf die Warteliste",
-    "waitlist_text": "Hinterlassen Sie Ihre E-Mail-Adresse – wir informieren Sie, sobald der frühe Zugang startet.",
+    "waitlist_title": "Frühen Zugang sichern",
+    "waitlist_text": "Hinterlassen Sie Ihre E-Mail-Adresse – wir sagen Ihnen Bescheid, sobald Sie es ausprobieren können.",
     "waitlist_product": "Ich interessiere mich für",
-    "waitlist_both": "Beide Tools",
+    "waitlist_both": "Beides",
     "waitlist_submit": "Eintragen",
     "waitlist_success": "Vielen Dank! Sie stehen auf der Liste.",
     "not_configured": "Das Online-Formular wird gerade eingerichtet. Bitte kontaktieren Sie uns bis dahin per E-Mail."
@@ -249,18 +249,18 @@
   },
   "pages": {
     "home": {
-      "title": "Websites, KI-Assistenten & individuelle Software | Zerone",
-      "description": "Zerone International ist ein Technologieunternehmen aus New York: Websites, lokales SEO, KI-Telefonassistenten, Automatisierung und Apps für Unternehmen in den USA.",
+      "title": "Websites, KI-Rezeptionist & individuelle Apps – New York | Zerone",
+      "description": "Tech-Unternehmen aus New York: Websites, lokales SEO, KI-Rezeptionist rund um die Uhr, Automatisierung, Web- und Mobile-Apps. Zuerst US-Firmen, Software weltweit.",
       "h1": "Technologie, mit der Ihr Unternehmen gefunden wird, jeden Anruf annimmt und Zeit spart",
       "hero": {
-        "eyebrow": "New York · für Unternehmen in den gesamten USA",
+        "eyebrow": "New York · zuerst US-Unternehmen, Kunden weltweit",
         "lede": "Wir sind ein Technologieunternehmen aus New York. Wir entwickeln Websites, die Kunden bringen, KI-Assistenten, die jeden Anruf annehmen, und Software, die Ihrem Team Routinearbeit abnimmt – von der einseitigen Website bis zur individuellen Anwendung.",
         "primary": "Projekt starten",
         "secondary": "Leistungen ansehen",
         "points": [
           "Schriftliches Angebot mit Preis, bevor die Arbeit beginnt",
           "Alles lässt sich schriftlich klären: per E-Mail, SMS oder Chat",
-          "Sitz in New York, Kunden im ganzen Land"
+          "Sitz in New York, Kunden in den gesamten USA und im Ausland"
         ]
       },
       "services": {
@@ -270,12 +270,12 @@
       },
       "reach": {
         "eyebrow": "Wo wir arbeiten",
-        "title": "Von New York aus ins ganze Land",
-        "text": "Unser Sitz ist in New York, daher haben New York City und Long Island Vorrang – dort können wir uns auch persönlich treffen. Alles andere läuft remote, sodass Unternehmen in jedem Bundesstaat denselben Ablauf, dieselben schriftlichen Angebote und denselben Support erhalten.",
+        "title": "Von New York ins ganze Land – und darüber hinaus",
+        "text": "Unser Sitz ist in New York, daher haben New York City und Long Island Vorrang – dort können wir uns auch persönlich treffen. Alles andere läuft remote: Unternehmen in jedem Bundesstaat erhalten denselben Ablauf, schriftliche Angebote und Support, und wir entwickeln Websites, Apps und Automatisierungen auch für Kunden in anderen Ländern.",
         "areas": [
           "New York City: Manhattan, Brooklyn, Queens, die Bronx und Staten Island",
           "Long Island: die Countys Nassau und Suffolk sowie die Hamptons",
-          "Remote-Projekte in allen 50 Bundesstaaten"
+          "Remote-Projekte in allen 50 Bundesstaaten und, bei Software, weltweit"
         ],
         "link": "Pakete und Preise ansehen"
       },
@@ -316,8 +316,8 @@
       }
     },
     "services": {
-      "title": "Websites, KI-Telefonassistenten & Software | Zerone",
-      "description": "Websites, lokales SEO, KI-Telefonassistenten, Automatisierung, Web- und mobile Apps für Unternehmen in den USA. Sitz in New York, klare schriftliche Angebote.",
+      "title": "Websites, KI-Rezeptionist, Automatisierung & Apps | Zerone",
+      "description": "Websites und lokales SEO, KI-Telefonassistent, Automatisierung, Web- und mobile Apps. Sitz in New York; zuerst US-Unternehmen, Softwareprojekte weltweit.",
       "eyebrow": "Leistungen",
       "h1": "Unsere Leistungen",
       "lede": "Vom ersten Eindruck im Netz bis zur Software, die Ihr Team jeden Tag nutzt. Sie bekommen genau das, was Sie brauchen, schriftlich vereinbart – und nichts, wofür Sie zahlen, ohne es je zu nutzen.",
@@ -342,14 +342,14 @@
           },
           {
             "q": "Arbeiten Sie auch mit Kunden außerhalb von New York?",
-            "a": "Ja. Wir betreuen Unternehmen in den gesamten USA. In New York City und auf Long Island können wir uns auch persönlich treffen; überall sonst arbeiten wir remote per E-Mail, Chat und Videocall. Wir kommunizieren auf Englisch und Türkisch."
+            "a": "Ja. Wir betreuen Unternehmen in den gesamten USA und übernehmen Websites, Web- und mobile Apps sowie Automatisierung auch für Kunden in anderen Ländern. In New York City und auf Long Island können wir uns auch persönlich treffen; überall sonst arbeiten wir remote per E-Mail, Chat und Videocall. Die Pflege des Google Business Profile und unseren KI-Telefonassistenten bieten wir Unternehmen in den USA an. Wir kommunizieren auf Englisch, Türkisch und Arabisch."
           }
         ]
       }
     },
     "service_presence": {
-      "title": "Websites & lokales SEO für kleine Unternehmen | Zerone",
-      "description": "Mobilfreundliche Websites, Pflege des Google Business Profile, lokales SEO und Bewertungsanfragen für Unternehmen in New York und den USA. Pakete ab $149 im Monat.",
+      "title": "Websites für kleine Firmen & Google-Profil-Pflege ab $149/Monat",
+      "description": "Mobilfreundliche Websites, Pflege des Google Business Profile, lokales SEO und Bewertungsanfragen für US-Unternehmen – aus New York. Pakete ab $149 im Monat.",
       "eyebrow": "Websites & Google-Präsenz",
       "h1": "Websites, lokales SEO und Google-Präsenz",
       "lede": "Die meisten Kunden finden ein Unternehmen auf dem Smartphone und entscheiden sich innerhalb von ein, zwei Minuten. Wir sorgen dafür, dass diese Minute zählt: korrekte Angaben überall, eine Website, die ihre Fragen beantwortet, und ein einfacher Weg, Sie zu erreichen.",
@@ -388,8 +388,8 @@
       ]
     },
     "service_phone": {
-      "title": "KI-Telefonassistent für Unternehmen | Zerone International",
-      "description": "Ein KI-Telefonassistent, der Geschäftsanrufe rund um die Uhr annimmt, sich als KI zu erkennen gibt und Termine bucht. Rufen Sie (631) 900-2595 an, um ihn zu hören.",
+      "title": "KI-Rezeptionist für kleine Firmen – rund um die Uhr | Zerone",
+      "description": "KI-Telefonassistent, der Anrufe rund um die Uhr annimmt, sich als KI vorstellt, Fragen beantwortet, Nachrichten notiert und Termine bucht. Anhören: (631) 900-2595.",
       "eyebrow": "KI-Telefonassistent",
       "h1": "Ein KI-Telefonassistent für Ihr Unternehmen",
       "lede": "Jeder verpasste Anruf kann ein verlorener Kunde sein. Ein KI-Assistent nimmt jeden Anruf an, Tag und Nacht, antwortet mit freundlicher Stimme und schickt Ihnen zu jedem Gespräch eine schriftliche Zusammenfassung.",
@@ -428,8 +428,8 @@
       ]
     },
     "service_automation": {
-      "title": "Prozessautomatisierung & individuelle Bots | Zerone International",
-      "description": "Individuelle Automatisierungen und Bots, die Daten und Dokumente aufbereiten, Benachrichtigungen senden, Ihre Tools verbinden und geplante Aufgaben ausführen.",
+      "title": "Automatisierung & eigene Bots – jede Woche Stunden sparen | Zerone",
+      "description": "Automatisierungen und Bots, die Dokumente erstellen, Hinweise senden, Ihre Tools verbinden und geplante Aufgaben ausführen. Aus New York für die USA und weltweit.",
       "eyebrow": "Automatisierung & Bots",
       "h1": "Prozessautomatisierung und individuelle Bots",
       "lede": "Wenn Ihr Team jeden Tag dieselben Schritte kopiert, einfügt, prüft und wiederholt, lassen sich diese meist automatisieren. Wir entwickeln Automatisierungen, die zuverlässig laufen und berichten, was sie getan haben.",
@@ -468,8 +468,8 @@
       ]
     },
     "service_web": {
-      "title": "Individuelle Webanwendungen entwickeln | Zerone International",
-      "description": "Individuelle Webanwendungen, Dashboards, interne Tools und Kundenportale mit rollenbasiertem Zugriff für Inhaber, Manager und Mitarbeitende.",
+      "title": "Individuelle Webanwendungen: Dashboards & Portale | Zerone",
+      "description": "Individuelle Webanwendungen, Dashboards, interne Tools und Kundenportale mit rollenbasiertem Zugriff. Entwickelt in New York für Kunden in den USA und weltweit.",
       "eyebrow": "Webanwendungen",
       "h1": "Entwicklung individueller Webanwendungen",
       "lede": "Bringen Sie Ihre Abläufe in eine einzige Browser-Anwendung. Keine Installation, Zugriff von jedem Gerät und die richtigen Berechtigungen für jeden Nutzer.",
@@ -508,8 +508,8 @@
       ]
     },
     "service_mobile": {
-      "title": "Individuelle App-Entwicklung für iOS & Android | Zerone International",
-      "description": "Individuelle iOS- und Android-Apps für Außendienstteams, Techniker und den Betrieb: Aufgabenlisten, Auftragsdaten, Fotos, Checklisten und Benachrichtigungen.",
+      "title": "App-Entwicklung für iOS & Android für Unternehmen | Zerone",
+      "description": "Individuelle iOS- und Android-Apps für Außendienst und Betrieb: Aufgaben, Auftragsdaten, Fotos, Checklisten und Benachrichtigungen. Aus New York für Kunden weltweit.",
       "eyebrow": "Mobile Apps",
       "h1": "Individuelle Entwicklung mobiler Apps",
       "lede": "Manche Arbeit findet nicht am Schreibtisch statt. Wir entwickeln mobile Apps für die Aufgaben, die Ihr Team vor Ort, im Außendienst oder unterwegs erledigt.",
@@ -548,30 +548,30 @@
       ]
     },
     "products": {
-      "title": "Eigene Softwareprodukte | Zerone International",
-      "description": "Neben Kundenprojekten entwickelt Zerone International eigene Software. Zuerst: ein Crosslisting-System und ein Analysetool für Restposten-Lots für Online-Händler.",
+      "title": "Ava KI-Rezeptionistin & Automatisierungskits | Zerone International",
+      "description": "Unsere eigenen Produkte: Ava, die KI-Rezeptionistin, die schon unsere Telefonleitung betreut, und fertige Automatisierungskits. Für den frühen Zugang vormerken.",
       "eyebrow": "Produkte",
       "h1": "Unsere eigenen Produkte",
-      "lede": "Neben Kundenprojekten entwickeln wir eigene Softwareprodukte. Die ersten beiden sind Tools für Online-Händler, und beide befinden sich in der Entwicklung. Tragen Sie sich in die Warteliste ein, um zu erfahren, wann der frühe Zugang startet.",
+      "lede": "Neben Kundenprojekten entwickeln wir eigene Produkte und setzen sie zuerst in unserem eigenen Unternehmen ein. Ava nimmt bereits die Anrufe auf unserer Telefonleitung entgegen; die Automatisierungskits erledigen unsere eigenen Angebote und Nachfassaktionen. Tragen Sie sich für den frühen Zugang ein, um sie auszuprobieren.",
       "items": [
         {
-          "name": "Crosslisting-System",
-          "text": "Ein Produkt einmal anlegen und seine Inserate auf mehreren Marktplätzen zentral verwalten.",
+          "name": "Ava, die KI-Rezeptionistin",
+          "text": "Ein KI-Telefonassistent, der jeden Anruf annimmt, sich als KI zu erkennen gibt, häufige Fragen beantwortet und Nachrichten aufnimmt. Rufen Sie (631) 900-2595 an und hören Sie, wie sie unsere eigene Leitung annimmt.",
           "features": [
-            "Ein Produktdatensatz für jeden Kanal",
-            "Entwürfe für Titel und Beschreibungen zur Prüfung",
-            "Bestandsstatus über alle Kanäle",
-            "Integrationen über zulässigen Plattformzugang"
+            "Antwortet rund um die Uhr mit Ihren Unternehmensdaten",
+            "Schriftliche Zusammenfassung nach jedem Anruf",
+            "Nachrichten und Rückrufwünsche gehen an Sie",
+            "Startet für US-Unternehmen als Zusatzoption zum Paket"
           ]
         },
         {
-          "name": "Restposten-Analyse",
-          "text": "Schätzen Sie, ob sich ein Restpostenlos lohnt, bevor Sie ein Gebot abgeben.",
+          "name": "Automatisierungskits für Unternehmen",
+          "text": "Fertige Automatisierungen, die wir im eigenen Unternehmen nutzen, angepasst an Ihre Tools: schriftliche Angebote, Nachfassaktionen und Tagesberichte ohne Handarbeit.",
           "features": [
-            "Kaufpreis, Gebühren und Versand in einer Ansicht",
-            "Einstellbare Puffer für Retouren und Schäden",
-            "Geschätzter Wiederverkaufswert und Nettomarge",
-            "Mehrere Lose nebeneinander vergleichen"
+            "Angebote und Rechnungen aus einem Formular",
+            "Erinnerungen zum Nachfassen, pünktlich verschickt",
+            "Tägliche Übersicht über neue Anfragen und Aufträge",
+            "Eingerichtet für Ihre Tools und Ihre Formulierungen"
           ]
         }
       ]
@@ -586,7 +586,7 @@
     },
     "company": {
       "title": "Über Zerone International – Technologie aus New York",
-      "description": "Zerone International LLC ist ein Technologieunternehmen aus New York, das Firmen in den USA mit Websites, KI-Assistenten, Automatisierung und Software unterstützt.",
+      "description": "Zerone International LLC ist ein Technologieunternehmen aus New York: Websites, KI-Assistenten, Automatisierung und Software für US-Unternehmen und Kunden weltweit.",
       "eyebrow": "Unternehmen",
       "h1": "Über Zerone International",
       "lede": "Ein Technologieunternehmen aus New York mit einem einfachen Ziel: nützliche Technologie, die jedes Unternehmen nutzen kann.",
@@ -660,12 +660,12 @@
       },
       "location": {
         "title": "Wo wir arbeiten",
-        "text": "Hauptsitz in Farmingville, New York. In New York City und auf Long Island treffen wir Kunden persönlich, mit Unternehmen in den gesamten USA arbeiten wir remote."
+        "text": "Hauptsitz in Farmingville, New York. In New York City und auf Long Island treffen wir Kunden persönlich; mit Unternehmen in den gesamten USA und bei Softwareprojekten weltweit arbeiten wir remote."
       }
     },
     "contact": {
-      "title": "Kontakt – Starten Sie Ihr Projekt | Zerone International",
-      "description": "Kontaktieren Sie Zerone International zu Website, KI-Telefonassistent, Automatisierung oder App. Anruf, SMS, E-Mail oder Formular; wir antworten schriftlich.",
+      "title": "Zerone kontaktieren – schriftliches Angebot & Preis | New York",
+      "description": "Ihr Projekt: Website, KI-Telefonassistent, Automatisierung oder App? Anruf, SMS, E-Mail oder Formular – Sie erhalten ein schriftliches Angebot mit Preis.",
       "eyebrow": "Kontakt",
       "h1": "Starten Sie Ihr Projekt",
       "lede": "Erzählen Sie uns von Ihrem Unternehmen oder dem Problem, das Sie lösen möchten. Wir antworten möglichst innerhalb von zwei Werktagen.",
@@ -734,8 +734,8 @@
       }
     },
     "blog": {
-      "title": "Blog – Ratgeber zu Websites, KI & Automatisierung | Zerone",
-      "description": "Praktische Ratgeber zu Websites, lokalem SEO, KI-Assistenten und Automatisierung für kleine und wachsende Unternehmen – von einem Tech-Unternehmen aus New York.",
+      "title": "Ratgeber für kleine Firmen: Websites, lokales SEO & KI | Zerone",
+      "description": "Praxisratgeber für kleine Unternehmen zu Websites, Google Business Profile, lokalem SEO, Anrufannahme und Automatisierung – von einem Tech-Unternehmen aus New York.",
       "eyebrow": "Blog",
       "h1": "Ratgeber für wachsende Unternehmen",
       "lede": "Praktische Artikel dazu, online gefunden zu werden, jedem Kunden zu antworten und Routinearbeit zu automatisieren. Unsere früheren Artikel behandeln den Onlinehandel.",
@@ -750,11 +750,11 @@
       "rss": "RSS-Feed"
     },
     "developers": {
-      "title": "Entwickler-APIs – Früher Zugang | Zerone International",
-      "description": "Zerone International plant APIs für Online-Händler: Inserats-Normalisierung, Bestandssynchronisierung, Lot-Analyse und Gebührenrechner. Jetzt vormerken lassen.",
+      "title": "Entwickler-API: früher Zugang – Ava & Automatisierung | Zerone",
+      "description": "Zerone International plant APIs für Geschäftsautomatisierung: Anrufzusammenfassungen von Ava, Lead-Webhooks, Dokumenterstellung und Berichte. Jetzt vormerken lassen.",
       "eyebrow": "Für Entwickler",
-      "h1": "APIs für Online-Händler",
-      "lede": "Wir öffnen den frühen Zugang zu Entwickler-Tools, die aus unseren eigenen Produkten für Online-Händler entstehen. Noch ist nichts live; tragen Sie sich ein und entscheiden Sie mit, was zuerst kommt.",
+      "h1": "APIs für Geschäftsautomatisierung",
+      "lede": "Wir öffnen den frühen Zugang zu Entwickler-Tools, die aus unseren eigenen Produkten entstehen: Ava, unserer KI-Rezeptionistin, und unseren Automatisierungskits. Noch ist nichts live; tragen Sie sich ein und entscheiden Sie mit, was zuerst kommt.",
       "hero_button": "Frühen Zugang sichern",
       "planned": "Geplant",
       "products": {
@@ -762,20 +762,20 @@
         "intro": "Dies sind Pläne, keine fertigen Produkte. Umfang und Zeitplan können sich durch das Feedback im frühen Zugang ändern.",
         "items": [
           {
-            "name": "Normalisierung von Angebotsdaten",
-            "text": "Produktdaten verschiedener Marktplätze in ein einheitliches Katalogformat bringen – bereit für Crosslisting."
+            "name": "API für Anrufzusammenfassungen",
+            "text": "Erhalten Sie Avas Anrufzusammenfassungen, Nachrichten und Rückrufwünsche als strukturierte Daten in Ihrem eigenen CRM oder Ihrer App."
           },
           {
-            "name": "Bestands- und Verkaufsabgleich",
-            "text": "Bestände über Marktplätze hinweg abgleichen und anderswo verkaufte Artikel markieren, um Doppelverkäufe zu vermeiden."
+            "name": "Lead- und Formular-Webhooks",
+            "text": "Senden Sie neue Leads aus Formularen, Anrufen und Chats an die Tools, die Sie bereits nutzen – Spam wird herausgefiltert."
           },
           {
-            "name": "Lot- und Manifest-Analyse",
-            "text": "Ein Restposten-Manifest auslesen und Wiederverkaufswert, Gebühren und Marge schätzen, bevor Sie den Posten kaufen."
+            "name": "Dokumenterstellung",
+            "text": "Erstellen Sie Angebote, Rechnungen und Berichte mit einer einzigen Anfrage als PDF aus Ihren Daten und Vorlagen."
           },
           {
-            "name": "Preis- und Gebührenrechner",
-            "text": "Marktplatzgebühren, Versand und Währungsumrechnung berechnen und sehen, was von einem Verkauf wirklich bleibt."
+            "name": "Berichtsdaten",
+            "text": "Übernehmen Sie tägliche und wöchentliche Kennzahlen zu Anrufen, Leads und Aufträgen in Ihre eigenen Dashboards."
           }
         ]
       },
@@ -797,7 +797,7 @@
           },
           {
             "title": "Sandbox",
-            "text": "In einer Sandbox mit Beispieldaten testen Sie, ohne echte Angebote oder Marktplatzkonten zu berühren."
+            "text": "In einer Sandbox mit Beispieldaten testen Sie, ohne echte Anrufe, Kunden oder Konten zu berühren."
           }
         ]
       },
@@ -805,7 +805,7 @@
         "title": "Für den frühen Entwickler-Zugang eintragen",
         "text": "Erzählen Sie uns, was Sie bauen möchten. Wir melden uns, sobald der frühe Zugang öffnet. Es entsteht keine Verpflichtung.",
         "idea": "Was würden Sie bauen?",
-        "idea_hint": "Zum Beispiel die beteiligten Marktplätze, Daten oder Abläufe. Bitte senden Sie keine Passwörter oder API-Schlüssel.",
+        "idea_hint": "Zum Beispiel die beteiligten Tools, Daten oder Abläufe. Bitte senden Sie keine Passwörter oder API-Schlüssel.",
         "submit": "Frühen Zugang anfragen",
         "success": "Vielen Dank! Sie stehen auf der Liste für den frühen Entwickler-Zugang."
       },
@@ -821,8 +821,8 @@
             "a": "Die Preise stehen noch nicht fest. Wir planen nutzungsbasierte Tarife und veröffentlichen die Preise, bevor ein kostenpflichtiger Tarif startet."
           },
           {
-            "q": "Welche Marktplätze werden unterstützt?",
-            "a": "Das hängt von der Nachfrage im frühen Zugang ab und davon, was der offizielle Zugang und die Bedingungen des jeweiligen Marktplatzes erlauben. Nennen Sie uns im Formular die für Sie wichtigen."
+            "q": "Mit welchen Tools wird es funktionieren?",
+            "a": "Das hängt von der Nachfrage im frühen Zugang ab. Wir planen Standard-Webhooks und eine REST API, die mit den meisten CRMs und Business-Tools funktionieren. Nennen Sie uns im Formular die für Sie wichtigen."
           }
         ]
       }

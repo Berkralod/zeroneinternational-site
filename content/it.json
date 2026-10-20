@@ -65,13 +65,13 @@
     "contact": "Contatti"
   },
   "footer": {
-    "tagline": "Siti web, assistenti telefonici IA, automazione e software su misura per aziende in tutti gli Stati Uniti, da New York.",
+    "tagline": "Siti web, assistenti telefonici IA, automazione e software su misura da New York, per aziende negli Stati Uniti e clienti in tutto il mondo.",
     "services": "Servizi",
     "company": "Azienda",
     "legal": "Note legali",
     "rights": "Tutti i diritti riservati.",
-    "trademark": "I nomi dei marketplace citati in questo sito sono marchi dei rispettivi proprietari. Zerone International LLC non è affiliata né approvata da essi.",
-    "location": "Farmingville, New York · clienti in tutti gli Stati Uniti"
+    "trademark": "I nomi di prodotti e piattaforme citati in questo sito sono marchi dei rispettivi proprietari. Zerone International LLC non è affiliata né approvata da essi.",
+    "location": "Farmingville, New York · clienti in tutti gli Stati Uniti e nel mondo"
   },
   "services_list": {
     "presence": {
@@ -181,10 +181,10 @@
     "sending": "Invio in corso…",
     "success": "Grazie! Il vostro messaggio è stato inviato. Vi risponderemo a breve.",
     "error": "Non è stato possibile inviare il messaggio. Riprovate o scriveteci via e-mail.",
-    "waitlist_title": "Iscrivetevi alla lista d’attesa",
-    "waitlist_text": "Lasciate il vostro indirizzo e-mail e vi avviseremo all’apertura dell’accesso anticipato.",
+    "waitlist_title": "Ottenete l’accesso anticipato",
+    "waitlist_text": "Lasciate il vostro indirizzo e-mail e vi avviseremo quando potrete provarlo.",
     "waitlist_product": "Mi interessa",
-    "waitlist_both": "Entrambi gli strumenti",
+    "waitlist_both": "Entrambi",
     "waitlist_submit": "Iscrivimi",
     "waitlist_success": "Grazie! Siete iscritti alla lista.",
     "not_configured": "Il modulo online è in fase di attivazione. Nel frattempo contattateci via e-mail."
@@ -249,18 +249,18 @@
   },
   "pages": {
     "home": {
-      "title": "Siti web, assistenti IA e software su misura | Zerone",
-      "description": "Zerone International è un’azienda tecnologica di New York: siti web e SEO locale, assistenti telefonici IA, automazione, app web e mobili per aziende in tutti gli USA.",
+      "title": "Siti web, receptionist IA e app su misura – New York | Zerone",
+      "description": "Azienda tech di New York: siti web, SEO locale, receptionist IA che risponde 24/7, automazione, app web e mobili. Prima le aziende USA, software in tutto il mondo.",
       "h1": "Tecnologia che aiuta la vostra azienda a farsi trovare, rispondere a ogni chiamata e risparmiare tempo",
       "hero": {
-        "eyebrow": "New York · al servizio di aziende in tutti gli USA",
+        "eyebrow": "New York · prima le aziende USA, clienti in tutto il mondo",
         "lede": "Siamo un’azienda tecnologica di New York. Realizziamo siti web che portano clienti, assistenti IA che rispondono a ogni chiamata e software che toglie al vostro team il lavoro ripetitivo, dal sito di una pagina all’applicazione su misura.",
         "primary": "Avvia un progetto",
         "secondary": "Scopri i servizi",
         "points": [
           "Proposta scritta e prezzo prima di iniziare qualsiasi lavoro",
           "Tutto si può gestire per iscritto: e-mail, SMS o chat",
-          "Sede a New York, clienti in tutto il Paese"
+          "Sede a New York, clienti in tutti gli Stati Uniti e all’estero"
         ]
       },
       "services": {
@@ -270,12 +270,12 @@
       },
       "reach": {
         "eyebrow": "Dove lavoriamo",
-        "title": "Da New York a tutto il Paese",
-        "text": "La nostra sede è a New York, quindi New York City e Long Island vengono per prime, e lì possiamo anche incontrarci di persona. Tutto il resto funziona da remoto: le aziende di ogni stato ricevono lo stesso processo, le stesse proposte scritte e la stessa assistenza.",
+        "title": "Da New York a tutto il Paese, e oltre",
+        "text": "La nostra sede è a New York, quindi New York City e Long Island vengono per prime, e lì possiamo anche incontrarci di persona. Tutto il resto funziona da remoto: le aziende di ogni stato ricevono lo stesso processo, proposte scritte e assistenza, e realizziamo siti web, app e automazioni anche per clienti in altri Paesi.",
         "areas": [
           "New York City: Manhattan, Brooklyn, Queens, the Bronx e Staten Island",
           "Long Island: contee di Nassau e Suffolk e the Hamptons",
-          "Progetti da remoto in tutti i 50 stati"
+          "Progetti da remoto in tutti i 50 stati e, per il software, in tutto il mondo"
         ],
         "link": "Scopri piani e prezzi"
       },
@@ -316,8 +316,8 @@
       }
     },
     "services": {
-      "title": "Siti web, assistenti telefonici IA e software | Zerone",
-      "description": "Siti web e SEO locale, assistenti telefonici IA, automazione, app web e mobili per aziende in tutti gli USA. Sede a New York, proposte scritte e chiare.",
+      "title": "Servizi: siti web, receptionist IA, automazione e app | Zerone",
+      "description": "Siti web e SEO locale, assistente telefonico IA, automazione, app web e mobili. Sede a New York; prima le aziende USA, progetti software in tutto il mondo.",
       "eyebrow": "Servizi",
       "h1": "I nostri servizi",
       "lede": "Dalla prima impressione online al software che il vostro team usa ogni giorno. Ottenete esattamente ciò che vi serve, concordato per iscritto, e niente che paghereste senza mai usarlo.",
@@ -342,14 +342,14 @@
           },
           {
             "q": "Lavorate con clienti fuori da New York?",
-            "a": "Sì. Serviamo aziende in tutti gli Stati Uniti. A New York City e a Long Island possiamo anche incontrarci di persona; altrove lavoriamo da remoto via e-mail, chat e videochiamate. Comunichiamo in inglese e in turco."
+            "a": "Sì. Serviamo aziende in tutti gli Stati Uniti e realizziamo siti web, app web e mobili e automazioni anche per clienti in altri Paesi. A New York City e a Long Island possiamo anche incontrarci di persona; altrove lavoriamo da remoto via e-mail, chat e videochiamate. La gestione del Google Business Profile e il nostro assistente telefonico IA sono offerti alle aziende statunitensi. Comunichiamo in inglese, turco e arabo."
           }
         ]
       }
     },
     "service_presence": {
-      "title": "Siti web per piccole imprese e SEO locale | Zerone International",
-      "description": "Siti per smartphone, gestione del Google Business Profile, SEO locale e richieste di recensioni per aziende a New York e negli USA. Piani da $149 al mese.",
+      "title": "Siti per piccole imprese e cura del profilo Google da $149/mese",
+      "description": "Siti per smartphone, gestione del Google Business Profile, SEO locale e richieste di recensioni per aziende USA, da New York. Piani da $149 al mese.",
       "eyebrow": "Siti web e presenza su Google",
       "h1": "Siti web, SEO locale e presenza su Google",
       "lede": "La maggior parte dei clienti trova un’attività sullo smartphone e decide in un minuto o due. Facciamo in modo che quel minuto conti: informazioni corrette ovunque, un sito che risponde alle loro domande e un modo semplice per contattarvi.",
@@ -388,8 +388,8 @@
       ]
     },
     "service_phone": {
-      "title": "Assistente telefonico IA per aziende | Zerone International",
-      "description": "Assistente telefonico IA che risponde 24/7, dichiara di essere un’IA, prende messaggi e fissa appuntamenti. Ascoltate il nostro: (631) 900-2595.",
+      "title": "Receptionist IA per piccole imprese – Risponde 24/7 | Zerone",
+      "description": "Assistente telefonico IA che risponde 24/7, dice di essere un’IA, risponde alle domande, prende messaggi e fissa appuntamenti. Ascoltate il nostro: (631) 900-2595.",
       "eyebrow": "Assistente telefonico IA",
       "h1": "Un assistente telefonico IA per la vostra azienda",
       "lede": "Ogni chiamata persa può essere un cliente perso. Un assistente IA risponde a ogni chiamata, giorno e notte, con voce cordiale e vi invia un riepilogo scritto di ogni conversazione.",
@@ -428,8 +428,8 @@
       ]
     },
     "service_automation": {
-      "title": "Automazione dei processi e bot su misura | Zerone International",
-      "description": "Automazioni e bot su misura che preparano dati e documenti, inviano notifiche, collegano i vostri strumenti ed eseguono attività pianificate.",
+      "title": "Automazione aziendale e bot – Ore risparmiate a settimana | Zerone",
+      "description": "Automazioni e bot che preparano documenti, inviano avvisi, collegano i vostri strumenti ed eseguono attività pianificate. Da New York per clienti in USA e nel mondo.",
       "eyebrow": "Automazione e bot",
       "h1": "Automazione dei processi e bot su misura",
       "lede": "Se il vostro team copia, incolla, controlla e ripete gli stessi passaggi ogni giorno, di solito quei passaggi si possono automatizzare. Creiamo automazioni affidabili che riportano ciò che hanno fatto.",
@@ -468,8 +468,8 @@
       ]
     },
     "service_web": {
-      "title": "Sviluppo di applicazioni web su misura | Zerone International",
-      "description": "Applicazioni web su misura, dashboard, strumenti interni e portali clienti con accesso per ruoli per titolari, responsabili e dipendenti.",
+      "title": "Sviluppo di web app su misura: dashboard e portali | Zerone",
+      "description": "Applicazioni web su misura, dashboard, strumenti interni e portali clienti con accesso basato sui ruoli. Realizzate a New York per clienti negli USA e nel mondo.",
       "eyebrow": "Applicazioni web",
       "h1": "Sviluppo di applicazioni web su misura",
       "lede": "Riunite le vostre attività in un’unica applicazione nel browser. Nessuna installazione, accesso da qualsiasi dispositivo e i permessi giusti per ogni utente.",
@@ -508,8 +508,8 @@
       ]
     },
     "service_mobile": {
-      "title": "Sviluppo di app mobili su misura (iOS e Android) | Zerone International",
-      "description": "App iOS e Android su misura per squadre sul campo, tecnici e operazioni: elenchi di attività, registri dei lavori, foto, checklist e notifiche.",
+      "title": "Sviluppo di app iOS e Android per aziende | Zerone",
+      "description": "App iOS e Android su misura per squadre sul campo e operazioni: attività, registri dei lavori, foto, checklist e avvisi. Realizzate a New York per tutto il mondo.",
       "eyebrow": "App mobili",
       "h1": "Sviluppo di app mobili su misura",
       "lede": "Non tutto il lavoro si svolge alla scrivania. Realizziamo app mobili per le attività che il vostro team svolge in sede, sul campo o in viaggio.",
@@ -548,30 +548,30 @@
       ]
     },
     "products": {
-      "title": "I nostri prodotti software | Zerone International",
-      "description": "Oltre ai progetti per i clienti, Zerone International sviluppa prodotti propri: un sistema di crosslisting e un’analisi dei lotti di liquidazione.",
+      "title": "Ava receptionist IA e kit di automazione | Zerone International",
+      "description": "I nostri prodotti: Ava, la receptionist IA che già risponde alla nostra linea, e kit di automazione pronti all’uso. Iscrivetevi all’accesso anticipato.",
       "eyebrow": "Prodotti",
       "h1": "I nostri prodotti",
-      "lede": "Oltre ai progetti per i clienti, sviluppiamo prodotti software propri. I primi due sono strumenti per chi vende online, ed entrambi sono in fase di sviluppo. Iscrivetevi alla lista d’attesa per sapere quando aprirà l’accesso anticipato.",
+      "lede": "Oltre ai progetti per i clienti, sviluppiamo prodotti nostri e li usiamo prima nella nostra azienda. Ava risponde già alla nostra linea telefonica; i kit di automazione gestiscono i nostri preventivi e follow-up. Iscrivetevi alla lista di accesso anticipato per provarli.",
       "items": [
         {
-          "name": "Sistema di pubblicazione multicanale",
-          "text": "Preparate un prodotto una sola volta e gestite le sue inserzioni su più marketplace da un unico punto.",
+          "name": "Ava, la receptionist IA",
+          "text": "Un assistente telefonico IA che risponde a ogni chiamata, dichiara di essere un’IA, risponde alle domande frequenti e prende messaggi. Chiamate il (631) 900-2595 per sentirla rispondere alla nostra linea.",
           "features": [
-            "Un’unica scheda prodotto per ogni canale",
-            "Bozze di titoli e descrizioni da verificare",
-            "Stato del magazzino su tutti i canali",
-            "Integrazioni tramite accesso consentito alle piattaforme"
+            "Risponde 24/7 con le informazioni della vostra attività",
+            "Riepilogo scritto dopo ogni chiamata",
+            "Messaggi e richieste di richiamata inviati a voi",
+            "In apertura per le aziende USA come aggiunta al piano"
           ]
         },
         {
-          "name": "Analisi dei lotti di liquidazione",
-          "text": "Valutate se un lotto di liquidazione conviene prima di fare un’offerta.",
+          "name": "Kit di automazione aziendale",
+          "text": "Automazioni pronte che usiamo nella nostra azienda, adattate ai vostri strumenti: preventivi scritti, follow-up e report giornalieri senza lavoro manuale.",
           "features": [
-            "Prezzo d’acquisto, commissioni e spedizione in un’unica vista",
-            "Accantonamenti configurabili per resi e danni",
-            "Valore di rivendita stimato e margine netto",
-            "Confronto di più lotti affiancati"
+            "Preventivi e fatture da un unico modulo",
+            "Promemoria di follow-up inviati puntuali",
+            "Un riepilogo giornaliero di nuovi contatti e lavori",
+            "Configurati per i vostri strumenti e il vostro linguaggio"
           ]
         }
       ]
@@ -586,7 +586,7 @@
     },
     "company": {
       "title": "Chi siamo – Zerone International, tecnologia da New York",
-      "description": "Zerone International LLC è un’azienda tecnologica di New York che aiuta le aziende di tutti gli Stati Uniti con siti web, assistenti IA, automazione e software su misura.",
+      "description": "Zerone International LLC è un’azienda tecnologica di New York: siti web, assistenti IA, automazione e software su misura per aziende USA e clienti in tutto il mondo.",
       "eyebrow": "Azienda",
       "h1": "Chi è Zerone International",
       "lede": "Un’azienda tecnologica di New York con un obiettivo semplice: tecnologia utile che ogni azienda possa usare.",
@@ -660,12 +660,12 @@
       },
       "location": {
         "title": "Dove lavoriamo",
-        "text": "Sede centrale a Farmingville, New York. Incontriamo i clienti di persona a New York City e a Long Island e lavoriamo da remoto con aziende in tutti gli Stati Uniti."
+        "text": "Sede centrale a Farmingville, New York. Incontriamo i clienti di persona a New York City e a Long Island e lavoriamo da remoto con aziende in tutti gli Stati Uniti e, per i progetti software, in tutto il mondo."
       }
     },
     "contact": {
-      "title": "Contattate Zerone International – Avviate il progetto",
-      "description": "Contattate Zerone International per siti web, assistente telefonico IA, automazione o app. Chiamate, scrivete o usate il modulo: rispondiamo per iscritto.",
+      "title": "Contattate Zerone – Proposta scritta e prezzo | New York",
+      "description": "Parlateci del progetto: sito web, assistente telefonico IA, automazione o app. Chiamate, mandate SMS o e-mail o usate il modulo: proposta e prezzo per iscritto.",
       "eyebrow": "Contatti",
       "h1": "Avviate il vostro progetto",
       "lede": "Raccontateci della vostra azienda o del problema che volete risolvere. Cerchiamo di rispondere entro due giorni lavorativi.",
@@ -734,8 +734,8 @@
       }
     },
     "blog": {
-      "title": "Blog – Guide su siti web, IA e automazione | Zerone",
-      "description": "Guide pratiche su siti web, SEO locale, assistenti IA e automazione per piccole aziende e imprese in crescita, da un’azienda tecnologica di New York.",
+      "title": "Guide per piccole imprese: siti web, SEO locale e IA | Zerone",
+      "description": "Guide pratiche per piccole imprese su siti web, Google Business Profile, SEO locale, rispondere a ogni chiamata e automazione, da un’azienda tech di New York.",
       "eyebrow": "Blog",
       "h1": "Guide per aziende in crescita",
       "lede": "Articoli pratici su come farsi trovare online, rispondere a ogni cliente e automatizzare il lavoro ripetitivo. I nostri articoli precedenti trattano la vendita online.",
@@ -750,11 +750,11 @@
       "rss": "Feed RSS"
     },
     "developers": {
-      "title": "API per sviluppatori – Accesso anticipato | Zerone International",
-      "description": "Zerone International progetta API per chi vende online: normalizzazione delle inserzioni, sincronizzazione dell’inventario, analisi dei lotti e commissioni.",
+      "title": "Accesso anticipato alle API – Ava e automazione | Zerone",
+      "description": "Zerone International progetta API per l’automazione aziendale: riepiloghi delle chiamate di Ava, webhook per i contatti, documenti e report. Iscrivetevi ora.",
       "eyebrow": "Per sviluppatori",
-      "h1": "API per chi vende online",
-      "lede": "Apriamo l’accesso anticipato a strumenti per sviluppatori nati dai nostri prodotti per chi vende online. Non c’è ancora nulla di attivo: iscrivetevi alla lista e aiutateci a decidere da cosa partire.",
+      "h1": "API per l’automazione aziendale",
+      "lede": "Apriamo l’accesso anticipato a strumenti per sviluppatori nati dai nostri prodotti: Ava, la nostra receptionist IA, e i nostri kit di automazione. Non c’è ancora nulla di attivo: iscrivetevi alla lista e aiutateci a decidere da cosa partire.",
       "hero_button": "Accesso anticipato",
       "planned": "Previsto",
       "products": {
@@ -762,20 +762,20 @@
         "intro": "Sono progetti, non prodotti finiti. Ambito e tempi possono cambiare in base ai riscontri dell’accesso anticipato.",
         "items": [
           {
-            "name": "Normalizzazione dei dati degli annunci",
-            "text": "Trasformate i dati prodotto di marketplace diversi in un unico formato di catalogo coerente, pronto per la pubblicazione multicanale."
+            "name": "API dei riepiloghi delle chiamate",
+            "text": "Ricevete i riepiloghi delle chiamate, i messaggi e le richieste di richiamata di Ava nel vostro CRM o nella vostra app come dati strutturati."
           },
           {
-            "name": "Sincronizzazione di scorte e venduto",
-            "text": "Mantenete allineate le scorte tra i marketplace e segnalate gli articoli venduti altrove, per evitare doppie vendite."
+            "name": "Webhook per contatti e moduli",
+            "text": "Inviate i nuovi contatti da moduli, chiamate e chat agli strumenti che già usate, con lo spam filtrato."
           },
           {
-            "name": "Analisi di lotti e manifesti",
-            "text": "Leggete un manifesto di liquidazione e stimate valore di rivendita, commissioni e margine prima di acquistare il lotto."
+            "name": "Generazione di documenti",
+            "text": "Create preventivi, fatture e report in PDF dai vostri dati e modelli con una sola richiesta."
           },
           {
-            "name": "Calcolatori di prezzi e commissioni",
-            "text": "Calcolate commissioni dei marketplace, spedizione e conversione valutaria per vedere quanto vi resta davvero da una vendita."
+            "name": "Dati per i report",
+            "text": "Portate i dati giornalieri e settimanali su chiamate, contatti e lavori nelle vostre dashboard."
           }
         ]
       },
@@ -797,7 +797,7 @@
           },
           {
             "title": "Sandbox",
-            "text": "Una sandbox con dati di esempio vi permetterà di fare prove senza toccare annunci o account reali."
+            "text": "Una sandbox con dati di esempio vi permetterà di fare prove senza toccare chiamate, clienti o account reali."
           }
         ]
       },
@@ -805,7 +805,7 @@
         "title": "Iscrivetevi all’accesso anticipato per sviluppatori",
         "text": "Raccontateci cosa vorreste realizzare. Vi contatteremo quando si aprirà l’accesso anticipato. Nessun impegno.",
         "idea": "Cosa realizzereste?",
-        "idea_hint": "Ad esempio i marketplace, i dati o il flusso di lavoro coinvolti. Non inviate password né chiavi API.",
+        "idea_hint": "Ad esempio gli strumenti, i dati o il flusso di lavoro coinvolti. Non inviate password né chiavi API.",
         "submit": "Richiedi accesso anticipato",
         "success": "Grazie! Siete iscritti all’accesso anticipato per sviluppatori."
       },
@@ -821,8 +821,8 @@
             "a": "I prezzi non sono ancora stati definiti. Prevediamo piani in base all’uso e pubblicheremo i prezzi prima dell’avvio di qualsiasi piano a pagamento."
           },
           {
-            "q": "Quali marketplace saranno supportati?",
-            "a": "Dipende dalla domanda nell’accesso anticipato e da ciò che consentono l’accesso ufficiale e le condizioni di ciascun marketplace. Indicateci nel modulo quelli che vi interessano."
+            "q": "Con quali strumenti funzionerà?",
+            "a": "Dipende dalla domanda di accesso anticipato. Prevediamo webhook standard e un’API REST compatibili con la maggior parte dei CRM e degli strumenti aziendali. Indicateci nel modulo quelli importanti per voi."
           }
         ]
       }
