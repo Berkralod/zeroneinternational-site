@@ -2,7 +2,7 @@
 title: Small business plans
 description: Websites, Google Business Profile care, review requests and an AI phone assistant for small businesses in New York and across the US. Monthly plans from $149.
 nav: Overview
-updated: 2026-10-19
+updated: 2026-10-20
 ---
 
 Most customers find a business on their phone, often in the evening, and decide in a minute or two. **ZERONE International — Small Business Plans** help small businesses make that minute count: accurate information, a page that answers their questions, and a fast reply when they get in touch.
@@ -33,6 +33,15 @@ We are a technology company based in New York. We work with businesses in New Yo
 - Your domain, your Google Business Profile and your accounts are always in your business's name. We are added as a helper, and you can remove us at any time.
 - We never ask for your passwords on paper, by text message or by e-mail.
 - Monthly plans have a 3-month minimum, then run month to month. If you leave, we hand over your website files and help you move.
+
+## Where we work
+
+We start close to home, where we can also meet in person, and work remotely with businesses in every state:
+
+- [Suffolk County](/plans/suffolk-county/), our home county, from the North Shore to the East End
+- [Nassau County](/plans/nassau-county/)
+- [The Hamptons](/plans/the-hamptons/), from Westhampton Beach to Montauk
+- [Manhattan](/plans/manhattan/) and the rest of New York City
 
 ## Prices
 

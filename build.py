@@ -32,7 +32,7 @@ BLOG = CONTENT / "blog"
 # Small-business plans: English-only pages under /plans/ (content/plans/*.md); /local/ was the old path.
 PLANS = CONTENT / "plans"
 PLANS_PATH = "/plans/"
-PLANS_ORDER = ["index", "pricing", "privacy", "terms"]
+PLANS_ORDER = ["index", "pricing", "suffolk-county", "nassau-county", "the-hamptons", "manhattan", "privacy", "terms"]
 # Old paths that moved (content/redirects.json): "/old/path/" -> "/new/path/".
 REDIRECTS = CONTENT / "redirects.json"
 # Based in New York, serving the whole country: New York City and Long Island first.
