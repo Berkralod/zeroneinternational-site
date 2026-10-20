@@ -1,5 +1,7 @@
 # SEO ve müşteri kazanma planı
 
+> **Not (20 Ekim 2026):** Bu belgedeki e-ticaret / crosslisting / liquidation bölümleri eski konumlandırmaya aittir ve artık uygulanmaz. Güncel yön: docs/DURUM.md'deki "Karma konumlandırma ve SEO hamlesi".
+
 Bu belge teknik bilgi gerektirmeden okunacak şekilde yazıldı. Sitenin teknik SEO tarafı (hız, etiketler, site haritası, yapılandırılmış veri) hazır, ayrıntılar [SEO kontrol listesi](SEO-KONTROL-LISTESI.md) dosyasında. Bu plan, **hangi aramalarda görünmek istediğimizi**, **hangi içerikleri yazacağımızı**, **başka sitelerden nasıl bağlantı alacağımızı** ve **müşteriyi hangi kanallardan bulacağımızı** anlatıyor.
 
 > **Sayılar hakkında:** Aşağıda arama hacmi veya "şu kadar trafik gelir" gibi tahminler yok, çünkü doğrulanmış veri olmadan sayı vermek yanıltıcı olur. Hacimleri kendi hesabınızla **Google Ads → Anahtar Kelime Planlayıcı** üzerinden ve site yayına girdikten sonra **Search Console → Performans** raporundan görebilirsiniz. Belgede kullanılan birkaç sayının kaynağı yanında verildi.
