@@ -164,11 +164,13 @@ def structured_data_problems(data):
     if not isinstance(data, dict) or data.get("@context") != "https://schema.org":
         yield "@context must be https://schema.org"
     for node in nodes:
-        kind = node.get("@type")
-        for key in REQUIRED_PROPERTIES.get(kind, ()):
-            if not node.get(key):
-                yield f"{kind} is missing {key}"
-        if kind == "Organization":
+        kinds = node.get("@type")
+        kinds = kinds if isinstance(kinds, list) else [kinds]  # e.g. ["Organization", "ProfessionalService"]
+        for kind in kinds:
+            for key in REQUIRED_PROPERTIES.get(kind, ()):
+                if not node.get(key):
+                    yield f"{kind} is missing {key}"
+        if "Organization" in kinds:
             logo = node.get("logo") or {}
             target = local_target(logo.get("url", "")) if isinstance(logo, dict) else None
             if not target or not target[0].is_file():
@@ -240,6 +242,8 @@ def main() -> int:
                 continue
             for problem in structured_data_problems(data):
                 err(f"JSON-LD: {problem}")
+            if '"streetAddress"' in block:
+                err("JSON-LD publishes a streetAddress (the site shows only Farmingville, NY 11738)")
 
         canon = [h for r, h, _ in p.links if r == "canonical"]
         if is_index:

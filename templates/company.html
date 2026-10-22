@@ -21,7 +21,10 @@
   <div class="wrap founder">
     {% if founder_photo %}
     <figure class="founder__photo">
-      <img src="{{ asset(founder_photo) }}" alt="{{ f.photo_alt }}" width="640" height="640" loading="lazy" decoding="async">
+      <picture>
+        <source srcset="{{ asset(founder_photo_webp) }}" type="image/webp">
+        <img src="{{ asset(founder_photo) }}" alt="{{ f.photo_alt }}" width="640" height="640" loading="lazy" decoding="async">
+      </picture>
     </figure>
     {% endif %}
     <div class="founder__text">

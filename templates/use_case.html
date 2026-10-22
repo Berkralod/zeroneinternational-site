@@ -45,6 +45,7 @@
           <p>{{ t.services_list[service_key].short }}</p>
         </div>
       </div>
+      {% if case_index in region_cases %}{{ blocks.where_we_work() }}{% endif %}
       <nav class="pager" aria-label="{{ t.ui.case_label }}">
         {% set prev_i = (case_index - 1) % n %}
         {% set next_i = (case_index + 1) % n %}
