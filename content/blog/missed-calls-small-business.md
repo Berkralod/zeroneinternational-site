@@ -72,6 +72,8 @@ We compare these options in more detail, including legal points about disclosure
 
 ## A simple way to choose
 
+To put a rough number on what missed calls may cost you, try our free [missed call cost calculator](/tools/missed-call-calculator/).
+
 Use what you learned in Step 1:
 
 - **A few missed calls a week, mostly when you are busy:** improve voicemail, set up forwarding, and add a missed-call text.
@@ -80,6 +82,20 @@ Use what you learned in Step 1:
 - **Lots of repeat questions (hours, prices, service area, booking):** an AI receptionist can handle these well and pass the rest to you.
 
 Whatever you choose, review your call log again in a month. If the number of missed calls and hang-ups went down, it is working. If not, adjust.
+
+## FAQ
+
+### How many business calls go unanswered?
+
+It varies by company and industry. CallRail reports that 28% of inbound calls go unanswered on average across its customers, and Invoca's 2026 report says about 56% of calls were answered by a person.
+
+### What is the cheapest way to miss fewer calls?
+
+Start with free steps: a clear voicemail greeting that says when you will call back, call forwarding to a teammate, and calling back missed numbers quickly.
+
+### Is an AI receptionist a replacement for staff?
+
+For most small businesses it covers the calls nobody can take, such as after hours or during busy moments. It works best alongside people, not instead of them.
 
 ## Where we can help
 

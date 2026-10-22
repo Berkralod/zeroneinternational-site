@@ -120,6 +120,20 @@ Ask any provider where recordings and transcripts are stored, who can access the
 
 You can also combine options, for example an AI receptionist for routine and after-hours calls with transfer to a person for anything sensitive. For more on missed calls, see our post on [missed calls and small businesses](/blog/missed-calls-small-business/).
 
+## FAQ
+
+### Is an AI receptionist cheaper than a live answering service?
+
+Often, yes, for small call volumes. Live answering services usually charge by the minute or call; one published example starts at about $250 a month for 50 minutes. Compare your own call volume before deciding.
+
+### Does an AI receptionist have to say it is an AI?
+
+It should. Being clear that the caller is talking to an AI builds trust, and some laws and platform rules require it. Check the rules that apply to your business.
+
+### When is voicemail still enough?
+
+If you get few calls, can call back quickly and your callers are not in a hurry, a good voicemail greeting and fast callbacks may be all you need.
+
 ## Hear one for yourself
 
 Our own phone line is answered by Ava, the AI receptionist we built at Zerone International. Call (631) 900-2595 and ask Ava a question to hear how it works. If you want something similar for your business, see our [AI phone assistant page](/services/ai-phone-assistant/) or [contact us](/contact/).

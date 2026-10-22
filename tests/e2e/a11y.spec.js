@@ -44,12 +44,17 @@ for (const scheme of ["light", "dark"]) {
   });
 }
 
-// Small-business plan pages (English only).
-const planSlugs = readdirSync(new URL("../../content/plans/", import.meta.url)).filter((f) => f.endsWith(".md")).map((f) => f.slice(0, -3));
+// Small-business plan pages and free tools (English only).
+// Every page of the English-only sections, nested guides included (content/plans/long-island/*.md, content/tools/*.md).
+const sectionPaths = (folder, base) =>
+  readdirSync(new URL(`../../content/${folder}/`, import.meta.url), { recursive: true })
+    .filter((f) => f.endsWith(".md"))
+    .map((f) => f.slice(0, -3).replaceAll("\\", "/"))
+    .map((s) => (s === "index" ? base : `${base}${s}/`));
 for (const scheme of ["light", "dark"]) {
-  test.describe(`accessibility of the small-business plan pages (${scheme})`, () => {
+  test.describe(`accessibility of the small-business plan and free tool pages (${scheme})`, () => {
     test.use({ colorScheme: scheme });
-    for (const path of planSlugs.map((s) => (s === "index" ? "/plans/" : `/plans/${s}/`))) {
+    for (const path of [...sectionPaths("plans", "/plans/"), ...sectionPaths("tools", "/tools/")]) {
       test(path, async ({ page }) => {
         await page.goto(path);
         const results = await new AxeBuilder({ page })

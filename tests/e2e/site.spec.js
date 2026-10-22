@@ -313,6 +313,90 @@ test("small-business plan pages are reached from every language's footer and lin
   expect(errors).toEqual([]);
 });
 
+test("missed call calculator shows the default estimate and updates as the visitor types @cross", async ({ page }) => {
+  const errors = await collectErrors(page);
+  await page.goto(pathFor("de", "home"));
+  await page.locator(".site-footer").getByRole("link", { name: content.de.footer.tools }).click();
+  await expect(page).toHaveURL(/\/tools\/$/);
+  await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  await page.locator(".post-body").getByRole("link", { name: /missed call/i }).first().click();
+  await expect(page).toHaveURL(/\/tools\/missed-call-calculator\/$/);
+  await expect(page.locator("article h1")).toContainText(/missed calls/i);
+  await expect(page.locator("#missed-call-calc")).toContainText(/estimate/i);
+  // 5 calls a week × 30% × 4.33 weeks = 6.5 jobs; × $250 = $1,624 a month, $19,485 a year.
+  await expect(page.locator("#calc-jobs")).toHaveText("6.5");
+  await expect(page.locator("#calc-month")).toHaveText("$1,624");
+  await expect(page.locator("#calc-year")).toHaveText("$19,485");
+  await page.locator("#calc-calls").fill("10");
+  await page.locator("#calc-rate").fill("40");
+  await page.locator("#calc-value").fill("400");
+  // 10 × 40% × 4.33 = 17.32 jobs; × $400 = $6,928 a month, $83,136 a year.
+  await expect(page.locator("#calc-jobs")).toHaveText("17.3");
+  await expect(page.locator("#calc-month")).toHaveText("$6,928");
+  await expect(page.locator("#calc-year")).toHaveText("$83,136");
+  await page.locator("#calc-calls").fill("-3");
+  await expect(page.locator("#calc-month")).toHaveText("$0");
+  expect(await page.evaluate(() => window.zeroneTools.estimate(5, 30, 250).month)).toBeCloseTo(1623.75, 2);
+  for (const width of [320, 1280]) {
+    await resizeTo(page, width, 900);
+    expect(await horizontalOverflow(page), `overflow at ${width}px`).toBeLessThanOrEqual(1);
+  }
+  expect(errors).toEqual([]);
+});
+
+test("missed call calculator still shows the example numbers without JavaScript", async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const page = await context.newPage();
+  await page.goto("/tools/missed-call-calculator/");
+  await expect(page.locator("#calc-month")).toHaveText("$1,624");
+  await expect(page.locator(".post-body")).toContainText("4.33");
+  await context.close();
+});
+
+test("Google Business Profile checklist is printable and numbered 1 to 18", async ({ page }) => {
+  const errors = await collectErrors(page);
+  await page.goto("/tools/google-business-profile-checklist/");
+  await expect(page.locator(".post-body ol > li")).toHaveCount(18);
+  await expect(page.locator("[data-print]")).toBeVisible();
+  await page.emulateMedia({ media: "print" });
+  await expect(page.locator("[data-print]")).toBeHidden();
+  await expect(page.locator(".site-footer")).toBeHidden();
+  await expect(page.locator(".post-body ol > li").last()).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
+test("Long Island hub links its guides, and guides show a visible FAQ @cross", async ({ page }) => {
+  const errors = await collectErrors(page);
+  await page.goto("/plans/");
+  await page.locator(".post-body").getByRole("link", { name: "Long Island" }).first().click();
+  await expect(page).toHaveURL(/\/plans\/long-island\/$/);
+  await expect(page.locator(".local-nav [aria-current=\"page\"]")).toHaveText("Long Island");
+  for (const path of ["/plans/long-island/contractor-websites/", "/plans/long-island/ai-receptionist-home-services/",
+    "/plans/suffolk-county/google-business-profile/"]) {
+    await expect(page.locator(`.post-body a[href="${path}"]`).first()).toBeVisible();
+  }
+  await page.locator('.post-body a[href="/plans/long-island/contractor-websites/"]').first().click();
+  await expect(page.locator(".breadcrumbs")).toContainText("Long Island");
+  await expect(page.locator(".post-body h2", { hasText: "FAQ" })).toBeVisible();
+  const graph = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent())["@graph"];
+  expect(graph.map((n) => n["@type"])).toEqual(expect.arrayContaining(["FAQPage", "Service", "BreadcrumbList"]));
+  await page.goto("/use-cases/after-hours-calls-for-contractors/");
+  await page.locator(".case-guide a").click();
+  await expect(page).toHaveURL(/\/plans\/long-island\/ai-receptionist-home-services\/$/);
+  expect(errors).toEqual([]);
+});
+
+test("blog posts with an FAQ show it on the page and in FAQPage data", async ({ page }) => {
+  for (const slug of ["ai-receptionist-vs-answering-service", "google-business-profile-service-area-business", "missed-calls-small-business"]) {
+    await page.goto(`${pathFor("en", "blog")}${slug}/`);
+    await expect(page.locator(".post-body h2", { hasText: "FAQ" })).toBeVisible();
+    const questions = await page.locator(".post-body h3").allTextContents();
+    const graph = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent())["@graph"];
+    const faq = graph.find((n) => n["@type"] === "FAQPage");
+    expect(faq.mainEntity.map((q) => q.name)).toEqual(questions.slice(-3));
+  }
+});
+
 test("developers page renders in several languages and the early-access form submits to Formspree @cross", async ({ page }) => {
   const errors = await collectErrors(page);
   for (const lang of ["en", "de", "ja"]) {
