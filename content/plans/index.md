@@ -38,6 +38,7 @@ We are a technology company based in New York. We work with businesses in New Yo
 
 We start close to home, where we can also meet in person, and work remotely with businesses in every state:
 
+- [Long Island](/plans/long-island/): Suffolk, Nassau and the Hamptons
 - [Suffolk County](/plans/suffolk-county/), our home county, from the North Shore to the East End
 - [Nassau County](/plans/nassau-county/)
 - [The Hamptons](/plans/the-hamptons/), from Westhampton Beach to Montauk

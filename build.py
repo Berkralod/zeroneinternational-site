@@ -32,10 +32,41 @@ BLOG = CONTENT / "blog"
 # Small-business plans: English-only pages under /plans/ (content/plans/*.md); /local/ was the old path.
 PLANS = CONTENT / "plans"
 PLANS_PATH = "/plans/"
-PLANS_ORDER = ["index", "pricing", "suffolk-county", "nassau-county", "the-hamptons", "manhattan", "privacy", "terms"]
+PLANS_ORDER = ["index", "pricing", "long-island", "suffolk-county", "nassau-county", "the-hamptons", "manhattan",
+               "privacy", "terms"]
 # Region plan pages linked site-wide ("Where we work"): slug -> place name (a proper noun, not translated).
-REGION_PAGES = {"suffolk-county": "Suffolk County", "nassau-county": "Nassau County",
+REGION_PAGES = {"long-island": "Long Island", "suffolk-county": "Suffolk County", "nassau-county": "Nassau County",
                 "the-hamptons": "The Hamptons", "manhattan": "Manhattan"}
+# Free tools: English-only pages under /tools/ (content/tools/*.md), same front matter as the plan pages.
+TOOLS = CONTENT / "tools"
+TOOLS_PATH = "/tools/"
+TOOLS_ORDER = ["index", "missed-call-calculator", "google-business-profile-checklist"]
+# English search titles and descriptions for local-service use cases (the other languages keep the
+# translated "<title> | Use case" pattern): slug -> (title tag, meta description).
+CASE_SEO = {
+    "after-hours-calls-for-contractors": (
+        "After-Hours Call Answering for Contractors – LI & NYC",
+        "Contractors miss calls while they work. An AI assistant answers 24/7, asks your intake questions and "
+        "texts you urgent jobs right away."),
+    "website-for-home-services": (
+        "Websites for Home Service Companies – Long Island & NYC",
+        "A fast, mobile-friendly website with your services, service areas, real photos and one-tap call and "
+        "quote buttons, plus Google profile care."),
+    "restaurant-phone-calls": (
+        "Restaurant Phone Answering with AI – Hours & Reservations",
+        "Answer questions about hours, the menu and reservations during the dinner rush, with a written note "
+        "for the staff after every call."),
+    "ai-receptionist-for-offices": (
+        "AI Receptionist for Professional Offices – After Hours",
+        "An AI assistant answers when the line is busy or the office is closed, says it is an AI and sends each "
+        "appointment request in writing."),
+}
+# Local guides (English plan pages) linked from related use cases: use-case slug -> plan page slug.
+CASE_GUIDES = {
+    "after-hours-calls-for-contractors": "long-island/ai-receptionist-home-services",
+    "website-for-home-services": "long-island/contractor-websites",
+    "google-business-profile-cleanup": "suffolk-county/google-business-profile",
+}
 # Local-service use cases (English slugs) that also link the region pages.
 REGION_CASES = ["website-for-home-services", "ai-receptionist-for-offices", "after-hours-calls-for-contractors",
                 "restaurant-phone-calls"]
@@ -197,6 +228,7 @@ def load_posts():
             "updated": max(published, updated).isoformat(),
             "tags": [tag.strip() for tag in meta.get("tags", "").split(",") if tag.strip()],
             "minutes": max(1, round(len(re.findall(r"\w+", body)) / 220)),
+            "faq": faq_items(body),
             "html": Markup(markdown.markdown(body, extensions=["extra", "sane_lists"], output_format="html")),
         })
     posts.sort(key=lambda p: (p["date"], p["title"]), reverse=True)
@@ -205,45 +237,93 @@ def load_posts():
     return posts
 
 
-def load_plan_pages():
-    """Small-business plan pages, English only: content/plans/<slug>.md, with index.md as the /plans/ hub.
+FAQ_HEADING_RE = re.compile(r"^## (?:FAQ|Frequently asked questions)\s*$", re.M | re.I)
 
-    Front matter: title, description, nav (label in the section menu), updated; legal texts also carry
-    a version. Pages are ordered as in PLANS_ORDER, any others follow alphabetically."""
+
+def faq_items(body):
+    """Question/answer pairs from a markdown '## FAQ' section ('### Question' + answer paragraphs),
+    as plain text for FAQPage structured data. The section stays visible on the page as written."""
+    match = FAQ_HEADING_RE.search(body)
+    if not match:
+        return []
+    section = re.split(r"^## ", body[match.end():], maxsplit=1, flags=re.M)[0]
+    items = []
+    for block in re.split(r"^### ", section, flags=re.M)[1:]:
+        question, _, answer = block.partition("\n")
+        answer = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", answer)  # [text](url) -> text
+        answer = re.sub(r"[*_`]", "", " ".join(answer.split()))
+        if question.strip() and answer:
+            items.append((question.strip(), answer))
+    return items
+
+
+def load_section_pages(folder, base_path, order, label):
+    """English-only markdown pages of a site section: <folder>/<slug>.md, with index.md as the hub.
+
+    Front matter: title, description, nav (label in the section menu), updated; optional heading (the H1
+    when it should differ from the title tag), version (legal texts), script (a page script under
+    /assets/js/), service (adds Service structured data with that name). Files in sub-folders become
+    nested pages (plans/long-island/contractor-websites.md -> /plans/long-island/contractor-websites/)
+    and stay out of the section menu. Top-level pages follow `order`, any others alphabetically."""
     pages = []
-    for path in PLANS.glob("*.md"):
+    for path in folder.rglob("*.md"):
+        slug = path.relative_to(folder).with_suffix("").as_posix()
         text = path.read_text(encoding="utf-8")
         match = FRONT_MATTER_RE.match(text)
         if not match:
-            raise BuildError(f"plans/{path.name}: missing '---' front matter")
+            raise BuildError(f"{label}/{slug}.md: missing '---' front matter")
         meta = {}
         for line in match.group(1).splitlines():
             key, _, value = line.partition(":")
             meta[key.strip()] = value.strip()
         for key in ("title", "description", "nav", "updated"):
             if not meta.get(key):
-                raise BuildError(f"plans/{path.name}: front matter needs '{key}'")
-        if not SLUG_RE.match(path.stem):
-            raise BuildError(f"plans/{path.name}: file name must be a lowercase slug")
+                raise BuildError(f"{label}/{slug}.md: front matter needs '{key}'")
+        if not SLUG_RE.match(slug) or slug.endswith("/index"):
+            raise BuildError(f"{label}/{slug}.md: file names must be lowercase slugs")
         try:
             updated = dt.date.fromisoformat(meta["updated"]).isoformat()
         except ValueError as exc:
-            raise BuildError(f"plans/{path.name}: dates must look like 2026-10-17 ({exc})") from None
+            raise BuildError(f"{label}/{slug}.md: dates must look like 2026-10-17 ({exc})") from None
+        script = meta.get("script", "")
+        if script and not re.fullmatch(r"/assets/js/[a-z0-9-]+\.js", script):
+            raise BuildError(f"{label}/{slug}.md: script must look like /assets/js/name.js")
+        body = text[match.end():]
+        parent = slug.rpartition("/")[0]
         pages.append({
-            "slug": path.stem,
-            "path": PLANS_PATH if path.stem == "index" else f"{PLANS_PATH}{path.stem}/",
+            "slug": slug,
+            "path": base_path if slug == "index" else f"{base_path}{slug}/",
+            "parent": parent,
             "title": meta["title"],
+            "heading": meta.get("heading") or meta["title"],
             "description": meta["description"],
             "nav": meta["nav"],
             "version": meta.get("version", ""),
+            "script": script,
+            "service": meta.get("service", ""),
             "updated": updated,
-            "html": Markup(markdown.markdown(text[match.end():], extensions=["extra", "sane_lists"], output_format="html")),
+            "faq": faq_items(body),
+            "html": Markup(markdown.markdown(body, extensions=["extra", "sane_lists"], output_format="html")),
         })
-    rank = {slug: i for i, slug in enumerate(PLANS_ORDER)}
-    pages.sort(key=lambda page: (rank.get(page["slug"], len(rank)), page["slug"]))
+    rank = {slug: i for i, slug in enumerate(order)}
+    pages.sort(key=lambda page: (rank.get(page["slug"].partition("/")[0], len(rank)), page["slug"]))
     if pages and pages[0]["slug"] != "index":
-        raise BuildError("content/plans/ needs an index.md for the /plans/ hub")
+        raise BuildError(f"content/{label}/ needs an index.md for the hub page")
+    slugs = {page["slug"] for page in pages}
+    for page in pages:
+        if page["parent"] and page["parent"] not in slugs:
+            raise BuildError(f"{label}/{page['slug']}.md: needs a {page['parent']}.md parent page")
     return pages
+
+
+def load_plan_pages():
+    """Small-business plan pages, English only: content/plans/<slug>.md, with index.md as the /plans/ hub."""
+    return load_section_pages(PLANS, PLANS_PATH, PLANS_ORDER, "plans")
+
+
+def load_tool_pages():
+    """Free tools, English only: content/tools/<slug>.md, with index.md as the /tools/ hub."""
+    return load_section_pages(TOOLS, TOOLS_PATH, TOOLS_ORDER, "tools")
 
 
 def load_redirects():
@@ -475,11 +555,15 @@ def assistant_catalog(site, config, posts, plan_pages=()):
         external("pay_paypal", config["paypal_url"], "Pay an invoice with PayPal",
                  lambda t: t["pages"]["payment"]["paypal"]["button"])
     for page in plan_pages:  # English only, so every language links to the same page
-        link_id = "plans" if page["slug"] == "index" else f"plans_{page['slug']}"
+        section = "tools" if page["path"].startswith(TOOLS_PATH) else "plans"
+        link_id = section if page["slug"] == "index" else f"{section}_{page['slug'].replace('/', '-')}"
+        kind = "Free tool" if section == "tools" else "Small-business plans"
+        hub_label = (lambda code: content[code]["footer"]["tools"]) if section == "tools" else (
+            lambda code: content[code]["nav"]["plans"])
         links[link_id] = {
-            "desc": f"Small-business plans (English page): {page['title']} – {page['description']}",
+            "desc": f"{kind} (English page): {page['title']} – {page['description']}",
             "urls": {code: site.abs(page["path"]) for code in langs},
-            "labels": {code: (content[code]["nav"]["plans"] if page["slug"] == "index" else page["title"]) for code in langs},
+            "labels": {code: (hub_label(code) if page["slug"] == "index" else page["title"]) for code in langs},
         }
     for post in posts:
         url = site.abs(site.post_path(post["slug"]))
@@ -659,6 +743,7 @@ def build(check_only=False):
     site = Site(config, content)
     posts = load_posts()
     plan_pages = load_plan_pages()
+    tool_pages = load_tool_pages()
     moved = load_redirects()
     if check_only:
         print(f"Content OK: {len(site.langs)} languages, identical structure.")
@@ -676,7 +761,7 @@ def build(check_only=False):
 
     # The Worker is deployed with this file (.github/workflows/assistant-deploy.yml), also while
     # the widget is still switched off on the site.
-    worker_data = assistant_data(site, config, posts, plan_pages)
+    worker_data = assistant_data(site, config, posts, plan_pages + tool_pages)
     (BUILD_META / "assistant-data.json").write_text(
         json.dumps(worker_data, ensure_ascii=False, indent=1), encoding="utf-8")
     assistant_json = None
@@ -738,8 +823,11 @@ def build(check_only=False):
         form_en=content[config["default_language"]]["form"],
         post_url=lambda slug: site.post_path(slug),
         plans_path=PLANS_PATH,
+        tools_path=TOOLS_PATH,
         regions=[(PLANS_PATH + slug + "/", name) for slug, name in REGION_PAGES.items()],
         region_cases={i for i, c in enumerate(content[config["default_language"]]["cases"]) if c["slug"] in REGION_CASES},
+        case_guides={i: next((PLANS_PATH + p["slug"] + "/", p["heading"]) for p in plan_pages if p["slug"] == CASE_GUIDES[c["slug"]])
+                     for i, c in enumerate(content[config["default_language"]]["cases"]) if c["slug"] in CASE_GUIDES},
         founder_photo=FOUNDER_PHOTO if FOUNDER_PHOTO in assets else None,
         founder_photo_webp=FOUNDER_PHOTO.replace(".jpg", ".webp"),
         logo=lambda suffix: Markup(logo_source.replace("logo-globe", f"logo-globe-{suffix}")),
@@ -754,6 +842,7 @@ def build(check_only=False):
     newest_post = max((p["updated"] for p in posts), default=None)
     feed_path = site.path(site.default, "blog") + "feed.xml"
     env.globals["site_feed"] = feed_path  # every page advertises the (English) blog feed
+    env.globals["page_script"] = ""  # only the free tools load a page script
 
     sitemap_entries = []
     rendered = 0
@@ -775,6 +864,8 @@ def build(check_only=False):
             title = page_title(case["title"], f"{label} – {config['site_name']}", f"{label} – Zerone", keep_brand=True)
             joiner = "" if lang in ("zh", "ja") else " "
             description = f"{case['summary']}{joiner}{case['challenge']}"
+            if lang == "en" and case["slug"] in CASE_SEO:
+                title, description = CASE_SEO[case["slug"]]
             heading = case["title"]
         else:
             case = None
@@ -970,6 +1061,15 @@ def build(check_only=False):
                 ],
             },
         ]
+        if post["faq"]:
+            graph.append({
+                "@type": "FAQPage",
+                "@id": site.abs(here) + "#faq",
+                "mainEntity": [
+                    {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+                    for q, a in post["faq"]
+                ],
+            })
         ctx = dict(
             lang=lang, meta=t["meta"], t=t, page=post, page_id="post", post=post,
             case=None, case_index=None, service_key=None,
@@ -986,67 +1086,93 @@ def build(check_only=False):
         rendered += 1
         sitemap_entries.append((site.abs(here), post["updated"], alternates))
 
-    # Small-business plan pages (English only, like blog posts): hreflang points to themselves and x-default.
-    for page in plan_pages:
-        lang = site.default
-        t = content[lang]
-        here = page["path"]
+    # Small-business plan pages and free tools (English only, like blog posts): hreflang points to
+    # themselves and x-default.
+    def faq_node(here, items):
+        return {
+            "@type": "FAQPage",
+            "@id": site.abs(here) + "#faq",
+            "mainEntity": [
+                {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+                for q, a in items
+            ],
+        }
 
-        def url(target, case=None, _lang=lang):
-            return site.path(_lang, target, case)
+    sections = [
+        (plan_pages, PLANS_PATH, "plans", "plans.html", lambda t: t["nav"]["plans"]),
+        (tool_pages, TOOLS_PATH, "tools", "tools.html", lambda t: t["footer"]["tools"]),
+    ]
+    for section_pages, base_path, section_id, template, hub_name in sections:
+        by_slug = {page["slug"]: page for page in section_pages}
+        for page in section_pages:
+            lang = site.default
+            t = content[lang]
+            here = page["path"]
 
-        alternates = [(lang, site.abs(here)), ("x-default", site.abs(here))]
-        crumbs = [(t["ui"]["home"], url("home")), (t["nav"]["plans"], PLANS_PATH)]
-        if page["slug"] != "index":
-            crumbs.append((page["title"], here))
-        graph = [
-            organization(site),
-            {
-                "@type": "WebPage",
-                "@id": site.abs(here) + "#webpage",
-                "url": site.abs(here),
-                "name": page["title"],
-                "description": page["description"],
-                "inLanguage": lang,
-                "dateModified": page["updated"],
-                "isPartOf": {"@id": site.abs("/#website")},
-                "about": {"@id": site.abs("/#organization")},
-                "breadcrumb": {"@id": site.abs(here) + "#breadcrumb"},
-            },
-            {
-                "@type": "BreadcrumbList",
-                "@id": site.abs(here) + "#breadcrumb",
-                "itemListElement": [
-                    {"@type": "ListItem", "position": i + 1, "name": name, "item": site.abs(link)}
-                    for i, (name, link) in enumerate(crumbs)
-                ],
-            },
-        ]
-        if page["slug"] == "index":
-            graph.append({
-                "@type": "Service",
-                "@id": site.abs(here) + "#service",
-                "name": "ZERONE International — Small Business Plans",
-                "description": page["description"],
-                "provider": {"@id": site.abs("/#organization")},
-                "areaServed": AREA_SERVED,
-                "url": site.abs(here),
-            })
-        ctx = dict(
-            lang=lang, meta=t["meta"], t=t, page=page, page_id="plans", plan_pages=plan_pages,
-            case=None, case_index=None, service_key=None,
-            title=page_title(page["title"], config["site_name"], "Zerone"), description=page["description"],
-            canonical=site.abs(here), here=here, url=url, abs_url=site.abs, alternates=alternates,
-            # The pages exist in English only, so the language menu leads to each language's home page.
-            lang_links=[(content[c]["meta"], here if c == lang else site.path(c, "home")) for c in site.langs],
-            crumbs=crumbs, jsonld=jsonld_script(graph), suggest_json=None, og_locales=[],
-            robots="index,follow", og_type="website", posts=posts, feed_url=None,
-        )
-        out = DIST / here.lstrip("/") / "index.html"
-        out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(env.get_template("plans.html").render(**ctx), encoding="utf-8")
-        rendered += 1
-        sitemap_entries.append((site.abs(here), page["updated"], alternates))
+            def url(target, case=None, _lang=lang):
+                return site.path(_lang, target, case)
+
+            alternates = [(lang, site.abs(here)), ("x-default", site.abs(here))]
+            crumbs = [(t["ui"]["home"], url("home")), (hub_name(t), base_path)]
+            if page["parent"]:
+                parent = by_slug[page["parent"]]
+                crumbs.append((parent["heading"], parent["path"]))
+            if page["slug"] != "index":
+                crumbs.append((page["heading"], here))
+            graph = [
+                organization(site),
+                {
+                    "@type": "WebPage",
+                    "@id": site.abs(here) + "#webpage",
+                    "url": site.abs(here),
+                    "name": page["title"],
+                    "description": page["description"],
+                    "inLanguage": lang,
+                    "dateModified": page["updated"],
+                    "isPartOf": {"@id": site.abs("/#website")},
+                    "about": {"@id": site.abs("/#organization")},
+                    "breadcrumb": {"@id": site.abs(here) + "#breadcrumb"},
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    "@id": site.abs(here) + "#breadcrumb",
+                    "itemListElement": [
+                        {"@type": "ListItem", "position": i + 1, "name": name, "item": site.abs(link)}
+                        for i, (name, link) in enumerate(crumbs)
+                    ],
+                },
+            ]
+            service_name = page["service"] or (
+                "ZERONE International — Small Business Plans" if section_id == "plans" and page["slug"] == "index" else "")
+            if service_name:
+                graph.append({
+                    "@type": "Service",
+                    "@id": site.abs(here) + "#service",
+                    "name": service_name,
+                    "description": page["description"],
+                    "provider": {"@id": site.abs("/#organization")},
+                    "areaServed": AREA_SERVED,
+                    "url": site.abs(here),
+                })
+            if page["faq"]:
+                graph.append(faq_node(here, page["faq"]))
+            ctx = dict(
+                lang=lang, meta=t["meta"], t=t, page=page, page_id=section_id,
+                plan_pages=[p for p in section_pages if not p["parent"]], section_pages=section_pages,
+                case=None, case_index=None, service_key=None,
+                title=page_title(page["title"], config["site_name"], "Zerone"), description=page["description"],
+                canonical=site.abs(here), here=here, url=url, abs_url=site.abs, alternates=alternates,
+                # The pages exist in English only, so the language menu leads to each language's home page.
+                lang_links=[(content[c]["meta"], here if c == lang else site.path(c, "home")) for c in site.langs],
+                crumbs=crumbs, jsonld=jsonld_script(graph), suggest_json=None, og_locales=[],
+                robots="index,follow", og_type="website", posts=posts, feed_url=None,
+                page_script=page["script"],
+            )
+            out = DIST / here.lstrip("/") / "index.html"
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_text(env.get_template(template).render(**ctx), encoding="utf-8")
+            rendered += 1
+            sitemap_entries.append((site.abs(here), page["updated"], alternates))
 
     # RSS feed of the blog.
     def rfc822(day):

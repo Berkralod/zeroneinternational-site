@@ -46,6 +46,7 @@
         </div>
       </div>
       {% if case_index in region_cases %}{{ blocks.where_we_work() }}{% endif %}
+      {% if case_index in case_guides %}<p class="case-guide">{{ icons.icon('arrow') }} <a href="{{ case_guides[case_index][0] }}"{% if lang != 'en' %} hreflang="en"{% endif %}>{{ case_guides[case_index][1] }}</a></p>{% endif %}
       <nav class="pager" aria-label="{{ t.ui.case_label }}">
         {% set prev_i = (case_index - 1) % n %}
         {% set next_i = (case_index + 1) % n %}

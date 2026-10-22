@@ -99,6 +99,8 @@ One post a week or every two weeks is a pace most owners can keep.
 
 ## A 30-minute checklist
 
+There is also a [printable version of this checklist](/tools/google-business-profile-checklist/).
+
 1. Confirm you are set up as a service-area business with your address hidden.
 2. Check that your service areas are real places you serve, within about two hours.
 3. Review your primary and additional categories.
@@ -107,6 +109,20 @@ One post a week or every two weeks is a pace most owners can keep.
 6. Send your review link to your last ten customers.
 7. Reply to any unanswered reviews.
 8. Publish one post.
+
+## FAQ
+
+### Can I have a Google Business Profile without a storefront?
+
+Yes. Set it up as a service-area business, hide your address and list the areas you actually serve.
+
+### How large can my service area be?
+
+Google's guidance is that service areas should not extend farther than about two hours of driving from where you are based.
+
+### Can I offer customers a discount for reviews?
+
+No. Google's rules do not allow rewards for reviews, and you should ask all customers, not only happy ones.
 
 ## Need a hand?
 

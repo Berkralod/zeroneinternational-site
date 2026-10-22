@@ -50,6 +50,13 @@ No. If your current site works well on phones, we can keep it and focus on your 
 
 Yes. Many owners prefer it. You can reply when it suits you, and you keep a written record of everything we agree on.
 
+## Guides for Long Island businesses
+
+- [Websites for contractors on Long Island](/plans/long-island/contractor-websites/)
+- [An AI receptionist for Long Island home-service businesses](/plans/long-island/ai-receptionist-home-services/)
+
+See all of [Long Island](/plans/long-island/) on one page.
+
 ## Get in touch
 
 Call **[(631) 900-2595](tel:+16319002595)** at any hour. Ava answers 24/7 and we follow up in writing. You can also text **[(631) 319-7032](sms:+16313197032)** or write to us through the [contact page](/contact/).

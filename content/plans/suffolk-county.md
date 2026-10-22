@@ -50,6 +50,14 @@ No. Ava says at the start of the call that it is an AI assistant. It takes messa
 
 Not always. Sometimes the existing site only needs fixes so it works on phones and loads quickly. We tell you honestly what we see in the free review, and you decide.
 
+## Guides for Long Island businesses
+
+- [Google Business Profile help in Suffolk County](/plans/suffolk-county/google-business-profile/)
+- [Websites for contractors on Long Island](/plans/long-island/contractor-websites/)
+- [An AI receptionist for Long Island home-service businesses](/plans/long-island/ai-receptionist-home-services/)
+
+See all of [Long Island](/plans/long-island/) on one page.
+
 ## Get in touch
 
 Call **[(631) 900-2595](tel:+16319002595)** any time. Ava answers 24/7, and we follow up in writing. Prefer to text? Send a message to **[(631) 319-7032](sms:+16313197032)**, or use our [contact page](/contact/).

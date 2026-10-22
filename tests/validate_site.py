@@ -298,6 +298,31 @@ def main() -> int:
     if not (DIST / "CNAME").exists():
         errors.append("missing CNAME (custom domain would be lost)")
 
+    # SEO pages: guides and blog posts with an FAQ carry FAQPage (and guides a Service), tools are in the sitemap
+    def graph_types(rel):
+        f = DIST / rel / "index.html"
+        if f not in pages:
+            errors.append(f"{rel}/: page missing")
+            return set()
+        types = set()
+        for block in pages[f].jsonld:
+            for node in (json.loads(block).get("@graph") or []):
+                kind = node.get("@type")
+                types.update(kind if isinstance(kind, list) else [kind])
+        return types
+    for rel in ("plans/long-island/contractor-websites", "plans/long-island/ai-receptionist-home-services",
+                "plans/suffolk-county/google-business-profile"):
+        for kind in {"FAQPage", "Service"} - graph_types(rel):
+            errors.append(f"{rel}/: JSON-LD has no {kind}")
+    for rel in ("blog/ai-receptionist-vs-answering-service", "blog/google-business-profile-service-area-business",
+                "blog/missed-calls-small-business"):
+        if "FAQPage" not in graph_types(rel):
+            errors.append(f"{rel}/: JSON-LD has no FAQPage")
+    for rel in ("plans/long-island", "tools", "tools/missed-call-calculator", "tools/google-business-profile-checklist"):
+        graph_types(rel)
+        if f"{BASE}/{rel}/" not in locs:
+            errors.append(f"sitemap.xml: missing {BASE}/{rel}/")
+
     # secrets anywhere in the published output
     for f in DIST.rglob("*"):
         if f.is_file() and f.suffix in (".html", ".js", ".css", ".json", ".txt", ".xml", ".webmanifest", ""):

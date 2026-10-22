@@ -72,7 +72,8 @@
     "rights": "All rights reserved.",
     "trademark": "Product and platform names mentioned on this site are trademarks of their respective owners. Zerone International LLC is not affiliated with or endorsed by them.",
     "location": "Farmingville, New York · clients across the US and worldwide",
-    "areas": "Where we work"
+    "areas": "Where we work",
+    "tools": "Free tools"
   },
   "services_list": {
     "presence": {
@@ -250,7 +251,7 @@
   },
   "pages": {
     "home": {
-      "title": "Websites, AI Receptionist & Custom Apps – New York | Zerone",
+      "title": "Websites & AI Receptionist – Long Island & NYC | Zerone",
       "description": "New York tech company: websites, local SEO, an AI receptionist that answers 24/7, automation, web and mobile apps. US businesses first, software clients worldwide.",
       "h1": "Technology that helps your business get found, answer every call and save time",
       "hero": {
@@ -349,10 +350,10 @@
       }
     },
     "service_presence": {
-      "title": "Small Business Websites & Google Profile Care from $149/mo",
+      "title": "Long Island Small Business Websites & Local SEO from $149",
       "description": "Mobile-friendly websites, Google Business Profile care, local SEO and review requests for US businesses, from New York. Plans from $149 a month.",
       "eyebrow": "Websites & Google presence",
-      "h1": "Websites, local SEO and Google presence",
+      "h1": "Websites, local SEO and Google presence for Long Island, NYC and the US",
       "lede": "Most customers find a business on their phone and decide within a minute or two. We make that minute count: accurate information everywhere, a website that answers their questions, and an easy way to reach you.",
       "features_title": "What we do",
       "features": [

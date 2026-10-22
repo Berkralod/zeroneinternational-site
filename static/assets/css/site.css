@@ -663,3 +663,19 @@ a.tag:hover { border-color: var(--brand); color: var(--brand); }
 .VIpgJd-ZVi9od-ORHb-OEVmcd, .VIpgJd-ZVi9od-l4eHX-hSRGPd { display: none !important; }
 .VIpgJd-yAWNEb-OQAXze, font.VIpgJd-yAWNEb-OQAXze { background: none !important; box-shadow: none !important; }
 .break-any { overflow-wrap: anywhere; }
+
+/* free tools (/tools/) */
+.calc { margin: 28px 0; padding: clamp(18px, 3vw, 28px); border: 1px solid var(--line, rgba(127, 127, 127, 0.3)); border-radius: 14px; }
+.calc h2 { margin-top: 0; }
+.calc__field { margin: 0 0 18px; }
+.calc__field label { display: block; font-weight: 600; margin-bottom: 6px; }
+.calc__field input { width: 100%; max-width: 220px; font: inherit; padding: 10px 12px; border: 1px solid var(--muted); border-radius: 8px; background: transparent; color: inherit; }
+.calc__hint { color: var(--muted); font-size: 0.92rem; margin: 6px 0 0; }
+.calc__result { margin-top: 8px; padding-top: 14px; border-top: 1px solid var(--line, rgba(127, 127, 127, 0.3)); }
+.calc__result p { margin: 4px 0; }
+.case-guide { margin-top: 16px; font-weight: 600; display: flex; gap: 8px; align-items: center; }
+@media print {
+  .no-print, .site-footer, .breadcrumbs, .local-nav, .assistant-launcher { display: none !important; }
+  .tool-page .post-body { font-size: 11pt; }
+  .tool-page h2 { break-after: avoid; }
+}

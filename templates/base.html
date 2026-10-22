@@ -68,6 +68,9 @@
 {% if assistant %}
 <script src="{{ asset('/assets/js/assistant.js') }}" defer></script>
 {% endif %}
+{% if page_script %}
+<script src="{{ asset(page_script) }}" defer></script>
+{% endif %}
 {% if config.cloudflare_analytics_token %}
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ config.cloudflare_analytics_token }}"}'></script>
 {% endif %}
