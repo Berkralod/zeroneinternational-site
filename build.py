@@ -33,6 +33,12 @@ BLOG = CONTENT / "blog"
 PLANS = CONTENT / "plans"
 PLANS_PATH = "/plans/"
 PLANS_ORDER = ["index", "pricing", "suffolk-county", "nassau-county", "the-hamptons", "manhattan", "privacy", "terms"]
+# Region plan pages linked site-wide ("Where we work"): slug -> place name (a proper noun, not translated).
+REGION_PAGES = {"suffolk-county": "Suffolk County", "nassau-county": "Nassau County",
+                "the-hamptons": "The Hamptons", "manhattan": "Manhattan"}
+# Local-service use cases (English slugs) that also link the region pages.
+REGION_CASES = ["website-for-home-services", "ai-receptionist-for-offices", "after-hours-calls-for-contractors",
+                "restaurant-phone-calls"]
 # Old paths that moved (content/redirects.json): "/old/path/" -> "/new/path/".
 REDIRECTS = CONTENT / "redirects.json"
 # Based in New York, serving the whole country: New York City and Long Island first.
@@ -578,7 +584,9 @@ def jsonld_script(items):
 def organization(site):
     c = site.config
     return {
-        "@type": "Organization",
+        # ProfessionalService is a LocalBusiness: lets Google tie the site to the Long Island / NYC service area.
+        # Locality only: the street address is never published.
+        "@type": ["Organization", "ProfessionalService"],
         "@id": site.abs("/#organization"),
         "name": c["site_name"],
         "legalName": c["legal_name"],
@@ -590,8 +598,11 @@ def organization(site):
             "addressLocality": c["address"]["locality"],
             "addressRegion": c["address"]["region"],
             "addressCountry": c["address"]["country"],
+            **({"postalCode": c["address"]["postal_code"]} if c["address"].get("postal_code") else {}),
         },
         **({"telephone": c["telephone"]} if c.get("telephone") else {}),
+        "priceRange": "$$",
+        "image": site.abs("/assets/icons/logo-600.png"),
         "areaServed": AREA_SERVED,
         "knowsLanguage": site.langs,
         "contactPoint": {
@@ -727,7 +738,10 @@ def build(check_only=False):
         form_en=content[config["default_language"]]["form"],
         post_url=lambda slug: site.post_path(slug),
         plans_path=PLANS_PATH,
+        regions=[(PLANS_PATH + slug + "/", name) for slug, name in REGION_PAGES.items()],
+        region_cases={i for i, c in enumerate(content[config["default_language"]]["cases"]) if c["slug"] in REGION_CASES},
         founder_photo=FOUNDER_PHOTO if FOUNDER_PHOTO in assets else None,
+        founder_photo_webp=FOUNDER_PHOTO.replace(".jpg", ".webp"),
         logo=lambda suffix: Markup(logo_source.replace("logo-globe", f"logo-globe-{suffix}")),
     )
 
@@ -739,6 +753,7 @@ def build(check_only=False):
         lastmod[lang] = max(dates) if dates else today
     newest_post = max((p["updated"] for p in posts), default=None)
     feed_path = site.path(site.default, "blog") + "feed.xml"
+    env.globals["site_feed"] = feed_path  # every page advertises the (English) blog feed
 
     sitemap_entries = []
     rendered = 0

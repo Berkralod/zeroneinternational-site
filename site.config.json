@@ -11,7 +11,8 @@
   "address": {
     "locality": "Farmingville",
     "region": "NY",
-    "country": "US"
+    "country": "US",
+    "postal_code": "11738"
   },
   "telephone": "+1-631-900-2595",
   "sms_number": "+1-631-319-7032",
@@ -29,5 +30,14 @@
   "assistant_endpoint": "https://zerone-assistant.zerone-5dc7de.workers.dev",
   "assistant_turnstile_sitekey": "0x4AAAAAAFYLkLgnQtDb0PiL",
   "youtube_url": "https://www.youtube.com/@zeroneinternational",
-  "same_as": ["https://t.me/zeroneintl", "https://www.youtube.com/@zeroneinternational"]
+  "same_as": [
+    "https://www.youtube.com/@zeroneinternational",
+    "https://x.com/Zeroneintl",
+    "https://www.tiktok.com/@zerone.international",
+    "https://www.instagram.com/zeroneinternational",
+    "https://www.threads.net/@zeroneinternational",
+    "https://www.facebook.com/profile.php?id=61595218334979",
+    "https://www.linkedin.com/company/zerone-international-llc",
+    "https://t.me/zeroneintl"
+  ]
 }

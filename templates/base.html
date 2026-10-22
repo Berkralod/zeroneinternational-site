@@ -21,8 +21,8 @@
 <link rel="icon" href="/assets/img/mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
-{% if feed_url %}
-<link rel="alternate" type="application/rss+xml" title="{{ t.nav.blog }} – {{ config.site_name }}" href="{{ feed_url }}">
+{% if feed_url or site_feed %}
+<link rel="alternate" type="application/rss+xml" title="{{ t.nav.blog }} – {{ config.site_name }}" href="{{ feed_url or site_feed }}">
 {% endif %}
 <meta name="theme-color" content="#f5f6f8" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0c141b" media="(prefers-color-scheme: dark)">

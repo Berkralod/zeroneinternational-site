@@ -4,6 +4,7 @@
       <a class="brand" href="{{ url('home') }}" aria-label="{{ config.legal_name }} – {{ t.ui.home }}">{{ logo('f') }}</a>
       <p>{{ t.footer.tagline }}</p>
       <p class="footer-location">{{ icons.icon('pin') }} {{ t.footer.location }}</p>
+      <p class="footer-areas">{{ t.footer.areas }}: {% for href, name in regions %}<a href="{{ href }}"{% if lang != 'en' %} hreflang="en"{% endif %}>{{ name }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>
       {% if config.youtube_url %}
       <p class="footer-social"><a href="{{ config.youtube_url }}" rel="noopener" target="_blank"><svg class="yt-logo" viewBox="0 0 28 20" width="28" height="20" aria-hidden="true" focusable="false"><rect width="28" height="20" rx="5" fill="#FF0000"/><path d="M11.2 5.8v8.4l7.2-4.2z" fill="#fff"/></svg> YouTube</a></p>
       {% endif %}

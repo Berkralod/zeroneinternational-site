@@ -102,6 +102,18 @@
 </section>
 {%- endmacro %}
 
+{% macro where_we_work(compact=False) -%}
+{# "Where we work": the English-only region plan pages, linked from every language. #}
+<nav class="regions{% if compact %} regions--compact{% endif %}" aria-label="{{ t.footer.areas }}">
+  {% if not compact %}<p class="eyebrow">{{ t.footer.areas }}</p>{% endif %}
+  <ul role="list">
+  {% for href, name in regions %}
+    <li><a href="{{ href }}"{% if lang != 'en' %} hreflang="en"{% endif %}>{{ name }}</a></li>
+  {% endfor %}
+  </ul>
+</nav>
+{%- endmacro %}
+
 {% macro cta_band() -%}
 <section class="section cta-band" aria-labelledby="cta-title">
   <div class="wrap cta-band__inner">

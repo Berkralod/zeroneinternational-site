@@ -545,6 +545,11 @@ a.tag:hover { border-color: var(--brand); color: var(--brand); }
 .footer-brand .brand svg { height: 40px; }
 .footer-location { display: flex; gap: 8px; align-items: center; }
 .footer-location .icon { color: var(--accent); }
+.footer-areas { font-size: .95rem; }
+.footer-areas a { color: var(--text); }
+.regions { margin-top: 28px; }
+.regions ul { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 8px 0 0; padding: 0; list-style: none; }
+.regions a { font-weight: 600; }
 .footer-social a { display: inline-flex; gap: 10px; align-items: center; color: var(--text); text-decoration: none; font-weight: 600; }
 .footer-social a:hover { text-decoration: underline; }
 .footer-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 14px; }
