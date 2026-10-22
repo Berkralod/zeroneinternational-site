@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "4.10.1",
-    "@lhci/cli": "0.14.0",
+    "@lhci/cli": "0.15.1",
     "@playwright/test": "1.56.0"
   }
 }
