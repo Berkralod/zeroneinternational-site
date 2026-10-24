@@ -550,8 +550,13 @@ a.tag:hover { border-color: var(--brand); color: var(--brand); }
 .regions { margin-top: 28px; }
 .regions ul { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 8px 0 0; padding: 0; list-style: none; }
 .regions a { font-weight: 600; }
-.footer-social a { display: inline-flex; gap: 10px; align-items: center; color: var(--text); text-decoration: none; font-weight: 600; }
-.footer-social a:hover { text-decoration: underline; }
+.footer-social { margin-top: 22px; }
+.footer-social .footer-title { margin-bottom: 6px; }
+.footer-social-note { font-size: .95rem; margin-bottom: 12px; }
+.site-footer .footer-social ul { grid-template-columns: repeat(2, max-content); gap: 10px 32px; }
+.footer-social a { display: inline-flex; gap: 10px; align-items: center; min-height: 32px; color: var(--text); text-decoration: none; font-weight: 600; }
+.footer-social a:hover, .footer-social a:focus-visible { text-decoration: underline; }
+.footer-social .soc-logo { flex: none; border-radius: 6px; box-shadow: 0 0 0 1px var(--border); }
 .footer-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 14px; }
 .site-footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .site-footer nav a { text-decoration: none; color: var(--text); }
