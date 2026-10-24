@@ -430,3 +430,14 @@ test("developers page renders in several languages and the early-access form sub
   expect(body).toContain("dev@example.com");
   expect(errors).toEqual([]);
 });
+
+test("footer has a Follow us section with every social account", async ({ page }) => {
+  await page.goto("/");
+  const links = page.locator(".footer-social a");
+  await expect(links).toHaveCount(7);
+  await expect(page.locator(".footer-social .footer-title")).toHaveText(/follow us/i);
+  for (const name of ["YouTube", "Instagram", "Facebook", "X", "TikTok", "Threads", "LinkedIn"]) {
+    await expect(page.locator(".footer-social a", { hasText: new RegExp(`^\\s*${name}\\s*$`) })).toHaveCount(1);
+  }
+  for (const href of await links.evaluateAll((as) => as.map((a) => a.getAttribute("href")))) expect(href).toMatch(/^https:\/\//);
+});
