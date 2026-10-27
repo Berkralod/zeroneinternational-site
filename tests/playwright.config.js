@@ -2,6 +2,9 @@
 import { defineConfig, devices } from "@playwright/test";
 
 const allBrowsers = process.env.ALL_BROWSERS === "1";
+// Claude cloud sessions ship one Chromium build that this pinned Playwright cannot download for itself;
+// the SessionStart hook (.claude/hooks/session-start.sh) sets PW_CHROMIUM_PATH to it. CI leaves it unset.
+const chromium = process.env.PW_CHROMIUM_PATH ? { launchOptions: { executablePath: process.env.PW_CHROMIUM_PATH } } : {};
 
 export default defineConfig({
   testDir: "./e2e",
@@ -24,8 +27,8 @@ export default defineConfig({
     stderr: "ignore",
   },
   projects: [
-    { name: "chromium", use: { ...devices["Desktop Chrome"] } },
-    { name: "mobile-chromium", use: { ...devices["Pixel 7"] }, grep: /@mobile/ },
+    { name: "chromium", use: { ...devices["Desktop Chrome"], ...chromium } },
+    { name: "mobile-chromium", use: { ...devices["Pixel 7"], ...chromium }, grep: /@mobile/ },
     ...(allBrowsers
       ? [
           { name: "firefox", use: { ...devices["Desktop Firefox"] }, grep: /@cross/ },
