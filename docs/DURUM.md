@@ -31,9 +31,11 @@ Kural: sabit, tekrarlayan kontroller **GitHub Actions**'ta (ücretsiz, Claude ge
 |---|---|
 | Nöbet kuyruğu (haberleri kontrol et, gerekeni düzelt) | Her gün 07:13 |
 | Günlük içerik üretimi (salı blog yazısı dahil) | Her gün 11:52 |
-| Günlük paylaşım kontrolü | Her gün 15:05–01:05, saat başı |
+| Günlük paylaşım kontrolü (paylaşıldı mı, hata var mı) | Her gün 01:37 (30 Ekim'den beri; işleri başlatmayı Cloudflare Worker yapıyor) |
 | Haftalık platform onay kontrolü (YouTube, TikTok, LinkedIn, Meta) | Pazartesi 09:37 |
 | Tek seferlik hatırlatmalar | Meta tekrar deneme, "can yeleği" klasörü, GitHub anahtarı yenileme, Google Business Profile API başvurusu |
+
+**Cloudflare Worker (zerone-local, 27 Ekim'den beri):** GitHub'ın zamanlaması geç kaldığı için Worker her saatin 23. dakikasında `daily-delivery` (15:00–17:59) ve `daily-publish` (15:00–01:59) işlerini kendisi başlatır; ücretsiz.
 
 Eski "Weekly blog post" ve "Weekly social content" görevleri 19 Ekim'de kapatıldı; işlerini günlük içerik sistemi yapıyor. Yeni görev eklenince veya biri kapatılınca bu tablo güncellenir.
 
