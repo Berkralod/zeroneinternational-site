@@ -1,6 +1,6 @@
 # Proje durumu (Claude'un devir notu)
 
-Son güncelleme: 2026-10-27. Yeni bir oturum veya sohbet özetlemesinden sonra Claude buradan devam eder.
+Son güncelleme: 2026-11-02. Yeni bir oturum veya sohbet özetlemesinden sonra Claude buradan devam eder.
 
 ## Canlıda olanlar
 - 15 dilli site (GitHub Pages), blog (her salı yeni yazı, günlük içerik sisteminin parçası), "Geliştiriciler için" sayfası.
@@ -40,6 +40,14 @@ Kural: sabit, tekrarlayan kontroller **GitHub Actions**'ta (ücretsiz, Claude ge
 Eski "Weekly blog post" ve "Weekly social content" görevleri 19 Ekim'de kapatıldı; işlerini günlük içerik sistemi yapıyor. Yeni görev eklenince veya biri kapatılınca bu tablo güncellenir.
 
 ## Açık işler
+- **SIRADAKİ İŞ: Dikkat çekici sosyal video sistemi (2 Kas 2026, Berk'in kararı, "can yeleği" klasöründen ÖNCE yapılacak).**
+  - Amaç: Günlük shorts, gönderi görselleri ve tanıtım filmleri artık sadece stok fotoğraf/video ile yapılmayacak. İzleyeni şaşırtacak, "şok" etkisi yaratan, çok dikkat çekici içerik hedefleniyor.
+  - Yöntem: GitHub'da ücretsiz, açık kaynak repoları araştır, analiz et, en iyilerini seç ve kur. İki alan:
+    1. **Görüntü:** Kodla üretilen animasyon ve motion graphics (Berk'in X'te gördüğü liste, 2 Kas: `lemomo-ai/lemo-opuscar`, `yihui-dev/awesome-opus5-5-videos`, `Vincentwei1021/mg-styles-15`, `JohnHeibel/ClaudeAnimationBase`, `joeseesun/opus-video-prompts` ve benzerleri). Ayrıca dikkat çekici stiller için başka repolar aranacak.
+    2. **Ses:** Ücretsiz, açık kaynak seslendirme (TTS), müzik ve ses efekti repoları.
+  - Kullanım alanları: sosyal medya tanıtım filmleri, günlük shorts ve gönderiler (günlük içerik sistemi, gizli `zerone-local` deposu), gerekirse sitedeki animasyonlar.
+  - Güvenlik kuralı: Aynı isimli taklit repolar var (2 Kas aramasında görüldü). Her repo kurulmadan önce kontrol edilir: doğru sahip, yıldız/tarih, lisans (ticari kullanıma izin veren: MIT, Apache vb.), kurulum betiklerinde şüpheli komut yok. Hiçbir anahtar bu araçlara verilmez.
+  - Sıra: (1) repo araştırması ve karşılaştırma tablosu → Berk'e kısa Türkçe öneri, (2) seçilenleri `zerone-local` içerik hattına kurma, (3) örnek video → Berk onayı, (4) günlük sisteme bağlama, (5) bu bitince "can yeleği" klasörü.
 - **Karma konumlandırma ve SEO hamlesi (20 Ekim 2026, Berk'in kararı):** "New York merkezli, önce ABD, dünyaya açık". Web siteleri, web/mobil uygulamalar ve otomasyon dünya çapında uzaktan; Google Business Profile bakımı ve Ava sadece ABD. Tüm sayfa başlıkları ve açıklamaları yeniden yazıldı (15 dil). Ürünler sayfası: Ava (AI resepsiyonist) ve otomasyon kitleri; Geliştiriciler sayfası: iş otomasyonu API'leri (planlı). 5 eski e-ticaret blog yazısı `/blog/`'a yönlendirildi; yerine 3 yeni rehber (cevapsız aramalar, hizmet bölgeli işletmeler için Google Business Profile, AI resepsiyonist vs. çağrı merkezi). Sırada: bölge sayfaları (Suffolk, Nassau, Hamptons, Manhattan), Google Business Profile ve dizin kayıtları. Search Console bağlı; haftalık SEO raporu zerone-local'den Telegram'a gidiyor.
 - **SEO B paketi (22 Ekim 2026, Berk onayladı, PR açık):** `/plans/long-island/` merkez sayfası ve 3 sektör rehberi (Long Island yüklenici siteleri, ev hizmetleri için AI resepsiyonist, Suffolk Google Business Profile; SSS + FAQPage). Ücretsiz araçlar `/tools/`: cevapsız arama maliyet hesaplayıcı (tarayıcıda çalışır, veri toplamaz) ve yazdırılabilir 18 maddelik Google Business Profile listesi. 3 blog yazısına SSS, 4 kullanım alanına yeni başlık, footer'a "Free tools", sameAs'a Google Business Profile linki. Lisans cümlesi resmi .gov kaynağı doğrulanamadığı için çıkarıldı. Yelp linki Berk'ten gelince eklenecek.
 - **Yeni konumlandırma (19 Ekim 2026, Berk'in kararı):** Site artık "e-ticaret / resale araçları" değil, **New York merkezli, tüm ABD'ye hizmet veren teknoloji ve büyüme ortağı**. Öncelik New York City (Manhattan, Brooklyn, Queens, Bronx, Staten Island) ve Long Island (Nassau, Suffolk, Hamptons); diğer eyaletler uzaktan. Metinlerde "sadece yerel" vurgusu yapılmaz.
