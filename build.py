@@ -651,6 +651,9 @@ def assistant_data(site, config, posts, plan_pages=()):
         "languages": site.langs,
         "default_language": site.default,
         "base_url": site.base,
+        "site_name": config["site_name"],
+        # The Worker relays the website forms to Formspree (and Telegram); see worker/assistant/src/form.js.
+        "formspree_form_id": config.get("formspree_form_id", ""),
         "links": assistant_catalog(site, config, posts, plan_pages),
         "knowledge": assistant_knowledge(site, config),
     }

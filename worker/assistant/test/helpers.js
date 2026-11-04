@@ -72,7 +72,7 @@ export function message(json, stopReason = "end_turn") {
 }
 
 /** A complete test setup. `respond(params)` decides what the mocked model returns. */
-export function setup({ respond = () => message(reply()), env: envOverrides = {}, turnstile = true } = {}) {
+export function setup({ respond = () => message(reply()), env: envOverrides = {}, turnstile = true, formspreeStatus = 200 } = {}) {
   let clock = Date.UTC(2026, 9, 12, 12, 0, 0);
   const calls = { model: [], fetch: [], waitUntil: [] };
   const client = {
@@ -91,6 +91,9 @@ export function setup({ respond = () => message(reply()), env: envOverrides = {}
       const params = new URLSearchParams(init.body);
       const ok = turnstile && params.get("response") === "good-token";
       return new Response(JSON.stringify({ success: ok, hostname: "zeroneinternational.com" }), { status: 200 });
+    }
+    if (String(url).startsWith("https://formspree.io/")) {
+      return new Response(JSON.stringify({ ok: true }), { status: formspreeStatus });
     }
     if (String(url).startsWith("https://api.telegram.org/")) {
       return new Response(JSON.stringify({ ok: true }), { status: 200 });
@@ -151,6 +154,7 @@ export function setup({ respond = () => message(reply()), env: envOverrides = {}
     },
     now: () => clock,
     telegramCalls: () => calls.fetch.filter((c) => c.url.startsWith("https://api.telegram.org/")),
+    formspreeCalls: () => calls.fetch.filter((c) => c.url.startsWith("https://formspree.io/")),
   };
 }
 

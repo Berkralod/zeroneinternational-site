@@ -2,6 +2,8 @@
   "languages": ["en", "tr", "de", "es", "fr", "it", "pt", "nl", "pl", "ru", "uk", "ar", "hi", "zh", "ja"],
   "default_language": "en",
   "base_url": "https://zeroneinternational.com",
+  "site_name": "Zerone International",
+  "formspree_form_id": "xtestform",
   "version": "test",
   "knowledge": "Company: Zerone International LLC. Services: automation, web apps, mobile apps.",
   "links": {

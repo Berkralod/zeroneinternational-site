@@ -25,11 +25,12 @@ export const RULES = {
   uploadsPerConversation: 3,
   uploadsPerDay: 10,
   leadsPerDay: 3,
+  formsPerDay: 5, // website form submissions relayed per IP
   retention: DAY, // all state of an IP hash is deleted this long after its last activity
 };
 
 function fresh() {
-  return { msgs: [], strikes: [], blockedUntil: 0, reason: "", verifiedUntil: 0, uploads: [], leads: [] };
+  return { msgs: [], strikes: [], blockedUntil: 0, reason: "", verifiedUntil: 0, uploads: [], leads: [], forms: [] };
 }
 
 function json(data, status = 200) {
@@ -43,6 +44,7 @@ export const ipRules = {
     state.strikes = state.strikes.filter((t) => t > now - RULES.strikeWindow);
     state.uploads = state.uploads.filter((u) => u.t > now - DAY);
     state.leads = state.leads.filter((l) => l.t > now - DAY);
+    state.forms = (state.forms || []).filter((t) => t > now - DAY);
     if (state.blockedUntil && state.blockedUntil <= now) {
       state.blockedUntil = 0;
       state.reason = "";
@@ -105,6 +107,14 @@ export const ipRules = {
     return { blocked_until: 0, reason: "", strikes: state.strikes.length };
   },
 
+  // A website form relayed to Formspree and Telegram: a few per IP per day.
+  form(state, now) {
+    ipRules.prune(state, now);
+    if (state.forms.length >= RULES.formsPerDay) return { ok: false };
+    state.forms.push(now);
+    return { ok: true };
+  },
+
   // A lead notification: at most once per conversation and kind, and a few per IP per day.
   lead(state, now, { kind, conversation }) {
     ipRules.prune(state, now);
@@ -143,6 +153,9 @@ export class IpLimiter {
         break;
       case "strike":
         result = ipRules.strike(state, now);
+        break;
+      case "form":
+        result = ipRules.form(state, now, command);
         break;
       case "lead":
         result = ipRules.lead(state, now, command);
