@@ -163,7 +163,97 @@
     if (label) label.textContent = address;
   });
 
-  /* ---------------------------------------------------------------- forms (Formspree) */
+  /* ---------------------------------------------------------------- forms (Formspree, via the Worker) */
+  // With the assistant Worker on, forms go to its /form relay (Turnstile bot check -> Formspree e-mail
+  // + Telegram alert). If the Worker cannot be reached the form posts straight to Formspree, as before.
+  var relay = null;
+  try {
+    var relayNode = document.getElementById("assistant-data");
+    var relayCfg = relayNode ? JSON.parse(relayNode.textContent) : null;
+    if (relayCfg && relayCfg.endpoint && relayCfg.sitekey) relay = { endpoint: relayCfg.endpoint, sitekey: relayCfg.sitekey, lang: relayCfg.lang };
+  } catch (e) { relay = null; }
+
+  var tsScript = null;
+  function loadTurnstile() {
+    if (window.turnstile) return Promise.resolve(window.turnstile);
+    if (!tsScript) {
+      tsScript = new Promise(function (resolve, reject) {
+        var script = document.createElement("script");
+        script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+        script.async = true;
+        script.onload = function () { window.turnstile ? resolve(window.turnstile) : reject(new Error("turnstile")); };
+        script.onerror = function () { tsScript = null; reject(new Error("turnstile")); };
+        document.head.appendChild(script);
+      });
+    }
+    return tsScript;
+  }
+
+  function formToken(form) {
+    return loadTurnstile().then(function (ts) {
+      return new Promise(function (resolve, reject) {
+        var box = form.querySelector(".form__turnstile");
+        if (!box) {
+          box = document.createElement("div");
+          box.className = "form__turnstile";
+          form.insertBefore(box, form.querySelector("[data-form-status]"));
+        }
+        var limit = window.setTimeout(function () { reject(new Error("turnstile")); }, 60000);
+        var done = function (token) { window.clearTimeout(limit); token ? resolve(token) : reject(new Error("turnstile")); };
+        box.__done = done;
+        if (!box.getAttribute("data-widget")) {
+          var id = ts.render(box, {
+            sitekey: relay.sitekey,
+            execution: "execute",
+            appearance: "interaction-only",
+            language: relay.lang,
+            callback: function (token) { if (box.__done) box.__done(token); },
+            "error-callback": function () { if (box.__done) box.__done(null); },
+            "timeout-callback": function () { if (box.__done) box.__done(null); }
+          });
+          box.setAttribute("data-widget", id);
+        } else {
+          ts.reset(box.getAttribute("data-widget"));
+        }
+        ts.execute(box);
+      });
+    });
+  }
+
+  function postDirect(form) {
+    return window.fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" }
+    }).then(function (response) {
+      if (!response.ok) throw new Error("HTTP " + response.status);
+    });
+  }
+
+  function postRelay(form) {
+    var data = {};
+    new FormData(form).forEach(function (value, key) { if (typeof value === "string") data[key] = value; });
+    data.page = window.location.pathname;
+    return formToken(form).then(function (token) {
+      data.turnstile = token;
+      return window.fetch(relay.endpoint + "/form", {
+        method: "POST",
+        mode: "cors",
+        credentials: "omit",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+    }).then(function (response) {
+      if (response.ok) return;
+      // Too many forms from this visitor today: stop here. Any other problem: Formspree directly.
+      if (response.status === 429) throw new Error("HTTP 429");
+      return postDirect(form);
+    }, function () {
+      // Network error or Turnstile could not load: keep the old path so no request is lost.
+      return postDirect(form);
+    });
+  }
+
   document.querySelectorAll("form[data-ajax-form]").forEach(function (form) {
     var status = form.querySelector("[data-form-status]");
     var button = form.querySelector("[type=submit]");
@@ -174,12 +264,7 @@
       button.disabled = true;
       status.removeAttribute("data-state");
       status.textContent = form.dataset.sending;
-      window.fetch(form.action, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { Accept: "application/json" }
-      }).then(function (response) {
-        if (!response.ok) throw new Error("HTTP " + response.status);
+      (relay ? postRelay(form) : postDirect(form)).then(function () {
         form.reset();
         status.setAttribute("data-state", "success");
         status.textContent = form.dataset.success;

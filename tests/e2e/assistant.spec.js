@@ -366,3 +366,47 @@ test.describe("AI sales assistant", () => {
     });
   }
 });
+
+test.describe("website forms through the Worker relay", () => {
+  test("the contact form goes to /form with a Turnstile token, not straight to Formspree", async ({ page }) => {
+    const direct = [];
+    await page.route("https://formspree.io/**", (route) => {
+      direct.push(route.request().url());
+      return route.fulfill({ status: 200, contentType: "application/json", body: '{"ok":true}' });
+    });
+    const { requests } = await openWith(page, pathFor("en", "contact"), () => ({ json: { ok: true } }));
+    const form = page.locator("form[data-ajax-form]").first();
+    await form.locator("#f-name").fill("Test Person");
+    await form.locator("#f-email").fill("test@example.com");
+    await form.locator("#f-type").selectOption("web");
+    await form.locator("#f-message").fill("We would like a dashboard for our service team, please.");
+    await form.locator("#project-consent").check();
+    await form.locator("[type=submit]").click();
+    await expect(form.locator("[data-form-status]")).toHaveText(content.en.form.success);
+    const sent = requests.filter((r) => r.path === "/form");
+    expect(sent).toHaveLength(1);
+    expect(sent[0].body.turnstile).toBe("test-token");
+    expect(sent[0].body.form).toBe("project");
+    expect(sent[0].body.email).toBe("test@example.com");
+    expect(sent[0].body.page).toBe(pathFor("en", "contact"));
+    expect(direct).toHaveLength(0);
+  });
+
+  test("if the Worker fails the form still reaches Formspree", async ({ page }) => {
+    const direct = [];
+    await page.route("https://formspree.io/**", (route) => {
+      direct.push(route.request().url());
+      return route.fulfill({ status: 200, contentType: "application/json", body: '{"ok":true}' });
+    });
+    await openWith(page, pathFor("en", "contact"), () => ({ status: 503, json: { error: "unavailable" } }));
+    const form = page.locator("form[data-ajax-form]").first();
+    await form.locator("#f-name").fill("Test Person");
+    await form.locator("#f-email").fill("test@example.com");
+    await form.locator("#f-type").selectOption("web");
+    await form.locator("#f-message").fill("We would like a dashboard for our service team, please.");
+    await form.locator("#project-consent").check();
+    await form.locator("[type=submit]").click();
+    await expect(form.locator("[data-form-status]")).toHaveText(content.en.form.success);
+    expect(direct).toHaveLength(1);
+  });
+});

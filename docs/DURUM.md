@@ -4,6 +4,7 @@ Son güncelleme: 2026-11-02. Yeni bir oturum veya sohbet özetlemesinden sonra C
 
 ## Canlıda olanlar
 - 15 dilli site (GitHub Pages), blog (her salı yeni yazı, günlük içerik sisteminin parçası), "Geliştiriciler için" sayfası.
+- Site formları (4 Kasım 2026, Berk'in isteği): proje talebi, bekleme listeleri ve bülten artık asistan Worker'ının `/form` adresinden geçer: Turnstile robot kontrolü → Formspree (e-posta eskisi gibi gelir) → Berk'e Türkçe Telegram mesajı, spam tahmini ile ("⚠️ Muhtemelen SPAM"). Worker'a ulaşılamazsa form eskisi gibi doğrudan Formspree'ye gider. Kod: `worker/assistant/src/form.js`. Formspree kimliğini doğrudan kullanan robotlar yine sadece e-postaya düşer (Telegram'a değil).
 - Ödeme: Stripe Payment Link (`stripe_payment_url`), Square fatura, PayPal.
 - prismapi.dev ve zeroneholding.com → Cloudflare 301 yönlendirmesi (`domain-redirects.yml`).
 - PayPal: Mercury banka hesapları bağlandı (12 Ekim 2026). "Activations Agent" e-postaları otomatik satış mesajı, cevap gerekmez.

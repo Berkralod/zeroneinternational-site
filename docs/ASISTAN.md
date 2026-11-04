@@ -19,6 +19,17 @@ Telefonunuzda nasıl görüneceğini görmek için: `preview/assistant-demo.html
 - Pencere kapalıyken cevap gelirse düğmede küçük bir nokta ve kısa, yumuşak bir ses çıkar. Ziyaretçi sesi zil simgesiyle kapatabilir.
 - Açık ve koyu temaya, Arapça (sağdan sola) yazıya, klavye ve ekran okuyucu kullanımına uygundur. Telefonda tam ekran açılır.
 
+## Site formları da bu Worker'dan geçer (4 Kasım 2026)
+
+Sitedeki formlar (proje talebi, bekleme listesi, geliştirici erken erişim, bülten) `/form` adresine gider:
+
+1. Turnstile robot kontrolü (görünmez; gerekirse tek tık).
+2. Aynı ziyaretçiden günde en fazla 5 form.
+3. Form Formspree'ye iletilir: e-posta eskisi gibi gelir. Spam sanılanların konusunda `[possible spam]` yazar.
+4. Berk'e Telegram'dan Türkçe özet gider: "📩 Site formu" ya da "⚠️ Muhtemelen SPAM" ve nedeni.
+
+Formspree'ye ulaşılamazsa Telegram mesajı bunu söyler (talep sadece orada). Worker'a ulaşılamazsa tarayıcı formu doğrudan Formspree'ye gönderir; hiçbir talep kaybolmaz. Anthropic anahtarı olmadan da çalışır.
+
 ## Kötüye kullanıma karşı kurallar
 
 Bu kuralların hepsi sunucuda (Cloudflare Worker) uygulanır. Ziyaretçi tarayıcısını temizlese veya cihaz değiştirse de aynı ağdan geldiği sürece kurallar devam eder.

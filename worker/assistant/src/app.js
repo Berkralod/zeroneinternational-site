@@ -3,6 +3,7 @@
 //
 // POST /chat  one chat turn: checks, rate limits, one Claude request, cleaned JSON answer
 // POST /lead  "Send this conversation to the team" (with the visitor's consent) -> Telegram
+// POST /form  website forms: Turnstile -> Formspree (e-mail) + Telegram with a spam estimate (src/form.js)
 // GET  /health
 //
 // Security model: only the website's origins may call it; every visitor is identified by a salted hash
@@ -13,10 +14,12 @@ import { MODEL, LANGS, NAMES, LANG_NAMES, outputSchema, staticPrompt, requestPro
 import { validateAttachment, FileError } from "./files.js";
 import { cleanResult, cleanText, allowedUrlSet, EMAIL_RE, validPhone, digits } from "./sanitize.js";
 import { leadMessage, sendTelegram } from "./telegram.js";
+import { readForm, spamCheck, formspreeBody, formMessage } from "./form.js";
 
 export const LIMITS = {
   maxBody: 6 * 1024 * 1024, // one 4 MB file is about 5.4 MB as base64, plus the text
   maxLeadBody: 64 * 1024,
+  maxFormBody: 32 * 1024,
   maxInput: 1000, // characters in the visitor's message
   maxHistory: 8, // messages of history sent to the model, whatever the browser sends
   maxHistoryChars: 2000,
@@ -421,6 +424,37 @@ export function createApp({ siteData, makeClient, fetchImpl = (...args) => fetch
     return { ok: true };
   }
 
+  async function sendForm(body, env, ctx, { call, ip }) {
+    const parsed = readForm(body, LANGS);
+    if (parsed.error === "trap") return { ok: true }; // a bot filled the hidden field: pretend success
+    if (parsed.error) throw new HttpError(400, parsed.error);
+    const state = await call({ op: "peek" });
+    if (state.blocked_until > now()) throw blocked(state);
+    await requireHuman(env, body.turnstile, ip);
+    const allowedForm = await call({ op: "form" });
+    if (!allowedForm.ok) throw new HttpError(429, "form_limit");
+    const verdict = spamCheck(parsed.fields, parsed.lang);
+    let emailed = false;
+    const formId = siteData.formspree_form_id;
+    if (formId) {
+      try {
+        const response = await fetchImpl(`https://formspree.io/f/${formId}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json", Origin: base, Referer: `${base}/contact/` },
+          body: JSON.stringify(formspreeBody(parsed, siteData.site_name || "Zerone International", verdict.spam)),
+        });
+        emailed = response.ok;
+        if (!response.ok) console.log(`formspree: HTTP ${response.status}`);
+      } catch {
+        console.log("formspree: network error");
+      }
+    }
+    const pagePath = typeof body.page === "string" && pagePaths.has(body.page) ? body.page : "";
+    const sent = await sendTelegram(fetchImpl, env, formMessage(parsed, verdict, { page: pagePath ? base + pagePath : "", emailed }));
+    if (!emailed && !sent) throw new HttpError(502, "unavailable");
+    return { ok: true };
+  }
+
   async function handle(request, env, ctx) {
     const url = new URL(request.url);
     const origin = request.headers.get("Origin") || "";
@@ -428,18 +462,21 @@ export function createApp({ siteData, makeClient, fetchImpl = (...args) => fetch
     const cors = originOk ? corsHeaders(origin) : {};
     try {
       if (url.pathname === "/health" && request.method === "GET") return respond({ ok: true }, 200, {});
-      if (url.pathname !== "/chat" && url.pathname !== "/lead") throw new HttpError(404, "not_found");
+      if (!["/chat", "/lead", "/form"].includes(url.pathname)) throw new HttpError(404, "not_found");
       if (!originOk) throw new HttpError(403, "origin");
       if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: { ...cors, "Cache-Control": "no-store" } });
       if (request.method !== "POST") throw new HttpError(405, "method");
       if (!/^application\/json\s*(;|$)/i.test(request.headers.get("Content-Type") || "")) throw new HttpError(415, "content_type");
       const turnstileReady = Boolean(env.TURNSTILE_SECRET) || env.TURNSTILE_DISABLED === "true";
-      if (!env.ANTHROPIC_API_KEY || !env.IP_HASH_SALT || !turnstileReady) throw new HttpError(503, "unavailable");
       const isChat = url.pathname === "/chat";
-      const body = await readJson(request, isChat ? LIMITS.maxBody : LIMITS.maxLeadBody);
+      const isForm = url.pathname === "/form";
+      // The form relay needs no model key: forms keep working even if the assistant is switched off.
+      if ((!isForm && !env.ANTHROPIC_API_KEY) || !env.IP_HASH_SALT || !turnstileReady) throw new HttpError(503, "unavailable");
+      const body = await readJson(request, isChat ? LIMITS.maxBody : isForm ? LIMITS.maxFormBody : LIMITS.maxLeadBody);
       const ip = request.headers.get("CF-Connecting-IP") || "unknown";
       const call = limiterFor(env, await hashIp(env.IP_HASH_SALT, ip));
-      const data = isChat ? await chat(body, env, ctx, { call, ip }) : await sendToTeam(body, env, ctx, { call, ip });
+      const handler = isChat ? chat : isForm ? sendForm : sendToTeam;
+      const data = await handler(body, env, ctx, { call, ip });
       return respond(data, 200, cors);
     } catch (error) {
       if (error instanceof HttpError) return respond({ error: error.code, ...error.extra }, error.status, cors);
