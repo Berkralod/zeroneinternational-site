@@ -1,6 +1,6 @@
 # Proje durumu (Claude'un devir notu)
 
-Son güncelleme: 2026-11-02. Yeni bir oturum veya sohbet özetlemesinden sonra Claude buradan devam eder.
+Son güncelleme: 2026-11-09. Yeni bir oturum veya sohbet özetlemesinden sonra Claude buradan devam eder.
 
 ## Canlıda olanlar
 - 15 dilli site (GitHub Pages), blog (her salı yeni yazı, günlük içerik sisteminin parçası), "Geliştiriciler için" sayfası.
@@ -11,6 +11,7 @@ Son güncelleme: 2026-11-02. Yeni bir oturum veya sohbet özetlemesinden sonra C
 - Apple Business: Zerone International LLC doğrulandı (12 Ekim 2026). Logo/marka kartı bilgisayarda eklenecek.
 - Yapay zekâ satış asistanı açık (16 Ekim 2026): Worker `zerone-assistant.zerone-5dc7de.workers.dev`. Anthropic'te ayrı çalışma alanı `zerone-site`, aylık limit 20 $, anahtar `zerone-assistant` (bitiş tarihi konsolda; dolmadan yenilenecek).
 - Ana alan adı Cloudflare DNS'te (17 Ekim 2026). Site GitHub Pages'te kalıyor: kayıtlar DNS-only, Google doğrulama kaydı korundu. E-posta Cloudflare Email Routing ile çalışıyor: berk@ ve diğer tüm adresler → zeronellc01@gmail.com (MX route1-3.mx.cloudflare.net). Gönderim için DKIM ve DMARC, Google Workspace açılınca kurulacak.
+- GitHub Actions kilitli (9 Kasım 2026, Berk'in onayı): bütün `uses:` satırları sürüm adı yerine tam commit numarasına sabitlendi (`actions/checkout@<sha> # v7`). Etiketi başka koda taşıyan biri bize ulaşamaz; Dependabot numaraları PR ile günceller. `tests/validate_site.py` kilitsiz satırı hata sayar. Dış GitHub araçlarının güvenlik sistemi (izleme + otomatik kapatma + 🚨 Nöbet) gizli depoda: `zerone-local/docs/UCUNCU-TARAF.md`.
 - Otomasyonlar: saatlik sağlık kontrolü, yayın sonrası duman testi + otomatik geri alma, CodeQL, Dependabot (öneriler incelenip birleştirilir), haftalık güvenlik özeti, haftalık trafik raporu (Cloudflare), hepsi Telegram'a Türkçe.
 
 ## Otomatik işler: hangisi nerede çalışıyor (27 Ekim 2026)

@@ -331,6 +331,13 @@ def main() -> int:
                 if pattern.search(text):
                     errors.append(f"{f.relative_to(DIST)}: looks like a secret ({pattern.pattern[:20]}…)")
 
+    # every GitHub Action pinned to a full commit SHA, so a moved tag can never change what runs
+    for wf in sorted((ROOT / ".github" / "workflows").glob("*.y*ml")):
+        for n, line in enumerate(wf.read_text(encoding="utf-8").splitlines(), 1):
+            m = re.search(r"uses:\s*([^\s#]+)", line)
+            if m and not m.group(1).startswith("./") and not re.search(r"@[0-9a-f]{40}$", m.group(1)):
+                errors.append(f".github/workflows/{wf.name}:{n}: pin {m.group(1)} to a commit SHA")
+
     for w in warnings:
         print(f"warning: {w}")
     for e in errors:
