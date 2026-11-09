@@ -26,7 +26,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v7
@@ -81,7 +81,7 @@ jobs:
     # (DNS, certificate, GitHub Pages outage), rolling back would only block every new deploy.
     name: Live site before deploy
     continue-on-error: true
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
       contents: read
@@ -108,7 +108,7 @@ jobs:
     # Waits for the baseline check so it measures the old site, but does not depend on its result.
     needs: [build, baseline]
     if: ${{ !cancelled() && needs.build.result == 'success' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
       pages: write
@@ -124,7 +124,7 @@ jobs:
     name: Post-deploy smoke test
     needs: deploy
     if: ${{ !cancelled() && needs.deploy.result == 'success' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     permissions:
       contents: read
@@ -155,7 +155,7 @@ jobs:
     if: >-
       always() && github.ref == 'refs/heads/main' && needs.baseline.outputs.healthy == 'true'
       && needs.deploy.result == 'success' && needs.smoke.result == 'failure'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
       actions: read
@@ -201,7 +201,7 @@ jobs:
   rollback-deploy:
     needs: rollback-prepare
     if: always() && needs.rollback-prepare.result == 'success'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
       pages: write
@@ -221,7 +221,7 @@ jobs:
     needs: [build, baseline, deploy, smoke, rollback-prepare, rollback-deploy]
     if: ${{ !cancelled() }}
     continue-on-error: true
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
       contents: read
@@ -317,7 +317,7 @@ jobs:
     # Asks Bing (and other IndexNow engines) to recrawl the site once the live check passed;
     # never blocks a deploy.
     needs: smoke
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     continue-on-error: true
     steps:
