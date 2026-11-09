@@ -19,7 +19,7 @@ concurrency:
 jobs:
   test:
     name: Build, validate and test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v7
@@ -77,7 +77,7 @@ jobs:
 
   cross-browser:
     name: Firefox and Safari (WebKit)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v7
@@ -108,7 +108,7 @@ jobs:
   worker:
     # Unit tests of the AI assistant's Cloudflare Worker (mocked Anthropic client, no network).
     name: Assistant Worker tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
@@ -132,7 +132,7 @@ jobs:
 
   docker:
     name: Railway image
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
@@ -150,7 +150,7 @@ jobs:
     name: Telegram alert on failure
     needs: [test, cross-browser, worker, docker]
     if: failure() && (github.event_name == 'schedule' || github.ref == 'refs/heads/main')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     permissions:
       contents: read

@@ -11,3 +11,6 @@ __pycache__/
 .DS_Store
 lighthouse-report/
 node_modules
+
+# Claude Code local permission file (may hold secrets, Nöbet N-531)
+.claude/settings.local.json
