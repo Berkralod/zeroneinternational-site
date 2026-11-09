@@ -27,14 +27,16 @@ Kural: sabit, tekrarlayan kontroller **GitHub Actions**'ta (ücretsiz, Claude ge
 | Dependabot güncelleme önerileri | GitHub ayarı | GitHub'ın takvimi |
 | Ana alan adı taşıma izleme | `domain-watch.yml` | **Kapalı** (17 Ekim, taşıma bitti) |
 
-**Claude Zamanlanmış görevleri** (claude.ai → Zamanlanmış görevler; çoğu gizli `zerone-local` deposunda çalışır):
+**Claude Zamanlanmış görevleri** (claude.ai → Zamanlanmış görevler; çoğu gizli `zerone-local` deposunda çalışır). 9 Kasım'dan beri hepsi "ZERONE otomatik görevler" oturumunda (Berk oraya yazmaz); oturum her ayın 1'i yenilenir. Kimlikler: `zerone-local` `can-yelegi/05-OTOMASYONLAR.md`.
 | Görev | Ne zaman |
 |---|---|
 | Nöbet kuyruğu (haberleri kontrol et, gerekeni düzelt) | Her gün 07:13 |
 | Günlük içerik üretimi (salı blog yazısı dahil) | Her gün 11:52 |
 | Günlük paylaşım kontrolü (paylaşıldı mı, hata var mı) | Her gün 01:37 (30 Ekim'den beri; işleri başlatmayı Cloudflare Worker yapıyor) |
 | Haftalık platform onay kontrolü (YouTube, TikTok, LinkedIn, Meta) | Pazartesi 09:37 |
-| Tek seferlik hatırlatmalar | Meta tekrar deneme, "can yeleği" klasörü, GitHub anahtarı yenileme, Google Business Profile API başvurusu |
+| Can yeleği aylık gözden geçirme | Ayın ilk pazartesi 09:47 |
+| Otomasyon oturumu yenileme (görevleri yeni oturuma taşır) | Her ayın 1'i 09:13 |
+| Tek seferlik hatırlatmalar | GitHub anahtarı yenileme (14 Kas 2026, 14 Eki 2027), Google Business Profile API başvurusu (20 Ara 2026) |
 
 **Cloudflare Worker (zerone-local, 27 Ekim'den beri):** GitHub'ın zamanlaması geç kaldığı için Worker her saatin 23. dakikasında `daily-delivery` (15:00–17:59) ve `daily-publish` (15:00–01:59) işlerini kendisi başlatır; ücretsiz.
 
