@@ -2,6 +2,9 @@
 
 Son güncelleme: 2026-11-09. Yeni bir oturum veya sohbet özetlemesinden sonra Claude buradan devam eder.
 
+## 11 Kas 2026: kurulum ücreti siparişte ödenir (LS-TERMS-3)
+- Berk (11 Kas, "A olsun"): kurulum ücreti yarı yarıya değil, siparişte tam ödenir (Stripe linkleri zaten böyle). `/plans/pricing/` iki plan satırı ve `/plans/terms/` madde 3 güncellendi; şartlar sürümü LS-TERMS-2 → LS-TERMS-3 (henüz müşteri yok, bildirim gerekmiyor). PR #75 (erken başlangıç indirimi) 10 Kas 22:30 ET birleşti.
+
 ## 11 Kas 2026: fiyat sayfasında "ilk 5 müşteri" teklifi kaldırıldı
 - Berk (11 Kas): "ilk 5 müşteri olayını bitir". `/plans/pricing/` ve `/plans/long-island/`: kurucu müşteri cümlesi çıktı; yerine "mektup/tekliften sonra 30 gün içinde başlayana kurulumda %25, tek seferlik işte %10 indirim". Aynı kural Ava, teklif PDF'i ve müşteri mektuplarında (zerone-local).
 
