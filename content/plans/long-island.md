@@ -38,7 +38,7 @@ We are happy to meet in person anywhere on Long Island once we know what your pr
 
 ## Pricing
 
-Plans start at $149 a month plus $399 setup (Starter). The Growth plan is $249 a month plus $499 setup. The AI phone assistant is a $149 a month add-on with 300 minutes included. Prices do not include applicable sales tax. Full details are on our [pricing page](/plans/pricing/). For our first five clients, we waive the setup fee in return for permission to show the new website in our portfolio.
+Plans start at $149 a month plus $399 setup (Starter). The Growth plan is $249 a month plus $499 setup. The AI phone assistant is a $149 a month add-on with 300 minutes included. Prices do not include applicable sales tax. Full details are on our [pricing page](/plans/pricing/). If you start within 30 days of receiving our letter or written proposal, the setup fee is 25% lower, and one-time projects are 10% lower.
 
 ## Talk to us
 

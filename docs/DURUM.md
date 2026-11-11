@@ -2,6 +2,9 @@
 
 Son güncelleme: 2026-11-09. Yeni bir oturum veya sohbet özetlemesinden sonra Claude buradan devam eder.
 
+## 11 Kas 2026: fiyat sayfasında "ilk 5 müşteri" teklifi kaldırıldı
+- Berk (11 Kas): "ilk 5 müşteri olayını bitir". `/plans/pricing/` ve `/plans/long-island/`: kurucu müşteri cümlesi çıktı; yerine "mektup/tekliften sonra 30 gün içinde başlayana kurulumda %25, tek seferlik işte %10 indirim". Aynı kural Ava, teklif PDF'i ve müşteri mektuplarında (zerone-local).
+
 ## Canlıda olanlar
 - 15 dilli site (GitHub Pages), blog (her salı yeni yazı, günlük içerik sisteminin parçası), "Geliştiriciler için" sayfası.
 - Site formları (4 Kasım 2026, Berk'in isteği): proje talebi, bekleme listeleri ve bülten artık asistan Worker'ının `/form` adresinden geçer: Turnstile robot kontrolü → Formspree (e-posta eskisi gibi gelir) → Berk'e Türkçe Telegram mesajı, spam tahmini ile ("⚠️ Muhtemelen SPAM"). Worker'a ulaşılamazsa form eskisi gibi doğrudan Formspree'ye gider. Kod: `worker/assistant/src/form.js`. Formspree kimliğini doğrudan kullanan robotlar yine sadece e-postaya düşer (Telegram'a değil).
