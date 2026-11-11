@@ -60,7 +60,7 @@ An AI assistant answers your calls around the clock. It says that it is an AI as
 
 - **14-day satisfaction guarantee.** If you are not happy, tell us in writing within 14 days after your first monthly payment and we refund that month's fee. The setup fee is not refunded once the work is delivered.
 - **Pay yearly, get 2 months free.** Pay 12 months in advance and pay for 10.
-- **Founding client offer.** For our first 5 clients, we waive the setup fee in return for permission to show your new website in our portfolio. Nothing else is asked: no reviews, no testimonials.
+- **Early start.** Start within 30 days of receiving our letter or written proposal and your setup fee is 25% lower. One-time projects are 10% lower. Larger projects, or several services together, are priced individually.
 - **What stays yours.** Your domain, your Google Business Profile and your accounts are always in your business's name.
 - **How you pay.** Through secure payment pages from Stripe, Square or PayPal. We never see or store your card details.
 - **No surprises.** Larger changes beyond the small edits are quoted in writing before we start. Full details are in our [terms](/plans/terms/).
