@@ -9,7 +9,7 @@ Two simple monthly plans, an AI phone assistant you can add later, and a few one
 
 ## Starter — $149 a month
 
-**Setup: $399** (half when you order, half when your site goes live)
+**Setup: $399** (paid when you order)
 
 **You get:**
 
@@ -25,7 +25,7 @@ Two simple monthly plans, an AI phone assistant you can add later, and a few one
 
 ## Growth — $249 a month
 
-**Setup: $499** (half when you order, half when everything is live)
+**Setup: $499** (paid when you order)
 
 **You get everything in Starter, plus:**
 

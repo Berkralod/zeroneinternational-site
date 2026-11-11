@@ -308,7 +308,7 @@ test("small-business plan pages are reached from every language's footer and lin
     expect(await horizontalOverflow(page), `overflow at ${width}px`).toBeLessThanOrEqual(1);
   }
   await menu.getByRole("link", { name: "Terms" }).click();
-  await expect(page.locator(".post-meta")).toContainText("Version LS-TERMS-2");
+  await expect(page.locator(".post-meta")).toContainText("Version LS-TERMS-3");
   await expect(page.locator(".breadcrumbs")).toContainText(content.en.nav.plans);
   expect(errors).toEqual([]);
 });

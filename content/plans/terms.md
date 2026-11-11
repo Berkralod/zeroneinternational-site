@@ -2,8 +2,8 @@
 title: Small Business Plans Terms of Service
 description: The terms for ZERONE International's small-business plans: plans, setup, billing, cancellation, the satisfaction guarantee, ownership of your accounts and AI features.
 nav: Terms
-version: LS-TERMS-2
-updated: 2026-10-19
+version: LS-TERMS-3
+updated: 2026-11-11
 ---
 
 These terms apply when a business ("you") orders services from ZERONE International LLC ("ZERONE", "we") through an order form, an online order page or a written proposal (each an "Order"). The Order and these terms together are the whole agreement. If the Order and these terms differ, the Order applies.
@@ -23,7 +23,7 @@ Some features depend on third parties. Text-message features need a carrier regi
 ## 3. Fees, billing and taxes
 
 - **Monthly fee.** Plans are billed monthly in advance, starting on the delivery date, or on the date in your Order.
-- **Setup fee.** Unless your Order says otherwise, 50% of the setup fee is due when you order and 50% on delivery.
+- **Setup fee.** Unless your Order says otherwise, the setup fee is due when you order.
 - **Usage.** Plans with an AI phone assistant include the call minutes stated in your Order. We charge extra minutes at the rate stated in your Order. We tell you before you go over the included minutes.
 - **Payment.** We bill through hosted payment pages from Stripe, Square or PayPal. We never ask for or store your card details.
 - **Taxes.** Prices do not include sales tax. Applicable sales tax is added where required.
